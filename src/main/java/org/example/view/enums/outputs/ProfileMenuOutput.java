@@ -1,4 +1,4 @@
-package org.example.veiw.enums.outputs;
+package org.example.view.enums.outputs;
 
 public enum ProfileMenuOutput {
     USERNAME_CHANGED_SUCCESSFULLY("username changed successfully!"),

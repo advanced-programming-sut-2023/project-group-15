@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import org.example.model.User;
 import org.example.veiw.enums.outputs.SignupMenuOutput;
 
 import javax.swing.*;
@@ -8,10 +7,7 @@ import javax.swing.*;
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUser() {
         if (usernameCheck(this.getUsername())==null) {
-            if (this.getPassword().matches("^\\s*random\\s*$")) {
-                this.setPassword(generateRandomPassword());
-                //TODO:not completed yet...
-            } else if (passwordCheck(this.getPassword()) == null) {
+            if (passwordCheck(this.getPassword()) == null) {
                 if (emailCheck(this.getEmail())==null) {
                     //TODO: doing user signing in ...
                     return null;
@@ -23,20 +19,16 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
 
-    public static SignupMenuOutput usernameCheck(String username) {
+    public SignupMenuOutput usernameCheck(String username) {
         if (username.matches("^\\w+$")) {
-            for (User user: User.allUsers) {
-                if (user.getUsername().equals(username)) {
-                    return SignupMenuOutput.USERNAME_EXISTS;
-                }
-            }
+            //TODO: checking other users....
             return null;
         }
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
 
 
-    public static SignupMenuOutput passwordCheck(String password) {
+    public SignupMenuOutput passwordCheck(String password) {
         if (password.length()>=6) {
             if (password.matches("[a-z]+")) {
                 if (password.matches("[A-Z]+")) {
@@ -55,7 +47,7 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;
     }
 
-    public static SignupMenuOutput emailCheck(String email) {
+    public SignupMenuOutput emailCheck(String email) {
         if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
             //TODO:checking other emails...
             return null;

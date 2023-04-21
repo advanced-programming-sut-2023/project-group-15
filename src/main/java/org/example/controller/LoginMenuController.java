@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.veiw.enums.outputs.LoginMenuOutput;
+import org.example.view.enums.outputs.LoginMenuOutput;
 
 public class LoginMenuController extends MainMenuController{
     private boolean stayLoggedInFlag = false;
