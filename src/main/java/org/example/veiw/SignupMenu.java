@@ -6,7 +6,7 @@ import org.example.controller.SignupMenuController;
 
 import java.util.regex.Matcher;
 
-public class SignupMenu {
+public class SignupMenu extends MainMenu{
     private final SignupMenuController signupMenuController = new SignupMenuController();
     public void checkSigningUp(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));

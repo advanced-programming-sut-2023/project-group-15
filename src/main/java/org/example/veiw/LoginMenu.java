@@ -7,11 +7,9 @@ import org.example.veiw.enums.commands.LoginMenuEnum;
 import org.example.veiw.enums.commands.ProfileMenuEnum;
 import org.example.veiw.enums.outputs.LoginMenuOutput;
 import org.example.veiw.enums.outputs.ProfileMenuOutput;
-
-import java.util.Scanner;
 import java.util.regex.Matcher;
 
-public class LoginMenu {
+public class LoginMenu extends MainMenu {
     private final LoginMenuController loginMenuController = new ProfileMenuController();
 
     public void run(InputScanner loginMenuScanner) {
@@ -22,17 +20,17 @@ public class LoginMenu {
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
             else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_USERNAME))!=null) {
-                new ProfileMenu().changeProfile(loginMenuMatcher);
+                new ProfileMenu().changeUserUsername(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PASSWORD))!=null) {
-                new ProfileMenu().changeProfile(loginMenuMatcher);
+                new ProfileMenu().changeUserPassword(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_EMAIL))!=null) {
-                //TODO:
+                new ProfileMenu().changeUserEmail(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_NICKNAME))!=null) {
-                //TODO:
+                new ProfileMenu().changeUserNickname(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_SLOGAN))!=null) {
-                //TODO:
+                new ProfileMenu().changeUserSlogan(loginMenuMatcher);
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.REMOVE_SLOGAN)!=null) {
-                //TODO:
+                new ProfileMenu().removeUserSlogan();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_PROFILE)!=null) {
                 //TODO:
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_SLOGAN)!=null) {
