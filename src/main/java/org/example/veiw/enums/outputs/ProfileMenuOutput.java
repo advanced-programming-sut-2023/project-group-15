@@ -6,6 +6,7 @@ public enum ProfileMenuOutput {
     NICKNAME_CHANGED_SUCCESSFULLY("nickname changed successfully!"),
     EMAIL_CHANGED_SUCCESSFULLY("email changed successfully!"),
     SLOGAN_CHANGED_SUCCESSFULLY("slogan changed successfully!"),
+    SLOGAN_REMOVED_SUCCESSFULLY("slogan removed successfully!"),
 
     NEWPASS_AND_OLDPASS_ARE_EQUALS("your new password is equal to your current password!,\ntry something else!"),
     INVALID_CURRENT_PASSWORD("Current password is incorrect!"),

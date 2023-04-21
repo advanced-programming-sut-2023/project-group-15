@@ -3,7 +3,6 @@ package org.example.controller;
 import org.example.model.User;
 import org.example.veiw.enums.outputs.ProfileMenuOutput;
 
-import javax.swing.*;
 
 public class ProfileMenuController extends LoginMenuController{
     public ProfileMenuOutput changeUsername(String username) {
@@ -44,37 +43,45 @@ public class ProfileMenuController extends LoginMenuController{
         if (SignupMenuController.emailCheck(email)==null) {
             User.findUserWithPass(this.getPassword()).setEmail(email);
             this.setEmail(email);
+            return ProfileMenuOutput.EMAIL_CHANGED_SUCCESSFULLY;
         }
         return ProfileMenuOutput.INVALID_NEW_EMAIL;
     }
 
     public ProfileMenuOutput changeSlogan(String slogan) {
-        //TODO:
-        return null;
+        User.findUserWithPass(this.getPassword()).setSlogan(slogan);
+        this.setSlogan(slogan);
+        return ProfileMenuOutput.SLOGAN_CHANGED_SUCCESSFULLY;
     }
 
     public ProfileMenuOutput removeSlogan() {
-        //TODO:
-        return null;
+        User.findUserWithPass(this.getPassword()).setSlogan(null);
+        this.setSlogan(null);
+        return ProfileMenuOutput.SLOGAN_REMOVED_SUCCESSFULLY;
     }
 
     public void showUserHighestScore() {
-        //TODO:
-        return;
+        //TODO: after completing other parts!
     }
 
     public void showUserRank() {
-        //TODO:
-        return;
+        //TODO: after completing other parts!
     }
 
     public void showUserSlogan() {
-        //TODO:
-        return;
+        System.out.println(this.getSlogan());
     }
 
     public void showUserProfileDisplay() {
-        //TODO:
-        return;
+        System.out.println("username:"+this.getUsername());
+        StringBuilder password = new StringBuilder("*");
+        for (int i=1;i<this.getPassword().length();i++) {
+            password.append("*");
+        }
+        System.out.println("password:"+password);
+        System.out.println("email:"+this.getEmail());
+        System.out.println("nickname:"+this.getNickname());
+        System.out.println("slogan:"+this.getSlogan());
+        //TODO:user rank and high score are left..
     }
 }
