@@ -1,4 +1,4 @@
-package org.example.veiw.commands;
+package org.example.veiw;
 
 public class ProfileMenu {
 }

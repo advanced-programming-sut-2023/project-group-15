@@ -1,8 +1,7 @@
 package org.example.veiw;
 
 import org.example.InputScanner;
-import org.example.veiw.commands.LoginMenuEnum;
-import org.example.veiw.enums.ProfileMenuEnum;
+import org.example.veiw.enums.commands.LoginMenuEnum;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
