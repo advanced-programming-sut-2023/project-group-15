@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import org.example.model.User;
-import org.example.veiw.enums.outputs.ProfileMenuOutput;
+import org.example.view.enums.outputs.ProfileMenuOutput;
 
 
 public class ProfileMenuController extends LoginMenuController{
