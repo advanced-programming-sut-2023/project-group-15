@@ -1,4 +1,4 @@
 package org.example.model;
 
-public class Person {
+public abstract class Person {
 }
