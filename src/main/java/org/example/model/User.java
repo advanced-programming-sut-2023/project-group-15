@@ -106,4 +106,12 @@ public class User {
     public String getPassRecoveryAnswer(){
         return this.passRecoveryAnswer;
     }
+
+    public static User findUserWithPass(String password) {
+        for (User user:User.allUsers) {
+            if (user.getPassword().equals(password))
+                return user;
+        }
+        return null;
+    }
 }

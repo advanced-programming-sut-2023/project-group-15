@@ -8,7 +8,8 @@ public class LoginMenuController extends MainMenuController{
     public LoginMenuOutput loginUser() {
         if (checkMatchUsername(this.getUsername())) {
             if (checkUsernameWithPassword(this.getUsername(),this.getPassword())) {
-
+                //TODO: later...
+                return LoginMenuOutput.LOGGED_IN_SUCCESSFULY;
             }
             return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;
         }

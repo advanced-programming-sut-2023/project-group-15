@@ -23,7 +23,7 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
 
-    public SignupMenuOutput usernameCheck(String username) {
+    public static SignupMenuOutput usernameCheck(String username) {
         if (username.matches("^\\w+$")) {
             for (User user: User.allUsers) {
                 if (user.getUsername().equals(username)) {
@@ -36,7 +36,7 @@ public class SignupMenuController extends MainMenuController{
     }
 
 
-    public SignupMenuOutput passwordCheck(String password) {
+    public static SignupMenuOutput passwordCheck(String password) {
         if (password.length()>=6) {
             if (password.matches("[a-z]+")) {
                 if (password.matches("[A-Z]+")) {
@@ -55,7 +55,7 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;
     }
 
-    public SignupMenuOutput emailCheck(String email) {
+    public static SignupMenuOutput emailCheck(String email) {
         if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
             //TODO:checking other emails...
             return null;

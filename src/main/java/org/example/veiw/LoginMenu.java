@@ -17,28 +17,29 @@ public class LoginMenu extends MainMenu {
         String userInput;
         while (true) {
             userInput = loginMenuScanner.getScanner().nextLine();
+            ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
             else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_USERNAME))!=null) {
-                new ProfileMenu().changeUserUsername(loginMenuMatcher);
+                profileMenu.changeUserUsername(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PASSWORD))!=null) {
-                new ProfileMenu().changeUserPassword(loginMenuMatcher);
+                profileMenu.changeUserPassword(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_EMAIL))!=null) {
-                new ProfileMenu().changeUserEmail(loginMenuMatcher);
+                profileMenu.changeUserEmail(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_NICKNAME))!=null) {
-                new ProfileMenu().changeUserNickname(loginMenuMatcher);
+                profileMenu.changeUserNickname(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_SLOGAN))!=null) {
-                new ProfileMenu().changeUserSlogan(loginMenuMatcher);
+                profileMenu.changeUserSlogan(loginMenuMatcher);
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.REMOVE_SLOGAN)!=null) {
-                new ProfileMenu().removeUserSlogan();
+                profileMenu.removeUserSlogan();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_PROFILE)!=null) {
-                //TODO:
+                profileMenu.displayUserProfile();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_SLOGAN)!=null) {
-                //TODO:
+                profileMenu.displayUserSlogan();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_RANK)!=null) {
-                //TODO:
+                profileMenu.displayUserRank();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_PROFILE)!=null) {
-                //TODO:
+                profileMenu.displayUserInfo();
             } else {
                 System.out.println(ProfileMenuOutput.INVALID_COMMAND.getOutput());
             }
@@ -55,5 +56,6 @@ public class LoginMenu extends MainMenu {
             InputScanner loginMenuScanner = new InputScanner();
             run(loginMenuScanner);
         }
+        System.out.println(message);
     }
 }
