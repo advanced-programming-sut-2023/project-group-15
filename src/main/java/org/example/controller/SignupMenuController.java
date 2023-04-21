@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.veiw.enums.outputs.SignupMenuOutput;
+import org.example.view.enums.outputs.SignupMenuOutput;
 
 import javax.swing.*;
 

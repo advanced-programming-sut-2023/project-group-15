@@ -1,10 +1,10 @@
-package org.example.veiw;
+package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.LoginMenuController;
 import org.example.controller.ProfileMenuController;
-import org.example.veiw.enums.commands.LoginMenuEnum;
-import org.example.veiw.enums.outputs.LoginMenuOutput;
+import org.example.view.enums.commands.LoginMenuEnum;
+import org.example.view.enums.outputs.LoginMenuOutput;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
