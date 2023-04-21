@@ -20,7 +20,7 @@ public class LoginMenu {
             userInput = loginMenuScanner.getScanner().nextLine();
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
-            else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE))!=null) {
+            else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_USERNAME))!=null) {
                 new ProfileMenu().changeProfile(loginMenuMatcher);
             }
         }
