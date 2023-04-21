@@ -1,9 +1,9 @@
-package org.example.veiw;
+package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.MainMenuController;
-import org.example.veiw.enums.commands.LoginMenuEnum;
-import org.example.veiw.enums.commands.SignupMenuEnum;
+import org.example.view.enums.commands.LoginMenuEnum;
+import org.example.view.enums.commands.SignupMenuEnum;
 
 import java.util.regex.Matcher;
 

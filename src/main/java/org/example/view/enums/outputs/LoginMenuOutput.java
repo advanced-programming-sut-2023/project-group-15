@@ -1,4 +1,4 @@
-package org.example.veiw.enums.outputs;
+package org.example.view.enums.outputs;
 
 public enum LoginMenuOutput {
     USER_DOES_NOT_EXIST("no user with this username exist!,\nenter valid username or signup to the game!"),

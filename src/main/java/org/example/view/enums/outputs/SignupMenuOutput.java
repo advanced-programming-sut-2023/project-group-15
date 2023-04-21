@@ -1,4 +1,4 @@
-package org.example.veiw.enums.outputs;
+package org.example.view.enums.outputs;
 
 public enum SignupMenuOutput {
     EMPTY_FIELD("you just missed some fields,\ntry again!"),

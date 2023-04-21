@@ -1,4 +1,4 @@
-package org.example.veiw;
+package org.example.view;
 
 
 
