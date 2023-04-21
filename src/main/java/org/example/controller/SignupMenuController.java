@@ -4,11 +4,11 @@ import org.example.veiw.enums.outputs.SignupMenuOutput;
 
 import javax.swing.*;
 
-public class SignupMenuController {
-    public SignupMenuOutput signupUser(String username, String password, String email, String slogan) {
-        if (usernameCheck(username)==null) {
-            if (passwordCheck(password) == null) {
-                if (emailCheck(email)==null) {
+public class SignupMenuController extends MainMenuController{
+    public SignupMenuOutput signupUser() {
+        if (usernameCheck(this.getUsername())==null) {
+            if (passwordCheck(this.getPassword()) == null) {
+                if (emailCheck(this.getEmail())==null) {
                     //TODO: doing user signing in ...
                     return null;
                 }

@@ -1,12 +1,18 @@
 package org.example.controller;
 
-import org.example.veiw.enums.LoginMenuError;
+import org.example.veiw.enums.outputs.LoginMenuOutput;
 
-public class LoginMenuController {
+public class LoginMenuController extends MainMenuController{
+    private boolean stayLoggedInFlag = false;
 
-    public LoginMenuError loginUser(String username, String password) {
-        //TODO:
-        return null;
+    public LoginMenuOutput loginUser() {
+        if (checkMatchUsername(this.getUsername())) {
+            if (checkUsernameWithPassword(this.getUsername(),this.getPassword())) {
+
+            }
+            return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;
+        }
+        return LoginMenuOutput.USER_DOES_NOT_EXIST;
     }
 
     public boolean checkMatchUsername(String username) {
@@ -24,7 +30,7 @@ public class LoginMenuController {
         return true;
     }
 
-    public LoginMenuError forgetPassword(String username) {
+    public LoginMenuOutput forgetPassword(String username) {
         //TODO:
         return null;
     }
@@ -37,6 +43,14 @@ public class LoginMenuController {
     public void captcha() {
         //TODO:
         return;
+    }
+
+    public boolean isStayLoggedInFlag() {
+        return stayLoggedInFlag;
+    }
+
+    public void setStayLoggedInFlag(boolean stayLoggedInFlag) {
+        this.stayLoggedInFlag = stayLoggedInFlag;
     }
 }
 

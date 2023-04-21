@@ -2,19 +2,19 @@ package org.example.veiw;
 
 
 
-import org.example.veiw.enums.outputs.SignupMenuOutput;
+import org.example.controller.SignupMenuController;
 
 import java.util.regex.Matcher;
 
 public class SignupMenu {
-    public SignupMenuOutput checkSigningUp(Matcher matcher) {
-        //TODO:checking user implements and call controller...
-        String username;
-        String password;
-        String email;
-        String slogan;
-        String nickname;
-        return null;
+    private final SignupMenuController signupMenuController = new SignupMenuController();
+    public void checkSigningUp(Matcher matcher) {
+        signupMenuController.setUsername(matcher.group("username"));
+        signupMenuController.setPassword(matcher.group("password"));
+        signupMenuController.setNickname(matcher.group("nickname"));
+        signupMenuController.setEmail(matcher.group("email"));
+        signupMenuController.setSlogan(matcher.group("slogan"));
+        System.out.println(signupMenuController.signupUser());
     }
 
 }

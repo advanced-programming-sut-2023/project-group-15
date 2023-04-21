@@ -2,7 +2,7 @@ package org.example.controller;
 
 import org.example.veiw.enums.outputs.ProfileMenuOutput;
 
-public class ProfileMenuController {
+public class ProfileMenuController extends LoginMenuController{
     public ProfileMenuOutput changeUsername(String username) {
         //TODO:
         return null;
