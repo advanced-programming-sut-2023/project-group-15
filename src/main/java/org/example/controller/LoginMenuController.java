@@ -26,8 +26,14 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkUsernameWithPassword(String username,String password) {
-        //TODO:
-        return true;
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(username)) {
+                if (user.getPassword().equals(password)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean checkSecurityQuestion(String answer) {
