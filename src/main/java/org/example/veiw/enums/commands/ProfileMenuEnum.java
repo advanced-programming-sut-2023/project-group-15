@@ -4,7 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum ProfileMenuEnum {
-    CHANGE_PROFILE("^\\s*profile\\s+change\\s*"),
+    CHANGE_PROFILE_USERNAME("^\\s*profile\\s+change\\s*(\\s*-u\\s+(?<username>[^\\\"][^\\s]+|\\\"[^\\\"]+\\\"))\\s*$"),
+    CREATE_USER("\\s*user\\s+create((\\s+-u\\s+(?<username>\\S+|(\"[^\"]+\")))|"+"(\\s+-p\\s+(?<password>\\S+|(\"[^\"]+\"))(\\s+(?<passwordConfirmation>\\S+|(\"[^\"]+\")))?)|" +
+            "(\\s+-email\\s+(?<email>\\S+|(\"[^\"]+\")))|"+"(\\s+-n\\s+(?<nickname>\\S+|(\"[^\"]+\")))|(\\s+-s\\s+(?<slogan>\\S*|(\"[^\"]+\"))))*\\s*"),
     CHANGE_PASSWORD("^\\s*profile\\s+change\\s+password\\s*"),
     CHANGE_SLOGAN("^\\s*profile\\s+change\\s+slogan\\s*"),
     REMOVE_SLOGAN("^\\s*profile\\s+remove\\s+slogan\\s*$"),

@@ -4,6 +4,7 @@ import org.example.InputScanner;
 import org.example.controller.LoginMenuController;
 import org.example.controller.ProfileMenuController;
 import org.example.veiw.enums.commands.LoginMenuEnum;
+import org.example.veiw.enums.commands.ProfileMenuEnum;
 import org.example.veiw.enums.outputs.LoginMenuOutput;
 
 import java.util.Scanner;
@@ -19,7 +20,9 @@ public class LoginMenu {
             userInput = loginMenuScanner.getScanner().nextLine();
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
-            //TODO: completing login menu...
+            else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE))!=null) {
+                new ProfileMenu().changeProfile(loginMenuMatcher);
+            }
         }
     }
 
