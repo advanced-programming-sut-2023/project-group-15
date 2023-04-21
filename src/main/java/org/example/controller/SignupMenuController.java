@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.model.User;
 import org.example.veiw.enums.outputs.SignupMenuOutput;
 
 import javax.swing.*;
@@ -7,7 +8,10 @@ import javax.swing.*;
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUser() {
         if (usernameCheck(this.getUsername())==null) {
-            if (passwordCheck(this.getPassword()) == null) {
+            if (this.getPassword().matches("^\\s*random\\s*$")) {
+                this.setPassword(generateRandomPassword());
+                //TODO:not completed yet...
+            } else if (passwordCheck(this.getPassword()) == null) {
                 if (emailCheck(this.getEmail())==null) {
                     //TODO: doing user signing in ...
                     return null;
@@ -21,7 +25,11 @@ public class SignupMenuController extends MainMenuController{
 
     public SignupMenuOutput usernameCheck(String username) {
         if (username.matches("^\\w+$")) {
-            //TODO: checking other users....
+            for (User user: User.allUsers) {
+                if (user.getUsername().equals(username)) {
+                    return SignupMenuOutput.USERNAME_EXISTS;
+                }
+            }
             return null;
         }
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;

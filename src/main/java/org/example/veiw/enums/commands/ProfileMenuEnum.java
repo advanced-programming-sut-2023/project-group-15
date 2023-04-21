@@ -5,10 +5,11 @@ import java.util.regex.Pattern;
 
 public enum ProfileMenuEnum {
     CHANGE_PROFILE_USERNAME("^\\s*profile\\s+change\\s*(\\s*-u\\s+(?<username>[^\\\"][^\\s]+|\\\"[^\\\"]+\\\"))\\s*$"),
-    CREATE_USER("\\s*user\\s+create((\\s+-u\\s+(?<username>\\S+|(\"[^\"]+\")))|"+"(\\s+-p\\s+(?<password>\\S+|(\"[^\"]+\"))(\\s+(?<passwordConfirmation>\\S+|(\"[^\"]+\")))?)|" +
-            "(\\s+-email\\s+(?<email>\\S+|(\"[^\"]+\")))|"+"(\\s+-n\\s+(?<nickname>\\S+|(\"[^\"]+\")))|(\\s+-s\\s+(?<slogan>\\S*|(\"[^\"]+\"))))*\\s*"),
-    CHANGE_PASSWORD("^\\s*profile\\s+change\\s+password\\s*"),
-    CHANGE_SLOGAN("^\\s*profile\\s+change\\s+slogan\\s*"),
+    CHANGE_PROFILE_NICKNAME("^\\s*profile\\s+change\\s+-n\\s+(?<nickname>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*$"),
+    CHANGE_PROFILE_EMAIL("^\\s*profile\\s+change\\s+-e\\s+(?<email>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*$"),
+    CHANGE_PASSWORD("^\\s*profile\\s+change\\s+password\\s+((-o\\s+(?<oldPass>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
+            "(-n\\s+(?<newPass>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))+$"),
+    CHANGE_SLOGAN("^\\s*profile\\s+change\\s+slogan\\s+-s\\s+(?<slogan>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*$"),
     REMOVE_SLOGAN("^\\s*profile\\s+remove\\s+slogan\\s*$"),
     DISPLAY_USER_PROFILE("^\\s*profile\\s+display\\s+high\\s*score\\s*$"),
     DISPLAY_USER_RANK("^\\s*profile\\s+display\\s+rank\\s*$"),
@@ -18,15 +19,17 @@ public enum ProfileMenuEnum {
 
     ;
     private final String regex;
+
     ProfileMenuEnum(String regex) {
         this.regex = regex;
     }
+
     public String getRegex() {
         return this.regex;
     }
 
     public static Matcher getMatcher(String input, ProfileMenuEnum regex) {
-        Matcher matcher = Pattern.compile(regex.regex,Pattern.CASE_INSENSITIVE).matcher(input);
+        Matcher matcher = Pattern.compile(regex.regex, Pattern.CASE_INSENSITIVE).matcher(input);
         return matcher.matches() ? matcher : null;
     }
 }

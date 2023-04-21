@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.model.MBC;
 
 public class Worker extends Person{
     public int numberOfWorker;

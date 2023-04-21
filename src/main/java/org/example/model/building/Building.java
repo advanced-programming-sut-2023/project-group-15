@@ -1,7 +1,7 @@
 package org.example.model.building;
 
 
-import org.example.model.Person;
+import org.example.model.MBC.Person;
 
 public class Building {
     private final int hp;

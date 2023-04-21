@@ -1,5 +1,4 @@
 package org.example.controller;
-import org.example.model.Soldier;
 import org.example.model.enums.State;
 import org.example.model.User;
 public class UnitMenuController {
