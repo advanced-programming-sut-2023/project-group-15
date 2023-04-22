@@ -10,6 +10,7 @@ public enum SignupMenuEnum {
             "(-n\\s+(?<nickname>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
             "(-s\\s+(?<slogan>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))+$"),
     PICK_QUESTION("^\\s*question\\s*pick\\s*"),
+    CAREATE_MAP("^\\s*create\\s+map\\s*$"),
 
     ;
 

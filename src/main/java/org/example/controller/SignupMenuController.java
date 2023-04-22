@@ -6,6 +6,9 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUser() {
         if (usernameCheck(this.getUsername())==null) {
+            if (this.getPassword().matches("\\s*random\\s*")) {
+                generateRandomPassword();
+            }
             if (passwordCheck(this.getPassword()) == null) {
                 if (emailCheck(this.getEmail())==null) {
                     //TODO: doing user signing in ...

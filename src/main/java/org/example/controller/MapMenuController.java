@@ -1,6 +1,6 @@
-package org.example.view;
+package org.example.controller;
 
-public class mapChangesMenu {
+public class MapMenuController {
     private void setTexture(int x , int y,String type)
     {
 
@@ -32,6 +32,8 @@ public class mapChangesMenu {
     {
 
     }
-
-
+    private boolean checkLand(int x , int y)
+    {
+        return true;
+    }
 }

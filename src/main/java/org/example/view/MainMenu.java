@@ -5,6 +5,7 @@ import org.example.controller.MainMenuController;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.SignupMenuEnum;
 
+import javax.swing.*;
 import java.util.regex.Matcher;
 
 public class MainMenu {
@@ -21,6 +22,8 @@ public class MainMenu {
                 new SignupMenu().checkSigningUp(mainMenuMatcher);
             } else if ((mainMenuMatcher = LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.USER_LOGIN))!=null) {
                 new LoginMenu().loginInCheck(mainMenuMatcher);
+            } else if (SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.CAREATE_MAP)!=null) {
+                new MapMenu().enterMapEnvironmentSettings();
             }
         }
     }

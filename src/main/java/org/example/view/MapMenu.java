@@ -2,12 +2,16 @@ package org.example.view;
 
 import java.util.regex.Matcher;
 
-public class mapMenu {
+public class MapMenu {
     private void run(Matcher matcher)
     {
         //TODO
         //
         //TODO exit
+    }
+
+    public void enterMapEnvironmentSettings() {
+
     }
    /* private map showMap(int x,int y )
     {
