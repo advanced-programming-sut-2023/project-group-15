@@ -1,4 +1,6 @@
 package org.example.model.MBC;
 
-public abstract class Person {
+import org.example.model.tiles;
+
+public abstract class Person extends tiles {
 }

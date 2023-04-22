@@ -9,8 +9,10 @@ public class mapMenu {
         //
         //TODO exit
     }
-   /* private map showMap(int x,int y )
+    private void showMap(int x,int y)
     {
+
+    }
 
         /*TODO map should be shown 10 up down left right
         s : soldier

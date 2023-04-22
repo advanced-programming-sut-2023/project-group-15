@@ -1,6 +1,7 @@
 package org.example.controller;
 
 public class mapMenuController {
+
     private void setTexture(int x , int y,String type)
     {
 
