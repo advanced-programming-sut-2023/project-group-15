@@ -1,10 +1,10 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
-import org.example.model.enums.InfantryUnitName;
+import org.example.model.enums.UnitName;
 
 public class InfantryUnit extends Soldier {
-    public InfantryUnitName name;
+    public UnitName name;
     public int maxMove;
     public int speed;
     public int attackingPower;
@@ -33,46 +33,46 @@ public class InfantryUnit extends Soldier {
     private int getDeffense(){
         return this.deffense;
     }
-    public void setName(InfantryUnitName name){
+    public void setName(UnitName name){
         this.name = name;
     }
 
-    public InfantryUnitName getName(){
+    public UnitName getName(){
         return this.name;
     }
 
     private void pikemen(){
-        this.name = InfantryUnitName.PIKEMEN;
+        this.name = UnitName.PIKEMEN;
         this.maxMove = 1;
     }
 
     private void swordsmen(){
-        this.name = InfantryUnitName.SWORDSMEN;
+        this.name = UnitName.SWORDSMEN;
         this.maxMove = 1;
     }
 
     private void knigth(){
-        this.name = InfantryUnitName.KNIGHT;
+        this.name = UnitName.KNIGHT;
         this.maxMove = 4;
     }
 
     private void engineer(){
-        this.name = InfantryUnitName.ENGINEER;
+        this.name = UnitName.ENGINEER;
         this.maxMove = 2;
     }
 
     private void blackMonk(){
-        this.name = InfantryUnitName.BLACK_MONK;
+        this.name = UnitName.BLACK_MONK;
         this.maxMove = 1;
     }
 
     private void slaves(){
-        this.name = InfantryUnitName.SLAVES;
+        this.name = UnitName.SLAVES;
         this.maxMove = 3;
     }
 
     private void arabianSwordsmen(){
-        this.name = InfantryUnitName.ARABIAN_SWORDSMEN;
+        this.name = UnitName.ARABIAN_SWORDSMEN;
         this.maxMove = 4;
     }
 
