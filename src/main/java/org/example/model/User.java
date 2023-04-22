@@ -14,14 +14,15 @@ public class User {
     private String slogan;
     public static final ArrayList<User> allUsers = new ArrayList<>();
 
-    private void User(String username,String password,String nickname,String email){
+    public User(String username, String password, String nickname, String email) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
         this.email = email;
+        this.addUser();
     }
 
-    private void User(String username,String password,String nickname,String email,String slogan){
+    public User(String username, String password, String nickname, String email, String slogan) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
@@ -29,12 +30,15 @@ public class User {
         this.slogan = slogan;
         this.addUser();
     }
+
     public ArrayList<User> getAllUsers() {
         return allUsers;
     }
+
     public void addUser() {
         allUsers.add(this);
     }
+
     public void setRank(int rank) {
         this.rank = rank;
     }
@@ -43,72 +47,72 @@ public class User {
         this.score = score;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return this.username;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return this.password;
     }
 
-    public String getNickname(){
+    public String getNickname() {
         return this.nickname;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return this.email;
     }
 
-    public String getSlogan(){
+    public String getSlogan() {
         return this.slogan;
     }
 
-    public int getRank(){
+    public int getRank() {
         return this.rank;
     }
 
-    public int getScore(){
+    public int getScore() {
         return this.score;
     }
 
-    public void setPassword(String password){
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setNickname(String nickname){
+    public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setSlogan(String slogan){
+    public void setSlogan(String slogan) {
         this.slogan = slogan;
     }
 
-    public void setPassRecoveryQuestion(String passRecoveryQuestion){
+    public void setPassRecoveryQuestion(String passRecoveryQuestion) {
         this.passRecoveryQuestion = passRecoveryQuestion;
     }
 
-    public void setPassRecoveryAnswer(String passRecoveryAnswer){
+    public void setPassRecoveryAnswer(String passRecoveryAnswer) {
         this.passRecoveryAnswer = passRecoveryAnswer;
     }
 
-    public String getPassRecoveryQuestion(){
+    public String getPassRecoveryQuestion() {
         return this.passRecoveryQuestion;
     }
 
-    public String getPassRecoveryAnswer(){
+    public String getPassRecoveryAnswer() {
         return this.passRecoveryAnswer;
     }
 
     public static User findUserWithPass(String password) {
-        for (User user:User.allUsers) {
+        for (User user : User.allUsers) {
             if (user.getPassword().equals(password))
                 return user;
         }

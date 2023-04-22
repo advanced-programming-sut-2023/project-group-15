@@ -1,24 +1,23 @@
 package org.example.controller;
 
 
+import org.example.model.User;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUser() {
-        if (usernameCheck(this.getUsername())==null) {
-            if (this.getPassword().matches("\\s*random\\s*")) {
-                generateRandomPassword();
-            }
-            if (passwordCheck(this.getPassword()) == null) {
-                if (emailCheck(this.getEmail())==null) {
-                    //TODO: doing user signing in ...
-                    return null;
-                }
-                return SignupMenuOutput.INVALID_EMAIL_FORMAT;
-            }
+        if (usernameCheck(this.getUsername())!=null)
+            return SignupMenuOutput.INVALID_USERNAME_FORMAT;
+        if (emailCheck(this.getEmail())!=null)
+            return SignupMenuOutput.INVALID_EMAIL_FORMAT;
+        if (passwordCheck(this.getPassword())!=null)
             return SignupMenuOutput.INVALID_PASSWORD_FORMAT;
+        if (this.getPassword().matches("\\s*random\\s*")) {
+            this.setClipBoard(generateRandomPassword());
+            return SignupMenuOutput.STAND_BY;
         }
-        return SignupMenuOutput.INVALID_USERNAME_FORMAT;
+        //TODO: completing later
+        return null;
     }
 
     public static SignupMenuOutput usernameCheck(String username) {
@@ -58,17 +57,30 @@ public class SignupMenuController extends MainMenuController{
     }
 
     public String generateRandomSlogan() {
-        //TODO:
+        //TODO: uncompleted method!
         return null;
     }
 
     public String generateRandomPassword() {
-        //TODO:
-        return null;
+        String password = null;
+        //TODO: generating strong password
+        return password;
     }
 
     public void securityQuestion() {
-        //TODO:
+        //TODO: uncompleted method!
         return;
+    }
+
+    public boolean randomPasswordVerification(String verification) {
+        return verification.equals(this.getClipBoard());
+    }
+
+    public void signingsComplete() {
+        User newUser = new User(this.getUsername(), this.getPassword(), this.getNickname(), this.getEmail());
+        if (this.getSlogan()!=null) {
+            newUser.setSlogan(this.getSlogan());
+        }
+        newUser.addUser();
     }
 }
