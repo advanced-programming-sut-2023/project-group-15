@@ -7,12 +7,7 @@
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="profile menu almost completed!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/InfantryUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/InfantryUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/LauncherUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/LauncherUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/UnitWallTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/UnitWallTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/InfantryUnitName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/LauncherUnitName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/UnitWallTargetName.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

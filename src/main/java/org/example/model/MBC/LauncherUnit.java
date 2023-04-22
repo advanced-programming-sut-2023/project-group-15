@@ -78,7 +78,7 @@ public class LauncherUnit extends Soldier {
         this.throwrange = 3;
     }
 
-    public int getMove(UnitName name){
+    public void setMove(UnitName name){
         switch (name){
             case ARCHER : this.maxMove = 3;
             break;
@@ -93,15 +93,15 @@ public class LauncherUnit extends Soldier {
             case FIRE_THROWERS: this.maxMove = 4;
             break;
         }
-        return this.maxMove;
     }
 
     private int getThrowrange(){
         return throwrange;
     }
 
-    private int getMaxMove(){
-        return maxMove;
+    public int getMaxMove(){
+        return this.maxMove;
     }
+
 
 }

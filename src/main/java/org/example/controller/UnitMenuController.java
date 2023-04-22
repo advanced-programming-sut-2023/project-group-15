@@ -1,18 +1,17 @@
 package org.example.controller;
-import org.example.model.MBC.LauncherUnit.*;
+import org.example.model.MBC.LauncherUnit;
 import org.example.model.enums.State;
 import org.example.model.User;
 import org.example.model.enums.UnitName;
 import org.example.view.enums.outputs.UnitMenuOutput;
-import org.example.model.MBC.LauncherUnit;
 
 
 public class UnitMenuController {
     public User currentUser;
-    public boolean unitState;
+    public State state;
     public String type;
     public int x,y;
-    UnitName name;
+    public UnitName name;
     private UnitMenuOutput selectUnit(int x, int y){
         //TODO: add code to get informaion from map
        if((name = UnitName.valueOf(type)) != null){
@@ -35,8 +34,8 @@ public class UnitMenuController {
             int deltaY = y - this.y;
             if(indexOfType<7)
             {
-                //TODO: add code to get move
-                int maxMove = 0;
+
+               int maxMove = 0;
                 if(deltaX > maxMove && deltaY > maxMove)
                     return UnitMenuOutput.OUT_OF_BOUNDS;
 
@@ -50,6 +49,7 @@ public class UnitMenuController {
 
             else if(indexOfType > 6 && indexOfType <= 12){
                 //TODO: add code to get move
+                //its zero for know until complete
                 int maxMove = 0;
                 if(deltaX > maxMove && deltaY > maxMove)
                     return UnitMenuOutput.OUT_OF_BOUNDS;
@@ -64,7 +64,7 @@ public class UnitMenuController {
 
             else{
                 //TODO: add code to get move
-                int maxMove = 0;
+                int maxMove = 0 ;
                 if(deltaX > maxMove && deltaY > maxMove)
                     return UnitMenuOutput.OUT_OF_BOUNDS;
 
@@ -80,11 +80,13 @@ public class UnitMenuController {
     }
 
     private void setUnit(int x, int y, State state){
-        // TODO: add code to select unit and set state
+        // TODO: add code to get unit from map
+
     }
 
     private void airAttack(int x,int y){
         // TODO: add code to select unit
+
     }
 
     private void disbandUnit(){
