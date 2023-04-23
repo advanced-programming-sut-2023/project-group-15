@@ -2,12 +2,16 @@ package org.example.model;
 
 import java.util.ArrayList;
 
-public class map {
+public abstract class map {
     int height;
     int weight;
-    tiles [][] currentMap = new tiles[200][200];
+     public static tile [][] currentMap = new tile[200][200];
 
-    public tiles[][] getCurrentMap() {
+    public static tile[][] getCurrentMap() {
         return currentMap;
+    }
+    public static tile findATile(int x , int y )
+    {
+         return currentMap[x-1][y-1];
     }
 }

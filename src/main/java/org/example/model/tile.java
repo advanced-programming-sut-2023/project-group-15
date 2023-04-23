@@ -1,10 +1,9 @@
 package org.example.model;
 
-import org.example.model.MBC.Person;
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
 
-public class tiles {
+public class tile {
     private Building building = null;
     private LandType landType;
     private int numberOfSoldiers;
@@ -24,5 +23,21 @@ public class tiles {
 
     public void setSoldier(Soldier soldier) {
         this.soldier = soldier;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public LandType getLandType() {
+        return landType;
+    }
+
+    public int getNumberOfSoldiers() {
+        return numberOfSoldiers;
+    }
+
+    public Soldier getSoldier() {
+        return soldier;
     }
 }

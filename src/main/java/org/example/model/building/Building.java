@@ -2,7 +2,7 @@ package org.example.model.building;
 
 
 import org.example.model.MBC.Person;
-import org.example.model.tiles;
+import org.example.model.tile;
 
 public class Building {
     private final int hp;
