@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.model.gameData;
 
 import org.example.model.enums.products;
 

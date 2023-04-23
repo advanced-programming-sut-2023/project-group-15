@@ -6,7 +6,6 @@ import org.example.controller.ProfileMenuController;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class LoginMenu {
