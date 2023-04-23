@@ -1,5 +1,5 @@
 package org.example.controller;
-import org.example.model.map;
+import org.example.model.gameData.map;
 import org.example.model.tile;
 
 public class mapMenuController {

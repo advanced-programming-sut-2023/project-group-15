@@ -1,11 +1,12 @@
 package org.example.model.gameData;
 
 import java.util.ArrayList;
+import org.example.model.tile;
 
 public abstract class map {
     int height;
     int weight;
-     public static tile [][] currentMap = new tile[200][200];
+     public static tile[][] currentMap = new tile[200][200];
 
 
     public static tile[][] getCurrentMap() {

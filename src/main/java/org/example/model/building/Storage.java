@@ -7,8 +7,8 @@ public class Storage extends Building{
     private int capacity;
     private final products good;
 
-    public Storage(int hp, int width, int height, int buildingCost, int capacity, products good) {
-        super(hp, width, height, buildingCost);
+    public Storage(int hp, int xCoordiante, int yCoordiante, products material1, products material2, int numberOfMaterial1, int numberOfWorkers, int capacity, products good) {
+        super(hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfWorkers);
         this.capacity = capacity;
         this.good = good;
     }

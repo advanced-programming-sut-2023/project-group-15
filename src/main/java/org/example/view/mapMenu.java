@@ -2,7 +2,7 @@ package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.mapMenuController;
-import org.example.model.map;
+import org.example.model.gameData.map;
 import org.example.view.enums.commands.mapMenuEnum;
 
 import java.util.regex.Matcher;

@@ -1,6 +1,6 @@
 package org.example.controller;
 import org.example.model.enums.LandType;
-import org.example.model.map;
+import org.example.model.gameData.map;
 
 public class mapChangesMenuController {
     private void setTexture(int x , int y,String type)
@@ -31,6 +31,7 @@ public class mapChangesMenuController {
     }
     private void dropBuilding(int x , int y , String type)
     {
+
 
     }
     private void dropTree(int x , int y, String type)

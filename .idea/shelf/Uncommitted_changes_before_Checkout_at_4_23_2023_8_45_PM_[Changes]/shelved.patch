@@ -1,0 +1,208 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"creating files...\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/map.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/map.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/tile.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/tile.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/mapChangesMenu.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"raya-map2\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OdNK38UNz2OrnIqCzmN0SMvyKl\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"D:/uni/ap/src\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"org.jetbrains.plugins.github.ui.GithubSettingsConfigurable\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example.veiw.enums\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\" />\r\n      <created>1681886432173</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681886432173</updated>\r\n      <workItem from=\"1681886433354\" duration=\"78000\" />\r\n      <workItem from=\"1681886686257\" duration=\"2512000\" />\r\n      <workItem from=\"1682084994720\" duration=\"4296000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۱\" summary=\"creating files...\">\r\n      <created>1681886768892</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <updated>1681886768892</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۲\" summary=\"creating files...\">\r\n      <created>1682085187908</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <updated>1682085187908</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۳\" summary=\"creating files...\">\r\n      <created>1682085989441</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <updated>1682085989441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"creating files...\">\r\n      <created>1682100710982</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100710982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"creating files...\">\r\n      <created>1682100873720</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100873720</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"raya-map\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creating files...\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"creating files...\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,15 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="creating files...">
++    <list default="true" id="6cd6bfc8-c74a-4e9b-9d24-81d9fa748f04" name="Changes" comment="creating files...">
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_5_43_PM_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_2023_5_40_PM_[Changes]/shelved.patch" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/map.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/tile.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/mapChangesMenu.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,22 +42,22 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "D:/uni/ap/src",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/uni/ap/src&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="org.example.veiw.enums" />
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_5_43_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_5_43_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_5_43_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_5_43_PM_[Changes]/shelved.patch	
+@@ -0,0 +1,132 @@
++Index: src/main/java/org/example/controller/mapMenuController.java
++===================================================================
++diff --git a/src/main/java/org/example/controller/mapMenuController.java b/src/main/java/org/example/controller/mapMenuController.java
++deleted file mode 100644
++--- a/src/main/java/org/example/controller/mapMenuController.java	(revision 385d363f85b42b9b7273c2b08a18ef331be0cf93)
+++++ /dev/null	(revision 385d363f85b42b9b7273c2b08a18ef331be0cf93)
++@@ -1,62 +0,0 @@
++-package org.example.controller;
++-import org.example.model.map;
++-import org.example.model.tile;
++-
++-public class mapMenuController {
++-    public mapMenuController() {
++-    }
++-
++-    public void showMap(int x, int y) {
++-        tile currentTile = map.getCurrentMap()[x][y];
++-        tile[][] mapToShow = new tile[11][11];
++-        int xS = x - 5;  // x startpoint
++-        int xE = x + 5;  // x endpoint
++-        if (xS < 0) {
++-            xE += -xS;
++-            xS = 0;
++-        }
++-        if (xE > 199) {
++-            xS -= xE - 199;
++-            xE = 199;
++-        }
++-        int yS = y - 5;  // y startpoint
++-        int yE = y + 5;  // y endpoint
++-        if (yS < 0) {
++-            yE += -yS;
++-            yS = 0;
++-        }
++-        if (yE > 199) {
++-            yS -= yE - 199;
++-            yE = 199;
++-        }
++-
++-        for (int i = xS; i < xE; i++) {
++-            for (int j = yS; j < yE; j++) {
++-                if (map.getCurrentMap()[i][j].getSoldier() != null) {
++-                    System.out.println("S");
++-                    continue;
++-                } else if (map.getCurrentMap()[i][j].getBuilding() != null) {
++-                    System.out.println("B");
++-                    continue;
++-                } else
++-                    System.out.println(map.getCurrentMap()[i][j].getLandType().getMapId());
++-            }
++-
++-        }
++-
++-
++-    }
++-
++-    private String showDetails(int x , int y) {
++-        String answer = "LandType : " ;
++-        answer = answer.concat(map.getCurrentMap()[x][y].getLandType().values().toString());
++-        if (map.getCurrentMap()[x][y].getBuilding() == null) {
++-            //answer = answer.concat("\n" + map.getCurrentMap()[x][y].getBuilding().get().toString());
++-        }
++-        return answer ;
++-    }
++-}
++-
++-
++-
++-
++Index: src/main/java/org/example/controller/governmentController.java
++===================================================================
++diff --git a/src/main/java/org/example/controller/governmentController.java b/src/main/java/org/example/controller/governmentController.java
++deleted file mode 100644
++--- a/src/main/java/org/example/controller/governmentController.java	(revision 385d363f85b42b9b7273c2b08a18ef331be0cf93)
+++++ /dev/null	(revision 385d363f85b42b9b7273c2b08a18ef331be0cf93)
++@@ -1,4 +0,0 @@
++-package org.example.controller;
++-
++-public class governmentController {
++-}
++Index: src/main/java/org/example/view/MapMenu.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/src/main/java/org/example/view/MapMenu.java b/src/main/java/org/example/view/MapMenu.java
++new file mode 100644
++--- /dev/null	(date 1682259046053)
+++++ b/src/main/java/org/example/view/MapMenu.java	(date 1682259046053)
++@@ -0,0 +1,42 @@
+++package org.example.view;
+++
+++import org.example.InputScanner;
+++import org.example.controller.mapMenuController;
+++import org.example.model.map;
+++import org.example.view.enums.commands.mapMenuEnum;
+++
+++import java.util.regex.Matcher;
+++
+++public class mapMenu {
+++    private void run(Matcher matcher)
+++    {
+++        String command;
+++        InputScanner scanner = new InputScanner();
+++        while (true)
+++        {
+++            command = scanner.getScanner().nextLine();
+++            if(command.matches("\\s*exit\\s*"))
+++                break;
+++            else if(mapMenuEnum.getMatcher(command,mapMenuEnum.SHOW_MAP) != null)
+++                showMap(Integer.parseInt(matcher.group("xCoordinate"))
+++                        , Integer.parseInt(matcher.group("yCoordinate")));
+++                    //TODO moving on map is not available now
+++
+++
+++        }
+++
+++    }
+++    private static void showMap(int x,int y)
+++    {
+++        mapMenuController controller = new mapMenuController();
+++        controller.showMap(x , y);
+++
+++    }
+++
+++    private map showDetails(int x , int y)
+++    {
+++        // TODO : only a tile should be shown
+++        return null;
+++
+++    }
+++}
