@@ -1,13 +1,19 @@
 package org.example.model;
 
+import org.example.model.*;
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
+import org.example.model.enums.LandType;
 
 public class tile {
     private Building building = null;
     private LandType landType;
     private int numberOfSoldiers;
-    private Soldier soldier = null;
+    private Soldier soldier;
+
+    {
+        soldier = null;
+    }
 
     public void setBuilding(Building building) {
         this.building = building;
