@@ -7,11 +7,12 @@ public class Market extends Building{
     private ArrayList<Source> userSources;
     private ArrayList<Weapon> userWeapons;
 
-    public Market(int hp, int width, int height, int buildingCost) {
-        super(hp, width, height, buildingCost);
-        this.userFoods = new ArrayList<>();
-        this.userSources = new ArrayList<>();
-        this.userWeapons = new ArrayList<>();
+    public Market(int hp, int xCoordiante, int yCoordiante, products material1, products material2, int numberOfMaterial1,
+                  int numberOfWorkers, ArrayList<products> userFoods, ArrayList<Source> userSources, ArrayList<Weapon> userWeapons) {
+        super(hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfWorkers);
+        this.userFoods = userFoods;
+        this.userSources = userSources;
+        this.userWeapons = userWeapons;
     }
 
     public ArrayList<products> getUserFoods() {
