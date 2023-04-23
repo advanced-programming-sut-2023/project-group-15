@@ -69,7 +69,45 @@ public enum buildingName {
     private int costForEachPerson;
     private int costForEachPerson2;
 
+    public int getNumberOfMaterial1() {
+        return numberOfMaterial1;
+    }
 
+    public int getNumberOfMaterial2() {
+        return numberOfMaterial2;
+    }
+
+    public products getMaterial1Name() {
+        return material1Name;
+    }
+
+    public products getMaterial2Name() {
+        return material2Name;
+    }
+
+    public int getNumberOfMaterial() {
+        return numberOfMaterial;
+    }
+
+    public products getMaterialName() {
+        return materialName;
+    }
+
+    public int getNumberOfWorkers() {
+        return numberOfWorkers;
+    }
+
+    public products getGood1() {
+        return good1;
+    }
+
+    public products getGood2() {
+        return good2;
+    }
+
+    public int getRate() {
+        return rate;
+    }
 
     //productive building
     buildingName(int numberOfMaterial1, products material1Name, int numberOfMaterial2, products material2Name,

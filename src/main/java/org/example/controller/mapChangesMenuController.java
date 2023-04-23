@@ -3,17 +3,17 @@ import org.example.model.enums.LandType;
 import org.example.model.map;
 
 public class mapChangesMenuController {
-    private void setTexture(int x , int y,String type)
+    /*private void setTexture(int x , int y,String type)
     {
         for(LandType l : LandType.values())
             if(l.equals(type)) {
-                LandType newLandType = l;
+                 newLandType = l;
             }
 
-       // map.findATile(x , y).setLandType(newLandType);
+        map.findATile(x , y).setLandType(newLandType);
 
 
-    }
+    }*/
     private void setTexture(int x1, int y1,int x2, int y2,String type)
     {
 

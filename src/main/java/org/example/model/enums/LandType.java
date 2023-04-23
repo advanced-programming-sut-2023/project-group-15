@@ -23,6 +23,10 @@ public enum LandType {
     ;
     private buildingName buildingName;
     private buildingName buildingName2;
+
+    LandType() {
+    }
+
     LandType(buildingName name)
     {
         this.buildingName = name;

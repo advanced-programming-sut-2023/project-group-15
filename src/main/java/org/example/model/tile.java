@@ -7,9 +7,11 @@ import org.example.model.enums.LandType;
 
 public class tile {
     private Building building = null;
-    private LandType landType;
-    private int numberOfSoldiers;
-    private Soldier soldier;
+    private LandType landType = null;
+    private int numberOfSoldiers =  0;
+    private Soldier soldier = null;
+    private String treeName = null ;
+    private boolean rock = false ;
 
     {
         soldier = null;
