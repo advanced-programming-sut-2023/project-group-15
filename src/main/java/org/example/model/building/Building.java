@@ -12,15 +12,19 @@ public class Building {
     private products material1 ;
     private products material2 ;
     private int numberOfMaterial1;
+    private int numberOfMaterial2;
     private int numberOfWorkers;
 
-    public Building(int hp, int xCoordiante, int yCoordiante, products material1, products material2, int numberOfMaterial1, int numberOfWorkers) {
+    public Building(int hp, int xCoordiante, int yCoordiante,
+                    products material1, products material2, int numberOfMaterial1,
+                    int numberOfMaterial2, int numberOfWorkers) {
         this.hp = hp;
         this.xCoordiante = xCoordiante;
         this.yCoordiante = yCoordiante;
         this.material1 = material1;
         this.material2 = material2;
         this.numberOfMaterial1 = numberOfMaterial1;
+        this.numberOfMaterial2 = numberOfMaterial2;
         this.numberOfWorkers = numberOfWorkers;
     }
 

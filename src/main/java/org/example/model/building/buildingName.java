@@ -7,7 +7,7 @@ import static org.example.model.enums.products.*;
 
 public enum buildingName {
     //TODO the rate & capacity & cost should be specified for each building
-    MILL(20, WOOD, 0, null, 1, null, FLOUR, 100),
+    MILL(20, WOOD, 0, null, 1,  FLOUR, null , 100),
     IRON_MINE(20, WOOD, 0, null, 2, IRON, null, 100),
     QUARRY(20, WOOD, 0, null, 3, ROCK, null, 100),
     WOODCUTTER(3, WOOD, 0, null, 1, WOOD, null, 100),
