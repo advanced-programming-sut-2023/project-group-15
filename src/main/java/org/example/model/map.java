@@ -7,6 +7,7 @@ public abstract class map {
     int weight;
      public static tile [][] currentMap = new tile[200][200];
 
+
     public static tile[][] getCurrentMap() {
         return currentMap;
     }

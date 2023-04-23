@@ -7,7 +7,7 @@ import org.example.model.enums.LandType;
 
 public class tile {
     private Building building = null;
-    private LandType landType = null;
+    private LandType landType = LandType.DEFAULT;
     private int numberOfSoldiers =  0;
     private Soldier soldier = null;
     private String treeName = null ;

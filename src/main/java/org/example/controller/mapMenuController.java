@@ -3,7 +3,10 @@ import org.example.model.map;
 import org.example.model.tile;
 
 public class mapMenuController {
-    private void showMap(int x, int y) {
+    public mapMenuController() {
+    }
+
+    public void showMap(int x, int y) {
         tile currentTile = map.getCurrentMap()[x][y];
         tile[][] mapToShow = new tile[11][11];
         int xS = x - 5;  // x startpoint
@@ -44,12 +47,14 @@ public class mapMenuController {
 
     }
 
-    /*private String showDetails(int x , int y) {
+    private String showDetails(int x , int y) {
+        String answer = "LandType : " ;
+        answer = answer.concat(map.getCurrentMap()[x][y].getLandType().values().toString());
         if (map.getCurrentMap()[x][y].getBuilding() == null) {
-             return map.findATile(x-1 , y-1).getBuilding();
-
-        }*/
-
+            //answer = answer.concat("\n" + map.getCurrentMap()[x][y].getBuilding().get().toString());
+        }
+        return answer ;
+    }
 }
 
 

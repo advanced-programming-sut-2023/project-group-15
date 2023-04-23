@@ -5,12 +5,11 @@ import org.example.model.map;
 public class mapChangesMenuController {
     private void setTexture(int x , int y,String type)
     {
-       /* for(LandType l : LandType.values())
+        for(LandType l : LandType.values())
             if(l.equals(type)) {
-                 newLandType = l;
+             LandType  newLandType = l;
+             map.findATile(x , y).setLandType(newLandType);
             }
-
-        map.findATile(x , y).setLandType(newLandType);*/
 
 
     }
@@ -25,12 +24,9 @@ public class mapChangesMenuController {
 
 
     }
-    private void dropRock()
-    {
-
-    }
     private void dropUnit(int x , int y, String type)
     {
+        //TODO list of units should be added to make this method work
 
     }
     private void dropBuilding(int x , int y , String type)
