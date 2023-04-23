@@ -3,17 +3,17 @@ import org.example.model.enums.LandType;
 import org.example.model.map;
 
 public class mapChangesMenuController {
-    /*private void setTexture(int x , int y,String type)
+    private void setTexture(int x , int y,String type)
     {
-        for(LandType l : LandType.values())
+       /* for(LandType l : LandType.values())
             if(l.equals(type)) {
                  newLandType = l;
             }
 
-        map.findATile(x , y).setLandType(newLandType);
+        map.findATile(x , y).setLandType(newLandType);*/
 
 
-    }*/
+    }
     private void setTexture(int x1, int y1,int x2, int y2,String type)
     {
 
@@ -33,16 +33,20 @@ public class mapChangesMenuController {
     {
 
     }
-    private void dropBuilding(int x , int y)
+    private void dropBuilding(int x , int y , String type)
     {
 
     }
     private void dropTree(int x , int y, String type)
     {
+        // TODO the input string should be matched with the one in enum
+        map.findATile(x , y).setTreeName(type);
 
     }
     private void dropRock(int x , int y , char direction)
     {
+        //TODO direction should be added
+        map.findATile(x,y).setRock();
 
     }
 

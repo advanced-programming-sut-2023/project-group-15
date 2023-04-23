@@ -33,9 +33,18 @@ public class tile {
         this.soldier = soldier;
     }
 
+    public void setTreeName(String treeName) {
+        this.treeName = treeName;
+    }
+
+    public void setRock() {
+        this.rock = true;
+    }
+
     public Building getBuilding() {
         return building;
     }
+
 
     public LandType getLandType() {
         return landType;
