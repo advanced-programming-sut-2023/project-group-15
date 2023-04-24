@@ -2,6 +2,7 @@ package org.example.model.building;
 
 import org.example.model.enums.Products;
 import org.example.model.interfaces.Fighting;
+
 public class WarBuilding extends Building implements Fighting {
     private int fireRange;
     private int defendRange;
@@ -33,9 +34,9 @@ public class WarBuilding extends Building implements Fighting {
         this.fireRange = fireRange;
     }
 
+
     @Override
     public void fightingStrategy() {
-        //TODO:
-        return;
+
     }
 }

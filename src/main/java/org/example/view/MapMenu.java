@@ -40,6 +40,9 @@ public class MapMenu {
         return null;
 
     }
+
+    public void enterMapEnvironmentSettings() {
+    }
     /*
     // TODO : have a guide for map tiles
 

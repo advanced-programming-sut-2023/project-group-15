@@ -8,12 +8,11 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GovernmentController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/products.java" beforeDir="false" />
-    </list>
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="creating files...">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/ProfileMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2OdNK38UNz2OrnIqCzmN0SMvyKl" />
   <component name="ProjectViewState">
@@ -169,45 +175,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creating files..." />
-    <option name="LAST_COMMIT_MESSAGE" value="creating files..." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapMenuEnum.java</url>
-          <line>16</line>
-          <properties class="org.example.view.enums.commands.mapMenuEnum" method="getMatcher">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java</url>
-          <line>8</line>
-          <properties class="org.example.controller.MapMenuController" method="showMap">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
