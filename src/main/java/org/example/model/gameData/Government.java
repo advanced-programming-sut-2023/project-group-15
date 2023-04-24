@@ -9,6 +9,7 @@ import java.util.ArrayList;
         int popularity;
         int foodRate;
         int taxrate;
+        int fearrate;
         ArrayList<products> foods = new ArrayList<>();
 
         public void setFoodRate(int foodRate) {
@@ -16,14 +17,39 @@ import java.util.ArrayList;
         }
 
         public void setPopularity(int popularity) {
+            // TODO : the popularity should be set here by the user
             this.popularity = popularity;
         }
 
         public void setTaxrate(int taxrate) {
+            // TODO : the taxrate should be
             this.taxrate = taxrate;
+        }
+
+        public void setFearrate(int fearrate) {
+            this.fearrate = fearrate;
         }
 
         public void addFood(products food) {
             this.foods.add(food);
+        }
+
+        public ArrayList<products> getFoods() {
+            //TODO the food list is going to be shown here
+            return foods;
+        }
+
+        public void showPopularityRates()
+        {
+
+        }
+        public void showPopularity()
+        {
+
+        }
+
+        public int getTaxrate() {
+            //TODO show tax rate here
+            return taxrate;
         }
     }
