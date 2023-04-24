@@ -1,0 +1,21 @@
+Index: .idea/libraries/Maven__org_passay_passay_1_6_3.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_passay_passay_1_6_3.xml b/.idea/libraries/Maven__org_passay_passay_1_6_3.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_passay_passay_1_6_3.xml	(revision 1d0f82365c2523f7534fa72c7e44d8a89d4cb1f7)
++++ /dev/null	(revision 1d0f82365c2523f7534fa72c7e44d8a89d4cb1f7)
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.passay:passay:1.6.3">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/passay/passay/1.6.3/passay-1.6.3.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/passay/passay/1.6.3/passay-1.6.3-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/passay/passay/1.6.3/passay-1.6.3-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
