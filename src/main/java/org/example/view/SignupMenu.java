@@ -2,6 +2,7 @@ package org.example.view;
 
 
 
+import org.example.InputScanner;
 import org.example.controller.SignupMenuController;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
@@ -9,7 +10,7 @@ import java.util.regex.Matcher;
 
 public class SignupMenu extends MainMenu{
     private final SignupMenuController signupMenuController = new SignupMenuController();
-    public void checkSigningUp(Matcher matcher) {
+    public void checkSigningUp(Matcher matcher, InputScanner sginupMenuScanner) {
         signupMenuController.setUsername(matcher.group("username"));
         signupMenuController.setPassword(matcher.group("password"));
         signupMenuController.setNickname(matcher.group("nickname"));

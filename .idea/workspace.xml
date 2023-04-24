@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="adding something to login menu">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-group-15.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-group-15.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/SignupMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +79,7 @@
       <workItem from="1682105082710" duration="1616000" />
       <workItem from="1682146119318" duration="3976000" />
       <workItem from="1682150502559" duration="833000" />
-      <workItem from="1682154466252" duration="2884000" />
+      <workItem from="1682154466252" duration="3613000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -173,7 +159,13 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۱۳" />
       <updated>1682146466982</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎−۰۰۰۱۴" summary="adding something to login menu">
+      <created>1682157672511</created>
+      <option name="number" value="LOCAL‎−۰۰۰۱۴" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۱۴" />
+      <updated>1682157672511</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
