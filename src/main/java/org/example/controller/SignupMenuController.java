@@ -5,31 +5,43 @@ import org.example.model.User;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 public class SignupMenuController extends MainMenuController{
-    public SignupMenuOutput signupUser() {
-        if (usernameCheck(this.getUsername())!=null)
-            return SignupMenuOutput.INVALID_USERNAME_FORMAT;
-        if (emailCheck(this.getEmail())!=null)
-            return SignupMenuOutput.INVALID_EMAIL_FORMAT;
-        if (passwordCheck(this.getPassword())!=null)
-            return SignupMenuOutput.INVALID_PASSWORD_FORMAT;
-        if (this.getPassword().matches("\\s*random\\s*")) {
-            this.setClipBoard(generateRandomPassword());
-            return SignupMenuOutput.STAND_BY;
-        }
-        //TODO: completing later
-        return null;
+    public SignupMenuOutput signupUserCheck() {
+        SignupMenuOutput status;
+        if ((status = usernameCheck(this.getUsername()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+            return status;
+        if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+            return status;
+        if ((status = passwordCheck(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+            return status;
+        if ((status = nicknameCheck(this.getNickname()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+            return status;
+        return SignupMenuOutput.SECURITY_QUESTION;
+    }
+
+    private SignupMenuOutput nicknameCheck(String nickname) {
+        return nickname==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULY;
     }
 
     public static SignupMenuOutput usernameCheck(String username) {
+        if (username == null) {
+            return SignupMenuOutput.EMPTY_FIELD;
+        }
         if (username.matches("^\\w+$")) {
-            //TODO: checking other users....
-            return null;
+            for (User user:User.allUsers) {
+                if (user.getUsername().equals(username)) {
+                    return SignupMenuOutput.USERNAME_EXISTS;
+                }
+            }
+            return SignupMenuOutput.CHECKED_SUCCESSFULY;
         }
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
 
 
     public static SignupMenuOutput passwordCheck(String password) {
+        if (password==null) {
+            return SignupMenuOutput.EMPTY_FIELD;
+        }
         if (password.length()>=6) {
             if (password.matches("[a-z]+")) {
                 if (password.matches("[A-Z]+")) {
@@ -49,6 +61,9 @@ public class SignupMenuController extends MainMenuController{
     }
 
     public static SignupMenuOutput emailCheck(String email) {
+        if (email==null) {
+            return SignupMenuOutput.EMPTY_FIELD;
+        }
         if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
             //TODO:checking other emails...
             return null;
@@ -67,9 +82,14 @@ public class SignupMenuController extends MainMenuController{
         return password;
     }
 
-    public void securityQuestion() {
+    public boolean pickSecurityQuestion(String numOfQuestion) {
+        //for on all questions!
         //TODO: uncompleted method!
-        return;
+        return false;
+    }
+    public String usernameSuggestion() {
+        //TODO: generating username
+        return null;
     }
 
     public boolean randomPasswordVerification(String verification) {

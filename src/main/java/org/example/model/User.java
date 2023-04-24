@@ -18,6 +18,9 @@ public class User {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
+        this.passRecoveryAnswer = null;
+        this.passRecoveryQuestion = null;
+        this.score = 0;
         this.email = email;
         this.addUser();
     }
@@ -110,6 +113,7 @@ public class User {
     public String getPassRecoveryAnswer() {
         return this.passRecoveryAnswer;
     }
+
 
     public static User findUserWithPass(String password) {
         for (User user : User.allUsers) {
