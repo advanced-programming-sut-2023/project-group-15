@@ -43,26 +43,40 @@ public class UnitWallTarget extends Soldier {
 
     private void spearmen(){
         this.name = UnitName.SPEARMEN;
-        this.maxMove = 2;
     }
 
     private void macemen(){
         this.name = UnitName.MACEMEN;
-        this.maxMove = 2;
     }
 
     private void tunneler(){
         this.name = UnitName.TUNNELER;
-        this.maxMove = 3;
     }
 
     private void laddermen(){
         this.name = UnitName.LADDERMEN;
-        this.maxMove = 3;
     }
 
     private void assassins(){
         this.name = UnitName.ASSASSINS;
-        this.maxMove = 2;
+    }
+
+    public void setMaxMove(UnitName name){
+        switch (name){
+            case SPEARMEN: this.maxMove = 2;
+            break;
+            case MACEMEN: this.maxMove = 2;
+            break;
+            case TUNNELER: this.maxMove = 3;
+            break;
+            case LADDERMEN: this.maxMove = 3;
+            break;
+            case ASSASSINS: this.maxMove = 2;
+            break;
+        }
+    }
+
+    public int getMaxMove(){
+        return this.maxMove;
     }
 }
