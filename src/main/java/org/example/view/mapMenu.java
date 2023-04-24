@@ -10,7 +10,6 @@ import java.util.regex.Matcher;
 public class mapMenu {
     public void run()
     {
-        map.setCurrentMap();
         String command;
         InputScanner scanner = new InputScanner();
         Matcher mapMenuMatcher ;

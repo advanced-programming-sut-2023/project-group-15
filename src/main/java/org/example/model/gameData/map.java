@@ -9,15 +9,13 @@ public abstract class map {
      public static tile[][] currentMap = new tile[200][200];
      public static void setCurrentMap()
      {
-         for( int i=0 ; i<200 ; i++)
-         {
-             for (int j=0 ; j<200 ; j++)
-             {
-                 currentMap[i][j] = new tile();
+
+             for (int i = 0; i < 200; i++) {
+                 for (int j = 0; j < 200; j++) {
+                     currentMap[i][j] = new tile();
+                 }
              }
          }
-
-     }
 
 
     public static tile[][] getCurrentMap() {
