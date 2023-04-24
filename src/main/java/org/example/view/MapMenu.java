@@ -1,63 +1,49 @@
 package org.example.view;
 
 import org.example.InputScanner;
-
+import org.example.controller.MapMenuController;
+import org.example.model.gameData.Map;
+import org.example.view.enums.commands.MapMenuEnum;
 import java.util.regex.Matcher;
 
 public class MapMenu {
-    private void run(Matcher matcher)
+    public void run()
     {
+        Map.setCurrentMap();
         String command;
         InputScanner scanner = new InputScanner();
-        command = scanner.getScanner().nextLine();
+        Matcher mapMenuMatcher ;
         while (true)
         {
-//            if(mapMenuEnum.getMatcher(command,mapMenuEnum.SHOW_MAP) != null)
-//                showMap(Integer.parseInt(matcher.group("xCoordinate"))
-//                        , Integer.parseInt(matcher.group("yCoordinate")));
-//
-
+            command = scanner.getScanner().nextLine();
+            if(command.matches("\\s*exit\\s*"))
+                break;
+            else if((mapMenuMatcher = MapMenuEnum.getMatcher(command, MapMenuEnum.SHOW_MAP)) != null)
+                showMap(Integer.parseInt(mapMenuMatcher.group("xCoordinate"))
+                        , Integer.parseInt(mapMenuMatcher.group("yCoordinate")));
+                    //TODO moving on map should be added
 
 
         }
 
-        //TODO
-        //
-        //TODO exit
     }
-<<<<<<< HEAD:src/main/java/org/example/view/mapMenu.java
     private static void showMap(int x,int y)
-=======
-
-    public void enterMapEnvironmentSettings() {
-
-    }
-   /* private map showMap(int x,int y )
->>>>>>> origin/mahdi:src/main/java/org/example/view/MapMenu.java
     {
+        MapMenuController controller = new MapMenuController();
+        controller.showMap(x , y);
 
     }
 
-        /*TODO map should be shown 10 up down left right
-        s : soldier
-        SG : small gatehouse
-        BG : big gatehouse
-        D : drawBridge
-        LT : lookoutTower
-        PT : perimeter tower
-
-/*
-
-
-
-        return null;
-    }
-    private map showDetails(int x ,int y)
+    private Map showDetails(int x , int y)
     {
         // TODO : only a tile should be shown
         return null;
 
     }
+
+    public void enterMapEnvironmentSettings() {
+    }
+    /*
     // TODO : have a guide for map tiles
 
     private void changeEnvironment(int x, int y)

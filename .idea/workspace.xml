@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="creating files...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/buildingName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/enums/products.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/mapChangesMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/CityBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/CityBuilding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/Market.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/ProductiveBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/ProductiveBuilding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/Food.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/ProfileMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java" afterDir="false" />
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapChangesMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/BuildingName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="mahdi" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +34,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2OdNK38UNz2OrnIqCzmN0SMvyKl" />
   <component name="ProjectViewState">
@@ -138,14 +135,7 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۰۹" />
       <updated>1682105632142</updated>
     </task>
-    <task id="LOCAL-00010" summary="completing unitMenu...">
-      <created>1682178963737</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1682178963737</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +149,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="true" />
+                  <entry key="Show.Git.Branches" value="false" />
                 </map>
               </option>
               <option name="FILTERS">
@@ -167,7 +157,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="mobina" />
+                        <option value="test" />
                       </list>
                     </value>
                   </entry>
@@ -181,10 +171,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creating files..." />
-    <MESSAGE value="completing login menu..." />
-    <MESSAGE value="completing profile menu &#10;login menu completed!" />
-    <MESSAGE value="profile menu almost completed!" />
-    <MESSAGE value="completing unitMenu..." />
-    <option name="LAST_COMMIT_MESSAGE" value="completing unitMenu..." />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
