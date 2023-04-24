@@ -13,16 +13,22 @@ public class SignupMenu extends MainMenu{
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private Matcher signupMenuMatcher;
     private String signupMenuInput;
-    public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
-        signupMenuController.setUsername(matcher.group("username"));
-        signupMenuController.setPassword(matcher.group("password"));
-        signupMenuController.setNickname(matcher.group("nickname"));
-        signupMenuController.setEmail(matcher.group("email"));
-        signupMenuController.setSlogan(matcher.group("slogan"));
-        String message = signupMenuController.signupUserCheck().getOutput();
-        if (signupMenuController.usernameCheck(signupMenuController.getUsername()).equals(SignupMenuOutput.USERNAME_EXISTS)) {
-            //TODO: suggest another username...
+
+    public void run(Matcher signupMenuMatcher,InputScanner signupMenuScanner) {
+        classifyParameters(signupMenuMatcher);
+        usernameCheck();
+    }
+
+    private void usernameCheck() {
+        if (signupMenuController.usernameCheck().equals(SignupMenuOutput.USERNAME_EXISTS)) {
+            signupMenuController.usernameSuggestion();
+            //TODO: suggesting valid username to user...
         }
+    }
+
+    public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
+
+        String message = signupMenuController.signupUserCheck().getOutput();
         if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
             signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
             System.out.println("your slogan is: "+signupMenuController.getSlogan());
@@ -56,6 +62,13 @@ public class SignupMenu extends MainMenu{
 
         }
         System.out.println(signupMenuController.signupUserCheck());
+    }
+    public void classifyParameters(Matcher matcher) {
+        signupMenuController.setUsername(matcher.group("username"));
+        signupMenuController.setPassword(matcher.group("password"));
+        signupMenuController.setNickname(matcher.group("nickname"));
+        signupMenuController.setEmail(matcher.group("email"));
+        signupMenuController.setSlogan(matcher.group("slogan"));
     }
 
 }

@@ -7,7 +7,7 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUserCheck() {
         SignupMenuOutput status;
-        if ((status = usernameCheck(this.getUsername()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULY)
             return status;
         if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
             return status;
@@ -22,13 +22,13 @@ public class SignupMenuController extends MainMenuController{
         return nickname==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULY;
     }
 
-    public static SignupMenuOutput usernameCheck(String username) {
-        if (username == null) {
+    public SignupMenuOutput usernameCheck() {
+        if (this.getUsername() == null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
-        if (username.matches("^\\w+$")) {
+        if (this.getUsername().matches("^\\w+$")) {
             for (User user:User.allUsers) {
-                if (user.getUsername().equals(username)) {
+                if (user.getUsername().equals(this.getUsername())) {
                     return SignupMenuOutput.USERNAME_EXISTS;
                 }
             }

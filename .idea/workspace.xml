@@ -7,10 +7,7 @@
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="working on scanner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/SignupMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
       <workItem from="1682146119318" duration="3976000" />
       <workItem from="1682150502559" duration="833000" />
       <workItem from="1682154466252" duration="3613000" />
-      <workItem from="1682319177740" duration="3503000" />
+      <workItem from="1682319177740" duration="4269000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -177,7 +174,19 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۱۵" />
       <updated>1682319567333</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎−۰۰۰۱۶" summary="working on scanner">
+      <created>1682322942684</created>
+      <option name="number" value="LOCAL‎−۰۰۰۱۶" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۱۶" />
+      <updated>1682322942684</updated>
+    </task>
+    <task id="LOCAL‎−۰۰۰۱۷" summary="working on scanner">
+      <created>1682322948594</created>
+      <option name="number" value="LOCAL‎−۰۰۰۱۷" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۱۷" />
+      <updated>1682322948595</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
