@@ -1,5 +1,6 @@
 package org.example.model.gameData;
 
+
 import org.example.model.Tile;
 
 public abstract class Map {
