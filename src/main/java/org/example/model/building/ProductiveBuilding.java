@@ -1,9 +1,9 @@
 package org.example.model.building;
 
-import org.example.model.interfaces.produce;
+import org.example.model.interfaces.Produce;
 import org.example.model.enums.Source;
 
-public class ProductiveBuilding extends Building implements produce {
+public class ProductiveBuilding extends Building implements Produce {
     private final int rate;
     private boolean needMaterial;
     private final Source product;

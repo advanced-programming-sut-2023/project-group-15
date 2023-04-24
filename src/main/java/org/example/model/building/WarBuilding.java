@@ -1,7 +1,7 @@
 package org.example.model.building;
 
-import org.example.model.interfaces.fighting;
-public class WarBuilding extends Building implements fighting {
+import org.example.model.interfaces.Fighting;
+public class WarBuilding extends Building implements Fighting {
     private int fireRange;
     private int defendRange;
 

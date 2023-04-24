@@ -2,7 +2,7 @@ package org.example.view;
 
 import java.util.regex.Matcher;
 
-public class mapMenu {
+public class MapMenu {
     private void run(Matcher matcher)
     {
         //TODO

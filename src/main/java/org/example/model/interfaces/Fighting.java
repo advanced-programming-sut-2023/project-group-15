@@ -1,6 +1,6 @@
 package org.example.model.interfaces;
 
-public interface fighting {
+public interface Fighting {
 
     public void fightingStrategy();
 }

@@ -1,13 +1,11 @@
 package org.example.model.gameData;
 
-import java.util.ArrayList;
-
-public class map {
+public class Map {
     int height;
     int weight;
    // ArrayList<Building> buildings = new ArrayList<>();
 
-    public map(int height, int weight) {
+    public Map(int height, int weight) {
         this.height = height;
         this.weight = weight;
     }
