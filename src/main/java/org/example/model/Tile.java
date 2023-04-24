@@ -4,7 +4,7 @@ import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
 import org.example.model.enums.LandType;
 
-public class tile {
+public class Tile {
     private Building building = null;
     private LandType landType;
     private int numberOfSoldiers;
