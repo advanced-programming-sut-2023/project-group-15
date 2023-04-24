@@ -1,6 +1,6 @@
 package org.example.model.interfaces;
 
-public interface produce {
+public interface Produce {
 
     public void production();
 }

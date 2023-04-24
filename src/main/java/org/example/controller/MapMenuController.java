@@ -1,14 +1,14 @@
 package org.example.controller;
-import org.example.model.gameData.map;
-import org.example.model.tile;
+import org.example.model.gameData.Map;
+import org.example.model.Tile;
 
-public class mapMenuController {
-    public mapMenuController() {
+public class MapMenuController {
+    public MapMenuController() {
     }
 
     public void showMap(int x, int y) {
-        tile currentTile = map.getCurrentMap()[x][y];
-        tile[][] mapToShow = new tile[11][11];
+        Tile currentTile = Map.getCurrentMap()[x][y];
+        Tile[][] mapToShow = new Tile[11][11];
         int xS = x - 5;  // x startpoint
         int xE = x + 5;  // x endpoint
         if (xS < 0) {
@@ -32,14 +32,14 @@ public class mapMenuController {
 
         for (int i = xS; i < xE; i++) {
             for (int j = yS; j < yE; j++) {
-                if (map.getCurrentMap()[i][j].getSoldier() != null) {
+                if (Map.getCurrentMap()[i][j].getSoldier() != null) {
                     System.out.print("S ");
                     continue;
-                } else if (map.getCurrentMap()[i][j].getBuilding() != null) {
+                } else if (Map.getCurrentMap()[i][j].getBuilding() != null) {
                     System.out.print("B ");
                     continue;
                 } else
-                    System.out.print(map.getCurrentMap()[i][j].getLandType().getMapId() + " ");
+                    System.out.print(Map.getCurrentMap()[i][j].getLandType().getMapId() + " ");
             }
             System.out.println();
 
@@ -50,8 +50,8 @@ public class mapMenuController {
 
     private String showDetails(int x , int y) {
         String answer = "LandType : " ;
-        answer = answer.concat(map.getCurrentMap()[x][y].getLandType().values().toString());
-        if (map.getCurrentMap()[x][y].getBuilding() == null) {
+        answer = answer.concat(Map.getCurrentMap()[x][y].getLandType().values().toString());
+        if (Map.getCurrentMap()[x][y].getBuilding() == null) {
             //answer = answer.concat("\n" + map.getCurrentMap()[x][y].getBuilding().get().toString());
         }
         return answer ;

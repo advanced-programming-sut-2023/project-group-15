@@ -1,14 +1,14 @@
 package org.example.controller;
 import org.example.model.enums.LandType;
-import org.example.model.gameData.map;
+import org.example.model.gameData.Map;
 
-public class mapChangesMenuController {
+public class MapChangesMenuController {
     private void setTexture(int x , int y,String type)
     {
         for(LandType l : LandType.values())
             if(l.equals(type)) {
              LandType  newLandType = l;
-             map.findATile(x , y).setLandType(newLandType);
+             Map.findATile(x , y).setLandType(newLandType);
             }
 
 
@@ -19,8 +19,8 @@ public class mapChangesMenuController {
     }
     private void clear(int x , int y)
     {
-        map.findATile(x ,y).setBuilding(null);
-        map.findATile(x , y).setSoldier(null);
+        Map.findATile(x ,y).setBuilding(null);
+        Map.findATile(x , y).setSoldier(null);
 
 
     }
@@ -37,13 +37,13 @@ public class mapChangesMenuController {
     private void dropTree(int x , int y, String type)
     {
         // TODO the input string should be matched with the one in enum
-        map.findATile(x , y).setTreeName(type);
+        Map.findATile(x , y).setTreeName(type);
 
     }
     private void dropRock(int x , int y , char direction)
     {
         //TODO direction should be added
-        map.findATile(x,y).setRock();
+        Map.findATile(x,y).setRock();
 
     }
 

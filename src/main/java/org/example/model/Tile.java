@@ -1,11 +1,10 @@
 package org.example.model;
 
-import org.example.model.*;
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
 import org.example.model.enums.LandType;
 
-public class tile {
+public class Tile {
     private Building building;
     private LandType landType;
     private int numberOfSoldiers =  0;
@@ -13,7 +12,7 @@ public class tile {
     private String treeName = null ;
     private boolean rock = false ;
 
-    public tile() {
+    public Tile() {
         this.building = null;
         this.landType= LandType.DEFAULT;
         this.numberOfSoldiers = 0 ;

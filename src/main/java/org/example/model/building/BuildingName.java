@@ -1,11 +1,10 @@
 package org.example.model.building;
 
-import org.example.model.enums.Source;
-import org.example.model.enums.products;
+import org.example.model.enums.Products;
 
-import static org.example.model.enums.products.*;
+import static org.example.model.enums.Products.*;
 
-public enum buildingName {
+public enum BuildingName {
     //TODO the rate & capacity & cost should be specified for each building
     MILL(20, WOOD, 0, null, 1,  FLOUR, null , 100),
     IRON_MINE(20, WOOD, 0, null, 2, IRON, null, 100),
@@ -53,13 +52,13 @@ public enum buildingName {
     ;
     private int numberOfMaterial1;
     private int numberOfMaterial2;
-    private products material1Name;
-    private products material2Name;
+    private Products material1Name;
+    private Products material2Name;
     private int numberOfMaterial;
-    private products materialName;
+    private Products materialName;
     private int numberOfWorkers;
-    private products good1;
-    private products good2;
+    private Products good1;
+    private Products good2;
     private int rate;
     private int capacity;
     private int fireRange;
@@ -77,11 +76,11 @@ public enum buildingName {
         return numberOfMaterial2;
     }
 
-    public products getMaterial1Name() {
+    public Products getMaterial1Name() {
         return material1Name;
     }
 
-    public products getMaterial2Name() {
+    public Products getMaterial2Name() {
         return material2Name;
     }
 
@@ -89,7 +88,7 @@ public enum buildingName {
         return numberOfMaterial;
     }
 
-    public products getMaterialName() {
+    public Products getMaterialName() {
         return materialName;
     }
 
@@ -97,11 +96,11 @@ public enum buildingName {
         return numberOfWorkers;
     }
 
-    public products getGood1() {
+    public Products getGood1() {
         return good1;
     }
 
-    public products getGood2() {
+    public Products getGood2() {
         return good2;
     }
 
@@ -110,8 +109,8 @@ public enum buildingName {
     }
 
     //productive building
-    buildingName(int numberOfMaterial1, products material1Name, int numberOfMaterial2, products material2Name,
-                 int numberOfWorkers, products good1, products good2, int rate) {
+    BuildingName(int numberOfMaterial1, Products material1Name, int numberOfMaterial2, Products material2Name,
+                 int numberOfWorkers, Products good1, Products good2, int rate) {
         this.numberOfMaterial1 = numberOfMaterial1;
         this.material1Name = material1Name;
         this.numberOfMaterial2 = numberOfMaterial2;
@@ -122,7 +121,7 @@ public enum buildingName {
         this.rate = rate;
     }
     //storage building
-    buildingName(int numberOfMaterial , products materialName , int capacity)
+    BuildingName(int numberOfMaterial , Products materialName , int capacity)
     {
         this.numberOfMaterial = numberOfMaterial ;
         this.materialName = materialName ;
@@ -130,13 +129,13 @@ public enum buildingName {
 
     }
     // war buildings
-    buildingName(int fireRange , int defendRange)
+    BuildingName(int fireRange , int defendRange)
     {
         this.fireRange =  fireRange;
         this.defendRange = defendRange;
     }
     //city buildings
-    buildingName(int popularityRate,int numberOfMaterial1, products material1Name , int numberOfMaterial2, products material2Name)
+    BuildingName(int popularityRate, int numberOfMaterial1, Products material1Name , int numberOfMaterial2, Products material2Name)
     {
         this.numberOfMaterial = numberOfMaterial1;
         this.materialName = material1Name ;
@@ -144,13 +143,13 @@ public enum buildingName {
         this.numberOfMaterial2 = numberOfMaterial2 ;
         this.material2Name = material2Name ;
     }
-    buildingName(int damage , int numberOfMaterial , products materialName)
+    BuildingName(int damage , int numberOfMaterial , Products materialName)
     {
         this.damage = damage;
         this.numberOfMaterial = numberOfMaterial ;
         this.materialName = materialName ;
     }
-    buildingName(int numberOfMaterial1 , products material1Name , int numberOfMaterial2 , products material2Name, int numberOfWorkers)
+    BuildingName(int numberOfMaterial1 , Products material1Name , int numberOfMaterial2 , Products material2Name, int numberOfWorkers)
     {
         this.numberOfMaterial1 = numberOfMaterial1 ;
         this.material1Name = material1Name ;
@@ -160,7 +159,7 @@ public enum buildingName {
 
     }
     //educations
-    buildingName(int costForEachPerson , int costForEachPerson2 , int numberOfMaterial1 , products material1Name,int numberOfMaterial2, products material2Name)
+    BuildingName(int costForEachPerson , int costForEachPerson2 , int numberOfMaterial1 , Products material1Name, int numberOfMaterial2, Products material2Name)
     {
         this.costForEachPerson = costForEachPerson;
         this.costForEachPerson2 = costForEachPerson2 ;

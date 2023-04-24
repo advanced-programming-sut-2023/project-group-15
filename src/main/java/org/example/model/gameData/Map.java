@@ -1,29 +1,28 @@
 package org.example.model.gameData;
 
-import java.util.ArrayList;
-import org.example.model.tile;
+import org.example.model.Tile;
 
-public abstract class map {
+public abstract class Map {
     int height;
     int weight;
-     public static tile[][] currentMap = new tile[200][200];
+     public static Tile[][] currentMap = new Tile[200][200];
      public static void setCurrentMap()
      {
          for( int i=0 ; i<200 ; i++)
          {
              for (int j=0 ; j<200 ; j++)
              {
-                 currentMap[i][j] = new tile();
+                 currentMap[i][j] = new Tile();
              }
          }
 
      }
 
 
-    public static tile[][] getCurrentMap() {
+    public static Tile[][] getCurrentMap() {
         return currentMap;
     }
-    public static tile findATile(int x , int y )
+    public static Tile findATile(int x , int y )
     {
          return currentMap[x][y];
     }

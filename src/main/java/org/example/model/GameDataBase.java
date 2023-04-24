@@ -2,7 +2,7 @@ package org.example.model;
 
 import java.util.ArrayList;
 
-public class gameDataBase {
+public class GameDataBase {
     private static ArrayList<User> allUsers = new ArrayList<>();
     User currentUser;
     public void addUser(User user)

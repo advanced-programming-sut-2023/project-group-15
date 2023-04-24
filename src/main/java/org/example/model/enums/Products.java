@@ -1,6 +1,6 @@
 package org.example.model.enums;
 
-public enum products {
+public enum Products {
     APPLE,
     HOP,
     BREAD,
