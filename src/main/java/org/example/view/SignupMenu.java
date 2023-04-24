@@ -25,6 +25,8 @@ public class SignupMenu extends MainMenu{
                     if (signupMenuController.nicknameCheckErrors().equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){
                         if (pickQuestion().equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
                             signupMenuController.signingsComplete();
+                            System.out.println(SignupMenuOutput.USER_ADDED_SUCCESSFULLY);
+                            return;
                         }
                     }
                 }
@@ -34,7 +36,6 @@ public class SignupMenu extends MainMenu{
         } else {
             System.out.println(status);
         }
-
     }
 
     private SignupMenuOutput pickQuestion() {
@@ -43,22 +44,16 @@ public class SignupMenu extends MainMenu{
         while (true) {
             String input = InputScanner.getScanner().nextLine();
             if ((signupMenuMatcher=SignupMenuEnum.getMatcher(input,SignupMenuEnum.PICK_QUESTION))!=null) {
-                for (SecurityQuestion question:SecurityQuestion.allQuestions()) {
-                    if (question.getQuestionNumber().matches(signupMenuMatcher.group("Qnumber"))) {
-                        signupMenuController.setPassRecoveryQuestion(question);
-                        if (signupMenuMatcher.group("Qanswer1").equals(signupMenuMatcher.group("Qanswer2"))) {
-                            signupMenuController.setPassRecoveryAnswer(signupMenuMatcher.group("Qanswer1"));
-                            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-                        } else {
-                            System.out.println("your answers doesn't match!,\ntry again!\n,type \"quit\" to cancel the process");
-                        }
-                    }
+                SignupMenuOutput status = signupMenuController.pickSecurityQuestion(signupMenuMatcher);
+                if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                    return status;
                 }
             } else if (input.matches("^\\s*quit\\s*$")) {
                 return SignupMenuOutput.QUIT_FROM_PROCESS;
             } else
                 System.out.println("invalid command!,\ntry again!\ntype \"quit\" to cancel the process");
         }
+
     }
     private void questions() {
         System.out.println("1."+ SecurityQuestion.FATHER_NAME.getQuestion());
@@ -72,7 +67,6 @@ public class SignupMenu extends MainMenu{
         System.out.println("9."+SecurityQuestion.USER_JOB.getQuestion());
         System.out.println("10."+SecurityQuestion.USER_AGE.getQuestion());
     }
-
     private SignupMenuOutput passwordCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
             signupMenuController.setClipBoard(signupMenuController.generateRandomPassword());
@@ -91,7 +85,6 @@ public class SignupMenu extends MainMenu{
         }
         return signupMenuController.passwordCheckErrors(signupMenuController.getPassword());
     }
-
     private SignupMenuOutput usernameCheck() {
         SignupMenuOutput result = signupMenuController.usernameCheckErrors();
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
@@ -121,7 +114,6 @@ public class SignupMenu extends MainMenu{
         }
         return result;
     }
-
     public void classifyParameters(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));
         signupMenuController.setPassword(matcher.group("password"));

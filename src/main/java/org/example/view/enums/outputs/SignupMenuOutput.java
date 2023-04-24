@@ -4,6 +4,7 @@ public enum SignupMenuOutput {
     EMPTY_FIELD("you just missed some fields,\ntry again!"),
     INVALID_USERNAME_FORMAT("username format is invalid!,\ntry again!"),
     CHECKED_SUCCESSFULLY("ok"),
+    USER_ADDED_SUCCESSFULLY("user created successfully"),
     INVALID_PASSWORD_FORMAT("password format is invalid!,\ntry something else..."),
     ERROR_PASSWORD_IS_TOO_SHORT("your password is too short!: your password must contain at least 6 characters!,\ntry again!"),
     ERROR_PASSWORD_NO_CAPITAL_CHARACTER("invalid password format!: your password must contain at least 1 capital alphabet!,\ntry again!"),

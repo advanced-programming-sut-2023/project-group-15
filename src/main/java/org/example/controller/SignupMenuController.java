@@ -3,24 +3,13 @@ package org.example.controller;
 
 import org.example.InputScanner;
 import org.example.model.User;
+import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.util.Random;
+import java.util.regex.Matcher;
 
 public class SignupMenuController extends MainMenuController{
-    public SignupMenuOutput signupUserCheck() {
-        SignupMenuOutput status;
-//        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-//            return status;
-        if ((status = emailCheckErrors())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-            return status;
-        if ((status = passwordCheckErrors(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-            return status;
-        if ((status = nicknameCheckErrors())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-            return status;
-        return SignupMenuOutput.SECURITY_QUESTION;
-    }
-
     public SignupMenuOutput nicknameCheckErrors() {
         return this.getNickname()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
@@ -80,15 +69,23 @@ public class SignupMenuController extends MainMenuController{
     }
 
     public String generateRandomPassword() {
-        String password = null;
         //TODO: generating strong password
-        return password;
+        return null;
     }
 
-    public boolean pickSecurityQuestion(String numOfQuestion) {
-        //for on all questions!
-        //TODO: uncompleted method!
-        return false;
+    public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
+        for (SecurityQuestion question:SecurityQuestion.allQuestions()) {
+            if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
+                this.setPassRecoveryQuestion(question);
+                if (matcher.group("Qanswer1").equals(matcher.group("Qanswer2"))) {
+                    this.setPassRecoveryAnswer(matcher.group("Qanswer1"));
+                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                } else {
+                    System.out.println("your answers doesn't match!,\ntry again!\n,type \"quit\" to cancel the process");
+                }
+            }
+        }
+        return SignupMenuOutput.STAND_BY;
     }
     public void usernameSuggestionGenerator() {
         while (true) {
@@ -106,14 +103,9 @@ public class SignupMenuController extends MainMenuController{
                 return;
         }
     }
-    public SignupMenuOutput suggestingUsername() {
-
-        return null;
-    }
     public boolean randomPasswordVerification(String verification) {
         return verification.equals(this.getClipBoard());
     }
-
     public void signingsComplete() {
         User newUser = new User(this.getUsername(), this.getPassword(), this.getNickname(), this.getEmail());
         if (this.getSlogan()!=null) {
@@ -121,5 +113,4 @@ public class SignupMenuController extends MainMenuController{
         }
         newUser.addUser();
     }
-
 }
