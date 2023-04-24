@@ -10,18 +10,17 @@ import java.util.regex.Matcher;
 
 public class MainMenu {
     private MainMenuController mainMenuController = new MainMenuController();
-    private static InputScanner mainMenuScanner = new InputScanner();
     public void run() {
         Matcher mainMenuMatcher;
         String userInput;
         while (true) {
-            userInput = mainMenuScanner.getScanner().nextLine();
+            userInput = InputScanner.getScanner().nextLine();
             if (userInput.matches("\\s*exit\\s*"))
                 return;
-            else if ((mainMenuMatcher = SignupMenuEnum.getMatcher(userInput, SignupMenuEnum.USER_CREATION))!=null) {
-                new SignupMenu().checkSigningUp(mainMenuMatcher,mainMenuScanner);
+            else if ((mainMenuMatcher = SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.USER_CREATION))!=null) {
+                new SignupMenu().run(mainMenuMatcher);
             } else if ((mainMenuMatcher = LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.USER_LOGIN))!=null) {
-                new LoginMenu().loginInCheck(mainMenuMatcher,mainMenuScanner);
+                new LoginMenu().loginInCheck(mainMenuMatcher);
             } else if (SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.CREATE_MAP)!=null) {
                 new MapMenu().enterMapEnvironmentSettings();
             }

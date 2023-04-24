@@ -1,28 +1,31 @@
 package org.example.controller;
 
 
+import org.example.InputScanner;
 import org.example.model.User;
 import org.example.view.enums.outputs.SignupMenuOutput;
+
+import java.util.Random;
 
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUserCheck() {
         SignupMenuOutput status;
-        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+//        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+//            return status;
+        if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
-        if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+        if ((status = passwordCheck(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
-        if ((status = passwordCheck(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
-            return status;
-        if ((status = nicknameCheck(this.getNickname()))!=SignupMenuOutput.CHECKED_SUCCESSFULY)
+        if ((status = nicknameCheck(this.getNickname()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
     }
 
     private SignupMenuOutput nicknameCheck(String nickname) {
-        return nickname==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULY;
+        return nickname==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
-    public SignupMenuOutput usernameCheck() {
+    public SignupMenuOutput usernameCheckErrors() {
         if (this.getUsername() == null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
@@ -32,7 +35,7 @@ public class SignupMenuController extends MainMenuController{
                     return SignupMenuOutput.USERNAME_EXISTS;
                 }
             }
-            return SignupMenuOutput.CHECKED_SUCCESSFULY;
+            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
         }
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
@@ -87,11 +90,26 @@ public class SignupMenuController extends MainMenuController{
         //TODO: uncompleted method!
         return false;
     }
-    public String usernameSuggestion() {
-        //TODO: generating username
+    public void usernameSuggestionGenerator() {
+        while (true) {
+            boolean flag = true;
+            Random random = new Random();
+            char randomChar = (char) (random.nextInt(26)+'a');
+            this.setUsername(this.getUsername()+randomChar);
+            for (User user : User.allUsers){
+                if (user.getUsername().equals(this.getUsername())) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag)
+                return;
+        }
+    }
+    public SignupMenuOutput suggestingUsername() {
+
         return null;
     }
-
     public boolean randomPasswordVerification(String verification) {
         return verification.equals(this.getClipBoard());
     }
@@ -103,4 +121,5 @@ public class SignupMenuController extends MainMenuController{
         }
         newUser.addUser();
     }
+
 }

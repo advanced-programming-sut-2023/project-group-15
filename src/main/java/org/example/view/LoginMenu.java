@@ -47,14 +47,14 @@ public class LoginMenu extends MainMenu {
         }
     }
 
-    public void loginInCheck(Matcher mainMenuMatcher,InputScanner loginMenuScanner) {
+    public void loginInCheck(Matcher mainMenuMatcher) {
         loginMenuController.setUsername("username");
         loginMenuController.setPassword("password");
         loginMenuController.setStayLoggedInFlag(mainMenuMatcher.group("stayLogged") != null);
         String message = loginMenuController.loginUser().getOutput();
         if (message.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULY)) {
             //TODO: about saving user in the game...
-            run(loginMenuScanner);
+//            run(loginMenuScanner);
         }
     }
 }
