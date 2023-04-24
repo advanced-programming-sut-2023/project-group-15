@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="creating files...">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/gameDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/gameDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" afterDir="false" />
-    </list>
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="creating files..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
