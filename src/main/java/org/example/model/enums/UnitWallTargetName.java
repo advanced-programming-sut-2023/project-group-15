@@ -1,5 +1,9 @@
 package org.example.model.enums;
 
-public class UnitWallTargetName {
-
+public enum UnitWallTargetName {
+    SPEARMEN,
+    MACEMEN,
+    TUNNELER,
+    LADDERMEN,
+    ASSASSINS,
 }

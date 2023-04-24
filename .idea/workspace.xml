@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="working on scanner">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InputScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InputScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/SignupMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" afterDir="false" />
-    </list>
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="profile menu almost completed!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,27 +14,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2OdNK38UNz2OrnIqCzmN0SMvyKl" />
   <component name="ProjectViewState">
@@ -53,9 +33,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mahdi.ak/Desktop/Term2/java/project-group-15&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,11 +61,7 @@
       <workItem from="1681886686257" duration="2512000" />
       <workItem from="1682084994720" duration="4517000" />
       <workItem from="1682091000420" duration="2004000" />
-      <workItem from="1682105082710" duration="1616000" />
-      <workItem from="1682146119318" duration="3976000" />
-      <workItem from="1682150502559" duration="833000" />
-      <workItem from="1682154466252" duration="3613000" />
-      <workItem from="1682319177740" duration="10314000" />
+      <workItem from="1682105082710" duration="1183000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -143,55 +117,7 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۰۹" />
       <updated>1682105632142</updated>
     </task>
-    <task id="LOCAL‎−۰۰۰۱۰" summary="profile menu almost completed!">
-      <created>1682106284755</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۰" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۰" />
-      <updated>1682106284755</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۱" summary="creating my branch and completing sing up controller">
-      <created>1682106445193</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۱" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۱" />
-      <updated>1682106445193</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۲" summary="creating my branch and completing sing up controller">
-      <created>1682106675513</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۲" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۲" />
-      <updated>1682106675513</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۳" summary="adding something to login menu">
-      <created>1682146466982</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۳" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۳" />
-      <updated>1682146466982</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۴" summary="adding something to login menu">
-      <created>1682157672511</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۴" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۴" />
-      <updated>1682157672511</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۵" summary="working on scanner">
-      <created>1682319567333</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۵" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۵" />
-      <updated>1682319567333</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۶" summary="working on scanner">
-      <created>1682322942684</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۶" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۶" />
-      <updated>1682322942684</updated>
-    </task>
-    <task id="LOCAL‎−۰۰۰۱۷" summary="working on scanner">
-      <created>1682322948594</created>
-      <option name="number" value="LOCAL‎−۰۰۰۱۷" />
-      <option name="presentableId" value="LOCAL‎−۰۰۰۱۷" />
-      <updated>1682322948595</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +128,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -213,9 +151,6 @@
     <MESSAGE value="completing login menu..." />
     <MESSAGE value="completing profile menu &#10;login menu completed!" />
     <MESSAGE value="profile menu almost completed!" />
-    <MESSAGE value="creating my branch and completing sing up controller" />
-    <MESSAGE value="adding something to login menu" />
-    <MESSAGE value="working on scanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on scanner" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile menu almost completed!" />
   </component>
 </project>
