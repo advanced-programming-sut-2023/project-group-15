@@ -3,7 +3,7 @@ package org.example.model.building;
 import java.util.ArrayList;
 import org.example.model.enums.*;
 public class Market extends Building{
-    private ArrayList<Food> userFoods;
+    private ArrayList<Products> userFoods;
     private ArrayList<Source> userSources;
     private ArrayList<Weapon> userWeapons;
 
@@ -14,7 +14,7 @@ public class Market extends Building{
         this.userWeapons = new ArrayList<>();
     }
 
-    public ArrayList<Food> getUserFoods() {
+    public ArrayList<Products> getUserFoods() {
         return userFoods;
     }
 

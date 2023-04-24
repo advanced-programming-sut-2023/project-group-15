@@ -1,14 +1,19 @@
 package org.example.model.gameData;
 
+import org.example.model.tile;
+
 import java.util.ArrayList;
 
 public class map {
     int height;
     int weight;
-   // ArrayList<Building> buildings = new ArrayList<>();
+     public static tile[][] currentMap = new tile[200][200];
 
-    public map(int height, int weight) {
-        this.height = height;
-        this.weight = weight;
+    public static tile[][] getCurrentMap() {
+        return currentMap;
+    }
+    public static tile findATile(int x , int y )
+    {
+         return currentMap[x-1][y-1];
     }
 }

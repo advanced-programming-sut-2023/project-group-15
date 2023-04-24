@@ -1,0 +1,32 @@
+Index: src/main/java/org/example/model/LandType.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.model;\r\n\r\npublic class LandType {\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/model/LandType.java b/src/main/java/org/example/model/LandType.java
+--- a/src/main/java/org/example/model/LandType.java	
++++ b/src/main/java/org/example/model/LandType.java	
+@@ -1,4 +1,6 @@
+ package org.example.model;
+ 
+ public class LandType {
++    //private String name = ;
++
+ }
+Index: src/main/java/org/example/view/enums/commands/mapMenuEnum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.view.enums.commands;\r\n\r\n\r\nimport java.util.regex.Matcher;\r\nimport java.util.regex.Pattern;\r\n\r\npublic enum mapMenuEnum {\r\n\r\n\r\n    SHOW_MAP(\"^\\\\s+show\\\\s+map\\\\s+-x\\\\s+-y\\\\s*\"),\r\n    SHOW_MAP_DETAILS(\"\\\\s*show\\\\s+details\\\\s+-x\\\\s+-y\\\\s*\");\r\n    private final String regex;\r\n    mapMenuEnum(String regex)\r\n    {\r\n        this.regex = regex ;\r\n    }\r\n    public static Matcher getMatcher(String input,mapMenuEnum regex)\r\n    {\r\n        Matcher matcher = Pattern.compile(regex.regex,Pattern.CASE_INSENSITIVE).matcher(input);\r\n        return matcher.matches() ? matcher : null ;\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/view/enums/commands/mapMenuEnum.java b/src/main/java/org/example/view/enums/commands/mapMenuEnum.java
+--- a/src/main/java/org/example/view/enums/commands/mapMenuEnum.java	
++++ b/src/main/java/org/example/view/enums/commands/mapMenuEnum.java	
+@@ -7,7 +7,7 @@
+ public enum mapMenuEnum {
+ 
+ 
+-    SHOW_MAP("^\\s+show\\s+map\\s+-x\\s+-y\\s*"),
++    SHOW_MAP("^\\s+show\\s+map\\s+-x(?<xCoordinate>[\\d+])\\s+-y(?<yCoordinate>[\\d+])\\s*"),
+     SHOW_MAP_DETAILS("\\s*show\\s+details\\s+-x\\s+-y\\s*");
+     private final String regex;
+     mapMenuEnum(String regex)

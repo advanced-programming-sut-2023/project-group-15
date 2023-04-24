@@ -1,14 +1,15 @@
 package org.example.model.building;
 
-import org.example.model.enums.Source;
+import org.example.model.enums.Products;
+
 public class Storage extends Building{
     private int capacity;
-    private final Source sourceType;
+    private final Products good;
 
-    public Storage(int hp, int width, int height, int buildingCost, int capacity, Source sourceType) {
+    public Storage(int hp, int width, int height, int buildingCost, int capacity, Products good) {
         super(hp, width, height, buildingCost);
         this.capacity = capacity;
-        this.sourceType = sourceType;
+        this.good = good;
     }
 
     public int showCapacity() {
@@ -23,7 +24,7 @@ public class Storage extends Building{
         this.capacity-=capacity;
     }
 
-    public Source getSourceType() {
-        return sourceType;
+    public Products getGood() {
+        return good;
     }
 }

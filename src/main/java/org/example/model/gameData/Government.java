@@ -1,6 +1,6 @@
 package org.example.model.gameData;
 
-import org.example.model.enums.Food;
+import org.example.model.enums.Products;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
         int popularity;
         int foodRate;
         int taxrate;
-        ArrayList<Food> foods = new ArrayList<>();
+        ArrayList<Products> foods = new ArrayList<>();
 
         public void setFoodRate(int foodRate) {
             //TODO foodrate should be changed based on numbers of food on the foodlist
