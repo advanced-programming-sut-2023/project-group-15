@@ -33,14 +33,15 @@ public class mapMenuController {
         for (int i = xS; i < xE; i++) {
             for (int j = yS; j < yE; j++) {
                 if (map.getCurrentMap()[i][j].getSoldier() != null) {
-                    System.out.println("S");
+                    System.out.print("S ");
                     continue;
                 } else if (map.getCurrentMap()[i][j].getBuilding() != null) {
-                    System.out.println("B");
+                    System.out.print("B ");
                     continue;
                 } else
-                    System.out.println(map.getCurrentMap()[i][j].getLandType().getMapId());
+                    System.out.print(map.getCurrentMap()[i][j].getLandType().getMapId() + " ");
             }
+            System.out.println();
 
         }
 

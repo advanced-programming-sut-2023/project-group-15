@@ -1,26 +1,28 @@
 package org.example.view;
 
 import org.example.InputScanner;
+import org.example.Main;
 import org.example.controller.mapMenuController;
 import org.example.model.gameData.map;
 import org.example.view.enums.commands.mapMenuEnum;
-
 import java.util.regex.Matcher;
 
 public class mapMenu {
-    private void run(Matcher matcher)
+    public void run()
     {
+        map.setCurrentMap();
         String command;
         InputScanner scanner = new InputScanner();
+        Matcher mapMenuMatcher ;
         while (true)
         {
             command = scanner.getScanner().nextLine();
             if(command.matches("\\s*exit\\s*"))
                 break;
-            else if(mapMenuEnum.getMatcher(command,mapMenuEnum.SHOW_MAP) != null)
-                showMap(Integer.parseInt(matcher.group("xCoordinate"))
-                        , Integer.parseInt(matcher.group("yCoordinate")));
-                    //TODO moving on map is not available now
+            else if((mapMenuMatcher = mapMenuEnum.getMatcher(command,mapMenuEnum.SHOW_MAP)) != null)
+                showMap(Integer.parseInt(mapMenuMatcher.group("xCoordinate"))
+                        , Integer.parseInt(mapMenuMatcher.group("yCoordinate")));
+                    //TODO moving on map should be added
 
 
         }

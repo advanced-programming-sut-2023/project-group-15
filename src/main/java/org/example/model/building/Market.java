@@ -7,9 +7,9 @@ public class Market extends Building{
     private ArrayList<Source> userSources;
     private ArrayList<Weapon> userWeapons;
 
-    public Market(int hp, int xCoordiante, int yCoordiante, products material1, products material2, int numberOfMaterial1,
+    public Market(String name, int hp, int xCoordiante, int yCoordiante, products material1, products material2, int numberOfMaterial1, int numberOfMaterial2,
                   int numberOfWorkers, ArrayList<products> userFoods, ArrayList<Source> userSources, ArrayList<Weapon> userWeapons) {
-        super(hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfWorkers);
+        super(name, hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfMaterial2, numberOfWorkers);
         this.userFoods = userFoods;
         this.userSources = userSources;
         this.userWeapons = userWeapons;

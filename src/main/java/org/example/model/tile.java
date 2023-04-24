@@ -6,15 +6,20 @@ import org.example.model.building.Building;
 import org.example.model.enums.LandType;
 
 public class tile {
-    private Building building = null;
-    private LandType landType = LandType.DEFAULT;
+    private Building building;
+    private LandType landType;
     private int numberOfSoldiers =  0;
     private Soldier soldier = null;
     private String treeName = null ;
     private boolean rock = false ;
 
-    {
-        soldier = null;
+    public tile() {
+        this.building = null;
+        this.landType= LandType.DEFAULT;
+        this.numberOfSoldiers = 0 ;
+        this.soldier = null ;
+        this.treeName = null ;
+        this.rock = false ;
     }
 
     public void setBuilding(Building building) {

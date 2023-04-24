@@ -6,6 +6,7 @@ import org.example.model.tile;
 import org.example.model.enums.*;
 
 public class Building {
+    private String name ;
     private final int hp;
     private int xCoordiante;
     private int yCoordiante;
@@ -15,9 +16,10 @@ public class Building {
     private int numberOfMaterial2;
     private int numberOfWorkers;
 
-    public Building(int hp, int xCoordiante, int yCoordiante,
+    public Building(String name, int hp, int xCoordiante, int yCoordiante,
                     products material1, products material2, int numberOfMaterial1,
                     int numberOfMaterial2, int numberOfWorkers) {
+        this.name = name;
         this.hp = hp;
         this.xCoordiante = xCoordiante;
         this.yCoordiante = yCoordiante;
@@ -26,6 +28,10 @@ public class Building {
         this.numberOfMaterial1 = numberOfMaterial1;
         this.numberOfMaterial2 = numberOfMaterial2;
         this.numberOfWorkers = numberOfWorkers;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getHp() {
