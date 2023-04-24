@@ -20,8 +20,8 @@ public abstract class map {
     public static void setCurrentMapB()
     {
 
-        for (int i = 0; i < 200; i++) {
-            for (int j = 0; j < 200; j++) {
+        for (int i = 0; i < 400; i++) {
+            for (int j = 0; j < 400; j++) {
                 currentMapB[i][j] = new tile();
             }
         }

@@ -8,8 +8,9 @@ import org.example.view.enums.commands.mapMenuEnum;
 import java.util.regex.Matcher;
 
 public class mapMenu {
-    public void run()
+    public void run(int x , int y )
     {
+        showMap(x , y);
         String command;
         InputScanner scanner = new InputScanner();
         Matcher mapMenuMatcher ;
@@ -18,10 +19,11 @@ public class mapMenu {
             command = scanner.getScanner().nextLine();
             if(command.matches("\\s*exit\\s*"))
                 break;
-            else if((mapMenuMatcher = mapMenuEnum.getMatcher(command,mapMenuEnum.SHOW_MAP)) != null)
-                showMap(Integer.parseInt(mapMenuMatcher.group("xCoordinate"))
-                        , Integer.parseInt(mapMenuMatcher.group("yCoordinate")));
-                    //TODO moving on map should be added
+            else if((mapMenuMatcher = mapMenuEnum.getMatcher(command,mapMenuEnum.SHOW_MAP_DETAILS)) != null)
+            showDetails(Integer.parseInt(mapMenuMatcher.group("xCoordinate")),
+                    Integer.parseInt(mapMenuMatcher.group("yCoordinate")));
+
+
 
 
         }
@@ -31,12 +33,12 @@ public class mapMenu {
     {
         mapMenuController controller = new mapMenuController();
         controller.showMap(x , y);
-
+        //TODO moving on map should be added
     }
 
     private map showDetails(int x , int y)
     {
-        // TODO : only a tile should be shown
+        // TODO : only a tile should be shown  with all information on it
         return null;
 
     }
