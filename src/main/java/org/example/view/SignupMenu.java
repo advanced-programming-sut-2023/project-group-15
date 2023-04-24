@@ -4,6 +4,7 @@ package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.SignupMenuController;
+import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
@@ -12,7 +13,6 @@ import java.util.regex.Matcher;
 public class SignupMenu extends MainMenu{
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private Matcher signupMenuMatcher;
-    private String signupMenuInput;
 
     public void run(Matcher signupMenuMatcher) {
         SignupMenuOutput status;
@@ -21,14 +21,56 @@ public class SignupMenu extends MainMenu{
         if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             status = passwordCheck();
             if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-                //continue
+                if (signupMenuController.emailCheckErrors().equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                    if (signupMenuController.nicknameCheckErrors().equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){
+                        if (pickQuestion().equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                            signupMenuController.signingsComplete();
+                        }
+                    }
+                }
             }
         } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
-            //TODO: returning to the main menu
+            return;
         } else {
             System.out.println(status);
         }
 
+    }
+
+    private SignupMenuOutput pickQuestion() {
+        System.out.println("pick a question from these questions,(enter the number):");
+        questions();
+        while (true) {
+            String input = InputScanner.getScanner().nextLine();
+            if ((signupMenuMatcher=SignupMenuEnum.getMatcher(input,SignupMenuEnum.PICK_QUESTION))!=null) {
+                for (SecurityQuestion question:SecurityQuestion.allQuestions()) {
+                    if (question.getQuestionNumber().matches(signupMenuMatcher.group("Qnumber"))) {
+                        signupMenuController.setPassRecoveryQuestion(question);
+                        if (signupMenuMatcher.group("Qanswer1").equals(signupMenuMatcher.group("Qanswer2"))) {
+                            signupMenuController.setPassRecoveryAnswer(signupMenuMatcher.group("Qanswer1"));
+                            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                        } else {
+                            System.out.println("your answers doesn't match!,\ntry again!\n,type \"quit\" to cancel the process");
+                        }
+                    }
+                }
+            } else if (input.matches("^\\s*quit\\s*$")) {
+                return SignupMenuOutput.QUIT_FROM_PROCESS;
+            } else
+                System.out.println("invalid command!,\ntry again!\ntype \"quit\" to cancel the process");
+        }
+    }
+    private void questions() {
+        System.out.println("1."+ SecurityQuestion.FATHER_NAME.getQuestion());
+        System.out.println("2."+SecurityQuestion.BROTHER_NAME.getQuestion());
+        System.out.println("3."+SecurityQuestion.LAPTOP_MODEL.getQuestion());
+        System.out.println("4."+SecurityQuestion.PHONE_MODEL.getQuestion());
+        System.out.println("5."+SecurityQuestion.HAIR_COLOR.getQuestion());
+        System.out.println("6."+SecurityQuestion.CAR_COLOR.getQuestion());
+        System.out.println("7."+SecurityQuestion.FAVORITE_FOOD.getQuestion());
+        System.out.println("8."+SecurityQuestion.FAVORITE_GAME.getQuestion());
+        System.out.println("9."+SecurityQuestion.USER_JOB.getQuestion());
+        System.out.println("10."+SecurityQuestion.USER_AGE.getQuestion());
     }
 
     private SignupMenuOutput passwordCheck() {
@@ -47,7 +89,7 @@ public class SignupMenu extends MainMenu{
                 }
             }
         }
-        return signupMenuController.passwordCheck(signupMenuController.getPassword());
+        return signupMenuController.passwordCheckErrors(signupMenuController.getPassword());
     }
 
     private SignupMenuOutput usernameCheck() {
@@ -80,28 +122,6 @@ public class SignupMenu extends MainMenu{
         return result;
     }
 
-    public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
-
-        String message = signupMenuController.signupUserCheck().getOutput();
-        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
-            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
-            System.out.println("your slogan is: "+signupMenuController.getSlogan());
-        }
-
-        if (message.equals(SignupMenuOutput.SECURITY_QUESTION.getOutput())) {
-            //TODO: printing security questions....
-            while (true) {
-                if ((signupMenuMatcher = SignupMenuEnum.getMatcher(signupMenuInput,SignupMenuEnum.PICK_QUESTION))!=null) {
-                    //TODO: pick question part...
-                }
-            }
-        }
-        if (message.equals(SignupMenuOutput.STAND_BY.getOutput())) {
-            System.out.println("you password is: "+signupMenuController.getClipBoard());
-
-        }
-        System.out.println(signupMenuController.signupUserCheck());
-    }
     public void classifyParameters(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));
         signupMenuController.setPassword(matcher.group("password"));

@@ -12,17 +12,17 @@ public class SignupMenuController extends MainMenuController{
         SignupMenuOutput status;
 //        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
 //            return status;
-        if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+        if ((status = emailCheckErrors())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
-        if ((status = passwordCheck(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+        if ((status = passwordCheckErrors(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
-        if ((status = nicknameCheck(this.getNickname()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+        if ((status = nicknameCheckErrors())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
     }
 
-    private SignupMenuOutput nicknameCheck(String nickname) {
-        return nickname==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    public SignupMenuOutput nicknameCheckErrors() {
+        return this.getNickname()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
     public SignupMenuOutput usernameCheckErrors() {
@@ -41,7 +41,7 @@ public class SignupMenuController extends MainMenuController{
     }
 
 
-    public static SignupMenuOutput passwordCheck(String password) {
+    public static SignupMenuOutput passwordCheckErrors(String password) {
         if (password==null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
@@ -63,11 +63,11 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;
     }
 
-    public static SignupMenuOutput emailCheck(String email) {
-        if (email==null) {
+    public SignupMenuOutput emailCheckErrors() {
+        if (this.getEmail()==null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
-        if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
+        if (getEmail().matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
             //TODO:checking other emails...
             return null;
         }
