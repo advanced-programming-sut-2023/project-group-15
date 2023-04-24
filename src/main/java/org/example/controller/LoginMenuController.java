@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.model.User;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
 public class LoginMenuController extends MainMenuController{
@@ -17,13 +18,22 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkMatchUsername(String username) {
-        //TODO:
-        return true;
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(username))
+                return true;
+        }
+        return false;
     }
 
     public boolean checkUsernameWithPassword(String username,String password) {
-        //TODO:
-        return true;
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(username)) {
+                if (user.getPassword().equals(password)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean checkSecurityQuestion(String answer) {

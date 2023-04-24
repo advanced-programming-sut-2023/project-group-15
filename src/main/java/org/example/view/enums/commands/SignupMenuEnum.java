@@ -9,7 +9,10 @@ public enum SignupMenuEnum {
             "\\\"[^\\\"]+\\\")\\s*|(-e\\s+(?<email>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
             "(-n\\s+(?<nickname>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
             "(-s\\s+(?<slogan>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))+$"),
-    PICK_QUESTION("^\\s*question\\s*pick\\s*"),
+    PICK_QUESTION("^\\s*question\\s+pick\\s*((-q\\s+(?<Qnumber>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
+                        "(-a\\s+(?<Qanswer1>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
+                        "(-c\\s+(?<Qanswer2>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))*$"),
+    CREATE_MAP("^\\s*create\\s+map\\s*$"),
 
     ;
 

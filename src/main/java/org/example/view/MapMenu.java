@@ -4,7 +4,7 @@ import org.example.InputScanner;
 
 import java.util.regex.Matcher;
 
-public class mapMenu {
+public class MapMenu {
     private void run(Matcher matcher)
     {
         String command;
@@ -25,7 +25,15 @@ public class mapMenu {
         //
         //TODO exit
     }
+<<<<<<< HEAD:src/main/java/org/example/view/mapMenu.java
     private static void showMap(int x,int y)
+=======
+
+    public void enterMapEnvironmentSettings() {
+
+    }
+   /* private map showMap(int x,int y )
+>>>>>>> origin/mahdi:src/main/java/org/example/view/MapMenu.java
     {
 
     }
