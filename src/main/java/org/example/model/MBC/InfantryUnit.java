@@ -1,10 +1,10 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
-import org.example.model.enums.InfantryUnitName;
+import org.example.model.enums.UnitName;
 
 public class InfantryUnit extends Soldier {
-    public InfantryUnitName name;
+    public UnitName name;
     public int maxMove;
     public int speed;
     public int attackingPower;
@@ -33,50 +33,62 @@ public class InfantryUnit extends Soldier {
     private int getDeffense(){
         return this.deffense;
     }
-    public void setName(InfantryUnitName name){
+    public void setName(UnitName name){
         this.name = name;
     }
 
-    public InfantryUnitName getName(){
+    public UnitName getName(){
         return this.name;
     }
 
     private void pikemen(){
-        this.name = InfantryUnitName.PIKEMEN;
-        this.maxMove = 1;
+        this.name = UnitName.PIKEMEN;
     }
 
     private void swordsmen(){
-        this.name = InfantryUnitName.SWORDSMEN;
-        this.maxMove = 1;
+        this.name = UnitName.SWORDSMEN;
     }
 
     private void knigth(){
-        this.name = InfantryUnitName.KNIGHT;
-        this.maxMove = 4;
+        this.name = UnitName.KNIGHT;
     }
 
     private void engineer(){
-        this.name = InfantryUnitName.ENGINEER;
-        this.maxMove = 2;
+        this.name = UnitName.ENGINEER;
     }
 
     private void blackMonk(){
-        this.name = InfantryUnitName.BLACK_MONK;
-        this.maxMove = 1;
+        this.name = UnitName.BLACK_MONK;
     }
 
     private void slaves(){
-        this.name = InfantryUnitName.SLAVES;
-        this.maxMove = 3;
+        this.name = UnitName.SLAVES;
     }
 
     private void arabianSwordsmen(){
-        this.name = InfantryUnitName.ARABIAN_SWORDSMEN;
-        this.maxMove = 4;
+        this.name = UnitName.ARABIAN_SWORDSMEN;
     }
 
-    private int getMaxMove(){
+    public void setMaxMove(UnitName name){
+        switch (name){
+            case PIKEMEN: this.maxMove = 1;
+            break;
+            case SWORDSMEN: this.maxMove = 1;
+            break;
+            case KNIGHT: this.maxMove = 4;
+            break;
+            case ENGINEER: this.maxMove = 2;
+            break;
+            case BLACK_MONK: this.maxMove = 1;
+            break;
+            case SLAVES: this.maxMove = 3;
+            break;
+            case ARABIAN_SWORDSMEN: this.maxMove = 4;
+            break;
+        }
+    }
+
+    public int getMaxMove(){
         return this.maxMove;
     }
 }

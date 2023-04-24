@@ -1,10 +1,10 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
-import org.example.model.enums.UnitWallTargetName;
+import org.example.model.enums.UnitName;
 
 public class UnitWallTarget extends Soldier {
-    public UnitWallTargetName name;
+    public UnitName name;
     public int maxMove;
     public int speed;
     public int attackingPower;
@@ -33,36 +33,50 @@ public class UnitWallTarget extends Soldier {
     private int getDeffense(){
         return this.deffense;
     }
-    public void setName(UnitWallTargetName name) {
+    public void setName(UnitName name) {
         this.name = name;
     }
 
-    public UnitWallTargetName getName() {
+    public UnitName getName() {
         return name;
     }
 
     private void spearmen(){
-        this.name = UnitWallTargetName.SPEARMEN;
-        this.maxMove = 2;
+        this.name = UnitName.SPEARMEN;
     }
 
     private void macemen(){
-        this.name = UnitWallTargetName.MACEMEN;
-        this.maxMove = 2;
+        this.name = UnitName.MACEMEN;
     }
 
     private void tunneler(){
-        this.name = UnitWallTargetName.TUNNELER;
-        this.maxMove = 3;
+        this.name = UnitName.TUNNELER;
     }
 
     private void laddermen(){
-        this.name = UnitWallTargetName.LADDERMEN;
-        this.maxMove = 3;
+        this.name = UnitName.LADDERMEN;
     }
 
     private void assassins(){
-        this.name = UnitWallTargetName.ASSASSINS;
-        this.maxMove = 2;
+        this.name = UnitName.ASSASSINS;
+    }
+
+    public void setMaxMove(UnitName name){
+        switch (name){
+            case SPEARMEN: this.maxMove = 2;
+            break;
+            case MACEMEN: this.maxMove = 2;
+            break;
+            case TUNNELER: this.maxMove = 3;
+            break;
+            case LADDERMEN: this.maxMove = 3;
+            break;
+            case ASSASSINS: this.maxMove = 2;
+            break;
+        }
+    }
+
+    public int getMaxMove(){
+        return this.maxMove;
     }
 }
