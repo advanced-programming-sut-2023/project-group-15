@@ -1,5 +1,7 @@
 package org.example.controller;
+import org.example.model.MBC.InfantryUnit;
 import org.example.model.MBC.LauncherUnit;
+import org.example.model.MBC.UnitWallTarget;
 import org.example.model.enums.State;
 import org.example.model.User;
 import org.example.model.enums.UnitName;
@@ -7,16 +9,20 @@ import org.example.view.enums.outputs.UnitMenuOutput;
 
 
 public class UnitMenuController {
-    public User currentUser;
+    public LauncherUnit launcherUnit;
+    public InfantryUnit infantryUnit;
+    public UnitWallTarget unitWallTarget;
     public State state;
     public String type;
     public int x,y;
     public UnitName name;
+
     private UnitMenuOutput selectUnit(int x, int y){
         //TODO: add code to get informaion from map
        if((name = UnitName.valueOf(type)) != null){
         this.x = y;
         this.y = y;
+        name = UnitName.valueOf(type);
         return UnitMenuOutput.UNIT_FOUND;
        }
 
@@ -34,8 +40,8 @@ public class UnitMenuController {
             int deltaY = y - this.y;
             if(indexOfType<7)
             {
-
-               int maxMove = 0;
+               infantryUnit.setMaxMove(name);
+               int maxMove = infantryUnit.getMaxMove();
                 if(deltaX > maxMove && deltaY > maxMove)
                     return UnitMenuOutput.OUT_OF_BOUNDS;
 
@@ -48,9 +54,8 @@ public class UnitMenuController {
             }
 
             else if(indexOfType > 6 && indexOfType <= 12){
-                //TODO: add code to get move
-                //its zero for know until complete
-                int maxMove = 0;
+                launcherUnit.setMove(name);
+                int maxMove = launcherUnit.getMaxMove();
                 if(deltaX > maxMove && deltaY > maxMove)
                     return UnitMenuOutput.OUT_OF_BOUNDS;
 
@@ -63,8 +68,8 @@ public class UnitMenuController {
             }
 
             else{
-                //TODO: add code to get move
-                int maxMove = 0 ;
+                unitWallTarget.setMaxMove(name);
+                int maxMove = unitWallTarget.getMaxMove();
                 if(deltaX > maxMove && deltaY > maxMove)
                     return UnitMenuOutput.OUT_OF_BOUNDS;
 

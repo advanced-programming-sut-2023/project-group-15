@@ -43,40 +43,52 @@ public class InfantryUnit extends Soldier {
 
     private void pikemen(){
         this.name = UnitName.PIKEMEN;
-        this.maxMove = 1;
     }
 
     private void swordsmen(){
         this.name = UnitName.SWORDSMEN;
-        this.maxMove = 1;
     }
 
     private void knigth(){
         this.name = UnitName.KNIGHT;
-        this.maxMove = 4;
     }
 
     private void engineer(){
         this.name = UnitName.ENGINEER;
-        this.maxMove = 2;
     }
 
     private void blackMonk(){
         this.name = UnitName.BLACK_MONK;
-        this.maxMove = 1;
     }
 
     private void slaves(){
         this.name = UnitName.SLAVES;
-        this.maxMove = 3;
     }
 
     private void arabianSwordsmen(){
         this.name = UnitName.ARABIAN_SWORDSMEN;
-        this.maxMove = 4;
     }
 
-    private int getMaxMove(){
+    public void setMaxMove(UnitName name){
+        switch (name){
+            case PIKEMEN: this.maxMove = 1;
+            break;
+            case SWORDSMEN: this.maxMove = 1;
+            break;
+            case KNIGHT: this.maxMove = 4;
+            break;
+            case ENGINEER: this.maxMove = 2;
+            break;
+            case BLACK_MONK: this.maxMove = 1;
+            break;
+            case SLAVES: this.maxMove = 3;
+            break;
+            case ARABIAN_SWORDSMEN: this.maxMove = 4;
+            break;
+        }
+    }
+
+    public int getMaxMove(){
         return this.maxMove;
     }
 }

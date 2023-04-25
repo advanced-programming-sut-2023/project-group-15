@@ -33,9 +33,9 @@ public class ProfileMenu extends LoginMenu{
         System.out.println(profileMenuController.changeSlogan(slogan));
     }
 
-   /* protected void removeUserSlogan() {
+    protected void removeUserSlogan() {
         System.out.println(profileMenuController.removeSlogan());
-    }*/
+    }
 
     protected void displayUserProfile() {
         profileMenuController.showUserHighestScore();

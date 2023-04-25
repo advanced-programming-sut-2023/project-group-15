@@ -44,38 +44,26 @@ public class LauncherUnit extends Soldier {
 
     private void archer(){
         this.name = UnitName.ARCHER;
-        this.maxMove = 3;
-        this.throwrange = 2;
     }
 
     private void crossbowmen(){
         this.name = UnitName.CROSSBOWMEN;
-        this.maxMove = 1;
-        this.throwrange = 2;
     }
 
     private void arrcherBow(){
         this.name = UnitName.ARCHERBOW;
-        this.maxMove = 3;
-        this.throwrange = 2;
     }
 
     private void slingers(){
         this.name = UnitName.SLINGERS;
-        this.maxMove = 3;
-        this.throwrange = 2;
     }
 
     private void horseArchers(){
         this.name = UnitName.HORSE_ARCHERS;
-        this.maxMove = 4;
-        this.throwrange = 2;
     }
 
     private void firethrowers(){
         this.name = UnitName.FIRE_THROWERS;
-        this.maxMove = 4;
-        this.throwrange = 3;
     }
 
     public void setMove(UnitName name){
@@ -95,8 +83,25 @@ public class LauncherUnit extends Soldier {
         }
     }
 
-    private int getThrowrange(){
-        return throwrange;
+    public void setThrowRange(UnitName name){
+        switch (name){
+            case ARCHER : this.throwrange = 2;
+            break;
+            case ARCHERBOW: this.throwrange = 2;
+            break;
+            case CROSSBOWMEN: this.throwrange = 2;
+            break;
+            case SLINGERS: this.throwrange = 2;
+            break;
+            case HORSE_ARCHERS: this.throwrange = 2;
+            break;
+            case FIRE_THROWERS: this.throwrange = 3;
+            break;
+        }
+    }
+
+    private int getThrowRange(){
+        return this.throwrange;
     }
 
     public int getMaxMove(){

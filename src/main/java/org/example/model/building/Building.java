@@ -1,8 +1,6 @@
 package org.example.model.building;
 
 
-import org.example.model.MBC.Person;
-import org.example.model.tile;
 import org.example.model.enums.*;
 
 public class Building {
@@ -10,14 +8,14 @@ public class Building {
     private final int hp;
     private int xCoordiante;
     private int yCoordiante;
-    private products material1 ;
-    private products material2 ;
+    private Products material1 ;
+    private Products material2 ;
     private int numberOfMaterial1;
     private int numberOfMaterial2;
     private int numberOfWorkers;
 
     public Building(String name, int hp, int xCoordiante, int yCoordiante,
-                    products material1, products material2, int numberOfMaterial1,
+                    Products material1, Products material2, int numberOfMaterial1,
                     int numberOfMaterial2, int numberOfWorkers) {
         this.name = name;
         this.hp = hp;
@@ -46,11 +44,11 @@ public class Building {
         return yCoordiante;
     }
 
-    public products getMaterial1() {
+    public Products getMaterial1() {
         return material1;
     }
 
-    public products getMaterial2() {
+    public Products getMaterial2() {
         return material2;
     }
 
@@ -75,11 +73,11 @@ public class Building {
         this.yCoordiante = yCoordiante;
     }
 
-    public void setMaterial1(products material1) {
+    public void setMaterial1(Products material1) {
         this.material1 = material1;
     }
 
-    public void setMaterial2(products material2) {
+    public void setMaterial2(Products material2) {
         this.material2 = material2;
     }
 }

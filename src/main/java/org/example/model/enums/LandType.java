@@ -1,7 +1,7 @@
 package org.example.model.enums;
-import org.example.model.building.buildingName;
+import org.example.model.building.BuildingName;
 
-import static org.example.model.building.buildingName.*;
+import static org.example.model.building.BuildingName.*;
 
 public enum LandType {
     DEFAULT(null , "D"),
@@ -21,16 +21,16 @@ public enum LandType {
     SEA(null,  "S"),
     DENSE_GRASSLAND(HOP_FARM , WEAT_FARM , "DG"),
     ;
-    private buildingName buildingName;
-    private buildingName buildingName2;
+    private BuildingName buildingName;
+    private BuildingName buildingName2;
     private String mapId;
 
-    LandType(buildingName name , String mapId)
+    LandType(BuildingName name , String mapId)
     {
         this.buildingName = name;
         this.mapId = mapId ;
     }
-    LandType(buildingName name1 , buildingName name2 , String mapId)
+    LandType(BuildingName name1 , BuildingName name2 , String mapId)
     {
         this.buildingName = name1 ;
         this.buildingName2 = name2 ;
