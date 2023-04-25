@@ -1,8 +1,8 @@
 package org.example.view;
 
 import org.example.InputScanner;
-import org.example.controller.dropBuildingController;
-import org.example.model.gameData.map;
+import org.example.controller.DropBuildingController;
+import org.example.model.gameData.Map;
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
@@ -24,10 +24,16 @@ public class GameMenu {
         InputScanner gameMenuScanner = new InputScanner();
         Matcher gameMenuMatcher;
         String input;
+        Map.setCurrentMap();
         while (true) {
             input = gameMenuScanner.getScanner().nextLine();
             if (input.matches("\\s*exit\\s*"))
                 return;
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null) {
+                MapMenu mapMenu = new MapMenu();
+                 mapMenu.run(Integer.parseInt(gameMenuMatcher.group("xCoordiante")),
+                        Integer.parseInt(gameMenuMatcher.group("yCoordiante")));
+            }
           /*  else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
@@ -46,26 +52,7 @@ public class GameMenu {
              //   System.out.println(GameMenuController.factors()); */
             //TODO: also most add commands for unit
         }
-    }
-    public void run()
-    {
-        map.setCurrentMap();
-        dropBuildingController controller = new dropBuildingController();
-        controller.dropProductiveBuilding(0 , 0 , MILL);
-        InputScanner gameMenuScanner = new InputScanner();
-        String command;
-        Matcher matcher;
-        while(true)
-        {
-            command = gameMenuScanner.getScanner().nextLine();
-            if((matcher = GameMenuEnum.getMatcher(command , GameMenuEnum.SHOW_MAP)) != null)
-            {
-                new mapMenu().run(Integer.parseInt(matcher.group("xCoordinate"))
-                        , Integer.parseInt(matcher.group("yCoordinate")));
-            }
 
-        }
-    }
 }
 
 }

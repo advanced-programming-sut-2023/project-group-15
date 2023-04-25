@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.view.GameMenu;
 import org.example.view.MainMenu;
 
 public class Main {

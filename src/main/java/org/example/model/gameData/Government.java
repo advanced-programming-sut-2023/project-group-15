@@ -31,11 +31,11 @@ import java.util.ArrayList;
             this.fearrate = fearrate;
         }
 
-        public void addFood(products food) {
+        public void addFood(Products food) {
             this.foods.add(food);
         }
 
-        public ArrayList<products> getFoods() {
+        public ArrayList<Products> getFoods() {
             //TODO the food list is going to be shown here
             return foods;
         }
