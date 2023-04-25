@@ -24,7 +24,6 @@ public class GameMenu {
         InputScanner gameMenuScanner = new InputScanner();
         Matcher gameMenuMatcher;
         String input;
-        Map.setCurrentMap();
         while (true) {
             input = gameMenuScanner.getScanner().nextLine();
             if (input.matches("\\s*exit\\s*"))

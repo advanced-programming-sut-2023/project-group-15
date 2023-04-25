@@ -9,7 +9,6 @@ import java.util.regex.Matcher;
 public class MapMenu {
     public void run(int x , int y )
     {
-        Map.setCurrentMap();
         showMap(x , y);
         String command;
         InputScanner scanner = new InputScanner();
