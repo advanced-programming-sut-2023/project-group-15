@@ -7,8 +7,7 @@ import java.util.regex.Pattern;
 public enum MapMenuEnum {
 
 
-    SHOW_MAP("^\\s*show\\s+map\\s+-x\\s+(?<xCoordinate>[\\d+])\\s+-y\\s+(?<yCoordinate>[\\d+])\\s*$"),
-    SHOW_MAP_DETAILS("\\s*show\\s+details\\s+-x\\s+-y\\s*");
+    SHOW_MAP_DETAILS("\\s*show\\s+details\\s+-x\\s+(?<xCoordinate>[\\d]+)\\s+-y\\s+(?<yCoordinate>[\\d]+)\\s*$");
     private final String regex;
     MapMenuEnum(String regex)
     {

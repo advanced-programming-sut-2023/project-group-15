@@ -22,7 +22,7 @@ public class MainMenu {
             } else if ((mainMenuMatcher = LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.USER_LOGIN))!=null) {
                 new LoginMenu().loginInCheck(mainMenuMatcher);
             } else if (SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.CREATE_MAP)!=null) {
-                new MapMenu().enterMapEnvironmentSettings();
+               // new MapMenu().enterMapEnvironmentSettings();
             }
         }
     }
