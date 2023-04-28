@@ -21,8 +21,10 @@ public class SignupMenu extends MainMenu{
         if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             status = passwordCheck();
             if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-                status = sloganCheck();
-
+                status = signupMenuController.signupUserCheck();
+                if (status.equals(SignupMenuOutput.SECURITY_QUESTION)){
+                    pickSecurityQuestion();
+                }
             } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                 return;
             } else {
@@ -33,6 +35,9 @@ public class SignupMenu extends MainMenu{
         } else {
             System.out.println(status);
         }
+    }
+
+    private void pickSecurityQuestion() {
     }
 
     private SignupMenuOutput sloganCheck() {

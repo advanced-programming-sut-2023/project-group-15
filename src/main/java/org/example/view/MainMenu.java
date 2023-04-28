@@ -18,11 +18,14 @@ public class MainMenu {
             if (userInput.matches("\\s*exit\\s*"))
                 return;
             else if ((mainMenuMatcher = SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.USER_CREATION))!=null) {
+                System.out.println("to signup menu..");
                 new SignupMenu().run(mainMenuMatcher);
             } else if ((mainMenuMatcher = LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.USER_LOGIN))!=null) {
                 new LoginMenu().loginInCheck(mainMenuMatcher);
             } else if (SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.CREATE_MAP)!=null) {
                // new MapMenu().enterMapEnvironmentSettings();
+            } else {
+                System.out.println("Invalid command!");
             }
         }
     }

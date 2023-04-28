@@ -6,9 +6,6 @@ import org.example.model.gameData.Map;
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
-
-import static org.example.model.building.buildingName.MILL;
-
 import org.example.InputScanner;
 import org.example.controller.GameMenuController;
 import org.example.controller.SignupMenuController;
