@@ -14,6 +14,7 @@ public class DropBuildingController {
                 return;
 
             }
+            //TODO each group of buildings should be made in a method
         }
 
         }

@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.model.gameData.Map;
+
 import java.util.ArrayList;
 
 public class User {
@@ -12,6 +14,7 @@ public class User {
     private int score;
     private int rank;
     private String slogan;
+    private Tile[][] map;
     public static final ArrayList<User> allUsers = new ArrayList<>();
 
     public User(String username, String password, String nickname, String email) {
@@ -114,6 +117,10 @@ public class User {
         return this.passRecoveryAnswer;
     }
 
+    public void setMap(){
+        Map.setCurrentMap();
+        this.map = Map.getCurrentMap();
+    }
 
     public static User findUserWithPass(String password) {
         for (User user : User.allUsers) {

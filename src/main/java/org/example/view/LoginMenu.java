@@ -17,6 +17,9 @@ public class LoginMenu extends MainMenu {
     public LoginMenu(Matcher loginMenuMatcher) {
         this.loginMenuMatcher = loginMenuMatcher;
     }
+    LoginMenu () {
+
+    }
 
     public void run(InputScanner loginMenuScanner) {
         String userInput;
@@ -51,7 +54,7 @@ public class LoginMenu extends MainMenu {
         }
     }
 
-    public void loginInCheck() {
+    public void loginInCheck(Matcher matcher) {
         classify();
 
         //username check

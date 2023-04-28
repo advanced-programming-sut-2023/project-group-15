@@ -6,12 +6,30 @@ import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignupMenuController extends MainMenuController{
-    public SignupMenuOutput nicknameCheckErrors() {
+    public SignupMenuOutput signupUserCheck() {
+        SignupMenuOutput status;
+        if ((status = usernameCheckErrors())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        if ((status = passwordCheckErrors(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        if ((status = nicknameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        return SignupMenuOutput.SECURITY_QUESTION;
+    }
+
+    private SignupMenuOutput nicknameCheck() {
         return this.getNickname()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    }
+    public SignupMenuOutput sloganCheck() {
+        return this.getSlogan()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
     public SignupMenuOutput usernameCheckErrors() {
@@ -39,7 +57,7 @@ public class SignupMenuController extends MainMenuController{
                 if (password.matches("[A-Z]+")) {
                     if (password.matches("\\d+")) {
                         if (password.matches("[',!;?$^:\\\\/`|~&\" @#%*{}()\\[\\]<>_+.\\s=-]")) {
-                            return null;
+                            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                         }
                         return SignupMenuOutput.ERROR_PASSWORD_NO_SPECIAL_CHARACTER;
                     }
@@ -52,13 +70,16 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;
     }
 
-    public SignupMenuOutput emailCheckErrors() {
-        if (this.getEmail()==null) {
+    public static SignupMenuOutput emailCheck(String email) {
+        if (email==null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
-        if (getEmail().matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
-            //TODO:checking other emails...
-            return null;
+        if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
+            for (User user: User.allUsers) {
+                if (user.getEmail().equals(email))
+                    return SignupMenuOutput.DUPLICATE_EMAIL_ERROR;
+            }
+            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
         }
         return SignupMenuOutput.INVALID_EMAIL_FORMAT;
     }
@@ -69,8 +90,25 @@ public class SignupMenuController extends MainMenuController{
     }
 
     public String generateRandomPassword() {
-        //TODO: generating strong password
-        return null;
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}]).{8,20}$";
+        String charSet = "";
+        charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        charSet += "abcdefghijklmnopqrstuvwxyz";
+        charSet += "1234567890";
+        charSet += "!@#$%^&*()_+{}";
+        Matcher matcher;
+        char[] password = new char[8];
+        Random random = new Random();
+        while(true){
+            for (int i = 0; i < 8; i++) {
+                password[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];
+            }
+            matcher = getMatcher(charSet,regex);
+            if(matcher != null) {
+                System.out.println(Arrays.toString(password));
+                return Arrays.toString(password);
+            }
+        }
     }
 
     public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
@@ -113,4 +151,9 @@ public class SignupMenuController extends MainMenuController{
         }
         newUser.addUser();
     }
+    private Matcher getMatcher(String password, String regex) {
+        Matcher matcher = Pattern.compile(regex).matcher(password);
+        return matcher.matches() ? matcher : null ;
+    }
+
 }

@@ -1,6 +1,12 @@
 package org.example.view;
 
 import org.example.InputScanner;
+import org.example.controller.DropBuildingController;
+import org.example.model.gameData.Map;
+import org.example.view.enums.commands.GameMenuEnum;
+
+import java.util.regex.Matcher;
+import org.example.InputScanner;
 import org.example.controller.GameMenuController;
 import org.example.controller.SignupMenuController;
 import org.example.view.enums.commands.GameMenuEnum;
@@ -19,6 +25,11 @@ public class GameMenu {
             input = gameMenuScanner.getScanner().nextLine();
             if (input.matches("\\s*exit\\s*"))
                 return;
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null) {
+                MapMenu mapMenu = new MapMenu();
+                 mapMenu.run(Integer.parseInt(gameMenuMatcher.group("xCoordiante")),
+                        Integer.parseInt(gameMenuMatcher.group("yCoordiante")));
+            }
           /*  else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
@@ -37,6 +48,7 @@ public class GameMenu {
              //   System.out.println(GameMenuController.factors()); */
             //TODO: also most add commands for unit
         }
-    }
+
+}
 
 }
