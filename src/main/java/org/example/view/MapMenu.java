@@ -19,11 +19,14 @@ public class MapMenu {
             command = InputScanner.getScanner().nextLine();
             if(command.matches("\\s*exit\\s*"))
                 break;
-            /*else if(mapMenuMatcher = MapMenuEnum.getMatcher(command,MapMenuEnum.moving))
+            else if((mapMenuMatcher = MapMenuEnum.getMatcher(command,MapMenuEnum.MAP_MOVING)) != null)
             {
-               // controller.moving();
+                controller.moving(mapMenuMatcher.group("firstMovement") ,
+                        mapMenuMatcher.group("secondMovement") ,
+                        Integer.parseInt(mapMenuMatcher.group("firstDirection")),
+                        Integer.parseInt(mapMenuMatcher.group("secondDirection")));
 
-            }*/
+            }
             else if((mapMenuMatcher = MapMenuEnum.getMatcher(command,MapMenuEnum.SHOW_MAP_DETAILS)) != null)
                 System.out.println(controller.showDetails(Integer.parseInt(mapMenuMatcher.group("xCoordinate")),
                     Integer.parseInt(mapMenuMatcher.group("yCoordinate"))));
