@@ -1,9 +1,17 @@
 package org.example.controller;
 import org.example.model.gameData.Map;
 import org.example.model.Tile;
-
+import org.example.view.MapMenu;
 public class MapMenuController {
+
+    int xStart = 0 ;
+    int yStart = 0 ;
     public MapMenuController() {
+    }
+    public void setStartingPoint(int x , int y)
+    {
+        this.xStart =  x ;
+        this.yStart = y ;
     }
 
     public void showMap(int x, int y) {
@@ -42,13 +50,19 @@ public class MapMenuController {
                     System.out.print(Map.getCurrentMap()[i][j].getLandType().getMapId() + " ");
             }
             System.out.println();
-
         }
-
-
+    }
+    public void moving(String hor , String ver , int x , int y) {
+        if (hor.equals("left"))
+            x = -x;
+        if(ver.equals("down"))
+            y = -y;
+        xStart += x ;
+        yStart += y ;
+        showMap(xStart , yStart);
     }
 
-    private String showDetails(int x , int y) {
+    public String showDetails(int x , int y) {
         String answer = "LandType : " ;
         answer = answer.concat(Map.getCurrentMap()[x][y].getLandType().values().toString());
         if (Map.getCurrentMap()[x][y].getBuilding() == null) {
@@ -56,6 +70,7 @@ public class MapMenuController {
         }
         return answer ;
     }
+
 }
 
 
