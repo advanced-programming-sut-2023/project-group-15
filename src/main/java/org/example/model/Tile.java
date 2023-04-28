@@ -41,8 +41,8 @@ public class Tile {
         this.treeName = treeName;
     }
 
-    public void setRock() {
-        this.rock = true;
+    public void setRock(boolean rockStatus) {
+        this.rock = rockStatus;
     }
 
     public Building getBuilding() {
