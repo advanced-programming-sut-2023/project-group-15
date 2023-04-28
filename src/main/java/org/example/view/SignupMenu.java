@@ -21,29 +21,41 @@ public class SignupMenu extends MainMenu{
         if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             status = passwordCheck();
             if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-                //continue
+                status = sloganCheck();
+
+            } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
+                return;
+            } else {
+                System.out.println(status);
             }
         } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
-            //TODO: returning to the main menu
+            return;
         } else {
             System.out.println(status);
         }
+    }
 
+    private SignupMenuOutput sloganCheck() {
+        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
+            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
+            System.out.println("Your slogan is: "+signupMenuController.getSlogan());
+        }
+        return signupMenuController.sloganCheck();
     }
 
     private SignupMenuOutput passwordCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
-            signupMenuController.setClipBoard(signupMenuController.generateRandomPassword());
+            signupMenuController.setPassword(signupMenuController.generateRandomPassword());
             System.out.println("your password is: "+signupMenuController.getPassword());
             while (true) {
-                String verification = InputScanner.getScanner().nextLine();
                 System.out.println("re-enter your password please: ");
+                String verification = InputScanner.getScanner().nextLine();
                 if (signupMenuController.randomPasswordVerification(verification)) {
                     return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                 } else if (verification.matches("^\\s*quit\\s*$")) {
                     return SignupMenuOutput.QUIT_FROM_PROCESS;
                 } else {
-                    System.out.println("doesn't matched to the password!,\n try again! or enter \"quit\" to exit");
+                    System.out.println("doesn't matched to the password!, try again! or enter \"quit\" to exit");
                 }
             }
         }
@@ -51,7 +63,7 @@ public class SignupMenu extends MainMenu{
     }
 
     private SignupMenuOutput usernameCheck() {
-        SignupMenuOutput result = signupMenuController.usernameCheckErrors();
+        SignupMenuOutput result = signupMenuController.usernameCheck();
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
             while (true) {
                 signupMenuController.usernameSuggestionGenerator();
@@ -81,13 +93,11 @@ public class SignupMenu extends MainMenu{
     }
 
     public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
-
         String message = signupMenuController.signupUserCheck().getOutput();
         if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
             signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
             System.out.println("your slogan is: "+signupMenuController.getSlogan());
         }
-
         if (message.equals(SignupMenuOutput.SECURITY_QUESTION.getOutput())) {
             //TODO: printing security questions....
             while (true) {
@@ -106,8 +116,15 @@ public class SignupMenu extends MainMenu{
         signupMenuController.setUsername(matcher.group("username"));
         signupMenuController.setPassword(matcher.group("password"));
         signupMenuController.setNickname(matcher.group("nickname"));
+        signupMenuController.setClipBoard(matcher.group("configuration"));
         signupMenuController.setEmail(matcher.group("email"));
         signupMenuController.setSlogan(matcher.group("slogan"));
+        //test:
+        System.out.println("username: "+signupMenuController.getUsername());
+        System.out.println("password: "+signupMenuController.getPassword());
+        System.out.println("P.configuration: "+signupMenuController.getClipBoard());
+        System.out.println("email: "+signupMenuController.getEmail());
+        System.out.println("slogan: "+signupMenuController.getSlogan());
     }
 
 }

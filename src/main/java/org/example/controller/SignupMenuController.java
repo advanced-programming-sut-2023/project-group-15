@@ -10,22 +10,25 @@ import java.util.Random;
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUserCheck() {
         SignupMenuOutput status;
-//        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-//            return status;
+        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
         if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         if ((status = passwordCheck(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
-        if ((status = nicknameCheck(this.getNickname()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+        if ((status = nicknameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
     }
 
-    private SignupMenuOutput nicknameCheck(String nickname) {
-        return nickname==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    private SignupMenuOutput nicknameCheck() {
+        return this.getNickname()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    }
+    public SignupMenuOutput sloganCheck() {
+        return this.getSlogan()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
-    public SignupMenuOutput usernameCheckErrors() {
+    public SignupMenuOutput usernameCheck() {
         if (this.getUsername() == null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
