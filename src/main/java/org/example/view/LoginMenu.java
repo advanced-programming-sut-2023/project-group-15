@@ -57,4 +57,6 @@ public class LoginMenu extends MainMenu {
 //            run(loginMenuScanner);
         }
     }
+    //TODO after user logg ins current user should be updated in gamedata base class
+    // commented by Raya
 }

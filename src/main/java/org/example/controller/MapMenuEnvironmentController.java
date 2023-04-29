@@ -5,6 +5,8 @@ import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.gameData.Map;
 
+
+
 public class MapMenuEnvironmentController {
     private void setTexture(int x , int y,String type)
     {
