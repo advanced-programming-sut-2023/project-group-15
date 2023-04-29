@@ -63,10 +63,12 @@ public class MapMenuController {
     }
 
     public String showDetails(int x , int y) {
+        Tile currentTile = Map.findATile(x , y);
         String answer = "LandType : " ;
-        answer = answer.concat(Map.getCurrentMap()[x][y].getLandType().values().toString());
-        if (Map.getCurrentMap()[x][y].getBuilding() == null) {
-            //answer = answer.concat("\n" + map.getCurrentMap()[x][y].getBuilding().get().toString());
+        answer = answer.concat(currentTile.getLandType().values().toString());
+        if (currentTile.getBuilding() != null) {
+            answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+            //TODO soldiers should be added to the string
         }
         return answer ;
     }
