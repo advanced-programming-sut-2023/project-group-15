@@ -4,7 +4,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum MapEnvironmentEnum {
-    SET_TEXTURE("settexture\\s+(((\\s-(?<flag>(x|y))( ((?<group>\\S+)|(\"(?<group2[^\"].+)\")))){3}"),
+   MAP_MOVING("map ((left|right) (\\d+)*(\\s+)*(up|down)(\\s+)*(\\d+)*)" +
+                      "|map ((up|down) (\\d+)*(\\s+)*(left|right)(\\s+)*(\\d+)*)"),
+   MAP_DETAILS("show details -(x|y) (\\d+) -(x|y) (\\d+)"),
+    SET_TEXTURE("settexture -(x|y) (\\d+) -(x|y) (\\d+) -t (a-z)"),
+    SET_TEXTURE2("settexture -(x1|y1) (\\d+) -(x2|y2) (\\d+) -t (a-z))"),
+    CLEAR("clear -(x|y) (\\d+) -(x|y) (\\d+)")
+
     ;
     private final String regex;
 

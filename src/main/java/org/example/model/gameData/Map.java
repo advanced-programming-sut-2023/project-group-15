@@ -6,9 +6,19 @@ public abstract class Map {
      public static Tile[][] currentMap = new Tile[200][200];
      public static Tile[][]  currentMapB = new Tile[400][400];
     public static void setCurrentMap()
+     private static int  mapSize;
+     private int playerMapLength;
+     private int playerMapWidth;
+     public static Tile[][] currentMap = new Tile[400][];
+
+
+    public static void setCurrentMap(int size)
      {
              for (int i = 0; i < 200; i++) {
                  for (int j = 0; j < 200; j++) {
+
+             for (int i = 0; i <size; i++) {
+                 for (int j = 0; j < size; j++) {
                      currentMap[i][j] = new Tile();
                  }
              }

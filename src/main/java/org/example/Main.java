@@ -11,7 +11,7 @@ public class Main {
         /*new GameMenu().run();
 
         new MainMenu().run();*/
-        Map.setCurrentMap();
+        //Map.setCurrentMap();
         new MapMenu().run(0,0);
         new MainMenu().run();
 
