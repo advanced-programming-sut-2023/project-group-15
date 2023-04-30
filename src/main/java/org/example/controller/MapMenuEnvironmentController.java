@@ -3,11 +3,24 @@ package org.example.controller;
 import org.example.model.Tile;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
 
 
 
 public class MapMenuEnvironmentController {
+    public void setMapGame(int size ,int number)
+    {
+        GameInformation.setMapGame(size,number);
+        //TODO hear we set the whole map game from the templates
+        // no changes on the ready template hear
+
+    }
+    /*public void generateEachPlayerMap(int playerNumber)
+    {
+        for(int i=0 ; i<)
+
+    }*/
     private void setTexture(int x , int y,String type)
     {
         Tile currentTile = Map.findATile(x , y);
@@ -59,7 +72,6 @@ public class MapMenuEnvironmentController {
     {
         Tile currentTile = Map.findATile(x , y);
         currentTile.setRock(true,direction);
-
 
     }
 

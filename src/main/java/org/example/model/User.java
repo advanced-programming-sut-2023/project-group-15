@@ -126,9 +126,9 @@ public class User {
         return userNO;
     }
 
-    public void setMap(){
-        Map.setCurrentMap();
-        this.map = Map.getCurrentMap();
+    public void setMap(Tile[][] map)
+    {
+        this.map = map ;
     }
 
     public static User findUserWithPass(String password) {
