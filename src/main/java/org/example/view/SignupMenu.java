@@ -1,7 +1,5 @@
 package org.example.view;
 
-
-
 import org.example.InputScanner;
 import org.example.controller.SignupMenuController;
 import org.example.model.enums.SecurityQuestion;
@@ -73,8 +71,8 @@ public class SignupMenu extends MainMenu {
             while (true) {
                 System.out.println("re-enter your password please: ");
                 String verification = InputScanner.getScanner().nextLine();
-                System.out.println("re-enter your password please: ");
                 if (signupMenuController.randomPasswordVerification(verification)) {
+                    System.out.println("should go to security question part...");
                     return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                 } else if (verification.matches("^\\s*quit\\s*$")) {
                     return SignupMenuOutput.QUIT_FROM_PROCESS;
@@ -83,7 +81,7 @@ public class SignupMenu extends MainMenu {
                 }
             }
         }
-        return signupMenuController.passwordCheckErrors(signupMenuController.getPassword());
+        return SignupMenuController.passwordCheckErrors(signupMenuController.getPassword());
     }
 
     private SignupMenuOutput usernameCheck() {
@@ -112,8 +110,8 @@ public class SignupMenu extends MainMenu {
             return SignupMenuOutput.QUIT_FROM_PROCESS;
         } else if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-        }
-        return result;
+        } else
+            return result;
     }
 
     public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {

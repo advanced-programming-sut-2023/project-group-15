@@ -4,9 +4,11 @@ package org.example.controller;
 import org.example.InputScanner;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
+import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -53,10 +55,10 @@ public class SignupMenuController extends MainMenuController{
             return SignupMenuOutput.EMPTY_FIELD;
         }
         if (password.length()>=6) {
-            if (password.matches("[a-z]+")) {
-                if (password.matches("[A-Z]+")) {
-                    if (password.matches("\\d+")) {
-                        if (password.matches("[',!;?$^:\\\\/`|~&\" @#%*{}()\\[\\]<>_+.\\s=-]")) {
+            if (SignupMenuEnum.getMatcher(password,SignupMenuEnum.SMALL_CHAR)!=null) {
+                if (SignupMenuEnum.getMatcher(password,SignupMenuEnum.CAPITAL_CHAR)!=null) {
+                    if (SignupMenuEnum.getMatcher(password,SignupMenuEnum.DIGITS)!=null) {
+                        if (SignupMenuEnum.getMatcher(password,SignupMenuEnum.SPECIAL_CHAR)!=null) {
                             return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                         }
                         return SignupMenuOutput.ERROR_PASSWORD_NO_SPECIAL_CHARACTER;
@@ -90,23 +92,18 @@ public class SignupMenuController extends MainMenuController{
     }
 
     public String generateRandomPassword() {
+        String password;
         String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}]).{8,20}$";
-        String charSet = "";
-        charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        charSet += "abcdefghijklmnopqrstuvwxyz";
-        charSet += "1234567890";
-        charSet += "!@#$%^&*()_+{}";
-        Matcher matcher;
-        char[] password = new char[8];
+        String charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+"abcdefghijklmnopqrstuvwxyz"+"1234567890"+"!@#$%^&*()_+{}";
         Random random = new Random();
         while(true){
-            for (int i = 0; i < 8; i++) {
-                password[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];
+            char[] p = new char[8];
+            for (int i=0;i<8;i++) {
+                p[i] = charSet.toCharArray()[random.nextInt(charSet.length()-1)];
             }
-            matcher = getMatcher(charSet,regex);
-            if(matcher != null) {
-                System.out.println(Arrays.toString(password));
-                return Arrays.toString(password);
+            password = java.lang.String.valueOf(p);
+            if(password.matches(regex)) {
+                return password;
             }
         }
     }
@@ -142,7 +139,7 @@ public class SignupMenuController extends MainMenuController{
         }
     }
     public boolean randomPasswordVerification(String verification) {
-        return verification.equals(this.getClipBoard());
+        return verification.equals(this.getPassword());
     }
     public void signingsComplete() {
         User newUser = new User(this.getUsername(), this.getPassword(), this.getNickname(), this.getEmail());
