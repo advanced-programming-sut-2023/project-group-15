@@ -14,8 +14,6 @@ import java.util.regex.Pattern;
 public class SignupMenuController extends MainMenuController{
     public SignupMenuOutput signupUserCheck() {
         SignupMenuOutput status;
-        if ((status = usernameCheckErrors())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-            return status;
         if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         if ((status = passwordCheckErrors(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
@@ -24,21 +22,19 @@ public class SignupMenuController extends MainMenuController{
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
     }
-
     private SignupMenuOutput nicknameCheck() {
         return this.getNickname()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
     public SignupMenuOutput sloganCheck() {
         return this.getSlogan()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
-
-    public SignupMenuOutput usernameCheckErrors() {
-        if (this.getUsername() == null) {
+    public static SignupMenuOutput usernameCheckErrors(String username) {
+        if (username == null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
-        if (this.getUsername().matches("^\\w+$")) {
+        if (username.matches("^\\w+$")) {
             for (User user:User.allUsers) {
-                if (user.getUsername().equals(this.getUsername())) {
+                if (user.getUsername().equals(username)) {
                     return SignupMenuOutput.USERNAME_EXISTS;
                 }
             }
@@ -46,8 +42,6 @@ public class SignupMenuController extends MainMenuController{
         }
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
-
-
     public static SignupMenuOutput passwordCheckErrors(String password) {
         if (password==null) {
             return SignupMenuOutput.EMPTY_FIELD;
@@ -69,7 +63,6 @@ public class SignupMenuController extends MainMenuController{
         }
         return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;
     }
-
     public static SignupMenuOutput emailCheck(String email) {
         if (email==null) {
             return SignupMenuOutput.EMPTY_FIELD;
@@ -83,12 +76,10 @@ public class SignupMenuController extends MainMenuController{
         }
         return SignupMenuOutput.INVALID_EMAIL_FORMAT;
     }
-
     public String selectSlogan(String input) {
         this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input)).getSlogan());
         return null;
     }
-
     public String generateRandomPassword() {
         String password;
         String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}]).{8,20}$";
@@ -105,7 +96,6 @@ public class SignupMenuController extends MainMenuController{
             }
         }
     }
-
     public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
         for (SecurityQuestion question:SecurityQuestion.allQuestions()) {
             if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
@@ -150,5 +140,4 @@ public class SignupMenuController extends MainMenuController{
         Matcher matcher = Pattern.compile(regex).matcher(password);
         return matcher.matches() ? matcher : null ;
     }
-
 }

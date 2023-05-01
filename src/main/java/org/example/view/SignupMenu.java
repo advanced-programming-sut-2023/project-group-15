@@ -120,7 +120,7 @@ public class SignupMenu extends MainMenu {
     }
 
     private SignupMenuOutput usernameCheck() {
-        SignupMenuOutput result = signupMenuController.usernameCheckErrors();
+        SignupMenuOutput result = signupMenuController.usernameCheckErrors(signupMenuController.getUsername());
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
             while (true) {
                 signupMenuController.usernameSuggestionGenerator();
