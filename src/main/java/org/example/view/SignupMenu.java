@@ -3,6 +3,7 @@ package org.example.view;
 import org.example.InputScanner;
 import org.example.controller.SignupMenuController;
 import org.example.model.enums.SecurityQuestion;
+import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
@@ -19,10 +20,16 @@ public class SignupMenu extends MainMenu {
         if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             status = passwordCheck();
             if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-                status = signupMenuController.signupUserCheck();
-                if (status.equals(SignupMenuOutput.SECURITY_QUESTION)) {
-                    pickQuestion();
-                }
+                status = sloganCheck();
+                if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                    status = signupMenuController.signupUserCheck();
+                    if (status.equals(SignupMenuOutput.SECURITY_QUESTION)) {
+                        pickQuestion();
+                    }
+                } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
+                    return;
+                } else
+                    System.out.println(status);
             } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                 return;
             } else {
@@ -34,6 +41,21 @@ public class SignupMenu extends MainMenu {
             System.out.println(status);
         }
     }
+
+    private SignupMenuOutput sloganCheck() {
+        if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
+            slogans();
+            System.out.println("choose one of these slogans (enter the number):");
+            String input = InputScanner.getScanner().nextLine();
+            if (Integer.parseInt(input)<=11||Integer.parseInt(input)>=1) {
+                signupMenuController.selectSlogan(input);
+            } else if (input.matches("^\\s*quit\\s*$")) {
+                return SignupMenuOutput.QUIT_FROM_PROCESS;
+            } else
+                System.out.println("you entered invalid input, try again! or enter \"quit\" to exit");
+        }
+        return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+        }
 
     private SignupMenuOutput pickQuestion() {
         System.out.println("pick a question from these questions,(enter the number):");
@@ -63,6 +85,19 @@ public class SignupMenu extends MainMenu {
         System.out.println("8."+SecurityQuestion.FAVORITE_GAME.getQuestion());
         System.out.println("9."+SecurityQuestion.USER_JOB.getQuestion());
         System.out.println("10."+SecurityQuestion.USER_AGE.getQuestion());
+    }
+    private void slogans() {
+        System.out.println("1."+Slogans.SLOGAN1.getSlogan());
+        System.out.println("2."+Slogans.SLOGAN2.getSlogan());
+        System.out.println("3."+Slogans.SLOGAN3.getSlogan());
+        System.out.println("4."+Slogans.SLOGAN4.getSlogan());
+        System.out.println("5."+Slogans.SLOGAN5.getSlogan());
+        System.out.println("6."+Slogans.SLOGAN6.getSlogan());
+        System.out.println("7."+Slogans.SLOGAN7.getSlogan());
+        System.out.println("8."+Slogans.SLOGAN8.getSlogan());
+        System.out.println("9."+Slogans.SLOGAN9.getSlogan());
+        System.out.println("10."+Slogans.SLOGAN10.getSlogan());
+        System.out.println("11."+Slogans.SLOGAN11.getSlogan());
     }
     private SignupMenuOutput passwordCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
@@ -117,7 +152,7 @@ public class SignupMenu extends MainMenu {
     public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
         String message = signupMenuController.signupUserCheck().getOutput();
         if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
-            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
+//            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
             System.out.println("your slogan is: "+signupMenuController.getSlogan());
         }
         if (message.equals(SignupMenuOutput.SECURITY_QUESTION.getOutput())) {

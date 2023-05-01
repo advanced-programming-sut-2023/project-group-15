@@ -1,14 +1,12 @@
 package org.example.controller;
 
 
-import org.example.InputScanner;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
+import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
-import java.util.Arrays;
-import java.util.Objects;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -86,8 +84,8 @@ public class SignupMenuController extends MainMenuController{
         return SignupMenuOutput.INVALID_EMAIL_FORMAT;
     }
 
-    public String generateRandomSlogan() {
-        //TODO: uncompleted method!
+    public String selectSlogan(String input) {
+        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input)).getSlogan());
         return null;
     }
 
