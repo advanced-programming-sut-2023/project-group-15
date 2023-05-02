@@ -14,6 +14,7 @@ import java.util.ArrayList;
         ArrayList<Products> foods = new ArrayList<>();
 
         public void setFoodRate(int foodRate) {
+
             //TODO foodrate should be changed based on numbers of food on the foodlist
         }
 

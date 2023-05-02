@@ -18,6 +18,9 @@ public class GameInformation {
         GameInformation.mapGameSize = mapGameSize;
         //TODO read the map from the file and set the map
     }
+    public static Tile[][] getGameMap(){
+        return gameMap;
+    }
 
     //TODO turn methods should be added hear
 
