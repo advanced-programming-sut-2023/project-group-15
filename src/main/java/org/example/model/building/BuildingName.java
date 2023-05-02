@@ -31,7 +31,7 @@ public enum BuildingName {
     STORE( 5, WOOD , 100 ),
     FOODSTORE( 5 , WOOD , 100),
     LOOKOUT_TOWER(100 , 100),
-    PERMETER_TOWER(100 , 100),
+    PERIMETER_TOWER(100 , 100),
     DEFEND_TURRET(100 , 100),
     SQUARE_TOWER(100 , 100),
     CIRCLE_TOWER(100 , 100),
