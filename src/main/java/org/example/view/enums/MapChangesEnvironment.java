@@ -4,7 +4,7 @@ import org.example.InputScanner;
 import org.example.controller.MapMenuEnvironmentController;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Map;
-import org.example.view.enums.commands.MapEnvironmentEnum;
+import org.example.view.enums.commands.MapEnum;
 
 import java.util.regex.Matcher;
 
@@ -27,22 +27,28 @@ public class MapChangesEnvironment {
             //TODO choose between map template and set the map game
 
         }
+
         while(true)
         {
             command = InputScanner.getScanner().nextLine();
-            if((matcher = MapEnvironmentEnum.getMatcher(command,MapEnvironmentEnum.MAP_MOVING)) != null)
-            {
-
-            }
-
+            if((matcher = MapEnum.getMatcher(command,MapEnum.SET_TEXTURE)) != null)
+            controller.setTileTexture(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.SET_TEXTURE2)) != null)
+                controller.setTexture(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.CLEAR)) != null)
+                controller.clear(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_ROCK)) != null)
+                controller.dropRock(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_TREE)) != null)
+                controller.dropTree(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_BUILDING)) !=null)
+            controller.dropBuilding(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_UNIT)) != null)
+                controller.dropUnit(matcher);
 
         }
 
 
 
-    }
-    private void chooseMap()
-    {
-        //System.out.println("please choose map template do you prefer");
     }
 }

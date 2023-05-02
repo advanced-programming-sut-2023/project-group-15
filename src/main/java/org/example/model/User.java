@@ -138,4 +138,8 @@ public class User {
         }
         return null;
     }
+
+    public Tile[][] getMap() {
+        return map;
+    }
 }
