@@ -16,8 +16,6 @@ public class SignupMenuController extends MainMenuController{
         SignupMenuOutput status;
         if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
-        if ((status = passwordCheckErrors(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
-            return status;
         if ((status = nicknameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
@@ -76,9 +74,8 @@ public class SignupMenuController extends MainMenuController{
         }
         return SignupMenuOutput.INVALID_EMAIL_FORMAT;
     }
-    public String selectSlogan(String input) {
+    public void selectSlogan(String input) {
         this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input)).getSlogan());
-        return null;
     }
     public String generateRandomPassword() {
         String password;
@@ -104,11 +101,11 @@ public class SignupMenuController extends MainMenuController{
                     this.setPassRecoveryAnswer(matcher.group("Qanswer1"));
                     return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                 } else {
-                    System.out.println("your answers doesn't match!,\ntry again!\n,type \"quit\" to cancel the process");
+                    return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;
                 }
             }
         }
-        return SignupMenuOutput.STAND_BY;
+        return SignupMenuOutput.INVALID_COMMAND;
     }
     public void usernameSuggestionGenerator() {
         while (true) {
@@ -135,6 +132,7 @@ public class SignupMenuController extends MainMenuController{
             newUser.setSlogan(this.getSlogan());
         }
         newUser.addUser();
+        System.out.println("added to User class!");
     }
     private Matcher getMatcher(String password, String regex) {
         Matcher matcher = Pattern.compile(regex).matcher(password);

@@ -7,11 +7,13 @@ import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import javax.swing.*;
 import java.util.regex.Matcher;
 
 public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private Matcher signupMenuMatcher;
+    private boolean questionFlag = true;
 
     public void run(Matcher signupMenuMatcher) {
         SignupMenuOutput status;
@@ -24,7 +26,11 @@ public class SignupMenu extends MainMenu {
                 if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
                     status = signupMenuController.signupUserCheck();
                     if (status.equals(SignupMenuOutput.SECURITY_QUESTION)) {
-                        pickQuestion();
+                        if (questionFlag)
+                            pickQuestion();
+                        signupMenuController.signingsComplete();
+                        System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());
+                        return;
                     }
                 } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                     return;
@@ -54,8 +60,8 @@ public class SignupMenu extends MainMenu {
             } else
                 System.out.println("you entered invalid input, try again! or enter \"quit\" to exit");
         }
-        return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-        }
+        return signupMenuController.sloganCheck();
+    }
 
     private SignupMenuOutput pickQuestion() {
         System.out.println("pick a question from these questions,(enter the number):");
@@ -66,13 +72,13 @@ public class SignupMenu extends MainMenu {
                 SignupMenuOutput status = signupMenuController.pickSecurityQuestion(signupMenuMatcher);
                 if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
                     return status;
-                }
+                } else
+                    System.out.println(status.getOutput());
             } else if (input.matches("^\\s*quit\\s*$")) {
                 return SignupMenuOutput.QUIT_FROM_PROCESS;
             } else
                 System.out.println("invalid command!,\ntry again!\ntype \"quit\" to cancel the process");
         }
-
     }
     private void questions() {
         System.out.println("1."+ SecurityQuestion.FATHER_NAME.getQuestion());
@@ -107,8 +113,9 @@ public class SignupMenu extends MainMenu {
                 System.out.println("re-enter your password please: ");
                 String verification = InputScanner.getScanner().nextLine();
                 if (signupMenuController.randomPasswordVerification(verification)) {
-                    System.out.println("should go to security question part...");
-                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                    SignupMenuOutput output = pickQuestion();
+                    questionFlag = false;
+                    return output;
                 } else if (verification.matches("^\\s*quit\\s*$")) {
                     return SignupMenuOutput.QUIT_FROM_PROCESS;
                 } else {

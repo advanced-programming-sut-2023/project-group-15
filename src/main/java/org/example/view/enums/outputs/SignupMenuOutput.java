@@ -4,7 +4,6 @@ public enum SignupMenuOutput {
     EMPTY_FIELD("you just missed some fields,\ntry again!"),
     INVALID_USERNAME_FORMAT("username format is invalid!,\ntry again!"),
     CHECKED_SUCCESSFULLY("ok"),
-    USER_ADDED_SUCCESSFULLY("user created successfully"),
     INVALID_PASSWORD_FORMAT("password format is invalid!,\ntry something else..."),
     ERROR_PASSWORD_IS_TOO_SHORT("your password is too short!: your password must contain at least 6 characters!,\ntry again!"),
     ERROR_PASSWORD_NO_CAPITAL_CHARACTER("invalid password format!: your password must contain at least 1 capital alphabet!,\ntry again!"),
@@ -19,7 +18,9 @@ public enum SignupMenuOutput {
     DUPLICATE_EMAIL_ERROR("a user with this email already exists,\n enter unique email please!"),
     INVALID_EMAIL_FORMAT("email format is invalid!,\ntry again!"),
     QUIT_FROM_PROCESS("canceling the process"),
-    INVALID_COMMAND("Invalid command!,\ntry again!")
+    INVALID_COMMAND("Invalid command!,\ntry again!"),
+    ANSWERS_ARE_NOT_EQUAL("your answers doesn't match!,\ntry again!,\ntype \"quit\" to cancel the process"),
+    USER_CREATED_SUCCESSFULLY("user has been created successfully!"),
     ;
     private final String output;
 
