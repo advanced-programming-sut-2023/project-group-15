@@ -29,9 +29,12 @@ public class MapMenuEnvironmentController {
             }
         }
         else{
-            for(int i=mapSize/ 2  ; i< mapSize ; i++)
+            for(int i=0  ; i< mapSize/2 ; i++)
             {
-                //for(int j=0 ; j<mapSize)
+                for(int j=0 ; j<mapSize/4 ; j++)
+                {
+                    playerMap[i][j] = GameInformation.getGameMap()[i+mapSize/2][((playerNumber % 4) -1) * mapSize/4];
+                }
             }
         }
 
