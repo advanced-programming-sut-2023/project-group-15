@@ -24,6 +24,16 @@ public enum GameMenuEnum {
 
     public static Matcher getMatcher(String input, GameMenuEnum regex) {
         Matcher matcher = Pattern.compile(regex.regex, Pattern.CASE_INSENSITIVE).matcher(input);
+        matcher.matches();
+        System.out.println("this is in getmatcher: "+matcher);
+        /*while (matcher.find()) {
+            System.out.println(matcher);
+            for (int i = 0; i <= matcher.groupCount(); i++) {
+                System.out.println("------------------------------------");
+                System.out.println("Group " + i + ": " + matcher.group(i));
+            }
+         n}*/
+
         return matcher.matches() ? matcher : null;
     }
 

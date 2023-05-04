@@ -37,7 +37,6 @@ public class MapMenuEnvironmentController {
                 }
             }
         }
-
     }
     public void setTileTexture(Matcher matcher){
         int x = 0;
@@ -69,7 +68,6 @@ public class MapMenuEnvironmentController {
         int y1=0;
         int x2=0;
         int y2=0;
-        while(matcher.find()) {
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i).equals("x1"))
                     x1 = Integer.parseInt(matcher.group(i + 1));
@@ -81,13 +79,11 @@ public class MapMenuEnvironmentController {
                     y2 = Integer.parseInt(matcher.group(i + 1));
                 if (matcher.group(i).equals("t"))
                     type = matcher.group(i + 1);
-
-            }
-            for (int i = x1; i < x2; i++) {
-                for (int j = y1; j < y2; j++) {
+            for (int x = x1; x< x2; x++) {
+                for (int y = y1; y < y2; y++) {
                     for (LandType landType : LandType.values())
                         if (landType.equals(type))
-                            Map.findATile(i, j).setLandType(landType);
+                            Map.findATile(x, y).setLandType(landType);
                 }
             }
         }

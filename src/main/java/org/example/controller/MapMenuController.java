@@ -2,6 +2,9 @@ package org.example.controller;
 import org.example.model.gameData.Map;
 import org.example.model.Tile;
 import org.example.view.MapMenu;
+
+import java.util.regex.Matcher;
+
 public class MapMenuController {
 
     int xStart = 0 ;
@@ -52,14 +55,16 @@ public class MapMenuController {
             System.out.println();
         }
     }
-    public void moving(String hor , String ver , int x , int y) {
-        if (hor.equals("left"))
+    public void moving(Matcher matcher) {
+        int x=0 , y=0 ;
+
+       /* if (hor.equals("left"))
             x = -x;
         if(ver.equals("down"))
             y = -y;
         xStart += x ;
         yStart += y ;
-        showMap(xStart , yStart);
+        showMap(xStart , yStart);*/
     }
 
     public String showDetails(int x , int y) {

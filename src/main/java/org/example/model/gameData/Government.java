@@ -10,7 +10,7 @@ import java.util.ArrayList;
         int foodRate;
         int taxRate;
         int fearRate;
-        ArrayList<Products> foods = new ArrayList<>();
+        private static ArrayList<Products> foods = new ArrayList<>();
 
         public void setFoodRate(int foodRate) {
 
@@ -52,6 +52,6 @@ import java.util.ArrayList;
 
         public int getTaxrate() {
             //TODO show tax rate here
-            return taxrate;
+            return taxRate;
         }
     }
