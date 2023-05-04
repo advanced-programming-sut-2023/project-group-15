@@ -15,16 +15,20 @@ public class MapChangesEnvironment {
         String command;
         int mapNumber;
         int mapsize;
+        int playerNo = GameDataBase.getCurrentUser().getUserNO();
         Matcher matcher;
-        if(GameDataBase.getCurrentUser().getUserNO() == 1) {
+        if(playerNo== 1) {
             System.out.println("please enter the size of map that you prefer between 200 & 400");
             mapsize = InputScanner.getScanner().nextInt();
-            //TODO show a brief of the maps
             System.out.println("now please enter the map number you want");
             mapNumber = InputScanner.getScanner().nextInt();
+            switch (mapNumber)
+            {
+                //TODO read and set from the file
+            }
+            controller.generateEachPlayerMap(playerNo, mapNumber);
             //TODO the first players map would be generated hear
             System.out.println("now please enter the changes you wish to make in the map");
-            //TODO choose between map template and set the map game
 
         }
 

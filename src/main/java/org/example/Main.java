@@ -11,8 +11,8 @@ import org.example.view.MapMenu;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the game!");
-        Map.setCurrentMap(400);
-        for (int i = 10; i < 15; i++){
+        //Map.setCurrentMap(400);
+      /*  for (int i = 10; i < 15; i++){
             for(int j=60 ; j<65 ;j++)
             {
                 Map.getCurrentMap()[i][j].setLandType(LandType.RIVER);
@@ -26,7 +26,7 @@ public class Main {
         mapTemplates.setMapTemplate3();
         mapTemplates.setJasonFile3();
         mapTemplates.setMapTemplate4();
-        mapTemplates.setJasonFile4();
+        mapTemplates.setJasonFile4();*/
         new GameMenu().run();
         //new MainMenu().run();
         //Map.setCurrentMap();

@@ -89,9 +89,7 @@ public class MapMenuEnvironmentController {
         }
     }
     public void clear(Matcher matcher ) {
-        int x = 0;
-        int y = 0;
-        while (matcher.find()) {
+        int x = 0 , y = 0 ;
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i) == null)
                     continue;
@@ -99,7 +97,6 @@ public class MapMenuEnvironmentController {
                     x = Integer.parseInt(matcher.group(i + 1));
                 if ((matcher.group(i).equals("y")))
                     y = Integer.parseInt(matcher.group(i + 1));
-            }
         }
             Tile currentTile = Map.findATile(x, y);
             currentTile.setBuilding(null);
@@ -117,10 +114,8 @@ public class MapMenuEnvironmentController {
     }
     public void dropTree(Matcher matcher)
     {
-        int x = 0;
-        int y =0;
+        int x = 0 , y = 0 ;
         String type = new String();
-        while (matcher.find()) {
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i) == null)
                     continue;
@@ -130,7 +125,6 @@ public class MapMenuEnvironmentController {
                     y = Integer.parseInt(matcher.group(i + 1));
                 if ((matcher.group(i).equals("-t")))
                     type = matcher.group(i + 1);
-            }
         }
         Tile currentTile = Map.findATile(x , y);
         for(Tree tree : Tree.values())
@@ -140,10 +134,8 @@ public class MapMenuEnvironmentController {
     }
     public void dropRock(Matcher matcher)
     {
-        int x = 0;
-        int y =0;
+        int x = 0 , y=0 ;
         String direction = new String();
-        while (matcher.find()) {
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i) == null)
                     continue;
@@ -154,7 +146,6 @@ public class MapMenuEnvironmentController {
                 if ((matcher.group(i).equals("-t")))
                     direction = matcher.group(i + 1);
             }
-        }
         Tile currentTile = Map.findATile(x , y);
         currentTile.setRock(true,direction);
 
