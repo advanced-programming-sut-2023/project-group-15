@@ -10,6 +10,7 @@ public enum SignupMenuOutput {
     ERROR_PASSWORD_NO_SMALL_CHARACTER("invalid password format!: your password must contain at least 1 small alphabet!,\ntry again!"),
     ERROR_PASSWORD_NO_DIGITS("invalid password format!: your password must contain at least 1 digits!,\ntry again!"),
     ERROR_PASSWORD_NO_SPECIAL_CHARACTER("invalid password format!: your password must contain at least 1 special character!,\ntry again!"),
+    ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION("you password is not equal to your configuration,\ntry again!"),
     STAND_BY("standing by"),
     SECURITY_QUESTION("security question"),
     USERNAME_EXISTS("you can't user this username because it already exists!,\n try something else..."),

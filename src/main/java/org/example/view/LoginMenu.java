@@ -18,13 +18,11 @@ public class LoginMenu extends MainMenu {
         this.loginMenuMatcher = loginMenuMatcher;
     }
     LoginMenu () {
-
     }
-
-    public void run(InputScanner loginMenuScanner) {
+    public void run() {
         String userInput;
         while (true) {
-            userInput = loginMenuScanner.getScanner().nextLine();
+            userInput = InputScanner.getScanner().nextLine();
             ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
@@ -55,17 +53,17 @@ public class LoginMenu extends MainMenu {
     }
 
     public void loginInCheck(Matcher matcher) {
-        classify();
-
-        //username check
-        //password check
-        run();
+        classify(matcher);
+        LoginMenuOutput status = loginMenuController.loginUser();
+        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULY))
+            run();
+        System.out.println(status.getOutput());
     }
 
-    private void classify() {
-        loginMenuController.setUsername(loginMenuMatcher.group("username"));
-        loginMenuController.setPassword(loginMenuMatcher.group("password"));
-        if (loginMenuMatcher.group("stayLogged")!=null)
+    private void classify(Matcher matcher) {
+        loginMenuController.setUsername(matcher.group("username"));
+        loginMenuController.setPassword(matcher.group("password"));
+        if (matcher.group("logged")!=null)
             loginMenuController.setStayLoggedInFlag(true);
     }
 }

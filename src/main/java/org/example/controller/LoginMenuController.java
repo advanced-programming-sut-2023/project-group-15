@@ -7,9 +7,8 @@ public class LoginMenuController extends MainMenuController{
     private boolean stayLoggedInFlag = false;
 
     public LoginMenuOutput loginUser() {
-        if (checkMatchUsername(this.getUsername())) {
-            if (checkUsernameWithPassword(this.getUsername(),this.getPassword())) {
-                //TODO: later...
+        if (checkMatchUsername()) {
+            if (checkUsernameWithPassword()) {
                 return LoginMenuOutput.LOGGED_IN_SUCCESSFULY;
             }
             return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;
@@ -17,18 +16,18 @@ public class LoginMenuController extends MainMenuController{
         return LoginMenuOutput.USER_DOES_NOT_EXIST;
     }
 
-    public boolean checkMatchUsername(String username) {
+    private boolean checkMatchUsername() {
         for (User user:User.allUsers) {
-            if (user.getUsername().equals(username))
+            if (user.getUsername().equals(this.getUsername()))
                 return true;
         }
         return false;
     }
 
-    public boolean checkUsernameWithPassword(String username,String password) {
+    private boolean checkUsernameWithPassword() {
         for (User user:User.allUsers) {
-            if (user.getUsername().equals(username)) {
-                if (user.getPassword().equals(password)) {
+            if (user.getUsername().equals(this.getUsername())) {
+                if (user.getPassword().equals(this.getPassword())) {
                     return true;
                 }
             }

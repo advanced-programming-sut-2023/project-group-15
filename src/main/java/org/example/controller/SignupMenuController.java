@@ -61,13 +61,17 @@ public class SignupMenuController extends MainMenuController{
         }
         return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;
     }
+
+    public boolean checkPasswordWithConfiguration() {
+        return this.getPassword().equals(this.getClipBoard());
+    }
     public static SignupMenuOutput emailCheck(String email) {
         if (email==null) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
         if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
             for (User user: User.allUsers) {
-                if (user.getEmail().equals(email))
+                if (getMatcher(user.getEmail(),email)!=null)
                     return SignupMenuOutput.DUPLICATE_EMAIL_ERROR;
             }
             return SignupMenuOutput.CHECKED_SUCCESSFULLY;
@@ -134,8 +138,8 @@ public class SignupMenuController extends MainMenuController{
         newUser.addUser();
         System.out.println("added to User class!");
     }
-    private Matcher getMatcher(String password, String regex) {
-        Matcher matcher = Pattern.compile(regex).matcher(password);
+    private static Matcher getMatcher(String password, String regex) {
+        Matcher matcher = Pattern.compile(regex,Pattern.CASE_INSENSITIVE).matcher(password);
         return matcher.matches() ? matcher : null ;
     }
 }

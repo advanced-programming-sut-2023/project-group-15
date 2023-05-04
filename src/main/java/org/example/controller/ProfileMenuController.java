@@ -19,9 +19,12 @@ public class ProfileMenuController extends LoginMenuController{
         return ProfileMenuOutput.INVALID_NEW_USERNAME;
     }
     public ProfileMenuOutput changeNickname(String nickname) {
-        User.findUserWithPass(this.getPassword()).setNickname(nickname);
-        this.setNickname(nickname);
-        return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
+        if (nickname != null) {
+            User.findUserWithPass(this.getPassword()).setNickname(nickname);
+            this.setNickname(nickname);
+            return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
+        }
+        return ProfileMenuOutput.EMPTY_FIELD;
     }
     public ProfileMenuOutput changePassword(String oldPass,String newPass) {
         if (this.getPassword().equals(oldPass)) {

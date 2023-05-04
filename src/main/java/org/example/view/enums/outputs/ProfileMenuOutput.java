@@ -16,7 +16,7 @@ public enum ProfileMenuOutput {
     INVALID_NEW_EMAIL("you entered invalid format of email!,\ntry again!"),
     INVALID_COMMAND("you entered invalid command!,\nenter \"game --help\" for hint!"),
 
-    ;
+    EMPTY_FIELD("empty field error!");
     private final String output;
 
     public String getOutput() {

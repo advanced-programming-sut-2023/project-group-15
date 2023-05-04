@@ -14,7 +14,6 @@ public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private Matcher signupMenuMatcher;
     private boolean questionFlag = true;
-
     public void run(Matcher signupMenuMatcher) {
         SignupMenuOutput status;
         classifyParameters(signupMenuMatcher);
@@ -32,22 +31,23 @@ public class SignupMenu extends MainMenu {
                         System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());
                         return;
                     }
+                    else
+                        System.out.println(status.getOutput());
                 } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                     return;
                 } else
-                    System.out.println(status);
+                    System.out.println(status.getOutput());
             } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                 return;
             } else {
-                System.out.println(status);
+                System.out.println(status.getOutput());
             }
         } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
             return;
         } else {
-            System.out.println(status);
+            System.out.println(status.getOutput());
         }
     }
-
     private SignupMenuOutput sloganCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
             slogans();
@@ -62,7 +62,6 @@ public class SignupMenu extends MainMenu {
         }
         return signupMenuController.sloganCheck();
     }
-
     private SignupMenuOutput pickQuestion() {
         System.out.println("pick a question from these questions,(enter the number):");
         questions();
@@ -123,11 +122,16 @@ public class SignupMenu extends MainMenu {
                 }
             }
         }
-        return SignupMenuController.passwordCheckErrors(signupMenuController.getPassword());
+        SignupMenuOutput status = SignupMenuController.passwordCheckErrors(signupMenuController.getPassword());
+        if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+            if (signupMenuController.checkPasswordWithConfiguration())
+                return status;
+            return SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION;
+        }
+        return status;
     }
-
     private SignupMenuOutput usernameCheck() {
-        SignupMenuOutput result = signupMenuController.usernameCheckErrors(signupMenuController.getUsername());
+        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(signupMenuController.getUsername());
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
             while (true) {
                 signupMenuController.usernameSuggestionGenerator();
@@ -150,31 +154,8 @@ public class SignupMenu extends MainMenu {
         }
         else if (result.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
             return SignupMenuOutput.QUIT_FROM_PROCESS;
-        } else if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
         } else
             return result;
-    }
-
-    public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
-        String message = signupMenuController.signupUserCheck().getOutput();
-        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
-//            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
-            System.out.println("your slogan is: "+signupMenuController.getSlogan());
-        }
-        if (message.equals(SignupMenuOutput.SECURITY_QUESTION.getOutput())) {
-            //TODO: printing security questions....
-            while (true) {
-                if ((signupMenuMatcher = SignupMenuEnum.getMatcher(message,SignupMenuEnum.PICK_QUESTION))!=null) {
-                    //TODO: pick question part...
-                }
-            }
-        }
-        if (message.equals(SignupMenuOutput.STAND_BY.getOutput())) {
-            System.out.println("you password is: "+signupMenuController.getClipBoard());
-
-        }
-        System.out.println(signupMenuController.signupUserCheck());
     }
     public void classifyParameters(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));
