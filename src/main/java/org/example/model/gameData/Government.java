@@ -11,7 +11,7 @@ import java.util.ArrayList;
         int taxRate;
         int fearRate;
         //ArrayList<products> foods = new ArrayList<>();
-        ArrayList<Products> foods = new ArrayList<>();
+        private static ArrayList<Products> foods = new ArrayList<>();
 
         public void setFoodRate(int foodRate) {
 
@@ -23,20 +23,21 @@ import java.util.ArrayList;
             this.popularity = popularity;
         }
 
-        public void setTaxrate(int taxRate) {
+        public void setTaxrate(int taxrate) {
             // TODO : the taxrate should be
-            this.taxRate = taxRate;
+            this.taxRate = taxrate;
         }
 
-        public void setFearRate(int fearRate) {
-            this.fearRate = fearRate;
+        public void setFeaRate(int fearrate) {
+
+            this.fearRate = fearrate;
         }
 
         public void addFood(Products food) {
             this.foods.add(food);
         }
 
-        public ArrayList<Products> getFoods() {
+        public static ArrayList<Products> getFoods() {
             //TODO the food list is going to be shown here
             return foods;
         }
@@ -50,8 +51,8 @@ import java.util.ArrayList;
 
         }
 
-        public int getTaxRate() {
+        public int getTaxrate() {
             //TODO show tax rate here
-            return taxRate;
+            return taxrate;
         }
     }
