@@ -3,6 +3,7 @@ package org.example;
 import org.example.model.enums.LandType;
 import org.example.model.enums.WaterArea;
 import org.example.model.gameData.Map;
+import org.example.model.gameData.MapTemplates;
 import org.example.view.GameMenu;
 import org.example.view.MainMenu;
 import org.example.view.MapMenu;
@@ -17,6 +18,15 @@ public class Main {
                 Map.getCurrentMap()[i][j].setLandType(LandType.RIVER);
             }
         }
+         MapTemplates mapTemplates = new MapTemplates();
+        mapTemplates.setMapTemplate1();
+        mapTemplates.setJasonFile1();
+        mapTemplates.setMapTemplate2();
+        mapTemplates.setJasonFile2();
+        mapTemplates.setMapTemplate3();
+        mapTemplates.setJasonFile3();
+        mapTemplates.setMapTemplate4();
+        mapTemplates.setJasonFile4();
         new GameMenu().run();
         //new MainMenu().run();
         //Map.setCurrentMap();

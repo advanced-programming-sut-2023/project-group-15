@@ -7,14 +7,31 @@ import java.util.regex.Matcher;
 
 public class MapMenuController {
 
-    int xStart = 0 ;
-    int yStart = 0 ;
+    private static int xStart = 0 ;
+    private static int yStart = 0 ;
     public MapMenuController() {
     }
-    public void setStartingPoint(int x , int y)
+    public void setStartingPoint(Matcher matcher)
     {
-        this.xStart =  x ;
-        this.yStart = y ;
+        int x=0 , y=0 ;
+        for (int i = 0; i < matcher.groupCount(); i++) {
+            if (matcher.group(i) == null)
+                continue;
+            if (matcher.group(i).equals("x"))
+                x = Integer.parseInt(matcher.group(i + 1));
+            if (matcher.group(i).equals("y"))
+                y = Integer.parseInt(matcher.group(i + 1));
+        }
+        xStart =  x ;
+        yStart = y ;
+    }
+
+    public  int getxStart() {
+        return xStart;
+    }
+
+    public int getyStart() {
+        return yStart;
     }
 
     public void showMap(int x, int y) {
@@ -40,7 +57,6 @@ public class MapMenuController {
             yS -= yE - 199;
             yE = 199;
         }
-
         for (int i = xS; i < xE; i++) {
             for (int j = yS; j < yE; j++) {
                 if (Map.getCurrentMap()[i][j].getSoldier() != null) {
@@ -56,18 +72,23 @@ public class MapMenuController {
         }
     }
     public void moving(Matcher matcher) {
-        int x=0 , y=0 ;
-
-       /* if (hor.equals("left"))
-            x = -x;
-        if(ver.equals("down"))
-            y = -y;
-        xStart += x ;
-        yStart += y ;
-        showMap(xStart , yStart);*/
+        int x = 0, y = 0;
+        for (int i = 0; i < matcher.groupCount(); i++) {
+            if (matcher.group(i) == null)
+                continue;
+            if (matcher.group(i).equals("right"))
+                x = Integer.parseInt(matcher.group(i + 1));
+            else if (matcher.group(i).equals("left"))
+                x = - Integer.parseInt(matcher.group(i + 1));
+            else if (matcher.group(i).equals("up"))
+                y = Integer.parseInt(matcher.group(i + 1));
+            else if (matcher.group(i).equals("down"))
+                y = - Integer.parseInt(matcher.group(i + 1));
+            showMap(xStart + x , yStart + y);
+        }
     }
-
-    public String showDetails(int x , int y) {
+    public String showDetails(Matcher matcher) {
+        int x = 0 , y = 0 ;
         Tile currentTile = Map.findATile(x , y);
         String answer = "LandType : " ;
         answer = answer.concat(currentTile.getLandType().values().toString());

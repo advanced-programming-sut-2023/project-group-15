@@ -64,4 +64,16 @@ public class Tile {
     public Soldier getSoldier() {
         return soldier;
     }
+
+    public Tree getTree() {
+        return tree;
+    }
+
+    public boolean isRock() {
+        return rock;
+    }
+
+    public String getRockDirection() {
+        return rockDirection;
+    }
 }
