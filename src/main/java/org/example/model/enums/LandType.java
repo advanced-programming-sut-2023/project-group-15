@@ -37,6 +37,7 @@ public enum LandType {
         this.mapId = mapId ;
     }
 
+
     public String getMapId() {
         return mapId;
     }
