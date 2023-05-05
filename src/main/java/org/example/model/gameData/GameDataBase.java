@@ -35,11 +35,8 @@ public class GameDataBase {
         dir.mkdirs();
 
         try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
-
             for (int i = 0; i < allUsers.size(); i++)
                 out.write(obj.toString());
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
