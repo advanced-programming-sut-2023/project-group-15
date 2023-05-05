@@ -4,6 +4,7 @@ package org.example.model.building;
 import org.example.model.enums.*;
 
 public class Building {
+//    private final BuildingName buildingName;
     private final String name ;
     private final int hp;
     private int xCoordinate;

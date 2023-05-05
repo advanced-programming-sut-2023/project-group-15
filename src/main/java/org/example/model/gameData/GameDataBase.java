@@ -19,7 +19,7 @@ public class GameDataBase {
         this.currentUser = currentUser;
     }
 
-    public User getCurrentUser() {
+    public static User getCurrentUser() {
         return currentUser;
     }
 

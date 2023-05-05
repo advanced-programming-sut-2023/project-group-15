@@ -1,4 +1,4 @@
-package org.example.view.enums;
+package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.MapMenuEnvironmentController;
