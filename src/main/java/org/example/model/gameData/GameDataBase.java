@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class GameDataBase {
     private static ArrayList<User> allUsers = new ArrayList<>();
     private static User currentUser;
-    public void addUser(User user)
+    public static void addUser(User user)
     {
         allUsers.add(user);
     }
@@ -27,7 +27,7 @@ public class GameDataBase {
         GameDataBase.allUsers = allUsers;
     }
 
-    public void setJasonFile() {
+    public static void setJasonFile() {
 
 
         JSONObject obj = new JSONObject();
@@ -36,17 +36,18 @@ public class GameDataBase {
         File dir = new File("d:/json/");
         dir.mkdirs();
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(path,true))) {
 
-            for (int i = 0; i < allUsers.size(); i++)
+            for (int i = 0; i < allUsers.size(); i++) {
+                obj.put("player", allUsers.get(i).toString());
                 out.write(obj.toString());
+            }
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
     public ArrayList<User> getAllUsers() {
         return allUsers;

@@ -4,6 +4,7 @@ package org.example.controller;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
+import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
@@ -135,6 +136,8 @@ public class SignupMenuController extends MainMenuController{
         if (this.getSlogan()!=null) {
             newUser.setSlogan(this.getSlogan());
         }
+        GameDataBase.addUser(newUser);
+        GameDataBase.setJasonFile();
         newUser.addUser();
         System.out.println("added to User class!");
     }

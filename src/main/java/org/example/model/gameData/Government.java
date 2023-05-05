@@ -86,7 +86,8 @@ public class Government {
             this.fearRate = fearRate;
         }
         public void addFood(Products food , double  amount) {
-            foods.put(food , amount);
+            foods.put(food, amount);
+        }
 
 
         public static int getTaxrate() {
