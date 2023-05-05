@@ -77,7 +77,7 @@ public class Government {
 
         public void addFood(Products food , double  amount) {
             foods.put(food , amount);
-        }
+
 
         public static int getTaxrate() {
             return taxRate;
