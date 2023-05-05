@@ -16,7 +16,7 @@ public enum Slogans {
     SLOGAN10("Oh....half rations.",10),
     SLOGAN11("This is too easy.",11),
     ;
-    static ArrayList<Slogans> allSlogans = new ArrayList<>();
+    static final ArrayList<Slogans> allSlogans = new ArrayList<>();
     static {
         allSlogans.add(SLOGAN1);
         allSlogans.add(SLOGAN2);
@@ -34,19 +34,14 @@ public enum Slogans {
     public static ArrayList<Slogans> getAllSlogans() {
         return allSlogans;
     }
-
     public int getIndex() {
         return index;
     }
-
     private final String slogan;
     private final int index;
-
-
     public String getSlogan() {
         return slogan;
     }
-
     Slogans(String slogan,int index) {
         this.slogan = slogan;
         this.index = index;

@@ -1,6 +1,7 @@
 package org.example.model.enums;
 
 public enum WaterArea {
+    DEFAULT,
     PETROLEUM,
     PLALIN,
     SHALLOW_WATER,

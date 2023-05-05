@@ -25,7 +25,7 @@ public class GameMenu {
         Matcher gameMenuMatcher;
         String input;
         while (true) {
-            input = gameMenuScanner.getScanner().nextLine();
+            input = InputScanner.getScanner().nextLine();
             if (input.matches("\\s*exit\\s*"))
                 return;
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null)
@@ -35,11 +35,11 @@ public class GameMenu {
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
-                System.out.println(GameMenuController.foodrate());
+                System.out.println(GameMenuController.foodRate());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
                 System.out.println(GameMenuController.taxRate());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FEAR_RATE)) != null)
-
+                //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_LIST)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_POPULARITY)) != null)

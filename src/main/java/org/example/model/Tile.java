@@ -3,11 +3,13 @@ package org.example.model;
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
 import org.example.model.enums.LandType;
+import org.example.model.enums.WaterArea;
 import org.example.model.enums.Tree;
 
 public class Tile {
     private Building building;
     private LandType landType;
+    private WaterArea waterArea;
     private int numberOfSoldiers =  0;
     private Soldier soldier = null;
     private Tree tree = null ;
@@ -17,6 +19,7 @@ public class Tile {
     public Tile() {
         this.building = null;
         this.landType= LandType.DEFAULT;
+        this.waterArea= WaterArea.DEFAULT;
         this.numberOfSoldiers = 0 ;
         this.soldier = null ;
         this.tree = null ;

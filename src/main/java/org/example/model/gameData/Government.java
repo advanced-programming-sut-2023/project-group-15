@@ -23,58 +23,68 @@ public class Government {
             {
                 case(-2):
                     popularity -= 8;
+                    break;
                 case(-1):
                     popularity -= 4;
+                    break;
                 case(1):
                     popularity += 4 ;
+                    break;
                 case(2):
                     popularity += 8 ;
-
+                    break;
             }
         }
 
         public void setPopularity(int popularity) {
             popularity = popularity;
         }
-
         public static void setTaxrate(int taxrate) {
             taxRate = taxrate;
             switch (taxRate) {
                 case (-3):
                     popularity += 7;
+                    break;
                 case(-2):
                     popularity += 5;
+                    break;
                 case(-1):
                     popularity += 3;
+                    break;
                 case(0):
                     popularity += 1;
+                    break;
                 case(1):
                     popularity -= 2;
+                    break;
                 case(2):
                     popularity -= 4;
+                    break;
                 case(3):
                     popularity -= 6;
+                    break;
                 case(4):
                     popularity -= 8;
+                    break;
                 case(5):
                     popularity -= 12;
+                    break;
                 case(6):
                     popularity -= 16;
+                    break;
                 case(7):
                     popularity -= 20;
+                    break;
                 case(8):
                     popularity -= 24 ;
-
-
+                    break;
             }
 
         }
 
-        public void setFearRate(int fearrate) {
-
-            this.fearRate = fearrate;
+        public void setFearRate(int fearRate) {
+            this.fearRate = fearRate;
         }
-
         public void addFood(Products food , double  amount) {
             foods.put(food , amount);
 
