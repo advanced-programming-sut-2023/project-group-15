@@ -41,6 +41,7 @@ public class GameDataBase {
             for (int i = 0; i < allUsers.size(); i++) {
                 obj.put("player", allUsers.get(i).toString());
                 out.write(obj.toString());
+                out.println();
             }
 
 
