@@ -6,6 +6,9 @@ import org.example.model.gameData.Map;
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
+
+import static org.example.model.building.BuildingName.MILL;
+
 import org.example.InputScanner;
 import org.example.controller.GameMenuController;
 import org.example.controller.SignupMenuController;
@@ -25,11 +28,8 @@ public class GameMenu {
             input = gameMenuScanner.getScanner().nextLine();
             if (input.matches("\\s*exit\\s*"))
                 return;
-            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null) {
-                MapMenu mapMenu = new MapMenu();
-                 mapMenu.run(Integer.parseInt(gameMenuMatcher.group("xCoordiante")),
-                        Integer.parseInt(gameMenuMatcher.group("yCoordiante")));
-            }
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null)
+                        new MapMenu().run(gameMenuMatcher);
           /*  else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
@@ -39,7 +39,7 @@ public class GameMenu {
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
                 System.out.println(GameMenuController.taxRate());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FEAR_RATE)) != null)
-                //
+
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_LIST)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_POPULARITY)) != null)

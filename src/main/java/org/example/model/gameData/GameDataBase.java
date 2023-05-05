@@ -10,11 +10,15 @@ import java.util.ArrayList;
 
 public class GameDataBase {
     private static ArrayList<User> allUsers = new ArrayList<>();
-    User currentUser;
+    private static User currentUser;
     public void addUser(User user)
     {
         allUsers.add(user);
 
+    }
+
+    public static User getCurrentUser() {
+        return currentUser;
     }
 
     public static void setAllUsers(ArrayList<User> allUsers) {

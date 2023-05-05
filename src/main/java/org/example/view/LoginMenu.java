@@ -66,4 +66,6 @@ public class LoginMenu extends MainMenu {
         if (matcher.group("logged")!=null)
             loginMenuController.setStayLoggedInFlag(true);
     }
+    //TODO after user logg ins current user should be updated in gamedata base class
+    // commented by Raya
 }

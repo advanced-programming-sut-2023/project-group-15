@@ -1,8 +1,9 @@
 package org.example.controller;
 
+import org.example.model.Tile;
 import org.example.model.User;
 import org.example.view.enums.outputs.GameMenuOutput;
-
+import org.example.model.gameData.Map;
 import java.util.ArrayList;
 
 public class GameMenuController {
@@ -35,9 +36,10 @@ public class GameMenuController {
         return 1;
     }
 
+
+    }
+
    /* public ArrayList factors(){
         //TODO: get list of factors from goverment
     }*/
 
-
-}

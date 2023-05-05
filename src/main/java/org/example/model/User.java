@@ -14,6 +14,7 @@ public class User {
     private int score;
     private int rank;
     private String slogan;
+    private int userNO;
     private Tile[][] map;
     public static final ArrayList<User> allUsers = new ArrayList<>();
 
@@ -101,6 +102,10 @@ public class User {
         this.slogan = slogan;
     }
 
+    public void setUserNO(int userNO) {
+        this.userNO = userNO;
+    }
+
     public void setPassRecoveryQuestion(String passRecoveryQuestion) {
         this.passRecoveryQuestion = passRecoveryQuestion;
     }
@@ -117,9 +122,13 @@ public class User {
         return this.passRecoveryAnswer;
     }
 
-    public void setMap(){
-        Map.setCurrentMap();
-        this.map = Map.getCurrentMap();
+    public int getUserNO() {
+        return userNO;
+    }
+
+    public void setMap(Tile[][] map)
+    {
+        this.map = map ;
     }
 
     public static User findUserWithPass(String password) {
@@ -128,5 +137,9 @@ public class User {
                 return user;
         }
         return null;
+    }
+
+    public Tile[][] getMap() {
+        return map;
     }
 }
