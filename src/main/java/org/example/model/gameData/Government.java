@@ -8,8 +8,8 @@ import java.util.ArrayList;
     public class Government {
         int popularity;
         int foodRate;
-        int taxrate;
-        int fearrate;
+        int taxRate;
+        int fearRate;
         //ArrayList<products> foods = new ArrayList<>();
         ArrayList<Products> foods = new ArrayList<>();
 
@@ -22,13 +22,13 @@ import java.util.ArrayList;
             this.popularity = popularity;
         }
 
-        public void setTaxrate(int taxrate) {
+        public void setTaxrate(int taxRate) {
             // TODO : the taxrate should be
-            this.taxrate = taxrate;
+            this.taxRate = taxRate;
         }
 
-        public void setFearrate(int fearrate) {
-            this.fearrate = fearrate;
+        public void setFearRate(int fearRate) {
+            this.fearRate = fearRate;
         }
 
         public void addFood(Products food) {
@@ -49,8 +49,8 @@ import java.util.ArrayList;
 
         }
 
-        public int getTaxrate() {
+        public int getTaxRate() {
             //TODO show tax rate here
-            return taxrate;
+            return taxRate;
         }
     }

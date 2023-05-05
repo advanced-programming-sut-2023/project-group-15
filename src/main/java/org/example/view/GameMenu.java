@@ -1,41 +1,33 @@
 package org.example.view;
 
 import org.example.InputScanner;
-import org.example.controller.DropBuildingController;
-import org.example.model.gameData.Map;
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
-import org.example.InputScanner;
+
 import org.example.controller.GameMenuController;
-import org.example.controller.SignupMenuController;
-import org.example.view.enums.commands.GameMenuEnum;
-
-import java.util.regex.Matcher;
 
 public class GameMenu {
-
     private final GameMenuController GameMenuController = new GameMenuController();
 
     public void run() {
-        InputScanner gameMenuScanner = new InputScanner();
         Matcher gameMenuMatcher;
         String input;
         while (true) {
-            input = gameMenuScanner.getScanner().nextLine();
+            input = InputScanner.getScanner().nextLine();
             if (input.matches("\\s*exit\\s*"))
                 return;
-            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null) {
+            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null) {
                 MapMenu mapMenu = new MapMenu();
-                 mapMenu.run(Integer.parseInt(gameMenuMatcher.group("xCoordiante")),
-                        Integer.parseInt(gameMenuMatcher.group("yCoordiante")));
+                mapMenu.run(Integer.parseInt(gameMenuMatcher.group("xCoordinate")),
+                        Integer.parseInt(gameMenuMatcher.group("yCoordinate")));
             }
           /*  else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
                 //
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
-                System.out.println(GameMenuController.foodrate());
+                System.out.println(GameMenuController.foodRate());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
                 System.out.println(GameMenuController.taxRate());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FEAR_RATE)) != null)
@@ -49,6 +41,6 @@ public class GameMenu {
             //TODO: also most add commands for unit
         }
 
-}
+    }
 
 }

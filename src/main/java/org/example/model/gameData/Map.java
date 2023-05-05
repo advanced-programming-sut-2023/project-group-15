@@ -5,11 +5,8 @@ import org.example.model.Tile;
 public abstract class Map {
      public static Tile[][] currentMap = new Tile[200][200];
      public static Tile[][]  currentMapB = new Tile[400][400];
-
-
     public static void setCurrentMap()
      {
-
              for (int i = 0; i < 200; i++) {
                  for (int j = 0; j < 200; j++) {
                      currentMap[i][j] = new Tile();

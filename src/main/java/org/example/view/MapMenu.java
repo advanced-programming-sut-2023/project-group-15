@@ -2,7 +2,6 @@ package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.MapMenuController;
-import org.example.model.gameData.Map;
 import org.example.view.enums.commands.MapMenuEnum;
 import java.util.regex.Matcher;
 
@@ -11,11 +10,10 @@ public class MapMenu {
     {
         showMap(x , y);
         String command;
-        InputScanner scanner = new InputScanner();
         Matcher mapMenuMatcher ;
         while (true)
         {
-            command = scanner.getScanner().nextLine();
+            command = InputScanner.getScanner().nextLine();
             if(command.matches("\\s*exit\\s*"))
                 break;
             else if((mapMenuMatcher = MapMenuEnum.getMatcher(command,MapMenuEnum.SHOW_MAP_DETAILS)) != null)
