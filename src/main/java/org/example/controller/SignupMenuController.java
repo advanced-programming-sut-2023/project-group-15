@@ -1,39 +1,61 @@
 package org.example.controller;
 
 
+import org.example.model.User;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SignupMenuController extends MainMenuController{
-    public SignupMenuOutput signupUser() {
-        if (usernameCheck(this.getUsername())==null) {
-            if (passwordCheck(this.getPassword()) == null) {
-                if (emailCheck(this.getEmail())==null) {
-                    //TODO: doing user signing in ...
-                    return null;
-                }
-                return SignupMenuOutput.INVALID_EMAIL_FORMAT;
-            }
-            return SignupMenuOutput.INVALID_PASSWORD_FORMAT;
-        }
-        return SignupMenuOutput.INVALID_USERNAME_FORMAT;
+    public SignupMenuOutput signupUserCheck() {
+        SignupMenuOutput status;
+        if ((status = usernameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        if ((status = emailCheck(this.getEmail()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        if ((status = passwordCheck(this.getPassword()))!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        if ((status = nicknameCheck())!=SignupMenuOutput.CHECKED_SUCCESSFULLY)
+            return status;
+        return SignupMenuOutput.SECURITY_QUESTION;
     }
 
-    public static SignupMenuOutput usernameCheck(String username) {
-        if (username.matches("^\\w+$")) {
-            //TODO: checking other users....
-            return null;
+    private SignupMenuOutput nicknameCheck() {
+        return this.getNickname()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    }
+    public SignupMenuOutput sloganCheck() {
+        return this.getSlogan()==null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    }
+
+    public SignupMenuOutput usernameCheck() {
+        if (this.getUsername() == null) {
+            return SignupMenuOutput.EMPTY_FIELD;
+        }
+        if (this.getUsername().matches("^\\w+$")) {
+            for (User user:User.allUsers) {
+                if (user.getUsername().equals(this.getUsername())) {
+                    return SignupMenuOutput.USERNAME_EXISTS;
+                }
+            }
+            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
         }
         return SignupMenuOutput.INVALID_USERNAME_FORMAT;
     }
 
 
     public static SignupMenuOutput passwordCheck(String password) {
+        if (password==null) {
+            return SignupMenuOutput.EMPTY_FIELD;
+        }
         if (password.length()>=6) {
             if (password.matches("[a-z]+")) {
                 if (password.matches("[A-Z]+")) {
                     if (password.matches("\\d+")) {
                         if (password.matches("[',!;?$^:\\\\/`|~&\" @#%*{}()\\[\\]<>_+.\\s=-]")) {
-                            return null;
+                            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                         }
                         return SignupMenuOutput.ERROR_PASSWORD_NO_SPECIAL_CHARACTER;
                     }
@@ -47,25 +69,84 @@ public class SignupMenuController extends MainMenuController{
     }
 
     public static SignupMenuOutput emailCheck(String email) {
+        if (email==null) {
+            return SignupMenuOutput.EMPTY_FIELD;
+        }
         if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
-            //TODO:checking other emails...
-            return null;
+            for (User user: User.allUsers) {
+                if (user.getEmail().equals(email))
+                    return SignupMenuOutput.DUPLICATE_EMAIL_ERROR;
+            }
+            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
         }
         return SignupMenuOutput.INVALID_EMAIL_FORMAT;
     }
 
     public String generateRandomSlogan() {
-        //TODO:
+        //TODO: uncompleted method!
         return null;
     }
 
     public String generateRandomPassword() {
-        //TODO:
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}]).{8,20}$";
+        String charSet = "";
+        charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        charSet += "abcdefghijklmnopqrstuvwxyz";
+        charSet += "1234567890";
+        charSet += "!@#$%^&*()_+{}";
+        Matcher matcher;
+        char[] password = new char[8];
+        Random random = new Random();
+        while(true){
+            for (int i = 0; i < 8; i++) {
+                password[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];
+            }
+            matcher = getMatcher(charSet,regex);
+            if(matcher != null) {
+                System.out.println(Arrays.toString(password));
+                return Arrays.toString(password);
+            }
+        }
+    }
+    public boolean pickSecurityQuestion(String numOfQuestion) {
+        //for on all questions!
+        //TODO: uncompleted method!
+        return false;
+    }
+    public void usernameSuggestionGenerator() {
+        while (true) {
+            boolean flag = true;
+            Random random = new Random();
+            char randomChar = (char) (random.nextInt(26)+'a');
+            this.setUsername(this.getUsername()+randomChar);
+            for (User user : User.allUsers){
+                if (user.getUsername().equals(this.getUsername())) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag)
+                return;
+        }
+    }
+    public SignupMenuOutput suggestingUsername() {
+
         return null;
     }
-
-    public void securityQuestion() {
-        //TODO:
-        return;
+    public boolean randomPasswordVerification(String verification) {
+        return verification.equals(this.getClipBoard());
     }
+
+    public void signingsComplete() {
+        User newUser = new User(this.getUsername(), this.getPassword(), this.getNickname(), this.getEmail());
+        if (this.getSlogan()!=null) {
+            newUser.setSlogan(this.getSlogan());
+        }
+        newUser.addUser();
+    }
+    private Matcher getMatcher(String password, String regex) {
+        Matcher matcher = Pattern.compile(regex).matcher(password);
+        return matcher.matches() ? matcher : null ;
+    }
+
 }

@@ -3,18 +3,19 @@ package org.example.model.building;
 import java.util.ArrayList;
 import org.example.model.enums.*;
 public class Market extends Building{
-    private ArrayList<Food> userFoods;
+    private ArrayList<Products> userFoods;
     private ArrayList<Source> userSources;
     private ArrayList<Weapon> userWeapons;
 
-    public Market(int hp, int width, int height, int buildingCost) {
-        super(hp, width, height, buildingCost);
-        this.userFoods = new ArrayList<>();
-        this.userSources = new ArrayList<>();
-        this.userWeapons = new ArrayList<>();
+    public Market(String name, int hp, int xCoordiante, int yCoordiante, Products material1, Products material2, int numberOfMaterial1, int numberOfMaterial2,
+                  int numberOfWorkers, ArrayList<Products> userFoods, ArrayList<Source> userSources, ArrayList<Weapon> userWeapons) {
+        super(name, hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfMaterial2, numberOfWorkers);
+        this.userFoods = userFoods;
+        this.userSources = userSources;
+        this.userWeapons = userWeapons;
     }
 
-    public ArrayList<Food> getUserFoods() {
+    public ArrayList<Products> getUserFoods() {
         return userFoods;
     }
 

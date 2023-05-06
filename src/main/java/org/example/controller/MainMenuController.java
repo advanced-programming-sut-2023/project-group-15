@@ -6,6 +6,8 @@ public class MainMenuController {
     private String nickname;
     private String slogan;
     private String email;
+    private String clipBoard;
+
 
     public MainMenuController() {
         this.username = null;
@@ -13,6 +15,15 @@ public class MainMenuController {
         this.nickname = null;
         this.slogan = null;
         this.email = null;
+        this.clipBoard = null;
+    }
+
+    public String getClipBoard() {
+        return clipBoard;
+    }
+
+    public void setClipBoard(String clipBoard) {
+        this.clipBoard = clipBoard;
     }
 
     public String getUsername() {
