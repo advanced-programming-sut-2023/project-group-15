@@ -137,7 +137,7 @@ public class SignupMenuController extends MainMenuController{
             newUser.setSlogan(this.getSlogan());
         }
         GameDataBase.addUser(newUser);
-        GameDataBase.setJasonFile();
+        GameDataBase.setJasonFile(newUser);
         newUser.addUser();
         System.out.println("added to User class!");
     }
