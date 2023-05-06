@@ -1,9 +1,9 @@
 package org.example.model.building;
 
 import org.example.model.enums.Products;
-import org.example.model.interfaces.Produce;
+//import org.example.model.interfaces.Produce;
 
-public class ProductiveBuilding extends Building implements Produce {
+public class ProductiveBuilding extends Building {
     private final int rate;
     private boolean needMaterial;
     private final Products product1;
@@ -30,8 +30,10 @@ public class ProductiveBuilding extends Building implements Produce {
     public int getRate() {
         return rate;
     }
-    @Override
+   /* @Override
     public void production() {
         //TODO:
-    }
+    }*/
 }
+
+

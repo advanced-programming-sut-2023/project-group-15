@@ -4,14 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="food completed" />
-=======
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="...">
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="food completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/ProductiveBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/ProductiveBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/WarBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/WarBuilding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/enums/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/SignupMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Building.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/Building.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/BuildingName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/BuildingName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/ProductiveBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/ProductiveBuilding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/WarBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/WarBuilding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/FilePaths.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/enums/FilePaths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/LandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/enums/LandType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/enums/Products.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/enums/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/gameDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/gameDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" afterDir="false" />
     </list>
->>>>>>> f149c500b1e3035e3021e581ecace5b289548557
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,6 +213,11 @@
           <line>17</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>
           <line>16</line>
@@ -207,7 +227,6 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-<<<<<<< HEAD
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>
           <line>8</line>
@@ -217,8 +236,6 @@
           </properties>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
-=======
->>>>>>> f149c500b1e3035e3021e581ecace5b289548557
       </breakpoints>
     </breakpoint-manager>
   </component>

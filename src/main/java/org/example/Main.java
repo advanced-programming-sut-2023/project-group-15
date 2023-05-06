@@ -30,7 +30,7 @@ public class Main {
         mapTemplates.setMapTemplate4();
         mapTemplates.setJasonFile4();*/
        // new GameMenu().run();
-        //new MainMenu().run();
+        new MainMenu().run();
         //Map.setCurrentMap();
        // new MapMenu().run(0,0);
     }
