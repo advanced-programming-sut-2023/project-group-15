@@ -168,6 +168,17 @@ public enum BuildingName {
         this.numberOfMaterial2 = numberOfMaterial2 ;
         this.material2Name = material2Name ;
     }
+    public static BuildingName getBuildingByName(String name)
+    {
+        for(BuildingName buildingName : BuildingName.values())
+        {
+            if(buildingName.equals(name))
+                return buildingName;
+
+        }
+        return null;
+
+    }
 
 
 
