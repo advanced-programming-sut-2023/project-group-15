@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class GameMenuController {
 
-    public int foodrate(){
+    public int foodRate(){
        return 1;
     }
 

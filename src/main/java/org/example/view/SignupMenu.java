@@ -1,19 +1,19 @@
 package org.example.view;
 
-
-
 import org.example.InputScanner;
 import org.example.controller.SignupMenuController;
+import org.example.model.enums.SecurityQuestion;
+import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import javax.swing.*;
 import java.util.regex.Matcher;
 
-public class SignupMenu extends MainMenu{
+public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private Matcher signupMenuMatcher;
-    private String signupMenuInput;
-
+    private boolean questionFlag = true;
     public void run(Matcher signupMenuMatcher) {
         SignupMenuOutput status;
         classifyParameters(signupMenuMatcher);
@@ -21,33 +21,89 @@ public class SignupMenu extends MainMenu{
         if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             status = passwordCheck();
             if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-                status = signupMenuController.signupUserCheck();
-                if (status.equals(SignupMenuOutput.SECURITY_QUESTION)){
-                    pickSecurityQuestion();
-                }
+                status = sloganCheck();
+                if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                    status = signupMenuController.signupUserCheck();
+                    if (status.equals(SignupMenuOutput.SECURITY_QUESTION)) {
+                        if (questionFlag)
+                            pickQuestion();
+                        signupMenuController.signingsComplete();
+                        System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());
+                        return;
+                    }
+                    else
+                        System.out.println(status.getOutput());
+                } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
+                    return;
+                } else
+                    System.out.println(status.getOutput());
             } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                 return;
             } else {
-                System.out.println(status);
+                System.out.println(status.getOutput());
             }
         } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
             return;
         } else {
-            System.out.println(status);
+            System.out.println(status.getOutput());
         }
     }
-
-    private void pickSecurityQuestion() {
-    }
-
     private SignupMenuOutput sloganCheck() {
-        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
-            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
-            System.out.println("Your slogan is: "+signupMenuController.getSlogan());
+        if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
+            slogans();
+            System.out.println("choose one of these slogans (enter the number):");
+            String input = InputScanner.getScanner().nextLine();
+            if (Integer.parseInt(input)<=11||Integer.parseInt(input)>=1) {
+                signupMenuController.selectSlogan(input);
+            } else if (input.matches("^\\s*quit\\s*$")) {
+                return SignupMenuOutput.QUIT_FROM_PROCESS;
+            } else
+                System.out.println("you entered invalid input, try again! or enter \"quit\" to exit");
         }
         return signupMenuController.sloganCheck();
     }
-
+    private SignupMenuOutput pickQuestion() {
+        System.out.println("pick a question from these questions,(enter the number):");
+        questions();
+        while (true) {
+            String input = InputScanner.getScanner().nextLine();
+            if ((signupMenuMatcher=SignupMenuEnum.getMatcher(input,SignupMenuEnum.PICK_QUESTION))!=null) {
+                SignupMenuOutput status = signupMenuController.pickSecurityQuestion(signupMenuMatcher);
+                if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                    return status;
+                } else
+                    System.out.println(status.getOutput());
+            } else if (input.matches("^\\s*quit\\s*$")) {
+                return SignupMenuOutput.QUIT_FROM_PROCESS;
+            } else
+                System.out.println("invalid command!,\ntry again!\ntype \"quit\" to cancel the process");
+        }
+    }
+    private void questions() {
+        System.out.println("1."+ SecurityQuestion.FATHER_NAME.getQuestion());
+        System.out.println("2."+SecurityQuestion.BROTHER_NAME.getQuestion());
+        System.out.println("3."+SecurityQuestion.LAPTOP_MODEL.getQuestion());
+        System.out.println("4."+SecurityQuestion.PHONE_MODEL.getQuestion());
+        System.out.println("5."+SecurityQuestion.HAIR_COLOR.getQuestion());
+        System.out.println("6."+SecurityQuestion.CAR_COLOR.getQuestion());
+        System.out.println("7."+SecurityQuestion.FAVORITE_FOOD.getQuestion());
+        System.out.println("8."+SecurityQuestion.FAVORITE_GAME.getQuestion());
+        System.out.println("9."+SecurityQuestion.USER_JOB.getQuestion());
+        System.out.println("10."+SecurityQuestion.USER_AGE.getQuestion());
+    }
+    private void slogans() {
+        System.out.println("1."+Slogans.SLOGAN1.getSlogan());
+        System.out.println("2."+Slogans.SLOGAN2.getSlogan());
+        System.out.println("3."+Slogans.SLOGAN3.getSlogan());
+        System.out.println("4."+Slogans.SLOGAN4.getSlogan());
+        System.out.println("5."+Slogans.SLOGAN5.getSlogan());
+        System.out.println("6."+Slogans.SLOGAN6.getSlogan());
+        System.out.println("7."+Slogans.SLOGAN7.getSlogan());
+        System.out.println("8."+Slogans.SLOGAN8.getSlogan());
+        System.out.println("9."+Slogans.SLOGAN9.getSlogan());
+        System.out.println("10."+Slogans.SLOGAN10.getSlogan());
+        System.out.println("11."+Slogans.SLOGAN11.getSlogan());
+    }
     private SignupMenuOutput passwordCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
             signupMenuController.setPassword(signupMenuController.generateRandomPassword());
@@ -56,7 +112,9 @@ public class SignupMenu extends MainMenu{
                 System.out.println("re-enter your password please: ");
                 String verification = InputScanner.getScanner().nextLine();
                 if (signupMenuController.randomPasswordVerification(verification)) {
-                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                    SignupMenuOutput output = pickQuestion();
+                    questionFlag = false;
+                    return output;
                 } else if (verification.matches("^\\s*quit\\s*$")) {
                     return SignupMenuOutput.QUIT_FROM_PROCESS;
                 } else {
@@ -64,11 +122,16 @@ public class SignupMenu extends MainMenu{
                 }
             }
         }
-        return signupMenuController.passwordCheck(signupMenuController.getPassword());
+        SignupMenuOutput status = SignupMenuController.passwordCheckErrors(signupMenuController.getPassword());
+        if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+            if (signupMenuController.checkPasswordWithConfiguration())
+                return status;
+            return SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION;
+        }
+        return status;
     }
-
     private SignupMenuOutput usernameCheck() {
-        SignupMenuOutput result = signupMenuController.usernameCheck();
+        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(signupMenuController.getUsername());
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
             while (true) {
                 signupMenuController.usernameSuggestionGenerator();
@@ -91,31 +154,8 @@ public class SignupMenu extends MainMenu{
         }
         else if (result.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
             return SignupMenuOutput.QUIT_FROM_PROCESS;
-        } else if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-        }
-        return result;
-    }
-
-    public void checkSigningUp(Matcher matcher, InputScanner signupMenuScanner) {
-        String message = signupMenuController.signupUserCheck().getOutput();
-        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
-            signupMenuController.setSlogan(signupMenuController.generateRandomSlogan());
-            System.out.println("your slogan is: "+signupMenuController.getSlogan());
-        }
-        if (message.equals(SignupMenuOutput.SECURITY_QUESTION.getOutput())) {
-            //TODO: printing security questions....
-            while (true) {
-                if ((signupMenuMatcher = SignupMenuEnum.getMatcher(signupMenuInput,SignupMenuEnum.PICK_QUESTION))!=null) {
-                    //TODO: pick question part...
-                }
-            }
-        }
-        if (message.equals(SignupMenuOutput.STAND_BY.getOutput())) {
-            System.out.println("you password is: "+signupMenuController.getClipBoard());
-
-        }
-        System.out.println(signupMenuController.signupUserCheck());
+        } else
+            return result;
     }
     public void classifyParameters(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));
@@ -131,5 +171,4 @@ public class SignupMenu extends MainMenu{
         System.out.println("email: "+signupMenuController.getEmail());
         System.out.println("slogan: "+signupMenuController.getSlogan());
     }
-
 }

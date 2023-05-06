@@ -5,14 +5,14 @@ import static org.example.model.building.BuildingName.*;
 
 public enum LandType {
     DEFAULT(null , "D"),
-    PEBBEL(null , "PB"),
+    PEBBLE(null , "PB"),
     BOWLDER(null , "B"),
     ROCK(QUARRY , "R"),
     IRON(IRON_MINE , "I"),
     GRASS(null , "G"),
     MEADOW(null , "M"),
     PETROLEUM(null , " P"),
-    PLALIN(null ,"PL"),
+    PLAIN(null ,"PL"),
     SHALLOW_WATER(null ,"SW"),
     RIVER(null , "RI"),
     SMALL_POND(null , "SP"),
