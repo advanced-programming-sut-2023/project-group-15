@@ -15,14 +15,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class GameInformation {
     private static int mapGameSize;
     private  static Tile[][] gameMap;
+    private static HashMap<User,Integer> players = new HashMap<User,Integer>();
+    private static int currentUserno;
 
-    public GameInformation(int map ) {
-        mapGameSize = map;
+    public GameInformation(int mapGameSize) {
+        mapGameSize = mapGameSize;
     }
 
     public static void setMapGame(int mapGame,int mapNumber, String path) {
@@ -56,12 +60,24 @@ public class GameInformation {
             e.printStackTrace();
         }
     }
-        //TODO read the map from the file and set the map
+
 
     public static Tile[][] getGameMap(){
         return gameMap;
     }
+    public static void addPlayer(User player , int number)
+    {
+        players.put(player,number);
+    }
 
+    public static int getCurrentUserno() {
+        return  currentUserno;
+
+    }
+
+    public static  void setCurrentUserno(int currentUserno) {
+        currentUserno = currentUserno;
+    }
     //TODO turn methods should be added hear
 
 

@@ -1,7 +1,11 @@
 package org.example.view;
 
 import org.example.InputScanner;
+import org.example.controller.GameInformationController;
+import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.GameInformation;
+import org.example.model.gameData.Government;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.commands.MapEnum;
 import org.example.view.enums.outputs.GameMenuOutput;
@@ -12,6 +16,7 @@ import java.util.regex.Matcher;
 public class GameStartMenu {
     public void run()
     {
+        GameInformationController controller = new GameInformationController();
         String input;
         Matcher gameStartMatcher;
         while(true)
@@ -30,7 +35,8 @@ public class GameStartMenu {
                 else if(GameDataBase.getUserByUsername(gameStartMatcher.group("name")) == null)
                     System.out.println(GameStartMenuOutput.USER_NOT_FOUND);
                 else {
-
+                    User newPlayer = GameDataBase.getUserByUsername(gameStartMatcher.group("name"));
+                    controller.playerAdder(newPlayer);
                     System.out.println(GameStartMenuOutput.ADD_USER_SUCCESS);
                 }
             }
