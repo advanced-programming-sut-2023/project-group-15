@@ -9,7 +9,7 @@ public abstract class Map {
      public static Tile[][] currentMap = new Tile[400][400];
 
 
-    public static void setCurrentMap(int size)
+    public static void setMap(int size)
      {
              for (int i = 0; i <size; i++) {
                  for (int j = 0; j < size; j++) {
