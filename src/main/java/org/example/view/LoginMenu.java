@@ -12,39 +12,34 @@ import java.util.regex.Matcher;
 
 public class LoginMenu extends MainMenu {
     private final LoginMenuController loginMenuController = new ProfileMenuController();
-    private Matcher loginMenuMatcher;
 
-    public LoginMenu(Matcher loginMenuMatcher) {
-        this.loginMenuMatcher = loginMenuMatcher;
-    }
-    LoginMenu () {
-    }
-    public void run() {
+    public void run(InputScanner loginMenuScanner) {
+        Matcher loginMenuMatcher;
         String userInput;
         while (true) {
-            userInput = InputScanner.getScanner().nextLine();
+            userInput = loginMenuScanner.getScanner().nextLine();
             ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
-            else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
+            else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_USERNAME))!=null) {
                 profileMenu.changeUserUsername(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PASSWORD)) != null) {
+            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PASSWORD))!=null) {
                 profileMenu.changeUserPassword(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_EMAIL)) != null) {
+            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_EMAIL))!=null) {
                 profileMenu.changeUserEmail(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_NICKNAME)) != null) {
+            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_PROFILE_NICKNAME))!=null) {
                 profileMenu.changeUserNickname(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_SLOGAN)) != null) {
+            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.CHANGE_SLOGAN))!=null) {
                 profileMenu.changeUserSlogan(loginMenuMatcher);
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.REMOVE_SLOGAN) != null) {
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.REMOVE_SLOGAN)!=null) {
                 profileMenu.removeUserSlogan();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_PROFILE) != null) {
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_PROFILE)!=null) {
                 profileMenu.displayUserProfile();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_SLOGAN) != null) {
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_SLOGAN)!=null) {
                 profileMenu.displayUserSlogan();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_RANK) != null) {
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_USER_RANK)!=null) {
                 profileMenu.displayUserRank();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.DISPLAY_PROFILE)!=null) {
                 profileMenu.displayUserInfo();
             } else {
                 System.out.println(ProfileMenuOutput.INVALID_COMMAND.getOutput());
@@ -52,19 +47,15 @@ public class LoginMenu extends MainMenu {
         }
     }
 
-    public void loginInCheck(Matcher matcher) {
-        classify(matcher);
-        LoginMenuOutput status = loginMenuController.loginUser();
-        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULY))
-            run();
-        System.out.println(status.getOutput());
-    }
-
-    private void classify(Matcher matcher) {
-        loginMenuController.setUsername(matcher.group("username"));
-        loginMenuController.setPassword(matcher.group("password"));
-        if (matcher.group("logged")!=null)
-            loginMenuController.setStayLoggedInFlag(true);
+    public void loginInCheck(Matcher mainMenuMatcher) {
+        loginMenuController.setUsername("username");
+        loginMenuController.setPassword("password");
+        loginMenuController.setStayLoggedInFlag(mainMenuMatcher.group("stayLogged") != null);
+        String message = loginMenuController.loginUser().getOutput();
+        if (message.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULY)) {
+            //TODO: about saving user in the game...
+//            run(loginMenuScanner);
+        }
     }
     //TODO after user logg ins current user should be updated in gamedata base class
     // commented by Raya

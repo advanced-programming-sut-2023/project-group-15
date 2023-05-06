@@ -22,6 +22,7 @@ public class User {
     private String [] tradeList;
     private ArrayList<GameDataBase> userGames;
     public static final ArrayList<User> allUsers = new ArrayList<>();
+
     public User(String username, String password, String nickname, String email) {
         this.username = username;
         this.password = password;
@@ -33,6 +34,7 @@ public class User {
         this.userGames = new ArrayList<>();
         this.addUser();
     }
+
     public User(String username, String password, String nickname, String email, String slogan) {
         this.username = username;
         this.password = password;
@@ -153,31 +155,5 @@ public class User {
 
     public Tile[][] getMap() {
         return map;
-    }
-
-    public String[] getTradeHistory() {
-        return tradeHistory;
-    }
-
-    public String[] getTradeList() {
-        return tradeList;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                ", passRecoveryQuestion='" + passRecoveryQuestion + '\'' +
-                ", passRecoveryAnswer='" + passRecoveryAnswer + '\'' +
-                ", score=" + score +
-                ", rank=" + rank +
-                ", slogan='" + slogan + '\'' +
-                ", userNO=" + userNO +
-                ", tradeHistory=" + Arrays.toString(tradeHistory) +
-                ", tradeList=" + Arrays.toString(tradeList) +
-                '}';
     }
 }

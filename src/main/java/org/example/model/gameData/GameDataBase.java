@@ -19,9 +19,7 @@ public class GameDataBase {
     public static void addUser(User user)
     {
         allUsers.add(user);
-    }
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
+
     }
 
     public static User getCurrentUser() {
