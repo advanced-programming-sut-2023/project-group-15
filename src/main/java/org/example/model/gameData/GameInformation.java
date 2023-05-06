@@ -34,6 +34,7 @@ public class GameInformation {
                         LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND")));
 
 
+
                         jsonobject = new JSONObject(jsonParser);
                         gameMap[i][j] = new Tile();
                     }
