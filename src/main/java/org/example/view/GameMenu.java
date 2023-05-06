@@ -29,9 +29,7 @@ public class GameMenu {
                 new MapMenu().run(gameMenuMatcher);
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null){
                 int tax = Integer.parseInt(gameMenuMatcher.group("taxRate"));
-                System.out.println(GameMenuController.foodList());
                 GameMenuController.setTaxRate(tax);
-                System.out.println(GameMenuController.foodList());
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input,GameMenuEnum.SHOW_TAX_RATE)) != null)
                 System.out.println(GameMenuController.taxRate());
@@ -48,7 +46,6 @@ public class GameMenu {
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null){
                 int rateFood = Integer.parseInt(gameMenuMatcher.group("foodRate"));
-                System.out.println(rateFood);
                 GameMenuController.setFoodRate(rateFood);
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null){

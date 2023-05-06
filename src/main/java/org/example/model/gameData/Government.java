@@ -23,10 +23,9 @@ public class Government {
     }
     public void setCoins(double coins) {
        this.coins = coins;
-       double b = 0;
-       if(Double.compare(this.coins,b) == 0){
+       Double zero = 0.00;
+       if(Double.compare(getCoins() , zero) == 0)
            setTaxrate(0);
-       }
     }
 
     public double getCoins() {
@@ -56,30 +55,42 @@ public class Government {
         public void setTaxrate(int taxrate) {
             this.taxRate = taxrate;
             switch (this.taxRate) {
-                case (-3):
+                case -3:
                     this.popularity += 7;
-                case(-2):
+                    break;
+                case -2:
                     this.popularity += 5;
-                case(-1):
+                    break;
+                case -1:
                    this.popularity += 3;
-                case(0):
+                   break;
+                case 0:
                     this.popularity += 1;
-                case(1):
+                    break;
+                case 1:
                    this.popularity -= 2;
-                case(2):
+                   break;
+                case 2:
                     this.popularity -= 4;
-                case(3):
+                    break;
+                case 3:
                     this.popularity -= 6;
-                case(4):
+                    break;
+                case 4:
                     this.popularity -= 8;
-                case(5):
+                    break;
+                case 5:
                     this.popularity -= 12;
-                case(6):
+                    break;
+                case 6:
                     this.popularity -= 16;
-                case(7):
+                    break;
+                case 7:
                     this.popularity -= 20;
-                case(8):
+                    break;
+                case 8:
                     this.popularity -= 24 ;
+                    break;
 
 
             }

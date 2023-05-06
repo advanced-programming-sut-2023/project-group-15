@@ -18,7 +18,6 @@ public class GameMenuController {
     UnitWallTarget unitWallTarget;
     Worker worker;
 
-    int n = 0;
     public GameMenuController(){
         government = new Government();
         people = new People();
@@ -75,8 +74,10 @@ public class GameMenuController {
     }
 
     public void setFoodRate(int rate){
+
         if(government.checkFoodVariety() == 0)
             rate = -2;
+
         switch (rate){
             case -2: government.setPopularity(government.getPopularity()-8+government.checkFoodVariety());
                      government.setFoodRate(-2);
@@ -104,12 +105,16 @@ public class GameMenuController {
     }
     public void setTaxRate(int rate){
 
+        Double zero = 0.00;
+        if(Double.compare(government.getCoins() , zero) == 0)
+            rate = 0;
         switch (rate){
             case -3: government.setCoins(government.getCoins()-people.getPeopleNumber());
                      government.setTaxrate(-3);
                 break;
             case -2: government.setCoins(government.getCoins()-0.8*people.getPeopleNumber());
                      government.setTaxrate(-2);
+
                 break;
             case -1: government.setCoins(government.getCoins()-0.6*people.getPeopleNumber());
                      government.setTaxrate(-1);
@@ -186,9 +191,7 @@ public class GameMenuController {
     }
 
     public HashMap foodList(){
-        ++n;
-        if(n==1)
-            government.foodList();
+
         return government.getFoods();
     }
 
