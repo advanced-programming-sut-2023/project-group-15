@@ -16,11 +16,10 @@ public class Government {
 
 
     public void foodList(){
-        foods.put("Apple" , 20.00);
-        foods.put("Hop" , 10.00);
-        foods.put("Bread" , 10.00);
-        foods.put("Cheese" , 5.00);
-        foods.put("Flour" , 2.00);
+        foods.put("Apple" , 0.00);
+        foods.put("Hop" , 0.00);
+        foods.put("Bread" , 0.00);
+        foods.put("Cheese" , 0.00);
     }
     public void setCoins(double coins) {
        this.coins = coins;
@@ -125,5 +124,31 @@ public class Government {
 
     public void changeFoodGivingPeople(double number){
         foods.replaceAll( (k,v)->v-=number);
+    }
+
+    public int checkFoodVariety(){
+            int varity = 0 ;
+            double zero = 0.00;
+            if(Double.compare(foods.get("Apple") , zero) != 0)
+                ++varity;
+            if(Double.compare(foods.get("Hop") , zero) != 0)
+                ++varity;
+            if(Double.compare(foods.get("Bread") , zero) != 0)
+                ++varity;
+        if(Double.compare(foods.get("Cheese") , zero) != 0)
+                ++varity;
+
+        switch (varity){
+            case 4:
+                return 3;
+            case 3:
+                return 2;
+            case 2:
+                return 1;
+            case 0:
+                return 0;
+            default:
+                return 0;
+        }
     }
 }
