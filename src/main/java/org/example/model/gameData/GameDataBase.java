@@ -1,6 +1,7 @@
 package org.example.model.gameData;
 
 import org.example.model.User;
+import org.example.model.enums.FilePaths;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -36,12 +37,11 @@ public class GameDataBase {
 
         JSONObject obj = new JSONObject();
 
-        String path = "d:/json/player.json";
-        File dir = new File("d:/json/");
+        String path =FilePaths.DATEBASE.getFilePaths();
+        File dir = new File(FilePaths.WORKING_DIR.getFilePaths());
         dir.mkdirs();
 
         try (PrintWriter out = new PrintWriter(new FileWriter(path,true))) {
-
                 obj.put("Name", user.getUsername());
                 obj.put("Nickname", user.getNickname());
                 obj.put("Password", user.getPassword());
