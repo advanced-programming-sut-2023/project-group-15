@@ -3,7 +3,10 @@ package org.example.model.gameData;
 import org.example.model.Tile;
 import org.example.model.User;
 import org.example.model.building.Building;
+import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
+import org.example.model.enums.Tree;
+import org.example.model.enums.UnitName;
 import org.example.view.enums.commands.GameMenuEnum;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -31,17 +34,20 @@ public class GameInformation {
             while(!jsonParser.end()) {
                 for(int i=0 ; i<mapGame ; i++) {
                     for (int j = 0; j < mapGame; j++) {
-                        LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND")));
-
-
-
+                        LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND:")));
+                        BuildingName buildingName = BuildingName.getBuildingByName(String.valueOf(jsonobject.get("building:")));
+                        Tree tree = Tree.getTree(String.valueOf(jsonobject.get("Tree:")));
+                        UnitName unitName = UnitName.getUnitName(String.valueOf("Soldier"));
+                        int numberOfSoldires = Integer.parseInt(String.valueOf(jsonobject.get("numberOfSoldiers")));
+                        boolean Rock = Boolean.valueOf(String.valueOf(jsonobject.get("ROCK")));
+                        String rockDirection = String.valueOf(jsonobject.get("Rockdirection:"));
                         jsonobject = new JSONObject(jsonParser);
-                        gameMap[i][j] = new Tile();
+                        gameMap[i][j] = new Tile(buildingName,landType,numberOfSoldires,unitName,tree,Rock,rockDirection);
+                        jsonParser.next();
                     }
                 }
 
-                System.out.println(jsonobject);
-                jsonParser.next();
+
             }
             // }catch(JSONException e){
             //System.out.println(e);

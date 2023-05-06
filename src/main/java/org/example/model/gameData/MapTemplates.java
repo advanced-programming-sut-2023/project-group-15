@@ -161,7 +161,7 @@ public class MapTemplates {
                             " Tree: " + mapTemplate1[i][j].getTree() +
                             " Soldier: " + mapTemplate1[i][j].getSoldier() +
                             " numberOfSoldiers: " + mapTemplate1[i][j].getNumberOfSoldiers() +
-                            " Rock" + mapTemplate1[i][j].isRock() +
+                            " Rock:" + mapTemplate1[i][j].isRock() +
                             " Rockdirection " + mapTemplate1[i][j].getRockDirection());
 
                     out.write(obj.toString());
