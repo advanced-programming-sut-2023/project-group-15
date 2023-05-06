@@ -1,107 +1,114 @@
 package org.example.model.gameData;
 
-import org.example.model.enums.Products;
+import org.example.model.enums.Food;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class Government {
-        private static int popularity;
-       private static int foodRate;
-       private static  int taxRate;
+        public int popularity;
+       private int foodRate;
+       private int taxRate;
         private static int fearRate;
-        private static HashMap<Products , Double> foods = new HashMap<>();
-        public void showPopularityFactors()
-        {
-            System.out.print("1.food\n2.tax\n3.religion\n4.fear");
-        }
+        public double coins;
+        private static HashMap<String , Double> foods = new HashMap<>();
 
-        public void setFoodRate(int foodRate) {
+
+    public void foodList(){
+        foods.put("Apple" , 20.00);
+        foods.put("Hop" , 10.00);
+        foods.put("Bread" , 10.00);
+        foods.put("Cheese" , 5.00);
+        foods.put("Flour" , 2.00);
+    }
+    public void setCoins(double coins) {
+       this.coins = coins;
+       double b = 0;
+       if(Double.compare(this.coins,b) == 0){
+           setTaxrate(0);
+       }
+    }
+
+    public double getCoins() {
+        return this.coins;
+    }
+
+   /* public void setFoodRate(int foodRate) {
             foodRate = foodRate;
             switch (foodRate)
             {
                 case(-2):
-                    popularity -= 8;
-                    break;
+                    this.popularity -= 8;
                 case(-1):
-                    popularity -= 4;
-                    break;
+                    this.popularity -= 4;
                 case(1):
-                    popularity += 4 ;
-                    break;
+                    this.popularity += 4 ;
                 case(2):
-                    popularity += 8 ;
-                    break;
+                    this.popularity += 8 ;
+
             }
-        }
+        } */
 
         public void setPopularity(int popularity) {
-            popularity = popularity;
+            this.popularity = popularity;
         }
-        public static void setTaxrate(int taxrate) {
-            taxRate = taxrate;
-            switch (taxRate) {
+
+        public void setTaxrate(int taxrate) {
+            this.taxRate = taxrate;
+            switch (this.taxRate) {
                 case (-3):
-                    popularity += 7;
-                    break;
+                    this.popularity += 7;
                 case(-2):
-                    popularity += 5;
-                    break;
+                    this.popularity += 5;
                 case(-1):
-                    popularity += 3;
-                    break;
+                   this.popularity += 3;
                 case(0):
-                    popularity += 1;
-                    break;
+                    this.popularity += 1;
                 case(1):
-                    popularity -= 2;
-                    break;
+                   this.popularity -= 2;
                 case(2):
-                    popularity -= 4;
-                    break;
+                    this.popularity -= 4;
                 case(3):
-                    popularity -= 6;
-                    break;
+                    this.popularity -= 6;
                 case(4):
-                    popularity -= 8;
-                    break;
+                    this.popularity -= 8;
                 case(5):
-                    popularity -= 12;
-                    break;
+                    this.popularity -= 12;
                 case(6):
-                    popularity -= 16;
-                    break;
+                    this.popularity -= 16;
                 case(7):
-                    popularity -= 20;
-                    break;
+                    this.popularity -= 20;
                 case(8):
-                    popularity -= 24 ;
-                    break;
+                    this.popularity -= 24 ;
+
+
             }
 
         }
 
         public void setFearRate(int fearRate) {
+
             this.fearRate = fearRate;
         }
-        public void addFood(Products food , double  amount) {
+
+        public void addFood(String food , double  amount) {
             foods.put(food , amount);
         }
 
-        public static int getTaxrate() {
-            return taxRate;
+        public int getTaxrate() {
+            return this.taxRate;
         }
 
-    public static int getFoodRate() {
-        return foodRate;
+    public int getFoodRate() {
+        return this.foodRate;
     }
 
-    public static int getPopularity() {
-        return popularity;
+    public int getPopularity() {
+        return this.popularity;
     }
 
-    public static int getTaxRate() {
+    public int getTaxRate() {
         return taxRate;
     }
 
@@ -109,7 +116,14 @@ public class Government {
         return fearRate;
     }
 
-    public static HashMap<Products, Double> getFoods() {
+    public void setFoodRate(int rate){
+         this.foodRate = rate;
+    }
+    public HashMap<String, Double> getFoods() {
         return foods;
+    }
+
+    public void changeFoodGivingPeople(double number){
+        foods.replaceAll( (k,v)->v-=number);
     }
 }

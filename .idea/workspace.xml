@@ -4,16 +4,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="...">
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="add goverment">
+      <change afterPath="$PROJECT_DIR$/Map/defaultMap1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map/defaultMap2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map/defaultMap3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map/defaultMap4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/MapChangesEnvironment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuEnvironmentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/MapChangesEnvironment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_5_52_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_5_52_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_6_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_6_26_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_2023_9_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_2023_9_40_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_2023_6_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_2023_6_27_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DropBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DropBuildingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GovernmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GovernmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapChangesMenuController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/GameDataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/GameInformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/InfantryUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/InfantryUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/LauncherUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/LauncherUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/UnitWallTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MBC/UnitWallTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/LandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/enums/LandType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameMenuEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapMenuEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/UnitMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/UnitMenuOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GovernmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GovernmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapChangesMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MapChangesMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/GameDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/GameInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/InfantryUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/MBC/InfantryUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/LauncherUnit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/MBC/LauncherUnit$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/LauncherUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/MBC/LauncherUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/People.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/MBC/People.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/UnitWallTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/MBC/UnitWallTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/LandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/enums/LandType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/gameDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/gameDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/mapTemplates.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/mapTemplates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapChangesMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MapMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameMenuEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameMenuEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapMenuEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapMenuEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/UnitMenuOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/UnitMenuOutput.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +102,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="raya-map" />
+        <entry key="$PROJECT_DIR$" value="test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +129,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/uni/ap/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/uni/ap/exercises/2/project-group-15&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -73,7 +144,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.example.view" />
       <recent name="org.example.veiw.enums" />
     </key>
   </component>
@@ -94,16 +164,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="" />
+      <changelist id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="add goverment" />
       <created>1681886432173</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -111,7 +178,6 @@
       <workItem from="1681886433354" duration="78000" />
       <workItem from="1681886686257" duration="2512000" />
       <workItem from="1682084994720" duration="4296000" />
-      <workItem from="1683312609400" duration="1963000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -156,19 +222,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="raya-map" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -176,11 +245,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creating files..." />
-    <option name="LAST_COMMIT_MESSAGE" value="creating files..." />
+    <MESSAGE value="add set tax method" />
+    <MESSAGE value="add goverment" />
+    <option name="LAST_COMMIT_MESSAGE" value="add goverment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java</url>
           <line>31</line>
@@ -192,9 +273,29 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="12" />
+          <line>22</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>
@@ -204,6 +305,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>
+          <line>8</line>
+          <properties class="org.example.controller.MapMenuController">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

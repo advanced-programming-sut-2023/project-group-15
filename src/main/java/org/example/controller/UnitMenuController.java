@@ -33,7 +33,7 @@ public class UnitMenuController {
     }
     public UnitMenuOutput selectUnit(int x, int y){
         //TODO: add code to get informaion from map
-        type = "SPEARMEN";
+        type = "ENGINEER";
        if((name = UnitName.valueOf(type)) != null){
         x1 = x;
         y1 = y;
@@ -151,6 +151,7 @@ public class UnitMenuController {
             else return UnitMenuOutput.OUT_OF_BOUNDS;
         }
 
+
     }
 
     public UnitMenuOutput disbandUnit(){
@@ -159,8 +160,30 @@ public class UnitMenuController {
         return UnitMenuOutput.UNIT_DISBANDED;
     }
 
-    private void build(){
-
+    public UnitMenuOutput buildEquipment(String equipment){
+        if(type.toUpperCase().equals("ENGINEER")){
+            if(equipment.toUpperCase().equals("TREBUCHET")){
+            //TODO: check if we have min 10 woods and 10 rocks
+            //TODO: add trebuchet in map
+            return UnitMenuOutput.SUCCESSFUL_BUILD_TREBUCHET;
+            }
+            if(equipment.toUpperCase().equals("CATAPULTS")){
+                //TODO: check if we have min 5 woods and 5 rocks
+                //TODO: add catapults in map
+                return UnitMenuOutput.SUCCESSFUL_BUILD_CATAPULTS;
+            }
+            if(equipment.toUpperCase().equals("PORTABLE SHIELD")){
+                //TODO: check if we have min 10 irons
+                //TODO: add a place in map
+                return UnitMenuOutput.SUCCESSFUL_BUILD_SHIELD;
+            }
+            if(equipment.toUpperCase().equals("BATTERING RAM")){
+                //TODO: check if we have min 20 woods
+                //TODO: add battering ram in map
+                return UnitMenuOutput.SUCCESSFUL_BUILD_BATTERING_RAM;
+            }
+        }
+        return UnitMenuOutput.WRONG_UNIT_ENGINEER;
     }
 
     public UnitMenuOutput pourOil(String direction){
@@ -183,7 +206,7 @@ public class UnitMenuController {
             return UnitMenuOutput.SUCCESSFUL_POUR_OIL;
         }
 
-        else return UnitMenuOutput.WRONG_UNIT_TO_POUR_OIL;
+        else return UnitMenuOutput.WRONG_UNIT_ENGINEER;
 
 
     }

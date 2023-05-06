@@ -21,7 +21,7 @@ public class InfantryUnit extends Soldier {
         this.speed = speed;
     }
 
-    private void setAttackingPower(int attackingPower){
+    public void setAttackingPower(int attackingPower){
         this.attackingPower = attackingPower;
     }
 
@@ -33,7 +33,7 @@ public class InfantryUnit extends Soldier {
         return this.speed;
     }
 
-    private int getAttackingPower(){
+    public int getAttackingPower(){
         return this.attackingPower;
     }
 
@@ -98,4 +98,5 @@ public class InfantryUnit extends Soldier {
     public int getMaxMove(){
         return this.maxMove;
     }
+
 }

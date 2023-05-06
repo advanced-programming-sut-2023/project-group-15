@@ -13,10 +13,14 @@ public enum UnitMenuOutput {
     SUCCESSFUL_AIR_ATTACK("successful air attack"),
     UNIT_DISBANDED("unit disbanded"),
     SUCCESSFUL_POUR_OIL("successful pour oil"),
-    WRONG_UNIT_TO_POUR_OIL("choose the right unit(engineer)!"),
+    WRONG_UNIT_ENGINEER("choose the right unit(engineer)!"),
     SUCCESSFUL_DIG_DITCH("successful dig ditch"),
     WRONG_UNIT_TO_DIG_DITCH("choose the right unit(spearmen)!"),
     PATROL_UNIT("The unit stopped patrolling"),
+    SUCCESSFUL_BUILD_TREBUCHET("engineer is building trebuchet"),
+    SUCCESSFUL_BUILD_CATAPULTS("engineer is building catapults"),
+    SUCCESSFUL_BUILD_SHIELD("engineer is building portable shield"),
+    SUCCESSFUL_BUILD_BATTERING_RAM("engineer is building portable shield"),
     ;
     private final String output;
 

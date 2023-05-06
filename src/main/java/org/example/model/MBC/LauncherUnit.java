@@ -4,6 +4,9 @@ import org.example.model.MBC.Soldier;
 import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class LauncherUnit extends Soldier {
     public UnitName name;
     public int maxMove;
@@ -12,11 +15,18 @@ public class LauncherUnit extends Soldier {
     public int attackingPower;
     public int deffense;
     public State state;
-
+    public ArrayList<String> FightingFeature;
     private void setSpeed(int speed){
         this.speed = speed;
     }
 
+
+    public void setThrowrange(int throwrange){
+        this.throwrange = throwrange;
+    }
+    public int getThrowRageForChanging(){
+        return this.throwrange;
+    }
     private void setAttackingPower(int attackingPower){
         this.attackingPower = attackingPower;
     }
@@ -109,9 +119,6 @@ public class LauncherUnit extends Soldier {
         switch (State.valueOf(state)){
             case STANDING:
         }
-    }
-    private int getThrowRange(){
-        return this.throwrange;
     }
 
     public int getMaxMove(){

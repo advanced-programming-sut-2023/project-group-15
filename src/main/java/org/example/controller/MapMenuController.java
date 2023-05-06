@@ -6,6 +6,7 @@ import org.example.view.MapMenu;
 import java.util.regex.Matcher;
 
 public class MapMenuController {
+
     private static int xStart = 0 ;
     private static int yStart = 0 ;
     public MapMenuController() {
