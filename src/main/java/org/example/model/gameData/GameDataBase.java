@@ -86,8 +86,14 @@ public class GameDataBase {
         }
 
     }
-
-    public ArrayList<User> getAllUsers() {
+    public static User getUserByUsername(String name)
+    {
+        for(User user : getAllUsers())
+            if(user.getUsername().equals(name))
+                return user;
+        return null;
+    }
+    public static ArrayList<User> getAllUsers() {
         return allUsers;
     }
             }

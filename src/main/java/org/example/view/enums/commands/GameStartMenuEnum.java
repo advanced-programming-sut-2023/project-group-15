@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public enum GameStartMenuEnum {
 
         NEW_GAME("start\\s+new\\s+game"),
+        ADD_PLAYER("add user -u (?<name>\\S+)"),
                 ;
         private final String regex;
 

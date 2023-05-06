@@ -156,4 +156,5 @@ public class User {
     public Tile[][] getMap() {
         return map;
     }
+
 }
