@@ -159,7 +159,7 @@ public class MapTemplates {
                     obj.put("Land: ", mapTemplate1[i][j].getLandType() +
                             " bulding: " + mapTemplate1[i][j].getBuilding() +
                             " Tree: " + mapTemplate1[i][j].getTree() +
-                            " Soldier: " + mapTemplate1[i][j].getTree() +
+                            " Soldier: " + mapTemplate1[i][j].getSoldier() +
                             " numberOfSoldiers: " + mapTemplate1[i][j].getNumberOfSoldiers() +
                             " Rock" + mapTemplate1[i][j].isRock() +
                             " Rockdirection " + mapTemplate1[i][j].getRockDirection());

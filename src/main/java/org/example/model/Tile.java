@@ -4,12 +4,14 @@ import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
+import org.example.model.enums.UnitName;
 
 public class Tile {
     private Building building;
     private LandType landType;
     private int numberOfSoldiers =  0;
-    private Soldier soldier = null;
+    private UnitName soldier = null;
+
     private Tree tree = null ;
     private boolean rock = false ;
     private String rockDirection;
@@ -23,7 +25,7 @@ public class Tile {
         this.rock = false ;
     }
 
-    public Tile(Building building, LandType landType, int numberOfSoldiers, Soldier soldier, Tree tree, boolean rock, String rockDirection) {
+    public Tile(Building building, LandType landType, int numberOfSoldiers, UnitName soldier, Tree tree, boolean rock, String rockDirection) {
         this.building = building;
         this.landType = landType;
         this.numberOfSoldiers = numberOfSoldiers;
@@ -45,7 +47,7 @@ public class Tile {
         this.numberOfSoldiers += numberOfSoldiers;
     }
 
-    public void setSoldier(Soldier soldier) {
+    public void setSoldier(UnitName soldier) {
         this.soldier = soldier;
     }
 
@@ -71,7 +73,7 @@ public class Tile {
         return numberOfSoldiers;
     }
 
-    public Soldier getSoldier() {
+    public UnitName getSoldier() {
         return soldier;
     }
 
