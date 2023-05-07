@@ -24,7 +24,7 @@ public class GameDataBase {
         return null;
     }
 
-    public void addUser(User user)
+    public static void addUser(User user)
     {
         allUsers.add(user);
 
