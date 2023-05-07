@@ -14,7 +14,11 @@ import java.util.regex.Pattern;
 public class MapMenuEnvironmentController {
     public void setMapGame(int size ,int number)
     {
+<<<<<<< HEAD
         GameInformation.setMapGame(size,number);
+=======
+       // GameInformation.setMapGame(size,number);
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
         //TODO hear we set the whole map game from the templates
         // no changes on the ready template hear
 

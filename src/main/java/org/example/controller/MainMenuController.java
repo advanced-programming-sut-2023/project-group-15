@@ -1,7 +1,5 @@
 package org.example.controller;
 
-import org.example.model.enums.SecurityQuestion;
-
 public class MainMenuController {
     private String username;
     private String password;
@@ -9,10 +7,6 @@ public class MainMenuController {
     private String slogan;
     private String email;
     private String clipBoard;
-    private SecurityQuestion passRecoveryQuestion;
-    private String passRecoveryAnswer;
-    private int score;
-    private int rank;
 
 
     public MainMenuController() {
@@ -22,41 +16,6 @@ public class MainMenuController {
         this.slogan = null;
         this.email = null;
         this.clipBoard = null;
-        this.passRecoveryAnswer = null;
-        this.passRecoveryQuestion = null;
-        this.score = 0;
-    }
-
-    public void setPassRecoveryQuestion(SecurityQuestion passRecoveryQuestion) {
-        this.passRecoveryQuestion = passRecoveryQuestion;
-    }
-
-    public void setPassRecoveryAnswer(String passRecoveryAnswer) {
-        this.passRecoveryAnswer = passRecoveryAnswer;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
-    public SecurityQuestion getPassRecoveryQuestion() {
-        return passRecoveryQuestion;
-    }
-
-    public String getPassRecoveryAnswer() {
-        return passRecoveryAnswer;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public int getRank() {
-        return rank;
     }
 
     public String getClipBoard() {

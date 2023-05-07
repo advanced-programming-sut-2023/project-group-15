@@ -14,7 +14,7 @@ public class UnitWallTarget extends Soldier {
         this.speed = speed;
     }
 
-    private void setattackingPower(int attackingPower){
+    public void setAttackingPower(int attackingPower){
         this.attackingPower = attackingPower;
     }
 
@@ -26,7 +26,7 @@ public class UnitWallTarget extends Soldier {
         return this.speed;
     }
 
-    private int getAttackingPower(){
+    public int getAttackingPower(){
         return this.attackingPower;
     }
 
@@ -78,5 +78,8 @@ public class UnitWallTarget extends Soldier {
 
     public int getMaxMove(){
         return this.maxMove;
+    }
+    public void changeMove(int maxMove){
+        this.maxMove = maxMove;
     }
 }
