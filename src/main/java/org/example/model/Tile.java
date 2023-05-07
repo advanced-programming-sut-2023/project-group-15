@@ -56,9 +56,14 @@ public class Tile {
         this.tree = treeName;
     }
 
+
+    public void setRock(boolean rockStatus) {
+        this.rock = rockStatus;
+    }
     public void setRock(boolean rockStatus,String direction) {
         this.rock = rockStatus;
         this.rockDirection = direction;
+
     }
 
     public BuildingName getBuilding() {

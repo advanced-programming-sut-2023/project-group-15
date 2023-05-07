@@ -5,8 +5,13 @@ import java.util.regex.Pattern;
 
 public enum GameMenuEnum {
     SHOW_MAP("show map -(x|y) (\\d+) -(x|y) (\\d+)"),
+<<<<<<< HEAD
+    SET_FOOD_RATE("^\\s*food\\s*rate\\s*-r\\s*(?<foodRate>(-2|-1|0|1|2)"),
+    SET_TAX_RATE("^\\s*tax\\s*rate\\s*-r\\s*(?<taxRate>(-3|-2|-1|0|[1,8])"),
+=======
     SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+(?<foodRate>-2|-1|0|1|2)$"),
     SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1-8])"),
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
     SHOW_FOOD_RATE("^\\s*food\\s+rate\\s+show\\s*$"),
     SHOW_TAX_RATE("^\\s*tax\\s+rate\\s+show\\s*$"),
     SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1,5])\\s*$"),
@@ -36,7 +41,11 @@ public enum GameMenuEnum {
     public static Matcher getMatcher(String input, GameMenuEnum regex) {
         Matcher matcher = Pattern.compile(regex.regex, Pattern.CASE_INSENSITIVE).matcher(input);
         matcher.matches();
+<<<<<<< HEAD
+        System.out.println("this is in getmatcher: "+matcher);
+=======
        // System.out.println("this is in getmatcher: "+matcher);
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
         /*while (matcher.find()) {
             System.out.println(matcher);
             for (int i = 0; i <= matcher.groupCount(); i++) {

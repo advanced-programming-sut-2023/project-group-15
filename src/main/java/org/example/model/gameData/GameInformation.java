@@ -2,6 +2,9 @@ package org.example.model.gameData;
 
 import org.example.model.Tile;
 import org.example.model.User;
+import org.example.view.enums.commands.GameMenuEnum;
+
+import java.util.ArrayList;
 import org.example.model.building.Building;
 import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
@@ -19,9 +22,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class GameInformation {
     private static int mapGameSize;
     private  static Tile[][] gameMap;
+
+
+    public static void setMapGame(int mapGame,int mapNumber) {
+        GameInformation.mapGameSize = mapGameSize;
+        //TODO read the map from the file and set the map
+    }
+
+
     private static HashMap<User,Integer> players = new HashMap<User,Integer>();
     private static int currentUserno;
 
@@ -78,6 +90,7 @@ public class GameInformation {
     public static  void setCurrentUserno(int currentUserno) {
         currentUserno = currentUserno;
     }
+
     //TODO turn methods should be added hear
 
 

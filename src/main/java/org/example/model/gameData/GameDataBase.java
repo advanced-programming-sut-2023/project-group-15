@@ -19,7 +19,6 @@ public class GameDataBase {
     public static void addUser(User user)
     {
         allUsers.add(user);
-
     }
 
     public static User getCurrentUser() {
@@ -31,29 +30,30 @@ public class GameDataBase {
     }
 
     public static void setJasonFile(User user) {
-
-
         JSONObject obj = new JSONObject();
-
-        String path =FilePaths.DATEBASE.getFilePaths();
+        String path = FilePaths.DATEBASE.getFilePaths();
         File dir = new File(FilePaths.WORKING_DIR.getFilePaths());
         dir.mkdirs();
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(path,true))) {
-                obj.put("Name", user.getUsername());
-                obj.put("Nickname", user.getNickname());
-                obj.put("Password", user.getPassword());
-                obj.put("Slogan", user.getSlogan());
-                obj.put("HighScore", user.getScore());
-                obj.put("rank", user.getRank());
-                obj.put("Email", user.getEmail());
-                out.println();
-                out.write(obj.toString());
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            for (int i = 0; i < allUsers.size(); i++)
+
+                try (PrintWriter out = new PrintWriter(new FileWriter(path, true))) {
+                    obj.put("Name", user.getUsername());
+                    obj.put("Nickname", user.getNickname());
+                    obj.put("Password", user.getPassword());
+                    obj.put("Slogan", user.getSlogan());
+                    obj.put("HighScore", user.getScore());
+                    obj.put("rank", user.getRank());
+                    obj.put("Email", user.getEmail());
+                    out.println();
+                    out.write(obj.toString());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
         }
-    }
+
     public static void readFromFile()
     {
         String path = "d:/json/player.json"; // this is the same as:  /Users/temp/IdeaProjects/ReadFromJson/BobFile.json

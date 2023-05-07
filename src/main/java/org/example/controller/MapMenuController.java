@@ -92,10 +92,14 @@ public class MapMenuController {
         Tile currentTile = Map.findATile(x , y);
         String answer = "LandType : " ;
         answer = answer.concat(currentTile.getLandType().values().toString());
-        if (currentTile.getBuilding() != null) {
+       /* if (currentTile.getBuilding() != null) {
+
+            answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+
             //answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+
             //TODO soldiers should be added to the string
-        }
+        }*/
         return answer ;
     }
 

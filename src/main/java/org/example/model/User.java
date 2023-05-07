@@ -1,6 +1,5 @@
 package org.example.model;
 
-import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Map;
 
 import java.util.ArrayList;
@@ -18,9 +17,12 @@ public class User {
     private String slogan;
     private int userNO;
     private Tile[][] map;
+<<<<<<< HEAD
+=======
     private String[] tradeHistory;
     private String [] tradeList;
     private ArrayList<GameDataBase> userGames;
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
     public static final ArrayList<User> allUsers = new ArrayList<>();
 
     public User(String username, String password, String nickname, String email) {
@@ -31,7 +33,6 @@ public class User {
         this.passRecoveryQuestion = null;
         this.score = 0;
         this.email = email;
-        this.userGames = new ArrayList<>();
         this.addUser();
     }
 
@@ -156,5 +157,8 @@ public class User {
     public Tile[][] getMap() {
         return map;
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 }

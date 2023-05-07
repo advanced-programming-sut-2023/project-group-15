@@ -201,5 +201,13 @@ public class GameMenuController {
 
 
     }
+<<<<<<< HEAD
+
+   /* public ArrayList factors(){
+        //TODO: get list of factors from goverment
+    }*/
+
+=======
 
 
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1

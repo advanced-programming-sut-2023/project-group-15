@@ -45,6 +45,7 @@ public enum LandType {
     }
 
 
+
     public String getMapId() {
         return mapId;
     }

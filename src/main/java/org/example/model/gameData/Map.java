@@ -6,11 +6,13 @@ public abstract class Map {
      private static int  mapSize;
      private int playerMapLength;
      private int playerMapWidth;
+
      public static Tile[][] currentMap = new Tile[400][400];
 
 
     public static void setMap(int size)
      {
+
              for (int i = 0; i <size; i++) {
                  for (int j = 0; j < size; j++) {
                      currentMap[i][j] = new Tile();
