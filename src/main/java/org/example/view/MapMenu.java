@@ -35,6 +35,7 @@ public class MapMenu {
                 showMap(Integer.parseInt(mapMenuMatcher.group("xCoordinate"))
                         , Integer.parseInt(mapMenuMatcher.group("yCoordinate")));*/
             //TODO moving on map should be added
+
         }
     }
 }

@@ -6,6 +6,7 @@ import org.example.view.MapMenu;
 import java.util.regex.Matcher;
 
 public class MapMenuController {
+
     private static int xStart = 0 ;
     private static int yStart = 0 ;
     public MapMenuController() {
@@ -92,7 +93,11 @@ public class MapMenuController {
         String answer = "LandType : " ;
         answer = answer.concat(currentTile.getLandType().values().toString());
         if (currentTile.getBuilding() != null) {
+<<<<<<< HEAD
             answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+=======
+            //answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+>>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
             //TODO soldiers should be added to the string
         }
         return answer ;
