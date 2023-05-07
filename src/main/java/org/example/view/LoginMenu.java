@@ -76,7 +76,7 @@ public class LoginMenu extends MainMenu {
         loginMenuController.setUsername(username);
         if (loginMenuController.checkMatchUsername()) {
             SecurityQuestion question = loginMenuController.findUserSecurityQuestion();
-            System.out.println(question);
+            System.out.println(question.getQuestion());
             while (true) {
                 String answer = InputScanner.getScanner().nextLine();
                 if (loginMenuController.checkSecurityQuestion(answer)) {

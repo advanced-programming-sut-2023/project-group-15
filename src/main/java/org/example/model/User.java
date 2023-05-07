@@ -153,9 +153,9 @@ public class User {
         return map;
     }
 
-    public SecurityQuestion findUserQuestionWithUsername(String username) {
+    public SecurityQuestion findUserQuestionWithUsername() {
         for (User user:User.allUsers) {
-            if (user.getUsername().equals(username)) {
+            if (user.getUsername().equals(this.getUsername())) {
                 for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
                     if (question.getQuestion().equals(user.getPassRecoveryQuestion())) {
                         return question;

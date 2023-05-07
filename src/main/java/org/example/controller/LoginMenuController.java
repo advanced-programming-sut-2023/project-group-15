@@ -37,14 +37,14 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkSecurityQuestion(String answer) {
-        if (this.getPassRecoveryAnswer().equals(answer))
-            return true;
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(this.getUsername())) {
+                if (user.getPassRecoveryAnswer().matches("\\s*"+answer+"\\s*")) {
+                    return true;
+                }
+            }
+        }
         return false;
-    }
-
-    public LoginMenuOutput forgetPassword(String username) {
-
-        return null;
     }
 
     public void logoutUser() {
@@ -53,10 +53,8 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public void captcha() {
-        //TODO:
-        return;
+        //TODO: later...
     }
-
     public boolean isStayLoggedInFlag() {
         return stayLoggedInFlag;
     }
@@ -68,7 +66,7 @@ public class LoginMenuController extends MainMenuController{
     public SecurityQuestion findUserSecurityQuestion() {
         for (User user:User.allUsers) {
             if (user.getUsername().equals(this.getUsername())) {
-                return user.findUserQuestionWithUsername(this.getUsername());
+                return user.findUserQuestionWithUsername();
             }
         }
         return null;

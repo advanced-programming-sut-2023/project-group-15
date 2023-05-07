@@ -62,7 +62,7 @@ public class SignupMenu extends MainMenu {
     }
     private SignupMenuOutput pickQuestion() {
         Matcher signupMenuMatcher;
-        System.out.println("pick a question from these questions,(enter the number):");
+        System.out.println("pick a question from these questions:");
         questions();
         while (true) {
             String input = InputScanner.getScanner().nextLine();
