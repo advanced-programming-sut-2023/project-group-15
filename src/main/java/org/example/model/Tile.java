@@ -5,11 +5,7 @@ import org.example.model.building.Building;
 import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
-<<<<<<< HEAD
-import org.example.model.enums.WaterArea;
-=======
 import org.example.model.enums.UnitName;
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 
 public class Tile {
     private BuildingName building;
@@ -60,14 +56,9 @@ public class Tile {
         this.tree = treeName;
     }
 
-<<<<<<< HEAD
-    public void setRock(boolean rockStatus) {
-        this.rock = rockStatus;
-=======
     public void setRock(boolean rockStatus,String direction) {
         this.rock = rockStatus;
         this.rockDirection = direction;
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
     }
 
     public BuildingName getBuilding() {

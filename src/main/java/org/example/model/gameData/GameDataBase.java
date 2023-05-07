@@ -19,38 +19,22 @@ public class GameDataBase {
     public static void addUser(User user)
     {
         allUsers.add(user);
-<<<<<<< HEAD
-
-=======
 
     }
 
     public static User getCurrentUser() {
         return currentUser;
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
     }
 
     public static void setAllUsers(ArrayList<User> allUsers) {
         GameDataBase.allUsers = allUsers;
     }
 
-<<<<<<< HEAD
-    public void setJasonFile() {
-=======
     public static void setJasonFile(User user) {
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 
 
         JSONObject obj = new JSONObject();
 
-<<<<<<< HEAD
-        String path = "d:/json/player.json";
-        File dir = new File("d:/json/");
-        dir.mkdirs();
-
-        try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
-            for (int i = 0; i < allUsers.size(); i++)
-=======
         String path =FilePaths.DATEBASE.getFilePaths();
         File dir = new File(FilePaths.WORKING_DIR.getFilePaths());
         dir.mkdirs();
@@ -64,18 +48,12 @@ public class GameDataBase {
                 obj.put("rank", user.getRank());
                 obj.put("Email", user.getEmail());
                 out.println();
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
                 out.write(obj.toString());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-<<<<<<< HEAD
-
-
-    public ArrayList<User> getAllUsers() {
-=======
     public static void readFromFile()
     {
         String path = "d:/json/player.json"; // this is the same as:  /Users/temp/IdeaProjects/ReadFromJson/BobFile.json
@@ -116,7 +94,6 @@ public class GameDataBase {
         return null;
     }
     public static ArrayList<User> getAllUsers() {
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
         return allUsers;
     }
             }

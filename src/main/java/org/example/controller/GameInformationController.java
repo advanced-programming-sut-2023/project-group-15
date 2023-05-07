@@ -1,19 +1,13 @@
 package org.example.controller;
 
-<<<<<<< HEAD
-=======
 import org.example.model.User;
 import org.example.model.enums.FilePaths;
 import org.example.model.gameData.GameDataBase;
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 import org.example.model.gameData.GameInformation;
 
 public class GameInformationController {
     public void setMap(int mapSize,int mapNumber)
     {
-<<<<<<< HEAD
-        GameInformation.setMapGame(mapSize,mapNumber);
-=======
         String filePath = new String();
         switch (mapNumber) {
             case (1):
@@ -36,6 +30,5 @@ public class GameInformationController {
         GameInformation.addPlayer(player,playerNO);
         playerNO ++;
         GameInformation.setCurrentUserno(playerNO);
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
     }
 }

@@ -1,10 +1,6 @@
 package org.example.view;
 
 import org.example.InputScanner;
-<<<<<<< HEAD
-import org.example.controller.DropBuildingController;
-import org.example.model.gameData.Map;
-=======
 import org.example.controller.*;
 import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
@@ -12,23 +8,10 @@ import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
 import org.example.InputScanner;
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
 
-<<<<<<< HEAD
-import static org.example.model.building.buildingName.MILL;
-
-import org.example.InputScanner;
-import org.example.controller.GameMenuController;
-import org.example.controller.SignupMenuController;
-import org.example.view.enums.commands.GameMenuEnum;
-
-import java.util.regex.Matcher;
-
-=======
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 public class GameMenu {
 
     private final GameMenuController GameMenuController = new GameMenuController();
@@ -43,23 +26,12 @@ public class GameMenu {
             if (input.matches("\\s*exit\\s*"))
                 return;
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null)
-<<<<<<< HEAD
-                        new MapMenu().run(gameMenuMatcher);
-          /*  else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null)
-                //
-            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
-                //
-            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
-                System.out.println(GameMenuController.foodrate());
-            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
-=======
                 new MapMenu().run(gameMenuMatcher);
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null){
                 int tax = Integer.parseInt(gameMenuMatcher.group("taxRate"));
                 GameMenuController.setTaxRate(tax);
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input,GameMenuEnum.SHOW_TAX_RATE)) != null)
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
                 System.out.println(GameMenuController.taxRate());
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FEAR_RATE)) != null){
                 int rateNumber = Integer.parseInt(gameMenuMatcher.group("fearRate"));
@@ -126,10 +98,5 @@ public class GameMenu {
 
         }
 
-<<<<<<< HEAD
-}
-
-=======
     }
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
 }

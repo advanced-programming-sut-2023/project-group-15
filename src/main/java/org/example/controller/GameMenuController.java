@@ -1,15 +1,7 @@
 package org.example.controller;
 
-<<<<<<< HEAD
-=======
 import org.example.model.MBC.*;
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1
-import org.example.model.Tile;
-import org.example.model.User;
 import org.example.model.gameData.Government;
-import org.example.view.enums.outputs.GameMenuOutput;
-import org.example.model.gameData.Map;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
@@ -204,13 +196,5 @@ public class GameMenuController {
 
 
     }
-<<<<<<< HEAD
-
-   /* public ArrayList factors(){
-        //TODO: get list of factors from goverment
-    }*/
-
-=======
 
 
->>>>>>> 5b2d190069a17219a3b79b0ff745eb8211fc2fd1

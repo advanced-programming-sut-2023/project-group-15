@@ -28,7 +28,7 @@ public class ProfileMenuController extends LoginMenuController{
     public ProfileMenuOutput changePassword(String oldPass,String newPass) {
         if (this.getPassword().equals(oldPass)) {
             if (!oldPass.equals(newPass)) {
-                if (SignupMenuController.passwordCheck(newPass)==null) {
+                if (SignupMenuController.passwordCheckErrors(newPass)==null) {
                     User.findUserWithPass(oldPass).setPassword(newPass);
                     this.setPassword(newPass);
                     return ProfileMenuOutput.PASSWORD_CHANGED_SUCCESSFULLY;

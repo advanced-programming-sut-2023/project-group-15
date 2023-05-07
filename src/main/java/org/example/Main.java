@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.model.enums.LandType;
-import org.example.model.enums.WaterArea;
 import org.example.model.gameData.Map;
 import org.example.model.gameData.MapTemplates;
 import org.example.view.GameMenu;
