@@ -7,12 +7,10 @@ import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
-import javax.swing.*;
 import java.util.regex.Matcher;
 
 public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
-    private Matcher signupMenuMatcher;
     private boolean questionFlag = true;
     public void run(Matcher signupMenuMatcher) {
         SignupMenuOutput status;
@@ -63,6 +61,7 @@ public class SignupMenu extends MainMenu {
         return signupMenuController.sloganCheck();
     }
     private SignupMenuOutput pickQuestion() {
+        Matcher signupMenuMatcher;
         System.out.println("pick a question from these questions,(enter the number):");
         questions();
         while (true) {

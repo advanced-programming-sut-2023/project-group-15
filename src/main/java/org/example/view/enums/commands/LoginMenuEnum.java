@@ -9,7 +9,7 @@ public enum LoginMenuEnum {
                      "(\\s*(?<logged>--stay-logged-in)?\\s*))*"),
     FORGET_PASSWORD("^\\s*forgot\\s+my\\s+password\\s*$"),
     USER_LOGOUT("^\\s*user\\s+logout\\s*$"),
-    ;
+    QUIT_THE_PROCESS("\\s*quit\\s*");
     private final String regex;
     LoginMenuEnum(String regex) {
         this.regex = regex;

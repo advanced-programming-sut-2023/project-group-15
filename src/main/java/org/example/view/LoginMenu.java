@@ -3,6 +3,7 @@ package org.example.view;
 import org.example.InputScanner;
 import org.example.controller.LoginMenuController;
 import org.example.controller.ProfileMenuController;
+import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
@@ -55,7 +56,7 @@ public class LoginMenu extends MainMenu {
     public void loginInCheck(Matcher matcher) {
         classify(matcher);
         LoginMenuOutput status = loginMenuController.loginUser();
-        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULY))
+        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY))
             run();
         System.out.println(status.getOutput());
     }
@@ -68,4 +69,25 @@ public class LoginMenu extends MainMenu {
     }
     //TODO after user logg ins current user should be updated in gamedata base class
     // commented by Raya
+
+    protected void forgetPassword(String username) {
+        loginMenuController.setUsername(username);
+        if (loginMenuController.checkMatchUsername()) {
+            SecurityQuestion question = loginMenuController.findUserSecurityQuestion();
+            System.out.println(question);
+            while (true) {
+                String answer = InputScanner.getScanner().nextLine();
+                if (loginMenuController.checkSecurityQuestion(answer)) {
+                    resettingUserPassword();
+                } else if (LoginMenuEnum.getMatcher(answer, LoginMenuEnum.QUIT_THE_PROCESS) != null) {
+                    break;
+                } else
+                    System.out.println(LoginMenuOutput.WRONG_ANSWER_FOR_SECURITY_QUESTION);
+            }
+        }
+        System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
+    }
+    private void resettingUserPassword() {
+        System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD);
+    }
 }
