@@ -10,7 +10,15 @@ import java.util.ArrayList;
 
 public class GameDataBase {
     private static ArrayList<User> allUsers = new ArrayList<>();
-    private User currentUser;
+    private static User currentUser;
+
+    public static User getUserByUsername(String name) {
+        for(User user :allUsers)
+            if(user.getUsername().equals(name))
+                return user;
+        return null;
+    }
+
     public void addUser(User user)
     {
         allUsers.add(user);
@@ -19,9 +27,9 @@ public class GameDataBase {
         this.currentUser = currentUser;
     }
 
-//    public static User getCurrentUser() {
-//        return currentUser;
-//    }
+    public static User getCurrentUser() {
+       return currentUser;
+    }
 
     public static void setAllUsers(ArrayList<User> allUsers) {
         GameDataBase.allUsers = allUsers;
@@ -43,5 +51,6 @@ public class GameDataBase {
         return allUsers;
     }
             }
+
 
 

@@ -1,0 +1,70 @@
+Index: src/main/java/org/example/view/MapChangesEnvironment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.view;\r\n\r\nimport org.example.InputScanner;\r\nimport org.example.controller.DropBuildingController;\r\nimport org.example.controller.MapMenuEnvironmentController;\r\nimport org.example.view.enums.commands.BuildingCommandsEnum;\r\nimport org.example.view.enums.commands.MapEnum;\r\nimport org.example.view.enums.outputs.BuildingStatusOutput;\r\n\r\nimport java.util.regex.Matcher;\r\n\r\npublic class MapChangesEnvironment {\r\n    public void run()\r\n    {\r\n        MapMenuEnvironmentController controller = new MapMenuEnvironmentController();\r\n        String command;\r\n        int mapNumber;\r\n        int mapsize;\r\n        int playerNo = 0;\r\n//      int playerNo = GameDataBase.getCurrentUser().getUserNO();\r\n        Matcher matcher;\r\n        if(playerNo== 1) {\r\n            System.out.println(\"please enter the size of map that you prefer between 200 & 400\");\r\n            mapsize = InputScanner.getScanner().nextInt();\r\n            System.out.println(\"now please enter the map number you want\");\r\n            mapNumber = InputScanner.getScanner().nextInt();\r\n            switch (mapNumber)\r\n            {\r\n                //TODO read and set from the file\r\n            }\r\n            controller.generateEachPlayerMap(playerNo, mapNumber);\r\n            //TODO the first players map would be generated hear\r\n            System.out.println(\"now please enter the changes you wish to make in the map\");\r\n\r\n        }\r\n\r\n        while(true)\r\n        {\r\n            command = InputScanner.getScanner().nextLine();\r\n            if((matcher = MapEnum.getMatcher(command,MapEnum.SET_TEXTURE)) != null)\r\n            controller.setTileTexture(matcher);\r\n            else if((matcher = MapEnum.getMatcher(command,MapEnum.SET_TEXTURE2)) != null)\r\n                controller.setTexture(matcher);\r\n            else if((matcher = MapEnum.getMatcher(command,MapEnum.CLEAR)) != null)\r\n                controller.clear(matcher);\r\n            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_ROCK)) != null)\r\n                controller.dropRock(matcher);\r\n            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_TREE)) != null)\r\n                controller.dropTree(matcher);\r\n            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_BUILDING)) !=null)\r\n            controller.dropBuilding(matcher);\r\n            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_UNIT)) != null)\r\n                controller.dropUnit(matcher);\r\n\r\n        }\r\n    }\r\n\r\n\r\n    //testing for dropping buildings...\r\n    private DropBuildingController buildingController = new DropBuildingController();\r\n    public void testRun() {\r\n        Matcher matcherTest;\r\n        String input;\r\n        while (true) {\r\n            input = InputScanner.getScanner().nextLine();\r\n            if ((matcherTest = BuildingCommandsEnum.getMatcher(input,BuildingCommandsEnum.DROP_BUILDING))!=null) {\r\n                BuildingStatusOutput status = dropBuilding(matcherTest);\r\n                if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY))\r\n                    System.out.println(\"building set successfully!\");\r\n                else\r\n                    System.out.println(status.getStatus());\r\n            }\r\n\r\n        }\r\n    }\r\n\r\n    private BuildingStatusOutput dropBuilding(Matcher matcherTest) {\r\n        classifyController(matcherTest);\r\n        BuildingStatusOutput status = buildingController.checkParameters();\r\n        if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {\r\n            status = buildingController.checkTheLand();\r\n            if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {\r\n                buildingController.SettingTheBuilding();\r\n            }\r\n        }\r\n        return status;\r\n    }\r\n\r\n\r\n    private void classifyController(Matcher matcherTest) {\r\n        buildingController.setType(matcherTest.group(\"type\"));\r\n        buildingController.setCoordinateX(matcherTest.group(\"x\"));\r\n        buildingController.setCoordinateY(matcherTest.group(\"y\"));\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/view/MapChangesEnvironment.java b/src/main/java/org/example/view/MapChangesEnvironment.java
+--- a/src/main/java/org/example/view/MapChangesEnvironment.java	
++++ b/src/main/java/org/example/view/MapChangesEnvironment.java	
+@@ -54,8 +54,6 @@
+ 
+         }
+     }
+-
+-
+     //testing for dropping buildings...
+     private DropBuildingController buildingController = new DropBuildingController();
+     public void testRun() {
+@@ -69,9 +67,22 @@
+                     System.out.println("building set successfully!");
+                 else
+                     System.out.println(status.getStatus());
+-            }
+-
+-        }
++            } else if ((matcherTest = BuildingCommandsEnum.getMatcher(input,BuildingCommandsEnum.SELECT_BUILDING))!=null) {
++                BuildingStatusOutput status = selectBuilding(matcherTest);
++            } else if ((matcherTest = BuildingCommandsEnum.getMatcher(input,BuildingCommandsEnum.CREATE_UNIT))!=null) {
++                BuildingStatusOutput status;
++            } else if (BuildingCommandsEnum.getMatcher(input,BuildingCommandsEnum.REPEAR )!= null) {
++                BuildingStatusOutput status;
++            } else
++                System.out.println("Invalid command idiot!");
++        }
++    }
++
++    private BuildingStatusOutput selectBuilding(Matcher matcherTest) {
++        classifyController(matcherTest);
++        BuildingStatusOutput status = buildingController.checkParameters();
++        //TODO: kar ziade hal ndarm bnvism...
++        return status;
+     }
+ 
+     private BuildingStatusOutput dropBuilding(Matcher matcherTest) {
+@@ -81,15 +92,20 @@
+             status = buildingController.checkTheLand();
+             if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
+                 buildingController.SettingTheBuilding();
+-            }
++                return status;
++            }
++            return status;
+         }
+         return status;
+     }
+-
+-
+     private void classifyController(Matcher matcherTest) {
+-        buildingController.setType(matcherTest.group("type"));
+-        buildingController.setCoordinateX(matcherTest.group("x"));
+-        buildingController.setCoordinateY(matcherTest.group("y"));
++        if (matcherTest.group("x")!=null)
++            buildingController.setCoordinateX(matcherTest.group("x"));
++        if (matcherTest.group("y")!=null)
++            buildingController.setCoordinateY(matcherTest.group("y"));
++        if (matcherTest.group("type") != null)
++            buildingController.setType(matcherTest.group("type"));
++        if (matcherTest.group("count")!=null)
++            buildingController.setCountOfUnits(matcherTest.group("count"));
+     }
+ }
