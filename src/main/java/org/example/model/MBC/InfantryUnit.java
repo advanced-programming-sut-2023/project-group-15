@@ -7,9 +7,6 @@ import org.example.model.enums.UnitName;
 public class InfantryUnit extends Soldier {
     public UnitName name;
     public int maxMove;
-    public int speed;
-    public int attackingPower;
-    public int deffense;
     public State state;
 
     /*public void setState(String state){
@@ -17,29 +14,7 @@ public class InfantryUnit extends Soldier {
             case STANDING:
         }
     }*/
-    private void setSpeed(int speed){
-        this.speed = speed;
-    }
 
-    public void setAttackingPower(int attackingPower){
-        this.attackingPower = attackingPower;
-    }
-
-    private void setDeffense(int deffense){
-        this.deffense = deffense;
-    }
-
-    private int getSpeed(){
-        return this.speed;
-    }
-
-    public int getAttackingPower(){
-        return this.attackingPower;
-    }
-
-    private int getDeffense(){
-        return this.deffense;
-    }
     public void setName(UnitName name){
         this.name = name;
     }

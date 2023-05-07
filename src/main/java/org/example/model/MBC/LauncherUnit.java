@@ -11,14 +11,9 @@ public class LauncherUnit extends Soldier {
     public UnitName name;
     public int maxMove;
     public int throwrange;
-    public int speed;
-    public int attackingPower;
-    public int deffense;
     public State state;
     public ArrayList<String> FightingFeature;
-    private void setSpeed(int speed){
-        this.speed = speed;
-    }
+
 
 
     public void setThrowrange(int throwrange){
@@ -26,25 +21,6 @@ public class LauncherUnit extends Soldier {
     }
     public int getThrowRageForChanging(){
         return this.throwrange;
-    }
-    private void setAttackingPower(int attackingPower){
-        this.attackingPower = attackingPower;
-    }
-
-    private void setDeffense(int deffense){
-        this.deffense = deffense;
-    }
-
-    private int getSpeed(){
-        return this.speed;
-    }
-
-    private int getAttackingPower(int attackingPower){
-        return this.attackingPower;
-    }
-
-    private int getDeffense(int deffense){
-        return this.deffense;
     }
     public UnitName getName() {
         return name;

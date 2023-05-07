@@ -157,32 +157,38 @@ public class GameMenuController {
     public void setFearRate(int rate){
         government.setFearRate(rate);
         switch (rate){
+            //TODO: add code to Increase in the production of buildings by workers
             case -5,-4,-3,-2,-1,0:
                      unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()-1);
                      launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()-1);
                      infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()-1);
                 break;
             case 1:
+                worker.setRandaman(worker.getRandaman()+1);
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()+1);
                 launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()+1);
                 infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()+1);
                 break;
             case 2:
+                worker.setRandaman(worker.getRandaman()+2);
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()+2);
                 launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()+2);
                 infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()+2);
                 break;
             case 3:
+                worker.setRandaman(worker.getRandaman()+3);
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()+3);
                 launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()+3);
                 infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()+3);
                 break;
             case 4:
+                worker.setRandaman(worker.getRandaman()+4);
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()+4);
                 launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()+4);
                 infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()+4);
                 break;
             case 5:
+                worker.setRandaman(worker.getRandaman()+5);
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()+5);
                 launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()+5);
                 infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()+5);

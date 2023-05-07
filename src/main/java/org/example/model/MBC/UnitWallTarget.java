@@ -6,33 +6,8 @@ import org.example.model.enums.UnitName;
 public class UnitWallTarget extends Soldier {
     public UnitName name;
     public int maxMove;
-    public int speed;
-    public int attackingPower;
-    public int deffense;
 
-    private void setSpeed(int speed){
-        this.speed = speed;
-    }
 
-    public void setAttackingPower(int attackingPower){
-        this.attackingPower = attackingPower;
-    }
-
-    private void setDeffense(int deffense){
-        this.deffense = deffense;
-    }
-
-    private int getSpeed(){
-        return this.speed;
-    }
-
-    public int getAttackingPower(){
-        return this.attackingPower;
-    }
-
-    private int getDeffense(){
-        return this.deffense;
-    }
     public void setName(UnitName name) {
         this.name = name;
     }
