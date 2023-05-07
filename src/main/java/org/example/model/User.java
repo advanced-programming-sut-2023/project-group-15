@@ -1,5 +1,6 @@
 package org.example.model;
 
+import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Map;
 
@@ -43,7 +44,7 @@ public class User {
         return allUsers;
     }
 
-    public void addUser() {
+    private void addUser() {
         allUsers.add(this);
     }
 
@@ -150,5 +151,18 @@ public class User {
 
     public Tile[][] getMap() {
         return map;
+    }
+
+    public SecurityQuestion findUserQuestionWithUsername(String username) {
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(username)) {
+                for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
+                    if (question.getQuestion().equals(user.getPassRecoveryQuestion())) {
+                        return question;
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

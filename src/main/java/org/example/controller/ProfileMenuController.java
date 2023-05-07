@@ -6,6 +6,7 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 
 
 public class ProfileMenuController extends LoginMenuController{
+
     public ProfileMenuOutput changeUsername(String username) {
         if (SignupMenuController.usernameCheckErrors(username).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             for (User user:User.allUsers) {

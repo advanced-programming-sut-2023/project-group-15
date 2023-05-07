@@ -67,13 +67,9 @@ public class LoginMenuController extends MainMenuController{
 
     public SecurityQuestion findUserSecurityQuestion() {
         for (User user:User.allUsers) {
-            if (user.getUsername().equals(this.getUsername()))
-                for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
-                    if (question.getQuestion().equals(user.getPassRecoveryQuestion())) {
-                        this.setPassRecoveryQuestion(question);
-                        return question;
-                    }
-                }
+            if (user.getUsername().equals(this.getUsername())) {
+                return user.findUserQuestionWithUsername(this.getUsername());
+            }
         }
         return null;
     }

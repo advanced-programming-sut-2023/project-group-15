@@ -135,11 +135,18 @@ public class SignupMenuController extends MainMenuController{
         if (this.getSlogan()!=null) {
             newUser.setSlogan(this.getSlogan());
         }
-        newUser.addUser();
         System.out.println("added to User class!");
     }
     private static Matcher getMatcher(String password, String regex) {
         Matcher matcher = Pattern.compile(regex,Pattern.CASE_INSENSITIVE).matcher(password);
         return matcher.matches() ? matcher : null ;
+    }
+
+    public void changeForgetPassword() {
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(this.getUsername())) {
+                user.setPassword(this.getPassword());
+            }
+        }
     }
 }
