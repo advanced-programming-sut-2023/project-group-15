@@ -2,16 +2,17 @@ package org.example.model;
 
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
+import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
-import org.example.model.enums.WaterArea;
 import org.example.model.enums.Tree;
+import org.example.model.enums.UnitName;
 
 public class Tile {
-    private Building building;
+    private BuildingName building;
     private LandType landType;
-    private WaterArea waterArea;
     private int numberOfSoldiers =  0;
-    private Soldier soldier = null;
+    private UnitName soldier = null;
+
     private Tree tree = null ;
     private boolean rock = false ;
     private String rockDirection;
@@ -19,14 +20,23 @@ public class Tile {
     public Tile() {
         this.building = null;
         this.landType= LandType.DEFAULT;
-        this.waterArea= WaterArea.DEFAULT;
         this.numberOfSoldiers = 0 ;
         this.soldier = null ;
         this.tree = null ;
         this.rock = false ;
     }
 
-    public void setBuilding(Building building) {
+    public Tile(BuildingName building, LandType landType, int numberOfSoldiers, UnitName soldier, Tree tree, boolean rock, String rockDirection) {
+        this.building = building;
+        this.landType = landType;
+        this.numberOfSoldiers = numberOfSoldiers;
+        this.soldier = soldier;
+        this.tree = tree;
+        this.rock = rock;
+        this.rockDirection = rockDirection;
+    }
+
+    public void setBuilding(BuildingName building) {
         this.building = building;
     }
 
@@ -38,7 +48,7 @@ public class Tile {
         this.numberOfSoldiers += numberOfSoldiers;
     }
 
-    public void setSoldier(Soldier soldier) {
+    public void setSoldier(UnitName soldier) {
         this.soldier = soldier;
     }
 
@@ -51,7 +61,7 @@ public class Tile {
         this.rockDirection = direction;
     }
 
-    public Building getBuilding() {
+    public BuildingName getBuilding() {
         return building;
     }
 
@@ -64,7 +74,7 @@ public class Tile {
         return numberOfSoldiers;
     }
 
-    public Soldier getSoldier() {
+    public UnitName getSoldier() {
         return soldier;
     }
 

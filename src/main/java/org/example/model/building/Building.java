@@ -4,24 +4,23 @@ package org.example.model.building;
 import org.example.model.enums.*;
 
 public class Building {
-//    private final BuildingName buildingName;
-    private final String name ;
+    private String name ;
     private final int hp;
-    private int xCoordinate;
-    private int yCoordinate;
+    private int xCoordiante;
+    private int yCoordiante;
     private Products material1 ;
     private Products material2 ;
     private int numberOfMaterial1;
     private int numberOfMaterial2;
     private int numberOfWorkers;
 
-    public Building(String name, int hp, int xCoordinate, int yCoordinate,
+    public Building(String name, int hp, int xCoordiante, int yCoordiante,
                     Products material1, Products material2, int numberOfMaterial1,
                     int numberOfMaterial2, int numberOfWorkers) {
         this.name = name;
         this.hp = hp;
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+        this.xCoordiante = xCoordiante;
+        this.yCoordiante = yCoordiante;
         this.material1 = material1;
         this.material2 = material2;
         this.numberOfMaterial1 = numberOfMaterial1;
@@ -37,12 +36,12 @@ public class Building {
         return hp;
     }
 
-    public int getxCoordinate() {
-        return xCoordinate;
+    public int getxCoordiante() {
+        return xCoordiante;
     }
 
-    public int getyCoordinate() {
-        return yCoordinate;
+    public int getyCoordiante() {
+        return yCoordiante;
     }
 
     public Products getMaterial1() {
@@ -62,16 +61,16 @@ public class Building {
     }
 
     public void setPosition(int x, int y) {
-        this.xCoordinate = x;
-        this.yCoordinate = y;
+        this.xCoordiante = x;
+        this.yCoordiante = y;
     }
 
-    public void setxCoordinate(int xCoordinate) {
-        this.xCoordinate = xCoordinate;
+    public void setxCoordiante(int xCoordiante) {
+        this.xCoordiante = xCoordiante;
     }
 
-    public void setyCoordinate(int yCoordinate) {
-        this.yCoordinate = yCoordinate;
+    public void setyCoordiante(int yCoordiante) {
+        this.yCoordiante = yCoordiante;
     }
 
     public void setMaterial1(Products material1) {

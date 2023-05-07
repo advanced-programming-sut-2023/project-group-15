@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class MapMenuEnvironmentController {
     public void setMapGame(int size ,int number)
     {
-        GameInformation.setMapGame(size,number);
+       // GameInformation.setMapGame(size,number);
         //TODO hear we set the whole map game from the templates
         // no changes on the ready template hear
 

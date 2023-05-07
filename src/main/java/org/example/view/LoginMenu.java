@@ -4,7 +4,6 @@ import org.example.InputScanner;
 import org.example.controller.LoginMenuController;
 import org.example.controller.ProfileMenuController;
 import org.example.controller.SignupMenuController;
-import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;

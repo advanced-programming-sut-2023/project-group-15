@@ -31,7 +31,6 @@ public class GameStartMenu {
             {
                 if(GameDataBase.getCurrentUser().getUserNO() != 1)
                     System.out.println(GameStartMenuOutput.ADD_USER_FORBIDDEN);
-
                 else if(GameDataBase.getUserByUsername(gameStartMatcher.group("name")) == null)
                     System.out.println(GameStartMenuOutput.USER_NOT_FOUND);
                 else {
