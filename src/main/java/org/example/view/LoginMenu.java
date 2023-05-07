@@ -49,6 +49,9 @@ public class LoginMenu extends MainMenu {
                 profileMenu.displayUserRank();
             } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
                 profileMenu.displayUserInfo();
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!=null) {
+                System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
+                break;
             } else {
                 System.out.println(ProfileMenuOutput.INVALID_COMMAND.getOutput());
             }

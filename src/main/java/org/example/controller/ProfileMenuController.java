@@ -66,7 +66,10 @@ public class ProfileMenuController extends LoginMenuController{
         //TODO: after completing other parts!
     }
     public void showUserSlogan() {
-        System.out.println(this.getSlogan());
+        if (this.getSlogan()!=null)
+            System.out.println(this.getSlogan());
+        else
+            System.out.println("slogan is empty!");
     }
     public void showUserProfileDisplay() {
         System.out.println("username:"+this.getUsername());

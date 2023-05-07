@@ -15,7 +15,7 @@ public enum ProfileMenuOutput {
     INVALID_NEW_NICKNAME("you entered invalid format of nickname!,\ntry again!"),
     INVALID_NEW_EMAIL("you entered invalid format of email!,\ntry again!"),
     INVALID_COMMAND("you entered invalid command!,\nenter \"game --help\" for hint!"),
-
+    LOGGED_OUT_SUCCESSFULLY("logged out successfully!"),
     EMPTY_FIELD("empty field error!");
     private final String output;
 

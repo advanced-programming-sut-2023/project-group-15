@@ -15,9 +15,7 @@ public enum ProfileMenuEnum {
     DISPLAY_USER_RANK("^\\s*profile\\s+display\\s+rank\\s*$"),
     DISPLAY_USER_SLOGAN("^\\s*profile\\s+display\\s+slogan\\s*$"),
     DISPLAY_PROFILE("^\\s*profile\\s+display\\s*$"),
-
-
-    ;
+    LOGOUT("^\\s*log\\s*out\\s*$");
     private final String regex;
 
     ProfileMenuEnum(String regex) {
