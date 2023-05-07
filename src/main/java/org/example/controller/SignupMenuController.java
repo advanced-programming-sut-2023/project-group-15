@@ -150,6 +150,7 @@ public class SignupMenuController extends MainMenuController {
             newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion().getQuestion());
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
+
         System.out.println("added to User class!");
     }
 

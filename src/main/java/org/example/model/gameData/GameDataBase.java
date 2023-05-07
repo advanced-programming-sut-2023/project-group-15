@@ -43,10 +43,12 @@ public class GameDataBase {
 
 
         JSONObject obj = new JSONObject();
-
-        String path =FilePaths.DATEBASE.getFilePaths();
-        File dir = new File(FilePaths.WORKING_DIR.getFilePaths());
+        String path ="d:/json/dataBase.json";
+        File dir = new File("d:/json/");
         dir.mkdirs();
+       /* String path =FilePaths.DATEBASE.getFilePaths();
+        File dir = new File(FilePaths.WORKING_DIR.getFilePaths());
+        dir.mkdirs();*/
 
         try (PrintWriter out = new PrintWriter(new FileWriter(path,true))) {
                 obj.put("Name", user.getUsername());
