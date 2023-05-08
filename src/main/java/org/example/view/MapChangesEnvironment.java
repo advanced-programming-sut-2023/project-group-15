@@ -28,7 +28,7 @@ public class MapChangesEnvironment {
             {
                 //TODO read and set from the file
             }
-            controller.generateEachPlayerMap(playerNo, mapNumber);
+          //  controller.generateEachPlayerMap(playerNo, mapNumber);
             //TODO the first players map would be generated hear
             System.out.println("now please enter the changes you wish to make in the map");
 

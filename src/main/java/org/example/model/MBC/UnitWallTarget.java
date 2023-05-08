@@ -14,7 +14,7 @@ public class UnitWallTarget extends Soldier {
         this.speed = speed;
     }
 
-    private void setattackingPower(int attackingPower){
+    public void setAttackingPower(int attackingPower){
         this.attackingPower = attackingPower;
     }
 
@@ -26,7 +26,7 @@ public class UnitWallTarget extends Soldier {
         return this.speed;
     }
 
-    private int getAttackingPower(){
+    public int getAttackingPower(){
         return this.attackingPower;
     }
 
@@ -64,19 +64,22 @@ public class UnitWallTarget extends Soldier {
     public void setMaxMove(UnitName name){
         switch (name){
             case SPEARMEN: this.maxMove = 2;
-            break;
+                break;
             case MACEMEN: this.maxMove = 2;
-            break;
+                break;
             case TUNNELER: this.maxMove = 3;
-            break;
+                break;
             case LADDERMEN: this.maxMove = 3;
-            break;
+                break;
             case ASSASSINS: this.maxMove = 2;
-            break;
+                break;
         }
     }
 
     public int getMaxMove(){
         return this.maxMove;
+    }
+    public void changeMove(int maxMove){
+        this.maxMove = maxMove;
     }
 }

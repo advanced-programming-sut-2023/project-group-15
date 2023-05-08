@@ -29,12 +29,7 @@ public class MapMenu {
                 controller.moving(mapMenuMatcher);
             else if ((mapMenuMatcher = MapEnum.getMatcher(command, MapEnum.MAP_DETAILS)) != null)
                 System.out.println(controller.showDetails(mapMenuMatcher));
-               /* System.out.println(controller.showDetails(Integer.parseInt(mapMenuMatcher.group("xCoordinate")),
-                        Integer.parseInt(mapMenuMatcher.group("yCoordinate"))));
-            /*else if((mapMenuMatcher = MapMenuEnum.getMatcher(command, MapMenuEnum.SHOW_MAP)) != null)
-                showMap(Integer.parseInt(mapMenuMatcher.group("xCoordinate"))
-                        , Integer.parseInt(mapMenuMatcher.group("yCoordinate")));*/
-            //TODO moving on map should be added
+
         }
     }
 }

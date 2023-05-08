@@ -19,4 +19,13 @@ public enum UnitName {
     TUNNELER,
     LADDERMEN,
     ASSASSINS,
+   ;
+    public static UnitName getUnitName(String name)
+    {
+        for(UnitName unitName : UnitName.values())
+            if(unitName.equals(name))
+                return unitName;
+        return null;
+    }
+
 }

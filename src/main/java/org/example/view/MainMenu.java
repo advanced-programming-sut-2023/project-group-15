@@ -1,6 +1,7 @@
 package org.example.view;
 
 import org.example.InputScanner;
+import org.example.controller.MainMenuController;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.SignupMenuEnum;
 

@@ -15,7 +15,7 @@ public class People extends Person{
         this.numberOfPeople -= number;
     }
 
-    private int getPeopleNumber(){
+    public int getPeopleNumber(){
         return numberOfPeople;
     }
 }

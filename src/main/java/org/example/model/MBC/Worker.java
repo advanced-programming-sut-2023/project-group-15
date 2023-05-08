@@ -2,20 +2,28 @@ package org.example.model.MBC;
 
 public class Worker extends Person{
     public int numberOfWorker;
+    public int randaman;
 
-    private void addWorker(int number){
+    public void addWorker(int number){
         this.numberOfWorker += number;
     }
 
-    private void setNumberOfWorker(int number){
+    public void setNumberOfWorker(int number){
         this.numberOfWorker = number;
     }
 
-    private void removeWorker(int number){
+    public void removeWorker(int number){
         this.numberOfWorker -= number;
     }
 
-    private int getWorkerNumber(){
+    public int getWorkerNumber(){
         return this.numberOfWorker;
     }
+    public int getRandaman(){
+        return this.randaman;
+    }
+    public void setRandaman(int randaman){
+        this.randaman = randaman;
+    }
+
 }

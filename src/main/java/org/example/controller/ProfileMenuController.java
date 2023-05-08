@@ -8,7 +8,7 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 public class ProfileMenuController extends LoginMenuController{
 
     public ProfileMenuOutput changeUsername(String username) {
-        if (SignupMenuController.usernameCheckErrors(username).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+//        if (SignupMenuController.usernameCheck(username)==null) {
             for (User user:User.allUsers) {
                 if (user.getUsername().equals(this.getUsername())) {
                     user.setUsername(username);
@@ -16,17 +16,16 @@ public class ProfileMenuController extends LoginMenuController{
                     return ProfileMenuOutput.USERNAME_CHANGED_SUCCESSFULLY;
                 }
             }
-        }
+//        }
         return ProfileMenuOutput.INVALID_NEW_USERNAME;
     }
+
     public ProfileMenuOutput changeNickname(String nickname) {
-        if (nickname != null) {
-            User.findUserWithPass(this.getPassword()).setNickname(nickname);
-            this.setNickname(nickname);
-            return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
-        }
-        return ProfileMenuOutput.EMPTY_FIELD;
+        User.findUserWithPass(this.getPassword()).setNickname(nickname);
+        this.setNickname(nickname);
+        return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
     }
+
     public ProfileMenuOutput changePassword(String oldPass,String newPass) {
         if (this.getPassword().equals(oldPass)) {
             if (!oldPass.equals(newPass)) {
@@ -41,36 +40,40 @@ public class ProfileMenuController extends LoginMenuController{
         }
         return ProfileMenuOutput.INVALID_CURRENT_PASSWORD;
     }
+
     public ProfileMenuOutput changeEmail(String email) {
-        if (SignupMenuController.emailCheck(email).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+        if (SignupMenuController.emailCheck(email)==null) {
             User.findUserWithPass(this.getPassword()).setEmail(email);
             this.setEmail(email);
             return ProfileMenuOutput.EMAIL_CHANGED_SUCCESSFULLY;
         }
         return ProfileMenuOutput.INVALID_NEW_EMAIL;
     }
+
     public ProfileMenuOutput changeSlogan(String slogan) {
         User.findUserWithPass(this.getPassword()).setSlogan(slogan);
         this.setSlogan(slogan);
         return ProfileMenuOutput.SLOGAN_CHANGED_SUCCESSFULLY;
     }
+
     public ProfileMenuOutput removeSlogan() {
         User.findUserWithPass(this.getPassword()).setSlogan(null);
         this.setSlogan(null);
         return ProfileMenuOutput.SLOGAN_REMOVED_SUCCESSFULLY;
     }
+
     public void showUserHighestScore() {
         //TODO: after completing other parts!
     }
+
     public void showUserRank() {
         //TODO: after completing other parts!
     }
+
     public void showUserSlogan() {
-        if (this.getSlogan()!=null)
-            System.out.println(this.getSlogan());
-        else
-            System.out.println("slogan is empty!");
+        System.out.println(this.getSlogan());
     }
+
     public void showUserProfileDisplay() {
         System.out.println("username:"+this.getUsername());
         StringBuilder password = new StringBuilder("*");

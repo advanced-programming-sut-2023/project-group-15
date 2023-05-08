@@ -45,7 +45,7 @@ public class DropBuildingController {
                 Building newBuilding = new ProductiveBuilding(name.toString(), 100, x, y, building.getMaterial1Name()
                         , building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial2(),
                         building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
-                Map.getCurrentMap()[x][y].setBuilding(newBuilding);
+                //Map.getCurrentMap()[x][y].setBuilding(newBuilding);
                 return;
 
             }

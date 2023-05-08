@@ -36,6 +36,14 @@ public enum LandType {
         this.buildingName2 = name2 ;
         this.mapId = mapId ;
     }
+    public static LandType getLandType(String type)
+    {
+        for(LandType landType : LandType.values())
+            if(landType.equals(type))
+                return landType;
+        return null;
+    }
+
 
 
     public String getMapId() {

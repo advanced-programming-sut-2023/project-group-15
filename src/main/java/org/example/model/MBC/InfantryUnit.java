@@ -10,35 +10,40 @@ public class InfantryUnit extends Soldier {
     public int attackingPower;
     public int deffense;
 
-    private void setSpeed(int speed){
+    public void setMaxMove(int maxMove) {
+        this.maxMove = maxMove;
+    }
+
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    private void setAttackingPower(int attackingPower){
+    public void setAttackingPower(int attackingPower) {
         this.attackingPower = attackingPower;
     }
 
-    private void setDeffense(int deffense){
+    public void setDeffense(int deffense) {
         this.deffense = deffense;
     }
 
-    private int getSpeed(){
-        return this.speed;
-    }
-
-    private int getAttackingPower(){
-        return this.attackingPower;
-    }
-
-    private int getDeffense(){
-        return this.deffense;
-    }
     public void setName(UnitName name){
         this.name = name;
     }
 
     public UnitName getName(){
         return this.name;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getAttackingPower() {
+        return attackingPower;
+    }
+
+    public int getDeffense() {
+        return deffense;
     }
 
     private void pikemen(){

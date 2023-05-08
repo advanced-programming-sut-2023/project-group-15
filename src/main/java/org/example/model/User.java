@@ -44,7 +44,7 @@ public class User {
         return allUsers;
     }
 
-    private void addUser() {
+    public void addUser() {
         allUsers.add(this);
     }
 

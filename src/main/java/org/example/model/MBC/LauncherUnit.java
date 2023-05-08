@@ -1,7 +1,11 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
+import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class LauncherUnit extends Soldier {
     public UnitName name;
@@ -10,11 +14,19 @@ public class LauncherUnit extends Soldier {
     public int speed;
     public int attackingPower;
     public int deffense;
-
+    public State state;
+    public ArrayList<String> FightingFeature;
     private void setSpeed(int speed){
         this.speed = speed;
     }
 
+
+    public void setThrowrange(int throwrange){
+        this.throwrange = throwrange;
+    }
+    public int getThrowRageForChanging(){
+        return this.throwrange;
+    }
     private void setAttackingPower(int attackingPower){
         this.attackingPower = attackingPower;
     }
@@ -27,7 +39,7 @@ public class LauncherUnit extends Soldier {
         return this.speed;
     }
 
-    private int getAttackingPower(int attackingPower){
+    public int getAttackingPower(int attackingPower){
         return this.attackingPower;
     }
 
@@ -69,39 +81,44 @@ public class LauncherUnit extends Soldier {
     public void setMove(UnitName name){
         switch (name){
             case ARCHER : this.maxMove = 3;
-            break;
+                break;
             case ARCHERBOW: this.maxMove = 3;
-            break;
+                break;
             case CROSSBOWMEN: this.maxMove = 1;
-            break;
+                break;
             case SLINGERS: this.maxMove = 3;
-            break;
+                break;
             case HORSE_ARCHERS: this.maxMove = 4;
-            break;
+                break;
             case FIRE_THROWERS: this.maxMove = 4;
-            break;
+                break;
         }
     }
 
-    public void setThrowRange(UnitName name){
+    public int getThrowRange(UnitName name){
         switch (name){
             case ARCHER : this.throwrange = 2;
-            break;
-            case ARCHERBOW: this.throwrange = 2;
-            break;
+                break;
+            case ARCHERBOW : this.throwrange = 2;
+                break;
             case CROSSBOWMEN: this.throwrange = 2;
-            break;
+                break;
             case SLINGERS: this.throwrange = 2;
-            break;
+                break;
             case HORSE_ARCHERS: this.throwrange = 2;
-            break;
+                break;
             case FIRE_THROWERS: this.throwrange = 3;
-            break;
+                break;
         }
+        return this.throwrange;
     }
 
-    private int getThrowRange(){
-        return this.throwrange;
+
+
+    public void setState(String state){
+        switch (State.valueOf(state)){
+            case STANDING:
+        }
     }
 
     public int getMaxMove(){

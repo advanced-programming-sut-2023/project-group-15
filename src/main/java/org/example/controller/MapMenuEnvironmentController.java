@@ -1,43 +1,21 @@
 package org.example.controller;
 
 import org.example.model.Tile;
-import org.example.model.enums.Direction;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
-import org.example.model.gameData.GameInformation;
+import org.example.model.enums.Direction;
 import org.example.model.gameData.Map;
 
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class MapMenuEnvironmentController {
-    public void setMapGame(int size, int number) {
-        GameInformation.setMapGame(size, number);
-        //TODO hear we set the whole map game from the templates
-        // no changes on the ready template hear
-
-    }
-
-    public void generateEachPlayerMap(int playerNumber, int mapSize) {
-        Tile[][] playerMap = new Tile[mapSize / 2][];
-        if (playerNumber <= 4) {
-            for (int i = 0; i < mapSize / 2; i++) {
-                for (int j = 0; j < mapSize / 4; j++)
-                    playerMap[i][j] = GameInformation.getGameMap()[i][(playerNumber - 1) * mapSize / 4];
-            }
-        } else {
-            for (int i = 0; i < mapSize / 2; i++) {
-                for (int j = 0; j < mapSize / 4; j++) {
-                    playerMap[i][j] = GameInformation.getGameMap()[i + mapSize / 2][((playerNumber % 4) - 1) * mapSize / 4];
-                }
-            }
-        }
-    }
 
     public void setTileTexture(Matcher matcher) {
         int x = 0;
         int y = 0;
-        String type = null;
+        String type = new String();
         while (matcher.find()) {
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i) == null)
@@ -58,7 +36,7 @@ public class MapMenuEnvironmentController {
 
 
     public void setTexture(Matcher matcher) {
-        String type = null;
+        String type = new String();
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
@@ -131,7 +109,7 @@ public class MapMenuEnvironmentController {
 
     public void dropRock(Matcher matcher) {
         int x = 0, y = 0;
-        String direction = null;
+        String direction = new String();
         for (int i = 0; i < matcher.groupCount(); i++) {
             if (matcher.group(i) == null)
                 continue;
@@ -146,8 +124,7 @@ public class MapMenuEnvironmentController {
         Direction direction1 = findDirection(direction);
         currentTile.setRock(true, direction1);
     }
-
-    private Direction findDirection(String direction) {
+    public static Direction findDirection(String direction) {
         if (direction.matches("\\s*[nN]\\s*")) {
             return Direction.UP;
         } else if (direction.matches("\\s*[eE]\\s*")) {
@@ -159,4 +136,5 @@ public class MapMenuEnvironmentController {
         }
         return Direction.NULL;
     }
+
 }

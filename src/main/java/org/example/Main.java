@@ -5,6 +5,7 @@ import org.example.view.MainMenu;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the game!");
+        new MainMenu().run();
 //        new MapChangesEnvironment().testRun();
         //Map.setCurrentMap(400);
       /*  for (int i = 10; i < 15; i++){
