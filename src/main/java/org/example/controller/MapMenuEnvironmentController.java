@@ -86,8 +86,12 @@ public class MapMenuEnvironmentController {
 
     public void dropBuilding(Matcher matcher) {
         DropBuildingController controller = new DropBuildingController();
-        if(controller.checkTheLand().equals(BuildingStatusOutput.DROP_FORBID));
-        System.out.println("Cant drop building in this tile");
+        if(controller.checkTheLand().equals(BuildingStatusOutput.DROP_FORBID))
+            System.out.println("Cant drop building in this tile");
+            else{
+
+        }
+
     }
 
     public void dropTree(Matcher matcher) {
