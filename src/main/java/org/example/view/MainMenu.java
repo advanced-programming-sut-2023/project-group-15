@@ -7,6 +7,7 @@ import org.example.view.enums.commands.SignupMenuEnum;
 import java.util.regex.Matcher;
 
 public class MainMenu {
+    private MainMenuController mainMenuController = new MainMenuController();
     public void run() {
         Matcher mainMenuMatcher;
         String userInput;

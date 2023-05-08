@@ -1,11 +1,10 @@
-package org.example.view;
+package org.example.view.enums;
 
 import org.example.InputScanner;
-import org.example.controller.DropBuildingController;
 import org.example.controller.MapMenuEnvironmentController;
-import org.example.view.enums.commands.BuildingCommandsEnum;
+import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.Map;
 import org.example.view.enums.commands.MapEnum;
-import org.example.view.enums.outputs.BuildingStatusOutput;
 
 import java.util.regex.Matcher;
 
@@ -16,8 +15,7 @@ public class MapChangesEnvironment {
         String command;
         int mapNumber;
         int mapsize;
-        int playerNo = 0;
-//      int playerNo = GameDataBase.getCurrentUser().getUserNO();
+        int playerNo = GameDataBase.getCurrentUser().getUserNO();
         Matcher matcher;
         if(playerNo== 1) {
             System.out.println("please enter the size of map that you prefer between 200 & 400");
@@ -53,45 +51,8 @@ public class MapChangesEnvironment {
                 controller.dropUnit(matcher);
 
         }
+
+
+
     }
-
-
-    //testing for dropping buildings...
-    private DropBuildingController buildingController = new DropBuildingController();
- /*   public void testRun() {
-        Matcher matcherTest;
-        String input;
-        while (true) {
-            input = InputScanner.getScanner().nextLine();
-            if ((matcherTest = BuildingCommandsEnum.getMatcher(input,BuildingCommandsEnum.DROP_BUILDING))!=null) {
-                BuildingStatusOutput status = dropBuilding(matcherTest);
-                if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY))
-                    System.out.println("building set successfully!");
-                else
-                    System.out.println(status.getStatus());
-            }
-
-        }
-    }
-
-    private BuildingStatusOutput dropBuilding(Matcher matcherTest) {
-        classifyController(matcherTest);
-         BuildingStatusOutput status = buildingController.checkParameters();
-        if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
-            status = buildingController.checkTheLand();
-            if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
-                buildingController.SettingTheBuilding();
-            }
-        }
-        return status;
-    }
-
-
-    private void classifyController(Matcher matcherTest) {
-        buildingController.setType(matcherTest.group("type"));
-        buildingController.setCoordinateX(matcherTest.group("x"));
-        buildingController.setCoordinateY(matcherTest.group("y"));
-    }
-
-*/
 }

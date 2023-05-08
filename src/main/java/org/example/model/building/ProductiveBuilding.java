@@ -17,8 +17,7 @@ public class ProductiveBuilding extends Building implements Produce {
         this.product1 = product1;
         this.product2 = product2;
     }
-
-
+    
     public Products getProduct1() {
         return product1;
     }

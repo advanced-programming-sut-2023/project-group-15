@@ -1,38 +1,26 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
+import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class LauncherUnit extends Soldier {
     public UnitName name;
     public int maxMove;
     public int throwrange;
-    public int speed;
-    public int attackingPower;
-    public int deffense;
+    public State state;
+    public ArrayList<String> FightingFeature;
 
-    private void setSpeed(int speed){
-        this.speed = speed;
+
+
+    public void setThrowrange(int throwrange){
+        this.throwrange = throwrange;
     }
-
-    private void setAttackingPower(int attackingPower){
-        this.attackingPower = attackingPower;
-    }
-
-    private void setDeffense(int deffense){
-        this.deffense = deffense;
-    }
-
-    private int getSpeed(){
-        return this.speed;
-    }
-
-    private int getAttackingPower(int attackingPower){
-        return this.attackingPower;
-    }
-
-    private int getDeffense(int deffense){
-        return this.deffense;
+    public int getThrowRageForChanging(){
+        return this.throwrange;
     }
     public UnitName getName() {
         return name;
@@ -83,11 +71,11 @@ public class LauncherUnit extends Soldier {
         }
     }
 
-    public void setThrowRange(UnitName name){
+    public int getThrowRange(UnitName name){
         switch (name){
             case ARCHER : this.throwrange = 2;
             break;
-            case ARCHERBOW: this.throwrange = 2;
+            case ARCHERBOW : this.throwrange = 2;
             break;
             case CROSSBOWMEN: this.throwrange = 2;
             break;
@@ -98,10 +86,15 @@ public class LauncherUnit extends Soldier {
             case FIRE_THROWERS: this.throwrange = 3;
             break;
         }
+        return this.throwrange;
     }
 
-    private int getThrowRange(){
-        return this.throwrange;
+
+
+    public void setState(String state){
+        switch (State.valueOf(state)){
+            case STANDING:
+        }
     }
 
     public int getMaxMove(){

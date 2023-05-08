@@ -1,38 +1,20 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
+import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
 
 public class InfantryUnit extends Soldier {
     public UnitName name;
     public int maxMove;
-    public int speed;
-    public int attackingPower;
-    public int deffense;
+    public State state;
 
-    private void setSpeed(int speed){
-        this.speed = speed;
-    }
+    /*public void setState(String state){
+        switch (State.valueOf(state)){
+            case STANDING:
+        }
+    }*/
 
-    private void setAttackingPower(int attackingPower){
-        this.attackingPower = attackingPower;
-    }
-
-    private void setDeffense(int deffense){
-        this.deffense = deffense;
-    }
-
-    private int getSpeed(){
-        return this.speed;
-    }
-
-    private int getAttackingPower(){
-        return this.attackingPower;
-    }
-
-    private int getDeffense(){
-        return this.deffense;
-    }
     public void setName(UnitName name){
         this.name = name;
     }
@@ -91,4 +73,5 @@ public class InfantryUnit extends Soldier {
     public int getMaxMove(){
         return this.maxMove;
     }
+
 }

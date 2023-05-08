@@ -20,6 +20,7 @@ public class User {
     private Tile[][] map;
     private ArrayList<GameDataBase> userGames;
     public static final ArrayList<User> allUsers = new ArrayList<>();
+
     public User(String username, String password, String nickname, String email) {
         this.username = username;
         this.password = password;
@@ -31,6 +32,7 @@ public class User {
         this.userGames = new ArrayList<>();
         this.addUser();
     }
+
     public User(String username, String password, String nickname, String email, String slogan) {
         this.username = username;
         this.password = password;
