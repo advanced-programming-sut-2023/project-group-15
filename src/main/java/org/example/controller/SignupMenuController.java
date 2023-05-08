@@ -4,12 +4,9 @@ package org.example.controller;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
-import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -143,36 +140,9 @@ public class SignupMenuController extends MainMenuController {
     public boolean randomPasswordVerification(String verification) {
         return verification.equals(this.getPassword());
     }
-    public static String getPassHashSha256(String password, byte[] salt) {
-
-        String passwordString = null;
-        try {
-            MessageDigest messagedigest = MessageDigest.getInstance("SHA-256");
-            messagedigest.update(salt);
-            byte[] bytes = messagedigest.digest(password.getBytes());
-            StringBuilder sb = new StringBuilder();
-            //System.out.println(bytes);
-            for (byte aByte : bytes) {
-                //convert to HEX;
-                //System.out.print(bytes[i]+" ");
-                sb.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
-                //System.out.println(sb);
-            }
-            passwordString = sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return passwordString;
-    }
-
-    private static byte[] makeSalt()  {
-        return new byte[16];
-    }
 
     public void signingsComplete() {
-        byte[] salt = makeSalt();
-        String passHash = getPassHashSha256(this.getPassword() , salt);
-        User newUser = new User(this.getUsername(), passHash, this.getNickname(), this.getEmail());
+        User newUser = new User(this.getUsername(), this.getPassword(), this.getNickname(), this.getEmail());
         if (this.getSlogan() != null) {
             newUser.setSlogan(this.getSlogan());
         }
@@ -180,9 +150,6 @@ public class SignupMenuController extends MainMenuController {
             newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion().getQuestion());
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
-        GameDataBase.addUser(newUser);
-        GameDataBase.setJasonFile(newUser);
-        newUser.addUser();
         System.out.println("added to User class!");
     }
 

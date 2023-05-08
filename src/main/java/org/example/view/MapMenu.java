@@ -33,6 +33,6 @@ public class MapMenu {
         }
     }
 }
-
+            // TODO : only a tile should be shown  with all information on the show details part
 
 

@@ -2,6 +2,7 @@ package org.example.model;
 
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
+import org.example.model.enums.Direction;
 import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
@@ -10,12 +11,11 @@ import org.example.model.enums.UnitName;
 public class Tile {
     private BuildingName building;
     private LandType landType;
-    private int numberOfSoldiers =  0;
-    private UnitName soldier = null;
-
-    private Tree tree = null ;
-    private boolean rock = false ;
-    private String rockDirection;
+    private int numberOfSoldiers;
+    private UnitName soldier;
+    private Tree tree;
+    private boolean rock;
+    private Direction rockDirection;
 
     public Tile() {
         this.building = null;
@@ -24,9 +24,10 @@ public class Tile {
         this.soldier = null ;
         this.tree = null ;
         this.rock = false ;
+        this.rockDirection = Direction.NULL;
     }
 
-    public Tile(BuildingName building, LandType landType, int numberOfSoldiers, UnitName soldier, Tree tree, boolean rock, String rockDirection) {
+    public Tile(BuildingName building, LandType landType, int numberOfSoldiers, UnitName soldier, Tree tree, boolean rock,Direction rockDirection) {
         this.building = building;
         this.landType = landType;
         this.numberOfSoldiers = numberOfSoldiers;
@@ -52,11 +53,11 @@ public class Tile {
         this.soldier = soldier;
     }
 
-    public void setTreeName(Tree treeName) {
-        this.tree = treeName;
+    public void setTree(Tree tree) {
+        this.tree = tree;
     }
 
-    public void setRock(boolean rockStatus,String direction) {
+    public void setRock(boolean rockStatus,Direction direction) {
         this.rock = rockStatus;
         this.rockDirection = direction;
     }
@@ -86,7 +87,7 @@ public class Tile {
         return rock;
     }
 
-    public String getRockDirection() {
+    public Direction getRockDirection() {
         return rockDirection;
     }
 }
