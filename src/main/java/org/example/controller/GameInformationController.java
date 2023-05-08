@@ -36,8 +36,9 @@ public class GameInformationController {
         playerNO ++;
         GameInformation.setCurrentUserno(playerNO);
     }
-    public void generateEachPlayerMap(int playerNumber, int mapSize)
+    public void generateEachPlayerMap(int mapSize)
     {
+        int playerNumber = GameInformation.getCurrentPlayerno();
         Tile[][] playerMap = new Tile[mapSize/2][];
         if(playerNumber <=4) {
             for (int i = 0; i <mapSize/2; i++) {

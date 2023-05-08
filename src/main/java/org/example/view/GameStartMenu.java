@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
 public class GameStartMenu {
     public void run()
     {
-        int mapNumber;
+        int mapNumber = 0;
         int mapsize;
         GameInformationController controller = new GameInformationController();
         String input;
@@ -42,6 +42,7 @@ public class GameStartMenu {
                     System.out.println(GameStartMenuOutput.USER_NOT_FOUND);
                 else {
                     User newPlayer = GameDataBase.getUserByUsername(gameStartMatcher.group("name"));
+                    controller.generateEachPlayerMap(mapNumber);
                     controller.playerAdder(newPlayer);
                     System.out.println(GameStartMenuOutput.ADD_USER_SUCCESS);
                 }
