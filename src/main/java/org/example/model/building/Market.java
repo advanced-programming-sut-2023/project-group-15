@@ -55,6 +55,7 @@ public class Market extends Building{
 
     public static void setTests() {
 
+        System.out.println("l");
         test.put("Apple", 10);
         test.put("Hop", 20);
         test.put("Bread", 0);

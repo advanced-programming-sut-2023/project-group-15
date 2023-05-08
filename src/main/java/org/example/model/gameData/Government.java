@@ -11,7 +11,7 @@ public class Government {
        private int foodRate;
        private int taxRate;
         private static int fearRate;
-        public double coins;
+        public static double coins;
         private static HashMap<String , Double> foods = new HashMap<>();
 
 
@@ -23,13 +23,16 @@ public class Government {
     }
     public void setCoins(double coins) {
        this.coins = coins;
-       Double zero = 0.00;
-       if(Double.compare(getCoins() , zero) == 0)
-           setTaxrate(0);
     }
 
-    public double getCoins() {
-        return this.coins;
+    public static void deCoin(double coin){
+        coins += coin;
+    }
+    public static void InCoin(double coin){
+        coins -= coin;
+    }
+    public static double getCoins() {
+        return coins;
     }
 
    /* public void setFoodRate(int foodRate) {

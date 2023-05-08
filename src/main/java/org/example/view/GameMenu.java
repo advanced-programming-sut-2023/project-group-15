@@ -102,7 +102,7 @@ public class GameMenu {
                 System.out.println("Source  " + "number  " + "sell  " + "buy");
                 System.out.println("______  " + "_____  " + "_____  " + "___  ");
 
-                HashMap<String , Integer> test = MarketController.show1();
+                 HashMap<String , Integer> test = MarketController.show1();
                 HashMap<String , Integer> test1 = MarketController.show2();
                 HashMap<String , Integer> test2 = MarketController.show3();
 
@@ -112,11 +112,11 @@ public class GameMenu {
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SELL_ITEM)) != null){
                 int number = Integer.parseInt(gameMenuMatcher.group("number"));
-                MarketController.sell(gameMenuMatcher.group("item") , number);
+                System.out.println(MarketController.sell(gameMenuMatcher.group("item") , number).getOutput());
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUY_ITEM)) != null){
                 int number = Integer.parseInt(gameMenuMatcher.group("number"));
-               MarketController.buy(gameMenuMatcher.group("item") , number);
+               System.out.println(MarketController.buy(gameMenuMatcher.group("item") , number).getOutput());
             }
         }
 
