@@ -1,4 +1,5 @@
 package org.example.controller;
+import org.example.model.Tile;
 import org.example.model.building.*;
 import org.example.model.gameData.*;
 import org.example.view.enums.outputs.BuildingStatusOutput;
@@ -38,6 +39,7 @@ public class DropBuildingController {
         this.coordinateY = coordinateY;
     }
 
+
     public void dropProductiveBuilding(int x , int y , BuildingName name)
     {
         for(BuildingName building : BuildingName.values()) {
@@ -45,13 +47,12 @@ public class DropBuildingController {
                 Building newBuilding = new ProductiveBuilding(name.toString(), 100, x, y, building.getMaterial1Name()
                         , building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial2(),
                         building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
-                //Map.getCurrentMap()[x][y].setBuilding(newBuilding);
+                Map.getCurrentMap()[x][y].setBuilding(newBuilding);
                 return;
 
             }
             //TODO each group of buildings should be made in a method
         }
-
         }
 
     public BuildingStatusOutput checkParameters() {
@@ -65,6 +66,14 @@ public class DropBuildingController {
     }
 
     public BuildingStatusOutput checkTheLand() {
+        int x = Integer.parseInt(getCoordinateX());
+        int y = Integer.parseInt(getCoordinateY());
+        Tile currentTile = GameInformation.getCurrentPlayer().getMap()[x][y];
+        if(!currentTile.isRock())
+            return BuildingStatusOutput.DROP_FORBID;
+        else if(!currentTile.getLandType().isBuildingStatus())
+            return BuildingStatusOutput.DROP_FORBID;
+
         return null;
     }
 

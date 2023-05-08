@@ -47,8 +47,9 @@ public class MapChangesEnvironment {
                 controller.dropRock(matcher);
             else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_TREE)) != null)
                 controller.dropTree(matcher);
-            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_BUILDING)) !=null)
-            controller.dropBuilding(matcher);
+            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_BUILDING)) !=null) {
+                controller.dropBuilding(matcher);
+            }
             else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_UNIT)) != null)
                 controller.dropUnit(matcher);
 
@@ -85,7 +86,6 @@ public class MapChangesEnvironment {
         }
         return status;
     }
-
 
     private void classifyController(Matcher matcherTest) {
         buildingController.setType(matcherTest.group("type"));

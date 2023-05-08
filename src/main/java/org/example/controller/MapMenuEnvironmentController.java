@@ -5,6 +5,7 @@ import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
 import org.example.model.gameData.Map;
+import org.example.view.enums.outputs.BuildingStatusOutput;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -84,7 +85,9 @@ public class MapMenuEnvironmentController {
     }
 
     public void dropBuilding(Matcher matcher) {
-        //Mahdi
+        DropBuildingController controller = new DropBuildingController();
+        if(controller.checkTheLand().equals(BuildingStatusOutput.DROP_FORBID));
+        System.out.println("Cant drop building in this tile");
     }
 
     public void dropTree(Matcher matcher) {

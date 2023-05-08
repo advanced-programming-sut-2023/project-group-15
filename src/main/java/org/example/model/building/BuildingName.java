@@ -12,7 +12,7 @@ public enum BuildingName {
     WOODCUTTER(3, WOOD, 0, null, 1, WOOD, null, 100),
     APPLE_GARDEN(5, WOOD, 0, null, 1, APPLE, null, 100),
     PITCH_RIG(20 , WOOD , 0 , null , 1 , PITCH , null , 100),
-    HOP_FARM(5, WOOD, 0, null, 1, HOP, null, 100),
+    OAT_FARM(5, WOOD, 0, null, 1, HOP, null, 100),
     HUNTING_BUILDING(5, WOOD, 0, null, 1, MEAT, null, 100),
     WEAT_FARM(15, WOOD, 0, null, 1, WEAT, null, 100),
     BAKERY(10, WOOD, 0, null, 1, BREAD, null, 100),

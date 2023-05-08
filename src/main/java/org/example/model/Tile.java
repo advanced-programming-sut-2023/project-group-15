@@ -9,7 +9,7 @@ import org.example.model.enums.Tree;
 import org.example.model.enums.UnitName;
 
 public class Tile {
-    private BuildingName building;
+    private Building building;
     private LandType landType;
     private int numberOfSoldiers;
     private UnitName soldier;
@@ -27,7 +27,7 @@ public class Tile {
         this.rockDirection = Direction.NULL;
     }
 
-    public Tile(BuildingName building, LandType landType, int numberOfSoldiers, UnitName soldier, Tree tree, boolean rock,Direction rockDirection) {
+    public Tile(Building building, LandType landType, int numberOfSoldiers, UnitName soldier, Tree tree, boolean rock,Direction rockDirection) {
         this.building = building;
         this.landType = landType;
         this.numberOfSoldiers = numberOfSoldiers;
@@ -37,7 +37,7 @@ public class Tile {
         this.rockDirection = rockDirection;
     }
 
-    public void setBuilding(BuildingName building) {
+    public void setBuilding(Building building) {
         this.building = building;
     }
 
@@ -62,7 +62,7 @@ public class Tile {
         this.rockDirection = direction;
     }
 
-    public BuildingName getBuilding() {
+    public Building getBuilding() {
         return building;
     }
 
