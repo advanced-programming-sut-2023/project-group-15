@@ -156,10 +156,9 @@ public class Government {
                 return 2;
             case 2:
                 return 1;
-            case 0:
-                return 0;
             default:
                 return 0;
         }
     }
+
 }

@@ -24,6 +24,9 @@ public enum GameMenuEnum {
     PATROL_UNIT("^\\s*patrol\\s+unit\\s+-x1\\s+(?<x1>\\d)\\s+-y1\\s+(?<y1>\\d)\\s+-x2\\s+(?<x2>\\d)\\s+-y2\\s+(?<y2>\\d)$"),
     STOP_PATROLLING("^\\s*stop\\s+patrolling\\s*$"),
     BUILD_EQUIPMENT("^\\s*build\\s+-q\\s+(?<equipment>trebuchet|portable shield|battering ram|catapults)$"),
+    SHOW_PRICE_LIST("^\\s*show\\s+price\\s+list$"),
+    SELL_ITEM("^\\s*sell\\s+-i\\s+(?<item>\\w+)\\s+-a\\s+(?<number>\\d+)$"),
+    BUY_ITEM("^\\s*buy\\s+-i\\s+(?<item>\\w+)\\s+-a\\s+(?<number>\\d+)$"),
     ;
 
 

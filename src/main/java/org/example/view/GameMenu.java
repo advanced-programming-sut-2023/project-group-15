@@ -2,10 +2,13 @@ package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.*;
+import org.example.model.building.Market;
 import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
 import org.example.view.enums.commands.GameMenuEnum;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import org.example.InputScanner;
 import org.example.view.enums.commands.GameMenuEnum;
@@ -95,7 +98,26 @@ public class GameMenu {
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUILD_EQUIPMENT)) != null){
                 System.out.println(UnitMenuController.buildEquipment(gameMenuMatcher.group("equipment")).getOutput());
             }
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_PRICE_LIST)) != null){
+                System.out.println("Source  " + "number  " + "sell  " + "buy");
+                System.out.println("______  " + "_____  " + "_____  " + "___  ");
 
+                HashMap<String , Integer> test = MarketController.show1();
+                HashMap<String , Integer> test1 = MarketController.show2();
+                HashMap<String , Integer> test2 = MarketController.show3();
+
+                for(String key : test.keySet()){
+                    System.out.println(key +"   "+ test.get(key) + "     " + test1.get(key) + "     " + test2.get(key));
+                }
+            }
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SELL_ITEM)) != null){
+                int number = Integer.parseInt(gameMenuMatcher.group("number"));
+                MarketController.sell(gameMenuMatcher.group("item") , number);
+            }
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUY_ITEM)) != null){
+                int number = Integer.parseInt(gameMenuMatcher.group("number"));
+               MarketController.buy(gameMenuMatcher.group("item") , number);
+            }
         }
 
     }
