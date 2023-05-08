@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b8194a-2a69-4a56-a342-4322569233a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameStartMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameStartMenuEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/LoginMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/LoginMenuOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/LoginMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/LoginMenuEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

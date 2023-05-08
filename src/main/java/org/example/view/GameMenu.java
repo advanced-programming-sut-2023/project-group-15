@@ -1,25 +1,11 @@
 package org.example.view;
 
 import org.example.InputScanner;
-import org.example.controller.DropBuildingController;
-import org.example.model.gameData.Map;
 import org.example.view.enums.commands.GameMenuEnum;
-
 import java.util.regex.Matcher;
-
-import static org.example.model.building.BuildingName.MILL;
-
-import org.example.InputScanner;
 import org.example.controller.GameMenuController;
-import org.example.controller.SignupMenuController;
-import org.example.view.enums.commands.GameMenuEnum;
-
-import java.util.regex.Matcher;
-
 public class GameMenu {
-
     private final GameMenuController GameMenuController = new GameMenuController();
-
     public void run() {
         Matcher gameMenuMatcher;
         String input;

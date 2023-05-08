@@ -31,7 +31,6 @@ public class MainMenu {
             }
         }
     }
-
     private void forgetPassword() {
         System.out.println("enter your username:");
         String input = InputScanner.getScanner().nextLine();
