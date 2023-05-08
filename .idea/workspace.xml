@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5b8194a-2a69-4a56-a342-4322569233a9" name="Changes" comment="" />
+    <list default="true" id="c5b8194a-2a69-4a56-a342-4322569233a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameStartMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameStartMenuEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/LoginMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/LoginMenuOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,11 +189,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>
           <line>32</line>
