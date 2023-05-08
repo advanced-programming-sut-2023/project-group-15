@@ -1,0 +1,187 @@
+Index: src/main/java/org/example/controller/MapMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.controller;\r\nimport org.example.model.gameData.Map;\r\nimport org.example.model.Tile;\r\nimport org.example.view.MapMenu;\r\n\r\nimport java.util.regex.Matcher;\r\n\r\npublic class MapMenuController {\r\n    private static int xStart = 0 ;\r\n    private static int yStart = 0 ;\r\n    public MapMenuController() {\r\n    }\r\n    public void setStartingPoint(Matcher matcher)\r\n    {\r\n        int x=0 , y=0 ;\r\n        for (int i = 0; i < matcher.groupCount(); i++) {\r\n            if (matcher.group(i) == null)\r\n                continue;\r\n            if (matcher.group(i).equals(\"x\"))\r\n                x = Integer.parseInt(matcher.group(i + 1));\r\n            if (matcher.group(i).equals(\"y\"))\r\n                y = Integer.parseInt(matcher.group(i + 1));\r\n        }\r\n        xStart =  x ;\r\n        yStart = y ;\r\n    }\r\n\r\n    public  int getxStart() {\r\n        return xStart;\r\n    }\r\n\r\n    public int getyStart() {\r\n        return yStart;\r\n    }\r\n\r\n    public void showMap(int x, int y) {\r\n        Tile currentTile = Map.getCurrentMap()[x][y];\r\n        Tile[][] mapToShow = new Tile[11][11];\r\n        int xS = x - 5;  // x startpoint\r\n        int xE = x + 5;  // x endpoint\r\n        if (xS < 0) {\r\n            xE += -xS;\r\n            xS = 0;\r\n        }\r\n        if (xE > 199) {\r\n            xS -= xE - 199;\r\n            xE = 199;\r\n        }\r\n        int yS = y - 5;  // y startpoint\r\n        int yE = y + 5;  // y endpoint\r\n        if (yS < 0) {\r\n            yE += -yS;\r\n            yS = 0;\r\n        }\r\n        if (yE > 199) {\r\n            yS -= yE - 199;\r\n            yE = 199;\r\n        }\r\n        for (int i = xS; i < xE; i++) {\r\n            for (int j = yS; j < yE; j++) {\r\n                if (Map.getCurrentMap()[i][j].getSoldier() != null) {\r\n                    System.out.print(\"S \");\r\n                    continue;\r\n                } else if (Map.getCurrentMap()[i][j].getBuilding() != null) {\r\n                    System.out.print(\"B \");\r\n                    continue;\r\n                } else\r\n                    System.out.print(Map.getCurrentMap()[i][j].getLandType().getMapId() + \" \");\r\n            }\r\n            System.out.println();\r\n        }\r\n    }\r\n    public void moving(Matcher matcher) {\r\n        int x = 0, y = 0;\r\n        for (int i = 0; i < matcher.groupCount(); i++) {\r\n            if (matcher.group(i) == null)\r\n                continue;\r\n            if (matcher.group(i).equals(\"right\"))\r\n                x = Integer.parseInt(matcher.group(i + 1));\r\n            else if (matcher.group(i).equals(\"left\"))\r\n                x = - Integer.parseInt(matcher.group(i + 1));\r\n            else if (matcher.group(i).equals(\"up\"))\r\n                y = Integer.parseInt(matcher.group(i + 1));\r\n            else if (matcher.group(i).equals(\"down\"))\r\n                y = - Integer.parseInt(matcher.group(i + 1));\r\n            showMap(xStart + x , yStart + y);\r\n        }\r\n    }\r\n    public String showDetails(Matcher matcher) {\r\n        int x = 0 , y = 0 ;\r\n        Tile currentTile = Map.findATile(x , y);\r\n        String answer = \"LandType : \" ;\r\n        answer = answer.concat(currentTile.getLandType().values().toString());\r\n        if (currentTile.getBuilding() != null) {\r\n            answer = answer.concat(\"\\n\" +currentTile.getBuilding().getName().toString());\r\n            //TODO soldiers should be added to the string\r\n        }\r\n        return answer ;\r\n    }\r\n\r\n}\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/controller/MapMenuController.java b/src/main/java/org/example/controller/MapMenuController.java
+--- a/src/main/java/org/example/controller/MapMenuController.java	(revision b75cdfcba4c258e5ed27b67b50e49a9dee760368)
++++ b/src/main/java/org/example/controller/MapMenuController.java	(date 1683477258352)
+@@ -91,10 +91,11 @@
+         Tile currentTile = Map.findATile(x , y);
+         String answer = "LandType : " ;
+         answer = answer.concat(currentTile.getLandType().values().toString());
+-        if (currentTile.getBuilding() != null) {
++        if (currentTile.getBuilding() != null)
+             answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+-            //TODO soldiers should be added to the string
+-        }
++        if(currentTile.getSoldier() != null)
++            answer = answer.concat("\n" + currentTile.getSoldier().toString());
++
+         return answer ;
+     }
+ 
+Index: src/main/java/org/example/model/Tile.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.model;\r\n\r\nimport org.example.model.MBC.Soldier;\r\nimport org.example.model.building.Building;\r\nimport org.example.model.enums.LandType;\r\nimport org.example.model.enums.WaterArea;\r\nimport org.example.model.enums.Tree;\r\n\r\npublic class Tile {\r\n    private Building building;\r\n    private LandType landType;\r\n    private WaterArea waterArea;\r\n    private int numberOfSoldiers =  0;\r\n    private Soldier soldier = null;\r\n    private Tree tree = null ;\r\n    private boolean rock = false ;\r\n    private String rockDirection;\r\n\r\n    public Tile() {\r\n        this.building = null;\r\n        this.landType= LandType.DEFAULT;\r\n        this.waterArea= WaterArea.DEFAULT;\r\n        this.numberOfSoldiers = 0 ;\r\n        this.soldier = null ;\r\n        this.tree = null ;\r\n        this.rock = false ;\r\n    }\r\n\r\n    public void setBuilding(Building building) {\r\n        this.building = building;\r\n    }\r\n\r\n    public void setLandType(LandType landType) {\r\n        this.landType = landType;\r\n    }\r\n\r\n    public void addToNumberOfSoldiers(int numberOfSoldiers) {\r\n        this.numberOfSoldiers += numberOfSoldiers;\r\n    }\r\n\r\n    public void setSoldier(Soldier soldier) {\r\n        this.soldier = soldier;\r\n    }\r\n\r\n    public void setTreeName(Tree treeName) {\r\n        this.tree = treeName;\r\n    }\r\n\r\n    public void setRock(boolean rockStatus,String direction) {\r\n        this.rock = rockStatus;\r\n        this.rockDirection = direction;\r\n    }\r\n\r\n    public Building getBuilding() {\r\n        return building;\r\n    }\r\n\r\n\r\n    public LandType getLandType() {\r\n        return landType;\r\n    }\r\n\r\n    public int getNumberOfSoldiers() {\r\n        return numberOfSoldiers;\r\n    }\r\n\r\n    public Soldier getSoldier() {\r\n        return soldier;\r\n    }\r\n\r\n    public Tree getTree() {\r\n        return tree;\r\n    }\r\n\r\n    public boolean isRock() {\r\n        return rock;\r\n    }\r\n\r\n    public String getRockDirection() {\r\n        return rockDirection;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/model/Tile.java b/src/main/java/org/example/model/Tile.java
+--- a/src/main/java/org/example/model/Tile.java	(revision b75cdfcba4c258e5ed27b67b50e49a9dee760368)
++++ b/src/main/java/org/example/model/Tile.java	(date 1683477299329)
+@@ -3,15 +3,15 @@
+ import org.example.model.MBC.Soldier;
+ import org.example.model.building.Building;
+ import org.example.model.enums.LandType;
++import org.example.model.enums.UnitName;
+ import org.example.model.enums.WaterArea;
+ import org.example.model.enums.Tree;
+ 
+ public class Tile {
+     private Building building;
+     private LandType landType;
+-    private WaterArea waterArea;
+     private int numberOfSoldiers =  0;
+-    private Soldier soldier = null;
++    private UnitName soldier = null;
+     private Tree tree = null ;
+     private boolean rock = false ;
+     private String rockDirection;
+@@ -19,7 +19,6 @@
+     public Tile() {
+         this.building = null;
+         this.landType= LandType.DEFAULT;
+-        this.waterArea= WaterArea.DEFAULT;
+         this.numberOfSoldiers = 0 ;
+         this.soldier = null ;
+         this.tree = null ;
+@@ -38,7 +37,7 @@
+         this.numberOfSoldiers += numberOfSoldiers;
+     }
+ 
+-    public void setSoldier(Soldier soldier) {
++    public void setSoldier(UnitName soldier) {
+         this.soldier = soldier;
+     }
+ 
+@@ -64,7 +63,7 @@
+         return numberOfSoldiers;
+     }
+ 
+-    public Soldier getSoldier() {
++    public UnitName getSoldier() {
+         return soldier;
+     }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Enum\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"mahdi\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OdNK38UNz2OrnIqCzmN0SMvyKl\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"D:/uni/ap/src\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\r\n    \"settings.editor.selected.configurable\": \"reference.settings.project.maven.repository.indices\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example.view\" />\r\n      <recent name=\"org.example.veiw.enums\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\r\n      <module name=\"project-group-15\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\" />\r\n      <created>1681886432173</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681886432173</updated>\r\n      <workItem from=\"1681886433354\" duration=\"78000\" />\r\n      <workItem from=\"1681886686257\" duration=\"2512000\" />\r\n      <workItem from=\"1682084994720\" duration=\"4296000\" />\r\n      <workItem from=\"1683312609400\" duration=\"2559000\" />\r\n      <workItem from=\"1683355289916\" duration=\"474000\" />\r\n      <workItem from=\"1683368615141\" duration=\"198000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۱\" summary=\"creating files...\">\r\n      <created>1681886768892</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <updated>1681886768892</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۲\" summary=\"creating files...\">\r\n      <created>1682085187908</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <updated>1682085187908</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۳\" summary=\"creating files...\">\r\n      <created>1682085989441</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <updated>1682085989441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"creating files...\">\r\n      <created>1682100710982</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100710982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"creating files...\">\r\n      <created>1682100873720</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100873720</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"mahdi\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creating files...\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"creating files...\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java</url>\r\n          <line>31</line>\r\n          <option name=\"timeStamp\" value=\"7\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>\r\n          <line>32</line>\r\n          <option name=\"timeStamp\" value=\"10\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java</url>\r\n          <line>17</line>\r\n          <option name=\"timeStamp\" value=\"12\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>\r\n          <line>16</line>\r\n          <properties class=\"org.example.view.enums.commands.MapMenuEnum\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"8\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b75cdfcba4c258e5ed27b67b50e49a9dee760368)
++++ b/.idea/workspace.xml	(date 1683477258733)
+@@ -4,8 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
++    <list default="true" id="fb7c36a5-cc63-4561-9774-ac8697d33d9e" name="Changes" comment="creating files...">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,7 +25,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="mahdi" />
++        <entry key="$PROJECT_DIR$" value="raya" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -47,26 +49,26 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "D:/uni/ap/src",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "run.code.analysis.last.selected.profile": "pProject Default",
+-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/uni/ap/src&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="org.example.view" />
+@@ -100,7 +102,7 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="" />
++      <changelist id="fb7c36a5-cc63-4561-9774-ac8697d33d9e" name="Changes" comment="creating files..." />
+       <created>1681886432173</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+@@ -155,19 +157,7 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="mahdi" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>

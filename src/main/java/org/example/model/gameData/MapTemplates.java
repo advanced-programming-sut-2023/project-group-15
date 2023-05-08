@@ -7,7 +7,6 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 public class MapTemplates {
     Tile[][] mapTemplate1 = new Tile[200][200];
@@ -22,8 +21,9 @@ public class MapTemplates {
             }
         }
         for (int i = 5; i < 15; i++) {
-            for (int j = 5; j < 40; j++)
+            for (int j = 5; j < 40; j++) {
                 mapTemplate2[i][j].setLandType(LandType.RIVER);
+            }
         }
         for (int i = 30; i < 60; i++) {
             for (int j = 40; j < 70; j++) {
@@ -33,8 +33,11 @@ public class MapTemplates {
 
         for (int i = 180; i < 200; i++) {
             for (int j = 180; j < 200; j++) {
-                mapTemplate2[i][j].setLandType(LandType.BEACH);
+                mapTemplate2[i][j].setLandType(LandType.DENSE_GRASSLAND);
             }
+        }
+        for(int i=180 ; i<200 ; i++)
+        {
             for (int j = 180; j < 200; j++) {
                 mapTemplate2[i][j].setLandType(LandType.SEA);
             }
@@ -54,7 +57,7 @@ public class MapTemplates {
         }
         for (int i = 11; i < 20; i++) {
             for (int j = 21; j < 35; j++) {
-                mapTemplate1[i][j].setLandType(LandType.BEACH);
+                mapTemplate1[i][j].setLandType(LandType.DENSE_GRASSLAND);
             }
         }
 
@@ -85,9 +88,9 @@ public class MapTemplates {
                 mapTemplate3[i][j].setLandType(LandType.SEA);
             }
         }
-        for (int i = 22; i < 40; i++) {
-            for (int j = 42; j < 70; j++) {
-                mapTemplate3[i][j].setLandType(LandType.BEACH);
+        for (int i = 20; i < 40; i++) {
+            for (int j = 40; j < 70; j++) {
+                mapTemplate3[i][j].setLandType(LandType.DENSE_GRASSLAND);
             }
         }
 
@@ -97,8 +100,9 @@ public class MapTemplates {
             }
         }
         for (int i = 100; i < 110; i++) {
-            for (int j = 100; j < 120; j++)
+            for (int j = 100; j < 120; j++) {
                 mapTemplate3[i][j].setLandType(LandType.RIVER);
+            }
         }
         for (int i = 240; i < 300; i++) {
             for (int j = 130; j < 150; j++) {
@@ -125,7 +129,7 @@ public class MapTemplates {
 
         for (int i = 180; i < 200; i++) {
             for (int j = 180; j < 200; j++) {
-                mapTemplate4[i][j].setLandType(LandType.BEACH);
+                mapTemplate4[i][j].setLandType(LandType.GRASS);
             }
             for (int j = 180; j < 200; j++) {
                 mapTemplate4[i][j].setLandType(LandType.SEA);
@@ -154,9 +158,9 @@ public class MapTemplates {
                     obj.put("Land: ", mapTemplate1[i][j].getLandType() +
                             " bulding: " + mapTemplate1[i][j].getBuilding() +
                             " Tree: " + mapTemplate1[i][j].getTree() +
-                            " Soldier: " + mapTemplate1[i][j].getTree() +
+                            " Soldier: " + mapTemplate1[i][j].getSoldier() +
                             " numberOfSoldiers: " + mapTemplate1[i][j].getNumberOfSoldiers() +
-                            " Rock" + mapTemplate1[i][j].isRock() +
+                            " Rock:" + mapTemplate1[i][j].isRock() +
                             " Rockdirection " + mapTemplate1[i][j].getRockDirection());
 
                     out.write(obj.toString());

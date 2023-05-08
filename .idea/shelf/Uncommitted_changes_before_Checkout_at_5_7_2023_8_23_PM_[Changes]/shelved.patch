@@ -1,0 +1,28 @@
+Index: src/main/java/org/example/controller/MapMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.controller;\r\nimport org.example.model.gameData.Map;\r\nimport org.example.model.Tile;\r\nimport org.example.view.MapMenu;\r\n\r\nimport java.util.regex.Matcher;\r\n\r\npublic class MapMenuController {\r\n\r\n    private static int xStart = 0 ;\r\n    private static int yStart = 0 ;\r\n    public MapMenuController() {\r\n    }\r\n    public void setStartingPoint(Matcher matcher)\r\n    {\r\n        int x=0 , y=0 ;\r\n        for (int i = 0; i < matcher.groupCount(); i++) {\r\n            if (matcher.group(i) == null)\r\n                continue;\r\n            if (matcher.group(i).equals(\"x\"))\r\n                x = Integer.parseInt(matcher.group(i + 1));\r\n            if (matcher.group(i).equals(\"y\"))\r\n                y = Integer.parseInt(matcher.group(i + 1));\r\n        }\r\n        xStart =  x ;\r\n        yStart = y ;\r\n    }\r\n\r\n    public  int getxStart() {\r\n        return xStart;\r\n    }\r\n\r\n    public int getyStart() {\r\n        return yStart;\r\n    }\r\n\r\n    public void showMap(int x, int y) {\r\n        Tile currentTile = Map.getCurrentMap()[x][y];\r\n        Tile[][] mapToShow = new Tile[11][11];\r\n        int xS = x - 5;  // x startpoint\r\n        int xE = x + 5;  // x endpoint\r\n        if (xS < 0) {\r\n            xE += -xS;\r\n            xS = 0;\r\n        }\r\n        if (xE > 199) {\r\n            xS -= xE - 199;\r\n            xE = 199;\r\n        }\r\n        int yS = y - 5;  // y startpoint\r\n        int yE = y + 5;  // y endpoint\r\n        if (yS < 0) {\r\n            yE += -yS;\r\n            yS = 0;\r\n        }\r\n        if (yE > 199) {\r\n            yS -= yE - 199;\r\n            yE = 199;\r\n        }\r\n        for (int i = xS; i < xE; i++) {\r\n            for (int j = yS; j < yE; j++) {\r\n                if (Map.getCurrentMap()[i][j].getSoldier() != null) {\r\n                    System.out.print(\"S \");\r\n                    continue;\r\n                } else if (Map.getCurrentMap()[i][j].getBuilding() != null) {\r\n                    System.out.print(\"B \");\r\n                    continue;\r\n                } else\r\n                    System.out.print(Map.getCurrentMap()[i][j].getLandType().getMapId() + \" \");\r\n            }\r\n            System.out.println();\r\n        }\r\n    }\r\n    public void moving(Matcher matcher) {\r\n        int x = 0, y = 0;\r\n        for (int i = 0; i < matcher.groupCount(); i++) {\r\n            if (matcher.group(i) == null)\r\n                continue;\r\n            if (matcher.group(i).equals(\"right\"))\r\n                x = Integer.parseInt(matcher.group(i + 1));\r\n            else if (matcher.group(i).equals(\"left\"))\r\n                x = - Integer.parseInt(matcher.group(i + 1));\r\n            else if (matcher.group(i).equals(\"up\"))\r\n                y = Integer.parseInt(matcher.group(i + 1));\r\n            else if (matcher.group(i).equals(\"down\"))\r\n                y = - Integer.parseInt(matcher.group(i + 1));\r\n            showMap(xStart + x , yStart + y);\r\n        }\r\n    }\r\n    public String showDetails(Matcher matcher) {\r\n        int x = 0 , y = 0 ;\r\n        Tile currentTile = Map.findATile(x , y);\r\n        String answer = \"LandType : \" ;\r\n        answer = answer.concat(currentTile.getLandType().values().toString());\r\n       /* if (currentTile.getBuilding() != null) {\r\n\r\n            answer = answer.concat(\"\\n\" +currentTile.getBuilding().getName().toString());\r\n\r\n            //answer = answer.concat(\"\\n\" +currentTile.getBuilding().getName().toString());\r\n\r\n            //TODO soldiers should be added to the string\r\n        }*/\r\n        return answer ;\r\n    }\r\n\r\n}\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/controller/MapMenuController.java b/src/main/java/org/example/controller/MapMenuController.java
+--- a/src/main/java/org/example/controller/MapMenuController.java	(revision 11b410a6ef4087ab47c5c098105f38d920b1ee7c)
++++ b/src/main/java/org/example/controller/MapMenuController.java	(date 1683478331045)
+@@ -92,14 +92,11 @@
+         Tile currentTile = Map.findATile(x , y);
+         String answer = "LandType : " ;
+         answer = answer.concat(currentTile.getLandType().values().toString());
+-       /* if (currentTile.getBuilding() != null) {
+-
+-            answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+-
++        if (currentTile.getBuilding() != null)
+             //answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
++        if(currentTile.getSoldier() != null)
++            answer = answer.concat("\n" + currentTile.getSoldier().toString());
+ 
+-            //TODO soldiers should be added to the string
+-        }*/
+         return answer ;
+     }
+ 

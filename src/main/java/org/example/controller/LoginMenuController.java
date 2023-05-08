@@ -1,34 +1,34 @@
 package org.example.controller;
 
 import org.example.model.User;
+import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
 public class LoginMenuController extends MainMenuController{
     private boolean stayLoggedInFlag = false;
 
     public LoginMenuOutput loginUser() {
-        if (checkMatchUsername(this.getUsername())) {
-            if (checkUsernameWithPassword(this.getUsername(),this.getPassword())) {
-                //TODO: later...
-                return LoginMenuOutput.LOGGED_IN_SUCCESSFULY;
+        if (checkMatchUsername()) {
+            if (checkUsernameWithPassword()) {
+                return LoginMenuOutput.LOGGED_IN_SUCCESSFULLY;
             }
             return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;
         }
         return LoginMenuOutput.USER_DOES_NOT_EXIST;
     }
 
-    public boolean checkMatchUsername(String username) {
+    public boolean checkMatchUsername() {
         for (User user:User.allUsers) {
-            if (user.getUsername().equals(username))
+            if (user.getUsername().equals(this.getUsername()))
                 return true;
         }
         return false;
     }
 
-    public boolean checkUsernameWithPassword(String username,String password) {
+    private boolean checkUsernameWithPassword() {
         for (User user:User.allUsers) {
-            if (user.getUsername().equals(username)) {
-                if (user.getPassword().equals(password)) {
+            if (user.getUsername().equals(this.getUsername())) {
+                if (user.getPassword().equals(this.getPassword())) {
                     return true;
                 }
             }
@@ -37,13 +37,14 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkSecurityQuestion(String answer) {
-        //TODO:
-        return true;
-    }
-
-    public LoginMenuOutput forgetPassword(String username) {
-        //TODO:
-        return null;
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(this.getUsername())) {
+                if (user.getPassRecoveryAnswer().matches("\\s*"+answer+"\\s*")) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public void logoutUser() {
@@ -52,16 +53,23 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public void captcha() {
-        //TODO:
-        return;
+        //TODO: later...
     }
-
     public boolean isStayLoggedInFlag() {
         return stayLoggedInFlag;
     }
 
     public void setStayLoggedInFlag(boolean stayLoggedInFlag) {
         this.stayLoggedInFlag = stayLoggedInFlag;
+    }
+
+    public SecurityQuestion findUserSecurityQuestion() {
+        for (User user:User.allUsers) {
+            if (user.getUsername().equals(this.getUsername())) {
+                return user.findUserQuestionWithUsername();
+            }
+        }
+        return null;
     }
 }
 

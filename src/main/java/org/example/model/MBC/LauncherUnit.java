@@ -11,9 +11,14 @@ public class LauncherUnit extends Soldier {
     public UnitName name;
     public int maxMove;
     public int throwrange;
+    public int speed;
+    public int attackingPower;
+    public int deffense;
     public State state;
     public ArrayList<String> FightingFeature;
-
+    private void setSpeed(int speed){
+        this.speed = speed;
+    }
 
 
     public void setThrowrange(int throwrange){
@@ -21,6 +26,25 @@ public class LauncherUnit extends Soldier {
     }
     public int getThrowRageForChanging(){
         return this.throwrange;
+    }
+    private void setAttackingPower(int attackingPower){
+        this.attackingPower = attackingPower;
+    }
+
+    private void setDeffense(int deffense){
+        this.deffense = deffense;
+    }
+
+    private int getSpeed(){
+        return this.speed;
+    }
+
+    public int getAttackingPower(int attackingPower){
+        return this.attackingPower;
+    }
+
+    private int getDeffense(int deffense){
+        return this.deffense;
     }
     public UnitName getName() {
         return name;
@@ -57,34 +81,34 @@ public class LauncherUnit extends Soldier {
     public void setMove(UnitName name){
         switch (name){
             case ARCHER : this.maxMove = 3;
-            break;
+                break;
             case ARCHERBOW: this.maxMove = 3;
-            break;
+                break;
             case CROSSBOWMEN: this.maxMove = 1;
-            break;
+                break;
             case SLINGERS: this.maxMove = 3;
-            break;
+                break;
             case HORSE_ARCHERS: this.maxMove = 4;
-            break;
+                break;
             case FIRE_THROWERS: this.maxMove = 4;
-            break;
+                break;
         }
     }
 
     public int getThrowRange(UnitName name){
         switch (name){
             case ARCHER : this.throwrange = 2;
-            break;
+                break;
             case ARCHERBOW : this.throwrange = 2;
-            break;
+                break;
             case CROSSBOWMEN: this.throwrange = 2;
-            break;
+                break;
             case SLINGERS: this.throwrange = 2;
-            break;
+                break;
             case HORSE_ARCHERS: this.throwrange = 2;
-            break;
+                break;
             case FIRE_THROWERS: this.throwrange = 3;
-            break;
+                break;
         }
         return this.throwrange;
     }

@@ -8,4 +8,14 @@ public enum Tree {
     DATE_PALM,
     ;
 
+
+
+    public static Tree getTree(String name)
+    {
+        for(Tree tree : Tree.values())
+            if(tree.equals(name))
+                return tree;
+        return null;
+    }
+
 }

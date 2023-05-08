@@ -3,10 +3,10 @@ package org.example.model.gameData;
 import org.example.model.Tile;
 
 public abstract class Map {
-     private static int  mapSize;
-     private int playerMapLength;
-     private int playerMapWidth;
-     public static Tile[][] currentMap = new Tile[400][400];
+    private static int mapSize;
+    private int playerMapLength;
+    private int playerMapWidth;
+    public static Tile[][] currentMap = new Tile[400][400];
 
 
     public static void setCurrentMap(int size)
@@ -34,8 +34,7 @@ public abstract class Map {
         return currentMap;
     }
 
-    public static Tile findATile(int x , int y )
-    {
-         return currentMap[x][y];
+    public static Tile findATile(int x, int y) {
+        return currentMap[x][y];
     }
 }

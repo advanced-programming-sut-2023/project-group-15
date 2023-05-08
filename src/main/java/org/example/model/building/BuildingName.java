@@ -21,7 +21,7 @@ public enum BuildingName {
     BLACKSMITH(100, GOLD_COIN, 20, WOOD, 1, SWORD, MACE, 100),
     POLETURNER(100, GOLD_COIN, 20, WOOD, 1, SPEAR, null, 100),
     FLETCHER(100, GOLD_COIN, 20, WOOD, 1, ARCHE, null, 100),
-    OIL_SMELTLER(10, IRON, 100, GOLD_COIN, 1, OILPOT, null, 100),
+    OIL_SMELTLER(10, IRON, 100, GOLD_COIN, 1, OIL_POT, null, 100),
     STABLE(20, WOOD, 400, GOLD_COIN, 0, HORSE, null, 100),
     ARMOURY(5 , WOOD , 100 ),
     OX_TETHER( 5 , WOOD , 0 , null ,  1 ),
@@ -31,7 +31,7 @@ public enum BuildingName {
     STORE( 5, WOOD , 100 ),
     FOODSTORE( 5 , WOOD , 100),
     LOOKOUT_TOWER(100 , 100),
-    PERIMETER_TOWER(100 , 100),
+    PERMETER_TOWER(100 , 100),
     DEFEND_TURRET(100 , 100),
     SQUARE_TOWER(100 , 100),
     CIRCLE_TOWER(100 , 100),
@@ -167,6 +167,17 @@ public enum BuildingName {
         this.material1Name = material1Name ;
         this.numberOfMaterial2 = numberOfMaterial2 ;
         this.material2Name = material2Name ;
+    }
+    public static BuildingName getBuildingByName(String name)
+    {
+        for(BuildingName buildingName : BuildingName.values())
+        {
+            if(buildingName.equals(name))
+                return buildingName;
+
+        }
+        return null;
+
     }
 
 

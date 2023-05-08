@@ -1,12 +1,7 @@
 package org.example.controller;
 
 import org.example.model.MBC.*;
-import org.example.model.Tile;
-import org.example.model.User;
 import org.example.model.gameData.Government;
-import org.example.view.enums.outputs.GameMenuOutput;
-import org.example.model.gameData.Map;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
@@ -27,19 +22,19 @@ public class GameMenuController {
     }
     public String showFoodRate(){
         String foodRate = "your food rate is " + government.getFoodRate() + "\nmeans:\n";
-       switch (government.getFoodRate()){
-           case -2: foodRate += "you feed people 1 unit\nmonthly your popularity decreases by 8 unit";
-               break;
-           case -1: foodRate += "you feed people 0.5 unit\nmonthly your popularity decreases by 4 unit";
-               break;
-           case 0: foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 0 unit";
-               break;
-           case 1: foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 4 unit";
-               break;
-           case 2: foodRate += "you feed people 2 units\nmonthly your popularity increases by 8 unit";
-               break;
-       }
-       return foodRate;
+        switch (government.getFoodRate()){
+            case -2: foodRate += "you feed people 1 unit\nmonthly your popularity decreases by 8 unit";
+                break;
+            case -1: foodRate += "you feed people 0.5 unit\nmonthly your popularity decreases by 4 unit";
+                break;
+            case 0: foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 0 unit";
+                break;
+            case 1: foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 4 unit";
+                break;
+            case 2: foodRate += "you feed people 2 units\nmonthly your popularity increases by 8 unit";
+                break;
+        }
+        return foodRate;
     }
 
     public String taxRate(){
@@ -80,22 +75,22 @@ public class GameMenuController {
 
         switch (rate){
             case -2: government.setPopularity(government.getPopularity()-8+government.checkFoodVariety());
-                     government.setFoodRate(-2);
+                government.setFoodRate(-2);
                 break;
             case -1: government.setPopularity(government.getPopularity()-4+government.checkFoodVariety());
-                     government.changeFoodGivingPeople(0.5);
-                     government.setFoodRate(-1);
+                government.changeFoodGivingPeople(0.5);
+                government.setFoodRate(-1);
                 break;
             case 0: government.changeFoodGivingPeople(1.0);
-                    government.setFoodRate(0);
+                government.setFoodRate(0);
                 break;
             case 1: government.setPopularity(government.getPopularity()+4+government.checkFoodVariety());
-                    government.changeFoodGivingPeople(1.5);
-                    government.setFoodRate(1);
+                government.changeFoodGivingPeople(1.5);
+                government.setFoodRate(1);
                 break;
             case 2: government.setPopularity(government.getPopularity()+8+government.checkFoodVariety());
-                    government.changeFoodGivingPeople(2.0);
-                    government.setFoodRate(2);
+                government.changeFoodGivingPeople(2.0);
+                government.setFoodRate(2);
                 break;
         }
     }
@@ -104,44 +99,46 @@ public class GameMenuController {
         government.setCoins(n);
     }
     public void setTaxRate(int rate){
-
+        government.setCoins(130.90);
+        people.setNumberOfPeople(10);
         Double zero = 0.00;
         if(Double.compare(government.getCoins() , zero) == 0)
             rate = 0;
         switch (rate){
             case -3: government.setCoins(government.getCoins()-people.getPeopleNumber());
-                     government.setTaxrate(-3);
+                government.setTaxrate(-3);
                 break;
             case -2: government.setCoins(government.getCoins()-0.8*people.getPeopleNumber());
-                     government.setTaxrate(-2);
+                government.setTaxrate(-2);
 
                 break;
             case -1: government.setCoins(government.getCoins()-0.6*people.getPeopleNumber());
-                     government.setTaxrate(-1);
+                government.setTaxrate(-1);
                 break;
             case 1: government.setCoins(government.getCoins()+0.6*people.getPeopleNumber());
-                    government.setTaxrate(1);
+                government.setTaxrate(1);
                 break;
             case 2: government.setCoins(government.getCoins()+0.8*people.getPeopleNumber());
-                    government.setTaxrate(2);
+                government.setTaxrate(2);
+                System.out.println(government.getCoins());
                 break;
             case 3: government.setCoins(government.getCoins()+people.getPeopleNumber());
-                    government.setTaxrate(3);
+                government.setTaxrate(3);
                 break;
             case 4: government.setCoins(government.getCoins()+0.5*people.getPeopleNumber());
-                    government.setTaxrate(4);
+                government.setTaxrate(4);
                 break;
             case 5: government.setCoins(government.getCoins()+0.25*people.getPeopleNumber());
-                    government.setTaxrate(5);
+                government.setTaxrate(5);
                 break;
             case 6: government.setCoins(government.getCoins()+0.17*people.getPeopleNumber());
-                    government.setTaxrate(6);
+                government.setTaxrate(6);
                 break;
             case 7: government.setCoins(government.getCoins()+0.13*people.getPeopleNumber());
-                    government.setTaxrate(7);
+                government.setTaxrate(7);
                 break;
             case 8: government.setCoins(government.getCoins()+2*people.getPeopleNumber());
-                    government.setTaxrate(8);
+                government.setTaxrate(8);
                 break;
         }
     }
@@ -159,9 +156,9 @@ public class GameMenuController {
         switch (rate){
             //TODO: add code to Increase in the production of buildings by workers
             case -5,-4,-3,-2,-1,0:
-                     unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()-1);
-                     launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()-1);
-                     infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()-1);
+                unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower()-1);
+                launcherUnit.setThrowrange(launcherUnit.getThrowRageForChanging()-1);
+                infantryUnit.setAttackingPower(infantryUnit.getAttackingPower()-1);
                 break;
             case 1:
                 worker.setRandaman(worker.getRandaman()+1);
@@ -202,10 +199,9 @@ public class GameMenuController {
     }
 
     public int popularity(){
-      return government.getPopularity();
+        return government.getPopularity();
     }
 
 
-    }
-
+}
 
