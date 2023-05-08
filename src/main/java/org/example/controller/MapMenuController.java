@@ -1,4 +1,6 @@
 package org.example.controller;
+import org.example.model.MBC.Soldier;
+import org.example.model.building.BuildingName;
 import org.example.model.gameData.Map;
 import org.example.model.Tile;
 import org.example.view.MapMenu;
@@ -92,10 +94,12 @@ public class MapMenuController {
         Tile currentTile = Map.findATile(x , y);
         String answer = "LandType : " ;
         answer = answer.concat(currentTile.getLandType().values().toString());
-        if (currentTile.getBuilding() != null) {
-            //answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
+        if (currentTile.getBuilding() != null)
+            answer = answer.concat("\n" + "Building(s): " +currentTile.getBuilding().values().toString());
+            if(currentTile.getSoldier() != null)
+                answer = answer.concat("\n" + "Soldiers : " + currentTile.getSoldier().values().toString());
             //TODO soldiers should be added to the string
-        }
+
         return answer ;
     }
 
