@@ -1,31 +1,26 @@
 package org.example.model.MBC;
 
 import org.example.model.MBC.Soldier;
+import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
 
 public class InfantryUnit extends Soldier {
-    public UnitName name;
-    public int maxMove;
-    public int speed;
-    public int attackingPower;
-    public int deffense;
+    private UnitName name;
+    private int maxMove;
+    private State state;
 
-    public void setMaxMove(int maxMove) {
+    /*public void setState(String state){
+        switch (State.valueOf(state)){
+            case STANDING:
+        }
+    }*/
+
+    public InfantryUnit(int speed, int attackingPower , int deffens , int x, int y, UnitName name , int maxMove , int throwRange , State state){
+        super(speed, attackingPower ,deffens , x, y);
+        this.name = name;
         this.maxMove = maxMove;
+        this.state = state;
     }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public void setAttackingPower(int attackingPower) {
-        this.attackingPower = attackingPower;
-    }
-
-    public void setDeffense(int deffense) {
-        this.deffense = deffense;
-    }
-
     public void setName(UnitName name){
         this.name = name;
     }
@@ -34,43 +29,31 @@ public class InfantryUnit extends Soldier {
         return this.name;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getAttackingPower() {
-        return attackingPower;
-    }
-
-    public int getDeffense() {
-        return deffense;
-    }
-
-    private void pikemen(){
+    public void pikemen(){
         this.name = UnitName.PIKEMEN;
     }
 
-    private void swordsmen(){
+    public void swordsmen(){
         this.name = UnitName.SWORDSMEN;
     }
 
-    private void knigth(){
+    public void knigth(){
         this.name = UnitName.KNIGHT;
     }
 
-    private void engineer(){
+    public void engineer(){
         this.name = UnitName.ENGINEER;
     }
 
-    private void blackMonk(){
+    public void blackMonk(){
         this.name = UnitName.BLACK_MONK;
     }
 
-    private void slaves(){
+    public void slaves(){
         this.name = UnitName.SLAVES;
     }
 
-    private void arabianSwordsmen(){
+    public void arabianSwordsmen(){
         this.name = UnitName.ARABIAN_SWORDSMEN;
     }
 
@@ -96,4 +79,5 @@ public class InfantryUnit extends Soldier {
     public int getMaxMove(){
         return this.maxMove;
     }
+
 }

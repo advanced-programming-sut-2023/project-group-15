@@ -1,13 +1,13 @@
 package org.example.model.MBC;
 
 public class Soldier extends Person{
-    public int speed;
-    public int attackingPower;
-    public int deffense;
-    public int x;
-    public int y;
+    private int speed;
+    private int attackingPower;
+    private int deffense;
+    private int x;
+    private int y;
 
-    private void Soldier(int speed,int attackingPower,int deffense,int x,int y){
+    public Soldier(int speed,int attackingPower,int deffense,int x,int y){
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.deffense = deffense;
@@ -15,43 +15,43 @@ public class Soldier extends Person{
         this.y = y;
     }
 
-    private void setSpeed(int speed){
+    public void setSpeed(int speed){
         this.speed = speed;
     }
 
-    private void setAttackingPower(int attackingPower) {
+    public void setAttackingPower(int attackingPower) {
         this.attackingPower = attackingPower;
     }
 
-    private void setDeffense(int deffense) {
+    public void setDeffense(int deffense) {
         this.deffense = deffense;
     }
 
-    private void setX(int x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    private void setY(int y) {
+    public void setY(int y) {
         this.y = y;
     }
 
-    private int getDeffense() {
+    public int getDeffense() {
         return deffense;
     }
 
-    private int getAttackingPower() {
+    public int getAttackingPower() {
         return attackingPower;
     }
 
-    private int getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
-    private int getX() {
+    public int getX() {
         return x;
     }
 
-    private int getY() {
+    public int getY() {
         return y;
     }
 }
