@@ -2,28 +2,28 @@ package org.example.model;
 
 import org.example.model.MBC.Soldier;
 import org.example.model.building.Building;
+import org.example.model.enums.Direction;
 import org.example.model.enums.LandType;
-import org.example.model.enums.WaterArea;
 import org.example.model.enums.Tree;
+
 
 public class Tile {
     private Building building;
     private LandType landType;
-    private WaterArea waterArea;
-    private int numberOfSoldiers =  0;
-    private Soldier soldier = null;
-    private Tree tree = null ;
-    private boolean rock = false ;
-    private String rockDirection;
+    private int numberOfSoldiers;
+    private Soldier soldier;
+    private Tree tree;
+    private boolean rock;
+    private Direction rockDirection;
 
     public Tile() {
         this.building = null;
         this.landType= LandType.DEFAULT;
-        this.waterArea= WaterArea.DEFAULT;
         this.numberOfSoldiers = 0 ;
         this.soldier = null ;
         this.tree = null ;
         this.rock = false ;
+        this.rockDirection = Direction.NULL;
     }
 
     public void setBuilding(Building building) {
@@ -42,11 +42,11 @@ public class Tile {
         this.soldier = soldier;
     }
 
-    public void setTreeName(Tree treeName) {
-        this.tree = treeName;
+    public void setTree(Tree tree) {
+        this.tree = tree;
     }
 
-    public void setRock(boolean rockStatus,String direction) {
+    public void setRock(boolean rockStatus,Direction direction) {
         this.rock = rockStatus;
         this.rockDirection = direction;
     }
@@ -76,7 +76,7 @@ public class Tile {
         return rock;
     }
 
-    public String getRockDirection() {
+    public Direction getRockDirection() {
         return rockDirection;
     }
 }
