@@ -15,6 +15,12 @@ public class InfantryUnit extends Soldier {
         }
     }*/
 
+    public InfantryUnit(int speed, int attackingPower , int deffens , int x, int y, UnitName name , int maxMove , int throwRange , State state){
+        super(speed, attackingPower ,deffens , x, y);
+        this.name = name;
+        this.maxMove = maxMove;
+        this.state = state;
+    }
     public void setName(UnitName name){
         this.name = name;
     }
@@ -23,31 +29,31 @@ public class InfantryUnit extends Soldier {
         return this.name;
     }
 
-    private void pikemen(){
+    public void pikemen(){
         this.name = UnitName.PIKEMEN;
     }
 
-    private void swordsmen(){
+    public void swordsmen(){
         this.name = UnitName.SWORDSMEN;
     }
 
-    private void knigth(){
+    public void knigth(){
         this.name = UnitName.KNIGHT;
     }
 
-    private void engineer(){
+    public void engineer(){
         this.name = UnitName.ENGINEER;
     }
 
-    private void blackMonk(){
+    public void blackMonk(){
         this.name = UnitName.BLACK_MONK;
     }
 
-    private void slaves(){
+    public void slaves(){
         this.name = UnitName.SLAVES;
     }
 
-    private void arabianSwordsmen(){
+    public void arabianSwordsmen(){
         this.name = UnitName.ARABIAN_SWORDSMEN;
     }
 

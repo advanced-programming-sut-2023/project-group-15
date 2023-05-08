@@ -4,10 +4,15 @@ import org.example.model.MBC.Soldier;
 import org.example.model.enums.UnitName;
 
 public class UnitWallTarget extends Soldier {
-    public UnitName name;
-    public int maxMove;
+    private UnitName name;
+    private int maxMove;
 
 
+    public UnitWallTarget(int speed, int attackingPower , int deffens , int x, int y, UnitName name , int maxMove){
+        super(speed, attackingPower ,deffens , x, y);
+        this.name = name;
+        this.maxMove = maxMove;
+    }
     public void setName(UnitName name) {
         this.name = name;
     }
@@ -16,23 +21,23 @@ public class UnitWallTarget extends Soldier {
         return name;
     }
 
-    private void spearmen(){
+    public void spearmen(){
         this.name = UnitName.SPEARMEN;
     }
 
-    private void macemen(){
+    public void macemen(){
         this.name = UnitName.MACEMEN;
     }
 
-    private void tunneler(){
+    public void tunneler(){
         this.name = UnitName.TUNNELER;
     }
 
-    private void laddermen(){
+    public void laddermen(){
         this.name = UnitName.LADDERMEN;
     }
 
-    private void assassins(){
+    public void assassins(){
         this.name = UnitName.ASSASSINS;
     }
 

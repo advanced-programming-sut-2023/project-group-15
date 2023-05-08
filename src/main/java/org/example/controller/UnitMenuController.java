@@ -26,11 +26,6 @@ public class UnitMenuController {
     public int maxRage;
     public boolean stopPatrolling = true;
 
-    public UnitMenuController(){
-        launcherUnit = new LauncherUnit();
-        infantryUnit = new InfantryUnit();
-        unitWallTarget = new UnitWallTarget();
-    }
     public UnitMenuOutput selectUnit(int x, int y){
         //TODO: add code to get informaion from map
         type = "ENGINEER";
@@ -265,10 +260,6 @@ public class UnitMenuController {
         }
         return UnitMenuOutput.PATROL_UNIT;
     }
-
-
-
-
 
 
 

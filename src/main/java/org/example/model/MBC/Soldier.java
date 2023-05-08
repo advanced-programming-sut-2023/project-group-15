@@ -7,7 +7,7 @@ public class Soldier extends Person{
     public int x;
     public int y;
 
-    public void Soldier(int speed,int attackingPower,int deffense,int x,int y){
+    public Soldier(int speed,int attackingPower,int deffense,int x,int y){
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.deffense = deffense;

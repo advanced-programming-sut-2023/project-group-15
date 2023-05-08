@@ -14,7 +14,7 @@ import org.example.InputScanner;
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.regex.Matcher;
-
+//change output of food list
 public class GameMenu {
 
     private final GameMenuController GameMenuController = new GameMenuController();
@@ -43,9 +43,12 @@ public class GameMenu {
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input,GameMenuEnum.SHOW_POPULARITY)) != null)
                 System.out.println(GameMenuController.popularity());
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input,GameMenuEnum.SHOW_POPULARITY_FACTORS)) != null)
-                System.out.println("1.food\n2.tax\n3.religion\n4.fear");
+                System.out.println("popularity factors:\n1.food\n2.tax\n3.religion\n4.fear");
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_LIST)) != null){
-                System.out.println(GameMenuController.foodList());
+                for (Object key: GameMenuController.foodList().keySet()) {
+                    System.out.println(key + " : " + GameMenuController.foodList().get(key));
+                }
+
             }
             else if((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null){
                 int rateFood = Integer.parseInt(gameMenuMatcher.group("foodRate"));

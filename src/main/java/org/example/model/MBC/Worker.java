@@ -1,8 +1,8 @@
 package org.example.model.MBC;
-
+// changed
 public class Worker extends Person{
-    public int numberOfWorker;
-    public int randaman;
+    private int numberOfWorker;
+    private int randaman;
 
     public void addWorker(int number){
         this.numberOfWorker += number;

@@ -8,19 +8,26 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class LauncherUnit extends Soldier {
-    public UnitName name;
-    public int maxMove;
-    public int throwrange;
-    public State state;
-    public ArrayList<String> FightingFeature;
+    private UnitName name;
+    private int maxMove;
+    private int throwRange;
+    private State state;
+    private ArrayList<String> FightingFeature;
 
 
+    public LauncherUnit(int speed, int attackingPower , int deffens , int x, int y, UnitName name , int maxMove , int throwRange , State state){
+        super(speed, attackingPower ,deffens , x, y);
+        this.name = name;
+        this.maxMove = maxMove;
+        this.throwRange = throwRange;
+        this.state = state;
+    }
 
-    public void setThrowrange(int throwrange){
-        this.throwrange = throwrange;
+    public void setThrowRange(int throwRange){
+        this.throwRange = throwRange;
     }
     public int getThrowRageForChanging(){
-        return this.throwrange;
+        return this.throwRange;
     }
     public UnitName getName() {
         return name;
@@ -30,27 +37,27 @@ public class LauncherUnit extends Soldier {
         this.name = name;
     }
 
-    private void archer(){
+    public void archer(){
         this.name = UnitName.ARCHER;
     }
 
-    private void crossbowmen(){
+    public void crossbowmen(){
         this.name = UnitName.CROSSBOWMEN;
     }
 
-    private void arrcherBow(){
+    public void arrcherBow(){
         this.name = UnitName.ARCHERBOW;
     }
 
-    private void slingers(){
+    public void slingers(){
         this.name = UnitName.SLINGERS;
     }
 
-    private void horseArchers(){
+    public void horseArchers(){
         this.name = UnitName.HORSE_ARCHERS;
     }
 
-    private void firethrowers(){
+    public void firethrowers(){
         this.name = UnitName.FIRE_THROWERS;
     }
 
@@ -73,20 +80,14 @@ public class LauncherUnit extends Soldier {
 
     public int getThrowRange(UnitName name){
         switch (name){
-            case ARCHER : this.throwrange = 2;
+            case ARCHER,ARCHERBOW,CROSSBOWMEN,SLINGERS: this.throwRange = 2;
             break;
-            case ARCHERBOW : this.throwrange = 2;
+            case HORSE_ARCHERS: this.throwRange = 3;
             break;
-            case CROSSBOWMEN: this.throwrange = 2;
-            break;
-            case SLINGERS: this.throwrange = 2;
-            break;
-            case HORSE_ARCHERS: this.throwrange = 2;
-            break;
-            case FIRE_THROWERS: this.throwrange = 3;
+            case FIRE_THROWERS: this.throwRange = 4;
             break;
         }
-        return this.throwrange;
+        return this.throwRange;
     }
 
 
