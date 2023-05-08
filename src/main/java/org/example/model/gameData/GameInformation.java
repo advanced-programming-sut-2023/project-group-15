@@ -30,8 +30,9 @@ import java.util.List;
 public class GameInformation {
     private static int mapGameSize;
     private  static Tile[][] gameMap;
+    private static User currentPlayer;
     private static HashMap<User,Integer> players = new HashMap<User,Integer>();
-    private static int currentUserno;
+    private static int currentPlayerNo = 1 ;
 
     public GameInformation(int mapGameSize) {
         mapGameSize = mapGameSize;
@@ -78,13 +79,21 @@ public class GameInformation {
         players.put(player,number);
     }
 
-    public static int getCurrentUserno() {
-        return  currentUserno;
+    public static int getCurrentPlayerno() {
+        return  currentPlayerNo;
 
     }
 
     public static  void setCurrentUserno(int currentUserno) {
         currentUserno = currentUserno;
+    }
+
+    public static User getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public static void setCurrentPlayer(User currentPlayer) {
+        GameInformation.currentPlayer = currentPlayer;
     }
     //TODO turn methods should be added hear
 

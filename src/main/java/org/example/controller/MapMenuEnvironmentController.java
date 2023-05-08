@@ -12,32 +12,7 @@ import java.util.regex.Pattern;
 
 
 public class MapMenuEnvironmentController {
-    public void setMapGame(int size ,int number)
-    {
-       // GameInformation.setMapGame(size,number);
-        //TODO hear we set the whole map game from the templates
-        // no changes on the ready template hear
 
-    }
-    public void generateEachPlayerMap(int playerNumber, int mapSize)
-    {
-        Tile[][] playerMap = new Tile[mapSize/2][];
-        if(playerNumber <=4) {
-            for (int i = 0; i <mapSize/2; i++) {
-                for (int j = 0; j < mapSize / 4; j++)
-                    playerMap[i][j] = GameInformation.getGameMap()[i][(playerNumber-1)* mapSize/4];
-            }
-        }
-        else{
-            for(int i=0  ; i< mapSize/2 ; i++)
-            {
-                for(int j=0 ; j<mapSize/4 ; j++)
-                {
-                    playerMap[i][j] = GameInformation.getGameMap()[i+mapSize/2][((playerNumber % 4) -1) * mapSize/4];
-                }
-            }
-        }
-    }
     public void setTileTexture(Matcher matcher){
         int x = 0;
         int y =0;

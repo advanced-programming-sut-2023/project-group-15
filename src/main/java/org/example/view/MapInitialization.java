@@ -11,35 +11,12 @@ public class MapInitialization {
     public static void run() {
         MapMenuEnvironmentController controller = new MapMenuEnvironmentController();
         String command;
-        int mapNumber;
-        int mapsize;
-        int playerNo = GameDataBase.getCurrentUser().getUserNO();
         Matcher matcher;
-        if (playerNo == 1) {
-            System.out.println("please enter the size of map that you prefer between 200 & 400");
-            mapsize = InputScanner.getScanner().nextInt();
-            System.out.println("now please enter the map number you want");
-            mapNumber = InputScanner.getScanner().nextInt();
-            if (mapsize == 200) {
-                controller.generateEachPlayerMap(playerNo, mapNumber);
-                System.out.println("now please enter the changes you wish to make in the map");
-        /*    switch (mapNumber)
-            {
-                case(1):
-
-                }
-
-                //TODO read and set from the file
-            }*/
-                controller.generateEachPlayerMap(playerNo, mapNumber);
-                //TODO the first players map would be generated hear
-                System.out.println("now please enter the changes you wish to make in the map");
-
-            }
-
             while (true) {
                 command = InputScanner.getScanner().nextLine();
-                if ((matcher = MapEnum.getMatcher(command, MapEnum.SET_TEXTURE)) != null)
+                if (command.matches("\\s*exit\\s*"))
+                    break;
+               else if ((matcher = MapEnum.getMatcher(command, MapEnum.SET_TEXTURE)) != null)
                     controller.setTileTexture(matcher);
                 else if ((matcher = MapEnum.getMatcher(command, MapEnum.SET_TEXTURE2)) != null)
                     controller.setTexture(matcher);
@@ -59,4 +36,4 @@ public class MapInitialization {
 
         }
     }
-}
+

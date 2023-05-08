@@ -16,6 +16,8 @@ import java.util.regex.Matcher;
 public class GameStartMenu {
     public void run()
     {
+        int mapNumber;
+        int mapsize;
         GameInformationController controller = new GameInformationController();
         String input;
         Matcher gameStartMatcher;
@@ -25,6 +27,11 @@ public class GameStartMenu {
             if((gameStartMatcher = GameStartMenuEnum.getMatcher(input,GameStartMenuEnum.NEW_GAME)) != null)
             {
                 GameDataBase.getCurrentUser().setUserNO(1);
+                System.out.println("please enter the size of map that you prefer between 200 & 400");
+                mapsize = InputScanner.getScanner().nextInt();
+                System.out.println("now please choose between these 2 maps");
+                mapNumber = InputScanner.getScanner().nextInt();
+                controller.setMap(mapsize , mapNumber);
                 MapInitialization.run();
             }
             if((gameStartMatcher = GameStartMenuEnum.getMatcher(input,GameStartMenuEnum.ADD_PLAYER)) != null)
