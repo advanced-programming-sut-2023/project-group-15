@@ -64,15 +64,15 @@ public class UnitWallTarget extends Soldier {
     public void setMaxMove(UnitName name){
         switch (name){
             case SPEARMEN: this.maxMove = 2;
-            break;
+                break;
             case MACEMEN: this.maxMove = 2;
-            break;
+                break;
             case TUNNELER: this.maxMove = 3;
-            break;
+                break;
             case LADDERMEN: this.maxMove = 3;
-            break;
+                break;
             case ASSASSINS: this.maxMove = 2;
-            break;
+                break;
         }
     }
 

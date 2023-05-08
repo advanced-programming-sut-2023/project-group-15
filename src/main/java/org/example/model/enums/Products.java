@@ -21,7 +21,7 @@ public enum Products {
     SPEAR,
     ARCHE,
     MACE,
-    OILPOT,
+    OIL_POT,
 
     ;
 }

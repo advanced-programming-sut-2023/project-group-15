@@ -1,32 +1,19 @@
 package org.example.model.gameData;
 
+import org.example.controller.MapMenuEnvironmentController;
 import org.example.model.Tile;
 import org.example.model.User;
-import org.example.model.building.Building;
 import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.enums.UnitName;
-import org.example.model.building.BuildingName;
-import org.example.model.enums.LandType;
-import org.example.model.enums.Tree;
-import org.example.model.enums.UnitName;
-import org.example.view.enums.commands.GameMenuEnum;
+import org.example.model.enums.Direction;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-
 public class GameInformation {
     private static int mapGameSize;
     private  static Tile[][] gameMap;
@@ -55,7 +42,8 @@ public class GameInformation {
                         boolean Rock = Boolean.valueOf(String.valueOf(jsonobject.get("ROCK")));
                         String rockDirection = String.valueOf(jsonobject.get("Rockdirection:"));
                         jsonobject = new JSONObject(jsonParser);
-                        gameMap[i][j] = new Tile(buildingName,landType,numberOfSoldires,unitName,tree,Rock,rockDirection);
+                        Direction direction = MapMenuEnvironmentController.findDirection(rockDirection);
+                        gameMap[i][j] = new Tile(buildingName,landType,numberOfSoldires,unitName,tree,Rock,direction);
                         jsonParser.next();
                     }
                 }
