@@ -27,7 +27,7 @@ public class Main {
         //new MainMenu().run();
         //Map.setCurrentMap();
        // new MapMenu().run(0,0);
-        new MainMenu().run();
+//        new MainMenu().run();
 
         //Map.setCurrentMap();
         //dropBuildingController controller = new dropBuildingController();
