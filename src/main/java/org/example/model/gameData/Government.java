@@ -1,6 +1,6 @@
 package org.example.model.gameData;
 
-import org.example.model.enums.Food;
+//import org.example.model.enums.Food;
 
 import java.util.ArrayList;
 import java.util.HashMap;
