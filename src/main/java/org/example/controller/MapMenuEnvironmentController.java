@@ -3,12 +3,8 @@ package org.example.controller;
 import org.example.model.Tile;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
-import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
-
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class MapMenuEnvironmentController {
