@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2052e35b-6559-4e71-9360-921f3813d97c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/TradingMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradingMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="90a226d9e029620d626a6c6ec140aeba78a9b504" />
+        <entry key="$PROJECT_DIR$" value="b8a5a5a50b88061b9b71d9e615f450a7b9e39adf" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,6 +91,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
