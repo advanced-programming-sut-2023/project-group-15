@@ -53,7 +53,7 @@ public class MarketController {
             return GameMenuOutput.SUCCESSFUL_BUY;}
 
             else
-                return GameMenuOutput.EROR_BUY_ITEM;
+                return GameMenuOutput.ERROR_BUY_ITEM;
 
     }
 

@@ -4,12 +4,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum GameMenuEnum {
-    SHOW_MAP("show map -(x|y) (\\d+) -(x|y) (\\d+)"),
-    SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+(?<foodRate>-2|-1|0|1|2)$"),
-    SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1-8])"),
+    SHOW_MAP("^\\s*show\\s+map\\s+-x\\s+(?<xCoordinate>[\\d]+)\\s+-y\\s+(?<yCoordinate>[\\d]+)\\s*$"),
+    SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+?<foodRate>(-2|-1|0|1|2)"),
+    SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1,8])"),
     SHOW_FOOD_RATE("^\\s*food\\s+rate\\s+show\\s*$"),
-    SHOW_TAX_RATE("^\\s*tax\\s+rate\\s+show\\s*$"),
-    SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1,5])\\s*$"),
+    SHOW_TAX_RATE("^\\s*food\\s+rate\\s+show\\s*$"),
+    SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1,5])$"),
     SHOW_FOOD_LIST("^\\s*show\\s+food\\s+list\\s*$"),
     SHOW_POPULARITY("^\\s*show\\s+popularity\\s*$"),
     SHOW_POPULARITY_FACTORS("^\\s*show\\s+popularity\\s+factors\\s*$"),
@@ -24,9 +24,9 @@ public enum GameMenuEnum {
     PATROL_UNIT("^\\s*patrol\\s+unit\\s+-x1\\s+(?<x1>\\d)\\s+-y1\\s+(?<y1>\\d)\\s+-x2\\s+(?<x2>\\d)\\s+-y2\\s+(?<y2>\\d)$"),
     STOP_PATROLLING("^\\s*stop\\s+patrolling\\s*$"),
     BUILD_EQUIPMENT("^\\s*build\\s+-q\\s+(?<equipment>trebuchet|portable shield|battering ram|catapults)$"),
+    SELL_ITEM("^\\s*sell\\s+-i(?<item>\\w+)\\s+-a\\s+(?<number>)$"),
+    BUY_ITEM("^\\s*buy\\s+-i(?<item>\\w+)\\s+-a\\s+(?<number>)$"),
     SHOW_PRICE_LIST("^\\s*show\\s+price\\s+list$"),
-    SELL_ITEM("^\\s*sell\\s+-i\\s+(?<item>\\w+)\\s+-a\\s+(?<number>\\d+)$"),
-    BUY_ITEM("^\\s*buy\\s+-i\\s+(?<item>\\w+)\\s+-a\\s+(?<number>\\d+)$"),
     ;
 
 

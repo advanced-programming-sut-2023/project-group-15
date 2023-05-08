@@ -62,6 +62,7 @@ public class GameMenu {
                 int y = Integer.parseInt(gameMenuMatcher.group("y"));
                 System.out.println(UnitMenuController.selectUnit(x, y).getOutput());
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.MOVE_UNIT)) != null) {
+                System.out.println("l");
                 int x = Integer.parseInt(gameMenuMatcher.group("x"));
                 int y = Integer.parseInt(gameMenuMatcher.group("y"));
                 System.out.println(UnitMenuController.moveUnit(x, y).getOutput());

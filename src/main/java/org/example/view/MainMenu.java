@@ -5,11 +5,9 @@ import org.example.controller.MainMenuController;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.SignupMenuEnum;
 
-import javax.swing.*;
 import java.util.regex.Matcher;
 
 public class MainMenu {
-    private MainMenuController mainMenuController = new MainMenuController();
     public void run() {
         Matcher mainMenuMatcher;
         String userInput;
@@ -22,11 +20,19 @@ public class MainMenu {
                 new SignupMenu().run(mainMenuMatcher);
             } else if ((mainMenuMatcher = LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.USER_LOGIN))!=null) {
                 new LoginMenu().loginInCheck(mainMenuMatcher);
+            } else if (LoginMenuEnum.getMatcher(userInput,LoginMenuEnum.FORGET_PASSWORD)!=null) {
+                forgetPassword();
             } else if (SignupMenuEnum.getMatcher(userInput,SignupMenuEnum.CREATE_MAP)!=null) {
                // new MapMenu().enterMapEnvironmentSettings();
             } else {
                 System.out.println("Invalid command!");
             }
         }
+    }
+
+    private void forgetPassword() {
+        System.out.println("enter your username:");
+        String input = InputScanner.getScanner().nextLine();
+        new LoginMenu().forgetPassword(input);
     }
 }

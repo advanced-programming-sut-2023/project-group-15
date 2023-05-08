@@ -28,7 +28,7 @@ public class MapChangesEnvironment {
             {
                 //TODO read and set from the file
             }
-            controller.generateEachPlayerMap(playerNo, mapNumber);
+          //  controller.generateEachPlayerMap(playerNo, mapNumber);
             //TODO the first players map would be generated hear
             System.out.println("now please enter the changes you wish to make in the map");
 
@@ -58,7 +58,7 @@ public class MapChangesEnvironment {
 
     //testing for dropping buildings...
     private DropBuildingController buildingController = new DropBuildingController();
- /*   public void testRun() {
+    public void testRun() {
         Matcher matcherTest;
         String input;
         while (true) {
@@ -76,7 +76,7 @@ public class MapChangesEnvironment {
 
     private BuildingStatusOutput dropBuilding(Matcher matcherTest) {
         classifyController(matcherTest);
-         BuildingStatusOutput status = buildingController.checkParameters();
+        BuildingStatusOutput status = buildingController.checkParameters();
         if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
             status = buildingController.checkTheLand();
             if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
@@ -92,6 +92,4 @@ public class MapChangesEnvironment {
         buildingController.setCoordinateX(matcherTest.group("x"));
         buildingController.setCoordinateY(matcherTest.group("y"));
     }
-
-*/
 }

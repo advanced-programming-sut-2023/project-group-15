@@ -1,19 +1,26 @@
 package org.example.controller;
+import org.example.model.MBC.Soldier;
+import org.example.model.building.BuildingName;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
 import org.example.model.Tile;
 import org.example.view.MapMenu;
 
+import javax.management.StringValueExp;
 import java.util.regex.Matcher;
 
 public class MapMenuController {
 
-    private static int xStart = 0 ;
-    private static int yStart = 0 ;
+    private static int xStart = 0;
+    private static int yStart = 0;
+    private static Tile[][] currentUserMap;
+
     public MapMenuController() {
+        currentUserMap = GameInformation.getGameMap();
     }
-    public void setStartingPoint(Matcher matcher)
-    {
-        int x=0 , y=0 ;
+
+    public void setStartingPoint(Matcher matcher) {
+        int x = 0, y = 0;
         for (int i = 0; i < matcher.groupCount(); i++) {
             if (matcher.group(i) == null)
                 continue;
@@ -22,11 +29,11 @@ public class MapMenuController {
             if (matcher.group(i).equals("y"))
                 y = Integer.parseInt(matcher.group(i + 1));
         }
-        xStart =  x ;
-        yStart = y ;
+        xStart = x;
+        yStart = y;
     }
 
-    public  int getxStart() {
+    public int getxStart() {
         return xStart;
     }
 
@@ -35,7 +42,7 @@ public class MapMenuController {
     }
 
     public void showMap(int x, int y) {
-        Tile currentTile = Map.getCurrentMap()[x][y];
+        Tile currentTile = currentUserMap[x][y];
         Tile[][] mapToShow = new Tile[11][11];
         int xS = x - 5;  // x startpoint
         int xE = x + 5;  // x endpoint
@@ -71,6 +78,7 @@ public class MapMenuController {
             System.out.println();
         }
     }
+
     public void moving(Matcher matcher) {
         int x = 0, y = 0;
         for (int i = 0; i < matcher.groupCount(); i++) {
@@ -79,27 +87,40 @@ public class MapMenuController {
             if (matcher.group(i).equals("right"))
                 x = Integer.parseInt(matcher.group(i + 1));
             else if (matcher.group(i).equals("left"))
-                x = - Integer.parseInt(matcher.group(i + 1));
+                x = -Integer.parseInt(matcher.group(i + 1));
             else if (matcher.group(i).equals("up"))
                 y = Integer.parseInt(matcher.group(i + 1));
             else if (matcher.group(i).equals("down"))
-                y = - Integer.parseInt(matcher.group(i + 1));
-            showMap(xStart + x , yStart + y);
+                y = -Integer.parseInt(matcher.group(i + 1));
+            showMap(xStart + x, yStart + y);
         }
-    }
-    public String showDetails(Matcher matcher) {
-        int x = 0 , y = 0 ;
-        Tile currentTile = Map.findATile(x , y);
-        String answer = "LandType : " ;
-        answer = answer.concat(currentTile.getLandType().values().toString());
-        if (currentTile.getBuilding() != null) {
-            answer = answer.concat("\n" +currentTile.getBuilding().getName().toString());
-            //TODO soldiers should be added to the string
-        }
-        return answer ;
     }
 
+    public String showDetails(Matcher matcher) {
+        int x = 0, y = 0 , landTypeCounter = 0;
+        Tile currentTile = currentUserMap[x][y];
+        String answer = "LandType : ";
+        for(int i=0 ; i< currentUserMap.length ; i++)
+        {
+            for(int j=0 ; j< currentUserMap.length ; j++){
+                if(currentUserMap[i][j].getLandType().equals(currentTile.getLandType()))
+                    landTypeCounter ++;
+
+            }
+        }
+        answer = answer.concat(currentTile.getLandType().values().toString() +
+                "number of tiles with this landtype on map : " + String.valueOf(landTypeCounter));
+        if (currentTile.getBuilding() != null)
+            answer = answer.concat("\n" + "Building(s): " + currentTile.getBuilding().values().toString());
+        if (currentTile.getSoldier() != null) {
+            answer = answer.concat("\n" + "Soldier(s) : " + currentTile.getSoldier().values().toString() +
+                    "\n" + "number of soldiers: " + String.valueOf(currentTile.getNumberOfSoldiers()));
+        }
+
+        return answer;
+    }
 }
+
 
 
 

@@ -108,7 +108,7 @@ public class UnitMenuController {
             String buildingType = "PERIMETER_TOWER";
             BuildingName buildingName1 = BuildingName.valueOf(buildingType);
             switch (buildingName1) {
-                case PERIMETER_TOWER:
+                case PERMETER_TOWER:
                     //remove building
                     return UnitMenuOutput.SUCCESSFUL_DIG;
                 case LOOKOUT_TOWER:

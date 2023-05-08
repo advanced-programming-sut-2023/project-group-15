@@ -5,9 +5,9 @@ import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
 
 public class InfantryUnit extends Soldier {
-    public UnitName name;
-    public int maxMove;
-    public State state;
+    private UnitName name;
+    private int maxMove;
+    private State state;
 
     /*public void setState(String state){
         switch (State.valueOf(state)){

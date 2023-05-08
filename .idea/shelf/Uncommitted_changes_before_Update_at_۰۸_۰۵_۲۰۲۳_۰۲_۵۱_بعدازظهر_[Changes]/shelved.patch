@@ -1,0 +1,276 @@
+Index: src/main/java/org/example/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport org.example.model.enums.LandType;\r\nimport org.example.model.gameData.Map;\r\nimport org.example.model.gameData.MapTemplates;\r\nimport org.example.view.GameMenu;\r\nimport org.example.view.MainMenu;\r\nimport org.example.view.MapMenu;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        System.out.println(\"Welcome to the game!\");\r\n        //Map.setCurrentMap(400);\r\n      /*  for (int i = 10; i < 15; i++){\r\n            for(int j=60 ; j<65 ;j++)\r\n            {\r\n                Map.getCurrentMap()[i][j].setLandType(LandType.RIVER);\r\n            }\r\n        }\r\n         MapTemplates mapTemplates = new MapTemplates();\r\n        mapTemplates.setMapTemplate1();\r\n        mapTemplates.setJasonFile1();\r\n        mapTemplates.setMapTemplate2();\r\n        mapTemplates.setJasonFile2();\r\n        mapTemplates.setMapTemplate3();\r\n        mapTemplates.setJasonFile3();\r\n        mapTemplates.setMapTemplate4();\r\n        mapTemplates.setJasonFile4();*/\r\n//        new GameMenu().run();\r\n        //new MainMenu().run();\r\n        //Map.setCurrentMap();\r\n       // new MapMenu().run(0,0);\r\n        new MainMenu().run();\r\n\r\n        //Map.setCurrentMap();\r\n        //dropBuildingController controller = new dropBuildingController();\r\n       // controller.dropProductiveBuilding(0 , 0 , MILL);\r\n       // new mapMenu().run();\r\n        //System.out.println(map.findATile(0 , 0).getLandType());\r\n       //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+--- a/src/main/java/org/example/Main.java	(revision 1fad768e2ebed5641eb8618654ac03b0062dce75)
++++ b/src/main/java/org/example/Main.java	(date 1683544823717)
+@@ -1,15 +1,12 @@
+ package org.example;
+ 
+-import org.example.model.enums.LandType;
+-import org.example.model.gameData.Map;
+-import org.example.model.gameData.MapTemplates;
+-import org.example.view.GameMenu;
+ import org.example.view.MainMenu;
+-import org.example.view.MapMenu;
+ 
+ public class Main {
+     public static void main(String[] args) {
+         System.out.println("Welcome to the game!");
++        new MainMenu().run();
++//        new MapChangesEnvironment().testRun();
+         //Map.setCurrentMap(400);
+       /*  for (int i = 10; i < 15; i++){
+             for(int j=60 ; j<65 ;j++)
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 1fad768e2ebed5641eb8618654ac03b0062dce75)
++++ b/.idea/misc.xml	(date 1683544843647)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2023_2_00_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2023_2_00_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/controller/ProfileMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/controller/ProfileMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/Tile.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/Tile.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/enums/SecurityQuestion.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/enums/SecurityQuestion.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameMenuEnum.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameMenuEnum.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Enum\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"raya-map\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OdNK38UNz2OrnIqCzmN0SMvyKl\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/uni/ap/src&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example.view\" />\r\n      <recent name=\"org.example.veiw.enums\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\r\n      <module name=\"project-group-15\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\" />\r\n      <created>1681886432173</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681886432173</updated>\r\n      <workItem from=\"1681886433354\" duration=\"78000\" />\r\n      <workItem from=\"1681886686257\" duration=\"2512000\" />\r\n      <workItem from=\"1682084994720\" duration=\"4296000\" />\r\n      <workItem from=\"1683312609400\" duration=\"2559000\" />\r\n      <workItem from=\"1683355289916\" duration=\"474000\" />\r\n      <workItem from=\"1683368615141\" duration=\"198000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۱\" summary=\"creating files...\">\r\n      <created>1681886768892</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <updated>1681886768892</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۲\" summary=\"creating files...\">\r\n      <created>1682085187908</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <updated>1682085187908</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۳\" summary=\"creating files...\">\r\n      <created>1682085989441</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <updated>1682085989441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"creating files...\">\r\n      <created>1682100710982</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100710982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"creating files...\">\r\n      <created>1682100873720</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100873720</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"raya-map\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creating files...\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"creating files...\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/mapMenu.java</url>\r\n          <line>31</line>\r\n          <option name=\"timeStamp\" value=\"7\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>\r\n          <line>32</line>\r\n          <option name=\"timeStamp\" value=\"10\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java</url>\r\n          <line>17</line>\r\n          <option name=\"timeStamp\" value=\"12\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>\r\n          <line>16</line>\r\n          <properties class=\"org.example.view.enums.commands.MapMenuEnum\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"8\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1fad768e2ebed5641eb8618654ac03b0062dce75)
++++ b/.idea/workspace.xml	(date 1683544843633)
+@@ -4,53 +4,18 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2023_2_00_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2023_2_00_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/enums/SecurityQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/enums/SecurityQuestion.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Map.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/GameMenuEnum.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/SignupMenuOutput.java" afterDir="false" />
+-    </list>
++    <list default="true" id="f070a486-10c3-47d4-81f3-5f6eeb15dc5c" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Class" />
+-        <option value="Enum" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="raya-map" />
++        <entry key="$PROJECT_DIR$" value="96156a8a5c58d5bf267bffacc1022317ffd3699c" />
+       </map>
+     </option>
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+-  </component>
+-  <component name="HighlightingSettingsPerFile">
+-    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -62,36 +27,19 @@
+       </MavenGeneralSettings>
+     </option>
+   </component>
+-  <component name="ProjectId" id="2OdNK38UNz2OrnIqCzmN0SMvyKl" />
++  <component name="ProjectId" id="2PVZMDZFcXcbXVZGhU33AxKXiEU" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/uni/ap/src&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+   }
+ }</component>
+-  <component name="RecentsManager">
+-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+-      <recent name="org.example.view" />
+-      <recent name="org.example.veiw.enums" />
+-    </key>
+-  </component>
+   <component name="RunManager">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+@@ -102,14 +50,25 @@
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="project-group-15" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="project-group-15" />
++      <option name="filePath" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.Main" />
+-        <item itemvalue="Application.Main" />
+         <item itemvalue="Application.Main" />
+         <item itemvalue="Application.Main" />
+       </list>
+@@ -117,52 +76,6 @@
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="" />
+-      <created>1681886432173</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1681886432173</updated>
+-      <workItem from="1681886433354" duration="78000" />
+-      <workItem from="1681886686257" duration="2512000" />
+-      <workItem from="1682084994720" duration="4296000" />
+-      <workItem from="1683312609400" duration="2559000" />
+-      <workItem from="1683355289916" duration="474000" />
+-      <workItem from="1683368615141" duration="198000" />
+-    </task>
+-    <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
+-      <created>1681886768892</created>
+-      <option name="number" value="LOCAL‎−۰۰۰۰۱" />
+-      <option name="presentableId" value="LOCAL‎−۰۰۰۰۱" />
+-      <updated>1681886768892</updated>
+-    </task>
+-    <task id="LOCAL‎−۰۰۰۰۲" summary="creating files...">
+-      <created>1682085187908</created>
+-      <option name="number" value="LOCAL‎−۰۰۰۰۲" />
+-      <option name="presentableId" value="LOCAL‎−۰۰۰۰۲" />
+-      <updated>1682085187908</updated>
+-    </task>
+-    <task id="LOCAL‎−۰۰۰۰۳" summary="creating files...">
+-      <created>1682085989441</created>
+-      <option name="number" value="LOCAL‎−۰۰۰۰۳" />
+-      <option name="presentableId" value="LOCAL‎−۰۰۰۰۳" />
+-      <updated>1682085989441</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="creating files...">
+-      <created>1682100710982</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1682100710982</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="creating files...">
+-      <created>1682100873720</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1682100873720</updated>
+-    </task>
+-    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -173,28 +86,12 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="raya-map" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="creating files..." />
+-    <option name="LAST_COMMIT_MESSAGE" value="creating files..." />
+-  </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+       <breakpoints>
+@@ -207,11 +104,6 @@
+           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>
+           <line>32</line>
+           <option name="timeStamp" value="10" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java</url>
+-          <line>17</line>
+-          <option name="timeStamp" value="12" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-method">
+           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>

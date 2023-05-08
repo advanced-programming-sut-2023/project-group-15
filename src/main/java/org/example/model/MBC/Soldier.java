@@ -1,11 +1,11 @@
 package org.example.model.MBC;
 
 public class Soldier extends Person{
-    public int speed;
-    public int attackingPower;
-    public int deffense;
-    public int x;
-    public int y;
+    private int speed;
+    private int attackingPower;
+    private int deffense;
+    private int x;
+    private int y;
 
     public Soldier(int speed,int attackingPower,int deffense,int x,int y){
         this.speed = speed;

@@ -2,9 +2,11 @@ package org.example.controller;
 
 import org.example.model.User;
 import org.example.view.enums.outputs.ProfileMenuOutput;
+import org.example.view.enums.outputs.SignupMenuOutput;
 
 
 public class ProfileMenuController extends LoginMenuController{
+
     public ProfileMenuOutput changeUsername(String username) {
 //        if (SignupMenuController.usernameCheck(username)==null) {
             for (User user:User.allUsers) {
@@ -27,7 +29,7 @@ public class ProfileMenuController extends LoginMenuController{
     public ProfileMenuOutput changePassword(String oldPass,String newPass) {
         if (this.getPassword().equals(oldPass)) {
             if (!oldPass.equals(newPass)) {
-                if (SignupMenuController.passwordCheck(newPass)==null) {
+                if (SignupMenuController.passwordCheckErrors(newPass).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
                     User.findUserWithPass(oldPass).setPassword(newPass);
                     this.setPassword(newPass);
                     return ProfileMenuOutput.PASSWORD_CHANGED_SUCCESSFULLY;

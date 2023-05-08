@@ -10,6 +10,7 @@ public enum SignupMenuOutput {
     ERROR_PASSWORD_NO_SMALL_CHARACTER("invalid password format!: your password must contain at least 1 small alphabet!,\ntry again!"),
     ERROR_PASSWORD_NO_DIGITS("invalid password format!: your password must contain at least 1 digits!,\ntry again!"),
     ERROR_PASSWORD_NO_SPECIAL_CHARACTER("invalid password format!: your password must contain at least 1 special character!,\ntry again!"),
+    ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION("you password is not equal to your configuration,\ntry again!"),
     STAND_BY("standing by"),
     SECURITY_QUESTION("security question"),
     USERNAME_EXISTS("you can't user this username because it already exists!,\n try something else..."),
@@ -18,7 +19,9 @@ public enum SignupMenuOutput {
     DUPLICATE_EMAIL_ERROR("a user with this email already exists,\n enter unique email please!"),
     INVALID_EMAIL_FORMAT("email format is invalid!,\ntry again!"),
     QUIT_FROM_PROCESS("canceling the process"),
-    INVALID_COMMAND("Invalid command!,\ntry again!")
+    INVALID_COMMAND("Invalid command!,\ntry again!"),
+    ANSWERS_ARE_NOT_EQUAL("your answers doesn't match!,\ntry again!,\ntype \"quit\" to cancel the process"),
+    USER_CREATED_SUCCESSFULLY("user has been created successfully!"),
     ;
     private final String output;
 
