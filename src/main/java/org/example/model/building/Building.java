@@ -81,4 +81,6 @@ public class Building {
     public void setMaterial2(Products material2) {
         this.material2 = material2;
     }
+
+
 }

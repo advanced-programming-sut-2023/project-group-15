@@ -189,6 +189,26 @@ public enum BuildingName {
         return null;
 
     }
+    public BuildingName getBuildingName(String name)
+    {
+        for(BuildingName buildingName : BuildingName.values())
+        {
+            if(buildingName .equals(name))
+                return buildingName;
+
+        }
+        return null;
+    }
+
+    public static String getBuildingType(String name)
+    {
+        for(BuildingName buildingName : BuildingName.values())
+        {
+            if(buildingName.equals(name))
+                return buildingName.type;
+        }
+        return null;
+    }
 
 
 
