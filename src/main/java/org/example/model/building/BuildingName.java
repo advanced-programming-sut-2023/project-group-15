@@ -22,6 +22,7 @@ public enum BuildingName {
     BLACKSMITH(100, GOLD_COIN, 20, WOOD, 1, SWORD, MACE, 100, "productive"),
     POLETURNER(100, GOLD_COIN, 20, WOOD, 1, SPEAR, null, 100 , "productive"),
     FLETCHER(100, GOLD_COIN, 20, WOOD, 1, ARCHE, null, 100, "productive"),
+    DIARY( 10 , WOOD , 0 , null , 1 , CHEESE , VEST , 100 , "productive"),
     OIL_SMELTLER(10, IRON, 100, GOLD_COIN, 1, OIL_POT, null, 100, "productive"),
     ARMOURY(5 , WOOD , 100  , "war"),
     OX_TETHER( 5 , WOOD , 0 , null , 1  ,"transfration" ),
@@ -109,6 +110,10 @@ public enum BuildingName {
         return rate;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     //productive building
     BuildingName(int numberOfMaterial1, Products material1Name, int numberOfMaterial2, Products material2Name,
                  int numberOfWorkers, Products good1, Products good2, int rate,String type) {
@@ -177,6 +182,7 @@ public enum BuildingName {
         this.type = type ;
 
     }
+
     public static BuildingName getBuildingByName(String name)
     {
         for(BuildingName buildingName : BuildingName.values())

@@ -6,7 +6,7 @@ public class popularityBuilding extends Building {
     int popularityRate;
 
     public popularityBuilding(String name, int hp, int xCoordinate, int yCoordinate, Products material1,
-                              Products material2, int numberOfMaterial1, int numberOfMaterial2, int numberOfWorkers, int popularityRate) {
+                              Products material2, int numberOfMaterial1, int numberOfMaterial2, int popularityRate) {
         super(name, hp, xCoordinate, yCoordinate, material1, material2, numberOfMaterial1, numberOfMaterial2);
         this.popularityRate = popularityRate;
     }

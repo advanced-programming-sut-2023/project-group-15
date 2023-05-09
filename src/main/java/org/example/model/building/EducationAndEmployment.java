@@ -9,9 +9,9 @@ public class EducationAndEmployment extends Building{
     private final Person personType;
 
     public EducationAndEmployment(String name, int hp, int xCoordiante, int yCoordiante, Products material1, Products material2,
-                                  int numberOfMaterial1, int numberOfMaterial2, int numberOfWorkers,
+                                  int numberOfMaterial1, int numberOfMaterial2,
                                   int costForEachPerson, Person personType) {
-        super(name, hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfMaterial2, numberOfWorkers);
+        super(name, hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfMaterial2);
         this.costForEachPerson = costForEachPerson;
         this.personType = personType;
     }

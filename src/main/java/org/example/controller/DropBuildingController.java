@@ -53,14 +53,14 @@ public class DropBuildingController {
             }
         }
         }
-        public void dropStorageBuilding( int x , int y , String name)
+       /* public void dropStorageBuilding( int x , int y , String name)
         {
-         for(BuildingName building : BuildingName.values())
+         /*for(BuildingName building : BuildingName.values())
              if(building.equals(name))
                  Building newBuilding = new Storage(name.toString() , 100 , x , y , building.getMaterial1Name() ,building.getMaterial2Name()
-                 ,building.getNumberOfMaterial1() , building.getNumberOfMaterial2() , )
+                 ,building.getNumberOfMaterial1() , building.getNumberOfMaterial2() ,building.getCapacity() ,building.getGood1() );
 
-        }
+        }*/
 
 
     public BuildingStatusOutput checkParameters() {
