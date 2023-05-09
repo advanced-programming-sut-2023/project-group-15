@@ -23,7 +23,6 @@ public enum BuildingName {
     POLETURNER(100, GOLD_COIN, 20, WOOD, 1, SPEAR, null, 100 , "productive"),
     FLETCHER(100, GOLD_COIN, 20, WOOD, 1, ARCHE, null, 100, "productive"),
     OIL_SMELTLER(10, IRON, 100, GOLD_COIN, 1, OIL_POT, null, 100, "productive"),
-
     ARMOURY(5 , WOOD , 100  , "war"),
     OX_TETHER( 5 , WOOD , 0 , null , 1  ,"transfration" ),
     BARRAK(10 , 0 , 15 , ROCK  , 0 , null , "educative"),
