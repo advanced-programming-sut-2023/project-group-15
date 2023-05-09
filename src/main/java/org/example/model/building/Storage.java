@@ -42,4 +42,11 @@ public class Storage extends Building{
     goods.remove(newProduct);
     goods.put(newProduct , currentAmount+1);
     }
+    public void addtoStorageWithAmount(Products newProduct , int amount)
+    {
+        if(goods.containsKey((newProduct)))
+            goods.remove(newProduct);
+        goods.put(newProduct , amount);
+
+    }
 }
