@@ -1,7 +1,5 @@
 package org.example.model;
 
-import org.example.model.MBC.Soldier;
-import org.example.model.building.Building;
 import org.example.model.enums.Direction;
 import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;

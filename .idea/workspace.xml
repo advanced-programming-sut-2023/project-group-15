@@ -5,24 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5b8194a-2a69-4a56-a342-4322569233a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_14_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_14_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_oval_oval_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json-20230227.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uml.drawio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradingMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/LoginMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/LoginMenuEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/MapEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapInitialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapInitialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/SignupMenuEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/ProfileMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/SignupMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/LoginMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapChangesEnvironment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MapChangesEnvironment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapInitialization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MapInitialization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MapMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradingMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/TradingMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameStartMenuEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameStartMenuEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/LoginMenuEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/LoginMenuEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/LoginMenuOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/LoginMenuOutput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/SignupMenuOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/SignupMenuOutput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,6 +99,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/test/java&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Raya/Desktop/project-group-15&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -73,12 +117,19 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example.view" />
       <recent name="org.example.veiw.enums" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.controller" />
+      <recent name="org.example.model" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ProfileMenuControllerTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="untitled" />
@@ -92,20 +143,83 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProfileMenuControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.example.controller.ProfileMenuControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileMenuControllerTest.changeNickname" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.example.controller.ProfileMenuControllerTest" />
+      <option name="METHOD_NAME" value="changeNickname" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileMenuControllerTest.changeNicknameTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.example.controller.ProfileMenuControllerTest" />
+      <option name="METHOD_NAME" value="changeNicknameTests" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileMenuControllerTest.changePasswordTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.example.controller.ProfileMenuControllerTest" />
+      <option name="METHOD_NAME" value="changePasswordTests" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProfileMenuControllerTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ProfileMenuControllerTest.changePasswordTests" />
+        <item itemvalue="JUnit.ProfileMenuControllerTest.changeNicknameTests" />
+        <item itemvalue="JUnit.ProfileMenuControllerTest.changeNickname" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="" />
+      <changelist id="c5b8194a-2a69-4a56-a342-4322569233a9" name="Changes" comment="" />
       <created>1681886432173</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -116,6 +230,8 @@
       <workItem from="1683312609400" duration="2559000" />
       <workItem from="1683355289916" duration="474000" />
       <workItem from="1683368615141" duration="198000" />
+      <workItem from="1683694285033" duration="7412000" />
+      <workItem from="1683707527458" duration="12317000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -201,5 +317,34 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest.ic" NAME="SignupMenuControllerTest Coverage Results" MODIFIED="1683728545144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changePasswordTests.ic" NAME="ProfileMenuControllerTest.changePasswordTests Coverage Results" MODIFIED="1683731541632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changeNickname.ic" NAME="ProfileMenuControllerTest.changeNickname Coverage Results" MODIFIED="1683729688488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changeUsernameTests.ic" NAME="ProfileMenuControllerTest.changeUsernameTests Coverage Results" MODIFIED="1683709321394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$UserTest_getterTests.ic" NAME="UserTest.getterTests Coverage Results" MODIFIED="1683700140040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest.ic" NAME="ProfileMenuControllerTest Coverage Results" MODIFIED="1683731790783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$UserTest_getterAndSetterTests.ic" NAME="UserTest.getterAndSetterTests Coverage Results" MODIFIED="1683700608530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_sloganCheck.ic" NAME="SignupMenuControllerTest.sloganCheck Coverage Results" MODIFIED="1683709606193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changeNicknameTests.ic" NAME="ProfileMenuControllerTest.changeNicknameTests Coverage Results" MODIFIED="1683731533120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -21,16 +21,16 @@ public class SignupMenuController extends MainMenuController {
         return SignupMenuOutput.SECURITY_QUESTION;
     }
 
-    private SignupMenuOutput nicknameCheck() {
-        return this.getNickname() == null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+    public SignupMenuOutput nicknameCheck() {
+        return this.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
     public SignupMenuOutput sloganCheck() {
-        return this.getSlogan() == null ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+        return this.getSlogan().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
     public static SignupMenuOutput usernameCheckErrors(String username) {
-        if (username == null) {
+        if (username.length() == 0) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
         if (username.matches("^\\w+$")) {
@@ -45,7 +45,7 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public static SignupMenuOutput passwordCheckErrors(String password) {
-        if (password == null) {
+        if (password.length() == 0) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
         if (password.length() >= 6) {
@@ -71,7 +71,7 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public static SignupMenuOutput emailCheck(String email) {
-        if (email == null) {
+        if (email.length() == 0) {
             return SignupMenuOutput.EMPTY_FIELD;
         }
         if (email.matches("[\\w.]+@[\\w.]+\\.[\\w.]+")) {
@@ -85,13 +85,13 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public void selectSlogan(String input) {
-        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input)).getSlogan());
+        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input)-1).getSlogan());
     }
 
     public String generateRandomPassword() {
         String password;
         String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}]).{8,20}$";
-        String charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "1234567890" + "!@#$%^&*()_+{}";
+        String charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"  + "abcdefghijklmnopqrstuvwxyz" + "1234567890" + "!@#$%^&*()_+{}";
         Random random = new Random();
         while (true) {
             char[] p = new char[8];
@@ -146,7 +146,7 @@ public class SignupMenuController extends MainMenuController {
         if (this.getSlogan() != null) {
             newUser.setSlogan(this.getSlogan());
         }
-        if (this.getPassRecoveryQuestion() != null){
+        if (this.getPassRecoveryQuestion() != null) {
             newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion().getQuestion());
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }

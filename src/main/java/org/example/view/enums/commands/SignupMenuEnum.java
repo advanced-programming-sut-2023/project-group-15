@@ -12,7 +12,6 @@ public enum SignupMenuEnum {
                         "(-a\\s+(?<Qanswer1>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
                         "(-c\\s+(?<Qanswer2>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))*$"),
     CREATE_MAP("^\\s*create\\s+map\\s*$"),
-    PASSWORD_VALIDATION("^((?<smallChar>[a-z]+)|(?<capitalChar>[A-Z]+)|(?<digits>[\\d]+)|(?<specialChar>[[',!;?$^:\\\\/`|~&\\\" @#%*{}()\\[\\]<>_+.\\s=\\-]]))+$"),
     SMALL_CHAR(".*[a-z]+.*"),
     CAPITAL_CHAR(".*[A-Z]+.*"),
     DIGITS(".*[\\d]+.*"),

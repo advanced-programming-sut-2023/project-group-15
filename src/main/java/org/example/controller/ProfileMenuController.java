@@ -5,18 +5,18 @@ import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 
-public class ProfileMenuController extends LoginMenuController{
+public class ProfileMenuController extends LoginMenuController {
 
     public ProfileMenuOutput changeUsername(String username) {
-//        if (SignupMenuController.usernameCheck(username)==null) {
-            for (User user:User.allUsers) {
+        if (SignupMenuController.usernameCheckErrors(username).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+            for (User user : User.allUsers) {
                 if (user.getUsername().equals(this.getUsername())) {
                     user.setUsername(username);
                     this.setUsername(username);
                     return ProfileMenuOutput.USERNAME_CHANGED_SUCCESSFULLY;
                 }
             }
-//        }
+        }
         return ProfileMenuOutput.INVALID_NEW_USERNAME;
     }
 
@@ -26,7 +26,7 @@ public class ProfileMenuController extends LoginMenuController{
         return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
     }
 
-    public ProfileMenuOutput changePassword(String oldPass,String newPass) {
+    public ProfileMenuOutput changePassword(String oldPass, String newPass) {
         if (this.getPassword().equals(oldPass)) {
             if (!oldPass.equals(newPass)) {
                 if (SignupMenuController.passwordCheckErrors(newPass).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
@@ -42,7 +42,7 @@ public class ProfileMenuController extends LoginMenuController{
     }
 
     public ProfileMenuOutput changeEmail(String email) {
-        if (SignupMenuController.emailCheck(email)==null) {
+        if (SignupMenuController.emailCheck(email).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             User.findUserWithPass(this.getPassword()).setEmail(email);
             this.setEmail(email);
             return ProfileMenuOutput.EMAIL_CHANGED_SUCCESSFULLY;
@@ -75,15 +75,16 @@ public class ProfileMenuController extends LoginMenuController{
     }
 
     public void showUserProfileDisplay() {
-        System.out.println("username:"+this.getUsername());
+        User user = User.findUserWithPass(this.getPassword());
+        System.out.println("username:" + user.getUsername());
         StringBuilder password = new StringBuilder("*");
-        for (int i=1;i<this.getPassword().length();i++) {
+        for (int i = 1; i < this.getPassword().length(); i++) {
             password.append("*");
         }
-        System.out.println("password:"+password);
-        System.out.println("email:"+this.getEmail());
-        System.out.println("nickname:"+this.getNickname());
-        System.out.println("slogan:"+this.getSlogan());
+        System.out.println("password:" + password);
+        System.out.println("email:" + user.getEmail());
+        System.out.println("nickname:" + user.getNickname());
+        System.out.println("slogan:" + user.getSlogan());
         //TODO:user rank and high score are left..
     }
 }

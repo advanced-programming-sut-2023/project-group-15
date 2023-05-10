@@ -5,7 +5,6 @@ import org.example.controller.LoginMenuController;
 import org.example.controller.ProfileMenuController;
 import org.example.controller.SignupMenuController;
 import org.example.model.enums.SecurityQuestion;
-import org.example.view.enums.commands.GameMenuEnum;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;
@@ -53,10 +52,10 @@ public class LoginMenu extends MainMenu {
                 profileMenu.displayUserInfo();
             } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.NEW_GAME)) != null) {
                 //not sure
-                new GameStartMenu().newGame(loginMenuMatcher,loginMenuController);
+                new GameStartMenu().newGame();
             } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
                 //not sure
-                new GameStartMenu().addUser(loginMenuMatcher,loginMenuController);
+                new GameStartMenu().addUser(loginMenuMatcher);
             } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.LOAD_GAME))!= null) {
                 //not sure
                 new GameStartMenu().loadGame(loginMenuMatcher,loginMenuController);

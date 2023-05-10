@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.controller.ProfileMenuController;
 import org.example.view.MainMenu;
 
 public class Main {
