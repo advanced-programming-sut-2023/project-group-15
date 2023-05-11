@@ -29,14 +29,14 @@ public class Main {
 //        new GameMenu().run();
         //new MainMenu().run();
         //Map.setCurrentMap();
-       // new MapMenu().run(0,0);
+        // new MapMenu().run(0,0);
 //        new MainMenu().run();
 
         //Map.setCurrentMap();
         //dropBuildingController controller = new dropBuildingController();
-       // controller.dropProductiveBuilding(0 , 0 , MILL);
-       // new mapMenu().run();
+        // controller.dropProductiveBuilding(0 , 0 , MILL);
+        // new mapMenu().run();
         //System.out.println(map.findATile(0 , 0).getLandType());
-       //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());
+        //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());
     }
 }
