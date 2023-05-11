@@ -3,6 +3,7 @@ package org.example.view;
 import org.example.InputScanner;
 import org.example.controller.MapMenuController;
 import org.example.view.enums.commands.MapEnum;
+import org.example.view.enums.outputs.LoginMenuOutput;
 
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -12,6 +13,10 @@ public class MapMenu {
         int x , y;
         MapMenuController controller = new MapMenuController();
         controller.setStartingPoint(matcher);
+        if (controller.getxStart()==-1||controller.getyStart()==-1) {
+            System.out.println("Invalid command!");
+            return;
+        }
         x = controller.getxStart();
         y = controller.getyStart();
         Matcher mapMenuMatcher;

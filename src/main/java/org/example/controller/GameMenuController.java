@@ -112,10 +112,8 @@ public class GameMenuController {
     }
 
     public void setFoodRate(int rate){
-
         if(government.checkFoodVariety() == 0)
             rate = -2;
-
         switch (rate){
             case -2: government.setPopularity(government.getPopularity()-8+government.checkFoodVariety());
                 government.setFoodRate(-2);
@@ -144,7 +142,7 @@ public class GameMenuController {
     public void setTaxRate(int rate){
         government.setCoins(130.90);
         people.setNumberOfPeople(10);
-        Double zero = 0.00;
+        double zero = 0.00;
         if(Double.compare(government.getCoins() , zero) == 0)
             rate = 0;
         switch (rate){

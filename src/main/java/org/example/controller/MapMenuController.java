@@ -20,17 +20,14 @@ public class MapMenuController {
     }
 
     public void setStartingPoint(Matcher matcher) {
-        int x = 0, y = 0;
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i) == null)
-                continue;
-            if (matcher.group(i).equals("x"))
-                x = Integer.parseInt(matcher.group(i + 1));
-            if (matcher.group(i).equals("y"))
-                y = Integer.parseInt(matcher.group(i + 1));
-        }
-        xStart = x;
-        yStart = y;
+        if (matcher.group("x")!=null)
+            xStart = Integer.parseInt(matcher.group("x"));
+        else
+            xStart = -1;
+        if (matcher.group("y")!=null)
+            yStart = Integer.parseInt(matcher.group("y"));
+        else
+            yStart = -1;
     }
 
     public int getxStart() {
