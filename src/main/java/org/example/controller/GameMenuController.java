@@ -119,7 +119,6 @@ public class GameMenuController {
                 break;
             case -2: government.setCoins(government.getCoins()-0.8*people.getPeopleNumber());
                      government.setTaxRate(-2);
-
                 break;
             case -1: government.setCoins(government.getCoins()-0.6*people.getPeopleNumber());
                      government.setTaxRate(-1);

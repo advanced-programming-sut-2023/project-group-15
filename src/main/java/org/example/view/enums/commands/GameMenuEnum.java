@@ -27,7 +27,8 @@ public enum GameMenuEnum {
     BUY_ITEM("^\\s*buy\\s+-i(?<item>\\w+)\\s+-a\\s+(?<number>)$"),
     SHOW_PRICE_LIST("^\\s*show\\s+price\\s+list$"),
     SHOW_MAP("show map -(x|y) (\\d+) -(x|y) (\\d+)"),
-    SELECT_BUILDING("select building -(x|y) (\\d+) -(x|y) (\\d+) ")
+    SELECT_BUILDING("select building -(x|y) (\\d+) -(x|y) (\\d+) "),
+    TRADE_MENU("enter\\s+trade\\s+menu"),
     ;
 
 

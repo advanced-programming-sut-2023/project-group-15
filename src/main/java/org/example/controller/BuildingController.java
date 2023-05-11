@@ -44,6 +44,46 @@ public class BuildingController {
     public void setCoordinateY(String coordinateY) {
         this.coordinateY = coordinateY;
     }
+    public String checkForSources(Products product , int amount)
+    {
+        int current;
+        Storage store = null;
+        for(StoreProducts storeProduct : StoreProducts.values()) {
+            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
+                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()));
+            }
+        }
+        if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
+            current = store.getGoods().get(product);
+            store.getGoods().remove(product);
+            store.getGoods().put(product, current - amount);
+            return "success";
+        }
+        return "not enough product";
+        //TODO change the return type to enum
+    }
+    public void dropBuilding(Matcher matcher) {
+        String type;
+        boolean canBuild = false;
+        int x , y;
+        x = Integer.parseInt(groupFinder(matcher, "x"));
+        y = Integer.parseInt(groupFinder(matcher, "y"));
+        if(checkTheLand(x , y).equals(BuildingStatusOutput.DROP_FORBID)
+                || GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null)
+            System.out.println("Cant drop building in this tile");
+        else {
+            String name;
+            name = groupFinder(matcher, "type");
+            canBuild = checkForBuildingMaterial(name);
+            if (!canBuild)
+                System.out.println("not enough resources to build this building");
+            else {
+                buildingTypeFinder(x , y , name);
+            }
+        }
+    }
+    //public void selectBuilding()
+
 
 
     public void dropProductiveBuilding(int x , int y , String name)
@@ -144,45 +184,7 @@ public class BuildingController {
 
         return null;
     }
-   public String checkForSources(Products product , int amount)
-    {
-        int current;
-        Storage store = null;
-        for(StoreProducts storeProduct : StoreProducts.values()) {
-            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
-                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()));
-            }
-        }
-         if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
-             current = store.getGoods().get(product);
-             store.getGoods().remove(product);
-             store.getGoods().put(product, current - amount);
-             return "success";
-         }
-         return "not enough product";
-     //TODO change the return type to enum
-     }
-    public void dropBuilding(Matcher matcher) {
-        String type;
-        boolean canBuild = false;
-        int x , y;
-        x = Integer.parseInt(groupFinder(matcher, "x"));
-        y = Integer.parseInt(groupFinder(matcher, "y"));
-        if(checkTheLand(x , y).equals(BuildingStatusOutput.DROP_FORBID)
-        || GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null)
-            System.out.println("Cant drop building in this tile");
-        else {
-            String name;
-            name = groupFinder(matcher, "type");
-            canBuild = checkForBuildingMaterial(name);
-            if (!canBuild)
-                System.out.println("not enough resources to build this building");
-            else {
-                buildingTypeFinder(x , y , name);
-            }
-        }
 
-    }
     public void buildingTypeFinder(int x , int y , String name)
     {
         String type = BuildingName.getBuildingType(name);

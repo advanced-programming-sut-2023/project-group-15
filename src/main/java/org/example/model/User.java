@@ -3,7 +3,6 @@ package org.example.model;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
-import org.example.model.gameData.Map;
 
 import java.util.ArrayList;
 
@@ -14,7 +13,7 @@ public class User {
     private String email;
     private String passRecoveryQuestion;
     private String passRecoveryAnswer;
-    private int score;
+    private int highscore;
     private int rank;
     private String slogan;
     private int userNO;
@@ -23,17 +22,34 @@ public class User {
     private int turn;
     private ArrayList<GameDataBase> userGames;
     public static final ArrayList<User> allUsers = new ArrayList<>();
+    public User(String username, String password, String nickname, String email , String passRecoveryQuestion , String passRecoveryAnswer , int rank , int highscore) {
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.passRecoveryAnswer = passRecoveryAnswer;
+        this.passRecoveryQuestion = passRecoveryQuestion;
+        this.rank = rank;
+        this.email = email;
+        this.highscore = highscore;
+    }
+    public User(String username, String password, String nickname, String email , String slogan, String passRecoveryQuestion , String passRecoveryAnswer , String rank , String  highscore) {
+        this.username = username;
+        this.password = password;
+        this.slogan = slogan;
+        this.nickname = nickname;
+        this.passRecoveryAnswer = passRecoveryAnswer;
+        this.passRecoveryQuestion = passRecoveryQuestion;
+        this.rank = Integer.valueOf(rank);
+        this.email = email;
+        this.highscore = Integer.valueOf(highscore);
+    }
     public User(String username, String password, String nickname, String email) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
-        this.passRecoveryAnswer = null;
-        this.passRecoveryQuestion = null;
-        this.score = 0;
         this.email = email;
-        this.userGames = new ArrayList<>();
-        this.addUser();
     }
+
     public User(String username, String password, String nickname, String email, String slogan) {
         this.username = username;
         this.password = password;
@@ -55,8 +71,8 @@ public class User {
         this.rank = rank;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setHighscore(int highscore) {
+        this.highscore = highscore;
     }
 
     public String getUsername() {
@@ -83,8 +99,8 @@ public class User {
         return this.rank;
     }
 
-    public int getScore() {
-        return this.score;
+    public int getHighscore() {
+        return this.highscore;
     }
 
     public void setPassword(String password) {
@@ -180,4 +196,5 @@ public class User {
     public Government getGovernment() {
         return government;
     }
+
 }

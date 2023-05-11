@@ -47,7 +47,7 @@ public class MapMenuController {
         int xS = x - 5;  // x startpoint
         int xE = x + 5;  // x endpoint
         if (xS < 0) {
-            xE += -xS;
+            xE -= xS;
             xS = 0;
         }
         if (xE > 199) {
@@ -57,7 +57,7 @@ public class MapMenuController {
         int yS = y - 5;  // y startpoint
         int yE = y + 5;  // y endpoint
         if (yS < 0) {
-            yE += -yS;
+            yE -= yS;
             yS = 0;
         }
         if (yE > 199) {

@@ -1,14 +1,25 @@
 package org.example.view;
 
 import org.example.InputScanner;
+import org.example.controller.GameMenuController;
 import org.example.controller.MainMenuController;
+import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.SignupMenuEnum;
+import org.json.JSONObject;
 
+import java.io.File;
+import java.util.Date;
 import java.util.regex.Matcher;
 
 public class MainMenu {
     public void run() {
+        JSONObject obj = new JSONObject();
+        String path ="d:/json/dataBase.json";
+        File dir = new File("d:/json/");
+        dir.mkdirs();
+        if(dir.length() != 0)
+        GameDataBase.readFromFile();
         Matcher mainMenuMatcher;
         String userInput;
         while (true) {

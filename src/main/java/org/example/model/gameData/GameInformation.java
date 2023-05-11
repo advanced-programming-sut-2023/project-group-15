@@ -114,4 +114,7 @@ public class GameInformation {
     //TODO turn methods should be added hear
 
 
+    public static HashMap<User, Integer> getPlayers() {
+        return players;
+    }
 }

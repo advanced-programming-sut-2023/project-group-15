@@ -7,4 +7,5 @@ public class InputScanner {
     public static Scanner getScanner() {
         return scanner;
     }
+
 }

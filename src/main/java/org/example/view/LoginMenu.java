@@ -4,6 +4,7 @@ import org.example.InputScanner;
 import org.example.controller.LoginMenuController;
 import org.example.controller.ProfileMenuController;
 import org.example.controller.SignupMenuController;
+import org.example.controller.Utility;
 import org.example.model.enums.SecurityQuestion;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;
@@ -67,7 +68,9 @@ public class LoginMenu extends MainMenu {
 
     private void classify(Matcher matcher) {
         loginMenuController.setUsername(matcher.group("username"));
-        loginMenuController.setPassword(matcher.group("password"));
+        String password = matcher.group("password");
+        byte[] salt = Utility.makeSalt();
+        loginMenuController.setPassword(Utility.getPassHashSha256(password,salt));
         if (matcher.group("logged") != null)
             loginMenuController.setStayLoggedInFlag(true);
     }

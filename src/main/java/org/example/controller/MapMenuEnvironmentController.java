@@ -17,19 +17,29 @@ public class MapMenuEnvironmentController {
     public void setTileTexture(Matcher matcher) {
         int x  , y;
         String type = new String();
-        x = Integer.parseInt(groupFinder(matcher , "x"));
-        y = Integer.parseInt(groupFinder(matcher , "y"));
-        type = groupFinder(matcher , "-t");
-        Tile currentTile = Map.findATile(x, y);
-        for (LandType landType : LandType.values())
-            if (landType.equals(type))
-                currentTile.setLandType(landType);
+        if(groupFinder(matcher , "x ") == null || groupFinder(matcher , "y") == null
+                || groupFinder(matcher , "-t") == null )
+            System.out.println("invalid command");
+        else {
+            x = Integer.parseInt(groupFinder(matcher, "x"));
+            y = Integer.parseInt(groupFinder(matcher, "y"));
+            type = groupFinder(matcher, "-t");
+            Tile currentTile = Map.findATile(x, y);
+            for (LandType landType : LandType.values())
+                if (String.valueOf(landType).equals(type))
+                    currentTile.setLandType(landType);
+        }
     }
 
 
     public void setTexture(Matcher matcher) {
         String type = new String();
         int x1 , y1 ,x2 , y2 ;
+        if(groupFinder(matcher , "x1") == null || groupFinder(matcher , "x2") == null
+                || groupFinder(matcher , "-t") == null || groupFinder(matcher , "y2") == null
+        || groupFinder(matcher , "y1") == null )
+            System.out.println("invalid command");
+        else {
         x1 = Integer.parseInt(groupFinder(matcher , "x1"));
         y1 = Integer.parseInt(groupFinder(matcher , "y1"));
         x2 = Integer.parseInt(groupFinder(matcher , "x2"));
@@ -42,17 +52,23 @@ public class MapMenuEnvironmentController {
                             GameInformation.getCurrentPlayer().getMap()[x][y].setLandType(landType);
                 }
             }
+            }
         }
 
     public void clear(Matcher matcher) {
         int x = 0, y = 0;
-        x = Integer.parseInt(groupFinder(matcher , "x"));
-        y = Integer.parseInt(groupFinder(matcher , "y"));
-        Tile currentTile = Map.findATile(x, y);
-        currentTile.setBuilding(null);
-        currentTile.setTree(null);
-        currentTile.setSoldier(null);
-        currentTile.setRock(false, null);
+        if(groupFinder(matcher , "x ") == null || groupFinder(matcher , "y") == null
+                || groupFinder(matcher , "-t") == null )
+            System.out.println("invalid command");
+        else {
+            x = Integer.parseInt(groupFinder(matcher, "x"));
+            y = Integer.parseInt(groupFinder(matcher, "y"));
+            Tile currentTile = Map.findATile(x, y);
+            currentTile.setBuilding(null);
+            currentTile.setTree(null);
+            currentTile.setSoldier(null);
+            currentTile.setRock(false, null);
+        }
     }
 
     public void dropUnit(Matcher matcher) {
@@ -64,25 +80,35 @@ public class MapMenuEnvironmentController {
     public void dropTree(Matcher matcher) {
         int x = 0, y = 0;
         String type = null;
-        x = Integer.parseInt(groupFinder(matcher , "x"));
-        y = Integer.parseInt(groupFinder(matcher , "y"));
-        type = groupFinder(matcher , "-t");
-        Tile currentTile = Map.findATile(x, y);
-        for (Tree tree : Tree.values())
-            if (tree.equals(type))
-                currentTile.setTree(tree);
+        if(groupFinder(matcher , "x ") == null || groupFinder(matcher , "y") == null
+                || groupFinder(matcher , "-t") == null )
+            System.out.println("invalid command");
+        else {
+            x = Integer.parseInt(groupFinder(matcher, "x"));
+            y = Integer.parseInt(groupFinder(matcher, "y"));
+            type = groupFinder(matcher, "-t");
+            Tile currentTile = Map.findATile(x, y);
+            for (Tree tree : Tree.values())
+                if (tree.equals(type))
+                    currentTile.setTree(tree);
+        }
 
     }
 
     public void dropRock(Matcher matcher) {
         int x = 0, y = 0;
         String direction = null;
-                x = Integer.parseInt(groupFinder(matcher , "x"));
-                y = Integer.parseInt(groupFinder(matcher , "y"));
-                direction = groupFinder(matcher , "-t");
-        Tile currentTile = Map.findATile(x, y);
-        Direction direction1 = findDirection(direction);
-        currentTile.setRock(true, direction1);
+        if(groupFinder(matcher , "x ") == null || groupFinder(matcher , "y") == null
+        || groupFinder(matcher , "-t") == null )
+            System.out.println("invalid command");
+        else {
+            x = Integer.parseInt(groupFinder(matcher, "x"));
+            y = Integer.parseInt(groupFinder(matcher, "y"));
+            direction = groupFinder(matcher, "-t");
+            Tile currentTile = Map.findATile(x, y);
+            Direction direction1 = findDirection(direction);
+            currentTile.setRock(true, direction1);
+        }
     }
     public static Direction findDirection(String direction) {
         if (direction.matches("\\s*[nN]\\s*")) {
