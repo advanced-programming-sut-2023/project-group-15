@@ -6,7 +6,7 @@ import org.example.model.enums.*;
 public class Building {
 //    private final BuildingName buildingName;
     private final String name ;
-    private final int hp;
+    private int hp;
     private int xCoordinate;
     private int yCoordinate;
     private Products material1 ;
@@ -33,6 +33,9 @@ public class Building {
         return name;
     }
 
+    public void setHp(int hp){
+        this.hp = hp;
+    }
     public int getHp() {
         return hp;
     }

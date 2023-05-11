@@ -1,9 +1,9 @@
 package org.example.model.MBC;
 
 public class People extends Person{
-    public int numberOfPeople;
+    private int numberOfPeople;
 
-    private void addPeople(int number){
+    public void addPeople(int number){
         this.numberOfPeople += number;
     }
 
