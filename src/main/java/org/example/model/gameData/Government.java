@@ -1,11 +1,7 @@
 package org.example.model.gameData;
 
-//import org.example.model.enums.Food;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
-//changed public to private and camel names
 public class Government {
 
     private int popularity;
@@ -23,16 +19,16 @@ public class Government {
         foods.put("Cheese", 10.00);
     }
 
-    public void setCoins(double coins) {
-        this.coins = coins;
+    public static void setCoins(double coin) {
+        coins = coin;
     }
 
     public static void deCoin(double coin) {
-        coins += coin;
+        coins -= coin;
     }
 
     public static void InCoin(double coin) {
-        coins -= coin;
+        coins += coin;
     }
 
     public static double getCoins() {
@@ -109,10 +105,14 @@ public class Government {
         this.fearRate = fearRate;
     }
 
-    public void addFood(String food, double amount) {
-        foods.replace(food, amount);
+    public static void addFood(String food, double amount) {
+        double number = foods.get(food) + amount;
+        foods.replace(food, number);
     }
-
+    public static void removeFood(String food, double amount) {
+        double number = foods.get(food) - amount;
+        foods.replace(food, number);
+    }
     public int getTaxRate() {
         return this.taxRate;
     }

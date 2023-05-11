@@ -308,5 +308,8 @@ public class UnitMenuController {
         return UnitMenuOutput.SUCCESSFUL_ATTACK;
     }
 
-
+    public void figuringApproachEnemy(){
+        //check from turn if attack or move
+        //get x , y and check
+    }
 }
