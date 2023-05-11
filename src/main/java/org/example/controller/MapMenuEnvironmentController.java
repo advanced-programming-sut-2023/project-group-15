@@ -6,6 +6,7 @@ import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
 import org.example.model.gameData.Map;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,7 +16,7 @@ public class MapMenuEnvironmentController {
     public void setTileTexture(Matcher matcher) {
         int x = 0;
         int y = 0;
-        String type = new String();
+        String type = null;
         while (matcher.find()) {
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i) == null)
@@ -28,15 +29,22 @@ public class MapMenuEnvironmentController {
                     type = matcher.group(i + 1);
             }
         }
+        type = turnToEnum(Objects.requireNonNull(type));
         Tile currentTile = Map.findATile(x, y);
         for (LandType landType : LandType.values())
-            if (landType.equals(type))
+            if (String.valueOf(landType).equals(type))
                 currentTile.setLandType(landType);
+    }
+
+    private String turnToEnum(String type) {
+        String result = type.toUpperCase();
+        result = result.replace(' ','_');
+        return result;
     }
 
 
     public void setTexture(Matcher matcher) {
-        String type = new String();
+        String type = null;
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
@@ -52,10 +60,11 @@ public class MapMenuEnvironmentController {
                 y2 = Integer.parseInt(matcher.group(i + 1));
             if (matcher.group(i).equals("t"))
                 type = matcher.group(i + 1);
+            type = turnToEnum(Objects.requireNonNull(type));
             for (int x = x1; x < x2; x++) {
                 for (int y = y1; y < y2; y++) {
                     for (LandType landType : LandType.values())
-                        if (landType.equals(type))
+                        if (String.valueOf(landType).equals(type))
                             Map.findATile(x, y).setLandType(landType);
                 }
             }
@@ -89,7 +98,7 @@ public class MapMenuEnvironmentController {
 
     public void dropTree(Matcher matcher) {
         int x = 0, y = 0;
-        String type = new String();
+        String type = null;
         for (int i = 0; i < matcher.groupCount(); i++) {
             if (matcher.group(i) == null)
                 continue;
@@ -101,8 +110,9 @@ public class MapMenuEnvironmentController {
                 type = matcher.group(i + 1);
         }
         Tile currentTile = Map.findATile(x, y);
+        type = turnToEnum(Objects.requireNonNull(type));
         for (Tree tree : Tree.values())
-            if (tree.equals(type))
+            if (String.valueOf(tree).equals(type))
                 currentTile.setTree(tree);
 
     }

@@ -56,7 +56,7 @@ public class DropBuildingController {
 
     public BuildingStatusOutput checkParameters() {
         if (this.getCoordinateX().matches("\\s*\\d+\\s*")) {
-            if (coordinateY.matches("\\s*\\d+\\s*")) {
+            if (this.getCoordinateY().matches("\\s*\\d+\\s*")) {
                 //TODO: searching on type of buildings
             }
             return BuildingStatusOutput.INVALID_Y_COORDINATE;

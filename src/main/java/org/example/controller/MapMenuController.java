@@ -1,4 +1,5 @@
 package org.example.controller;
+
 import org.example.model.MBC.Soldier;
 import org.example.model.building.BuildingName;
 import org.example.model.gameData.GameInformation;
@@ -20,11 +21,11 @@ public class MapMenuController {
     }
 
     public void setStartingPoint(Matcher matcher) {
-        if (matcher.group("x")!=null)
+        if (matcher.group("x") != null)
             xStart = Integer.parseInt(matcher.group("x"));
         else
             xStart = -1;
-        if (matcher.group("y")!=null)
+        if (matcher.group("y") != null)
             yStart = Integer.parseInt(matcher.group("y"));
         else
             yStart = -1;
@@ -99,12 +100,10 @@ public class MapMenuController {
         int landTypeCounter = 0;
         Tile currentTile = currentUserMap[x][y];
         String answer = "LandType : ";
-        for(int i=0 ; i< currentUserMap.length ; i++)
-        {
-            for(int j=0 ; j< currentUserMap.length ; j++){
-                if(currentUserMap[i][j].getLandType().equals(currentTile.getLandType()))
-                    landTypeCounter ++;
-
+        for (int i = 0; i < currentUserMap.length; i++) {
+            for (int j = 0; j < currentUserMap.length; j++) {
+                if (currentUserMap[i][j].getLandType().equals(currentTile.getLandType()))
+                    landTypeCounter++;
             }
         }
         answer = answer.concat(currentTile.getLandType().values().toString() +
@@ -115,7 +114,6 @@ public class MapMenuController {
             answer = answer.concat("\n" + "Soldier(s) : " + currentTile.getSoldier().values().toString() +
                     "\n" + "number of soldiers: " + String.valueOf(currentTile.getNumberOfSoldiers()));
         }
-
         return answer;
     }
 

@@ -1,7 +1,5 @@
 package org.example.model.enums;
 
-import org.example.model.User;
-
 public enum UnitName {
     PIKEMEN(3,9,8,1,10),
     SWORDSMEN(3,15,2,1,10),
@@ -23,12 +21,12 @@ public enum UnitName {
     ASSASSINS(2,9,6,2,10),
    ;
 
-    private int speed;
-    private int attackingPower;
-    private int deffense;
-    private int maxMove;
+    private final int speed;
+    private final int attackingPower;
+    private final int defense;
+    private final int maxMove;
     private int throwRange;
-    private int unitHp;
+    private final int unitHp;
 
     public int getSpeed(){
         return this.speed;
@@ -36,8 +34,8 @@ public enum UnitName {
     public int getAttackingPower(){
         return this.attackingPower;
     }
-    public int getDeffense(){
-        return this.deffense;
+    public int getDefense(){
+        return this.defense;
     }
     public int getMaxMove(){
         return this.maxMove;
@@ -48,17 +46,17 @@ public enum UnitName {
     public int getUnitHp(){
         return this.unitHp;
     }
-    UnitName(int speed,int attackingPower,int deffense, int maxMove,int unitHp){
+    UnitName(int speed,int attackingPower,int defense, int maxMove,int unitHp){
         this.speed = speed;
         this.attackingPower = attackingPower;
-        this.deffense = deffense;
+        this.defense = defense;
         this.maxMove = maxMove;
         this.unitHp = unitHp;
     }
-    UnitName(int speed,int attackingPower,int deffense, int maxMove,int unitHp,int throwRange){
+    UnitName(int speed,int attackingPower,int defense, int maxMove,int unitHp,int throwRange){
         this.speed = speed;
         this.attackingPower = attackingPower;
-        this.deffense = deffense;
+        this.defense = defense;
         this.maxMove = maxMove;
         this.unitHp = unitHp;
         this.throwRange = throwRange;

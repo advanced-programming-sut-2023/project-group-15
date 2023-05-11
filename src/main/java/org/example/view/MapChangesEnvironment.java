@@ -63,7 +63,7 @@ public class MapChangesEnvironment {
             input = InputScanner.getScanner().nextLine();
             if ((matcherTest = BuildingCommandsEnum.getMatcher(input, BuildingCommandsEnum.DROP_BUILDING)) != null) {
                 BuildingStatusOutput status = dropBuilding(matcherTest);
-                if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY))
+                if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY))
                     System.out.println("building set successfully!");
                 else
                     System.out.println(status.getStatus());
@@ -75,9 +75,9 @@ public class MapChangesEnvironment {
     private BuildingStatusOutput dropBuilding(Matcher matcherTest) {
         classifyController(matcherTest);
         BuildingStatusOutput status = buildingController.checkParameters();
-        if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
+        if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY)) {
             status = buildingController.checkTheLand();
-            if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
+            if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY)) {
                 buildingController.SettingTheBuilding();
             }
         }

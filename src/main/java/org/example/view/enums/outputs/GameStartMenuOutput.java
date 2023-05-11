@@ -1,3 +1,4 @@
+//this is class is completed!
 package org.example.view.enums.outputs;
 
 public enum GameStartMenuOutput {
