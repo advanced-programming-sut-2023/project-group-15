@@ -106,6 +106,10 @@ public class GameMenuController {
         government.setCoins(n);
     }
     public void setTaxRate(int rate){
+        ++n;
+        if(n==1)
+        people.setNumberOfPeople(10);
+        government.setCoins(20.78);
         Double zero = 0.00;
         if(Double.compare(government.getCoins() , zero) == 0)
             rate = 0;
@@ -125,6 +129,8 @@ public class GameMenuController {
                 break;
             case 2: government.setCoins(government.getCoins()+0.8*people.getPeopleNumber());
                     government.setTaxRate(2);
+                    people.addPeople(5);
+                    System.out.println("lll");
                     System.out.println(government.getCoins());
                 break;
             case 3: government.setCoins(government.getCoins()+people.getPeopleNumber());
@@ -132,6 +138,7 @@ public class GameMenuController {
                 break;
             case 4: government.setCoins(government.getCoins()+0.5*people.getPeopleNumber());
                     government.setTaxRate(4);
+                    System.out.println(people.getPeopleNumber());
                 break;
             case 5: government.setCoins(government.getCoins()+0.25*people.getPeopleNumber());
                     government.setTaxRate(5);

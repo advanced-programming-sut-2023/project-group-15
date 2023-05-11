@@ -1,18 +1,71 @@
 package org.example.model.MBC;
 
+import org.example.model.User;
+import org.example.model.enums.State;
+import org.example.model.enums.UnitName;
+import org.example.model.gameData.Government;
+
 public class Soldier extends Person{
     private int speed;
     private int attackingPower;
     private int deffense;
     private int x;
     private int y;
-
-    public Soldier(int speed,int attackingPower,int deffense,int x,int y){
+    private UnitName name;
+    private int maxMove;
+    private State state;
+    private static User owner;
+    private int unitHp;
+    public Soldier(int speed,int attackingPower,int deffense,int x,int y , int unitHp ,int maxMove,UnitName name,State state,User owner){
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.deffense = deffense;
         this.x = x;
         this.y = y;
+        //owner = owner;
+        this.unitHp = unitHp;
+        this.maxMove = maxMove;
+        this.name = name;
+        this.state = state;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public static User getOwner() {
+        return owner;
+    }
+
+    public void setName(UnitName name){
+        this.name = name;
+    }
+
+    public UnitName getName(){
+        return this.name;
+    }
+    public void setUnitHp(int unitHp) {
+        this.unitHp = unitHp;
+    }
+
+    public void setMaxMove(int maxMove) {
+        this.maxMove = maxMove;
+    }
+
+    public int getMaxMove(){
+        return this.maxMove;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public int getUnitHp() {
+        return unitHp;
     }
 
     public void setSpeed(int speed){
