@@ -10,10 +10,11 @@ public class Market extends Building{
    private static HashMap<String , Integer> number = new HashMap<>();
     private static HashMap<String, Integer> sellCoin = new HashMap<>();
     private static HashMap<String, Integer> buyCoin = new HashMap<>();
+    private static int numberOfWorkers;
     public Market(String name, int hp, int xCoordiante, int yCoordiante, Products material1, Products material2, int numberOfMaterial1, int numberOfMaterial2,
-                  int numberOfWorkers, ArrayList<Products> userFoods, ArrayList<Source> userSources, ArrayList<Weapon> userWeapons) {
+                  int numberOfWorkers) {
         super(name, hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfMaterial2);
-
+        this.numberOfWorkers = numberOfWorkers;
     }
 
 

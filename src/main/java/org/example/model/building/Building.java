@@ -55,6 +55,11 @@ public class Building {
     public int getNumberOfMaterial1() {
         return numberOfMaterial1;
     }
+    /*public Building getBuildingByName(String name)
+    {
+
+
+    }*/
 
 
     public void setPosition(int x, int y) {

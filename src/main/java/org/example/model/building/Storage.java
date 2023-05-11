@@ -9,7 +9,7 @@ import java.util.Map;
 public class Storage extends Building{
     private int capacity;
     //private final Products good;
-    private int freePlace;
+    private int freePlace = 100;
     private static HashMap<Products , Integer> goods = new HashMap<>();
 
     public Storage(String name, int hp, int xCoordiante, int yCoordiante, Products material1, Products material2,
@@ -31,8 +31,13 @@ public class Storage extends Building{
         this.capacity-=capacity;
     }*/
 
+    public int getFreePlace() {
+        return freePlace;
+    }
 
-
+    public void setFreePlace(int freePlace) {
+        this.freePlace = freePlace;
+    }
 
     public void addToStorage(Products newProduct)
     {
@@ -41,12 +46,20 @@ public class Storage extends Building{
      currentAmount = goods.get(newProduct);
     goods.remove(newProduct);
     goods.put(newProduct , currentAmount+1);
+    int currentFreePlace = getFreePlace();
+    setFreePlace(currentFreePlace - 1);
     }
+
     public void addtoStorageWithAmount(Products newProduct , int amount)
     {
         if(goods.containsKey((newProduct)))
             goods.remove(newProduct);
-        goods.put(newProduct , amount);
+            goods.put(newProduct, amount);
+        int currentFreePlace = getFreePlace();
+        setFreePlace(currentFreePlace - amount);
+    }
 
+    public static HashMap<Products, Integer> getGoods() {
+        return goods;
     }
 }

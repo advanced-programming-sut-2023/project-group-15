@@ -28,18 +28,18 @@ public class Government {
     }
 
     public static void deCoin(double coin) {
-        coins += coin;
+        coins -= coin;
     }
 
     public static void InCoin(double coin) {
-        coins -= coin;
+        coins += coin;
     }
 
     public static double getCoins() {
         return coins;
     }
 
-   /* public void setFoodRate(int foodRate) {
+   /*+ public void setFoodRate(int foodRate) {
             foodRate = foodRate;
             switch (foodRate)
             {
@@ -164,5 +164,6 @@ public class Government {
                 return 0;
         }
     }
+
 
 }

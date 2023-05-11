@@ -5,11 +5,11 @@ import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
 import org.example.view.enums.outputs.BuildingStatusOutput;
 
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class MapMenuEnvironmentController {
@@ -39,7 +39,7 @@ public class MapMenuEnvironmentController {
                 for (int y = y1; y < y2; y++) {
                     for (LandType landType : LandType.values())
                         if (landType.equals(type))
-                            Map.findATile(x, y).setLandType(landType);
+                            GameInformation.getCurrentPlayer().getMap()[x][y].setLandType(landType);
                 }
             }
         }
@@ -59,23 +59,7 @@ public class MapMenuEnvironmentController {
         //Mobina
     }
 
-    public void dropBuilding(Matcher matcher) {
-        DropBuildingController controller = new DropBuildingController();
-        if(controller.checkTheLand().equals(BuildingStatusOutput.DROP_FORBID))
-            System.out.println("Cant drop building in this tile");
-            else{
-                String name;
-                int xCoordinate , yCoordinate;
-                name = groupFinder(matcher , "type");
-                xCoordinate = Integer .parseInt(groupFinder(matcher , "x")) ;
-                yCoordinate = Integer.parseInt(groupFinder(matcher , "y")) ;
-            BuildingName.getBuildingType(name);
-            //TODO should choose which drop method to call
 
-
-        }
-
-    }
 
     public void dropTree(Matcher matcher) {
         int x = 0, y = 0;
