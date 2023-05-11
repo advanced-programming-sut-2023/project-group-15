@@ -4,9 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum GameMenuEnum {
-    SHOW_MAP("^\\s*show\\s+map\\s+-x\\s+(?<xCoordinate>[\\d]+)\\s+-y\\s+(?<yCoordinate>[\\d]+)\\s*$"),
-    SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+(?<foodRate>-2|-1|0|1|2)"),
-    SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1-8])"),
+    SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+?<foodRate>(-2|-1|0|1|2)"),
+    SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1,8])"),
     SHOW_FOOD_RATE("^\\s*food\\s+rate\\s+show\\s*$"),
     SHOW_TAX_RATE("^\\s*tax\\s+rate\\s+show\\s*$"),
     SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1,5])$"),
@@ -27,6 +26,8 @@ public enum GameMenuEnum {
     SELL_ITEM("^\\s*sell\\s+-i\\s+(?<item>\\w+)\\s+-a\\s+(?<number>\\d)$"),
     BUY_ITEM("^\\s*buy\\s+-i\\s+(?<item>\\w+)\\s+-a\\s+(?<number>\\d)$"),
     SHOW_PRICE_LIST("^\\s*show\\s+price\\s+list$"),
+    SHOW_MAP("show map -(x|y) (\\d+) -(x|y) (\\d+)"),
+    SELECT_BUILDING("select building -(x|y) (\\d+) -(x|y) (\\d+) ")
     ;
 
 

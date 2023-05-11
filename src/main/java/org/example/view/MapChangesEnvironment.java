@@ -1,11 +1,9 @@
 package org.example.view;
 
 import org.example.InputScanner;
-import org.example.controller.DropBuildingController;
+import org.example.controller.BuildingController;
 import org.example.controller.MapMenuEnvironmentController;
-import org.example.view.enums.commands.BuildingCommandsEnum;
 import org.example.view.enums.commands.MapEnum;
-import org.example.view.enums.outputs.BuildingStatusOutput;
 
 import java.util.regex.Matcher;
 
@@ -47,8 +45,10 @@ public class MapChangesEnvironment {
                 controller.dropRock(matcher);
             else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_TREE)) != null)
                 controller.dropTree(matcher);
-            else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_BUILDING)) !=null)
-            controller.dropBuilding(matcher);
+           /* else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_BUILDING)) !=null) {
+                controller.dropBuilding(matcher);
+            }*/
+            //TODO add the dropbuilding part
             else if((matcher = MapEnum.getMatcher(command,MapEnum.DROP_UNIT)) != null)
                 controller.dropUnit(matcher);
 
@@ -57,8 +57,8 @@ public class MapChangesEnvironment {
 
 
     //testing for dropping buildings...
-    private DropBuildingController buildingController = new DropBuildingController();
-    public void testRun() {
+    private BuildingController buildingController = new BuildingController();
+  /*  public void testRun() {
         Matcher matcherTest;
         String input;
         while (true) {
@@ -72,9 +72,9 @@ public class MapChangesEnvironment {
             }
 
         }
-    }
+    }*/
 
-    private BuildingStatusOutput dropBuilding(Matcher matcherTest) {
+  /*  private BuildingStatusOutput dropBuilding(Matcher matcherTest) {
         classifyController(matcherTest);
         BuildingStatusOutput status = buildingController.checkParameters();
         if (status.equals(BuildingStatusOutput.CHECKED_SUCCESSFULY)) {
@@ -84,8 +84,7 @@ public class MapChangesEnvironment {
             }
         }
         return status;
-    }
-
+    }*/
 
     private void classifyController(Matcher matcherTest) {
         buildingController.setType(matcherTest.group("type"));

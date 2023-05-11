@@ -13,11 +13,10 @@ public class Building {
     private Products material2 ;
     private int numberOfMaterial1;
     private int numberOfMaterial2;
-    private int numberOfWorkers;
 
     public Building(String name, int hp, int xCoordinate, int yCoordinate,
                     Products material1, Products material2, int numberOfMaterial1,
-                    int numberOfMaterial2, int numberOfWorkers) {
+                    int numberOfMaterial2) {
         this.name = name;
         this.hp = hp;
         this.xCoordinate = xCoordinate;
@@ -26,7 +25,7 @@ public class Building {
         this.material2 = material2;
         this.numberOfMaterial1 = numberOfMaterial1;
         this.numberOfMaterial2 = numberOfMaterial2;
-        this.numberOfWorkers = numberOfWorkers;
+
     }
 
     public String getName() {
@@ -59,10 +58,12 @@ public class Building {
     public int getNumberOfMaterial1() {
         return numberOfMaterial1;
     }
+    /*public Building getBuildingByName(String name)
+    {
 
-    public int getNumberOfWorker() {
-        return numberOfWorkers;
-    }
+
+    }*/
+
 
     public void setPosition(int x, int y) {
         this.xCoordinate = x;
@@ -84,4 +85,6 @@ public class Building {
     public void setMaterial2(Products material2) {
         this.material2 = material2;
     }
+
+
 }

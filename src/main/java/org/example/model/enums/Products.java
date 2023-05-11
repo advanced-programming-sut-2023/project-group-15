@@ -2,7 +2,7 @@ package org.example.model.enums;
 
 public enum Products {
     APPLE,
-    HOP,
+    OAT,
     BREAD,
     MEAT,
     WEAT,
@@ -19,7 +19,7 @@ public enum Products {
     GOLD_COIN,
     SWORD,
     SPEAR,
-    ARCHE,
+    BOW,
     MACE,
     OIL_POT,
 

@@ -1,12 +1,9 @@
 package org.example;
 
-import org.example.view.GameMenu;
-import org.example.view.MainMenu;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to the game!");
-        new GameMenu().run();
+        /*System.out.println("Welcome to the game!");
+        //new GameMenu().run();
 //        new MapChangesEnvironment().testRun();
         //Map.setCurrentMap(400);
       /*  for (int i = 10; i < 15; i++){
@@ -28,7 +25,7 @@ public class Main {
         //new MainMenu().run();
         //Map.setCurrentMap();
        // new MapMenu().run(0,0);
-//        new MainMenu().run();
+      //  new MainMenu().run();
 
         //Map.setCurrentMap();
         //dropBuildingController controller = new dropBuildingController();

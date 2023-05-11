@@ -1,33 +1,25 @@
 package org.example.controller;
 
 import org.example.model.Tile;
+import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Map;
+import org.example.view.enums.outputs.BuildingStatusOutput;
 
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class MapMenuEnvironmentController {
 
     public void setTileTexture(Matcher matcher) {
-        int x = 0;
-        int y = 0;
+        int x  , y;
         String type = new String();
-        while (matcher.find()) {
-            for (int i = 0; i < matcher.groupCount(); i++) {
-                if (matcher.group(i) == null)
-                    continue;
-                if (matcher.group(i).equals("x"))
-                    x = Integer.parseInt(matcher.group(i + 1));
-                if ((matcher.group(i).equals("y")))
-                    y = Integer.parseInt(matcher.group(i + 1));
-                if ((matcher.group(i).equals("-t")))
-                    type = matcher.group(i + 1);
-            }
-        }
+        x = Integer.parseInt(groupFinder(matcher , "x"));
+        y = Integer.parseInt(groupFinder(matcher , "y"));
+        type = groupFinder(matcher , "-t");
         Tile currentTile = Map.findATile(x, y);
         for (LandType landType : LandType.values())
             if (landType.equals(type))
@@ -37,41 +29,25 @@ public class MapMenuEnvironmentController {
 
     public void setTexture(Matcher matcher) {
         String type = new String();
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 0;
-        int y2 = 0;
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i).equals("x1"))
-                x1 = Integer.parseInt(matcher.group(i + 1));
-            if (matcher.group(i).equals("y1"))
-                y1 = Integer.parseInt(matcher.group(i + 1));
-            if (matcher.group(i).equals("x2"))
-                x2 = Integer.parseInt(matcher.group(i + 1));
-            if (matcher.group(i).equals("y2"))
-                y2 = Integer.parseInt(matcher.group(i + 1));
-            if (matcher.group(i).equals("t"))
-                type = matcher.group(i + 1);
+        int x1 , y1 ,x2 , y2 ;
+        x1 = Integer.parseInt(groupFinder(matcher , "x1"));
+        y1 = Integer.parseInt(groupFinder(matcher , "y1"));
+        x2 = Integer.parseInt(groupFinder(matcher , "x2"));
+        y2 = Integer.parseInt(groupFinder(matcher , "y2"));
+        type = groupFinder(matcher , "-t");
             for (int x = x1; x < x2; x++) {
                 for (int y = y1; y < y2; y++) {
                     for (LandType landType : LandType.values())
                         if (landType.equals(type))
-                            Map.findATile(x, y).setLandType(landType);
+                            GameInformation.getCurrentPlayer().getMap()[x][y].setLandType(landType);
                 }
             }
         }
-    }
 
     public void clear(Matcher matcher) {
         int x = 0, y = 0;
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i) == null)
-                continue;
-            if (matcher.group(i).equals("x"))
-                x = Integer.parseInt(matcher.group(i + 1));
-            if ((matcher.group(i).equals("y")))
-                y = Integer.parseInt(matcher.group(i + 1));
-        }
+        x = Integer.parseInt(groupFinder(matcher , "x"));
+        y = Integer.parseInt(groupFinder(matcher , "y"));
         Tile currentTile = Map.findATile(x, y);
         currentTile.setBuilding(null);
         currentTile.setTree(null);
@@ -83,23 +59,14 @@ public class MapMenuEnvironmentController {
         //Mobina
     }
 
-    public void dropBuilding(Matcher matcher) {
-        //Mahdi
-    }
+
 
     public void dropTree(Matcher matcher) {
         int x = 0, y = 0;
-        String type = new String();
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i) == null)
-                continue;
-            if (matcher.group(i).equals("x"))
-                x = Integer.parseInt(matcher.group(i + 1));
-            if ((matcher.group(i).equals("y")))
-                y = Integer.parseInt(matcher.group(i + 1));
-            if ((matcher.group(i).equals("-t")))
-                type = matcher.group(i + 1);
-        }
+        String type = null;
+        x = Integer.parseInt(groupFinder(matcher , "x"));
+        y = Integer.parseInt(groupFinder(matcher , "y"));
+        type = groupFinder(matcher , "-t");
         Tile currentTile = Map.findATile(x, y);
         for (Tree tree : Tree.values())
             if (tree.equals(type))
@@ -109,17 +76,10 @@ public class MapMenuEnvironmentController {
 
     public void dropRock(Matcher matcher) {
         int x = 0, y = 0;
-        String direction = new String();
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i) == null)
-                continue;
-            if (matcher.group(i).equals("x"))
-                x = Integer.parseInt(matcher.group(i + 1));
-            if ((matcher.group(i).equals("y")))
-                y = Integer.parseInt(matcher.group(i + 1));
-            if ((matcher.group(i).equals("-t")))
-                direction = matcher.group(i + 1);
-        }
+        String direction = null;
+                x = Integer.parseInt(groupFinder(matcher , "x"));
+                y = Integer.parseInt(groupFinder(matcher , "y"));
+                direction = groupFinder(matcher , "-t");
         Tile currentTile = Map.findATile(x, y);
         Direction direction1 = findDirection(direction);
         currentTile.setRock(true, direction1);
@@ -135,6 +95,18 @@ public class MapMenuEnvironmentController {
             return Direction.DOWN;
         }
         return Direction.NULL;
+    }
+    public String groupFinder(Matcher matcher , String toFind)
+    {
+        while (matcher.find()) {
+            for (int i = 0; i < matcher.groupCount(); i++) {
+                if (matcher.group(i) == null)
+                    continue;
+                if (matcher.group(i).equals(toFind))
+                    return matcher.group(i + 1);
+            }
+        }
+        return null;
     }
 
 }

@@ -4,25 +4,27 @@ import org.example.model.building.BuildingName;
 import static org.example.model.building.BuildingName.*;
 
 public enum LandType {
-    DEFAULT(null , "D"),
-    PEBBLE(null , "PB"),
-    BOWLDER(null , "B"),
-    ROCK(QUARRY , "R"),
-    IRON(IRON_MINE , "I"),
-    GRASS(null , "G"),
-    MEADOW(null , "M"),
-    PETROLEUM(null , " P"),
-    PLAIN(null ,"PL"),
-    SHALLOW_WATER(null ,"SW"),
-    RIVER(null , "RI"),
-    SMALL_POND(null , "SP"),
-    BIG_POND(null , "BP"),
-    BEACH(null , "B"),
-    SEA(null,  "S"),
-    DENSE_GRASSLAND(HOP_FARM , WEAT_FARM , "DG"),
+    DEFAULT(null , "D" , true ),
+    PEBBLE(null , "PB" , true ),
+    BOWLDER(null , "B" , true),
+    ROCK(QUARRY , "R" , true),
+    IRON(IRON_MINE , "I" , true ),
+    GRASS(null , "G" , true ),
+    MEADOW(null , "M" , true),
+    PETROLEUM(null , " P" , true),
+    PLAIN(null ,"PL" , false),
+    SHALLOW_WATER(null ,"SW" , false),
+    RIVER(null , "RI" , false),
+    SMALL_POND(null , "SP" , false),
+    BIG_POND(null , "BP",false),
+    BEACH(null , "B",true),
+    SEA(null,  "S",false),
+    DENSE_GRASSLAND(OAT_FARM , WEAT_FARM , "DG",true),
     ;
     private BuildingName buildingName;
     private BuildingName buildingName2;
+    private boolean buildingStatus;
+
     private String mapId;
 
     LandType(BuildingName name , String mapId)
@@ -30,12 +32,24 @@ public enum LandType {
         this.buildingName = name;
         this.mapId = mapId ;
     }
-    LandType(BuildingName name1 , BuildingName name2 , String mapId)
+    LandType(BuildingName name1 , BuildingName name2 , String mapId,boolean buildingStatus)
     {
         this.buildingName = name1 ;
         this.buildingName2 = name2 ;
         this.mapId = mapId ;
+        this.buildingStatus = buildingStatus;
     }
+
+    LandType(BuildingName buildingName, String mapId ,boolean buildingStatus) {
+        this.buildingName = buildingName;
+        this.mapId = mapId;
+        this.buildingStatus = buildingStatus;
+    }
+
+    public boolean isBuildingStatus() {
+        return buildingStatus;
+    }
+
     public static LandType getLandType(String type)
     {
         for(LandType landType : LandType.values())
@@ -43,6 +57,7 @@ public enum LandType {
                 return landType;
         return null;
     }
+
 
 
 

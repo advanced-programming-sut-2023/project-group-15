@@ -26,8 +26,8 @@ public class MapInitialization {
                     controller.dropRock(matcher);
                 else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_TREE)) != null)
                     controller.dropTree(matcher);
-                else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_BUILDING)) != null)
-                    controller.dropBuilding(matcher);
+               /* else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_BUILDING)) != null)
+                    controller.dropBuilding(matcher);*/
                 else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_UNIT)) != null)
                     controller.dropUnit(matcher);
 

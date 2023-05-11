@@ -111,7 +111,7 @@ public class MapMenuController {
         answer = answer.concat(currentTile.getLandType().values().toString() +
                 "number of tiles with this landtype on map : " + String.valueOf(landTypeCounter));
         if (currentTile.getBuilding() != null)
-            answer = answer.concat("\n" + "Building(s): " + currentTile.getBuilding().values().toString());
+            answer = answer.concat("\n" + "Building(s): " + currentTile.getBuilding().getName().toString());
         if (currentTile.getSoldier() != null) {
             answer = answer.concat("\n" + "Soldier(s) : " + currentTile.getSoldier().values().toString() +
                     "\n" + "number of soldiers: " + String.valueOf(currentTile.getNumberOfSoldiers()));

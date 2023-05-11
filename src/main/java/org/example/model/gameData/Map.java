@@ -1,6 +1,7 @@
 package org.example.model.gameData;
 
 import org.example.model.Tile;
+import org.example.model.building.Building;
 
 public abstract class Map {
     private static int mapSize;
@@ -36,5 +37,18 @@ public abstract class Map {
 
     public static Tile findATile(int x, int y) {
         return currentMap[x][y];
+    }
+   public static Building findBuilding(String name)
+    {
+        for(int i=0 ; i<GameInformation.getCurrentPlayerMap().length ; i++)
+        {
+            for(int j=0 ; j<GameInformation.getCurrentPlayerMap().length ; j++)
+            {
+                if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding().getName()
+                        .equals(name))
+                    return GameInformation.getCurrentPlayerMap()[i][j].getBuilding();
+            }
+        }
+        return null;
     }
 }
