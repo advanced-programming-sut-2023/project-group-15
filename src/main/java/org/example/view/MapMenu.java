@@ -29,7 +29,10 @@ public class MapMenu {
             else if ((mapMenuMatcher = MapEnum.getMatcher(command, MapEnum.MAP_MOVING)) != null)
                 controller.moving(mapMenuMatcher);
             else if ((mapMenuMatcher = MapEnum.getMatcher(command, MapEnum.MAP_DETAILS)) != null)
-                System.out.println(controller.showDetails(mapMenuMatcher));
+                if (controller.checkMatcher(mapMenuMatcher)) {
+                    System.out.println(controller.showDetails(mapMenuMatcher));
+                } else
+                    System.out.println("Invalid command!");
         }
     }
 }

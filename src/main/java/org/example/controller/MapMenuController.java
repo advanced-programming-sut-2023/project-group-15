@@ -94,7 +94,9 @@ public class MapMenuController {
     }
 
     public String showDetails(Matcher matcher) {
-        int x = 0, y = 0 , landTypeCounter = 0;
+        int x = Integer.parseInt(matcher.group("x"));
+        int y = Integer.parseInt(matcher.group("y"));
+        int landTypeCounter = 0;
         Tile currentTile = currentUserMap[x][y];
         String answer = "LandType : ";
         for(int i=0 ; i< currentUserMap.length ; i++)
@@ -115,6 +117,10 @@ public class MapMenuController {
         }
 
         return answer;
+    }
+
+    public boolean checkMatcher(Matcher matcher) {
+        return matcher.group("x") != null && matcher.group("y") != null;
     }
 }
 
