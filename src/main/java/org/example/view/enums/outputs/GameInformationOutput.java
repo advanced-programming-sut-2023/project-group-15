@@ -1,10 +1,5 @@
 package org.example.view.enums.outputs;
 
-import org.example.model.gameData.GameInformation;
-import org.example.view.enums.commands.LoginMenuEnum;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public enum GameInformationOutput {
     SUCCESS("success"),

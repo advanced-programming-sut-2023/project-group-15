@@ -1,10 +1,8 @@
 package org.example.model;
 
 import org.example.model.enums.Direction;
-import org.example.model.building.BuildingName;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
-import org.example.model.enums.UnitName;
 import org.example.model.building.Building;
 import org.example.model.MBC.Soldier;
 public class Tile {
@@ -26,16 +24,6 @@ public class Tile {
         this.rockDirection = Direction.NULL;
     }
 
-    public Tile(Building building, LandType landType, int numberOfSoldiers, Soldier soldier, Tree tree, boolean rock,Direction rockDirection) {
-        this.building = building;
-        this.landType = landType;
-        this.numberOfSoldiers = numberOfSoldiers;
-        this.soldier = soldier;
-        this.tree = tree;
-        this.rock = rock;
-        this.rockDirection = rockDirection;
-    }
-
     public void setBuilding(Building building) {
         this.building = building;
     }
@@ -44,7 +32,7 @@ public class Tile {
         this.landType = landType;
     }
 
-    public void addToNumberOfSoldiers(int numberOfSoldiers) {
+    public void addNumberOfSoldiers(int numberOfSoldiers) {
         this.numberOfSoldiers += numberOfSoldiers;
     }
 
@@ -64,8 +52,6 @@ public class Tile {
     public Building getBuilding() {
         return building;
     }
-
-
     public LandType getLandType() {
         return landType;
     }

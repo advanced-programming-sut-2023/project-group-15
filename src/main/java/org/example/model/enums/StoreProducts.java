@@ -23,7 +23,7 @@ public enum StoreProducts {
     OIL_POT("armoury"),
 
     ;
-    private String storeType;
+    private final String storeType;
 
     StoreProducts(String storeType) {
         this.storeType = storeType;
@@ -32,6 +32,5 @@ public enum StoreProducts {
     public String getStoreType() {
         return storeType;
     }
-
 
 }

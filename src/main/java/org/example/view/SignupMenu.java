@@ -27,7 +27,6 @@ public class SignupMenu extends MainMenu {
                             pickQuestion();
                         signupMenuController.signingsComplete();
                         System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());
-                        return;
                     }
                     else
                         System.out.println(status.getOutput());

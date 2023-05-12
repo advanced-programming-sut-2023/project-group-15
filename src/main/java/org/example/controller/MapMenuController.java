@@ -1,13 +1,8 @@
 package org.example.controller;
 
-import org.example.model.MBC.Soldier;
-import org.example.model.building.BuildingName;
 import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Map;
 import org.example.model.Tile;
-import org.example.view.MapMenu;
 
-import javax.management.StringValueExp;
 import java.util.regex.Matcher;
 
 public class MapMenuController {
@@ -40,8 +35,6 @@ public class MapMenuController {
     }
 
     public void showMap(int x, int y) {
-        Tile currentTile = currentUserMap[x][y];
-        Tile[][] mapToShow = new Tile[11][11];
         int xS = x - 5;  // x startpoint
         int xE = x + 5;  // x endpoint
         if (xS < 0) {

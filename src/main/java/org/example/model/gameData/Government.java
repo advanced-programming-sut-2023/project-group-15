@@ -3,54 +3,33 @@ package org.example.model.gameData;
 import java.util.HashMap;
 
 public class Government {
-
     private int popularity;
     private int foodRate;
     private int taxRate;
-    private static int fearRate;
-    private static double coins;
-    private static HashMap<String, Double> foods = new HashMap<>();
-
-
+    private int fearRate;
+    private double coins;
+    private final HashMap<String, Double> foods = new HashMap<>();
     public void foodList() {
-        foods.put("Apple", 10.00);
-        foods.put("Hop", 10.00);
-        foods.put("Bread", 10.00);
-        foods.put("Cheese", 10.00);
+        foods.put("Apple", 0.00);
+        foods.put("Hop", 0.00);
+        foods.put("Bread", 0.00);
+        foods.put("Cheese", 0.00);
+    }
+    public void setCoins(double coin) {
+        this.coins = coin;
     }
 
-    public static void setCoins(double coin) {
-        coins = coin;
+    public void deCoin(double coin) {
+        this.coins -= coin;
     }
 
-    public static void deCoin(double coin) {
-        coins -= coin;
+    public void InCoin(double coin) {
+        this.coins += coin;
     }
 
-    public static void InCoin(double coin) {
-        coins += coin;
+    public double getCoins() {
+        return this.coins;
     }
-
-    public static double getCoins() {
-        return coins;
-    }
-
-   /* public void setFoodRate(int foodRate) {
-            foodRate = foodRate;
-            switch (foodRate)
-            {
-                case(-2):
-                    this.popularity -= 8;
-                case(-1):
-                    this.popularity -= 4;
-                case(1):
-                    this.popularity += 4 ;
-                case(2):
-                    this.popularity += 8 ;
-
-            }
-        } */
-
     public void setPopularity(int popularity) {
         this.popularity = popularity;
     }
@@ -94,24 +73,20 @@ public class Government {
             case 8:
                 this.popularity -= 24;
                 break;
-
-
         }
-
     }
 
     public void setFearRate(int fearRate) {
-
         this.fearRate = fearRate;
     }
 
-    public static void addFood(String food, double amount) {
-        double number = foods.get(food) + amount;
-        foods.replace(food, number);
+    public void addFood(String food, double amount) {
+        double number = this.foods.get(food) + amount;
+        this.foods.replace(food, number);
     }
-    public static void removeFood(String food, double amount) {
-        double number = foods.get(food) - amount;
-        foods.replace(food, number);
+    public void removeFood(String food, double amount) {
+        double number = this.foods.get(food) - amount;
+        this.foods.replace(food, number);
     }
     public int getTaxRate() {
         return this.taxRate;
@@ -125,8 +100,8 @@ public class Government {
         return this.popularity;
     }
 
-    public static int getFearRate() {
-        return fearRate;
+    public int getFearRate() {
+        return this.fearRate;
     }
 
     public void setFoodRate(int rate) {
@@ -152,7 +127,6 @@ public class Government {
             ++varity;
         if (Double.compare(foods.get("Cheese"), zero) != 0)
             ++varity;
-
         switch (varity) {
             case 4:
                 return 3;

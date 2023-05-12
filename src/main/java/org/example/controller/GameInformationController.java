@@ -6,47 +6,44 @@ import org.example.model.enums.FilePaths;
 import org.example.model.gameData.GameInformation;
 
 public class GameInformationController {
-    public void setMap(int mapSize,int mapNumber)
-    {
+    public void setMap(int mapSize, int mapNumber) {
         String filePath = null;
         switch (mapNumber) {
             case (1):
                 filePath = FilePaths.MAP1.getFilePaths();
                 break;
-            case(2):
+            case (2):
                 filePath = FilePaths.Map2.getFilePaths();
                 break;
-            case(3):
+            case (3):
                 filePath = FilePaths.Map3.getFilePaths();
-            case(4):
+                break;
+            case (4):
                 filePath = FilePaths.Map4.getFilePaths();
+                break;
         }
-
-        GameInformation.setMapGame(mapSize,mapNumber,filePath);
+        GameInformation.setMapGame(mapSize, mapNumber, filePath);
     }
-    public void playerAdder(User player)
-    {
+
+    public void playerAdder(User player) {
         int playerNO = GameInformation.getCurrentPlayerno();
-        GameInformation.addPlayer(player,playerNO);
-        playerNO ++;
+        GameInformation.addPlayer(player, playerNO);
+        playerNO++;
         GameInformation.setCurrentUserno(playerNO);
     }
-    public void generateEachPlayerMap(int mapSize)
-    {
+
+    public void generateEachPlayerMap(int mapSize) {
         int playerNumber = GameInformation.getCurrentPlayerno();
-        Tile[][] playerMap = new Tile[mapSize/2][];
-        if(playerNumber <=4) {
-            for (int i = 0; i <mapSize/2; i++) {
+        Tile[][] playerMap = new Tile[mapSize / 2][];
+        if (playerNumber <= 4) {
+            for (int i = 0; i < mapSize / 2; i++) {
                 for (int j = 0; j < mapSize / 4; j++)
-                    playerMap[i][j] = GameInformation.getGameMap()[i][(playerNumber-1)* mapSize/4];
+                    playerMap[i][j] = GameInformation.getGameMap()[i][(playerNumber - 1) * mapSize / 4];
             }
-        }
-        else{
-            for(int i=0  ; i< mapSize/2 ; i++)
-            {
-                for(int j=0 ; j<mapSize/4 ; j++)
-                {
-                    playerMap[i][j] = GameInformation.getGameMap()[i+mapSize/2][((playerNumber % 4) -1) * mapSize/4];
+        } else {
+            for (int i = 0; i < mapSize / 2; i++) {
+                for (int j = 0; j < mapSize / 4; j++) {
+                    playerMap[i][j] = GameInformation.getGameMap()[i + mapSize / 2][((playerNumber % 4) - 1) * mapSize / 4];
                 }
             }
         }

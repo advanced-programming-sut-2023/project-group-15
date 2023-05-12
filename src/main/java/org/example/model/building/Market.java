@@ -1,18 +1,19 @@
 package org.example.model.building;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.example.model.enums.*;
-public class Market extends Building{
-    private static HashMap < String, Integer > number = new HashMap < > ();
-    private static HashMap < String, Integer > sellCoin = new HashMap < > ();
-    private static HashMap < String, Integer > buyCoin = new HashMap < > ();
+
+public class Market extends Building {
+    private static HashMap<String, Integer> number = new HashMap<>();
+    private static final HashMap<String, Integer> sellCoin = new HashMap<>();
+    private static final HashMap<String, Integer> buyCoin = new HashMap<>();
     private int numberOfWorkers;
+
     public Market(String name, int hp, int xCoordinate, int yCoordinate,
-                    Products material1, Products material2, int numberOfMaterial1,
-                    int numberOfMaterial2,int numberOfWorkers){
-        super(name,hp,xCoordinate,yCoordinate,material1,material2,numberOfMaterial1,numberOfMaterial2);
+                  Products material1, Products material2, int numberOfMaterial1,
+                  int numberOfMaterial2, int numberOfWorkers) {
+        super(name, hp, xCoordinate, yCoordinate, material1, material2, numberOfMaterial1, numberOfMaterial2);
         this.numberOfWorkers = numberOfWorkers;
     }
 
@@ -79,15 +80,16 @@ public class Market extends Building{
         int newNumber = number.get(Item) + num;
         number.replace(Item, newNumber);
     }
-    public static HashMap < String, Integer > getNumber() {
+
+    public static HashMap<String, Integer> getNumber() {
         return number;
     }
 
-    public static HashMap < String, Integer > getSellCoin() {
+    public static HashMap<String, Integer> getSellCoin() {
         return sellCoin;
     }
 
-    public static HashMap < String, Integer > getBuyCoin() {
+    public static HashMap<String, Integer> getBuyCoin() {
         return buyCoin;
     }
 

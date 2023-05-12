@@ -111,9 +111,9 @@ public class GameMenu {
                     int y1 = Integer.parseInt(gameMenuMatcher.group("y1"));
                     int x2 = Integer.parseInt(gameMenuMatcher.group("x2"));
                     int y2 = Integer.parseInt(gameMenuMatcher.group("y2"));
-                    System.out.println(unitMenuController.patrolUnit(x1, y1, x2, y2).getOutput());*/
+                    System.out.println(unitMenuController.patrolUnit(x1, y1, x2, y2).getOutput());
                 } else if
-                    System.out.println("Invalid command");
+                    System.out.println("Invalid command");*/
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.STOP_PATROLLING)) != null) {
                 // UnitMenuController.stopPatrolling = false;
                 String s = unitMenuController.patrolStop(false, unitMenuController.patX1, unitMenuController.patY1,

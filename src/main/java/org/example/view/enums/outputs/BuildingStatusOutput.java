@@ -6,6 +6,8 @@ public enum BuildingStatusOutput {
     INVALID_X_COORDINATE(""),
     INVALID_Y_COORDINATE(""),
     CHECKED_SUCCESSFULLY("ok!"),
+    DROP_FORBID("drop building forbid"),
+
 
     ;
 

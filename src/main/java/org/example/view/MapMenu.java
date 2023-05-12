@@ -3,9 +3,6 @@ package org.example.view;
 import org.example.InputScanner;
 import org.example.controller.MapMenuController;
 import org.example.view.enums.commands.MapEnum;
-import org.example.view.enums.outputs.LoginMenuOutput;
-
-import java.util.Map;
 import java.util.regex.Matcher;
 
 public class MapMenu {
@@ -36,6 +33,5 @@ public class MapMenu {
         }
     }
 }
-            // TODO : only a tile should be shown  with all information on the show details part
 
 

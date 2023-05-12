@@ -38,7 +38,7 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkSecurityQuestion(String answer) {
-        for (User user:User.allUsers) {
+        for (User user:GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
                 if (user.getPassRecoveryAnswer().matches("\\s*"+answer+"\\s*")) {
                     return true;
@@ -47,12 +47,6 @@ public class LoginMenuController extends MainMenuController{
         }
         return false;
     }
-
-    public void logoutUser() {
-        //TODO:
-        return;
-    }
-
     public void captcha() {
         //TODO: later...
     }
@@ -65,7 +59,7 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public SecurityQuestion findUserSecurityQuestion() {
-        for (User user:User.allUsers) {
+        for (User user:GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
                 return user.findUserQuestionWithUsername();
             }

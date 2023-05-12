@@ -51,15 +51,9 @@ public class LoginMenu extends MainMenu {
                 profileMenu.displayUserRank();
             } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
                 profileMenu.displayUserInfo();
-            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.NEW_GAME)) != null) {
-                //not sure
-                new GameStartMenu().newGame();
             } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
                 //not sure
                 new GameStartMenu().addUser(loginMenuMatcher);
-            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.LOAD_GAME))!= null) {
-                //not sure
-                new GameStartMenu().loadGame(loginMenuMatcher,loginMenuController);
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!= null) {
                 System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
                 break;
@@ -72,10 +66,11 @@ public class LoginMenu extends MainMenu {
     public void loginInCheck(Matcher matcher) {
         classify(matcher);
         LoginMenuOutput status = loginMenuController.loginUser();
-        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY))
-            run();
+        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
-
+            run();
+        }
+        System.out.println(status.getOutput());
     }
 
     private void classify(Matcher matcher) {
@@ -86,9 +81,6 @@ public class LoginMenu extends MainMenu {
         if (matcher.group("logged") != null)
             loginMenuController.setStayLoggedInFlag(true);
     }
-    //TODO after user logg ins current user should be updated in gamedata base class
-    // commented by Raya
-
     protected void forgetPassword(String username) {
         loginMenuController.setUsername(username);
         if (loginMenuController.checkMatchUsername()) {
@@ -106,7 +98,6 @@ public class LoginMenu extends MainMenu {
         }
         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
     }
-
     private void resettingUserPassword(String username) {
         System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());
         String newPassword = InputScanner.getScanner().nextLine();
@@ -129,5 +120,9 @@ public class LoginMenu extends MainMenu {
                     System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());
             }
         }
+    }
+
+    public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {
+        //kamel mikonm
     }
 }

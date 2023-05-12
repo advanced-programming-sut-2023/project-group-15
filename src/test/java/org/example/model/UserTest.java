@@ -1,5 +1,6 @@
 package org.example.model;
 
+import org.example.model.gameData.GameDataBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ class UserTest {
     @Test
     public void getterAndSetterTests() {
         User user1 = new User("","","","","");
-        Assertions.assertTrue(User.allUsers.contains(user1));
+        Assertions.assertTrue(GameDataBase.getAllUsers().contains(user1));
         user1.setUsername("arturMorgan");
         user1.setPassword("redDead2Redemption@$");
         user1.setNickname("you are goddamn right!");

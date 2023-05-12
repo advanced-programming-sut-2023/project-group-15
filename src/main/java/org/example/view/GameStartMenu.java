@@ -20,7 +20,8 @@ public class GameStartMenu{
         System.out.println("now please choose between these 2 maps");
         mapNumber = InputScanner.getScanner().nextInt();
         controller.setMap(mapSize, mapNumber);
-        MapInitialization.run();
+        new MapChangesEnvironment().run();
+//        MapInitialization.run();
     }
     public void addUser(Matcher loginMenuMatcher) {
         int mapNumber = 0;
@@ -34,8 +35,5 @@ public class GameStartMenu{
             controller.playerAdder(newPlayer);
             System.out.println(GameStartMenuOutput.ADD_USER_SUCCESS.getOutput());
         }
-    }
-    public void loadGame(Matcher loginMenuMatcher, LoginMenuController loginMenuController) {
-        //TODO: later...
     }
 }

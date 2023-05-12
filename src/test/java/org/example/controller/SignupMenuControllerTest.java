@@ -3,6 +3,7 @@ package org.example.controller;
 
 import org.example.model.User;
 import org.example.model.enums.Slogans;
+import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 import org.junit.jupiter.api.Assertions;
@@ -156,7 +157,7 @@ class SignupMenuControllerTest {
         controller.setSlogan("this is a test!");
         User user = new User("test user","test@1PASS","test nickname","test@email.com","this is a test!");
         controller.signingsComplete();
-        Assertions.assertTrue(User.allUsers.contains(user));
+        Assertions.assertTrue(GameDataBase.getAllUsers().contains(user));
     }
 
     @org.junit.jupiter.api.Test

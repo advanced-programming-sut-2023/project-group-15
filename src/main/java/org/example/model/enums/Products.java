@@ -27,15 +27,12 @@ public enum Products {
     Products() {
     }
 
-    public static Products getproductByName(String name)
-            {
-                for(Products product : Products.values())
-                {
-                    if(String.valueOf(product).equals(name))
-                        return product;
-                }
-                return null;
-            }
+    public static Products getProductByName(String name) {
+        for (Products product : Products.values()) {
+            if (String.valueOf(product).equals(name))
+                return product;
+        }
+        return null;
+    }
 
-    ;
 }

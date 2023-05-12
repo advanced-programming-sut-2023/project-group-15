@@ -6,9 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum GameStartMenuEnum {
-    NEW_GAME("^\\s*start\\s+new\\s+game\\s+(-n\\s+(?<name>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)$"),
     ADD_PLAYER("^\\s*add\\s+user\\s+(-u\\s+(?<name>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)$"),
-    LOAD_GAME("^\\s*load\\s+game\\s+(-u\\s+(?<name>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)$");
+    ;
     private final String regex;
 
     GameStartMenuEnum(String regex) {

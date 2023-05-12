@@ -10,23 +10,24 @@ import org.example.model.enums.*;
 import org.example.view.enums.outputs.GameInformationOutput;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class GameInformation {
     private static int mapGameSize;
     private static Tile[][] gameMap;
     private static User currentPlayer;
-    private static HashMap<User, Integer> players = new HashMap<User, Integer>();
+    private static final HashMap<User, Integer> players = new HashMap<>();
     private static int currentPlayerNo = 1;
     private int currentPlayerTurn;
     private int gameTurn;
     private int numberOfPlayers;
     private static ArrayList<Soldier> allSoldiers = new ArrayList<>();
     private static ArrayList<Building> allBuildings = new ArrayList<>();
-
 
     public GameInformation(int mapGameSize) {
         mapGameSize = mapGameSize;
@@ -44,7 +45,7 @@ public class GameInformation {
                         LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND:")));
                         //BuildingName buildingName = BuildingName.getBuildingByName(String.valueOf(jsonobject.get("building:")));
                         Tree tree = Tree.getTree(String.valueOf(jsonobject.get("Tree:")));
-                        UnitName unitName = UnitName.getUnitName(String.valueOf("Soldier"));
+                        UnitName unitName = UnitName.getUnitType(String.valueOf("Soldier"));
                         int numberOfSoldires = Integer.parseInt(String.valueOf(jsonobject.get("numberOfSoldiers")));
                         boolean Rock = Boolean.valueOf(String.valueOf(jsonobject.get("ROCK")));
                         String rockDirection = String.valueOf(jsonobject.get("Rockdirection:"));
@@ -96,10 +97,11 @@ public class GameInformation {
         GameInformation.currentPlayer = currentPlayer;
     }
 
-    public static Tile[][] getCurrentPlayerMap(){
+    public static Tile[][] getCurrentPlayerMap() {
         return GameInformation.getCurrentPlayer().getMap();
     }
-    public static Building findBuilding(String name , User user ) {
+
+    public static Building findBuilding(String name, User user) {
         for (int i = 0; i < user.getMap().length; i++) {
             for (int j = 0; j < user.getMap()[0].length; j++) {
                 if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding().getName()
@@ -109,8 +111,8 @@ public class GameInformation {
         }
         return null;
     }
-    public static String checkForSources(Products product , int amount)
-    {
+
+    public static String checkForSources(Products product, int amount) {
         int current;
         Storage store = null;
         /*for(StoreProducts storeProduct : StoreProducts.values()) {
@@ -127,8 +129,8 @@ public class GameInformation {
         return GameInformationOutput.NOT_ENOUGH.getOutput();
         //TODO change the return type to enum
     }
-    public static Government getCurrentPlayerGovernment()
-    {
+
+    public static Government getCurrentPlayerGovernment() {
         return currentPlayer.getGovernment();
     }
     //TODO turn methods should be added hear
