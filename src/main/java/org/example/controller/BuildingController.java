@@ -135,7 +135,7 @@ public class BuildingController {
         return BuildingStatusOutput.INVALID_X_COORDINATE;
     }
 
-    public BuildingStatusOutput checkTheLand(int x , int y) {
+  /*  public BuildingStatusOutput checkTheLand(int x , int y) {
         Tile currentTile = GameInformation.getCurrentPlayer().getMap()[x][y];
         if(!currentTile.isRock())
             return BuildingStatusOutput.DROP_FORBID;
@@ -143,7 +143,7 @@ public class BuildingController {
             return BuildingStatusOutput.DROP_FORBID;
 
         return null;
-    }
+    }*/
    public String checkForSources(Products product , int amount)
     {
         int current;
@@ -162,13 +162,13 @@ public class BuildingController {
          return "not enough product";
      //TODO change the return type to enum
      }
-    public void dropBuilding(Matcher matcher) {
+  /*  public void dropBuilding(Matcher matcher) {
         String type;
         boolean canBuild = false;
         int x , y;
         x = Integer.parseInt(groupFinder(matcher, "x"));
         y = Integer.parseInt(groupFinder(matcher, "y"));
-        if(checkTheLand(x , y).equals(BuildingStatusOutput.DROP_FORBID)
+        if(checkTheLand(x , y).equals(BuildingStatusOutput.DROP_FORID)
         || GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null)
             System.out.println("Cant drop building in this tile");
         else {
@@ -182,7 +182,7 @@ public class BuildingController {
             }
         }
 
-    }
+    }*/
     public void buildingTypeFinder(int x , int y , String name)
     {
         String type = BuildingName.getBuildingType(name);

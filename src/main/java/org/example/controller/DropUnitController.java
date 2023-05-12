@@ -11,7 +11,7 @@ import org.example.model.gameData.GameInformation;
 import org.example.view.enums.outputs.UnitMenuOutput;
 
 public class DropUnitController {
-
+/*
     public static UnitMenuOutput dropUnit(String name, int x, int y){
         UnitName type = UnitName.getType(name);
         if(checkLand(x,y)){
@@ -50,5 +50,5 @@ public class DropUnitController {
         }
     }
 
-
+*/
 }

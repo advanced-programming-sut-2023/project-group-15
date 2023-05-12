@@ -124,10 +124,12 @@ public class UnitMenuController {
             }
         }
             else*/
-                return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;
 
 
-    }}
+
+    }
+            return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;
+    }
     private void setUnit(int x, int y, State state){
         // TODO: add code to get unit from map
 
