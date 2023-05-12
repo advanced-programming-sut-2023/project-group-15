@@ -1,10 +1,11 @@
 package org.example.model.building;
 
 
+import org.example.model.User;
 import org.example.model.enums.*;
+import org.example.model.gameData.*;
 
 public class Building {
-//    private final BuildingName buildingName;
     private final String name ;
     private final int hp;
     private int xCoordinate;
@@ -13,6 +14,8 @@ public class Building {
     private Products material2 ;
     private int numberOfMaterial1;
     private int numberOfMaterial2;
+    private User owner = GameInformation.getCurrentPlayer();
+
 
     public Building(String name, int hp, int xCoordinate, int yCoordinate,
                     Products material1, Products material2, int numberOfMaterial1,
@@ -25,6 +28,7 @@ public class Building {
         this.material2 = material2;
         this.numberOfMaterial1 = numberOfMaterial1;
         this.numberOfMaterial2 = numberOfMaterial2;
+        this.owner = GameInformation.getCurrentPlayer();
 
     }
 

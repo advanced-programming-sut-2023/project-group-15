@@ -57,7 +57,7 @@ public class MapChangesEnvironment {
 
 
     //testing for dropping buildings...
-    private BuildingController buildingController = new BuildingController();
+   // private BuildingController buildingController = new BuildingController();
   /*  public void testRun() {
         Matcher matcherTest;
         String input;

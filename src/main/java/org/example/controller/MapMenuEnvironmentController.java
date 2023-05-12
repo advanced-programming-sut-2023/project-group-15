@@ -24,7 +24,7 @@ public class MapMenuEnvironmentController {
             x = Integer.parseInt(groupFinder(matcher, "x"));
             y = Integer.parseInt(groupFinder(matcher, "y"));
             type = groupFinder(matcher, "-t");
-            Tile currentTile = Map.findATile(x, y);
+            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
             for (LandType landType : LandType.values())
                 if (String.valueOf(landType).equals(type))
                     currentTile.setLandType(landType);
@@ -63,7 +63,7 @@ public class MapMenuEnvironmentController {
         else {
             x = Integer.parseInt(groupFinder(matcher, "x"));
             y = Integer.parseInt(groupFinder(matcher, "y"));
-            Tile currentTile = Map.findATile(x, y);
+            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
             currentTile.setBuilding(null);
             currentTile.setTree(null);
             currentTile.setSoldier(null);
@@ -87,7 +87,7 @@ public class MapMenuEnvironmentController {
             x = Integer.parseInt(groupFinder(matcher, "x"));
             y = Integer.parseInt(groupFinder(matcher, "y"));
             type = groupFinder(matcher, "-t");
-            Tile currentTile = Map.findATile(x, y);
+            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
             for (Tree tree : Tree.values())
                 if (tree.equals(type))
                     currentTile.setTree(tree);
@@ -105,7 +105,7 @@ public class MapMenuEnvironmentController {
             x = Integer.parseInt(groupFinder(matcher, "x"));
             y = Integer.parseInt(groupFinder(matcher, "y"));
             direction = groupFinder(matcher, "-t");
-            Tile currentTile = Map.findATile(x, y);
+            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
             Direction direction1 = findDirection(direction);
             currentTile.setRock(true, direction1);
         }

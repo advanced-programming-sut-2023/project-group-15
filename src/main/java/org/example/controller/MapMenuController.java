@@ -66,14 +66,14 @@ public class MapMenuController {
         }
         for (int i = xS; i < xE; i++) {
             for (int j = yS; j < yE; j++) {
-                if (Map.getCurrentMap()[i][j].getSoldier() != null) {
+                if (GameInformation.getCurrentPlayerMap()[i][j].getSoldier() != null) {
                     System.out.print("S ");
                     continue;
-                } else if (Map.getCurrentMap()[i][j].getBuilding() != null) {
+                } else if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding() != null) {
                     System.out.print("B ");
                     continue;
                 } else
-                    System.out.print(Map.getCurrentMap()[i][j].getLandType().getMapId() + " ");
+                    System.out.print(GameInformation.getCurrentPlayerMap()[i][j].getLandType().getMapId() + " ");
             }
             System.out.println();
         }

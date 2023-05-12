@@ -77,6 +77,7 @@ public class BuildingController {
                         , building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial2(),
                         building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
+                GameInformation.getAllBuildings().add(newBuilding);
                 return;
 
             }
@@ -89,6 +90,7 @@ public class BuildingController {
                  Building newBuilding = new Storage(name, 100, x, y, building.getMaterial1Name(), building.getMaterial2Name()
                          , building.getNumberOfMaterial1(), building.getNumberOfMaterial2(), building.getCapacity());
                  GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
+                 GameInformation.getAllBuildings().add(newBuilding);
              }
 
         }
@@ -100,6 +102,7 @@ public class BuildingController {
                     Building newBuilding = new CityBuilding(name , 100 , x, y , building.getMaterial1Name() , building.getMaterial2Name()
                     , building.getNumberOfMaterial1() , building.getNumberOfMaterial2());
                     GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
+                    GameInformation.getAllBuildings().add(newBuilding);
                 }
         }
         public void dropWarBuilding(int x , int y , String name)
@@ -110,6 +113,7 @@ public class BuildingController {
                     Building newBuilding = new WarBuilding(name , building.getHp() , x , y , building.getMaterial1Name() , building.getMaterial2Name() ,
                             building.getNumberOfMaterial1() , building.getNumberOfMaterial2(),building.getFireRange() , building.getDefendRange());
                     GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
+                    GameInformation.getAllBuildings().add(newBuilding);
                 }
         }
         public void dropPopularityBuilding(int x , int y , String name)
@@ -121,6 +125,7 @@ public class BuildingController {
                 Building newBuilding = new PopularityBuilding(name, building.getHp(), x , y , building.getMaterial1Name() ,
                         building.getMaterial2Name() , building.getNumberOfMaterial1() , building.getNumberOfMaterial(), building.getRate());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
+                    GameInformation.getAllBuildings().add(newBuilding);
                 }
             }
         }
@@ -129,6 +134,7 @@ public class BuildingController {
                     Building market = new Market(name, building.getHp(), x, y, building.getMaterial1Name(), building.getMaterial2Name(),
                             building.getNumberOfMaterial1(), building.getNumberOfMaterial2(), building.getNumberOfWorkers());
                     GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(market);
+                GameInformation.getAllBuildings().add(market);
                 }
             }
         public boolean checkForBuildingMaterial(String name) {
@@ -147,6 +153,10 @@ public class BuildingController {
             }
             return false;
         }
+       /* public void buildingSearcher(int x , int y , String name)
+        {
+            GameInformation.getCurrentPlayerMap()[x][y].getBuilding().getName()
+        }*/
 
     public BuildingStatusOutput checkParameters() {
         if (this.getCoordinateX().matches("\\s*\\d+\\s*")) {

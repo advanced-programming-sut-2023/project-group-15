@@ -1,6 +1,7 @@
 package org.example.model.gameData;
 
 import org.example.controller.MapMenuEnvironmentController;
+import org.example.model.MBC.Soldier;
 import org.example.model.Tile;
 import org.example.model.User;
 import org.example.model.building.Building;
@@ -12,6 +13,7 @@ import org.json.JSONTokener;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 public class GameInformation {
     private static int mapGameSize;
@@ -22,6 +24,8 @@ public class GameInformation {
     private int currentPlayerTurn;
     private int gameTurn;
     private int numberOfPlayers;
+    private static ArrayList<Soldier> allSoldiers = new ArrayList<>();
+    private static ArrayList<Building> allBuildings = new ArrayList<>();
 
 
     public GameInformation(int mapGameSize) {
@@ -132,5 +136,13 @@ public class GameInformation {
 
     public static HashMap<User, Integer> getPlayers() {
         return players;
+    }
+
+    public static ArrayList<Soldier> getAllSoldiers() {
+        return allSoldiers;
+    }
+
+    public static ArrayList<Building> getAllBuildings() {
+        return allBuildings;
     }
 }
