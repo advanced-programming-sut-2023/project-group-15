@@ -11,7 +11,7 @@ public enum TradingMenuEnum {
     TRADE_ACCEPT("trade accept ((-i) (\\d+) (-m) ([a-z]+)|(-m) ([a-z]+) (-i) (\\d+))"),
 
     TRADE_HISTORY("trade history"),
-    SHOW_PRICELIST("show price list"),
+    SHOW_PRICELIST("^\\s*show\\s+price\\s+list\\s*$"),
 
     BUY("buy ((-i) ([a-z]+) (-a) ([a-z]+))|((-a) ([a-z]+) (-i) ([a-z]+))"),
 

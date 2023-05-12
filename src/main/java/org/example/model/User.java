@@ -6,6 +6,7 @@ import org.example.model.gameData.Government;
 import org.example.model.gameData.Trade;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.List;
 
 public class User {
@@ -15,21 +16,20 @@ public class User {
     private String email;
     private String passRecoveryQuestion;
     private String passRecoveryAnswer;
-    private int highscore;
+    private int highScore;
     private int rank;
     private String slogan;
     private int userNO;
+    private boolean stayLoggedIn;
     private Tile[][] map;
     private Government government;
     private int turn;
-    private ArrayList<GameDataBase> userGames;
-    private List <Trade> tradeSendList = new ArrayList<>();
-    private List <Trade> tradeReqList = new ArrayList<>();
-    private List <Trade > tradeHistoryList = new ArrayList<>();
+    private final List<Trade> tradeSendList;
+    private final List<Trade> tradeReqList;
+    private final List<Trade> tradeHistoryList;
     int lastOrderIndex = 0;
 
-    public static final ArrayList<User> allUsers = new ArrayList<>();
-    public User(String username, String password, String nickname, String email , String passRecoveryQuestion , String passRecoveryAnswer , int rank , int highscore) {
+    public User(String username, String password, String nickname, String email, String passRecoveryQuestion, String passRecoveryAnswer, int rank, int highScore) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
@@ -37,24 +37,44 @@ public class User {
         this.passRecoveryQuestion = passRecoveryQuestion;
         this.rank = rank;
         this.email = email;
-        this.highscore = highscore;
+        this.highScore = highScore;
+        this.stayLoggedIn = false;
+        this.addUser();
+        this.tradeHistoryList = new ArrayList<>();
+        this.tradeReqList = new ArrayList<>();
+        this.tradeSendList = new ArrayList<>();
     }
-    public User(String username, String password, String nickname, String email , String slogan, String passRecoveryQuestion , String passRecoveryAnswer , String rank , String  highscore) {
+
+    public User(String username, String password, String nickname, String email, String slogan, String passRecoveryQuestion, String passRecoveryAnswer, String rank, String highScore) {
         this.username = username;
         this.password = password;
         this.slogan = slogan;
         this.nickname = nickname;
         this.passRecoveryAnswer = passRecoveryAnswer;
         this.passRecoveryQuestion = passRecoveryQuestion;
-        this.rank = Integer.valueOf(rank);
+        this.rank = Integer.parseInt(rank);
         this.email = email;
-        this.highscore = Integer.valueOf(highscore);
+        this.highScore = Integer.parseInt(highScore);
+        this.stayLoggedIn = false;
+        this.addUser();
+        this.tradeHistoryList = new ArrayList<>();
+        this.tradeReqList = new ArrayList<>();
+        this.tradeSendList = new ArrayList<>();
     }
+
     public User(String username, String password, String nickname, String email) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
+        this.passRecoveryAnswer = null;
+        this.passRecoveryQuestion = null;
+        this.highScore = 0;
         this.email = email;
+        this.stayLoggedIn = false;
+        this.addUser();
+        this.tradeHistoryList = new ArrayList<>();
+        this.tradeReqList = new ArrayList<>();
+        this.tradeSendList = new ArrayList<>();
     }
 
     public User(String username, String password, String nickname, String email, String slogan) {
@@ -63,23 +83,24 @@ public class User {
         this.nickname = nickname;
         this.email = email;
         this.slogan = slogan;
+        this.stayLoggedIn = false;
         this.addUser();
+        this.tradeHistoryList = new ArrayList<>();
+        this.tradeReqList = new ArrayList<>();
+        this.tradeSendList = new ArrayList<>();
     }
 
-    public ArrayList<User> getAllUsers() {
-        return allUsers;
-    }
 
     public void addUser() {
-        allUsers.add(this);
+        GameDataBase.getAllUsers().add(this);
     }
 
     public void setRank(int rank) {
         this.rank = rank;
     }
 
-    public void setHighscore(int highscore) {
-        this.highscore = highscore;
+    public void setHighScore(int highScore) {
+        this.highScore = highScore;
     }
 
     public String getUsername() {
@@ -106,8 +127,8 @@ public class User {
         return this.rank;
     }
 
-    public int getHighscore() {
-        return this.highscore;
+    public int getHighScore() {
+        return this.highScore;
     }
 
     public void setPassword(String password) {
@@ -154,25 +175,16 @@ public class User {
         return userNO;
     }
 
-    public void setMap(Tile[][] map)
-    {
-        this.map = map ;
+    public void setMap(Tile[][] map) {
+        this.map = map;
     }
 
     public static User findUserWithPass(String password) {
-        for (User user : User.allUsers) {
+        for (User user : GameDataBase.getAllUsers()) {
             if (user.getPassword().equals(password))
                 return user;
         }
         return null;
-    }
-
-    public GameDataBase findUserGame() {
-        //TODO: search in user games
-        return null;
-    }
-    public void addGame(GameDataBase gameDataBase) {
-        this.userGames.add(gameDataBase);
     }
 
     public Tile[][] getMap() {
@@ -180,7 +192,7 @@ public class User {
     }
 
     public SecurityQuestion findUserQuestionWithUsername() {
-        for (User user:User.allUsers) {
+        for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
                 for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
                     if (question.getQuestion().equals(user.getPassRecoveryQuestion())) {
@@ -208,31 +220,40 @@ public class User {
         return tradeSendList;
     }
 
-    public void setTradeSendList(List<Trade> tradeSendList) {
-        this.tradeSendList = tradeSendList;
-    }
-
     public List<Trade> getTradeReqList() {
         return tradeReqList;
-    }
-
-    public void setTradeReqList(List<Trade> tradeReqList) {
-        this.tradeReqList = tradeReqList;
     }
 
     public List<Trade> getTradeHistoryList() {
         return tradeHistoryList;
     }
 
-    public void setTradeHistoryList(List<Trade> tradeHistoryList) {
-        this.tradeHistoryList = tradeHistoryList;
-    }
-
     public int getLastOrderIndex() {
         return lastOrderIndex;
     }
 
+    public boolean isStayLoggedIn() {
+        return stayLoggedIn;
+    }
+
+    public void setStayLoggedIn(boolean stayLoggedIn) {
+        this.stayLoggedIn = stayLoggedIn;
+    }
+
     public void setLastOrderIndex(int lastOrderIndex) {
         this.lastOrderIndex = lastOrderIndex;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return username.equals(user.username) && password.equals(user.password) && nickname.equals(user.nickname) && email.equals(user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, nickname, email, slogan);
     }
 }

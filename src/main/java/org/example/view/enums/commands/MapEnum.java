@@ -1,3 +1,4 @@
+//this is class is completed!
 package org.example.view.enums.commands;
 
 import java.util.regex.Matcher;
@@ -7,25 +8,14 @@ public enum MapEnum {
     MAP_MOVING("map ((left|right) (\\d+)*(\\s+)*(up|down)(\\s+)*(\\d+)*)" +
             "|map ((up|down) (\\d+)*(\\s+)*(left|right)(\\s+)*(\\d+)*)"),
 
-    MAP_DETAILS("^\\s*show\\s+details -(x|y) (\\d+) -(x|y) (\\d+)"),
-    SET_TEXTURE("settexture -(x1|y1) (\\d+) -(x2|y2) (\\d+) -t (a-z))"),
-    SET_TEXTURE2("settexture (-(x|y) (\\d+) -(x|y) (\\d+) (-t) ([a-z]+))" +
-            "|((-t) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
-            "|(-(x|y) (\\d+) (-t) ([a-z]+) -(x|y) (\\d+))"),
-    CLEAR("clear -(x|y) (\\d+) -(x|y) (\\d+)"),
-    DROP_TREE("droptree  (-(x|y) (\\d+) -(x|y) (\\d+) (-t) ([a-z]+))" +
-            "|((-t) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
-            "|(-(x|y) (\\d+) (-t) ([a-z]+) -(x|y) (\\d+))"),
-    DROP_BUILDING("dropbuilding (-(x|y) (\\d+) -(x|y) (\\d+) (-t) ([a-z]+))" +
-            "|((-t) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
-            "|(-(x|y) (\\d+) (-t) ([a-z]+) -(x|y) (\\d+))"),
-    DROP_ROCK("droprock (-(x|y) (\\d+) -(x|y) (\\d+) (-d) ([a-z]+))" +
-            "|((-d) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
-            "|(-(x|y) (\\d+) (-d) ([a-z]+) -(x|y) (\\d+))"),
-    DROP_UNIT("dropunit (-(x|y|c) (\\d+) -(x|y|c) (\\d+) (-x|y|c) (\\d+) (-t) ([a-z]+))" +
-            "|((-t) ([a-z]+) -(x|y|c) (\\d+) -(x|y|c) (\\d+) -(x|y|c) (\\d+))" +
-            "|(-(x|y|c) (\\d+) (-t) ([a-z]+) -(x|y|c) (\\d+)  -(x|y|c) (\\d+))" +
-            "|(-(x|y|c) (\\d+) -(x|y|c) (\\d+) (-t) ([a-z]+) -(x|y|c) (\\d+))"),
+    MAP_DETAILS("^\\s*show\\s+details\\s+((-x\\s*(?<x>\\d+)\\s*)|(-y\\s*(?<y>\\d+)\\s*))+\\s*$"),
+    SET_TEXTURE("^\\s*set\\s*texture\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*)|(-t\\s+(?<type>[a-z ]+)))*\\s*$"),
+    SET_TEXTURE2("^\\s*set\\s*texture\\s+((-x1\\s+(?<x1>\\d+)\\s*)|(-y1\\s+(?<y1>\\d+)\\s*)|(-y2\\s+(?<y2>\\d+)\\s*)|(-x2\\s+(?<x2>\\d+)\\s*)|(-t\\s+(?<type>[a-z ]+)))*\\s*$"),
+    CLEAR("^\\s*clear\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*))*\\s*$"),
+    DROP_TREE("^\\s*drop\\s*tree\\s*((-x\\s*(?<x>\\d+)\\s*)|(-y\\s*(?<y>\\d+)\\s*)|(-t\\s*(?<type>[a-z ]+)\\s*))*\\s*$"),
+    DROP_BUILDING("^\\s*drop\\s*building\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*)|(-type\\s+(?<type>\\S*)\\s*))*$"),
+    DROP_ROCK("^\\s*drop\\s*rock\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*)|(-d\\s+(?<direction>\\S*)\\s*))*$"),
+    DROP_UNIT("^\\s*drop\\s*unit\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*)|(-t\\s+(?<type>[a-z ]+)\\s*)|(-c\\s+(?<count>\\d+)\\s*))*\\s*$"),
 
     ;
     private final String regex;

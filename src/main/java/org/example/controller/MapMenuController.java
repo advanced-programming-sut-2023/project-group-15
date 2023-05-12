@@ -1,12 +1,8 @@
 package org.example.controller;
-import org.example.model.MBC.Soldier;
-import org.example.model.building.BuildingName;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Map;
-import org.example.model.Tile;
-import org.example.view.MapMenu;
 
-import javax.management.StringValueExp;
+import org.example.model.gameData.GameInformation;
+import org.example.model.Tile;
+
 import java.util.regex.Matcher;
 
 public class MapMenuController {
@@ -20,17 +16,14 @@ public class MapMenuController {
     }
 
     public void setStartingPoint(Matcher matcher) {
-        int x = 0, y = 0;
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i) == null)
-                continue;
-            if (matcher.group(i).equals("x"))
-                x = Integer.parseInt(matcher.group(i + 1));
-            if (matcher.group(i).equals("y"))
-                y = Integer.parseInt(matcher.group(i + 1));
-        }
-        xStart = x;
-        yStart = y;
+        if (matcher.group("x") != null)
+            xStart = Integer.parseInt(matcher.group("x"));
+        else
+            xStart = -1;
+        if (matcher.group("y") != null)
+            yStart = Integer.parseInt(matcher.group("y"));
+        else
+            yStart = -1;
     }
 
     public int getxStart() {
@@ -42,8 +35,6 @@ public class MapMenuController {
     }
 
     public void showMap(int x, int y) {
-        Tile currentTile = currentUserMap[x][y];
-        Tile[][] mapToShow = new Tile[11][11];
         int xS = x - 5;  // x startpoint
         int xE = x + 5;  // x endpoint
         if (xS < 0) {
@@ -97,15 +88,15 @@ public class MapMenuController {
     }
 
     public String showDetails(Matcher matcher) {
-        int x = 0, y = 0 , landTypeCounter = 0;
+        int x = Integer.parseInt(matcher.group("x"));
+        int y = Integer.parseInt(matcher.group("y"));
+        int landTypeCounter = 0;
         Tile currentTile = currentUserMap[x][y];
         String answer = "LandType : ";
-        for(int i=0 ; i< currentUserMap.length ; i++)
-        {
-            for(int j=0 ; j< currentUserMap.length ; j++){
-                if(currentUserMap[i][j].getLandType().equals(currentTile.getLandType()))
-                    landTypeCounter ++;
-
+        for (int i = 0; i < currentUserMap.length; i++) {
+            for (int j = 0; j < currentUserMap.length; j++) {
+                if (currentUserMap[i][j].getLandType().equals(currentTile.getLandType()))
+                    landTypeCounter++;
             }
         }
         answer = answer.concat(currentTile.getLandType().values().toString() +
@@ -113,11 +104,14 @@ public class MapMenuController {
         if (currentTile.getBuilding() != null)
             answer = answer.concat("\n" + "Building(s): " + currentTile.getBuilding().getName().toString());
         if (currentTile.getSoldier() != null) {
-            answer = answer.concat("\n" + "Soldier(s) : " + currentTile.getSoldier().values().toString() +
+            answer = answer.concat("\n" + "Soldier(s) : " + currentTile.getSoldier().getName().toString() +
                     "\n" + "number of soldiers: " + String.valueOf(currentTile.getNumberOfSoldiers()));
         }
-
         return answer;
+    }
+
+    public boolean checkMatcher(Matcher matcher) {
+        return matcher.group("x") != null && matcher.group("y") != null;
     }
 }
 

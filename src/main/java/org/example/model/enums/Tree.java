@@ -8,12 +8,9 @@ public enum Tree {
     DATE_PALM,
     ;
 
-
-
-    public static Tree getTree(String name)
-    {
-        for(Tree tree : Tree.values())
-            if(tree.equals(name))
+    public static Tree getTree(String name) {
+        for (Tree tree : Tree.values())
+            if (String.valueOf(tree).equals(name))
                 return tree;
         return null;
     }

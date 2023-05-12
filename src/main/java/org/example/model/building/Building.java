@@ -6,16 +6,15 @@ import org.example.model.enums.*;
 import org.example.model.gameData.*;
 
 public class Building {
-    private final String name ;
-    private final int hp;
+    private final String name;
+    private int hp;
     private int xCoordinate;
     private int yCoordinate;
-    private Products material1 ;
-    private Products material2 ;
-    private int numberOfMaterial1;
+    private Products material1;
+    private Products material2;
+    private final int numberOfMaterial1;
     private int numberOfMaterial2;
     private User owner = GameInformation.getCurrentPlayer();
-
 
     public Building(String name, int hp, int xCoordinate, int yCoordinate,
                     Products material1, Products material2, int numberOfMaterial1,
@@ -34,6 +33,10 @@ public class Building {
 
     public String getName() {
         return name;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
     public int getHp() {
@@ -59,6 +62,7 @@ public class Building {
     public int getNumberOfMaterial1() {
         return numberOfMaterial1;
     }
+
     /*public Building getBuildingByName(String name)
     {
 

@@ -4,9 +4,8 @@ import org.example.model.enums.Products;
 import org.example.model.enums.UnitName;
 
 public class PopularityBuilding extends Building {
-    private int popularityRate;
+    private final int popularityRate;
     private UnitName unitName = null;
-
 
     public PopularityBuilding(String name, int hp, int xCoordinate, int yCoordinate, Products material1,
                               Products material2, int numberOfMaterial1, int numberOfMaterial2, int popularityRate) {

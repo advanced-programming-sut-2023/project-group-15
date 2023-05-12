@@ -27,7 +27,6 @@ public class SignupMenu extends MainMenu {
                             pickQuestion();
                         signupMenuController.signingsComplete();
                         System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());
-                        return;
                     }
                     else
                         System.out.println(status.getOutput());
@@ -163,11 +162,5 @@ public class SignupMenu extends MainMenu {
         signupMenuController.setClipBoard(matcher.group("configuration"));
         signupMenuController.setEmail(matcher.group("email"));
         signupMenuController.setSlogan(matcher.group("slogan"));
-        //test:
-        System.out.println("username: "+signupMenuController.getUsername());
-        System.out.println("password: "+signupMenuController.getPassword());
-        System.out.println("P.configuration: "+signupMenuController.getClipBoard());
-        System.out.println("email: "+signupMenuController.getEmail());
-        System.out.println("slogan: "+signupMenuController.getSlogan());
     }
 }
