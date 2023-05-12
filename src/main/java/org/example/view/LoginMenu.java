@@ -6,6 +6,8 @@ import org.example.controller.ProfileMenuController;
 import org.example.controller.SignupMenuController;
 import org.example.controller.Utility;
 import org.example.model.enums.SecurityQuestion;
+import org.example.view.enums.commands.GameMenuEnum;
+import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
@@ -24,6 +26,7 @@ public class LoginMenu extends MainMenu {
     }
     public void run() {
         String userInput;
+        System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());
         while (true) {
             userInput = InputScanner.getScanner().nextLine();
             ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
@@ -49,7 +52,16 @@ public class LoginMenu extends MainMenu {
                 profileMenu.displayUserRank();
             } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
                 profileMenu.displayUserInfo();
-            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!=null) {
+            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.NEW_GAME)) != null) {
+                //not sure
+                new GameStartMenu().newGame(loginMenuMatcher,loginMenuController);
+            } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
+                //not sure
+                new GameStartMenu().addUser(loginMenuMatcher,loginMenuController);
+            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.LOAD_GAME))!= null) {
+                //not sure
+                new GameStartMenu().loadGame(loginMenuMatcher,loginMenuController);
+            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!= null) {
                 System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
                 break;
             } else {

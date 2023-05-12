@@ -5,9 +5,9 @@ import java.util.regex.Pattern;
 
 public enum MapEnum {
     MAP_MOVING("map ((left|right) (\\d+)*(\\s+)*(up|down)(\\s+)*(\\d+)*)" +
-                      "|map ((up|down) (\\d+)*(\\s+)*(left|right)(\\s+)*(\\d+)*)"),
+            "|map ((up|down) (\\d+)*(\\s+)*(left|right)(\\s+)*(\\d+)*)"),
 
-   MAP_DETAILS("show details -(x|y) (\\d+) -(x|y) (\\d+)"),
+    MAP_DETAILS("^\\s*show\\s+details -(x|y) (\\d+) -(x|y) (\\d+)"),
     SET_TEXTURE("settexture -(x1|y1) (\\d+) -(x2|y2) (\\d+) -t (a-z))"),
     SET_TEXTURE2("settexture (-(x|y) (\\d+) -(x|y) (\\d+) (-t) ([a-z]+))" +
             "|((-t) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
@@ -22,7 +22,7 @@ public enum MapEnum {
     DROP_ROCK("droprock (-(x|y) (\\d+) -(x|y) (\\d+) (-d) ([a-z]+))" +
             "|((-d) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
             "|(-(x|y) (\\d+) (-d) ([a-z]+) -(x|y) (\\d+))"),
-    DROP_UNIT("dropunit (-(x|y|c) (\\d+) -(x|y|c) (\\d+) (-x|y|c) (\\d+) (-t) ([a-z]+))"+
+    DROP_UNIT("dropunit (-(x|y|c) (\\d+) -(x|y|c) (\\d+) (-x|y|c) (\\d+) (-t) ([a-z]+))" +
             "|((-t) ([a-z]+) -(x|y|c) (\\d+) -(x|y|c) (\\d+) -(x|y|c) (\\d+))" +
             "|(-(x|y|c) (\\d+) (-t) ([a-z]+) -(x|y|c) (\\d+)  -(x|y|c) (\\d+))" +
             "|(-(x|y|c) (\\d+) -(x|y|c) (\\d+) (-t) ([a-z]+) -(x|y|c) (\\d+))"),

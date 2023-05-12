@@ -2,7 +2,6 @@ package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.MapMenuEnvironmentController;
-import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.MapEnum;
 
 import java.util.regex.Matcher;
@@ -30,10 +29,7 @@ public class MapInitialization {
                     controller.dropBuilding(matcher);*/
                 else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_UNIT)) != null)
                     controller.dropUnit(matcher);
-
             }
-
-
         }
     }
 

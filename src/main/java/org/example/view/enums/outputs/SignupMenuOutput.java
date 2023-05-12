@@ -22,6 +22,19 @@ public enum SignupMenuOutput {
     INVALID_COMMAND("Invalid command!,\ntry again!"),
     ANSWERS_ARE_NOT_EQUAL("your answers doesn't match!,\ntry again!,\ntype \"quit\" to cancel the process"),
     USER_CREATED_SUCCESSFULLY("user has been created successfully!"),
+    SHOW_MAIN_MENU_OPTIONS("you are in main menu now!\n" +
+                           "commands you can use here:\n" +
+                           "for creating new account: user create -u <username> -p <password> <password confirmation> –email <email> -s <slogan> -n <nickname>" +
+                           "for logging in to your account: user login -u <username> -p <password>\n" +
+                           "if you forgot your password use: forgot my password\n" +
+                           "if you want to create a map user: create map"),
+
+    SHOW_OPTIONS("you are in signup menu now!\n" +
+                         "commands you can use:\n" +
+                         "for creating account: user create -u <username> -p <password> <password confirmation> –email <email> -s <slogan> -n <nickname>\n" +
+                         "for picking up security question: question pick -q <question-number> -a <answer> -c <answer confirm>\n" +
+                         "for creating map: create map"),
+
     ;
     private final String output;
 

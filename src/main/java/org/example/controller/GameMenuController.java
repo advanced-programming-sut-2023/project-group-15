@@ -14,13 +14,56 @@ import org.example.model.gameData.Government;
 import java.util.HashMap;
 
 public class GameMenuController {
+    private Government government;
+    private People people;
+    private InfantryUnit infantryUnit;
+    private LauncherUnit launcherUnit;
+    private UnitWallTarget unitWallTarget;
+    private Worker worker;
+    public void setGovernment(Government government) {
+        this.government = government;
+    }
+    public void setPeople(People people) {
+        this.people = people;
+    }
+    public void setInfantryUnit(InfantryUnit infantryUnit) {
+        this.infantryUnit = infantryUnit;
+    }
+    public void setLauncherUnit(LauncherUnit launcherUnit) {
+        this.launcherUnit = launcherUnit;
+    }
 
-    Government government;
-    People people;
-    InfantryUnit infantryUnit;
-    LauncherUnit launcherUnit;
-    UnitWallTarget unitWallTarget;
-    Worker worker;
+    public void setUnitWallTarget(UnitWallTarget unitWallTarget) {
+        this.unitWallTarget = unitWallTarget;
+    }
+
+    public void setWorker(Worker worker) {
+        this.worker = worker;
+    }
+
+    public Government getGovernment() {
+        return government;
+    }
+
+    public People getPeople() {
+        return people;
+    }
+
+    public InfantryUnit getInfantryUnit() {
+        return infantryUnit;
+    }
+
+    public LauncherUnit getLauncherUnit() {
+        return launcherUnit;
+    }
+
+    public UnitWallTarget getUnitWallTarget() {
+        return unitWallTarget;
+    }
+
+    public Worker getWorker() {
+        return worker;
+    }
 
     public int n = 0 ;
     public GameMenuController(){

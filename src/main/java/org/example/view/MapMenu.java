@@ -8,28 +8,23 @@ import java.util.Map;
 import java.util.regex.Matcher;
 
 public class MapMenu {
-    private int xStart;
-    private int yStart;
-
     public void run(Matcher matcher) {
-        int x = 0, y = 0;
+        int x , y;
         MapMenuController controller = new MapMenuController();
         controller.setStartingPoint(matcher);
         x = controller.getxStart();
         y = controller.getyStart();
         Matcher mapMenuMatcher;
         String command;
-        InputScanner scanner = new InputScanner();
         controller.showMap(x, y);
         while (true) {
-            command = scanner.getScanner().nextLine();
+            command = InputScanner.getScanner().nextLine();
             if (command.matches("\\s*exit\\s*"))
                 break;
             else if ((mapMenuMatcher = MapEnum.getMatcher(command, MapEnum.MAP_MOVING)) != null)
                 controller.moving(mapMenuMatcher);
             else if ((mapMenuMatcher = MapEnum.getMatcher(command, MapEnum.MAP_DETAILS)) != null)
                 System.out.println(controller.showDetails(mapMenuMatcher));
-
         }
     }
 }
