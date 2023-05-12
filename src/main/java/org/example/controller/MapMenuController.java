@@ -45,7 +45,7 @@ public class MapMenuController {
         int xS = x - 5;  // x startpoint
         int xE = x + 5;  // x endpoint
         if (xS < 0) {
-            xE += -xS;
+            xE -= xS;
             xS = 0;
         }
         if (xE > 199) {
@@ -55,7 +55,7 @@ public class MapMenuController {
         int yS = y - 5;  // y startpoint
         int yE = y + 5;  // y endpoint
         if (yS < 0) {
-            yE += -yS;
+            yE -= yS;
             yS = 0;
         }
         if (yE > 199) {
@@ -64,14 +64,14 @@ public class MapMenuController {
         }
         for (int i = xS; i < xE; i++) {
             for (int j = yS; j < yE; j++) {
-                if (Map.getCurrentMap()[i][j].getSoldier() != null) {
+                if (GameInformation.getCurrentPlayerMap()[i][j].getSoldier() != null) {
                     System.out.print("S ");
                     continue;
-                } else if (Map.getCurrentMap()[i][j].getBuilding() != null) {
+                } else if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding() != null) {
                     System.out.print("B ");
                     continue;
                 } else
-                    System.out.print(Map.getCurrentMap()[i][j].getLandType().getMapId() + " ");
+                    System.out.print(GameInformation.getCurrentPlayerMap()[i][j].getLandType().getMapId() + " ");
             }
             System.out.println();
         }

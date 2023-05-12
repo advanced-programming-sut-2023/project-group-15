@@ -54,9 +54,8 @@ public class MapChangesEnvironment {
 
 
     //testing for dropping buildings...
-    private final DropBuildingController buildingController = new DropBuildingController();
-
-    public void testRun() {
+   // private BuildingController buildingController = new BuildingController();
+  /*  public void testRun() {
         Matcher matcherTest;
         String input;
         while (true) {
@@ -85,9 +84,9 @@ public class MapChangesEnvironment {
     }
 
 
-    private void classifyController(Matcher matcherTest) {
+   /* private void classifyController(Matcher matcherTest) {
         buildingController.setType(matcherTest.group("type"));
         buildingController.setCoordinateX(matcherTest.group("x"));
         buildingController.setCoordinateY(matcherTest.group("y"));
-    }
+    }*/
 }

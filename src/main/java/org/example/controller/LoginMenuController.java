@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
+import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
 public class LoginMenuController extends MainMenuController{
@@ -18,7 +19,7 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkMatchUsername() {
-        for (User user:User.allUsers) {
+        for (User user: GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername()))
                 return true;
         }
@@ -26,7 +27,7 @@ public class LoginMenuController extends MainMenuController{
     }
 
     private boolean checkUsernameWithPassword() {
-        for (User user:User.allUsers) {
+        for (User user:GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
                 if (user.getPassword().equals(this.getPassword())) {
                     return true;

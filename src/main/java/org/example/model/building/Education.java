@@ -17,7 +17,7 @@ public class Education extends Building{
                 material2, numberOfMaterial1, numberOfMaterial2);;
     }
     //TODO decrease people and coins
-    private void Educate(UnitName unitName)
+    private void Educate(UnitName unitName , int count)
     {
         String typeToEducate = String.valueOf(unitName);
         for(Unitcosts unitcosts : Unitcosts.values()) {

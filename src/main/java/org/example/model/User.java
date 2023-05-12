@@ -3,10 +3,11 @@ package org.example.model;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
-import org.example.model.gameData.Map;
+import org.example.model.gameData.Trade;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.List;
 
 public class User {
     private String username;
@@ -15,7 +16,7 @@ public class User {
     private String email;
     private String passRecoveryQuestion;
     private String passRecoveryAnswer;
-    private int score;
+    private int highscore;
     private int rank;
     private String slogan;
     private int userNO;
@@ -23,7 +24,33 @@ public class User {
     private Government government;
     private int turn;
     private ArrayList<GameDataBase> userGames;
+    private List <Trade> tradeSendList = new ArrayList<>();
+    private List <Trade> tradeReqList = new ArrayList<>();
+    private List <Trade > tradeHistoryList = new ArrayList<>();
+    int lastOrderIndex = 0;
+
     public static final ArrayList<User> allUsers = new ArrayList<>();
+    public User(String username, String password, String nickname, String email , String passRecoveryQuestion , String passRecoveryAnswer , int rank , int highscore) {
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.passRecoveryAnswer = passRecoveryAnswer;
+        this.passRecoveryQuestion = passRecoveryQuestion;
+        this.rank = rank;
+        this.email = email;
+        this.highscore = highscore;
+    }
+    public User(String username, String password, String nickname, String email , String slogan, String passRecoveryQuestion , String passRecoveryAnswer , String rank , String  highscore) {
+        this.username = username;
+        this.password = password;
+        this.slogan = slogan;
+        this.nickname = nickname;
+        this.passRecoveryAnswer = passRecoveryAnswer;
+        this.passRecoveryQuestion = passRecoveryQuestion;
+        this.rank = Integer.valueOf(rank);
+        this.email = email;
+        this.highscore = Integer.valueOf(highscore);
+    }
     public User(String username, String password, String nickname, String email) {
         this.username = username;
         this.password = password;
@@ -35,6 +62,7 @@ public class User {
         this.userGames = new ArrayList<>();
         this.addUser();
     }
+
     public User(String username, String password, String nickname, String email, String slogan) {
         this.username = username;
         this.password = password;
@@ -44,6 +72,9 @@ public class User {
         this.addUser();
     }
 
+    public ArrayList<User> getAllUsers() {
+        return allUsers;
+    }
 
     public void addUser() {
         allUsers.add(this);
@@ -53,8 +84,8 @@ public class User {
         this.rank = rank;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setHighscore(int highscore) {
+        this.highscore = highscore;
     }
 
     public String getUsername() {
@@ -81,8 +112,8 @@ public class User {
         return this.rank;
     }
 
-    public int getScore() {
-        return this.score;
+    public int getHighscore() {
+        return this.highscore;
     }
 
     public void setPassword(String password) {
@@ -177,6 +208,38 @@ public class User {
 
     public Government getGovernment() {
         return government;
+    }
+
+    public List<Trade> getTradeSendList() {
+        return tradeSendList;
+    }
+
+    public void setTradeSendList(List<Trade> tradeSendList) {
+        this.tradeSendList = tradeSendList;
+    }
+
+    public List<Trade> getTradeReqList() {
+        return tradeReqList;
+    }
+
+    public void setTradeReqList(List<Trade> tradeReqList) {
+        this.tradeReqList = tradeReqList;
+    }
+
+    public List<Trade> getTradeHistoryList() {
+        return tradeHistoryList;
+    }
+
+    public void setTradeHistoryList(List<Trade> tradeHistoryList) {
+        this.tradeHistoryList = tradeHistoryList;
+    }
+
+    public int getLastOrderIndex() {
+        return lastOrderIndex;
+    }
+
+    public void setLastOrderIndex(int lastOrderIndex) {
+        this.lastOrderIndex = lastOrderIndex;
     }
 
     @Override

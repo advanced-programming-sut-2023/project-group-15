@@ -1,9 +1,11 @@
 package org.example.model.gameData;
 
+import org.example.InputScanner;
 import org.example.model.User;
-import org.example.model.enums.FilePaths;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -44,8 +46,8 @@ public class GameDataBase {
 
         JSONObject obj = new JSONObject();
         String path ="d:/json/dataBase.json";
-        File dir = new File("d:/json/");
-        dir.mkdirs();
+        //File dir = new File("d:/json/");
+        //dir.mkdirs();
        /* String path =FilePaths.DATEBASE.getFilePaths();
         File dir = new File(FilePaths.WORKING_DIR.getFilePaths());
         dir.mkdirs();*/
@@ -55,9 +57,11 @@ public class GameDataBase {
                 obj.put("Nickname", user.getNickname());
                 obj.put("Password", user.getPassword());
                 obj.put("Slogan", user.getSlogan());
-                obj.put("HighScore", user.getScore());
+                obj.put("HighScore", user.getHighscore());
                 obj.put("rank", user.getRank());
                 obj.put("Email", user.getEmail());
+                obj.put("Password recovery question:",user.getPassRecoveryQuestion());
+                obj.put("Password recover answer:" , user.getPassRecoveryAnswer());
                 out.println();
                 out.write(obj.toString());
 
@@ -65,34 +69,33 @@ public class GameDataBase {
             e.printStackTrace();
         }
     }
-    public static void readFromFile()
-    {
-        String path = "d:/json/player.json"; // this is the same as:  /Users/temp/IdeaProjects/ReadFromJson/BobFile.json
-        String rank ="";
+    public static void readFromFile() {
+        String path = "d:/json/database.json";
         try {
             String contents = new String((Files.readAllBytes(Paths.get(path))));
             //JSONObject o = new JSONObject(contents);
-
-
-
             JSONTokener jsonParser = new JSONTokener(contents);
-            JSONObject  jsonobject=new JSONObject(jsonParser);
+            //JSONObject jsonobject = new JSONObject(jsonParser);
             //try{
-            while(!jsonParser.end()) {
-                jsonobject=new JSONObject(jsonParser);
-                User user = new User(String.valueOf(jsonobject.get("name")),
+            while (!jsonParser.end()) {
+                JSONObject jsonobject = new JSONObject(jsonParser);
+                User user = new User(String.valueOf(jsonobject.get("Name")),
                         String.valueOf(jsonobject.get("Password")),
                         String.valueOf(jsonobject.get("Nickname")),
                         String.valueOf(jsonobject.get("Email")),
-                        String.valueOf(jsonobject.get("slogan")));
+                        String.valueOf(jsonobject.get("Slogan")),
+                        String.valueOf(jsonobject.get("Password recovery question:")),
+                        String.valueOf(jsonobject.get("Password recover answer:")),
+                        String.valueOf(jsonobject.get("rank")),
+                        String.valueOf(jsonobject.get("HighScore")));
+                allUsers.add(user);
                 jsonParser.next();
             }
 
 
-            // }catch(JSONException e){
-            //System.out.println(e);
-            //}
-        }catch(IOException e){
+        } catch (JSONException e) {
+            System.out.println(e);
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
