@@ -39,19 +39,31 @@ public class TradingMenuController{
         User receiver = GameDataBase.getUserByUsername(name);
         User sender = GameDataBase.getCurrentUser();
         Trade newTrade = new Trade( sender, receiver ,amount , product , message , price );
-        sender.getTradeList().add(newTrade);
-        receiver.getTradeList().add(newTrade);
+        sender.getTradeSendList().add(newTrade);
+        receiver.getTradeReqList().add(newTrade);
 
 
     }
-    public String showTradeList()
+    public void showTradeList()
     {
-        return null;
-    }
-    public String showTradeHistory()
-    {
+        User user = GameInformation.getCurrentPlayer();
+        for(int i = 0; i < GameInformation.getCurrentPlayer().getTradeSendList().size() ; i++){
+            if(i==0)
+                System.out.println("--------------------------------------------------------------------------");
+            System.out.println("No." + (i+1) +":" + user.getTradeSendList().get(i));
+        }
 
-        return null;
+    }
+    public void showTradeHistory() {
+        User user = GameInformation.getCurrentPlayer();
+        if (user.getTradeHistoryList().size() == 0)
+            System.out.println("\nTrade History List Is Empty!!!");
+        for (int i = 0; i < user.getTradeHistoryList().size(); i++) {
+            if (i == 0)
+                System.out.println("----------------------------------History of accepted trade:------------------------------------------");
+            System.out.println("No." + (i+1) +":" + user.getTradeHistoryList().get(i));
+
+        }
     }
     public void acceptRequest(Trade trade) {
         Storage storage = null;
@@ -72,16 +84,26 @@ public class TradingMenuController{
             if(trade.getProduct().name().equals(String.valueOf(storeProducts)))
                 storage =(Storage) GameInformation.findBuilding(storeProducts.getStoreType() , trade.getSender());
             storage.addtoStorageWithAmount(trade.getProduct() , trade.getAmount());
-            trade.getSender().getTradeHistory().add(trade);
-            trade.getReceiver().getTradeHistory().add(trade);
-            trade.getSender().getTradeList().remove(trade);
-            trade.getReceiver().getTradeList().remove(trade);
+            trade.getSender().getTradeHistoryList().add(trade);
+            trade.getReceiver().getTradeHistoryList().add(trade);
+            trade.getSender().getTradeSendList().remove(trade);
+            trade.getReceiver().getTradeReqList().remove(trade);
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
 
         }
 
+    }
+    public static void listOfNewOrders(){
+       User currentUser = GameInformation.getCurrentPlayer();
+        System.out.println("\n-----------------------------------List Of Your New Request(s)----------------------------------------");
+        int j =0;
+        for (int i = currentUser.getLastOrderIndex() ; i<currentUser.getTradeReqList().size() ; i++){
+            System.out.println(++j +"." + currentUser.getTradeReqList().get(i));
+        }
+        System.out.println("------------------------------------------------------------------------------------------------------");
 
-
+        currentUser.setLastOrderIndex(currentUser.getTradeReqList().size()); //set last seen order request index
+        System.out.println("Current Index:" + currentUser.getLastOrderIndex());
     }
 
 }

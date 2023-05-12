@@ -71,6 +71,16 @@ public class Trade {
 
     @Override
     public String toString() {
+        return "Trade{" +
+                "sender=" + sender +
+                ", amount=" + amount +
+                ", product=" + product +
+                ", message='" + message + '\'' +
+                ", price=" + price +
+                '}';
+    }
+    //@Override
+    /*public String toString() {
         return "sender=" + sender +
                 ", receiver=" + receiver +
                 ", amount=" + amount +
@@ -78,5 +88,5 @@ public class Trade {
                 ", message='" + message + '\'' +
                 ", price=" + price +
                 '}';
-    }
+    }*/
 }

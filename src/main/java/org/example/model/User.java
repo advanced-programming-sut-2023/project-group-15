@@ -6,7 +6,6 @@ import org.example.model.gameData.Government;
 import org.example.model.gameData.Trade;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class User {
@@ -24,9 +23,10 @@ public class User {
     private Government government;
     private int turn;
     private ArrayList<GameDataBase> userGames;
-    private List <Trade> tradeList = new ArrayList<>();
+    private List <Trade> tradeSendList = new ArrayList<>();
     private List <Trade> tradeReqList = new ArrayList<>();
-    private List <Trade > tradeHistory = new ArrayList<>();
+    private List <Trade > tradeHistoryList = new ArrayList<>();
+    int lastOrderIndex = 0;
 
     public static final ArrayList<User> allUsers = new ArrayList<>();
     public User(String username, String password, String nickname, String email , String passRecoveryQuestion , String passRecoveryAnswer , int rank , int highscore) {
@@ -204,12 +204,12 @@ public class User {
         return government;
     }
 
-    public List<Trade> getTradeList() {
-        return tradeList;
+    public List<Trade> getTradeSendList() {
+        return tradeSendList;
     }
 
-    public void setTradeList(List<Trade> tradeList) {
-        this.tradeList = tradeList;
+    public void setTradeSendList(List<Trade> tradeSendList) {
+        this.tradeSendList = tradeSendList;
     }
 
     public List<Trade> getTradeReqList() {
@@ -220,11 +220,19 @@ public class User {
         this.tradeReqList = tradeReqList;
     }
 
-    public List<Trade> getTradeHistory() {
-        return tradeHistory;
+    public List<Trade> getTradeHistoryList() {
+        return tradeHistoryList;
     }
 
-    public void setTradeHistory(List<Trade> tradeHistory) {
-        this.tradeHistory = tradeHistory;
+    public void setTradeHistoryList(List<Trade> tradeHistoryList) {
+        this.tradeHistoryList = tradeHistoryList;
+    }
+
+    public int getLastOrderIndex() {
+        return lastOrderIndex;
+    }
+
+    public void setLastOrderIndex(int lastOrderIndex) {
+        this.lastOrderIndex = lastOrderIndex;
     }
 }

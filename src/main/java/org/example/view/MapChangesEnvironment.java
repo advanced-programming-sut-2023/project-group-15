@@ -86,9 +86,9 @@ public class MapChangesEnvironment {
         return status;
     }*/
 
-    private void classifyController(Matcher matcherTest) {
+   /* private void classifyController(Matcher matcherTest) {
         buildingController.setType(matcherTest.group("type"));
         buildingController.setCoordinateX(matcherTest.group("x"));
         buildingController.setCoordinateY(matcherTest.group("y"));
-    }
+    }*/
 }
