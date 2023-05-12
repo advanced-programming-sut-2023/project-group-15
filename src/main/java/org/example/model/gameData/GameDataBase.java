@@ -2,8 +2,10 @@ package org.example.model.gameData;
 
 import org.example.InputScanner;
 import org.example.model.User;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -67,36 +69,34 @@ public class GameDataBase {
             e.printStackTrace();
         }
     }
-    public static void readFromFile()
-    {
+    public static void readFromFile() {
         String path = "d:/json/database.json";
         try {
             String contents = new String((Files.readAllBytes(Paths.get(path))));
             //JSONObject o = new JSONObject(contents);
             JSONTokener jsonParser = new JSONTokener(contents);
-            JSONObject  jsonobject=new JSONObject(jsonParser);
+            JSONObject jsonobject = new JSONObject(jsonParser);
             //try{
-            while(!jsonParser.end()) {
-                jsonobject=new JSONObject(jsonParser);
+            while (!jsonParser.end()) {
+                jsonobject = new JSONObject(jsonParser);
+                System.out.println(String.valueOf(jsonobject.get("Name")));
                 User user = new User(String.valueOf(jsonobject.get("Name")),
                         String.valueOf(jsonobject.get("Password")),
                         String.valueOf(jsonobject.get("Nickname")),
                         String.valueOf(jsonobject.get("Email")),
                         String.valueOf(jsonobject.get("Slogan")),
-                String.valueOf(jsonobject.get("Password recovery question:")),
+                        String.valueOf(jsonobject.get("Password recovery question:")),
                         String.valueOf(jsonobject.get("Password recover answer:")),
                         String.valueOf(jsonobject.get("rank")),
                         String.valueOf(jsonobject.get("HighScore")));
-
                 allUsers.add(user);
                 jsonParser.next();
             }
 
 
-            // }catch(JSONException e){
-            //System.out.println(e);
-            //}
-        }catch(IOException e){
+        } catch (JSONException e) {
+            System.out.println(e);
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

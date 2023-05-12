@@ -15,11 +15,12 @@ import java.util.regex.Matcher;
 public class MainMenu {
     public void run() {
         JSONObject obj = new JSONObject();
-        String path ="d:/json/dataBase.json";
-        File dir = new File("d:/json/");
-        dir.mkdirs();
-        if(dir.length() != 0)
-        GameDataBase.readFromFile();
+        //String path ="d:/json/dataBase.json";
+        File dir = new File("d:/json/dataBase.json");
+        //File direcotry = new File(directoryPath);
+        //dir.mkdirs();
+        if(dir.exists())
+            GameDataBase.readFromFile();
         Matcher mainMenuMatcher;
         String userInput;
         while (true) {

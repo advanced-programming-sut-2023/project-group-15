@@ -63,7 +63,8 @@ public class LoginMenu extends MainMenu {
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY))
             run();
-        System.out.println(status.getOutput());
+            System.out.println(status.getOutput());
+
     }
 
     private void classify(Matcher matcher) {
