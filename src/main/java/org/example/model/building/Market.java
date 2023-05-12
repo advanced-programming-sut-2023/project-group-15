@@ -8,10 +8,12 @@ public class Market extends Building{
     private static HashMap < String, Integer > number = new HashMap < > ();
     private static HashMap < String, Integer > sellCoin = new HashMap < > ();
     private static HashMap < String, Integer > buyCoin = new HashMap < > ();
-    public Market(String name, int hp, int xCoordiante, int yCoordiante, Products material1, Products material2, int numberOfMaterial1, int numberOfMaterial2,
-                  int numberOfWorkers, ArrayList < Products > userFoods, ArrayList < Source > userSources, ArrayList < Weapon > userWeapons) {
-        super(name, hp, xCoordiante, yCoordiante, material1, material2, numberOfMaterial1, numberOfMaterial2, numberOfWorkers);
-
+    private int numberOfWorkers;
+    public Market(String name, int hp, int xCoordinate, int yCoordinate,
+                    Products material1, Products material2, int numberOfMaterial1,
+                    int numberOfMaterial2,int numberOfWorkers){
+        super(name,hp,xCoordinate,yCoordinate,material1,material2,numberOfMaterial1,numberOfMaterial2);
+        this.numberOfWorkers = numberOfWorkers;
     }
 
     public static void setMarket() {
@@ -99,5 +101,13 @@ public class Market extends Building{
 
     public static int getNumberOfItem(String item) {
         return number.get(item);
+    }
+
+    public int getNumberOfWorkers() {
+        return numberOfWorkers;
+    }
+
+    public void setNumberOfWorkers(int numberOfWorkers) {
+        this.numberOfWorkers = numberOfWorkers;
     }
 }

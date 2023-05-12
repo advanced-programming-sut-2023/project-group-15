@@ -12,10 +12,10 @@ import java.util.ArrayList;
 public class LauncherUnit extends Soldier {
     private int throwRange;
     private Weapon fightingFeature;
-    public LauncherUnit(int speed, int attackingPower , int deffens , int x, int y , int unitHp , int maxMove , UnitName name , State state , User owner, int range , Weapon weapon){
-        super(speed, attackingPower ,deffens , x, y , unitHp , maxMove , name,state,owner);
+    public LauncherUnit(int speed, int attackingPower , int deffens , int x, int y , int unitHp , int maxMove ,
+                        String name , State state , int range ){
+        super(speed, attackingPower ,deffens , x, y , unitHp , maxMove , name,state);
         this.throwRange = range;
-        this.fightingFeature = weapon;
     }
     public void setThrowRange(int throwRange){
         this.throwRange = throwRange;

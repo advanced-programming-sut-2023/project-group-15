@@ -27,6 +27,9 @@ public enum UnitMenuOutput {
     WRONG_UNIT_ENGINEER("choose the right unit(engineer)!"),
     CONQUERING_AND_OPENING_THE_GATE("Conquering and opening the gate"),
     CONQUERING("Conquering..."),
+    NOT_IN_A_STATE("unit is not in a state..."),
+    CAN_NOT_DROP_UNIT("you can't drop unit here!"),
+    SUCCESSFUL_DROP_UNIT("successful drop unit"),
     ;
     private final String output;
 

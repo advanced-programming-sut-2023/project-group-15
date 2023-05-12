@@ -1,9 +1,19 @@
 package org.example;
 
+import org.example.model.User;
+import org.example.view.MainMenu;
+
 public class Main {
     public static void main(String[] args) {
-        /*System.out.println("Welcome to the game!");
-        //new GameMenu().run();
+        System.out.println("Welcome to the game!");
+        new MainMenu().run();
+        for (User user:User.allUsers) {
+            System.out.println("username: "+user.getUsername());
+            System.out.println("password: "+user.getPassword());
+            System.out.println("email: "+user.getEmail());
+            System.out.println("slogan: "+user.getSlogan());
+        }
+//        new GameMenu().run();
 //        new MapChangesEnvironment().testRun();
         //Map.setCurrentMap(400);
       /*  for (int i = 10; i < 15; i++){
@@ -24,14 +34,14 @@ public class Main {
 //        new GameMenu().run();
         //new MainMenu().run();
         //Map.setCurrentMap();
-       // new MapMenu().run(0,0);
-      //  new MainMenu().run();
+        // new MapMenu().run(0,0);
+//        new MainMenu().run();
 
         //Map.setCurrentMap();
         //dropBuildingController controller = new dropBuildingController();
-       // controller.dropProductiveBuilding(0 , 0 , MILL);
-       // new mapMenu().run();
+        // controller.dropProductiveBuilding(0 , 0 , MILL);
+        // new mapMenu().run();
         //System.out.println(map.findATile(0 , 0).getLandType());
-       //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());
+        //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());
     }
 }

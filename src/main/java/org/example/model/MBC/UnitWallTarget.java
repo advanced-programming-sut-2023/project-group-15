@@ -8,8 +8,8 @@ import org.example.model.gameData.Government;
 
 public class UnitWallTarget extends Soldier {
 
-    public UnitWallTarget(int speed, int attackingPower , int deffens , int x, int y , int unitHp , int maxMove , UnitName name , State state , User owner){
-        super(speed, attackingPower ,deffens , x, y , unitHp , maxMove , name,state,owner);
+    public UnitWallTarget(int speed, int attackingPower , int deffens , int x, int y , int unitHp , int maxMove , String name , State state){
+        super(speed, attackingPower ,deffens , x, y , unitHp , maxMove , name,state);
     }
 
 

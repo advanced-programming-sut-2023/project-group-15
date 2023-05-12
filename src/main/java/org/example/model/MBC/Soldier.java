@@ -11,18 +11,17 @@ public class Soldier extends Person{
     private int deffense;
     private int x;
     private int y;
-    private UnitName name;
+    private String name;
     private int maxMove;
     private State state;
     private static User owner;
     private int unitHp;
-    public Soldier(int speed,int attackingPower,int deffense,int x,int y , int unitHp ,int maxMove,UnitName name,State state,User owner){
+    public Soldier(int speed,int attackingPower,int deffense,int x,int y , int unitHp ,int maxMove,String name,State state){
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.deffense = deffense;
         this.x = x;
         this.y = y;
-        //owner = owner;
         this.unitHp = unitHp;
         this.maxMove = maxMove;
         this.name = name;
@@ -37,11 +36,11 @@ public class Soldier extends Person{
         return owner;
     }
 
-    public void setName(UnitName name){
+    public void setName(String name){
         this.name = name;
     }
 
-    public UnitName getName(){
+    public String getName(){
         return this.name;
     }
     public void setUnitHp(int unitHp) {

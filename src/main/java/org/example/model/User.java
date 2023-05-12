@@ -6,6 +6,7 @@ import org.example.model.gameData.Government;
 import org.example.model.gameData.Map;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class User {
     private String username;
@@ -43,9 +44,6 @@ public class User {
         this.addUser();
     }
 
-    public ArrayList<User> getAllUsers() {
-        return allUsers;
-    }
 
     public void addUser() {
         allUsers.add(this);
@@ -179,5 +177,18 @@ public class User {
 
     public Government getGovernment() {
         return government;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return username.equals(user.username) && password.equals(user.password) && nickname.equals(user.nickname) && email.equals(user.email) ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, nickname, email, slogan);
     }
 }

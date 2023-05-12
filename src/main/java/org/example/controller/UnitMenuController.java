@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class UnitMenuController {
     public LauncherUnit launcherUnit;
-    public InfantryUnit infantryUnit = new InfantryUnit(1,2,3,1,1,10,3,UnitName.ENGINEER,State.STANDING, GameInformation.getCurrentPlayer());
+  //  public InfantryUnit infantryUnit = new InfantryUnit(1,2,3,1,1,10,3,UnitName.ENGINEER,State.STANDING, GameInformation.getCurrentPlayer());
     public UnitWallTarget unitWallTarget;
     public BuildingName buildingName;
     public Building building;
@@ -113,9 +113,9 @@ public class UnitMenuController {
         else if(checkMove.equals("unit do not allowed to place there"))
             return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;
             if(GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {
-                BuildingName buildingName = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
+                Building buildingName = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
 
-            switch (buildingName) {
+  /*          switch (buildingName) {
                 case PERMETER_TOWER,LOOKOUT_TOWER,DEFEND_TURRET,SQUARE_TOWER,CIRCLE_TOWER:
                     //remove building
                     return UnitMenuOutput.SUCCESSFUL_DIG;
@@ -123,11 +123,11 @@ public class UnitMenuController {
                     return UnitMenuOutput.WRONG_BUILDING;
             }
         }
-            else
+            else*/
                 return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;
 
 
-    }
+    }}
     private void setUnit(int x, int y, State state){
         // TODO: add code to get unit from map
 
