@@ -2,6 +2,7 @@ package org.example.controller;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
 
 public class Utility {
     public static String getPassHashSha256(String password, byte[] salt) {
@@ -24,6 +25,18 @@ public class Utility {
             e.printStackTrace();
         }
         return passwordString;
+    }
+    public static String groupFinder(Matcher matcher , String toFind)
+    {
+        while (matcher.find()) {
+            for (int i = 0; i < matcher.groupCount(); i++) {
+                if (matcher.group(i) == null)
+                    continue;
+                if (matcher.group(i).equals(toFind))
+                    return matcher.group(i + 1);
+            }
+        }
+        return null;
     }
 
     public static byte[] makeSalt()  {

@@ -1,11 +1,15 @@
 package org.example;
 
+import org.example.model.enums.Products;
+import org.example.model.enums.StoreProducts;
 import org.example.view.MainMenu;
 
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Welcome to the game!");
+        if(Products.APPLE.name().equals(String.valueOf(StoreProducts.APPLE)))
+        System.out.println(Products.APPLE.name());
         //new GameMenu().run();
 //        new MapChangesEnvironment().testRun();
         //Map.setCurrentMap(400);

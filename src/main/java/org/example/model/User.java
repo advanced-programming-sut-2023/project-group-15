@@ -3,8 +3,11 @@ package org.example.model;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
+import org.example.model.gameData.Trade;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class User {
     private String username;
@@ -21,6 +24,10 @@ public class User {
     private Government government;
     private int turn;
     private ArrayList<GameDataBase> userGames;
+    private List <Trade> tradeList = new ArrayList<>();
+    private List <Trade> tradeReqList = new ArrayList<>();
+    private List <Trade > tradeHistory = new ArrayList<>();
+
     public static final ArrayList<User> allUsers = new ArrayList<>();
     public User(String username, String password, String nickname, String email , String passRecoveryQuestion , String passRecoveryAnswer , int rank , int highscore) {
         this.username = username;
@@ -197,4 +204,27 @@ public class User {
         return government;
     }
 
+    public List<Trade> getTradeList() {
+        return tradeList;
+    }
+
+    public void setTradeList(List<Trade> tradeList) {
+        this.tradeList = tradeList;
+    }
+
+    public List<Trade> getTradeReqList() {
+        return tradeReqList;
+    }
+
+    public void setTradeReqList(List<Trade> tradeReqList) {
+        this.tradeReqList = tradeReqList;
+    }
+
+    public List<Trade> getTradeHistory() {
+        return tradeHistory;
+    }
+
+    public void setTradeHistory(List<Trade> tradeHistory) {
+        this.tradeHistory = tradeHistory;
+    }
 }

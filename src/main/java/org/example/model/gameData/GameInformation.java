@@ -4,11 +4,9 @@ import org.example.controller.MapMenuEnvironmentController;
 import org.example.model.Tile;
 import org.example.model.User;
 import org.example.model.building.Building;
-import org.example.model.building.BuildingName;
-import org.example.model.enums.LandType;
-import org.example.model.enums.Tree;
-import org.example.model.enums.UnitName;
-import org.example.model.enums.Direction;
+import org.example.model.building.Storage;
+import org.example.model.enums.*;
+import org.example.view.enums.outputs.GameInformationOutput;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import java.io.IOException;
@@ -97,15 +95,33 @@ public class GameInformation {
     public static Tile[][] getCurrentPlayerMap(){
         return GameInformation.getCurrentPlayer().getMap();
     }
-    public static Building findBuilding(String name) {
-        for (int i = 0; i < GameInformation.getCurrentPlayerMap().length; i++) {
-            for (int j = 0; j < GameInformation.getCurrentPlayerMap().length; j++) {
+    public static Building findBuilding(String name , User user ) {
+        for (int i = 0; i < user.getMap().length; i++) {
+            for (int j = 0; j < user.getMap()[0].length; j++) {
                 if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding().getName()
                         .equals(name))
                     return GameInformation.getCurrentPlayerMap()[i][j].getBuilding();
             }
         }
         return null;
+    }
+    public static String checkForSources(Products product , int amount)
+    {
+        int current;
+        Storage store = null;
+        /*for(StoreProducts storeProduct : StoreProducts.values()) {
+            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
+                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , );
+            }
+        }*/
+        if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
+            current = store.getGoods().get(product);
+            store.getGoods().remove(product);
+            store.getGoods().put(product, current - amount);
+            return GameInformationOutput.SUCCESS.getOutput();
+        }
+        return GameInformationOutput.NOT_ENOUGH.getOutput();
+        //TODO change the return type to enum
     }
     public static Government getCurrentPlayerGovernment()
     {

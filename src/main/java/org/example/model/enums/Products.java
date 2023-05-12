@@ -22,6 +22,20 @@ public enum Products {
     BOW,
     MACE,
     OIL_POT,
+    ;
+
+    Products() {
+    }
+
+    public static Products getproductByName(String name)
+            {
+                for(Products product : Products.values())
+                {
+                    if(String.valueOf(product).equals(name))
+                        return product;
+                }
+                return null;
+            }
 
     ;
 }

@@ -50,7 +50,7 @@ public class ProductiveBuilding extends Building implements Produce {
                         buildingName = store.getStoreType();
                         break;
                     }
-                        storage = (Storage) GameInformation.findBuilding(buildingName);
+                        storage = (Storage) GameInformation.findBuilding(buildingName , GameInformation.getCurrentPlayer());
                         storage.addToStorage(product1);
 
                 }
@@ -60,7 +60,7 @@ public class ProductiveBuilding extends Building implements Produce {
                         buildingName = store.getStoreType();
                         break;
                     }
-                    storage = (Storage) GameInformation.findBuilding(buildingName);
+                    storage = (Storage) GameInformation.findBuilding(buildingName , GameInformation.getCurrentPlayer());
                     storage.addToStorage(product2);
 
                 }
