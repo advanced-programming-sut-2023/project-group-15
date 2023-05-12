@@ -40,7 +40,7 @@ public class SignupMenuController extends MainMenuController {
             return SignupMenuOutput.EMPTY_FIELD;
         }
         if (username.matches("^\\w+$")) {
-            for (User user : User.allUsers) {
+            for (User user : GameDataBase.getAllUsers()) {
                 if (user.getUsername().equals(username)) {
                     return SignupMenuOutput.USERNAME_EXISTS;
                 }

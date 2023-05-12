@@ -75,11 +75,10 @@ public class GameDataBase {
             String contents = new String((Files.readAllBytes(Paths.get(path))));
             //JSONObject o = new JSONObject(contents);
             JSONTokener jsonParser = new JSONTokener(contents);
-            JSONObject jsonobject = new JSONObject(jsonParser);
+            //JSONObject jsonobject = new JSONObject(jsonParser);
             //try{
             while (!jsonParser.end()) {
-                jsonobject = new JSONObject(jsonParser);
-                System.out.println(String.valueOf(jsonobject.get("Name")));
+                JSONObject jsonobject = new JSONObject(jsonParser);
                 User user = new User(String.valueOf(jsonobject.get("Name")),
                         String.valueOf(jsonobject.get("Password")),
                         String.valueOf(jsonobject.get("Nickname")),

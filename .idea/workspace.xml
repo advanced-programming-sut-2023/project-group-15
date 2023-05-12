@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="commit before merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SignupMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/LoginMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/SignupMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/request.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/LoginMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/MainMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683826820411</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit before merge">
+      <created>1683861614496</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683861614496</updated>
+    </task>
+    <task id="LOCAL-00016" summary="commit before merge">
+      <created>1683861625742</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1683861625742</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
