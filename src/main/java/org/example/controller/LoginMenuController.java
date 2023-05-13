@@ -7,10 +7,14 @@ import org.example.view.enums.outputs.LoginMenuOutput;
 
 public class LoginMenuController extends MainMenuController{
     private boolean stayLoggedInFlag = false;
+    private GameDataBaseController gameDataBaseController = new GameDataBaseController();
 
     public LoginMenuOutput loginUser() {
         if (checkMatchUsername()) {
             if (checkUsernameWithPassword()) {
+                if (this.isStayLoggedInFlag()) {
+                    new GameDataBaseController().changeUserFlag(this.getUsername(),this.isStayLoggedInFlag());
+                }
                 return LoginMenuOutput.LOGGED_IN_SUCCESSFULLY;
             }
             return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;
@@ -63,6 +67,13 @@ public class LoginMenuController extends MainMenuController{
             if (user.getUsername().equals(this.getUsername())) {
                 return user.findUserQuestionWithUsername();
             }
+        }
+        return null;
+    }
+    public SecurityQuestion findUserSecurityQuestion(String question) {
+        for (SecurityQuestion securityQuestion:SecurityQuestion.allQuestions()) {
+            if (securityQuestion.getQuestion().equals(question))
+                return securityQuestion;
         }
         return null;
     }

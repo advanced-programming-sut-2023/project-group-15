@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public enum GameStartMenuEnum {
     ADD_PLAYER("^\\s*add\\s+user\\s+(-u\\s+(?<name>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)$"),
-    ;
+    ENTER_GAME("^\\s*enter\\s+game\\s*$");
     private final String regex;
 
     GameStartMenuEnum(String regex) {

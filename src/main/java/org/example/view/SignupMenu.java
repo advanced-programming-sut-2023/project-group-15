@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private boolean questionFlag = true;
+
     public void run(Matcher signupMenuMatcher) {
         SignupMenuOutput status;
         classifyParameters(signupMenuMatcher);
@@ -27,8 +28,8 @@ public class SignupMenu extends MainMenu {
                             pickQuestion();
                         signupMenuController.signingsComplete();
                         System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());
-                    }
-                    else
+                        return;
+                    } else
                         System.out.println(status.getOutput());
                 } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
                     return;
@@ -45,27 +46,32 @@ public class SignupMenu extends MainMenu {
             System.out.println(status.getOutput());
         }
     }
+
     private SignupMenuOutput sloganCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
             slogans();
             System.out.println("choose one of these slogans (enter the number):");
-            String input = InputScanner.getScanner().nextLine();
-            if (Integer.parseInt(input)<=11||Integer.parseInt(input)>=1) {
-                signupMenuController.selectSlogan(input);
-            } else if (input.matches("^\\s*quit\\s*$")) {
-                return SignupMenuOutput.QUIT_FROM_PROCESS;
-            } else
-                System.out.println("you entered invalid input, try again! or enter \"quit\" to exit");
+            while (true) {
+                String input = InputScanner.getScanner().nextLine();
+                if (Integer.parseInt(input) <= 11 || Integer.parseInt(input) >= 1) {
+                    signupMenuController.selectSlogan(input);
+                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                } else if (input.matches("^\\s*quit\\s*$")) {
+                    return SignupMenuOutput.QUIT_FROM_PROCESS;
+                } else
+                    System.out.println("you entered invalid input, try again! or enter \"quit\" to exit");
+            }
         }
-        return signupMenuController.sloganCheck();
+        return SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
+
     private SignupMenuOutput pickQuestion() {
         Matcher signupMenuMatcher;
         System.out.println("pick a question from these questions:");
         questions();
         while (true) {
             String input = InputScanner.getScanner().nextLine();
-            if ((signupMenuMatcher=SignupMenuEnum.getMatcher(input,SignupMenuEnum.PICK_QUESTION))!=null) {
+            if ((signupMenuMatcher = SignupMenuEnum.getMatcher(input, SignupMenuEnum.PICK_QUESTION)) != null) {
                 SignupMenuOutput status = signupMenuController.pickSecurityQuestion(signupMenuMatcher);
                 if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
                     return status;
@@ -77,35 +83,38 @@ public class SignupMenu extends MainMenu {
                 System.out.println("invalid command!,\ntry again!\ntype \"quit\" to cancel the process");
         }
     }
+
     private void questions() {
-        System.out.println("1."+ SecurityQuestion.FATHER_NAME.getQuestion());
-        System.out.println("2."+SecurityQuestion.BROTHER_NAME.getQuestion());
-        System.out.println("3."+SecurityQuestion.LAPTOP_MODEL.getQuestion());
-        System.out.println("4."+SecurityQuestion.PHONE_MODEL.getQuestion());
-        System.out.println("5."+SecurityQuestion.HAIR_COLOR.getQuestion());
-        System.out.println("6."+SecurityQuestion.CAR_COLOR.getQuestion());
-        System.out.println("7."+SecurityQuestion.FAVORITE_FOOD.getQuestion());
-        System.out.println("8."+SecurityQuestion.FAVORITE_GAME.getQuestion());
-        System.out.println("9."+SecurityQuestion.USER_JOB.getQuestion());
-        System.out.println("10."+SecurityQuestion.USER_AGE.getQuestion());
+        System.out.println("1." + SecurityQuestion.FATHER_NAME.getQuestion());
+        System.out.println("2." + SecurityQuestion.BROTHER_NAME.getQuestion());
+        System.out.println("3." + SecurityQuestion.LAPTOP_MODEL.getQuestion());
+        System.out.println("4." + SecurityQuestion.PHONE_MODEL.getQuestion());
+        System.out.println("5." + SecurityQuestion.HAIR_COLOR.getQuestion());
+        System.out.println("6." + SecurityQuestion.CAR_COLOR.getQuestion());
+        System.out.println("7." + SecurityQuestion.FAVORITE_FOOD.getQuestion());
+        System.out.println("8." + SecurityQuestion.FAVORITE_GAME.getQuestion());
+        System.out.println("9." + SecurityQuestion.USER_JOB.getQuestion());
+        System.out.println("10." + SecurityQuestion.USER_AGE.getQuestion());
     }
+
     private void slogans() {
-        System.out.println("1."+Slogans.SLOGAN1.getSlogan());
-        System.out.println("2."+Slogans.SLOGAN2.getSlogan());
-        System.out.println("3."+Slogans.SLOGAN3.getSlogan());
-        System.out.println("4."+Slogans.SLOGAN4.getSlogan());
-        System.out.println("5."+Slogans.SLOGAN5.getSlogan());
-        System.out.println("6."+Slogans.SLOGAN6.getSlogan());
-        System.out.println("7."+Slogans.SLOGAN7.getSlogan());
-        System.out.println("8."+Slogans.SLOGAN8.getSlogan());
-        System.out.println("9."+Slogans.SLOGAN9.getSlogan());
-        System.out.println("10."+Slogans.SLOGAN10.getSlogan());
-        System.out.println("11."+Slogans.SLOGAN11.getSlogan());
+        System.out.println("1." + Slogans.SLOGAN1.getSlogan());
+        System.out.println("2." + Slogans.SLOGAN2.getSlogan());
+        System.out.println("3." + Slogans.SLOGAN3.getSlogan());
+        System.out.println("4." + Slogans.SLOGAN4.getSlogan());
+        System.out.println("5." + Slogans.SLOGAN5.getSlogan());
+        System.out.println("6." + Slogans.SLOGAN6.getSlogan());
+        System.out.println("7." + Slogans.SLOGAN7.getSlogan());
+        System.out.println("8." + Slogans.SLOGAN8.getSlogan());
+        System.out.println("9." + Slogans.SLOGAN9.getSlogan());
+        System.out.println("10." + Slogans.SLOGAN10.getSlogan());
+        System.out.println("11." + Slogans.SLOGAN11.getSlogan());
     }
+
     private SignupMenuOutput passwordCheck() {
         if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
             signupMenuController.setPassword(signupMenuController.generateRandomPassword());
-            System.out.println("your password is: "+signupMenuController.getPassword());
+            System.out.println("your password is: " + signupMenuController.getPassword());
             while (true) {
                 System.out.println("re-enter your password please: ");
                 String verification = InputScanner.getScanner().nextLine();
@@ -128,6 +137,7 @@ public class SignupMenu extends MainMenu {
         }
         return status;
     }
+
     private SignupMenuOutput usernameCheck() {
         SignupMenuOutput result = SignupMenuController.usernameCheckErrors(signupMenuController.getUsername());
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
@@ -149,12 +159,12 @@ public class SignupMenu extends MainMenu {
                 } else
                     System.out.println(SignupMenuOutput.INVALID_COMMAND);
             }
-        }
-        else if (result.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
+        } else if (result.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
             return SignupMenuOutput.QUIT_FROM_PROCESS;
         } else
             return result;
     }
+
     public void classifyParameters(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));
         signupMenuController.setPassword(matcher.group("password"));

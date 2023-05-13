@@ -26,10 +26,6 @@ public class SignupMenuController extends MainMenuController {
         return this.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
-    public SignupMenuOutput sloganCheck() {
-        return this.getSlogan().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
-    }
-
     public static SignupMenuOutput usernameCheckErrors(String username) {
         if (username.length() == 0) {
             return SignupMenuOutput.EMPTY_FIELD;
@@ -157,8 +153,7 @@ public class SignupMenuController extends MainMenuController {
             newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion().getQuestion());
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
-        GameDataBase.setJasonFile(newUser);
-        System.out.println("added to User class!");
+        new GameDataBaseController().setJasonFile(newUser,false);
     }
 
     private static Matcher getMatcher(String password, String regex) {

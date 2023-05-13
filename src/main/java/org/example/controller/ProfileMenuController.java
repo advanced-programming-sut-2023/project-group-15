@@ -74,7 +74,10 @@ public class ProfileMenuController extends LoginMenuController {
     }
 
     public void showUserSlogan() {
-        System.out.println(this.getSlogan());
+        if (this.getSlogan() == null)
+            System.out.println("slogan is empty!");
+        else
+            System.out.println(this.getSlogan());
     }
 
     public void showUserProfileDisplay() {
@@ -87,7 +90,8 @@ public class ProfileMenuController extends LoginMenuController {
         System.out.println("password:" + password);
         System.out.println("email:" + user.getEmail());
         System.out.println("nickname:" + user.getNickname());
-        System.out.println("slogan:" + user.getSlogan());
+        if (user.getSlogan() != null)
+            System.out.println("slogan:" + user.getSlogan());
         //TODO:user rank and high score are left..
     }
 }

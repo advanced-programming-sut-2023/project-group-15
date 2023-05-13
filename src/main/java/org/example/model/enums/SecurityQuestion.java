@@ -25,7 +25,7 @@ public enum SecurityQuestion {
             questions.add(PHONE_MODEL);
             questions.add(HAIR_COLOR);
             questions.add(CAR_COLOR);
-            questions.add(FAVORITE_GAME);
+            questions.add(FAVORITE_FOOD);
             questions.add(FAVORITE_GAME);
             questions.add(USER_JOB);
             questions.add(USER_AGE);

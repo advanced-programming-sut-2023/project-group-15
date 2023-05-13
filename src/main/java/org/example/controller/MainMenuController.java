@@ -1,8 +1,19 @@
 package org.example.controller;
 
 import org.example.model.enums.SecurityQuestion;
+import org.example.view.LoginMenu;
+import org.example.view.MainMenu;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class MainMenuController {
+    private final GameDataBaseController gameDataBaseController ;
     private String username;
     private String password;
     private String nickname;
@@ -25,6 +36,7 @@ public class MainMenuController {
         this.passRecoveryAnswer = null;
         this.passRecoveryQuestion = null;
         this.score = 0;
+        this.gameDataBaseController = new GameDataBaseController();
     }
 
     public void setPassRecoveryQuestion(SecurityQuestion passRecoveryQuestion) {
@@ -35,7 +47,7 @@ public class MainMenuController {
         this.passRecoveryAnswer = passRecoveryAnswer;
     }
 
-    public void setScore(int score) {
+    public void setHighScore(int score) {
         this.score = score;
     }
 
@@ -105,5 +117,47 @@ public class MainMenuController {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void checkJsonDirectory() {
+        File dir = new File("d:/json/dataBase.json");
+        if (dir.exists()) {
+            gameDataBaseController.readFromFile();
+            checkUsersFlag();
+        } else {
+            new File("d:/json").mkdirs();
+            new MainMenu().run();
+        }
+    }
+
+    public void checkUsersFlag() {
+        String path = "d:/json/database.json";
+        try {
+            String contents = new String((Files.readAllBytes(Paths.get(path))));
+            JSONTokener jsonParser = new JSONTokener(contents);
+            while (!jsonParser.end()) {
+                JSONObject jsonobject = new JSONObject(jsonParser);
+                if (jsonobject.get("flag").equals(true)) {
+                    String name = String.valueOf(jsonobject.get("Name"));
+                    String password = String.valueOf(jsonobject.get("Password"));
+                    String nickname = String.valueOf(jsonobject.get("Nickname"));
+                    String email = String.valueOf(jsonobject.get("Email"));
+                    String slogan = String.valueOf(jsonobject.get("Slogan"));
+                    String passwordRecoveryQuestion = String.valueOf(jsonobject.get("Password recovery question:"));
+                    String passwordRecoveryAnswer = String.valueOf(jsonobject.get("Password recover answer:"));
+                    String rank = String.valueOf(jsonobject.get("rank"));
+                    String highScore = String.valueOf(jsonobject.get("HighScore"));
+                    new LoginMenu().loggedInUserInformation(name,password,nickname,email,slogan,passwordRecoveryQuestion,passwordRecoveryAnswer,rank,highScore);
+                    new MainMenu().run();
+                    return;
+                }
+                jsonParser.next();
+            }
+            new MainMenu().run();
+        } catch (JSONException e) {
+            System.out.println(e);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

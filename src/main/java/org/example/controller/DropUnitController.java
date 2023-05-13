@@ -5,7 +5,6 @@ import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.Soldier;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.enums.LandType;
-import org.example.model.enums.State;
 import org.example.model.enums.UnitName;
 import org.example.model.gameData.GameInformation;
 import org.example.view.enums.outputs.UnitMenuOutput;

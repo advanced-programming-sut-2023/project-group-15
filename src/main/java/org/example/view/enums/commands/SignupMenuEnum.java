@@ -11,7 +11,7 @@ public enum SignupMenuEnum {
             "(-s\\s+(?<slogan>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))+$"),
     PICK_QUESTION("^\\s*question\\s+pick\\s*((-q\\s+(?<Qnumber>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
             "(-a\\s+(?<Qanswer1>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)|" +
-            "(-c\\s+(?<Qanswer2>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))*$"),
+            "(-c\\s+(?<Qanswer2>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*))*\\s*$"),
     CREATE_MAP("^\\s*create\\s+map\\s*$"),
     SMALL_CHAR(".*[a-z]+.*"),
     CAPITAL_CHAR(".*[A-Z]+.*"),

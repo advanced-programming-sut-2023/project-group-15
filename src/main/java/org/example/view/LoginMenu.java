@@ -1,11 +1,7 @@
 package org.example.view;
 
 import org.example.InputScanner;
-import org.example.controller.LoginMenuController;
-import org.example.controller.ProfileMenuController;
-import org.example.controller.SignupMenuController;
-import org.example.controller.Utility;
-import org.example.model.enums.SecurityQuestion;
+import org.example.controller.*;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;
@@ -21,7 +17,7 @@ public class LoginMenu extends MainMenu {
     public LoginMenu(Matcher loginMenuMatcher) {
         this.loginMenuMatcher = loginMenuMatcher;
     }
-    LoginMenu() {
+    public LoginMenu() {
     }
     public void run() {
         String userInput;
@@ -54,6 +50,8 @@ public class LoginMenu extends MainMenu {
             } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
                 //not sure
                 new GameStartMenu().addUser(loginMenuMatcher);
+            } else if (GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ENTER_GAME)!=null) {
+                new UserTurnController().checkUserTurn();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!= null) {
                 System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
                 break;
@@ -69,8 +67,8 @@ public class LoginMenu extends MainMenu {
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
             run();
-        }
-        System.out.println(status.getOutput());
+        } else
+            System.out.println(status.getOutput());
     }
 
     private void classify(Matcher matcher) {
@@ -84,16 +82,17 @@ public class LoginMenu extends MainMenu {
     protected void forgetPassword(String username) {
         loginMenuController.setUsername(username);
         if (loginMenuController.checkMatchUsername()) {
-            SecurityQuestion question = loginMenuController.findUserSecurityQuestion();
-            System.out.println(question.getQuestion());
+            System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
             while (true) {
                 String answer = InputScanner.getScanner().nextLine();
+                byte[] salt = Utility.makeSalt();
+                answer = Utility.getPassHashSha256(answer,salt);
                 if (loginMenuController.checkSecurityQuestion(answer)) {
                     resettingUserPassword(username);
                 } else if (LoginMenuEnum.getMatcher(answer, LoginMenuEnum.QUIT_THE_PROCESS) != null) {
                     break;
                 } else
-                    System.out.println(LoginMenuOutput.WRONG_ANSWER_FOR_SECURITY_QUESTION);
+                    System.out.println(LoginMenuOutput.WRONG_ANSWER_FOR_SECURITY_QUESTION.getOutput());
             }
         }
         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
@@ -114,8 +113,9 @@ public class LoginMenu extends MainMenu {
                     System.out.println(LoginMenuOutput.PASSWORD_SET_SUCCESSFULLY.getOutput());
                     signupMenuController.setPassword(newPassword);
                     signupMenuController.changeForgetPassword();
+                    return;
                 } else if (newPassword.matches(LoginMenuEnum.QUIT_THE_PROCESS.getRegex())) {
-                    break;
+                    return;
                 } else
                     System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());
             }
@@ -123,6 +123,15 @@ public class LoginMenu extends MainMenu {
     }
 
     public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {
-        //kamel mikonm
+        loginMenuController.setUsername(name);
+        loginMenuController.setPassword(password);
+        loginMenuController.setNickname(nickname);
+        loginMenuController.setEmail(email);
+        loginMenuController.setSlogan(slogan);
+        loginMenuController.setPassRecoveryQuestion(loginMenuController.findUserSecurityQuestion(passwordRecoveryQuestion));
+        loginMenuController.setPassRecoveryAnswer(passwordRecoveryAnswer);
+        loginMenuController.setRank(Integer.parseInt(rank));
+        loginMenuController.setHighScore(Integer.parseInt(highScore));
+        run();
     }
 }

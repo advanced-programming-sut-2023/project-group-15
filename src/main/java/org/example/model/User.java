@@ -1,5 +1,6 @@
 package org.example.model;
 
+import org.example.controller.GameDataBaseController;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
@@ -39,10 +40,10 @@ public class User {
         this.email = email;
         this.highScore = highScore;
         this.stayLoggedIn = false;
-        this.addUser();
         this.tradeHistoryList = new ArrayList<>();
         this.tradeReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
+        GameDataBaseController.addUser(this);
     }
 
     public User(String username, String password, String nickname, String email, String slogan, String passRecoveryQuestion, String passRecoveryAnswer, String rank, String highScore) {
@@ -56,10 +57,10 @@ public class User {
         this.email = email;
         this.highScore = Integer.parseInt(highScore);
         this.stayLoggedIn = false;
-        this.addUser();
         this.tradeHistoryList = new ArrayList<>();
         this.tradeReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
+        GameDataBaseController.addUser(this);
     }
 
     public User(String username, String password, String nickname, String email) {
@@ -71,10 +72,11 @@ public class User {
         this.highScore = 0;
         this.email = email;
         this.stayLoggedIn = false;
-        this.addUser();
         this.tradeHistoryList = new ArrayList<>();
         this.tradeReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
+        GameDataBaseController.addUser(this);
+
     }
 
     public User(String username, String password, String nickname, String email, String slogan) {
@@ -84,15 +86,10 @@ public class User {
         this.email = email;
         this.slogan = slogan;
         this.stayLoggedIn = false;
-        this.addUser();
         this.tradeHistoryList = new ArrayList<>();
         this.tradeReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
-    }
-
-
-    public void addUser() {
-        GameDataBase.getAllUsers().add(this);
+        GameDataBaseController.addUser(this);
     }
 
     public void setRank(int rank) {
