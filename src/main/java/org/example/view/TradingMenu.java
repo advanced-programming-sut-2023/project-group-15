@@ -7,6 +7,9 @@ import org.example.view.enums.commands.TradingMenuEnum;
 import java.util.regex.Matcher;
 
 public class TradingMenu {
+        public TradingMenu() {
+        }
+
         public void run()
         {
                 TradingMenuController controller = new TradingMenuController();
@@ -27,7 +30,6 @@ public class TradingMenu {
                                 controller.showTradeHistory();
                         else if ((matcher = TradingMenuEnum.getMatcher(tradeCommand , TradingMenuEnum.TRADE_LIST)) != null )
                                 controller.showTradeList();
-
                 }
         }
 }

@@ -1,5 +1,8 @@
 package org.example.controller;
 
+import org.example.model.building.Education;
+
+import java.io.File;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
@@ -26,8 +29,8 @@ public class Utility {
         }
         return passwordString;
     }
-    public static String groupFinder(Matcher matcher , String toFind)
-    {
+
+    public static String groupFinder(Matcher matcher, String toFind) {
         while (matcher.find()) {
             for (int i = 0; i < matcher.groupCount(); i++) {
                 if (matcher.group(i) == null)
@@ -39,8 +42,19 @@ public class Utility {
         return null;
     }
 
-    public static byte[] makeSalt()  {
+    public static byte[] makeSalt() {
         return new byte[16];
     }
 
+    public static void deleteFile() {
+        String path = ("d:/json/dataBase.json");
+        try {
+            File toDelete = new File(path);
+            toDelete.delete();
+            toDelete.delete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

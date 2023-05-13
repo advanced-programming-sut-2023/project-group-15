@@ -1,6 +1,7 @@
 package org.example.model.building;
 
 import org.example.model.MBC.Soldier;
+import org.example.model.MBC.UnitWallTarget;
 import org.example.model.enums.Products;
 import org.example.model.enums.UnitName;
 import org.example.model.gameData.GameInformation;
@@ -17,9 +18,12 @@ public class Education extends Building {
     }
 
     //TODO decrease people and coins
-    private void Educate(UnitName unitName, int count) {
+    private void Educate(String name, int count) {
         int currentPopularity;
-        String typeToEducate = String.valueOf(unitName);
+        UnitName unitName = UnitName.getUnitType(name);
+        String type = unitName.getType();
+        //switch ()
+        /*String typeToEducate = String.valueOf(unitName);
         for (UnitName unit : UnitName.values()) {
             if (unit.equals(unitName)) {
 
@@ -31,12 +35,14 @@ public class Education extends Building {
                     GameInformation.getCurrentPlayerGovernment().deCoin(unit.getCost());
                     currentPopularity = GameInformation.getCurrentPlayerGovernment().getPopularity();
                     GameInformation.getCurrentPlayerGovernment().setPopularity(currentPopularity - count);
+                    UnitName.getUnitType(name);
+                    if()
                     //GameInformation.getAllSoldiers().add();
 
 
                 }
             }
-        }
+        }*/
     }
 }
 

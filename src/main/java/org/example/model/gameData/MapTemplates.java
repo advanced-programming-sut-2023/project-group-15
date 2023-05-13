@@ -155,8 +155,8 @@ public class MapTemplates {
 
             for (int i = 0; i < mapTemplate1.length; i++) {
                 for (int j = 0; j < mapTemplate1.length; j++) {
-                    obj.put("Land: ", mapTemplate1[i][j].getLandType() +
-                            " bulding: " + mapTemplate1[i][j].getBuilding() +
+                    obj.put("Land: "+ mapTemplate1[i][j].getLandType() +
+                            " bulding: " , mapTemplate1[i][j].getBuilding().toString()+
                             " Tree: " + mapTemplate1[i][j].getTree() +
                             " Soldier: " + mapTemplate1[i][j].getSoldier() +
                             " numberOfSoldiers: " + mapTemplate1[i][j].getNumberOfSoldiers() +

@@ -44,8 +44,8 @@ public class GameInformation {
                 for (int i = 0; i < mapGame; i++) {
                     for (int j = 0; j < mapGame; j++) {
                         LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND:")));
-//                        Building building = BuildingName.getBuildingByName(String.valueOf(jsonobject.get("building:")));
-                        Tree tree = Tree.getTree(String.valueOf(jsonobject.get("Tree:")));
+                        //Building Building = new Building(String.valueOf(jsonobject.get("")))
+                        //Tree tree = Tree.getTree(String.valueOf(jsonobject.get("Tree:")));
                         UnitName unitName = UnitName.getUnitType(String.valueOf("Soldier"));
                         int numberOfSoldires = Integer.parseInt(String.valueOf(jsonobject.get("numberOfSoldiers")));
                         boolean Rock = Boolean.valueOf(String.valueOf(jsonobject.get("ROCK")));

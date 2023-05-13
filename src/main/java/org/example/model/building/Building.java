@@ -88,8 +88,17 @@ public class Building {
     public void setMaterial2(Products material2) {
         this.material2 = material2;
     }
-//    public Building getBuildingByName(String name) {
-//        Building building = new Building();
-//        return building;
-//    }
+
+    @Override
+    public String toString() {
+        return "Building{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                ", material1=" + material1 +
+                ", material2=" + material2 +
+                ", numberOfMaterial1=" + numberOfMaterial1 +
+                ", numberOfMaterial2=" + numberOfMaterial2 +
+                ", owner=" + owner +
+                '}';
+    }
 }

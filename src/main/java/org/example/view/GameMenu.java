@@ -32,6 +32,15 @@ public class GameMenu {
                 System.out.println();
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null)
                 new MapMenu().run(gameMenuMatcher);
+            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FOOD_RATE)) != null)
+                System.out.println();
+            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
+                System.out.println();
+            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
+                System.out.println();
+//                System.out.println(GameMenuController.foodRate());
+            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE)) != null)
+                System.out.println(gameMenuController.taxRate());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_FEAR_RATE)) != null) {
                 int rateNumber = Integer.parseInt(gameMenuMatcher.group("fearRate"));
                 gameMenuController.setFearRate(rateNumber);

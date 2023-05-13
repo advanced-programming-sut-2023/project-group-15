@@ -12,6 +12,8 @@ public enum BuildingCommandsEnum {
             "|(-(x|y)\\s+(\\d+)\\s+(-type)\\s+([a-z]+)\\s+-(x|y)\\s+(\\d+))\\s*$"),
     SELECT_BUILDING("^\\s*select\\s*building\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*))*\\s*$"),
     REPAIR("^\\s*repair\\s*$"),
+    CREATE_UNIT("\\s*create\\s+unit\\s+((-t\\s+(?<type>\\S+)\\s*|(-c\\s+(?<count>\\d+)\\s*))*$"),
+
     ;
     private final String command;
     BuildingCommandsEnum(String command) {
