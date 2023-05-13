@@ -11,12 +11,10 @@ public class Soldier extends Person {
     private int y;
     private final String name;
     private int maxMove;
-    private State state;
-    private User owner;
-    //owner most set in the controller ...
+    private String state;
+    private static User owner;
     private int unitHp;
-
-    public Soldier(int speed, int attackingPower, int defense, int x, int y, int unitHp, int maxMove, String name, State state) {
+    public Soldier(int speed,int attackingPower,int defense,int x,int y , int unitHp ,int maxMove,String name,String state){
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.defense = defense;
@@ -48,11 +46,11 @@ public class Soldier extends Person {
         return this.maxMove;
     }
 
-    public void setState(State state) {
+    public void setState(String state) {
         this.state = state;
     }
 
-    public State getState() {
+    public String getState() {
         return state;
     }
 

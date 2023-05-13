@@ -23,15 +23,15 @@ public class DropUnitController {
     public static void unitType(UnitName unit,int x , int y){
         switch (unit.getType()){
             case "launcher": Soldier soldier = new LauncherUnit(unit.getSpeed(),unit.getAttackingPower(),unit.getDefense(),
-                    x,y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),State.STANDING,unit.getThrowRange());
+                    x,y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),"STANDING",unit.getThrowRange());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier);
                 break;
             case "infantry": Soldier soldier1 = new InfantryUnit(unit.getSpeed(),unit.getAttackingPower(),unit.getDefense(),
-                    x,y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),State.STANDING);
+                    x,y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),"STANDING");
                 GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);
                 break;
             case "wallTarget": Soldier soldier2 = new UnitWallTarget(unit.getSpeed(),unit.getAttackingPower(),unit.getDefense(),
-                    x,y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),State.STANDING);
+                    x,y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),"STANDING");
                 GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier2);
                 break;
         }

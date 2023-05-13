@@ -4,11 +4,15 @@ import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.Soldier;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
+import org.example.model.building.CityBuilding;
 import org.example.model.enums.*;
 import org.example.model.gameData.GameInformation;
+import org.example.view.enums.outputs.GameInformationOutput;
 import org.example.view.enums.outputs.UnitMenuOutput;
 import org.example.model.building.BuildingName;
 import org.example.model.enums.State;
+
+import java.util.ArrayList;
 
 
 public class UnitMenuController {
@@ -16,7 +20,6 @@ public class UnitMenuController {
     public UnitWallTarget unitWallTarget;
     public BuildingName buildingName;
     public Building building;
-    public State state;
     Soldier soldier;
     public String type;
     public int x1, y1;
@@ -24,22 +27,21 @@ public class UnitMenuController {
     public int patX1, patX2, patY1, patY2;
     public int bounds;
     public int maxRage;
+    public boolean checkSelect = false;
     public boolean stopPatrolling = true;
 
     public UnitMenuOutput selectUnit(int x, int y) {
-  /*     if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null){
-           soldier = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();
-        x1 = x;
-        y1 = y;
-        return UnitMenuOutput.UNIT_FOUND;
-       }*/
-
-        //  else
-        return UnitMenuOutput.UNIT_NOT_FOUND;
+        if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) {
+            soldier = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();
+            x1 = x;
+            y1 = y;
+            return UnitMenuOutput.UNIT_FOUND;
+        } else
+            return UnitMenuOutput.UNIT_NOT_FOUND;
     }
 
     public UnitMenuOutput moveUnit(int x, int y) {
-        //soldier.getName();
+
         int indexOfType = UnitName.valueOf(type).ordinal();
         int deltaX = Math.abs(x - x1);
         int deltaY = Math.abs(y - y1);
@@ -49,7 +51,7 @@ public class UnitMenuController {
                     landType.equals(LandType.SEA) || landType.equals(LandType.SMALL_POND) || landType.equals(LandType.ROCK) || landType.equals(LandType.PEBBLE))
                 return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;
         }
-        if (indexOfType < 7) {
+
             int maxMove = soldier.getMaxMove();
             if (deltaX > maxMove || deltaY > maxMove) {
                 bounds++;
@@ -57,30 +59,12 @@ public class UnitMenuController {
             } else {
                 x1 += deltaX;
                 y1 += deltaY;
-                // TODO: add code to move unit in map
+                soldier.setX(x1);
+                soldier.setY(y1);
                 return UnitMenuOutput.SUCCESSFUL_MOVE;
             }
-        } else if (indexOfType <= 12) {
-            int maxMove = soldier.getMaxMove();
-            if (deltaX > maxMove || deltaY > maxMove)
-                return UnitMenuOutput.OUT_OF_BOUNDS;
-            else {
-                x1 += deltaX;
-                y1 += deltaY;
-                // TODO: add code to move unit in map
-                return UnitMenuOutput.SUCCESSFUL_MOVE;
-            }
-        } else {
-            int maxMove = soldier.getMaxMove();
-            if (deltaX > maxMove || deltaY > maxMove)
-                return UnitMenuOutput.OUT_OF_BOUNDS;
-            else {
-                x1 += deltaX;
-                y1 += deltaY;
-                // TODO: add code to move unit in map
-                return UnitMenuOutput.SUCCESSFUL_MOVE;
-            }
-        }
+
+
     }
 
     public UnitMenuOutput digTunnel(int x, int y) {
@@ -92,23 +76,23 @@ public class UnitMenuController {
         else if (checkMove.equals("unit do not allowed to place there"))
             return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;
         if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {
-            Building buildingName = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
-  /*          switch (buildingName) {
-                case PERMETER_TOWER,LOOKOUT_TOWER,DEFEND_TURRET,SQUARE_TOWER,CIRCLE_TOWER:
-                    //remove building
+            Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
+            switch (building.getName()) {
+                case "permeter tower", "lookout tower", "defend turret", "square tower", "circle tower":
+                    GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(null);
                     return UnitMenuOutput.SUCCESSFUL_DIG;
                 default:
                     return UnitMenuOutput.WRONG_BUILDING;
             }
-        }
-            else*/
-        }
-        return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;
+        } else
+            return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;
+
+
     }
 
-    private void setUnit(int x, int y, State state) {
-        // TODO: add code to get unit from map
 
+    private void setState(int x, int y, String state) {
+        soldier.setState(state);
     }
 
     public UnitMenuOutput airAttack(int x, int y) {
@@ -123,55 +107,84 @@ public class UnitMenuController {
 
             if (deltaX <= maxRage && deltaY <= maxRage) {
                 if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {
-                    //Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
-                    // building.setHp(building.getHp()-soldier.getAttackingPower());
+                    Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
+                    building.setHp(building.getHp() - soldier.getAttackingPower());
                 } else if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) {
-                    //  Soldier unit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();
-                    //  soldier.setUnitHp(unit.getUnitHp()-soldier.getAttackingPower());
+                    Soldier unit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();
+                    unit.setUnitHp(unit.getUnitHp() + unit.getDefense() - soldier.getAttackingPower());
                 }
 
                 return UnitMenuOutput.SUCCESSFUL_AIR_ATTACK;
             } else return UnitMenuOutput.OUT_OF_BOUNDS;
         }
+
     }
 
     public UnitMenuOutput disbandUnit() {
-        //TODO: get location from map
-        return UnitMenuOutput.UNIT_DISBANDED;
+        ArrayList building = GameInformation.getAllBuildings();
+        for (int i = 0; i != building.size(); i++) {
+            Building building1 = (Building) building.get(i);
+            if (building1.getName().equals("Hovel")) {
+                int x = building1.getxCoordinate();
+                int y = building1.getyCoordinate();
+                moveUnit(x, y);
+                return UnitMenuOutput.UNIT_DISBANDED;
+            }
+        }
+        return UnitMenuOutput.ERROR_DISBAND;
     }
 
     public UnitMenuOutput buildEquipment(String equipment) {
         if (type.toUpperCase().equals("ENGINEER")) {
             if (equipment.toUpperCase().equals("TREBUCHET")) {
-                //TODO: check if we have min 10 woods and 10 rocks
-                //TODO: add trebuchet in map
-                return UnitMenuOutput.SUCCESSFUL_BUILD_TREBUCHET;
+                if ((GameInformation.checkForSources(Products.WOOD, 10).equals(
+                        GameInformationOutput.SUCCESS)) && (GameInformation.checkForSources(Products.ROCK, 5).equals(
+                        GameInformationOutput.SUCCESS)))
+                    return UnitMenuOutput.SUCCESSFUL_BUILD_TREBUCHET;
+
+                else return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
             if (equipment.toUpperCase().equals("CATAPULTS")) {
-                //TODO: check if we have min 5 woods and 5 rocks
-                //TODO: add catapults in map
-                return UnitMenuOutput.SUCCESSFUL_BUILD_CATAPULTS;
+                if ((GameInformation.checkForSources(Products.WOOD, 5).equals(
+                        GameInformationOutput.SUCCESS)) && (GameInformation.checkForSources(Products.ROCK, 5).equals(
+                        GameInformationOutput.SUCCESS)))
+                    return UnitMenuOutput.SUCCESSFUL_BUILD_CATAPULTS;
+
+                return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
             if (equipment.toUpperCase().equals("PORTABLE SHIELD")) {
-                //TODO: check if we have min 10 irons
-                //TODO: add a place in map
-                return UnitMenuOutput.SUCCESSFUL_BUILD_SHIELD;
+                if (GameInformation.checkForSources(Products.IRON, 10).equals(
+                        GameInformationOutput.SUCCESS))
+                    return UnitMenuOutput.SUCCESSFUL_BUILD_SHIELD;
+
+                return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
             if (equipment.toUpperCase().equals("BATTERING RAM")) {
-                //TODO: check if we have min 20 woods
-                //TODO: add battering ram in map
-                return UnitMenuOutput.SUCCESSFUL_BUILD_BATTERING_RAM;
+                if (GameInformation.checkForSources(Products.WOOD, 20).equals(
+                        GameInformationOutput.SUCCESS))
+                    return UnitMenuOutput.SUCCESSFUL_BUILD_BATTERING_RAM;
+
+                return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
+
+            return UnitMenuOutput.WRONG_BUILDING_EQ;
         }
         return UnitMenuOutput.WRONG_UNIT_ENGINEER;
     }
 
     public UnitMenuOutput pourOil(String direction) {
 
-        String validEngineer = type.toUpperCase();
-        if (type.toUpperCase().equals("ENGINEER")) {
-            //TODO: check if engineer has a oil bowl
-            //TODO: call move to the building and back
+        if (soldier.getName().toUpperCase().equals("ENGINEER")) {
+            ArrayList building = GameInformation.getAllBuildings();
+            for (int i = 0; i != building.size(); i++) {
+                Building building1 = (Building) building.get(i);
+                if (building1.getName().equals("oil smelter")) {
+                    int x = building1.getxCoordinate();
+                    int y = building1.getyCoordinate();
+                    moveUnit(x, y);
+                    moveUnit(soldier.getX() - x, soldier.getY() - y);
+                }
+            }
             switch (Direction.valueOf(direction.toUpperCase())) {
                 case UP:
                     y1++;
@@ -185,29 +198,27 @@ public class UnitMenuController {
                 case RIGHT:
                     x1++;
             }
-            //TODO: set oil at x1,y1 in map
 
             return UnitMenuOutput.SUCCESSFUL_POUR_OIL;
         } else return UnitMenuOutput.WRONG_UNIT_ENGINEER;
-
-
     }
 
     public UnitMenuOutput digDitch(int x, int y) {
 
         if (type.toUpperCase().equals("SPEARMEN")) {
-            //TODO: create ditch in map
             String checkMove = moveUnit(x, y).getOutput();
             if (checkMove.equals("Your destination is beyond the soldier's power\ntry again"))
                 return UnitMenuOutput.OUT_OF_BOUNDS;
-            System.out.println(x1 + " , " + y1);
-            return UnitMenuOutput.SUCCESSFUL_DIG_DITCH;
+            else {
+                //create ditch
+                        GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
+                return UnitMenuOutput.SUCCESSFUL_DIG_DITCH;
+            }
         } else return UnitMenuOutput.WRONG_UNIT_TO_DIG_DITCH;
     }
 
     public UnitMenuOutput patrolUnit(int x, int y, int x2, int y2) {
         String checkMove = moveUnit(x, y).getOutput();
-        // System.out.println(checkMove);
         if (checkMove.equals("Your destination is beyond the soldier's power\ntry again")) {
             x1 -= x;
             y1 -= y;
@@ -224,10 +235,7 @@ public class UnitMenuController {
 
         System.out.println("unit started patrolling...");
 
-       /* while(stopPatrolling){
 
-           //System.out.println("xxxx");
-        }*/
         patX1 = x;
         patY1 = y;
         patX2 = x2;
@@ -255,8 +263,8 @@ public class UnitMenuController {
             return UnitMenuOutput.OUT_OF_BOUNDS;
         } else {
             if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) {
-                //  Soldier unit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();
-                //  soldier.setUnitHp(unit.getUnitHp() + unit.getDeffense() -soldier.getAttackingPower());
+                Soldier unit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();
+                soldier.setUnitHp(unit.getUnitHp() + unit.getDefense() - soldier.getAttackingPower());
                 return UnitMenuOutput.SUCCESSFUL_ATTACK;
             } else return UnitMenuOutput.UNIT_NOT_FOUND;
         }
@@ -266,24 +274,21 @@ public class UnitMenuController {
         Building building;
         Soldier unit;
 
-   /*     if((GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) && (soldier.getName().equals(UnitName.SPEARMEN)||soldier.getName().equals(UnitName.MACEMEN)) ){
-            attackUnit(x,y);
+        if ((GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) && (soldier.getName().equals(UnitName.SPEARMEN) || soldier.getName().equals(UnitName.MACEMEN))) {
+            attackUnit(x, y);
         }
-        if(GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null && (soldier.getName().equals(UnitName.SPEARMEN)||soldier.getName().equals(UnitName.MACEMEN) ||
-                soldier.getName().equals(UnitName.LADDERMEN) || soldier.getName().equals(UnitName.ASSASSINS) )){
-                    if(GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding().getName().equals("Small stone gatehouse") ||
-                            GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding().getName().equals("big stone gatehouse") ){
-                        return UnitMenuOutput.CONQUERING_AND_OPENING_THE_GATE;}
+        if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null && (soldier.getName().equals(UnitName.SPEARMEN) || soldier.getName().equals(UnitName.MACEMEN) ||
+                soldier.getName().equals(UnitName.LADDERMEN) || soldier.getName().equals(UnitName.ASSASSINS))) {
+            if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding().getName().equals("Small stone gatehouse") ||
+                    GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding().getName().equals("big stone gatehouse")) {
+                return UnitMenuOutput.CONQUERING_AND_OPENING_THE_GATE;
+            } else
+                return UnitMenuOutput.CONQUERING;
 
-                        else
-                            return UnitMenuOutput.CONQUERING;
-
-        }*/
+        }
         return UnitMenuOutput.SUCCESSFUL_ATTACK;
     }
 
-    public void figuringApproachEnemy() {
-        //check from turn if attack or move
-        //get x , y and check
-    }
+
+
 }

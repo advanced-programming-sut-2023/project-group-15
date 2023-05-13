@@ -3,6 +3,7 @@ package org.example;
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
 import org.example.model.gameData.GameDataBase;
+import org.example.view.GameMenu;
 import org.example.view.MainMenu;
 
 import org.example.model.User;
@@ -10,7 +11,8 @@ import org.example.model.User;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the game!");
-        new MainMenu().checkUsersFlag();
+        new GameMenu().run();
+  /*      new MainMenu().checkUsersFlag();
         new MainMenu().run();
         for (User user : GameDataBase.getAllUsers()) {
             System.out.println("username: " + user.getUsername());
@@ -18,7 +20,7 @@ public class Main {
             System.out.println("email: " + user.getEmail());
             System.out.println("slogan: " + user.getSlogan());
         }
-//        new GameMenu().run();
+//
         System.out.println("Welcome to the game!");
         if (Products.APPLE.name().equals(String.valueOf(StoreProducts.APPLE)))
             System.out.println(Products.APPLE.name());
@@ -51,6 +53,6 @@ public class Main {
         // controller.dropProductiveBuilding(0 , 0 , MILL);
         // new mapMenu().run();
         //System.out.println(map.findATile(0 , 0).getLandType());
-        //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());
+        //System.out.println(map.getCurrentMap()[0][0].getBuilding().getName());*/
     }
 }
