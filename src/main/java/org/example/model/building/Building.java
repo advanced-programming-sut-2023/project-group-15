@@ -5,6 +5,8 @@ import org.example.model.User;
 import org.example.model.enums.*;
 import org.example.model.gameData.*;
 
+import java.util.StringJoiner;
+
 public class Building {
     private final String name;
     private int hp;
@@ -13,7 +15,7 @@ public class Building {
     private Products material1;
     private Products material2;
     private final int numberOfMaterial1;
-    private int numberOfMaterial2;
+    private final int numberOfMaterial2;
     private User owner = GameInformation.getCurrentPlayer();
 
     public Building(String name, int hp, int xCoordinate, int yCoordinate,
@@ -28,7 +30,6 @@ public class Building {
         this.numberOfMaterial1 = numberOfMaterial1;
         this.numberOfMaterial2 = numberOfMaterial2;
         this.owner = GameInformation.getCurrentPlayer();
-
     }
 
     public String getName() {
@@ -87,6 +88,8 @@ public class Building {
     public void setMaterial2(Products material2) {
         this.material2 = material2;
     }
-
-
+//    public Building getBuildingByName(String name) {
+//        Building building = new Building();
+//        return building;
+//    }
 }

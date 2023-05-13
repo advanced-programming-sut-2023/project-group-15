@@ -5,6 +5,7 @@ import org.example.model.MBC.Soldier;
 import org.example.model.Tile;
 import org.example.model.User;
 import org.example.model.building.Building;
+import org.example.model.building.BuildingName;
 import org.example.model.building.Storage;
 import org.example.model.enums.*;
 import org.example.view.enums.outputs.GameInformationOutput;
@@ -43,7 +44,7 @@ public class GameInformation {
                 for (int i = 0; i < mapGame; i++) {
                     for (int j = 0; j < mapGame; j++) {
                         LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND:")));
-                        //BuildingName buildingName = BuildingName.getBuildingByName(String.valueOf(jsonobject.get("building:")));
+//                        Building building = BuildingName.getBuildingByName(String.valueOf(jsonobject.get("building:")));
                         Tree tree = Tree.getTree(String.valueOf(jsonobject.get("Tree:")));
                         UnitName unitName = UnitName.getUnitType(String.valueOf("Soldier"));
                         int numberOfSoldires = Integer.parseInt(String.valueOf(jsonobject.get("numberOfSoldiers")));

@@ -16,13 +16,14 @@ public class BuildingController {
     private String coordinateX;
     private String coordinateY;
     private Building selectedBuilding;
-    People people;
-    Worker worker;
+    private People people;
+    private int numberOfWorker;
 
     public BuildingController() {
         this.type = null;
         this.coordinateX = null;
         this.coordinateY = null;
+        this.numberOfWorker = 0;
     }
 
     public String getType() {
@@ -49,9 +50,7 @@ public class BuildingController {
         this.coordinateY = coordinateY;
     }
 
-    public void dropBuilding(Matcher matcher) {
-        String type;
-        boolean canBuild = false;
+    public void findBuildingDroperType(Matcher matcher) {
         int x, y;
         x = Integer.parseInt(Objects.requireNonNull(Utility.groupFinder(matcher, "x")));
         y = Integer.parseInt(Objects.requireNonNull(Utility.groupFinder(matcher, "y")));
@@ -61,8 +60,7 @@ public class BuildingController {
         else {
             String name;
             name = Utility.groupFinder(matcher, "type");
-            canBuild = checkForBuildingMaterial(name);
-            if (!canBuild)
+            if (!checkForBuildingMaterial(name))
                 System.out.println("not enough resources to build this building");
             else {
                 buildingTypeFinder(x, y, name);
@@ -75,7 +73,6 @@ public class BuildingController {
             for (int j = 0; j < GameInformation.getCurrentPlayerMap()[0].length; j++) {
                 if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding() != null)
                     selectedBuilding = GameInformation.getCurrentPlayerMap()[i][j].getBuilding();
-
             }
         }
     }
@@ -124,7 +121,7 @@ public class BuildingController {
     {
         if(people.getPeopleNumber() >= buildingName.getNumberOfWorkers()) {
             people.removerPeople(buildingName.getNumberOfWorkers());
-            worker.addWorker(buildingName.getNumberOfWorkers());
+            numberOfWorker += buildingName.getNumberOfWorkers();
             return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
 
         }

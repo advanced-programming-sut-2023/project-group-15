@@ -7,7 +7,7 @@ import org.example.model.gameData.GameInformation;
 
 public class GameInformationController {
     public void setMap(int mapSize, int mapNumber) {
-        String filePath = null;
+        String filePath = "d:/Map/";
         switch (mapNumber) {
             case (1):
                 filePath = FilePaths.MAP1.getFilePaths();

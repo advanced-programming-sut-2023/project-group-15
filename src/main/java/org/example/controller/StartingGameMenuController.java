@@ -20,9 +20,6 @@ public class StartingGameMenuController {
     public void newGame(int mapSize,int mapNumber) {
 //        gameOwner.setUserNO(1);
 //        GameDataBase.getCurrentUser().setUserNO(1);
-        mapSize = InputScanner.getScanner().nextInt();
-        System.out.println("now please choose between these 2 maps");
-        mapNumber = InputScanner.getScanner().nextInt();
         controller.setMap(mapSize, mapNumber);
 //        MapInitialization.run();
         newGameAccess = false;

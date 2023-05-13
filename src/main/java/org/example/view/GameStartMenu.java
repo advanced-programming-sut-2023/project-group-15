@@ -25,11 +25,27 @@ public class GameStartMenu{
                 System.out.println("select your map with this command:\nmap select -a <area> -t <type>\n(area most be 200 or 400,type most be 1 or 2!)");
                 String input = InputScanner.getScanner().nextLine();
                 if ((matcher = GameStartMenuEnum.getMatcher(input,GameStartMenuEnum.SELECT_MAP))!=null) {
-                    //check inputs
+                    if (checkSelectMapInputs(matcher)) {
+                        int mapSize = Integer.parseInt(matcher.group("area"));
+                        int mapNumber = Integer.parseInt(matcher.group("type"));
+                        startingGameMenuController.newGame(mapSize,mapNumber);
+                    } else {
+                        System.out.println("your inputs are not valid!,\ntey again!");
+                    }
+                } else if (input.matches("\\s*quit\\s*")) {
+                    return;
+                } else {
+                    System.out.println("invalid command!,enter \"quit\" to cancel the process");
                 }
             }
-            startingGameMenuController.newGame();
         } else
             System.out.println(GameStartMenuOutput.USER_HAS_STARTED_GAME);
+    }
+
+    private boolean checkSelectMapInputs(Matcher matcher) {
+        if (matcher.group("area").equals("200")||matcher.group("area").equals("400")) {
+            return matcher.group("type").equals("1") || matcher.group("type").equals("2");
+        }
+        return false;
     }
 }
