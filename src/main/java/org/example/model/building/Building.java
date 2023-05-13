@@ -88,5 +88,16 @@ public class Building {
         this.material2 = material2;
     }
 
-
+    @Override
+    public String toString() {
+        return "Building{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                ", material1=" + material1 +
+                ", material2=" + material2 +
+                ", numberOfMaterial1=" + numberOfMaterial1 +
+                ", numberOfMaterial2=" + numberOfMaterial2 +
+                ", owner=" + owner +
+                '}';
+    }
 }

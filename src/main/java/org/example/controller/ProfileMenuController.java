@@ -16,6 +16,7 @@ public class ProfileMenuController extends LoginMenuController {
                 if (user.getUsername().equals(this.getUsername())) {
                     user.setUsername(username);
                     this.setUsername(username);
+                    moveDataToFile();
                     return ProfileMenuOutput.USERNAME_CHANGED_SUCCESSFULLY;
                 }
             }
