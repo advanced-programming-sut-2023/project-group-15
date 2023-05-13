@@ -33,6 +33,7 @@ public enum UnitMenuOutput {
     SUCCESSFUL_DROP_UNIT("successful drop unit"),
     NOT_ENOUGH_RESOURCES("not enough resources"),
     WRONG_BUILDING_EQ("you choose the wrong building"),
+    SET_STATE("successful set state"),
     ;
     private final String output;
 

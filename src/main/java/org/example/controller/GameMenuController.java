@@ -188,7 +188,7 @@ public class GameMenuController {
         switch (rate) {
             //TODO: add code to Increase in the production of buildings by workers
             case -5, -4, -3, -2, -1, 0:
-                for(int i = 0 ; i != building.size() ; i++){
+                for (int i = 0; i != building.size(); i++) {
                     Building building1 = (Building) building.get(i);
                 }
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower() - 1);

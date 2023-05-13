@@ -10,9 +10,10 @@ public class MarketController {
     public Market market;
     public Government government;
 
-    public MarketController(){
+    public MarketController() {
         government = new Government();
     }
+
     public HashMap show1() {
 
         return market.getNumber();
