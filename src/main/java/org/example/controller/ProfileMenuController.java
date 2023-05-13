@@ -84,7 +84,7 @@ public class ProfileMenuController extends LoginMenuController {
         User user = User.findUserWithPass(this.getPassword());
         System.out.println("username:" + Objects.requireNonNull(user).getUsername());
         StringBuilder password = new StringBuilder("*");
-        for (int i = 1; i < this.getPassword().length(); i++) {
+        for (int i = 1; i < this.getClipBoard().length(); i++) {
             password.append("*");
         }
         System.out.println("password:" + password);

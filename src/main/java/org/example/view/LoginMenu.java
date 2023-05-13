@@ -22,9 +22,9 @@ public class LoginMenu extends MainMenu {
     public void run() {
         String userInput;
         System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());
+        ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
         while (true) {
             userInput = InputScanner.getScanner().nextLine();
-            ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
                 return;
             else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
@@ -47,11 +47,12 @@ public class LoginMenu extends MainMenu {
                 profileMenu.displayUserRank();
             } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
                 profileMenu.displayUserInfo();
+            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.START_NEW_GAME))!=null) {
+                new GameStartMenu(loginMenuController).startNewGame();
             } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
-                //not sure
-                new GameStartMenu().addUser(loginMenuMatcher);
+                new GameStartMenu(loginMenuController).addPlayer(loginMenuMatcher);
             } else if (GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ENTER_GAME)!=null) {
-                new UserTurnController().checkUserTurn();
+                new UserTurn(loginMenuController).enterGame();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!= null) {
                 System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
                 break;
@@ -76,6 +77,7 @@ public class LoginMenu extends MainMenu {
         String password = matcher.group("password");
         byte[] salt = Utility.makeSalt();
         loginMenuController.setPassword(Utility.getPassHashSha256(password,salt));
+        loginMenuController.setClipBoard(matcher.group("password"));
         if (matcher.group("logged") != null)
             loginMenuController.setStayLoggedInFlag(true);
     }

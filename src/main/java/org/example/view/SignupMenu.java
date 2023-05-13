@@ -48,7 +48,9 @@ public class SignupMenu extends MainMenu {
     }
 
     private SignupMenuOutput sloganCheck() {
-        if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
+        if (signupMenuController.getSlogan() == null)
+            return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
             slogans();
             System.out.println("choose one of these slogans (enter the number):");
             while (true) {

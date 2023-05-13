@@ -18,6 +18,7 @@ public class Main {
             System.out.println("nickname: "+ user.getNickname());
             System.out.println("email: " + user.getEmail());
             System.out.println("slogan: " + user.getSlogan());
+            System.out.println("user number: "+ user.getUserNO());
         }
 //
         //new GameMenu().run();

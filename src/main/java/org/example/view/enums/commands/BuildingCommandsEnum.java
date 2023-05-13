@@ -7,11 +7,11 @@ public enum BuildingCommandsEnum {
     DROP_BUILDING("drop building -((x|y) (\\d+) -(x|y) (\\d+) (-type) ([a-z]+))" +
             "|((-type) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
             "|(-(x|y) (\\d+) (-type) ([a-z]+) -(x|y) (\\d+))"),
-    DROP_BUILDING2("^\\s*drop\\s+building\\s+-((x|y)\\s+(\\\\d+)\\s+-(x|y)\\s+(\\\\d+)\\s+(-type)\\s+([a-z]+))" +
-            "|((-type) ([a-z]+) -(x|y) (\\\\d+) -(x|y) (\\\\d+))\" +\n" +
-            "            \"|(-(x|y) (\\\\d+) (-type) ([a-z]+) -(x|y) (\\\\d+))"),
-    SELECT_BUILDING("^\\s*select\\s*building\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*))*$"),
-    REPAIR("\\s*repair\\s*"),
+    DROP_BUILDING2("^\\s*drop\\s+building\\s+-((x|y)\\s+(\\\\d+)\\s+-(x|y)\\s+(\\d+)\\s+(-type)\\s+([a-z]+))" +
+            "|((-type)\\s+([a-z]+)\\s+-(x|y)\\s+(\\d+)\\s+-(x|y)\\s+(\\d+))" +
+            "|(-(x|y)\\s+(\\d+)\\s+(-type)\\s+([a-z]+)\\s+-(x|y)\\s+(\\d+))\\s*$"),
+    SELECT_BUILDING("^\\s*select\\s*building\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*))*\\s*$"),
+    REPAIR("^\\s*repair\\s*$"),
     ;
     private final String command;
     BuildingCommandsEnum(String command) {

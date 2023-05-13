@@ -31,6 +31,7 @@ public class User {
     int lastOrderIndex = 0;
 
     public User(String username, String password, String nickname, String email, String passRecoveryQuestion, String passRecoveryAnswer, int rank, int highScore) {
+        this.userNO = 0;
         this.username = username;
         this.password = password;
         this.nickname = nickname;
@@ -47,6 +48,7 @@ public class User {
     }
 
     public User(String username, String password, String nickname, String email, String slogan, String passRecoveryQuestion, String passRecoveryAnswer, String rank, String highScore) {
+        this.userNO = 0;
         this.username = username;
         this.password = password;
         this.slogan = slogan;
@@ -64,6 +66,7 @@ public class User {
     }
 
     public User(String username, String password, String nickname, String email) {
+        this.userNO = 0;
         this.username = username;
         this.password = password;
         this.nickname = nickname;
@@ -80,6 +83,7 @@ public class User {
     }
 
     public User(String username, String password, String nickname, String email, String slogan) {
+        this.userNO = 0;
         this.username = username;
         this.password = password;
         this.nickname = nickname;

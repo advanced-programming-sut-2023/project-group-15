@@ -28,9 +28,12 @@ public class MapChangesEnvironment {
                 controller.dropTree(matcher);
             else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_BUILDING)) != null)
                 new BuildingController().dropBuilding(matcher);
-        /*    else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_UNIT)) != null)
-                controller.dropUnit(matcher);*/
-
+            else if ((matcher = MapEnum.getMatcher(command, MapEnum.DROP_UNIT)) != null) {
+//                controller.dropUnit(matcher);
+            } else if (command.matches("\\s*exit\\s*")) {
+                return;
+            } else
+                System.out.println("invalid command!");
         }
     }
 }
