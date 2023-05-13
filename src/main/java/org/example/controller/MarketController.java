@@ -19,7 +19,7 @@ public class MarketController {
         return market.getBuyCoin();
     }
 
-    public static GameMenuOutput sell(String item, int number) {
+  /*  public static GameMenuOutput sell(String item, int number) {
         if (market.getNumberOfItem(item) >= number) {
             market.sellItemNumber(item, number);
             Government.InCoin(number * market.getSellCoin(item));
@@ -29,7 +29,7 @@ public class MarketController {
             return GameMenuOutput.ERROR_SELL;
     }
 
-    public static GameMenuOutput buy(String item, int number) {
+    /*public static GameMenuOutput buy(String item, int number) {
         if (Government.getCoins() >= number * market.getBuyCoin(item)) {
             market.buyItemNumber(item, number);
             Government.deCoin(number * market.getBuyCoin(item));
@@ -38,6 +38,6 @@ public class MarketController {
         } else
             return GameMenuOutput.ERROR_BUY_ITEM;
 
-    }
+    }*/
 
 }

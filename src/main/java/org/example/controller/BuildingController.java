@@ -1,9 +1,12 @@
 package org.example.controller;
 
+import org.example.model.MBC.People;
+import org.example.model.MBC.Worker;
 import org.example.model.Tile;
 import org.example.model.building.*;
 import org.example.model.gameData.*;
 import org.example.view.enums.outputs.BuildingStatusOutput;
+import org.example.view.enums.outputs.GameInformationOutput;
 
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -12,6 +15,9 @@ public class BuildingController {
     private String type;
     private String coordinateX;
     private String coordinateY;
+    private Building selectedBuilding;
+    People people;
+    Worker worker;
 
     public BuildingController() {
         this.type = null;
@@ -64,20 +70,42 @@ public class BuildingController {
         }
     }
 
-    public void selectBuilding() {
+    public void selectBuilding(int x, int y) {
+        for (int i = 0; i < GameInformation.getCurrentPlayerMap().length; i++) {
+            for (int j = 0; j < GameInformation.getCurrentPlayerMap()[0].length; j++) {
+                if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding() != null)
+                    selectedBuilding = GameInformation.getCurrentPlayerMap()[i][j].getBuilding();
+
+            }
+        }
+    }
+
+    public void selectForChangingTax(int tax) {
+        String name = selectedBuilding.getName();
+        if (name.equals("BIG_STONE_GATEHOUSE") || name.equals("SMALL_STONE_GATEHOUSE"))
+            GameInformation.getCurrentPlayerGovernment().setTaxRate(tax);
 
     }
 
+       /* public void selectForEducate()
+        {
+            if(selectedBuilding instanceof Education)
+                selectedBuilding.Educate();
+        }*/
+    //TODO add education
+
+
     public void dropProductiveBuilding(int x, int y, String name) {
+
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
-                Building newBuilding = new ProductiveBuilding(name, 100, x, y, building.getMaterial1Name()
-                        , building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial2(),
-                        building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
-                GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
-                GameInformation.getAllBuildings().add(newBuilding);
-                return;
-
+                if(checkForWorkers(building).equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput())) {
+                    Building newBuilding = new ProductiveBuilding(name, 100, x, y, building.getMaterial1Name()
+                            , building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial2(),
+                            building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
+                    GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
+                    GameInformation.getAllBuildings().add(newBuilding);
+                }
             }
         }
     }
@@ -91,6 +119,16 @@ public class BuildingController {
                 GameInformation.getAllBuildings().add(newBuilding);
             }
 
+    }
+    public String checkForWorkers(BuildingName buildingName)
+    {
+        if(people.getPeopleNumber() >= buildingName.getNumberOfWorkers()) {
+            people.removerPeople(buildingName.getNumberOfWorkers());
+            worker.addWorker(buildingName.getNumberOfWorkers());
+            return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
+
+        }
+        return BuildingStatusOutput.DROP_FORBID.getOutput();
     }
 
     public void dropCityBuilding(int x, int y, String name) {
@@ -149,14 +187,10 @@ public class BuildingController {
         return false;
     }
 
-    public BuildingStatusOutput checkParameters() {
-        if (this.getCoordinateX().matches("\\s*\\d+\\s*")) {
-            if (this.getCoordinateY().matches("\\s*\\d+\\s*")) {
-                //TODO: searching on type of buildings
-            }
-            return BuildingStatusOutput.INVALID_Y_COORDINATE;
-        }
-        return BuildingStatusOutput.INVALID_X_COORDINATE;
+    public String checkParameters(int x, int y, String name) {
+        if (GameInformation.getCurrentPlayerMap()[x][y].getBuilding().getName().equals(name))
+            return BuildingStatusOutput.INVALID_COORDINATE.getOutput();
+        return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
     }
 
     public BuildingStatusOutput checkTheLand(int x, int y) {
@@ -182,6 +216,22 @@ public class BuildingController {
             dropMarket(x, y, name);
     }
 
+    public String repair() {
+        String name = selectedBuilding.getName();
+        String status1 = null , status2 = null;
+        int completeHp = BuildingName.getBuildingName(name).getHp();
+        if (selectedBuilding.getHp() < completeHp) {
+            if (selectedBuilding.getMaterial1() != null)
+                status1 = GameInformation.checkForSources(selectedBuilding.getMaterial1(), selectedBuilding.getNumberOfMaterial1());
+            if(selectedBuilding.getMaterial2() != null)
+                status2 = GameInformation.checkForSources(selectedBuilding.getMaterial2() , selectedBuilding.getNumberOfMaterial2());
+        }
+        if(status1 .equals(GameInformationOutput.NOT_ENOUGH) || status2.equals(GameInformationOutput.NOT_ENOUGH))
+            return BuildingStatusOutput.REPAIR_FORBID.getOutput();
+        else
+            return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
+
+    }
 }
 
 

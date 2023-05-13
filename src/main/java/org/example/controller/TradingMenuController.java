@@ -13,6 +13,8 @@ import org.example.view.enums.outputs.GameInformationOutput;
 import java.util.Map;
 import java.util.regex.Matcher;
 
+import static org.example.controller.Utility.groupFinder;
+
 public class TradingMenuController {
     public void showUserslist() {
         for (Map.Entry<User, Integer> entry : GameInformation.getPlayers().entrySet())
@@ -57,10 +59,17 @@ public class TradingMenuController {
         }
     }
 
-    public void acceptRequest(Trade trade) {
+    public void acceptRequest(Matcher matcher) {
+        Trade trade = null;
+        if (groupFinder(matcher, "id") == null) {
+            System.out.println("invlaid command");
+            return;
+        }
+        int id = Integer.parseInt(groupFinder(matcher, "id"));
+        trade = GameInformation.getCurrentPlayer().getTradeReqList().get(id);
         Storage storage = null;
         String message1 = GameInformation.checkForSources(trade.getProduct(), trade.getAmount());
-        if (message1.equals(GameInformationOutput.NOT_ENOUGH.getOutput())) {
+        if (message1.equals(GameInformationOutput.NOT_ENOUGH)) {
             System.out.println(message1);
             return;
         }
@@ -68,19 +77,19 @@ public class TradingMenuController {
             System.out.println("not enough coins for the trade sender");
             return;
         }
-        if (message1.equals(GameInformationOutput.SUCCESS.getOutput())) {
-            for (StoreProducts storeProducts : StoreProducts.values()) {
+
+        if (message1.equals(GameInformationOutput.SUCCESS)) {
+            for (StoreProducts storeProducts : StoreProducts.values())
                 if (trade.getProduct().name().equals(String.valueOf(storeProducts)))
                     storage = (Storage) GameInformation.findBuilding(storeProducts.getStoreType(), trade.getSender());
-            }
             storage.addonStorageWithAmount(trade.getProduct(), trade.getAmount());
             trade.getSender().getTradeHistoryList().add(trade);
             trade.getReceiver().getTradeHistoryList().add(trade);
             trade.getSender().getTradeSendList().remove(trade);
             trade.getReceiver().getTradeReqList().remove(trade);
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
-        }
 
+        }
     }
 
     public static void listOfNewOrders() {

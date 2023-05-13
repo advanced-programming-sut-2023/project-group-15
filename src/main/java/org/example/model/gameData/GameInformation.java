@@ -115,11 +115,11 @@ public class GameInformation {
     public static String checkForSources(Products product, int amount) {
         int current;
         Storage store = null;
-        /*for(StoreProducts storeProduct : StoreProducts.values()) {
+        for(StoreProducts storeProduct : StoreProducts.values()) {
             if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
-                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , );
+                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , GameInformation.getCurrentPlayer());
             }
-        }*/
+        }
         if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
             current = store.getGoods().get(product);
             store.getGoods().remove(product);
@@ -127,7 +127,6 @@ public class GameInformation {
             return GameInformationOutput.SUCCESS.getOutput();
         }
         return GameInformationOutput.NOT_ENOUGH.getOutput();
-        //TODO change the return type to enum
     }
 
     public static Government getCurrentPlayerGovernment() {

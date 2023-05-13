@@ -14,6 +14,7 @@ public enum TradingMenuEnum {
     SHOW_PRICELIST("^\\s*show\\s+price\\s+list\\s*$"),
 
     BUY("buy ((-i) ([a-z]+) (-a) ([a-z]+))|((-a) ([a-z]+) (-i) ([a-z]+))"),
+    SELECT_USER("select user -u (?<username>\\S*) "),
 
     SELL("sell ((-i) ([a-z]+) (-a) ([a-z]+))|((-a) ([a-z]+) (-i) ([a-z]+))"),
     ;

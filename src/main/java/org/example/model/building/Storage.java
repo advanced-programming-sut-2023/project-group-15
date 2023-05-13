@@ -30,20 +30,24 @@ public class Storage extends Building {
 
     public void addToStorage(Products newProduct) {
         int currentAmount = 0;
-        if (goods.containsKey(newProduct))
-            currentAmount = goods.get(newProduct);
-        goods.remove(newProduct);
-        goods.put(newProduct, currentAmount + 1);
-        int currentFreePlace = getFreePlace();
-        setFreePlace(currentFreePlace - 1);
+        if(freePlace != 0) {
+            if (goods.containsKey(newProduct))
+                currentAmount = goods.get(newProduct);
+            goods.remove(newProduct);
+            goods.put(newProduct, currentAmount + 1);
+            int currentFreePlace = getFreePlace();
+            setFreePlace(currentFreePlace - 1);
+        }
     }
 
     public void addonStorageWithAmount(Products newProduct, int amount) {
-        if (goods.containsKey((newProduct)))
-            goods.remove(newProduct);
-        goods.put(newProduct, amount);
-        int currentFreePlace = getFreePlace();
-        setFreePlace(currentFreePlace - amount);
+        if(this.freePlace >= amount) {
+            if (goods.containsKey((newProduct)))
+                goods.remove(newProduct);
+            goods.put(newProduct, amount);
+            int currentFreePlace = this.getFreePlace();
+            setFreePlace(currentFreePlace - amount);
+        }
     }
 
     public static HashMap<Products, Integer> getGoods() {

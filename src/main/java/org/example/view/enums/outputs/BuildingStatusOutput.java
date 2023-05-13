@@ -3,21 +3,21 @@ package org.example.view.enums.outputs;
 
 public enum BuildingStatusOutput {
 
-    INVALID_X_COORDINATE(""),
-    INVALID_Y_COORDINATE(""),
+    INVALID_COORDINATE("there in no building on this tile"),
     CHECKED_SUCCESSFULLY("ok!"),
     DROP_FORBID("drop building forbid"),
+    REPAIR_FORBID("not enough source for repair"),
 
 
     ;
 
-    private final String status;
+    private final String output;
 
-    public String getStatus() {
-        return status;
+    public String getOutput() {
+        return output;
     }
 
     BuildingStatusOutput(String status) {
-        this.status = status;
+        this.output = status;
     }
 }

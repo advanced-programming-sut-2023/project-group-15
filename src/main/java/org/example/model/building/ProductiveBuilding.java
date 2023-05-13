@@ -1,7 +1,9 @@
 package org.example.model.building;
 
+import org.example.model.MBC.People;
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
+import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
 import org.example.model.interfaces.Produce;
 
@@ -41,18 +43,19 @@ public class ProductiveBuilding extends Building implements Produce {
         Products product1 = this.getProduct1();
         Products product2 = this.getProduct2();
         if (currentTurn % this.rate == 0) {
-            findProduct(product1);
-            findProduct(product2);
+            findStorage(product1);
+            findStorage(product2);
         }
     }
 
-    private void findProduct(Products product) {
+
+    private void findStorage(Products product) {
         String buildingName = null;
         Storage storage;
         if (product != null) {
-            for (StoreProducts store : StoreProducts.values()) {
-                if (String.valueOf(product).equals(String.valueOf(store))) {
-                    buildingName = store.getStoreType();
+            for (StoreProducts storeProducts : StoreProducts.values()) {
+                if (String.valueOf(storeProducts).equals(String.valueOf(storeProducts))) {
+                    buildingName = storeProducts.getStoreType();
                     break;
                 }
             }

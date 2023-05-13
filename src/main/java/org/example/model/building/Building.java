@@ -63,12 +63,9 @@ public class Building {
         return numberOfMaterial1;
     }
 
-    /*public Building getBuildingByName(String name)
-    {
-
-
-    }*/
-
+    public int getNumberOfMaterial2() {
+        return numberOfMaterial2;
+    }
 
     public void setPosition(int x, int y) {
         this.xCoordinate = x;

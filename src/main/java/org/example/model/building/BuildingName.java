@@ -6,7 +6,7 @@ import static org.example.model.enums.Products.*;
 
 public enum BuildingName {
     MARKET(5, WOOD, 0, "market", 10),
-    MILL(20, WOOD, 0, null, 1, FLOUR, null, 2, "productive", 10),
+    MILL(20, WOOD, 0, null, 1, FLOUR, null, 2,  WEAT, "productive", 10),
     IRON_MINE(20, WOOD, 0, null, 2, IRON, null, 3, "productive", 20),
     QUARRY(20, WOOD, 0, null, 3, ROCK, null, 3, "productive", 20),
     WOODCUTTER(3, WOOD, 0, null, 1, WOOD, null, 2, "productive", 10),
@@ -16,12 +16,12 @@ public enum BuildingName {
     STABLE(20, WOOD, 400, GOLD_COIN, 0, HORSE, null, 2, "productive", 10),
     HUNTING_BUILDING(5, WOOD, 0, null, 1, MEAT, null, 2, "productive", 20),
     WEAT_FARM(15, WOOD, 0, null, 1, WEAT, null, 3, "productive", 10),
-    BAKERY(10, WOOD, 0, null, 1, BREAD, null, 2, "productive", 10),
-    BEER_MAKING(10, WOOD, 0, null, 1, BEER, null, 1, "productive", 15),
-    ARMOURER(100, GOLD_COIN, 20, WOOD, 1, ARMOUR, null, 2, "productive", 20),
-    BLACKSMITH(100, GOLD_COIN, 20, WOOD, 1, SWORD, MACE, 2, "productive", 15),
-    POLETURNER(100, GOLD_COIN, 20, WOOD, 1, SPEAR, null, 2, "productive", 15),
-    FLETCHER(100, GOLD_COIN, 20, WOOD, 1, BOW, null, 2, "productive", 15),
+    BAKERY(10, WOOD, 0, null, 1, BREAD, null, 2, FLOUR, "productive", 10),
+    BEER_MAKING(10, WOOD, 0, null, 1, BEER, null, 1, OAT, "productive", 15),
+    ARMOURER(100, GOLD_COIN, 20, WOOD, 1, ARMOUR, null, 2, IRON , "productive", 20),
+    BLACKSMITH(100, GOLD_COIN, 20, WOOD, 1, SWORD, MACE, 2, IRON, "productive", 15),
+    POLETURNER(100, GOLD_COIN, 20, WOOD, 1, SPEAR, null, 2, WOOD, "productive", 15),
+    FLETCHER(100, GOLD_COIN, 20, WOOD, 1, BOW, null, 2, WOOD , "productive", 15),
     DIARY(10, WOOD, 0, null, 1, CHEESE, VEST, 2, "productive", 10),
     OIL_SMELTLER(10, IRON, 100, GOLD_COIN, 1, OIL_POT, null, 2, "productive", 15),
     OX_TETHER(5, WOOD, 0, null, 1, "productive", 10),
@@ -69,6 +69,7 @@ public enum BuildingName {
     private int costForEachPerson2;
     private String type;
     private int hp;
+    private Products material;
 
     public int getNumberOfMaterial1() {
         return numberOfMaterial1;
@@ -140,6 +141,20 @@ public enum BuildingName {
         this.type = type;
         this.hp = hp;
     }
+    BuildingName(int numberOfMaterial1, Products material1Name, int numberOfMaterial2, Products material2Name,
+                 int numberOfWorkers, Products good1, Products good2, int rate, Products material, String type, int hp) {
+        this.numberOfMaterial1 = numberOfMaterial1;
+        this.material1Name = material1Name;
+        this.numberOfMaterial2 = numberOfMaterial2;
+        this.material2Name = material2Name;
+        this.numberOfWorkers = numberOfWorkers;
+        this.good1 = good1;
+        this.good2 = good2;
+        this.rate = rate;
+        this.type = type;
+        this.material = material;
+        this.hp = hp;
+    }
 
     //storage building
     BuildingName(int numberOfMaterial, Products materialName, int capacity, String type, int hp) {
@@ -205,7 +220,7 @@ public enum BuildingName {
 
     }
 
-    public BuildingName getBuildingName(String name) {
+    public static BuildingName getBuildingName(String name) {
         for (BuildingName buildingName : BuildingName.values()) {
             if (String.valueOf(buildingName).equals(name))
                 return buildingName;
@@ -221,6 +236,8 @@ public enum BuildingName {
         return null;
     }
 
-
+    public Products getMaterial() {
+        return material;
+    }
 }
 
