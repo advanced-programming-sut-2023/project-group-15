@@ -5,10 +5,10 @@ import java.util.regex.Pattern;
 
 public enum GameMenuEnum {
     SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+?<foodRate>(-2|-1|0|1|2)"),
-    SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1,8])"),
+    SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1-8])"),
     SHOW_FOOD_RATE("^\\s*food\\s+rate\\s+show\\s*$"),
     SHOW_TAX_RATE("^\\s*tax\\s+rate\\s+show\\s*$"),
-    SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1,5])$"),
+    SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1-5])$"),
     SHOW_FOOD_LIST("^\\s*show\\s+food\\s+list\\s*$"),
     SHOW_POPULARITY("^\\s*show\\s+popularity\\s*$"),
     SHOW_POPULARITY_FACTORS("^\\s*show\\s+popularity\\s+factors\\s*$"),
@@ -29,7 +29,7 @@ public enum GameMenuEnum {
     SHOW_MAP("show map -(x|y) (\\d+) -(x|y) (\\d+)"),
     SELECT_BUILDING("select building -(x|y) (\\d+) -(x|y) (\\d+) "),
     TRADE_MENU("enter\\s+trade\\s+menu"),
-
+    DROP_UNIT("^\\s*drop\\s*unit\\s+-x\\s+(?<x>\\d+)\\s+-y\\s+(?<y>\\d+)\\s+-t\\s+(?<name>\\w+)\\s+-c\\s+(?<count>\\d+)$"),
     ;
 
 

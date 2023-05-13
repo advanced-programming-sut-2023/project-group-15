@@ -15,6 +15,7 @@ public enum UnitMenuOutput {
     SUCCESSFUL_AIR_ATTACK("successful air attack"),
     SUCCESSFUL_ATTACK("successful attack"),
     UNIT_DISBANDED("unit disbanded"),
+    ERROR_DISBAND("can not disband unit"),
     SUCCESSFUL_POUR_OIL("successful pour oil"),
     WRONG_UNIT_TO_POUR_OIL("choose the right unit(engineer)!"),
     SUCCESSFUL_DIG_DITCH("successful dig ditch"),
@@ -30,6 +31,8 @@ public enum UnitMenuOutput {
     NOT_IN_A_STATE("unit is not in a state..."),
     CAN_NOT_DROP_UNIT("you can't drop unit here!"),
     SUCCESSFUL_DROP_UNIT("successful drop unit"),
+    NOT_ENOUGH_RESOURCES("not enough resources"),
+    WRONG_BUILDING_EQ("you choose the wrong building"),
     ;
     private final String output;
 

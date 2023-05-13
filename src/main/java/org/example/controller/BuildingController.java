@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.model.MBC.People;
 import org.example.model.Tile;
 import org.example.model.building.*;
 import org.example.model.gameData.*;
@@ -12,7 +13,6 @@ public class BuildingController {
     private String type;
     private String coordinateX;
     private String coordinateY;
-
     public BuildingController() {
         this.type = null;
         this.coordinateX = null;

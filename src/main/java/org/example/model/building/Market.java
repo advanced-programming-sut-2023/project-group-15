@@ -17,7 +17,7 @@ public class Market extends Building {
         this.numberOfWorkers = numberOfWorkers;
     }
 
-    public static void setMarket() {
+    public void setMarket() {
 
         number.put("Apple", 10);
         number.put("Hop", 0);
@@ -71,37 +71,37 @@ public class Market extends Building {
         buyCoin.put("Horse", 65);
     }
 
-    public static void sellItemNumber(String item, int num) {
+    public void sellItemNumber(String item, int num) {
         int newNumber = number.get(item) - num;
         number.replace(item, newNumber);
     }
 
-    public static void buyItemNumber(String Item, int num) {
+    public void buyItemNumber(String Item, int num) {
         int newNumber = number.get(Item) + num;
         number.replace(Item, newNumber);
     }
 
-    public static HashMap<String, Integer> getNumber() {
+    public HashMap<String, Integer> getNumber() {
         return number;
     }
 
-    public static HashMap<String, Integer> getSellCoin() {
+    public HashMap<String, Integer> getSellCoin() {
         return sellCoin;
     }
 
-    public static HashMap<String, Integer> getBuyCoin() {
+    public HashMap<String, Integer> getBuyCoin() {
         return buyCoin;
     }
 
-    public static int getSellCoin(String item) {
+    public int getSellCoin(String item) {
         return sellCoin.get(item);
     }
 
-    public static int getBuyCoin(String item) {
+    public int getBuyCoin(String item) {
         return buyCoin.get(item);
     }
 
-    public static int getNumberOfItem(String item) {
+    public int getNumberOfItem(String item) {
         return number.get(item);
     }
 

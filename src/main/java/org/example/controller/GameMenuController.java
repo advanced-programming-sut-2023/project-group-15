@@ -1,8 +1,11 @@
 package org.example.controller;
 
 import org.example.model.MBC.*;
+import org.example.model.building.Building;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Government;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
@@ -141,7 +144,6 @@ public class GameMenuController {
             case 2:
                 government.setCoins(government.getCoins() + 0.8 * people.getPeopleNumber());
                 government.setTaxRate(2);
-                System.out.println(government.getCoins());
                 break;
             case 3:
                 government.setCoins(government.getCoins() + people.getPeopleNumber());
@@ -182,9 +184,13 @@ public class GameMenuController {
 
     public void setFearRate(int rate) {
         government.setFearRate(rate);
+        ArrayList building = GameInformation.getAllBuildings();
         switch (rate) {
             //TODO: add code to Increase in the production of buildings by workers
             case -5, -4, -3, -2, -1, 0:
+                for(int i = 0 ; i != building.size() ; i++){
+                    Building building1 = (Building) building.get(i);
+                }
                 unitWallTarget.setAttackingPower(unitWallTarget.getAttackingPower() - 1);
                 launcherUnit.setThrowRange(launcherUnit.getThrowRageForChanging() - 1);
                 infantryUnit.setAttackingPower(infantryUnit.getAttackingPower() - 1);

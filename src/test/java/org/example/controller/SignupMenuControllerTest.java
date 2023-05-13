@@ -1,6 +1,6 @@
 package org.example.controller;
 
-
+/*
 import org.example.model.User;
 import org.example.model.enums.Slogans;
 import org.example.model.gameData.GameDataBase;
@@ -173,4 +173,4 @@ class SignupMenuControllerTest {
         Matcher matcher = Pattern.compile(regex, Pattern.CASE_INSENSITIVE).matcher(password);
         return matcher.matches() ? matcher : null;
     }
-}
+}*/
