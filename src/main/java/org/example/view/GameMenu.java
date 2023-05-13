@@ -72,7 +72,7 @@ public class GameMenu {
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_STATE)) != null) {
                 int x = Integer.parseInt(gameMenuMatcher.group("x"));
                 int y = Integer.parseInt(gameMenuMatcher.group("y"));
-                System.out.println(unitMenuController.digTunnel(x, y).getOutput());
+                System.out.println(unitMenuController.setState(x, y,gameMenuMatcher.group("state")).getOutput());
 
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.AIR_ATTACK)) != null) {
                 int x = Integer.parseInt(gameMenuMatcher.group("x"));
@@ -116,8 +116,7 @@ public class GameMenu {
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUY_ITEM)) != null) {
                 int number = Integer.parseInt(gameMenuMatcher.group("number"));
                 System.out.println(marketController.buy(gameMenuMatcher.group("item"), number).getOutput());
-            }
-            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input,GameMenuEnum.DROP_UNIT)) != null){
+            } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.DROP_UNIT)) != null) {
                 int x = Integer.parseInt(gameMenuMatcher.group("x"));
                 int y = Integer.parseInt(gameMenuMatcher.group("y"));
                 int count = Integer.parseInt(gameMenuMatcher.group("count"));

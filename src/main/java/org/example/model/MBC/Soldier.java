@@ -14,7 +14,8 @@ public class Soldier extends Person {
     private String state;
     private static User owner;
     private int unitHp;
-    public Soldier(int speed,int attackingPower,int defense,int x,int y , int unitHp ,int maxMove,String name,String state){
+    private String type;
+    public Soldier(int speed,int attackingPower,int defense,int x,int y , int unitHp ,int maxMove,String name,String type,String state){
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.defense = defense;
@@ -87,5 +88,13 @@ public class Soldier extends Person {
 
     public int getY() {
         return y;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
