@@ -26,6 +26,8 @@ public class ProfileMenuController extends LoginMenuController {
     public ProfileMenuOutput changeNickname(String nickname) {
         Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setNickname(nickname);
         this.setNickname(nickname);
+        Utility.deleteFile();
+        GameDataBase.setJasonFile();
         return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
     }
 

@@ -87,7 +87,7 @@ public class BuildingController {
 
     }
 
-       /* public void selectForEducate()
+     /*   public void selectForEducate()
         {
             if(selectedBuilding instanceof Education)
                 selectedBuilding.Educate();
@@ -138,7 +138,10 @@ public class BuildingController {
                         , building.getNumberOfMaterial1(), building.getNumberOfMaterial2());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
+                if(newBuilding.getName().equals("HOUSE"))
+                    people.addPeople(8);
             }
+
     }
 
     public void dropWarBuilding(int x, int y, String name) {
@@ -217,6 +220,8 @@ public class BuildingController {
     }
 
     public String repair() {
+        if(selectedBuilding == null)
+            return BuildingStatusOutput.NOT_SELECTED.getOutput();
         String name = selectedBuilding.getName();
         String status1 = null , status2 = null;
         int completeHp = BuildingName.getBuildingName(name).getHp();

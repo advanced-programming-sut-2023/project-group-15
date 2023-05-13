@@ -7,7 +7,7 @@ public enum BuildingStatusOutput {
     CHECKED_SUCCESSFULLY("ok!"),
     DROP_FORBID("drop building forbid"),
     REPAIR_FORBID("not enough source for repair"),
-
+    NOT_SELECTED("you have no selected building to repair"),
 
     ;
 

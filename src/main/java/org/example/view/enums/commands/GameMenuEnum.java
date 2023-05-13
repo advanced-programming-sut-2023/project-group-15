@@ -29,6 +29,7 @@ public enum GameMenuEnum {
     SHOW_MAP("show map -(x|y) (\\d+) -(x|y) (\\d+)"),
     SELECT_BUILDING("select building -(x|y) (\\d+) -(x|y) (\\d+) "),
     TRADE_MENU("enter\\s+trade\\s+menu"),
+    BUILDING_MENU("\\s*enter\\s+building\\s+menu\\s*")
 
     ;
 

@@ -130,13 +130,18 @@ public class GameMenu {
                 for (String key : test.keySet()) {
                     System.out.println(key + "   " + test.get(key) + "     " + test1.get(key) + "     " + test2.get(key));
                 }
-            } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SELL_ITEM)) != null) {
+
+        /*    } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SELL_ITEM)) != null) {
                 int number = Integer.parseInt(gameMenuMatcher.group("number"));
                 System.out.println(MarketController.sell(gameMenuMatcher.group("item"), number).getOutput());
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUY_ITEM)) != null) {
                 int number = Integer.parseInt(gameMenuMatcher.group("number"));
-                System.out.println(MarketController.buy(gameMenuMatcher.group("item"), number).getOutput());
+                System.out.println(MarketController.buy(gameMenuMatcher.group("item"), number).getOutput());*/
             }
+            /*else if((gameMenuMatcher = GameMenuEnum.getMatcher(input , GameMenuEnum.TRADE_MENU)) != null)
+                new TradingMenu.run();*/
+            else if((gameMenuMatcher = GameMenuEnum.getMatcher(input , GameMenuEnum.BUILDING_MENU)) != null)
+                new BuildingMenu().run();
         }
 
     }

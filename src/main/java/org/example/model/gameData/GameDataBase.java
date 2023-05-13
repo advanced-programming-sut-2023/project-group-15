@@ -27,24 +27,27 @@ public class GameDataBase {
         return currentUser;
     }
 
-    public static void setJasonFile(User user) {
+    public static void setJasonFile() {
         JSONObject obj = new JSONObject();
         String path = "d:/json/dataBase.json";
-        try (PrintWriter out = new PrintWriter(new FileWriter(path, true))) {
-            obj.put("Name", user.getUsername());
-            obj.put("Nickname", user.getNickname());
-            obj.put("Password", user.getPassword());
-            obj.put("Slogan", user.getSlogan());
-            obj.put("HighScore", user.getHighScore());
-            obj.put("rank", user.getRank());
-            obj.put("Email", user.getEmail());
-            obj.put("Password recovery question:", user.getPassRecoveryQuestion());
-            obj.put("Password recover answer:", user.getPassRecoveryAnswer());
-            obj.put("flag", user.isStayLoggedIn());
-            out.println();
-            out.write(obj.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
+        for(User user : GameDataBase.getAllUsers() ) {
+            try (PrintWriter out = new PrintWriter(new FileWriter(path, true))) {
+                obj.put("Name", user.getUsername());
+                obj.put("Nickname", user.getNickname());
+                obj.put("Password", user.getPassword());
+                obj.put("Slogan", user.getSlogan());
+                obj.put("HighScore", user.getHighScore());
+                obj.put("rank", user.getRank());
+                obj.put("Email", user.getEmail());
+                obj.put("Password recovery question:", user.getPassRecoveryQuestion());
+                obj.put("Password recover answer:", user.getPassRecoveryAnswer());
+                obj.put("flag", user.isStayLoggedIn());
+                out.println();
+                out.write(obj.toString());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

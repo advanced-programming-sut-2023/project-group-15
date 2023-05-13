@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.controller.Utility;
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
 import org.example.model.gameData.GameDataBase;
@@ -10,18 +11,19 @@ import org.example.model.User;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the game!");
-        new MainMenu().checkUsersFlag();
+        //Utility.deleteFile();
+      //  new MainMenu().checkUsersFlag();
         new MainMenu().run();
-        for (User user : GameDataBase.getAllUsers()) {
+       /* for (User user : GameDataBase.getAllUsers()) {
             System.out.println("username: " + user.getUsername());
             System.out.println("password: " + user.getPassword());
             System.out.println("email: " + user.getEmail());
             System.out.println("slogan: " + user.getSlogan());
-        }
+        }*/
 //        new GameMenu().run();
-        System.out.println("Welcome to the game!");
+       /* System.out.println("Welcome to the game!");
         if (Products.APPLE.name().equals(String.valueOf(StoreProducts.APPLE)))
-            System.out.println(Products.APPLE.name());
+            System.out.println(Products.APPLE.name());*/
         //new GameMenu().run();
 //        new MapChangesEnvironment().testRun();
         //Map.setCurrentMap(400);
