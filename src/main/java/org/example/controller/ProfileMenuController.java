@@ -26,8 +26,7 @@ public class ProfileMenuController extends LoginMenuController {
     public ProfileMenuOutput changeNickname(String nickname) {
         Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setNickname(nickname);
         this.setNickname(nickname);
-        Utility.deleteFile();
-        GameDataBase.setJasonFile();
+        moveDataToFile();
         return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
     }
 
@@ -37,6 +36,7 @@ public class ProfileMenuController extends LoginMenuController {
                 if (SignupMenuController.passwordCheckErrors(newPass).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
                     Objects.requireNonNull(User.findUserWithPass(oldPass)).setPassword(newPass);
                     this.setPassword(newPass);
+                    moveDataToFile();
                     return ProfileMenuOutput.PASSWORD_CHANGED_SUCCESSFULLY;
                 }
                 return ProfileMenuOutput.INVALID_NEW_PASSWORD;
@@ -50,6 +50,7 @@ public class ProfileMenuController extends LoginMenuController {
         if (SignupMenuController.emailCheck(email).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setEmail(email);
             this.setEmail(email);
+            moveDataToFile();
             return ProfileMenuOutput.EMAIL_CHANGED_SUCCESSFULLY;
         }
         return ProfileMenuOutput.INVALID_NEW_EMAIL;
@@ -58,12 +59,14 @@ public class ProfileMenuController extends LoginMenuController {
     public ProfileMenuOutput changeSlogan(String slogan) {
         Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setSlogan(slogan);
         this.setSlogan(slogan);
+        moveDataToFile();
         return ProfileMenuOutput.SLOGAN_CHANGED_SUCCESSFULLY;
     }
 
     public ProfileMenuOutput removeSlogan() {
         Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setSlogan(null);
         this.setSlogan(null);
+        moveDataToFile();
         return ProfileMenuOutput.SLOGAN_REMOVED_SUCCESSFULLY;
     }
 
@@ -91,5 +94,10 @@ public class ProfileMenuController extends LoginMenuController {
         System.out.println("nickname:" + user.getNickname());
         System.out.println("slogan:" + user.getSlogan());
         //TODO:user rank and high score are left..
+    }
+    public void moveDataToFile()
+    {
+        Utility.deleteFile();
+        GameDataBase.setJasonFile();
     }
 }
