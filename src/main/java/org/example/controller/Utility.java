@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import org.example.model.building.Education;
 
 import java.io.File;
 import java.security.MessageDigest;
@@ -9,7 +8,6 @@ import java.util.regex.Matcher;
 
 public class Utility {
     public static String getPassHashSha256(String password, byte[] salt) {
-
         String passwordString = null;
         try {
             MessageDigest messagedigest = MessageDigest.getInstance("SHA-256");
@@ -51,7 +49,7 @@ public class Utility {
         try {
             File toDelete = new File(path);
             toDelete.delete();
-            toDelete.delete();
+//            toDelete.delete();
         } catch (Exception e) {
             e.printStackTrace();
         }

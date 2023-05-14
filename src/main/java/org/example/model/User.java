@@ -13,6 +13,7 @@ import java.util.List;
 public class User {
     private String username;
     private String password;
+    private String clipBoard;
     private String nickname;
     private String email;
     private String passRecoveryQuestion;
@@ -24,10 +25,10 @@ public class User {
     private boolean stayLoggedIn;
     private Tile[][] map;
     private Government government;
+    public void setGovernment(Government government) {
+        this.government = government;
+    }
     private int turn;
-    private final List<Trade> tradeSendList;
-    private final List<Trade> tradeReqList;
-    private final List<Trade> tradeHistoryList;
     int lastOrderIndex = 0;
 
     public User(String username, String password, String nickname, String email, String passRecoveryQuestion, String passRecoveryAnswer, int rank, int highScore) {
@@ -41,10 +42,15 @@ public class User {
         this.email = email;
         this.highScore = highScore;
         this.stayLoggedIn = false;
-        this.tradeHistoryList = new ArrayList<>();
-        this.tradeReqList = new ArrayList<>();
-        this.tradeSendList = new ArrayList<>();
-        GameDataBaseController.addUser(this);
+        this.slogan = "empty";
+    }
+
+    public String getClipBoard() {
+        return clipBoard;
+    }
+
+    public void setClipBoard(String clipBoard) {
+        this.clipBoard = clipBoard;
     }
 
     public User(String username, String password, String nickname, String email, String slogan, String passRecoveryQuestion, String passRecoveryAnswer, String rank, String highScore) {
@@ -59,10 +65,6 @@ public class User {
         this.email = email;
         this.highScore = Integer.parseInt(highScore);
         this.stayLoggedIn = false;
-        this.tradeHistoryList = new ArrayList<>();
-        this.tradeReqList = new ArrayList<>();
-        this.tradeSendList = new ArrayList<>();
-        GameDataBaseController.addUser(this);
     }
 
     public User(String username, String password, String nickname, String email) {
@@ -71,29 +73,23 @@ public class User {
         this.password = password;
         this.nickname = nickname;
         this.passRecoveryAnswer = null;
+        this.slogan = "empty";
         this.passRecoveryQuestion = null;
         this.highScore = 0;
         this.email = email;
         this.stayLoggedIn = false;
-        this.tradeHistoryList = new ArrayList<>();
-        this.tradeReqList = new ArrayList<>();
-        this.tradeSendList = new ArrayList<>();
-        GameDataBaseController.addUser(this);
 
     }
 
-    public User(String username, String password, String nickname, String email, String slogan) {
+    public User(String username, String password,String clipBoard, String nickname, String email) {
         this.userNO = 0;
         this.username = username;
         this.password = password;
         this.nickname = nickname;
+        this.clipBoard = clipBoard;
         this.email = email;
-        this.slogan = slogan;
+        this.slogan = "empty";
         this.stayLoggedIn = false;
-        this.tradeHistoryList = new ArrayList<>();
-        this.tradeReqList = new ArrayList<>();
-        this.tradeSendList = new ArrayList<>();
-        GameDataBaseController.addUser(this);
     }
 
     public void setRank(int rank) {
@@ -217,17 +213,6 @@ public class User {
         return government;
     }
 
-    public List<Trade> getTradeSendList() {
-        return tradeSendList;
-    }
-
-    public List<Trade> getTradeReqList() {
-        return tradeReqList;
-    }
-
-    public List<Trade> getTradeHistoryList() {
-        return tradeHistoryList;
-    }
 
     public int getLastOrderIndex() {
         return lastOrderIndex;

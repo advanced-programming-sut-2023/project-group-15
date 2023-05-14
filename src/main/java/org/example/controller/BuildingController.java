@@ -4,6 +4,8 @@ import org.example.model.MBC.People;
 import org.example.model.MBC.Worker;
 import org.example.model.Tile;
 import org.example.model.building.*;
+import org.example.model.enums.Products;
+import org.example.model.enums.StoreProducts;
 import org.example.model.gameData.*;
 import org.example.view.enums.outputs.BuildingStatusOutput;
 import org.example.view.enums.outputs.GameInformationOutput;
@@ -12,18 +14,17 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 
 public class BuildingController {
+    private final Government government;
     private String type;
     private String coordinateX;
     private String coordinateY;
     private Building selectedBuilding;
-    private People people;
-    private int numberOfWorker;
 
-    public BuildingController() {
+    public BuildingController(String playerName) {
+        this.government = Government.findGovernmentWithUsername(playerName);
         this.type = null;
         this.coordinateX = null;
         this.coordinateY = null;
-        this.numberOfWorker = 0;
     }
 
     public String getType() {
@@ -50,22 +51,13 @@ public class BuildingController {
         this.coordinateY = coordinateY;
     }
 
-    public void findBuildingDroperType(Matcher matcher) {
-        int x, y;
-        x = Integer.parseInt(Objects.requireNonNull(Utility.groupFinder(matcher, "x")));
-        y = Integer.parseInt(Objects.requireNonNull(Utility.groupFinder(matcher, "y")));
-        if (checkTheLand(x, y).equals(BuildingStatusOutput.DROP_FORBID)
-                || GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null)
-            System.out.println("Cant drop building in this tile");
-        else {
-            String name;
-            name = Utility.groupFinder(matcher, "type");
-            if (!checkForBuildingMaterial(name))
-                System.out.println("not enough resources to build this building");
-            else {
-                buildingTypeFinder(x, y, name);
-            }
-        }
+    public boolean checkTheLand(int x, int y) {
+        Tile currentTile = GameInformation.getCurrentPlayer().getMap()[x][y];
+        if (currentTile.isRock())
+            return false;
+        if (GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null)
+            return false;
+        else return currentTile.getLandType().isBuildingStatus();
     }
 
     public void selectBuilding(int x, int y) {
@@ -93,7 +85,6 @@ public class BuildingController {
 
 
     public void dropProductiveBuilding(int x, int y, String name) {
-
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
                 if(checkForWorkers(building).equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput())) {
@@ -115,13 +106,12 @@ public class BuildingController {
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
             }
-
     }
     public String checkForWorkers(BuildingName buildingName)
     {
-        if(people.getPeopleNumber() >= buildingName.getNumberOfWorkers()) {
-            people.removerPeople(buildingName.getNumberOfWorkers());
-            numberOfWorker += buildingName.getNumberOfWorkers();
+        if(government.getPeople() >= buildingName.getNumberOfWorkers()) {
+            government.reducePeople(buildingName.getNumberOfWorkers());
+            government.addWorker(buildingName.getNumberOfWorkers());
             return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
 
         }
@@ -136,7 +126,7 @@ public class BuildingController {
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
                 if(newBuilding.getName().equals("HOUSE"))
-                    people.addPeople(8);
+                    government.addPeople(9);
             }
 
     }
@@ -175,11 +165,11 @@ public class BuildingController {
         String status;
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
-                status = GameInformation.checkForSources(building.getMaterial1Name(), building.getNumberOfMaterial1());
+                status = checkForSources(building.getMaterial1Name(), building.getNumberOfMaterial1());
                 if (!status.equals("success"))
                     return false;
                 else if (building.getMaterial2Name() != null)
-                    status = GameInformation.checkForSources(building.getMaterial2Name(), building.getNumberOfMaterial2());
+                    status = checkForSources(building.getMaterial2Name(), building.getNumberOfMaterial2());
                 if (status.equals("success"))
                     return true;
             }
@@ -191,15 +181,6 @@ public class BuildingController {
         if (GameInformation.getCurrentPlayerMap()[x][y].getBuilding().getName().equals(name))
             return BuildingStatusOutput.INVALID_COORDINATE.getOutput();
         return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
-    }
-
-    public BuildingStatusOutput checkTheLand(int x, int y) {
-        Tile currentTile = GameInformation.getCurrentPlayer().getMap()[x][y];
-        if (!currentTile.isRock())
-            return BuildingStatusOutput.DROP_FORBID;
-        else if (!currentTile.getLandType().isBuildingStatus())
-            return BuildingStatusOutput.DROP_FORBID;
-        return null;
     }
 
     public void buildingTypeFinder(int x, int y, String name) {
@@ -224,15 +205,32 @@ public class BuildingController {
         int completeHp = BuildingName.getBuildingName(name).getHp();
         if (selectedBuilding.getHp() < completeHp) {
             if (selectedBuilding.getMaterial1() != null)
-                status1 = GameInformation.checkForSources(selectedBuilding.getMaterial1(), selectedBuilding.getNumberOfMaterial1());
+                status1 = checkForSources(selectedBuilding.getMaterial1(), selectedBuilding.getNumberOfMaterial1());
             if(selectedBuilding.getMaterial2() != null)
-                status2 = GameInformation.checkForSources(selectedBuilding.getMaterial2() , selectedBuilding.getNumberOfMaterial2());
+                status2 = checkForSources(selectedBuilding.getMaterial2() , selectedBuilding.getNumberOfMaterial2());
         }
         if(status1 .equals(GameInformationOutput.NOT_ENOUGH) || status2.equals(GameInformationOutput.NOT_ENOUGH))
             return BuildingStatusOutput.REPAIR_FORBID.getOutput();
         else
             return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
 
+    }
+
+    public static String checkForSources(Products product, int amount) {
+        int current;
+        Storage store = null;
+        for(StoreProducts storeProduct : StoreProducts.values()) {
+            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
+                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , GameInformation.getCurrentPlayer());
+            }
+        }
+        if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
+            current = store.getGoods().get(product);
+            store.getGoods().remove(product);
+            store.getGoods().put(product, current - amount);
+            return GameInformationOutput.SUCCESS.getOutput();
+        }
+        return GameInformationOutput.NOT_ENOUGH.getOutput();
     }
 }
 

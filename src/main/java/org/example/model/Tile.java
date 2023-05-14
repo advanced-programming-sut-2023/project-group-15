@@ -23,6 +23,15 @@ public class Tile {
         this.rock = false ;
         this.rockDirection = Direction.NULL;
     }
+    public Tile(Building building,LandType landType, int numberOfSoldiers, Soldier soldier, Tree tree, boolean rock, Direction rockDirection) {
+        this.building = building;
+        this.landType = landType;
+        this.numberOfSoldiers = numberOfSoldiers;
+        this.soldier = soldier;
+        this.tree = tree;
+        this.rock = rock;
+        this.rockDirection = rockDirection;
+    }
 
     public void setBuilding(Building building) {
         this.building = building;

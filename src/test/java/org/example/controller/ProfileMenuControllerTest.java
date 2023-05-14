@@ -6,14 +6,17 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 //import org.mockito.InjectMocks;
 //import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class)
 class ProfileMenuControllerTest {
-    @InjectMocks ProfileMenuController controller;
+    @InjectMocks
+    ProfileMenuController controller;
     @AfterEach
     void cleaningController() {
         controller.setUsername("");
@@ -90,4 +93,4 @@ class ProfileMenuControllerTest {
     void showUserProfileDisplay() {
 
     }
-}*/
+}

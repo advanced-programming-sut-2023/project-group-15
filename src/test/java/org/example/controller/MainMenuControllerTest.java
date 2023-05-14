@@ -2,11 +2,9 @@ package org.example.controller;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-/*import org.mockito.Mockito;
-//import org.mockito.junit.MockitoJUnitRunner;
-//import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class MainMenuControllerTest {
     private SignupMenuController c = Mockito.mock(SignupMenuController.class);
@@ -92,4 +90,4 @@ class MainMenuControllerTest {
     }
 
 
-}*/
+}

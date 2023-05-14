@@ -3,6 +3,7 @@ package org.example.view;
 import org.example.InputScanner;
 import org.example.controller.LoginMenuController;
 import org.example.controller.StartingGameMenuController;
+import org.example.model.gameData.GameInformation;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
@@ -15,7 +16,16 @@ public class GameStartMenu{
     }
 
     public void addPlayer(Matcher loginMenuMatcher) {
-        System.out.println(startingGameMenuController.addUser(loginMenuMatcher).getOutput());
+        String playerToBeAdded = loginMenuMatcher.group("name");
+        if (GameInformation.checkPlayer(playerToBeAdded)){
+            if (!GameInformation.checkPlayerExist(playerToBeAdded)) {
+                System.out.println(startingGameMenuController.addUser(playerToBeAdded).getOutput());
+                return;
+            }
+            System.out.println("the player is already in the game!");
+            return;
+        }
+        System.out.println("the player you want to add doesn't exist!");
     }
 
     public void startNewGame() {
@@ -29,8 +39,9 @@ public class GameStartMenu{
                         int mapSize = Integer.parseInt(matcher.group("area"));
                         int mapNumber = Integer.parseInt(matcher.group("type"));
                         startingGameMenuController.newGame(mapSize,mapNumber);
+                        return;
                     } else {
-                        System.out.println("your inputs are not valid!,\ntey again!");
+                        System.out.println("your inputs are not valid!,\ntry again or enter \"quit\" to cancel the process!");
                     }
                 } else if (input.matches("\\s*quit\\s*")) {
                     return;
@@ -39,7 +50,7 @@ public class GameStartMenu{
                 }
             }
         } else
-            System.out.println(GameStartMenuOutput.USER_HAS_STARTED_GAME);
+            System.out.println(GameStartMenuOutput.USER_HAS_STARTED_GAME.getOutput());
     }
 
     private boolean checkSelectMapInputs(Matcher matcher) {

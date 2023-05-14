@@ -7,13 +7,14 @@ import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 
 public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private boolean questionFlag = true;
 
-    public void run(Matcher signupMenuMatcher) {
+    public void run(Matcher signupMenuMatcher) throws IOException {
         SignupMenuOutput status;
         classifyParameters(signupMenuMatcher);
         status = usernameCheck();
@@ -48,9 +49,11 @@ public class SignupMenu extends MainMenu {
     }
 
     private SignupMenuOutput sloganCheck() {
-        if (signupMenuController.getSlogan() == null)
+        if (signupMenuController.getSlogan() == null) {
+            signupMenuController.setSlogan("empty");
             return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-        if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
+        }
+        else if (signupMenuController.getSlogan().matches("\\s*random\\s*")) {
             slogans();
             System.out.println("choose one of these slogans (enter the number):");
             while (true) {

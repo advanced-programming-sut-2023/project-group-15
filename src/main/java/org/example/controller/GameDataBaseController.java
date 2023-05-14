@@ -15,6 +15,16 @@ import java.nio.file.Paths;
 public class GameDataBaseController {
 
     public void setJasonFile(User user, boolean flag) {
+        setUserInformationToJson(user,flag);
+    }
+
+    public static void setJasonFileForAllUsers() {
+        for (User user : GameDataBase.getAllUsers()) {
+            setUserInformationToJson(user,user.isStayLoggedIn());
+        }
+    }
+
+    private static void setUserInformationToJson(User user,boolean flag) {
         JSONObject obj = new JSONObject();
         String path = "d:/json/dataBase.json";
         try (PrintWriter out = new PrintWriter(new FileWriter(path, true))) {
@@ -34,7 +44,8 @@ public class GameDataBaseController {
             e.printStackTrace();
         }
     }
-    public void readFromFile() {
+
+    public static void readFromFile() {
         String path = "d:/json/database.json";
         try {
             String contents = new String((Files.readAllBytes(Paths.get(path))));
@@ -60,34 +71,6 @@ public class GameDataBaseController {
         }
     }
 
-    public void changeUserFlag(String username, boolean stayLoggedInFlag) {
-        User user = GameDataBase.getUserByUsername(username);
-        setJasonFile(user,stayLoggedInFlag);
-        //
-        String path = "d:/json/database.json";
-        try {
-            String contents = new String((Files.readAllBytes(Paths.get(path))));
-            JSONTokener jsonParser = new JSONTokener(contents);
-            while (!jsonParser.end()) {
-                JSONObject jsonobject = new JSONObject(jsonParser);
-                User user2 = new User(String.valueOf(jsonobject.get("Name")),
-                        String.valueOf(jsonobject.get("Password")),
-                        String.valueOf(jsonobject.get("Nickname")),
-                        String.valueOf(jsonobject.get("Email")),
-                        String.valueOf(jsonobject.get("Slogan")),
-                        String.valueOf(jsonobject.get("Password recovery question:")),
-                        String.valueOf(jsonobject.get("Password recover answer:")),
-                        String.valueOf(jsonobject.get("rank")),
-                        String.valueOf(jsonobject.get("HighScore")));
-                GameDataBase.getAllUsers().add(user2);
-                jsonParser.next();
-            }
-        } catch (JSONException e) {
-            System.out.println(e);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public static void addUser(User user) {
         GameDataBase.getAllUsers().add(user);
     }

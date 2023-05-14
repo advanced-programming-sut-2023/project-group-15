@@ -1,14 +1,10 @@
 package org.example.model.gameData;
 
-import org.example.controller.MapMenuEnvironmentController;
 import org.example.model.MBC.Soldier;
 import org.example.model.Tile;
 import org.example.model.User;
 import org.example.model.building.Building;
-import org.example.model.building.BuildingName;
-import org.example.model.building.Storage;
 import org.example.model.enums.*;
-import org.example.view.enums.outputs.GameInformationOutput;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -20,7 +16,14 @@ import java.util.HashMap;
 
 public class GameInformation {
     private static int mapGameSize;
-    private static Tile[][] gameMap;
+    private final static Tile[][] gameMap = new Tile[200][200];
+    private final static ArrayList<User> allPlayers = new ArrayList<>();
+    public static ArrayList<User> getAllPlayers() {
+        return allPlayers;
+    }
+    public static Tile[][] getGameMap() {
+        return gameMap;
+    }
     private static User currentPlayer;
     private static final HashMap<User, Integer> players = new HashMap<>();
     private static int currentPlayerNo = 1;
@@ -34,59 +37,35 @@ public class GameInformation {
         mapGameSize = mapGameSize;
     }
 
-    public static void setMapGame(int mapGame, int mapNumber, String path) {
+    public static void setMapGame(int mapGame, String path) {
         try {
             String contents = new String((Files.readAllBytes(Paths.get(path))));
             JSONTokener jsonParser = new JSONTokener(contents);
             JSONObject jsonobject = new JSONObject(jsonParser);
-            //try{
             while (!jsonParser.end()) {
                 for (int i = 0; i < mapGame; i++) {
                     for (int j = 0; j < mapGame; j++) {
-                        LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("LAND:")));
-                        //Building Building = new Building(String.valueOf(jsonobject.get("")))
-                        //Tree tree = Tree.getTree(String.valueOf(jsonobject.get("Tree:")));
-                        UnitName unitName = UnitName.getUnitType(String.valueOf("Soldier"));
-                        int numberOfSoldires = Integer.parseInt(String.valueOf(jsonobject.get("numberOfSoldiers")));
-                        boolean Rock = Boolean.valueOf(String.valueOf(jsonobject.get("ROCK")));
-                        String rockDirection = String.valueOf(jsonobject.get("Rockdirection:"));
-                        jsonobject = new JSONObject(jsonParser);
-                        Direction direction = MapMenuEnvironmentController.findDirection(rockDirection);
-                        //  gameMap[i][j] = new Tile(build,landType,numberOfSoldires,unitName,tree,Rock,direction);
+                        LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("Land: ")));
+                        gameMap[i][j] = new Tile(null,landType,0,null,null,false,null);
                         jsonParser.next();
-                        //TODO reading map from file
                     }
                 }
-
             }
-            // }catch(JSONException e){
-            //System.out.println(e);
-            //}
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-   /*public static void turnCounter()
-    {
-        getCurrentPlayer().getTurn()
 
-    }*/
-
-
-    public static Tile[][] getGameMap() {
-        return gameMap;
+    public static void addPlayer(User player) {
+        allPlayers.add(player);
     }
 
-    public static void addPlayer(User player, int number) {
-        players.put(player, number);
-    }
-
-    public static int getCurrentPlayerno() {
+    public static int getCurrentPlayerNo() {
         return currentPlayerNo;
 
     }
 
-    public static void setCurrentUserno(int currentUserno) {
+    public static void setCurrentUserNo(int currentUserno) {
         currentUserno = currentUserno;
     }
 
@@ -113,22 +92,6 @@ public class GameInformation {
         return null;
     }
 
-    public static String checkForSources(Products product, int amount) {
-        int current;
-        Storage store = null;
-        for(StoreProducts storeProduct : StoreProducts.values()) {
-            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
-                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , GameInformation.getCurrentPlayer());
-            }
-        }
-        if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
-            current = store.getGoods().get(product);
-            store.getGoods().remove(product);
-            store.getGoods().put(product, current - amount);
-            return GameInformationOutput.SUCCESS.getOutput();
-        }
-        return GameInformationOutput.NOT_ENOUGH.getOutput();
-    }
 
     public static Government getCurrentPlayerGovernment() {
         return currentPlayer.getGovernment();
@@ -146,5 +109,22 @@ public class GameInformation {
 
     public static ArrayList<Building> getAllBuildings() {
         return allBuildings;
+    }
+
+    public static boolean checkPlayer(String playerToBeAdded) {
+        for (User user:GameDataBase.getAllUsers()) {
+            if (user.getUsername().equals(playerToBeAdded))
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean checkPlayerExist(String playerToBeAdded) {
+        for (User user:GameDataBase.getAllUsers()) {
+            if (user.getUsername().equals(playerToBeAdded)) {
+                return allPlayers.contains(user);
+            }
+        }
+        return false;
     }
 }

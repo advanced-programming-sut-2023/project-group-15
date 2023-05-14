@@ -20,13 +20,13 @@ public class UserTurn {
     }
 
     public void run() {
+
     }
 
 
     public void enterGame() {
         if (userTurnController.checkUserTurn()) {
-            run();
-            //mire to bazi
+            new GameMenu(this.userController).run();
         } else
             System.out.println(GameStartMenuOutput.NOT_YOUR_TURN.getOutput());
     }

@@ -2,6 +2,9 @@ package org.example.controller;
 
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.GameInformation;
+import org.example.model.gameData.Government;
+import org.example.model.gameData.Map;
 import org.example.view.MapChangesEnvironment;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
@@ -9,44 +12,39 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 
 public class StartingGameMenuController {
-    private int addingPlayerValidation = 2;
     private boolean newGameAccess = true;
     private final User gameOwner;
-    private final ArrayList<User> players = new ArrayList<>();
-    static GameInformationController controller = new GameInformationController();
+    private int userNumberForMapSelection = 2;
+    private final GameInformationController controller = new GameInformationController();
     public StartingGameMenuController(LoginMenuController controller) {
         this.gameOwner = GameDataBase.getUserByUsername(controller.getUsername());
     }
     public void newGame(int mapSize,int mapNumber) {
-//        gameOwner.setUserNO(1);
-//        GameDataBase.getCurrentUser().setUserNO(1);
         controller.setMap(mapSize, mapNumber);
-//        MapInitialization.run();
+        gameOwner.setUserNO(1);
+        controller.generateEachPlayerMap(1);
         newGameAccess = false;
-        players.add(this.gameOwner);
+        gameOwner.setGovernment(new Government(gameOwner.getUsername()));
+        GameInformation.addPlayer(gameOwner);
         System.out.println("new game created successfully(test)");
         new MapChangesEnvironment().run();
     }
-    public GameStartMenuOutput addUser(Matcher loginMenuMatcher) {
+    public GameStartMenuOutput addUser(String playerToBeAdded) {
         GameDataBase.setCurrentUser(gameOwner);
-        int mapNumber = 0;
-        if (addingPlayerValidation>8) {
+        if (GameInformation.getAllPlayers().size()>8) {
             return GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL;
         }
-        if (GameDataBase.getCurrentUser().getUserNO() == 0) {
+        else if (newGameAccess) {
             return GameStartMenuOutput.GAME_IS_NOT_STARTED;
         }
-        if (GameDataBase.getCurrentUser().getUserNO() != 1)
+        else if (gameOwner.getUserNO() != 1)
             return GameStartMenuOutput.ADD_USER_FORBIDDEN;
-        else if (GameDataBase.getUserByUsername(loginMenuMatcher.group("name")) == null)
-            return GameStartMenuOutput.USER_NOT_FOUND;
         else {
-            User newPlayer = GameDataBase.getUserByUsername(loginMenuMatcher.group("name"));
-            controller.generateEachPlayerMap(mapNumber);
-            controller.playerAdder(newPlayer);
-            newPlayer.setUserNO(addingPlayerValidation);
-            addingPlayerValidation++;
-            players.add(newPlayer);
+            User newPlayer = GameDataBase.getUserByUsername(playerToBeAdded);
+            newPlayer.setGovernment(new Government(newPlayer.getUsername()));
+            GameInformation.addPlayer(newPlayer);
+            controller.generateEachPlayerMap(userNumberForMapSelection);
+            userNumberForMapSelection++;
             return GameStartMenuOutput.ADD_USER_SUCCESS;
         }
     }

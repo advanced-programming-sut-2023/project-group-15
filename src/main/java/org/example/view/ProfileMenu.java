@@ -17,22 +17,22 @@ public class ProfileMenu extends LoginMenu{
     protected void changeUserPassword(Matcher matcher) {
         String oldPass = matcher.group("oldPass");
         String newPass = matcher.group("newPass");
-        System.out.println(profileMenuController.changePassword(oldPass,newPass));
+        System.out.println(profileMenuController.changePassword(oldPass,newPass).getOutput());
     }
     protected void changeUserNickname(Matcher matcher) {
         String nickName = matcher.group("nickname");
-        System.out.println(profileMenuController.changeNickname(nickName));
+        System.out.println(profileMenuController.changeNickname(nickName).getOutput());
     }
     protected void changeUserEmail(Matcher matcher) {
         String email = matcher.group("email");
-        System.out.println(profileMenuController.changeEmail(email));
+        System.out.println(profileMenuController.changeEmail(email).getOutput());
     }
     protected void changeUserSlogan(Matcher matcher) {
         String slogan = matcher.group("slogan");
-        System.out.println(profileMenuController.changeSlogan(slogan));
+        System.out.println(profileMenuController.changeSlogan(slogan).getOutput());
     }
     protected void removeUserSlogan() {
-        System.out.println(profileMenuController.removeSlogan());
+        System.out.println(profileMenuController.removeSlogan().getOutput());
     }
     protected void displayUserProfile() {
         profileMenuController.showUserHighestScore();

@@ -65,18 +65,18 @@ public class ProfileMenuController extends LoginMenuController {
     }
 
     public ProfileMenuOutput removeSlogan() {
-        Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setSlogan(null);
-        this.setSlogan(null);
+        Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setSlogan("empty");
+        this.setSlogan("empty");
         moveDataToFile();
         return ProfileMenuOutput.SLOGAN_REMOVED_SUCCESSFULLY;
     }
 
     public void showUserHighestScore() {
-        //TODO: after completing other parts!
+        System.out.println(this.getScore());
     }
 
     public void showUserRank() {
-        //TODO: after completing other parts!
+        System.out.println(this.getRank());
     }
 
     public void showUserSlogan() {
@@ -88,21 +88,17 @@ public class ProfileMenuController extends LoginMenuController {
 
     public void showUserProfileDisplay() {
         User user = User.findUserWithPass(this.getPassword());
-        System.out.println("username:" + Objects.requireNonNull(user).getUsername());
-        StringBuilder password = new StringBuilder("*");
-        for (int i = 1; i < this.getClipBoard().length(); i++) {
-            password.append("*");
-        }
-        System.out.println("password:" + password);
-        System.out.println("email:" + user.getEmail());
-        System.out.println("nickname:" + user.getNickname());
-        if (user.getSlogan() != null)
-            System.out.println("slogan:" + user.getSlogan());
-        //TODO:user rank and high score are left..
+        System.out.println("username: " + Objects.requireNonNull(user).getUsername());
+        this.setClipBoard(GameDataBase.getUserByUsername(user.getUsername()).getClipBoard());
+        System.out.println("password: " + this.getClipBoard());
+        System.out.println("email: " + user.getEmail());
+        System.out.println("nickname: " + user.getNickname());
+        System.out.println("slogan: " + user.getSlogan());
+        System.out.println("rank: " + user.getRank());
+        System.out.println("high score: "+user.getHighScore());
     }
-    public void moveDataToFile()
-    {
+    public static void moveDataToFile() {
         Utility.deleteFile();
-        GameDataBase.setJasonFile();
+        GameDataBaseController.setJasonFileForAllUsers();
     }
 }

@@ -25,9 +25,13 @@ public class LoginMenu extends MainMenu {
         ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
         while (true) {
             userInput = InputScanner.getScanner().nextLine();
-            if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex()))
+            if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex())) {
+                loginMenuController.logOut();
                 return;
-            else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
+            }
+            else if (userInput.matches(LoginMenuEnum.EXIT.getRegex())) {
+                System.exit(0);
+            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
                 profileMenu.changeUserUsername(loginMenuMatcher);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PASSWORD)) != null) {
                 profileMenu.changeUserPassword(loginMenuMatcher);

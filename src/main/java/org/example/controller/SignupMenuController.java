@@ -145,14 +145,15 @@ public class SignupMenuController extends MainMenuController {
     public void signingsComplete() {
         byte[] salt = makeSalt();
         String passHash = Utility.getPassHashSha256(this.getPassword(), salt);
-        User newUser = new User(this.getUsername(), passHash, this.getNickname(), this.getEmail());
-        if (this.getSlogan() != null) {
+        User newUser = new User(this.getUsername(), passHash,this.getClipBoard(), this.getNickname(), this.getEmail());
+        if (!this.getSlogan().equals("empty")) {
             newUser.setSlogan(this.getSlogan());
         }
         if (this.getPassRecoveryQuestion() != null) {
             newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion().getQuestion());
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
+        GameDataBase.getAllUsers().add(newUser);
         new GameDataBaseController().setJasonFile(newUser,false);
     }
 

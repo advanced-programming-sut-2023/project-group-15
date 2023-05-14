@@ -5,15 +5,17 @@ import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
+
 public class LoginMenuController extends MainMenuController{
     private boolean stayLoggedInFlag = false;
     private GameDataBaseController gameDataBaseController = new GameDataBaseController();
 
-    public LoginMenuOutput loginUser() {
+    public LoginMenuOutput loginUser()  {
         if (checkMatchUsername()) {
             if (checkUsernameWithPassword()) {
                 if (this.isStayLoggedInFlag()) {
-                    new GameDataBaseController().changeUserFlag(this.getUsername(),this.isStayLoggedInFlag());
+                    GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(true);
+                    ProfileMenuController.moveDataToFile();
                 }
                 return LoginMenuOutput.LOGGED_IN_SUCCESSFULLY;
             }
@@ -76,6 +78,12 @@ public class LoginMenuController extends MainMenuController{
                 return securityQuestion;
         }
         return null;
+    }
+
+    public void logOut() {
+        GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(false);
+        this.setStayLoggedInFlag(false);
+        ProfileMenuController.moveDataToFile();
     }
 }
 

@@ -8,7 +8,8 @@ public enum BuildingStatusOutput {
     DROP_FORBID("drop building forbid"),
     REPAIR_FORBID("not enough source for repair"),
     NOT_SELECTED("you have no selected building to repair"),
-
+    CAN_NOT_DROP_BUILDING("Cant drop building in this tile"),
+    NOT_ENOUGH_RESOURCES("not enough resources to build this building"),
     ;
 
     private final String output;

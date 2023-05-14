@@ -6,10 +6,12 @@ import org.example.controller.MainMenuController;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
+
+import java.io.IOException;
 import java.util.regex.Matcher;
 
 public class MainMenu {
-    public void run() {
+    public void run() throws IOException {
         Matcher mainMenuMatcher;
         String userInput;
         System.out.println(SignupMenuOutput.SHOW_MAIN_MENU_OPTIONS.getOutput());

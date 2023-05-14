@@ -1,23 +1,16 @@
 package org.example;
 
 import org.example.controller.MainMenuController;
-import org.example.controller.Utility;
-import org.example.model.enums.LandType;
-import org.example.model.enums.Products;
-import org.example.model.enums.StoreProducts;
 import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.Map;
-import org.example.model.gameData.MapTemplates;
-import org.example.view.MainMenu;
 
 import org.example.model.User;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Welcome to the game!");
-        MainMenu mainMenu = new MainMenu();
         new MainMenuController().checkJsonDirectory();
-//        new GameMenu().run();
         for (User user : GameDataBase.getAllUsers()) {
             System.out.println("username: " + user.getUsername());
             System.out.println("password: " + user.getPassword());

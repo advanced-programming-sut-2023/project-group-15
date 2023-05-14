@@ -24,6 +24,7 @@ public class Soldier extends Person {
         this.unitHp = unitHp;
         this.maxMove = maxMove;
         this.name = name;
+        this.type = type;
         this.state = state;
     }
 

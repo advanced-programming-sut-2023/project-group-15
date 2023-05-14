@@ -42,7 +42,6 @@ public class UnitMenuController {
                     landType.equals(LandType.SEA) || landType.equals(LandType.SMALL_POND) || landType.equals(LandType.ROCK) || landType.equals(LandType.PEBBLE))
                 return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;
         }
-
         int maxMove = soldier.getMaxMove();
         if (deltaX > maxMove || deltaY > maxMove) {
             return UnitMenuOutput.OUT_OF_BOUNDS;
@@ -51,17 +50,15 @@ public class UnitMenuController {
             soldier.setY(soldier.getY() + y);
             return UnitMenuOutput.SUCCESSFUL_MOVE;
         }
-
-
     }
 
     public UnitMenuOutput digTunnel(int x, int y) {
         if (!soldier.getName().equalsIgnoreCase("TUNNELER"))
             return UnitMenuOutput.WRONG_UNIT;
         String checkMove = moveUnit(x, y).getOutput();
-        if (checkMove.equals("Your destination is beyond the soldier's power\ntry again"))
+        if (checkMove.equals(UnitMenuOutput.OUT_OF_BOUNDS.getOutput()))
             return UnitMenuOutput.OUT_OF_BOUNDS;
-        else if (checkMove.equals("unit do not allowed to place there"))
+        else if (checkMove.equals(UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE.getOutput()))
             return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;
         if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {
             Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
@@ -74,8 +71,6 @@ public class UnitMenuController {
             }
         } else
             return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;
-
-
     }
 
 
@@ -143,30 +138,30 @@ public class UnitMenuController {
     public UnitMenuOutput buildEquipment(String equipment) {
         if (soldier.getName().equalsIgnoreCase("ENGINEER")) {
             if (equipment.equalsIgnoreCase("TREBUCHET")) {
-                if ((GameInformation.checkForSources(Products.WOOD, 10).equals(
-                        GameInformationOutput.SUCCESS.getOutput())) && (GameInformation.checkForSources(Products.ROCK, 5).equals(
+                if ((BuildingController.checkForSources(Products.WOOD, 10).equals(
+                        GameInformationOutput.SUCCESS.getOutput())) && (BuildingController.checkForSources(Products.ROCK, 5).equals(
                         GameInformationOutput.SUCCESS.getOutput())))
                     return UnitMenuOutput.SUCCESSFUL_BUILD_TREBUCHET;
 
                 else return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
             if (equipment.equalsIgnoreCase("CATAPULTS")) {
-                if ((GameInformation.checkForSources(Products.WOOD, 5).equals(
-                        GameInformationOutput.SUCCESS.getOutput())) && (GameInformation.checkForSources(Products.ROCK, 5).equals(
+                if ((BuildingController.checkForSources(Products.WOOD, 5).equals(
+                        GameInformationOutput.SUCCESS.getOutput())) && (BuildingController.checkForSources(Products.ROCK, 5).equals(
                         GameInformationOutput.SUCCESS.getOutput())))
                     return UnitMenuOutput.SUCCESSFUL_BUILD_CATAPULTS;
 
                 return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
             if (equipment.equalsIgnoreCase("PORTABLE SHIELD")) {
-                if (GameInformation.checkForSources(Products.IRON, 10).equals(
+                if (BuildingController.checkForSources(Products.IRON, 10).equals(
                         GameInformationOutput.SUCCESS.getOutput()))
                     return UnitMenuOutput.SUCCESSFUL_BUILD_SHIELD;
 
                 return UnitMenuOutput.NOT_ENOUGH_RESOURCES;
             }
             if (equipment.equalsIgnoreCase("BATTERING RAM")) {
-                if (GameInformation.checkForSources(Products.WOOD, 20).equals(
+                if (BuildingController.checkForSources(Products.WOOD, 20).equals(
                         GameInformationOutput.SUCCESS.getOutput()))
                     return UnitMenuOutput.SUCCESSFUL_BUILD_BATTERING_RAM;
 
@@ -179,9 +174,8 @@ public class UnitMenuController {
     }
 
     public UnitMenuOutput pourOil(String direction) {
-
         if (soldier.getName().equalsIgnoreCase("ENGINEER")) {
-            ArrayList building = GameInformation.getAllBuildings();
+            ArrayList<Building> building = GameInformation.getAllBuildings();
             for (int i = 0; i != building.size(); i++) {
                 Building building1 = (Building) building.get(i);
                 if (building1.getName().equals("oil smelter")) {
@@ -204,13 +198,11 @@ public class UnitMenuController {
                 case RIGHT:
                     x1++;
             }
-
             return UnitMenuOutput.SUCCESSFUL_POUR_OIL;
         } else return UnitMenuOutput.WRONG_UNIT_ENGINEER;
     }
 
     public UnitMenuOutput digDitch(int x, int y) {
-
         if (soldier.getName().equalsIgnoreCase("SPEARMEN")) {
             String checkMove = moveUnit(x, y).getOutput();
             if (checkMove.equals("Your destination is beyond the soldier's power\ntry again"))
@@ -230,31 +222,25 @@ public class UnitMenuController {
             y1 -= y;
             return UnitMenuOutput.OUT_OF_BOUNDS;
         }
-
         String doubleCheck = moveUnit(x2, y2).getOutput();
         if (doubleCheck.equals("Your destination is beyond the soldier's power\ntry again")) {
             x1 = x1 - (x + x2);
             y1 = y1 - (y + y2);
             return UnitMenuOutput.OUT_OF_BOUNDS;
         }
-
-
         System.out.println("unit started patrolling...");
-
-
         patX1 = x;
         patY1 = y;
         patX2 = x2;
         patY2 = y2;
         String c = patrolStop(stopPatrolling, x, y, x2, y2).getOutput();
-
         System.out.println("stopped");
         return UnitMenuOutput.PATROL_UNIT;
 
     }
 
     public UnitMenuOutput patrolStop(boolean stopPatrolling, int x, int y, int x2, int y2) {
-        while (stopPatrolling == true) {
+        while (stopPatrolling) {
             String checkMove = moveUnit(x, y).getOutput();
             String doubleCheck = moveUnit(x2, y2).getOutput();
         }
@@ -281,7 +267,6 @@ public class UnitMenuController {
     public UnitMenuOutput wallTarget(int x, int y) {
         Building building;
         Soldier unit;
-
         if ((GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) && (soldier.getName().equalsIgnoreCase("SPEARMEN") || (soldier.getName().equalsIgnoreCase("MACEMEN")))) {
             attackUnit(x, y);
         }
@@ -298,7 +283,7 @@ public class UnitMenuController {
     }
 
     public void figuringNearbyUnits(Soldier unit) {
-        ArrayList soldiers = GameInformation.getAllSoldiers();
+        ArrayList<Soldier> soldiers = GameInformation.getAllSoldiers();
         int numberOfSoldier = 0;
         if (unit.getType().equals("infantry")) {
             for (int i = 0; i != soldiers.size(); i++) {
@@ -307,10 +292,8 @@ public class UnitMenuController {
                     attackUnit(soldier1.getX(), soldier1.getY());
                     if (unit.getState().equals("defensive"))
                         return;
-
                     ++numberOfSoldier;
                     if (numberOfSoldier == 2) return;
-
                 }
             }
             if (unit.getType().equals("launcher")) {
@@ -328,7 +311,7 @@ public class UnitMenuController {
     public void attackEnemy(int x, int y, String name) {
         //Checking what the previous user ordered
         //if !pour oil || build Eq || disband
-        if(soldier.getType().equalsIgnoreCase("wallTarget"))
-            wallTarget(x,y);
+        if (soldier.getType().equalsIgnoreCase("wallTarget"))
+            wallTarget(x, y);
     }
 }

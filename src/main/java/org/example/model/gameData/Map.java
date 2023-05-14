@@ -9,7 +9,6 @@ public abstract class Map {
     private int playerMapWidth;
     public static Tile[][] currentMap = new Tile[400][400];
 
-
     public static void setCurrentMap(int size)
      {
              for (int i = 0; i <size; i++) {

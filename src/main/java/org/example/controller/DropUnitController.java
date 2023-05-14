@@ -7,9 +7,14 @@ import org.example.model.MBC.UnitWallTarget;
 import org.example.model.enums.LandType;
 import org.example.model.enums.UnitName;
 import org.example.model.gameData.GameInformation;
+import org.example.model.gameData.Government;
 import org.example.view.enums.outputs.UnitMenuOutput;
 
 public class DropUnitController {
+//    private final Government government;
+
+    public DropUnitController() {
+    }
 
     public static UnitMenuOutput dropUnit(String name, int x, int y) {
         UnitName type = UnitName.getUnitType(name);
@@ -28,7 +33,7 @@ public class DropUnitController {
                 break;
             case "infantry":
                 Soldier soldier1 = new InfantryUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,
-                        unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
+                        unit.getUnitHp(), unit.getMaxMove(),unit.getName(), unit.getType(), "STANDING");
                 GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);
                 break;
             case "wallTarget":

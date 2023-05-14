@@ -22,18 +22,11 @@ public class GameInformationController {
                 filePath = FilePaths.Map4.getFilePaths();
                 break;
         }
-        GameInformation.setMapGame(mapSize, mapNumber, filePath);
-    }
-
-    public void playerAdder(User player) {
-        int playerNO = GameInformation.getCurrentPlayerno();
-        GameInformation.addPlayer(player, playerNO);
-        playerNO++;
-        GameInformation.setCurrentUserno(playerNO);
+        GameInformation.setMapGame(mapSize,filePath);
     }
 
     public void generateEachPlayerMap(int mapSize) {
-        int playerNumber = GameInformation.getCurrentPlayerno();
+        int playerNumber = GameInformation.getCurrentPlayerNo();
         Tile[][] playerMap = new Tile[mapSize / 2][];
         if (playerNumber <= 4) {
             for (int i = 0; i < mapSize / 2; i++) {

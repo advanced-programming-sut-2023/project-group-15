@@ -1,14 +1,61 @@
 package org.example.model.gameData;
 
+import org.example.model.MBC.InfantryUnit;
+import org.example.model.MBC.LauncherUnit;
+import org.example.model.MBC.UnitWallTarget;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Government {
+    private final String owner;
+    private int people;
+    private int workers;
+    private ArrayList<InfantryUnit> infantryUnit;
+    private ArrayList<LauncherUnit> launcherUnit;
+    private ArrayList<UnitWallTarget> unitWallTarget;
+    private final List<Trade> tradeSendList;
+    private final List<Trade> tradeReqList;
+    private final List<Trade> tradeHistoryList;
     private int popularity;
     private int foodRate;
     private int taxRate;
     private int fearRate;
     private double coins;
     private final HashMap<String, Double> foods = new HashMap<>();
+    private static final ArrayList<Government> allGovernments = new ArrayList<>();
+
+    public Government(String owner) {
+        this.owner = owner;
+        this.coins = 100.00;
+        this.people = 50;
+        this.workers = 0;
+        this.infantryUnit = new ArrayList<>();
+        this.launcherUnit = new ArrayList<>();
+        this.unitWallTarget = new ArrayList<>();
+        this.tradeHistoryList = new ArrayList<>();
+        this.tradeReqList = new ArrayList<>();
+        this.tradeSendList = new ArrayList<>();
+        allGovernments.add(this);
+    }
+    public String getOwner() {
+        return owner;
+    }
+
+//    public ArrayList<Government> getAllGovernments() {
+//        return allGovernments;
+//    }
+    public static Government findGovernmentWithUsername(String username) {
+        for (Government government:Government.allGovernments) {
+            if (government.getOwner().equals(username))
+                return government;
+        }
+        return null;
+    }
+
+
+
     public void foodList() {
         foods.put("Apple", 0.00);
         foods.put("Hop", 0.00);
@@ -96,6 +143,37 @@ public class Government {
         return this.foodRate;
     }
 
+    public void setPeople(int people) {
+        this.people = people;
+    }
+    public void addWorker(int amount) {
+        this.workers += amount;
+    }
+    public void reduceWorker(int amount) {
+        this.workers -= amount;
+    }
+    public void addPeople(int amount) {
+        this.people += amount;
+    }
+    public void reducePeople(int amount) {
+        this.people -= amount;
+    }
+    public void setWorkers(int workers) {
+        this.workers = workers;
+    }
+
+    public void setInfantryUnit(ArrayList<InfantryUnit> infantryUnit) {
+        this.infantryUnit = infantryUnit;
+    }
+
+    public void setLauncherUnit(ArrayList<LauncherUnit> launcherUnit) {
+        this.launcherUnit = launcherUnit;
+    }
+
+    public void setUnitWallTarget(ArrayList<UnitWallTarget> unitWallTarget) {
+        this.unitWallTarget = unitWallTarget;
+    }
+
     public int getPopularity() {
         return this.popularity;
     }
@@ -138,5 +216,56 @@ public class Government {
                 return 0;
         }
     }
+    public int getPeople() {
+        return people;
+    }
 
+    public int getWorkers() {
+        return workers;
+    }
+
+    public int getInfantryUnitNumber() {
+        return infantryUnit.size();
+    }
+
+    public int getLauncherUnitNumber() {
+        return launcherUnit.size();
+    }
+
+    public int getUnitWallTargetNumber() {
+        return unitWallTarget.size();
+    }
+
+    public InfantryUnit getInfantryUnit() {
+        return infantryUnit.get(0);
+    }
+
+    public LauncherUnit getLauncherUnit() {
+        return launcherUnit.get(0);
+    }
+
+    public UnitWallTarget getUnitWallTarget() {
+        return unitWallTarget.get(0);
+    }
+
+    public void addInfantryUnit(InfantryUnit infantryUnit) {
+        this.infantryUnit.add(infantryUnit);
+    }
+    public void addLauncherUnit(LauncherUnit launcherUnit) {
+        this.launcherUnit.add(launcherUnit);
+    }
+    public void addUnitWallTarget(UnitWallTarget unitWallTarget) {
+        this.unitWallTarget.add(unitWallTarget);
+    }
+    public List<Trade> getTradeSendList() {
+        return tradeSendList;
+    }
+
+    public List<Trade> getTradeReqList() {
+        return tradeReqList;
+    }
+
+    public List<Trade> getTradeHistoryList() {
+        return tradeHistoryList;
+    }
 }

@@ -119,10 +119,10 @@ public class MainMenuController {
         this.email = email;
     }
 
-    public void checkJsonDirectory() {
+    public void checkJsonDirectory() throws IOException {
         File dir = new File("d:/json/dataBase.json");
         if (dir.exists()) {
-            gameDataBaseController.readFromFile();
+            GameDataBaseController.readFromFile();
             checkUsersFlag();
         } else {
             new File("d:/json").mkdirs();

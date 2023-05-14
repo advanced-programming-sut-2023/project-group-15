@@ -12,7 +12,7 @@ public class MapMenuController {
     private static Tile[][] currentUserMap;
 
     public MapMenuController() {
-        currentUserMap = GameInformation.getGameMap();
+        currentUserMap = GameInformation.gameMap;
     }
 
     public void setStartingPoint(Matcher matcher) {

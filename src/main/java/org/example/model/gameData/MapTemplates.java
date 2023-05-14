@@ -264,8 +264,5 @@ public class MapTemplates {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        //TODO : user should be able to choose between maps in the first of the game
-
     }
 }
