@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.controller.userControllers;
 
 import org.example.model.User;
@@ -6,10 +7,10 @@ import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
 
-public class LoginMenuController extends MainMenuController{
+public class LoginMenuController extends MainMenuController {
     private boolean stayLoggedInFlag = false;
 
-    public LoginMenuOutput loginUser()  {
+    public LoginMenuOutput loginUser() {
         if (checkMatchUsername()) {
             if (checkUsernameWithPassword()) {
                 if (this.isStayLoggedInFlag()) {
@@ -24,7 +25,7 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkMatchUsername() {
-        for (User user: GameDataBase.getAllUsers()) {
+        for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername()))
                 return true;
         }
@@ -32,7 +33,7 @@ public class LoginMenuController extends MainMenuController{
     }
 
     private boolean checkUsernameWithPassword() {
-        for (User user:GameDataBase.getAllUsers()) {
+        for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
                 if (user.getPassword().equals(this.getPassword())) {
                     return true;
@@ -43,18 +44,16 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public boolean checkSecurityQuestion(String answer) {
-        for (User user:GameDataBase.getAllUsers()) {
+        for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
-                if (user.getPassRecoveryAnswer().matches("\\s*"+answer+"\\s*")) {
+                if (user.getPassRecoveryAnswer().matches("\\s*" + answer + "\\s*")) {
                     return true;
                 }
             }
         }
         return false;
     }
-    public void captcha() {
-        //TODO: later...
-    }
+
     public boolean isStayLoggedInFlag() {
         return stayLoggedInFlag;
     }
@@ -64,15 +63,16 @@ public class LoginMenuController extends MainMenuController{
     }
 
     public SecurityQuestion findUserSecurityQuestion() {
-        for (User user:GameDataBase.getAllUsers()) {
+        for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
                 return user.findUserQuestionWithUsername();
             }
         }
         return null;
     }
+
     public SecurityQuestion findUserSecurityQuestion(String question) {
-        for (SecurityQuestion securityQuestion:SecurityQuestion.allQuestions()) {
+        for (SecurityQuestion securityQuestion : SecurityQuestion.allQuestions()) {
             if (securityQuestion.getQuestion().equals(question))
                 return securityQuestion;
         }

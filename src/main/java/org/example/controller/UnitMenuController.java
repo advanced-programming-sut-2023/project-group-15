@@ -21,9 +21,11 @@ public class UnitMenuController {
     private LauncherUnit launcherUnit;
     private UnitWallTarget unitWallTarget;
     private InfantryUnit infantryUnit;
+
     public UnitMenuController(String playerName) {
         this.government = Government.findGovernmentWithUsername(playerName);
     }
+
     public int x1, y1;
     public int patX1, patX2, patY1, patY2;
 
@@ -99,7 +101,7 @@ public class UnitMenuController {
         else {
             int deltaX = x - this.selectedUnit.getX();
             int deltaY = y - this.selectedUnit.getY();
-            if (deltaX <=  this.launcherUnit.getThrowRageForCharging() && deltaY <= this.launcherUnit.getThrowRageForCharging()) {
+            if (deltaX <= this.launcherUnit.getThrowRageForCharging() && deltaY <= this.launcherUnit.getThrowRageForCharging()) {
                 if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {
                     Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();
 
@@ -316,30 +318,31 @@ public class UnitMenuController {
 //        if (soldier.getType().equalsIgnoreCase("wallTarget"))
 //            wallTarget(x, y);
     }
-    public UnitMenuOutput dropUnit(String name, int x, int y,int count) {
+
+    public UnitMenuOutput dropUnit(String name, int x, int y, int count) {
         UnitName type = UnitName.getUnitType(name);
         if (checkLand(x, y)) {
-            unitType(type, x, y,count);
+            unitType(type, x, y, count);
             return UnitMenuOutput.SUCCESSFUL_DROP_UNIT;
         } else return UnitMenuOutput.CAN_NOT_DROP_UNIT;
     }
 
-    public void unitType(UnitName unit, int x, int y,int count) {
+    public void unitType(UnitName unit, int x, int y, int count) {
         switch (unit.getType()) {
             case "launcher":
-                createLauncherUnit(unit,x,y,count);
+                createLauncherUnit(unit, x, y, count);
                 break;
             case "infantry":
-                createInfantryUnit(unit,x,y,count);
+                createInfantryUnit(unit, x, y, count);
                 break;
             case "wallTarget":
-                createWallTargetUnit(unit,x,y,count);
+                createWallTargetUnit(unit, x, y, count);
                 break;
         }
     }
 
     private void createWallTargetUnit(UnitName unit, int x, int y, int count) {
-        for (int i=0;i<count ;i ++) {
+        for (int i = 0; i < count; i++) {
             Soldier soldier2 = new UnitWallTarget(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,
                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier2);
@@ -349,7 +352,7 @@ public class UnitMenuController {
     }
 
     private void createInfantryUnit(UnitName unit, int x, int y, int count) {
-        for (int i=0; i< count;i++) {
+        for (int i = 0; i < count; i++) {
             Soldier soldier1 = new InfantryUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,
                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);
@@ -359,7 +362,7 @@ public class UnitMenuController {
     }
 
     private void createLauncherUnit(UnitName unit, int x, int y, int count) {
-        for (int i =0 ; i< count;i++) {
+        for (int i = 0; i < count; i++) {
             Soldier soldier = new LauncherUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,
                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING", unit.getThrowRange());
             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier);

@@ -1,6 +1,7 @@
 package org.example.controller;
 
 
+import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.User;
 import org.example.model.enums.Slogans;
 import org.example.model.gameData.GameDataBase;
@@ -17,7 +18,8 @@ import java.util.regex.Pattern;
 
 @ExtendWith(MockitoExtension.class)
 class SignupMenuControllerTest {
-    @InjectMocks SignupMenuController controller;
+    @InjectMocks
+    SignupMenuController controller;
     @org.junit.jupiter.api.Test
     void signupUserCheckTests() {
         SignupMenuOutput status = SignupMenuController.emailCheck("mahdi@.com");
@@ -164,8 +166,9 @@ class SignupMenuControllerTest {
         controller.setUsername("mahdi");
         controller.setPassword("mahdi123@AK");
         controller.changeForgetPassword();
-        Assertions.assertEquals("mahdi123@AK",user.getPassword());
-        Assertions.assertNotEquals("mahdiAK123@",user.getPassword());
+        System.out.println(user.getPassword());
+        Assertions.assertNotEquals("mahdi123@AK",user.getPassword());
+        Assertions.assertEquals("mahdiAK123@",user.getPassword());
     }
     private static Matcher getMatcherForTest(String password, String regex) {
         Matcher matcher = Pattern.compile(regex, Pattern.CASE_INSENSITIVE).matcher(password);

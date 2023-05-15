@@ -25,7 +25,7 @@ public class MainMenu {
                 new LoginMenu().loginInCheck(mainMenuMatcher);
             } else if (LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.FORGET_PASSWORD) != null) {
                 forgetPassword();
-            } else if ((mainMenuMatcher = SignupMenuEnum.getMatcher(userInput, SignupMenuEnum.CREATE_MAP)) != null) {
+            } else if (SignupMenuEnum.getMatcher(userInput, SignupMenuEnum.CREATE_MAP) != null) {
                 new MapMenu().run();
             } else {
                 System.out.println("Invalid command!");

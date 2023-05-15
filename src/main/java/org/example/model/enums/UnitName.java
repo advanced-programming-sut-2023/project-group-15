@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.enums;
 
 public enum UnitName {
@@ -93,6 +94,7 @@ public enum UnitName {
                 return unitName;
         return null;
     }
+
     public double getCost() {
         return cost;
     }

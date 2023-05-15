@@ -1,8 +1,8 @@
+//this class is completed!
 package org.example.controller.userControllers;
 
 
-import org.example.controller.jsonController;
-import org.example.controller.Utility;
+import org.example.controller.JsonController;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
@@ -146,8 +146,8 @@ public class SignupMenuController extends MainMenuController {
 
     public void signingsComplete() {
         byte[] salt = makeSalt();
-        String passHash = Utility.getPassHashSha256(this.getPassword(), salt);
-        User newUser = new User(this.getUsername(), passHash,this.getClipBoard(), this.getNickname(), this.getEmail());
+        String passHash = JsonController.getPassHashSha256(this.getPassword(), salt);
+        User newUser = new User(this.getUsername(), passHash, this.getClipBoard(), this.getNickname(), this.getEmail());
         if (!this.getSlogan().equals("empty")) {
             newUser.setSlogan(this.getSlogan());
         }
@@ -156,7 +156,7 @@ public class SignupMenuController extends MainMenuController {
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
         GameDataBase.getAllUsers().add(newUser);
-        new jsonController().setJasonFile(newUser,false);
+        new JsonController().setJasonFile(newUser, false);
     }
 
     private static Matcher getMatcher(String password, String regex) {
@@ -170,5 +170,13 @@ public class SignupMenuController extends MainMenuController {
                 user.setPassword(this.getPassword());
             }
         }
+    }
+
+    public void showQuestions() {
+        SecurityQuestion.questions();
+    }
+
+    public void showSlogans() {
+        Slogans.slogans();
     }
 }

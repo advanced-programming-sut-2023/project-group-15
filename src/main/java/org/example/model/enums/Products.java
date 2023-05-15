@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.enums;
 
 public enum Products {
@@ -27,6 +28,7 @@ public enum Products {
     ;
 
     private final String productName;
+
     Products(String productName) {
         this.productName = productName;
     }
@@ -43,6 +45,7 @@ public enum Products {
         }
         return null;
     }
+
     public static Products getProductByName(String name) {
         for (Products product : Products.values()) {
             if (String.valueOf(product).equals(name))

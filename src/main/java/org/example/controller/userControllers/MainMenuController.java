@@ -1,6 +1,7 @@
+//this class is completed!
 package org.example.controller.userControllers;
 
-import org.example.controller.jsonController;
+import org.example.controller.JsonController;
 import org.example.model.enums.SecurityQuestion;
 import org.example.view.userView.LoginMenu;
 import org.example.view.userView.MainMenu;
@@ -14,7 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class MainMenuController {
-    private final jsonController gameDataBaseController ;
+    private final JsonController gameDataBaseController ;
     private String username;
     private String password;
     private String nickname;
@@ -37,7 +38,7 @@ public class MainMenuController {
         this.passRecoveryAnswer = null;
         this.passRecoveryQuestion = null;
         this.score = 0;
-        this.gameDataBaseController = new jsonController();
+        this.gameDataBaseController = new JsonController();
     }
 
     public void setPassRecoveryQuestion(SecurityQuestion passRecoveryQuestion) {
@@ -123,7 +124,7 @@ public class MainMenuController {
     public void checkJsonDirectory()  {
         File dir = new File("d:/json/dataBase.json");
         if (dir.exists()) {
-            jsonController.readFromFile();
+            JsonController.readFromFile();
             checkUsersFlag();
         } else {
             new File("d:/json").mkdirs();

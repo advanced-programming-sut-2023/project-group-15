@@ -1,18 +1,22 @@
+//this class is completed!
 package org.example.model.enums;
 
 public enum Tree {
-    SHRUB,
-    CHERRY_PALM,
-    OLIVE_TREE,
-    COCONUT_PALM,
-    DATE_PALM,
+    SHRUB("shrub"),
+    CHERRY_PALM("cherry palm"),
+    OLIVE_TREE("olive tree"),
+    COCONUT_PALM("coconut palm"),
+    DATE_PALM("date palm"),
     ;
+    private final String tree;
 
-    public static Tree getTree(String name) {
-        for (Tree tree : Tree.values())
-            if (String.valueOf(tree).equals(name))
-                return tree;
-        return null;
+    public String getTree() {
+        return tree;
     }
+
+    Tree(String tree) {
+        this.tree = tree;
+    }
+
 
 }

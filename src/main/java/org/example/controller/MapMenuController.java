@@ -23,11 +23,11 @@ public class MapMenuController {
         return yStart;
     }
 
-    public void setxStart(int xStart) {
+    public void setXStart(int xStart) {
         this.xStart = xStart;
     }
 
-    public void setyStart(int yStart) {
+    public void setYStart(int yStart) {
         this.yStart = yStart;
     }
 
@@ -68,7 +68,7 @@ public class MapMenuController {
     }
 
     public void moving(Matcher matcher) {
-        int x,y;
+        int x, y;
         x = findX(matcher);
         y = findY(matcher);
         showMap(xStart + x, yStart + y);
@@ -79,48 +79,38 @@ public class MapMenuController {
             if (matcher.group("un") != null)
                 return Integer.parseInt(matcher.group("un"));
             else
-                return  1;
+                return 1;
         } else {
             if (matcher.group("dn") != null)
-                return  -Integer.parseInt(matcher.group("dn"));
+                return -Integer.parseInt(matcher.group("dn"));
             else
-                return  -1;
+                return -1;
         }
     }
 
     private int findX(Matcher matcher) {
         if (matcher.group("l") != null) {
             if (matcher.group("ln") != null)
-                return  -Integer.parseInt(matcher.group("ln"));
+                return -Integer.parseInt(matcher.group("ln"));
             else
-                return  -1;
+                return -1;
         } else {
             if (matcher.group("rn") != null)
                 return Integer.parseInt(matcher.group("rn"));
             else
-                return  1;
+                return 1;
         }
     }
 
-    public String showDetails(int x, int y) {
-        int landTypeCounter = 0;
-        Tile currentTile = currentUserMap[x][y];
-        String answer = "LandType : ";
-        for (int i = 0; i < currentUserMap.length; i++) {
-            for (int j = 0; j < currentUserMap.length; j++) {
-                if (currentUserMap[i][j].getLandType().equals(currentTile.getLandType()))
-                    landTypeCounter++;
-            }
-        }
-        answer = answer.concat(currentTile.getLandType().values().toString() +
-                "number of tiles with this landtype on map : " + String.valueOf(landTypeCounter));
-        if (currentTile.getBuilding() != null)
-            answer = answer.concat("\n" + "Building(s): " + currentTile.getBuilding().getName().toString());
-        if (currentTile.getSoldier() != null) {
-            answer = answer.concat("\n" + "Soldier(s) : " + currentTile.getSoldier().getName().toString() +
-                    "\n" + "number of soldiers: " + String.valueOf(currentTile.getNumberOfSoldiers()));
-        }
-        return answer;
+    public void showDetails(int x, int y) {
+        Tile tile = GameInformation.getGameMap()[x][y];
+        System.out.println("LandType: " + tile.getLandType());
+        if (tile.getBuilding() != null)
+            System.out.println("Building: " + GameInformation.getGameMap()[x][y].getBuilding().getName());
+        if (tile.getSoldier() != null)
+            System.out.println("Soldiers: " + tile.getSoldier().getName() + " amount: " + tile.getNumberOfSoldiers());
+        if (tile.getTree() != null)
+            System.out.println("Tree: " + tile.getTree());
     }
 
     public boolean checkMatcher(Matcher matcher) {

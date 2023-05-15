@@ -1,9 +1,9 @@
+//this class is completed!
 package org.example.view.userView;
 
 
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.ProfileMenuController;
-import org.example.view.userView.LoginMenu;
 
 import java.util.regex.Matcher;
 

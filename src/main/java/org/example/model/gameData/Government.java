@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.gameData;
 
 import org.example.model.MBC.InfantryUnit;
@@ -71,9 +72,11 @@ public class Government {
     public ArrayList<Building> getAllBuiltBuildings() {
         return builtBuildings;
     }
+
     public void addBuiltBuilding(Building building) {
         this.getAllBuiltBuildings().add(building);
     }
+
     public int getReligion() {
         return religion;
     }
@@ -81,7 +84,6 @@ public class Government {
     public void setReligion(int religion) {
         this.religion = religion;
     }
-
 
     private void setPrimitiveFoods() {
         this.foods.put("Apple", 0.00);
@@ -94,22 +96,14 @@ public class Government {
         return owner;
     }
 
-//    public ArrayList<Government> getAllGovernments() {
-//        return allGovernments;
-//    }
     public static Government findGovernmentWithUsername(String username) {
-        for (Government government:Government.allGovernments) {
+        for (Government government : Government.allGovernments) {
             if (government.getOwner().equals(username))
                 return government;
         }
         return null;
     }
 
-
-
-    public void foodList() {
-
-    }
     public void setCoins(double coin) {
         this.coins = coin;
     }
@@ -125,6 +119,7 @@ public class Government {
     public double getCoins() {
         return this.coins;
     }
+
     public void setPopularity(int popularity) {
         this.popularity = popularity;
     }
@@ -179,10 +174,12 @@ public class Government {
         double number = this.foods.get(food) + amount;
         this.foods.replace(food, number);
     }
+
     public void removeFood(String food, double amount) {
         double number = this.foods.get(food) - amount;
         this.foods.replace(food, number);
     }
+
     public int getTaxRate() {
         return this.taxRate;
     }
@@ -191,35 +188,20 @@ public class Government {
         return this.foodRate;
     }
 
-    public void setPeople(int people) {
-        this.people = people;
-    }
     public void addWorker(int amount) {
         this.workers += amount;
     }
+
     public void reduceWorker(int amount) {
         this.workers -= amount;
     }
+
     public void addPeople(int amount) {
         this.people += amount;
     }
+
     public void reducePeople(int amount) {
         this.people -= amount;
-    }
-    public void setWorkers(int workers) {
-        this.workers = workers;
-    }
-
-    public void setInfantryUnit(ArrayList<InfantryUnit> infantryUnit) {
-        this.infantryUnit = infantryUnit;
-    }
-
-    public void setLauncherUnit(ArrayList<LauncherUnit> launcherUnit) {
-        this.launcherUnit = launcherUnit;
-    }
-
-    public void setUnitWallTarget(ArrayList<UnitWallTarget> unitWallTarget) {
-        this.unitWallTarget = unitWallTarget;
     }
 
     public int getPopularity() {
@@ -243,17 +225,17 @@ public class Government {
     }
 
     public int checkFoodVariety() {
-        int varity = 0;
+        int variety = 0;
         double zero = 0.00;
         if (Double.compare(foods.get("Apple"), zero) != 0)
-            ++varity;
+            ++variety;
         if (Double.compare(foods.get("Hop"), zero) != 0)
-            ++varity;
+            ++variety;
         if (Double.compare(foods.get("Bread"), zero) != 0)
-            ++varity;
+            ++variety;
         if (Double.compare(foods.get("Cheese"), zero) != 0)
-            ++varity;
-        switch (varity) {
+            ++variety;
+        switch (variety) {
             case 4:
                 return 3;
             case 3:
@@ -264,6 +246,7 @@ public class Government {
                 return 0;
         }
     }
+
     public int getPeople() {
         return people;
     }
@@ -299,12 +282,15 @@ public class Government {
     public void addInfantryUnit(InfantryUnit infantryUnit) {
         this.infantryUnit.add(infantryUnit);
     }
+
     public void addLauncherUnit(LauncherUnit launcherUnit) {
         this.launcherUnit.add(launcherUnit);
     }
+
     public void addUnitWallTarget(UnitWallTarget unitWallTarget) {
         this.unitWallTarget.add(unitWallTarget);
     }
+
     public List<Trade> getTradeSendList() {
         return tradeSendList;
     }
@@ -319,5 +305,9 @@ public class Government {
 
     public boolean isStoreBuilt() {
         return this.storeBuilt;
+    }
+
+    public void addPopularity(int amount) {
+        this.popularity += amount;
     }
 }

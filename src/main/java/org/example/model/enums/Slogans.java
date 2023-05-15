@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.enums;
 
 import java.util.ArrayList;
@@ -45,6 +46,19 @@ public enum Slogans {
 
     public String getSlogan() {
         return slogan;
+    }
+    public static void slogans() {
+        System.out.println("1." + Slogans.SLOGAN1.getSlogan());
+        System.out.println("2." + Slogans.SLOGAN2.getSlogan());
+        System.out.println("3." + Slogans.SLOGAN3.getSlogan());
+        System.out.println("4." + Slogans.SLOGAN4.getSlogan());
+        System.out.println("5." + Slogans.SLOGAN5.getSlogan());
+        System.out.println("6." + Slogans.SLOGAN6.getSlogan());
+        System.out.println("7." + Slogans.SLOGAN7.getSlogan());
+        System.out.println("8." + Slogans.SLOGAN8.getSlogan());
+        System.out.println("9." + Slogans.SLOGAN9.getSlogan());
+        System.out.println("10." + Slogans.SLOGAN10.getSlogan());
+        System.out.println("11." + Slogans.SLOGAN11.getSlogan());
     }
 
     Slogans(String slogan, int index) {

@@ -1,7 +1,6 @@
 package org.example.model.MBC;
 
 import org.example.model.User;
-import org.example.model.enums.State;
 
 public class Soldier extends Person {
     private final int speed;
@@ -14,10 +13,10 @@ public class Soldier extends Person {
     private String state;
     private static User owner;
     public boolean patrolling;
-
     private int unitHp;
     private String type;
-    public Soldier(int speed,int attackingPower,int defense,int x,int y , int unitHp ,int maxMove,String name,String type,String state){
+
+    public Soldier(int speed, int attackingPower, int defense, int x, int y, int unitHp, int maxMove, String name, String type, String state) {
         this.speed = speed;
         this.attackingPower = attackingPower;
         this.defense = defense;
@@ -74,6 +73,7 @@ public class Soldier extends Person {
     public void setAttackingPower(int attackingPower) {
         this.attackingPower = attackingPower;
     }
+
     public void setX(int x) {
         this.x = x;
     }

@@ -1,7 +1,5 @@
 package org.example.controller;
 
-import org.example.model.MBC.People;
-import org.example.model.MBC.Worker;
 import org.example.model.Tile;
 import org.example.model.building.*;
 import org.example.model.enums.Products;
@@ -10,8 +8,6 @@ import org.example.model.gameData.*;
 import org.example.view.enums.outputs.BuildingStatusOutput;
 import org.example.view.enums.outputs.GameInformationOutput;
 
-import java.util.Objects;
-import java.util.regex.Matcher;
 
 public class BuildingController {
     private final Government government;
@@ -49,25 +45,10 @@ public class BuildingController {
         return false;
     }
 
-    public void selectForChangingTax(int tax) {
-        String name = selectedBuilding.getName();
-        if (name.equals("BIG_STONE_GATEHOUSE") || name.equals("SMALL_STONE_GATEHOUSE"))
-            GameInformation.getCurrentPlayerGovernment().setTaxRate(tax);
-
-    }
-
-     /*   public void selectForEducate()
-        {
-            if(selectedBuilding instanceof Education)
-                selectedBuilding.Educate();
-        }*/
-    //TODO add education
-
-
     public void dropProductiveBuilding(int x, int y, String name) {
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
-                if(checkForWorkers(building).equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput())) {
+                if (checkForWorkers(building).equals(BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput())) {
                     Building newBuilding = new ProductiveBuilding(name, 100, x, y, building.getMaterial1Name()
                             , building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial2(),
                             building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
@@ -97,7 +78,7 @@ public class BuildingController {
                         , building.getNumberOfMaterial1(), building.getNumberOfMaterial2());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
-                if(newBuilding.getName().equals("HOUSE"))
+                if (newBuilding.getName().equals("HOUSE"))
                     government.addPeople(9);
                 government.addBuiltBuilding(newBuilding);
             }
@@ -123,6 +104,7 @@ public class BuildingController {
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
                 government.addBuiltBuilding(newBuilding);
+                government.addPopularity(10);
             }
         }
     }
@@ -134,7 +116,7 @@ public class BuildingController {
             GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(market);
             GameInformation.getAllBuildings().add(market);
             government.addBuiltBuilding(market);
-            government.setPayerMarket((Market)market);
+            government.setPayerMarket((Market) market);
         }
     }
 
@@ -153,12 +135,13 @@ public class BuildingController {
         }
         return false;
     }
+
     public static String checkForSources(Products product, int amount) {
         int current;
         Storage store = null;
-        for(StoreProducts storeProduct : StoreProducts.values()) {
-            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
-                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , GameInformation.getCurrentPlayer());
+        for (StoreProducts storeProduct : StoreProducts.values()) {
+            if (String.valueOf(product).equalsIgnoreCase(String.valueOf(storeProduct))) {
+                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()), GameInformation.getCurrentPlayer());
             }
         }
         if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
@@ -188,35 +171,35 @@ public class BuildingController {
             dropPopularityBuilding(x, y, name);
         else if (type.equals("market"))
             dropMarket(x, y, name);
-        else if(type.equals("store"))
-            dropStorageBuilding(x,y,name);
+        else if (type.equals("store"))
+            dropStorageBuilding(x, y, name);
     }
 
     public String repair() {
-        if(selectedBuilding == null)
+        if (selectedBuilding == null)
             return BuildingStatusOutput.NOT_SELECTED.getOutput();
         String name = selectedBuilding.getName();
-        String status1 = null , status2 = null;
+        String status1 = null, status2 = null;
         int completeHp = BuildingName.getBuildingName(name).getHp();
         if (selectedBuilding.getHp() < completeHp) {
             if (selectedBuilding.getMaterial1() != null)
                 status1 = checkForSources(selectedBuilding.getMaterial1(), selectedBuilding.getNumberOfMaterial1());
-            if(selectedBuilding.getMaterial2() != null)
-                status2 = checkForSources(selectedBuilding.getMaterial2() , selectedBuilding.getNumberOfMaterial2());
+            if (selectedBuilding.getMaterial2() != null)
+                status2 = checkForSources(selectedBuilding.getMaterial2(), selectedBuilding.getNumberOfMaterial2());
         }
-        if(status1 .equals(GameInformationOutput.NOT_ENOUGH) || status2.equals(GameInformationOutput.NOT_ENOUGH))
+        if (status1.equals(GameInformationOutput.NOT_ENOUGH.getOutput()) || status2.equals(GameInformationOutput.NOT_ENOUGH.getOutput()))
             return BuildingStatusOutput.REPAIR_FORBID.getOutput();
         else
             return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
 
     }
+
     public boolean isPlayerHaveStore() {
         return government.isStoreBuilt();
     }
 
-    public String checkForWorkers(BuildingName buildingName)
-    {
-        if(government.getPeople() >= buildingName.getNumberOfWorkers()) {
+    public String checkForWorkers(BuildingName buildingName) {
+        if (government.getPeople() >= buildingName.getNumberOfWorkers()) {
             government.reducePeople(buildingName.getNumberOfWorkers());
             government.addWorker(buildingName.getNumberOfWorkers());
             return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();

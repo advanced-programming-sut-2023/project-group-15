@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.gameData;
 
 import org.example.model.User;
@@ -12,22 +13,26 @@ public class Trade {
     private final User receiver;
     private final int amount;
     private final Products product;
-    private final String message;
+    private final String senderMessage;
+    private String receiverMessage;
     private final double price;
     private boolean accepted;
     private final static ArrayList<Trade> allTrades = new ArrayList<>();
+
     public Trade(User sender, User receiver, int amount, Products product, String message, double price) {
         this.sender = sender;
         this.receiver = receiver;
         this.amount = amount;
         this.product = product;
-        this.message = message;
+        this.senderMessage = message;
+        this.receiverMessage = null;
         this.price = price;
         this.accepted = false;
         this.tradeID = id;
-        id ++ ;
+        id++;
         allTrades.add(this);
     }
+
     public static ArrayList<Trade> getAllTrades() {
         return allTrades;
     }
@@ -46,36 +51,39 @@ public class Trade {
 
     public static void showTrades() {
         int index = 1;
-        for (Trade trade:Trade.getAllTrades()) {
+        for (Trade trade : Trade.getAllTrades()) {
             if (!trade.isAccepted()) {
                 System.out.println(index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
-                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getMessage() + " trade ID: " + trade.getTradeID());
+                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getSenderMessage() + " trade ID: " + trade.getTradeID());
                 index++;
             }
         }
     }
+
     public static void showTradesHistory(User user) {
-        int index = 1 ;
-        for (Trade trade:Trade.getAllTrades()) {
+        int index = 1;
+        for (Trade trade : Trade.getAllTrades()) {
             if (trade.getSender().getUsername().equals(user.getUsername()) || trade.getReceiver().getUsername().equals(user.getUsername())) {
                 System.out.println(index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
-                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getMessage() + " trade ID: " + trade.getTradeID());
+                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getSenderMessage() + " trade ID: " + trade.getTradeID());
                 index++;
                 System.out.print("status: ");
                 if (trade.isAccepted())
                     System.out.println("accepted!");
                 else
-                    System.out.println("not accepted yet1");
+                    System.out.println("not accepted yet!");
             }
         }
     }
+
     public static Trade findTradeWithID(int id) {
-        for (Trade trade:Trade.getAllTrades()) {
-            if (trade.getTradeID()==id)
+        for (Trade trade : Trade.getAllTrades()) {
+            if (trade.getTradeID() == id)
                 return trade;
         }
         return null;
     }
+
     public User getSender() {
         return sender;
     }
@@ -92,12 +100,20 @@ public class Trade {
         return product;
     }
 
-    public String getMessage() {
-        return message;
+    public String getSenderMessage() {
+        return senderMessage;
+    }
+
+    public String getReceiverMessage() {
+        return receiverMessage;
     }
 
     public double getPrice() {
         return price;
+    }
+
+    public void setReceiverMessage(String receiverMessage) {
+        this.receiverMessage = receiverMessage;
     }
 
     @Override
@@ -106,7 +122,7 @@ public class Trade {
                 "sender=" + sender +
                 ", amount=" + amount +
                 ", product=" + product +
-                ", message='" + message + '\'' +
+                ", message='" + senderMessage + '\'' +
                 ", price=" + price +
                 '}';
     }

@@ -1,15 +1,12 @@
 package org.example.model.building;
 
-import org.example.model.MBC.People;
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
-import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
-import org.example.model.interfaces.Produce;
 
 import java.util.Objects;
 
-public class ProductiveBuilding extends Building implements Produce {
+public class ProductiveBuilding extends Building {
     private final int rate;
     private final Products product1;
     private final Products product2;

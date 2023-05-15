@@ -9,13 +9,12 @@ import java.util.HashMap;
 
 public class GameMenuController {
     private final Government government;
-
     public GameMenuController(String player) {
         government = Government.findGovernmentWithUsername(player);
     }
 
     public String showFoodRate() {
-        String foodRate = "your food rate is " + government.getFoodRate() + "\nmeans:\n";
+        String foodRate = "your food rate is " + government.getFoodRate() + "\nmeans: ";
         switch (government.getFoodRate()) {
             case -2:
                 foodRate += "you feed people 1 unit\nmonthly your popularity decreases by 8 unit";
@@ -37,7 +36,7 @@ public class GameMenuController {
     }
 
     public String showTaxRate() {
-        String taxRate = "your tax rate is " + government.getTaxRate() + "\nmeans:\n";
+        String taxRate = "your tax rate is " + government.getTaxRate() + "\nmeans: ";
         switch (government.getTaxRate()) {
             case -3:
                 taxRate += "0 tax\nyou give people 1 coin\nmonthly your popularity increases by 7 unit";
@@ -79,10 +78,8 @@ public class GameMenuController {
     }
 
     public void setFoodRate(int rate) {
-
         if (government.checkFoodVariety() == 0)
             rate = -2;
-
         switch (rate) {
             case -2:
                 government.setPopularity(government.getPopularity() - 8 + government.checkFoodVariety());
@@ -109,15 +106,6 @@ public class GameMenuController {
                 break;
         }
     }
-
-    public boolean setTaxRateCheckInput(int rate) {
-        return rate <= 8 && rate >= -3;
-    }
-
-    public boolean setFearRateCheckInput(int rate) {
-        return rate <= 5 && rate >= -5;
-    }
-
     public void setTaxRate(int rate) {
         if (Double.compare(government.getCoins(), 0.00) == 0)
             government.setTaxRate(0);
@@ -170,6 +158,15 @@ public class GameMenuController {
             }
         }
     }
+
+    public boolean setTaxRateCheckInput(int rate) {
+        return rate <= 8 && rate >= -3;
+    }
+
+    public boolean setFearRateCheckInput(int rate) {
+        return rate <= 5 && rate >= -5;
+    }
+
 
     public void religionAccordingToChurch() {
         int number = government.getPeople() / 4;

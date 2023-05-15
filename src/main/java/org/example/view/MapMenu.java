@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.view;
 
 import org.example.InputScanner;
@@ -33,8 +34,8 @@ public class MapMenu {
         if (checkMapCoordinate(matcher)) {
             int x = Integer.parseInt(matcher.group("x"));
             int y = Integer.parseInt(matcher.group("y"));
-            mapMenuController.setxStart(x);
-            mapMenuController.setyStart(y);
+            mapMenuController.setXStart(x);
+            mapMenuController.setYStart(y);
             mapMenuController.showMap(x, y);
         } else
             System.out.println("invalid coordinates input!");
@@ -54,7 +55,7 @@ public class MapMenu {
         if (mapMenuController.checkMatcher(gameMenuMatcher)) {
             int x = Integer.parseInt(gameMenuMatcher.group("x"));
             int y = Integer.parseInt(gameMenuMatcher.group("y"));
-            System.out.println(mapMenuController.showDetails(x, y));
+            mapMenuController.showDetails(x, y);
         } else
             System.out.println("invalid coordinate input!");
     }

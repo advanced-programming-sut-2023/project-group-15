@@ -1,6 +1,6 @@
+//this class is completed!
 package org.example.controller;
 
-import org.example.model.Tile;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
@@ -9,48 +9,47 @@ import org.example.model.gameData.GameInformation;
 
 public class MapMenuEnvironmentController {
 
-    public void setTextureOneCoordinate(int x, int y, String type) {
-        Tile currentTile = GameInformation.getGameMap()[x][y];
+    public boolean setTextureOneCoordinate(int x, int y, String type) {
         for (LandType landType : LandType.values()) {
-            if (String.valueOf(landType).equals(type))
-                currentTile.setLandType(landType);
+            if (String.valueOf(landType).equalsIgnoreCase(type)) {
+                GameInformation.setLandType(x, y, landType);
+                return true;
+            }
         }
+        return false;
     }
 
     public void setTextureTwoCoordinate(int x1, int y1, int x2, int y2, String type) {
         LandType landType = LandType.DEFAULT;
         for (LandType landType1 : LandType.values()) {
-            if (String.valueOf(landType1).equals(type))
+            if (String.valueOf(landType1).equalsIgnoreCase(type))
                 landType = landType1;
         }
         for (int x = x1; x < x2; x++) {
             for (int y = y1; y < y2; y++) {
-                GameInformation.getCurrentPlayer().getMap()[x][y].setLandType(landType);
+                GameInformation.setLandType(x, y, landType);
             }
         }
     }
 
     public void clear(int x, int y) {
-        Tile currentTile = GameInformation.getGameMap()[x][y];
-        currentTile.setBuilding(null);
-        currentTile.setTree(null);
-        currentTile.setSoldier(null);
-        currentTile.setRock(false, null);
-        currentTile.setLandType(LandType.DEFAULT);
+        GameInformation.setLandType(x, y, LandType.DEFAULT);
+        GameInformation.setTree(x, y, null);
+        GameInformation.setBuilding(x, y, null);
+        GameInformation.setRock(x, y, false, Direction.NULL);
+        GameInformation.setSoldier(x, y, null);
     }
 
     public void dropTree(int x, int y, String treeType) {
-        Tile currentTile = GameInformation.getGameMap()[x][y];
         for (Tree tree : Tree.values()) {
-            if (String.valueOf(tree).equals(treeType))
-                currentTile.setTree(tree);
+            if (String.valueOf(tree).equalsIgnoreCase(treeType))
+                GameInformation.setTree(x, y, tree);
         }
     }
 
     public void dropRock(int x, int y, String direction) {
-        Tile currentTile = GameInformation.getGameMap()[x][y];
         Direction directionI = findDirection(direction);
-        currentTile.setRock(true, directionI);
+        GameInformation.setRock(x, y, true, directionI);
     }
 
     public static Direction findDirection(String direction) {
@@ -68,7 +67,7 @@ public class MapMenuEnvironmentController {
 
     public boolean checkLandType(String type) {
         for (LandType landType : LandType.values()) {
-            if (String.valueOf(landType).equals(type))
+            if (String.valueOf(landType).equalsIgnoreCase(type))
                 return true;
         }
         return false;
@@ -76,7 +75,7 @@ public class MapMenuEnvironmentController {
 
     public boolean treeTypeCheck(String type) {
         for (Tree tree : Tree.values()) {
-            if (String.valueOf(tree).equals(type))
+            if (String.valueOf(tree).equalsIgnoreCase(type))
                 return true;
         }
         return false;

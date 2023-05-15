@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.view;
 
 import org.example.InputScanner;
@@ -17,7 +18,7 @@ public class GameStartMenu{
 
     public void addPlayer(String owner,Matcher loginMenuMatcher) {
         String playerToBeAdded = loginMenuMatcher.group("name");
-        if (GameInformation.checkPlayer(playerToBeAdded)){
+        if (GameInformation.checkPlayerExist(playerToBeAdded)){
             if (!GameInformation.checkPlayerExist(playerToBeAdded)) {
                 System.out.println(startingGameMenuController.addUser(owner,playerToBeAdded).getOutput());
                 return;

@@ -1,13 +1,12 @@
+//this class is completed!
 package org.example.controller.userControllers;
 
-import org.example.controller.jsonController;
-import org.example.controller.Utility;
+import org.example.controller.JsonController;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
-import java.util.Objects;
 
 
 public class ProfileMenuController extends LoginMenuController {
@@ -27,7 +26,7 @@ public class ProfileMenuController extends LoginMenuController {
     }
 
     public ProfileMenuOutput changeNickname(String nickname) {
-        Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setNickname(nickname);
+        User.findUserWithPass(this.getPassword()).setNickname(nickname);
         this.setNickname(nickname);
         moveDataToFile();
         return ProfileMenuOutput.NICKNAME_CHANGED_SUCCESSFULLY;
@@ -37,7 +36,7 @@ public class ProfileMenuController extends LoginMenuController {
         if (this.getPassword().equals(oldPass)) {
             if (!oldPass.equals(newPass)) {
                 if (SignupMenuController.passwordCheckErrors(newPass).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-                    Objects.requireNonNull(User.findUserWithPass(oldPass)).setPassword(newPass);
+                    User.findUserWithPass(oldPass).setPassword(newPass);
                     this.setPassword(newPass);
                     moveDataToFile();
                     return ProfileMenuOutput.PASSWORD_CHANGED_SUCCESSFULLY;
@@ -51,7 +50,7 @@ public class ProfileMenuController extends LoginMenuController {
 
     public ProfileMenuOutput changeEmail(String email) {
         if (SignupMenuController.emailCheck(email).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-            Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setEmail(email);
+            User.findUserWithPass(this.getPassword()).setEmail(email);
             this.setEmail(email);
             moveDataToFile();
             return ProfileMenuOutput.EMAIL_CHANGED_SUCCESSFULLY;
@@ -60,14 +59,14 @@ public class ProfileMenuController extends LoginMenuController {
     }
 
     public ProfileMenuOutput changeSlogan(String slogan) {
-        Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setSlogan(slogan);
+        User.findUserWithPass(this.getPassword()).setSlogan(slogan);
         this.setSlogan(slogan);
         moveDataToFile();
         return ProfileMenuOutput.SLOGAN_CHANGED_SUCCESSFULLY;
     }
 
     public ProfileMenuOutput removeSlogan() {
-        Objects.requireNonNull(User.findUserWithPass(this.getPassword())).setSlogan("empty");
+        User.findUserWithPass(this.getPassword()).setSlogan("empty");
         this.setSlogan("empty");
         moveDataToFile();
         return ProfileMenuOutput.SLOGAN_REMOVED_SUCCESSFULLY;
@@ -90,17 +89,18 @@ public class ProfileMenuController extends LoginMenuController {
 
     public void showUserProfileDisplay() {
         User user = User.findUserWithPass(this.getPassword());
-        System.out.println("username: " + Objects.requireNonNull(user).getUsername());
+        System.out.println("username: " + user.getUsername());
         this.setClipBoard(GameDataBase.getUserByUsername(user.getUsername()).getClipBoard());
         System.out.println("password: " + this.getClipBoard());
         System.out.println("email: " + user.getEmail());
         System.out.println("nickname: " + user.getNickname());
         System.out.println("slogan: " + user.getSlogan());
         System.out.println("rank: " + user.getRank());
-        System.out.println("high score: "+user.getHighScore());
+        System.out.println("high score: " + user.getHighScore());
     }
+
     public static void moveDataToFile() {
-        Utility.deleteFile();
-        jsonController.setJasonFileForAllUsers();
+        JsonController.deleteFile();
+        JsonController.setJasonFileForAllUsers();
     }
 }

@@ -1,9 +1,7 @@
 package org.example.model.building;
 
-import org.example.model.MBC.Soldier;
-import org.example.model.MBC.UnitWallTarget;
-import org.example.model.enums.Products;
-import org.example.model.enums.UnitName;
+import org.example.model.MBC.*;
+import org.example.model.enums.*;
 import org.example.model.gameData.GameInformation;
 
 public class Education extends Building {
@@ -18,31 +16,29 @@ public class Education extends Building {
     }
 
     //TODO decrease people and coins
-    private void Educate(String name, int count) {
+    public void Educate(String name, int count) {
         int currentPopularity;
-        UnitName unitName = UnitName.getUnitType(name);
-        String type = unitName.getType();
-        //switch ()
-        /*String typeToEducate = String.valueOf(unitName);
-        for (UnitName unit : UnitName.values()) {
-            if (unit.equals(unitName)) {
-
-                if (GameInformation.getCurrentPlayerGovernment().getCoins() <= count * unit.getCost())
-                    return;
-                else if (GameInformation.getCurrentPlayerGovernment().getPopularity() <= count)
-                    return;
-                else {
-                    GameInformation.getCurrentPlayerGovernment().deCoin(unit.getCost());
-                    currentPopularity = GameInformation.getCurrentPlayerGovernment().getPopularity();
-                    GameInformation.getCurrentPlayerGovernment().setPopularity(currentPopularity - count);
-                    UnitName.getUnitType(name);
-                    if()
-                    //GameInformation.getAllSoldiers().add();
-
-
-                }
-            }
-        }*/
+        int x = this.getxCoordinate();
+        int y = this.getyCoordinate();
+        UnitName unit = UnitName.getUnitType(name);
+        String type = unit.getType();
+        switch (unit.getType()) {
+            case "launcher":
+                Soldier soldier = new LauncherUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(),
+                        x, y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),unit.getType(), State.STANDING.getState(), unit.getThrowRange());
+                GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier);
+                break;
+            case "infantry":
+                Soldier soldier1 = new InfantryUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(),
+                        x, y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(),State.STANDING.getState());
+                GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);
+                break;
+            case "wallTarget":
+                Soldier soldier2 = new UnitWallTarget(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(),
+                        x, y, unit.getUnitHp(), unit.getMaxMove(), unit.getName(),unit.getType() ,State.STANDING.getState());
+                GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier2);
+                break;
+        }
     }
 }
 

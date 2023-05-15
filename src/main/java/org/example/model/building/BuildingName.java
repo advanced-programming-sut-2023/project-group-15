@@ -188,14 +188,6 @@ public enum BuildingName {
         this.hp = hp;
     }
 
-    BuildingName(int damage, int numberOfMaterial, Products materialName, String type) {
-        this.damage = damage;
-        this.numberOfMaterial = numberOfMaterial;
-        this.materialName = materialName;
-        this.type = type;
-        this.hp = hp;
-    }
-
     BuildingName(int numberOfMaterial1, Products material1Name, int numberOfMaterial2, Products material2Name, int numberOfWorkers, String type, int hp) {
         this.numberOfMaterial1 = numberOfMaterial1;
         this.material1Name = material1Name;

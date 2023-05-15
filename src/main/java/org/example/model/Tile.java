@@ -57,7 +57,6 @@ public class Tile {
         this.rock = rockStatus;
         this.rockDirection = direction;
     }
-
     public Building getBuilding() {
         return building;
     }

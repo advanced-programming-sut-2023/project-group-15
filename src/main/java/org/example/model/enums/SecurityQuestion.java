@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.enums;
 
 
@@ -37,7 +38,18 @@ public enum SecurityQuestion {
     }
 
     private final String questionNumber;
-
+    public static void questions() {
+        System.out.println("1." + SecurityQuestion.FATHER_NAME.getQuestion());
+        System.out.println("2." + SecurityQuestion.BROTHER_NAME.getQuestion());
+        System.out.println("3." + SecurityQuestion.LAPTOP_MODEL.getQuestion());
+        System.out.println("4." + SecurityQuestion.PHONE_MODEL.getQuestion());
+        System.out.println("5." + SecurityQuestion.HAIR_COLOR.getQuestion());
+        System.out.println("6." + SecurityQuestion.CAR_COLOR.getQuestion());
+        System.out.println("7." + SecurityQuestion.FAVORITE_FOOD.getQuestion());
+        System.out.println("8." + SecurityQuestion.FAVORITE_GAME.getQuestion());
+        System.out.println("9." + SecurityQuestion.USER_JOB.getQuestion());
+        System.out.println("10." + SecurityQuestion.USER_AGE.getQuestion());
+    }
     SecurityQuestion(String questionNumber, String question) {
         this.question = question;
         this.questionNumber = questionNumber;

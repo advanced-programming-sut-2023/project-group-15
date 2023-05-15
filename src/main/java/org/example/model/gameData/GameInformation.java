@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.gameData;
 
 import org.example.model.MBC.Soldier;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameInformation {
-    private static int mapGameSize;
     private static boolean newGameAccess = true;
 
     public static boolean isNewGameAccess() {
@@ -26,26 +26,21 @@ public class GameInformation {
         GameInformation.newGameAccess = newGameAccess;
     }
 
-    private final static Tile[][] gameMap = new Tile[400][400];
+    private static Tile[][] gameMap = new Tile[400][400];
     private final static ArrayList<User> allPlayers = new ArrayList<>();
+
     public static ArrayList<User> getAllPlayers() {
         return allPlayers;
     }
+
     public static Tile[][] getGameMap() {
         return gameMap;
     }
+
     private static User currentPlayer;
     private static final HashMap<User, Integer> players = new HashMap<>();
-    private static int currentPlayerNo = 1;
-    private int currentPlayerTurn;
-    private int gameTurn;
-    private int numberOfPlayers;
-    private static ArrayList<Soldier> allSoldiers = new ArrayList<>();
-    private static ArrayList<Building> allBuildings = new ArrayList<>();
-
-    public GameInformation(int mapGameSize) {
-        mapGameSize = mapGameSize;
-    }
+    private static final ArrayList<Soldier> allSoldiers = new ArrayList<>();
+    private static final ArrayList<Building> allBuildings = new ArrayList<>();
 
     public static void setMapGame(int mapGame, String path) {
         try {
@@ -56,7 +51,7 @@ public class GameInformation {
                 for (int i = 0; i < mapGame; i++) {
                     for (int j = 0; j < mapGame; j++) {
                         LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("Land: ")));
-                        gameMap[i][j] = new Tile(null,landType,0,null,null,false,null);
+                        gameMap[i][j] = new Tile(null, landType, 0, null, null, false, null);
                         jsonParser.next();
                     }
                 }
@@ -68,15 +63,6 @@ public class GameInformation {
 
     public static void addPlayer(User player) {
         allPlayers.add(player);
-    }
-
-    public static int getCurrentPlayerNo() {
-        return currentPlayerNo;
-
-    }
-
-    public static void setCurrentUserNo(int currentUserno) {
-        currentUserno = currentUserno;
     }
 
     public static User getCurrentPlayer() {
@@ -102,13 +88,6 @@ public class GameInformation {
         return null;
     }
 
-
-    public static Government getCurrentPlayerGovernment() {
-        return currentPlayer.getGovernment();
-    }
-    //TODO turn methods should be added hear
-
-
     public static HashMap<User, Integer> getPlayers() {
         return players;
     }
@@ -121,20 +100,32 @@ public class GameInformation {
         return allBuildings;
     }
 
-    public static boolean checkPlayer(String playerToBeAdded) {
-        for (User user:GameDataBase.getAllUsers()) {
-            if (user.getUsername().equals(playerToBeAdded))
+    public static boolean checkPlayerExist(String playerToBeAdded) {
+        for (User user : GameDataBase.getAllUsers()) {
+            if (user.getUsername().equals(playerToBeAdded)) {
                 return true;
+            }
         }
         return false;
     }
 
-    public static boolean checkPlayerExist(String playerToBeAdded) {
-        for (User user:GameDataBase.getAllUsers()) {
-            if (user.getUsername().equals(playerToBeAdded)) {
-                return allPlayers.contains(user);
-            }
-        }
-        return false;
+    public static void setLandType(int x,int y,LandType landType) {
+        gameMap[x][y].setLandType(landType);
+    }
+
+    public static void setTree(int x, int y, Tree tree) {
+        gameMap[x][y].setTree(tree);
+    }
+
+    public static void setBuilding(int x, int y, Building building) {
+        gameMap[x][y].setBuilding(building);
+    }
+
+    public static void setRock(int x, int y, boolean isRock,Direction direction) {
+        gameMap[x][y].setRock(isRock,direction);
+    }
+
+    public static void setSoldier(int x, int y, Soldier soldier) {
+        gameMap[x][y].setSoldier(soldier);
     }
 }

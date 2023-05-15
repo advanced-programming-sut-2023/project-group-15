@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.view;
 
 import org.example.InputScanner;
@@ -9,6 +10,7 @@ import java.util.regex.Matcher;
 
 public class MapChangesEnvironment {
     private final MapMenuEnvironmentController mapMenuEnvironmentController = new MapMenuEnvironmentController();
+
     public void run() {
         String command;
         Matcher matcher;
@@ -45,8 +47,7 @@ public class MapChangesEnvironment {
         if (mapMenuEnvironmentController.treeTypeCheck(type)) {
             mapMenuEnvironmentController.dropTree(x, y, type);
             System.out.println("tree set in the map successfully");
-        }
-        else
+        } else
             System.out.println("your input is invalid!");
     }
 
@@ -54,8 +55,8 @@ public class MapChangesEnvironment {
         int x = Integer.parseInt(matcher.group("x"));
         int y = Integer.parseInt(matcher.group("y"));
         String direction = matcher.group("direction");
-        if (MapMenuEnvironmentController.findDirection(direction).getDirection()!=null) {
-            mapMenuEnvironmentController.dropRock(x,y,MapMenuEnvironmentController.findDirection(direction).getDirection());
+        if (MapMenuEnvironmentController.findDirection(direction).getDirection() != null) {
+            mapMenuEnvironmentController.dropRock(x, y, MapMenuEnvironmentController.findDirection(direction).getDirection());
             System.out.println("rock dropped successfully");
         } else
             System.out.println("your input is invalid!");
@@ -64,7 +65,7 @@ public class MapChangesEnvironment {
     private void clearArea(Matcher matcher) {
         int x = Integer.parseInt(matcher.group("x"));
         int y = Integer.parseInt(matcher.group("y"));
-        mapMenuEnvironmentController.clear(x,y);
+        mapMenuEnvironmentController.clear(x, y);
         System.out.println("field cleared successfully!");
     }
 
@@ -75,10 +76,10 @@ public class MapChangesEnvironment {
         int y2 = Integer.parseInt(matcher.group("y2"));
         String type = matcher.group("type");
         if (mapMenuEnvironmentController.checkLandType(type)) {
-            mapMenuEnvironmentController.setTextureTwoCoordinate(x1,y1,x2,y2,type);
+            mapMenuEnvironmentController.setTextureTwoCoordinate(x1, y1, x2, y2, type);
             System.out.println("texture set successfully");
-        }
-        System.out.println("your input is not valid!");
+        } else
+            System.out.println("your input is not valid!");
     }
 
     public void setTileTextureCheck(Matcher matcher) {
@@ -86,9 +87,11 @@ public class MapChangesEnvironment {
         int y = Integer.parseInt(matcher.group("y"));
         String type = matcher.group("type");
         if (mapMenuEnvironmentController.checkLandType(type)) {
-            mapMenuEnvironmentController.setTextureOneCoordinate(x,y,type);
-            System.out.println("texture set successfully");
-        }
-        System.out.println("your input is not valid!");
+            if (mapMenuEnvironmentController.setTextureOneCoordinate(x, y, type))
+                System.out.println("texture set successfully");
+            else
+                System.out.println("texture doesn't set");
+        } else
+            System.out.println("your input is not valid!");
     }
 }

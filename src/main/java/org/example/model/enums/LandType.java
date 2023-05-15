@@ -36,10 +36,6 @@ public enum LandType {
     private boolean buildingStatus;
     private final String mapId;
 
-    LandType(BuildingName name, String mapId) {
-        this.buildingName = name;
-        this.mapId = mapId;
-    }
 
     LandType(BuildingName name1, BuildingName name2, String mapId, boolean buildingStatus) {
         this.buildingName = name1;

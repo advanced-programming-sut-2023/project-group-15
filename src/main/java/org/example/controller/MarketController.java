@@ -1,6 +1,6 @@
+//this class is completed!
 package org.example.controller;
 
-import org.example.model.building.Market;
 import org.example.model.gameData.Government;
 import org.example.view.enums.outputs.GameMenuOutput;
 
@@ -13,15 +13,15 @@ public class MarketController {
         government = Government.findGovernmentWithUsername(playerName);
     }
 
-    public HashMap<String,Integer> show1() {
+    public HashMap<String, Integer> show1() {
         return government.playerMarket().getNumber();
     }
 
-    public HashMap<String,Integer> show2() {
+    public HashMap<String, Integer> show2() {
         return government.playerMarket().getSellCoin();
     }
 
-    public HashMap<String,Integer> show3() {
+    public HashMap<String, Integer> show3() {
         return government.playerMarket().getBuyCoin();
     }
 

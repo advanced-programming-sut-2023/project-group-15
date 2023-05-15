@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.view.userView;
 
 import org.example.InputScanner;
@@ -22,11 +23,7 @@ public class LoginMenu extends MainMenu {
     private final LoginMenuController loginMenuController = new ProfileMenuController();
     private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
     private Matcher loginMenuMatcher;
-    public LoginMenu(Matcher loginMenuMatcher) {
-        this.loginMenuMatcher = loginMenuMatcher;
-    }
-    public LoginMenu() {
-    }
+
     public void run() {
         GameInformation.setCurrentPlayer(GameDataBase.getUserByUsername(loginMenuController.getUsername()));
         String userInput;
@@ -37,8 +34,7 @@ public class LoginMenu extends MainMenu {
             if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex())) {
                 loginMenuController.logOut();
                 return;
-            }
-            else if (userInput.matches(LoginMenuEnum.EXIT.getRegex())) {
+            } else if (userInput.matches(LoginMenuEnum.EXIT.getRegex())) {
                 System.exit(0);
             } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
                 profileMenu.changeUserUsername(loginMenuMatcher);
@@ -60,15 +56,15 @@ public class LoginMenu extends MainMenu {
                 profileMenu.displayUserRank();
             } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
                 profileMenu.displayUserInfo();
-            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.START_NEW_GAME))!=null) {
+            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.START_NEW_GAME)) != null) {
                 GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
                 gameStartMenu.startNewGame();
-            } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
-                gameStartMenu.addPlayer(loginMenuController.getUsername(),loginMenuMatcher);
-            } else if (GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ENTER_GAME)!=null) {
+            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ADD_PLAYER)) != null) {
+                gameStartMenu.addPlayer(loginMenuController.getUsername(), loginMenuMatcher);
+            } else if (GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ENTER_GAME) != null) {
                 new GameMenu(loginMenuController).run();
 //                new UserTurn(loginMenuController).enterGame();
-            } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!= null) {
+            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.LOGOUT) != null) {
                 System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
                 break;
             } else {
@@ -90,20 +86,21 @@ public class LoginMenu extends MainMenu {
     private void classify(Matcher matcher) {
         loginMenuController.setUsername(matcher.group("username"));
         String password = matcher.group("password");
-        byte[] salt = Utility.makeSalt();
-        loginMenuController.setPassword(Utility.getPassHashSha256(password,salt));
+        byte[] salt = JsonController.makeSalt();
+        loginMenuController.setPassword(JsonController.getPassHashSha256(password, salt));
         loginMenuController.setClipBoard(matcher.group("password"));
         if (matcher.group("logged") != null)
             loginMenuController.setStayLoggedInFlag(true);
     }
+
     protected void forgetPassword(String username) {
         loginMenuController.setUsername(username);
         if (loginMenuController.checkMatchUsername()) {
             System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
             while (true) {
                 String answer = InputScanner.getScanner().nextLine();
-                byte[] salt = Utility.makeSalt();
-                answer = Utility.getPassHashSha256(answer,salt);
+                byte[] salt = JsonController.makeSalt();
+                answer = JsonController.getPassHashSha256(answer, salt);
                 if (loginMenuController.checkSecurityQuestion(answer)) {
                     resettingUserPassword(username);
                 } else if (LoginMenuEnum.getMatcher(answer, LoginMenuEnum.QUIT_THE_PROCESS) != null) {
@@ -114,6 +111,7 @@ public class LoginMenu extends MainMenu {
         }
         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
     }
+
     private void resettingUserPassword(String username) {
         System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());
         String newPassword = InputScanner.getScanner().nextLine();

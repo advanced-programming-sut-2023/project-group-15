@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.enums;
 
 public enum FilePaths {
@@ -9,7 +10,6 @@ public enum FilePaths {
     WORKING_DIR("d:/json/"),
     ;
     private final String filePaths;
-
 
     FilePaths(String filePaths) {
         this.filePaths = filePaths;
