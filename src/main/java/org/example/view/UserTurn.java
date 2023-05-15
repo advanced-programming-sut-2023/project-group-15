@@ -1,7 +1,7 @@
 package org.example.view;
 
-import org.example.controller.LoginMenuController;
 import org.example.controller.UserTurnController;
+import org.example.controller.userControllers.LoginMenuController;
 import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 

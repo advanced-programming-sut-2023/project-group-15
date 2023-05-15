@@ -9,10 +9,13 @@ public enum GameMenuEnum {
     SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+(?<foodRate>-2|-1|0|1|2)\\s*$"),
     SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1-5])\\s*$"),
     SHOW_FOOD_RATE("^\\s*food\\s+rate\\s+show\\s*$"),
-    SHOW_TAX_RATE("^\\s*tax\\s+rate\\s+show\\s*$"),
-    SHOW_FOOD_LIST("^\\s*show\\s+food\\s+list\\s*$"),
+    SHOW_TAX_RATE("^\\s*((tax\\s+rate\\s*)|(show\\s*)){2}\\s*$"),
+    SHOW_FOOD_LIST("^\\s*((food\\s+rate\\s*)|(show\\s*)){2}\\s*$"),
     SHOW_POPULARITY("^\\s*show\\s+popularity\\s*$"),
     SHOW_POPULARITY_FACTORS("^\\s*show\\s+popularity\\s+factors\\s*$"),
+
+
+    DROP_UNIT("^\\s*drop\\s*unit\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*)|(-t\\s+(?<name>\\w+)\\s*)|(-c\\s+(?<count>\\d+)\\s*)){4}\\s*$"),
     SELECT_UNIT("^\\s*select\\s+unit\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*))+\\s*$$"),
     MOVE_UNIT("^\\s*move\\s+unit\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*))*\\s*$"),
     DIG_TUNNEL("^\\s*dig\\s+tunnel\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*))*\\s*$"),
@@ -30,7 +33,6 @@ public enum GameMenuEnum {
     SELECT_BUILDING("^\\s*select\\s+building\\s+-(x|y)\\s+(\\d+)\\s+-(x|y)\\s+(\\d+)\\s*$"),
     TRADE_MENU("^\\s*enter\\s+trade\\s+menu\\s*$"),
     BUILDING_MENU("^\\s*enter\\s+building\\s+menu\\s*$"),
-    DROP_UNIT("^\\s*drop\\s*unit\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*)|(-t\\s+(?<name>\\w+)\\s*)|(-c\\s+(?<count>\\d+)\\s*))*\\s*$"),
     ;
 
 

@@ -1,20 +1,20 @@
-package org.example.view;
+package org.example.view.userView;
 
 import org.example.InputScanner;
-import org.example.controller.SignupMenuController;
+import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
+import org.example.view.userView.MainMenu;
 
-import java.io.IOException;
 import java.util.regex.Matcher;
 
 public class SignupMenu extends MainMenu {
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private boolean questionFlag = true;
 
-    public void run(Matcher signupMenuMatcher) throws IOException {
+    public void run(Matcher signupMenuMatcher)  {
         SignupMenuOutput status;
         classifyParameters(signupMenuMatcher);
         status = usernameCheck();

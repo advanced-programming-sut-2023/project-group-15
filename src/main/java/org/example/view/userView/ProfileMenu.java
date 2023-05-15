@@ -1,11 +1,13 @@
-package org.example.view;
+package org.example.view.userView;
 
-import org.example.controller.LoginMenuController;
-import org.example.controller.ProfileMenuController;
+
+import org.example.controller.userControllers.LoginMenuController;
+import org.example.controller.userControllers.ProfileMenuController;
+import org.example.view.userView.LoginMenu;
 
 import java.util.regex.Matcher;
 
-public class ProfileMenu extends LoginMenu{
+public class ProfileMenu extends LoginMenu {
     private final ProfileMenuController profileMenuController;
     public ProfileMenu(LoginMenuController currentUserController) {
         this.profileMenuController = (ProfileMenuController) currentUserController;

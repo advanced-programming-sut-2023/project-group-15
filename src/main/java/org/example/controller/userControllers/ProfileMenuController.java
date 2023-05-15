@@ -1,5 +1,7 @@
-package org.example.controller;
+package org.example.controller.userControllers;
 
+import org.example.controller.jsonController;
+import org.example.controller.Utility;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.ProfileMenuOutput;
@@ -99,6 +101,6 @@ public class ProfileMenuController extends LoginMenuController {
     }
     public static void moveDataToFile() {
         Utility.deleteFile();
-        GameDataBaseController.setJasonFileForAllUsers();
+        jsonController.setJasonFileForAllUsers();
     }
 }

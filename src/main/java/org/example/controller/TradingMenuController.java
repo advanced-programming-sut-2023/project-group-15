@@ -12,9 +12,7 @@ import org.example.model.gameData.Trade;
 import org.example.view.enums.outputs.GameInformationOutput;
 
 import java.util.Map;
-import java.util.regex.Matcher;
 
-import static org.example.controller.Utility.groupFinder;
 
 public class TradingMenuController {
     private final Government government;
@@ -23,10 +21,6 @@ public class TradingMenuController {
         this.government = Government.findGovernmentWithUsername(playerName);
     }
 
-    public void showUserslist() {
-        for (Map.Entry<User, Integer> entry : GameInformation.getPlayers().entrySet())
-            System.out.println("User " + entry.getKey().getUsername() + ", UserNo: " + entry.getValue());
-    }
 
     public void sendTradeRequest(String recourseType,int recourseAmount,String messageI,double priceI,String receiverI) {
         Products product = Products.getProductByName(recourseType);
@@ -35,14 +29,21 @@ public class TradingMenuController {
         Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
         sender.getGovernment().getTradeSendList().add(newTrade);
         receiver.getGovernment().getTradeReqList().add(newTrade);
+        Government.getTradeHistoryList().add(newTrade);
     }
 
     public void showTradeList() {
-        Trade.showTrades();
+        if (Trade.getAllTrades().size() != 0) {
+            Trade.showTrades();
+        } else
+            System.out.println("no trade request sent!");
     }
 
     public void showTradeHistory() {
-        Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
+        if (Trade.getAllTrades().isEmpty()) {
+            System.out.println("no trade request sent!");
+        } else
+            Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
     }
 
     public GameInformationOutput acceptRequest(int id,String message) {
@@ -64,18 +65,6 @@ public class TradingMenuController {
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
         }
         return GameInformationOutput.ACCEPTED_SUCCESSFULLY;
-    }
-
-    public static void listOfNewOrders() {
-        User currentUser = GameInformation.getCurrentPlayer();
-        System.out.println("\n-----------------------------------List Of Your New Request(s)----------------------------------------");
-        int j = 0;
-//        for (int i = currentUser.getLastOrderIndex(); i < currentUser.getTradeReqList().size(); i++) {
-//            System.out.println(++j + "." + currentUser.getTradeReqList().get(i));
-//        }
-//        System.out.println("------------------------------------------------------------------------------------------------------");
-//        currentUser.setLastOrderIndex(currentUser.getTradeReqList().size()); //set last seen order request index
-        System.out.println("Current Index:" + currentUser.getLastOrderIndex());
     }
 
     public boolean productInputCheck(String product) {
@@ -103,4 +92,24 @@ public class TradingMenuController {
         }
         return false;
     }
+
+
+
+    public static void listOfNewOrders() {
+        User currentUser = GameInformation.getCurrentPlayer();
+        System.out.println("\n-----------------------------------List Of Your New Request(s)----------------------------------------");
+//        int j = 0;
+//        for (int i = currentUser.getLastOrderIndex(); i < currentUser.getTradeReqList().size(); i++) {
+//            System.out.println(++j + "." + currentUser.getTradeReqList().get(i));
+//        }
+//        System.out.println("------------------------------------------------------------------------------------------------------");
+//        currentUser.setLastOrderIndex(currentUser.getTradeReqList().size()); //set last seen order request index
+        System.out.println("Current Index:" + currentUser.getLastOrderIndex());
+    }
+    public void showUserslist() {
+        for (Map.Entry<User, Integer> entry : GameInformation.getPlayers().entrySet())
+            System.out.println("User " + entry.getKey().getUsername() + ", UserNo: " + entry.getValue());
+    }
+
+
 }

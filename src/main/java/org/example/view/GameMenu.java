@@ -2,26 +2,27 @@ package org.example.view;
 
 import org.example.InputScanner;
 import org.example.controller.*;
+import org.example.controller.userControllers.LoginMenuController;
 import org.example.view.enums.commands.BuildingCommandsEnum;
 import org.example.view.enums.commands.GameMenuEnum;
 
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.regex.Matcher;
 
 import org.example.controller.GameMenuController;
 import org.example.view.enums.commands.MapEnum;
 import org.example.view.enums.commands.TradingMenuEnum;
 import org.example.view.enums.outputs.BuildingStatusOutput;
+import org.example.view.enums.outputs.UnitMenuOutput;
 
 public class GameMenu {
     private final String player;
     private final GameMenuController gameMenuController;
     private final BuildingController buildingController;
-    private final UnitMenuController unitMenuController = new UnitMenuController();
+    private final UnitMenuController unitMenuController;
     private final MarketController marketController;
     private final TradingMenuController tradingMenuController;
-    private final DropUnitController dropUnitController = new DropUnitController();
+    private final MapMenuController mapMenuController;
 
     public GameMenu(LoginMenuController controller) {
         this.player = controller.getUsername();
@@ -29,12 +30,14 @@ public class GameMenu {
         this.buildingController = new BuildingController(player);
         this.marketController = new MarketController(player);
         this.tradingMenuController = new TradingMenuController(player);
+        this.unitMenuController = new UnitMenuController(player);
+        this.mapMenuController = new MapMenuController();
     }
 
     public void run() {
         Matcher gameMenuMatcher;
         String input;
-        System.out.println("to quit the game enter: exit game");
+        System.out.println("to quit the game enter: \"exit game\" and for ending your turn enter: \"end turn\"");
         while (true) {
             input = InputScanner.getScanner().nextLine();
             if (input.matches("^\\s*exit\\s+game\\s*$"))
@@ -42,12 +45,17 @@ public class GameMenu {
             else if (input.matches("^\\s*end\\s*turn\\s*$")) {
                 System.out.println("changing the turn!!");
                 //TODO:
+            } else if (input.matches("^\\s*status\\s*$"))
+                gameMenuController.governmentStatus();
+            else if (input.matches("^\\s*changing\\s+map\\s*$")) {
+                new MapChangesEnvironment().run();
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null)
                 new MapMenu().showMap(gameMenuMatcher);
             else if ((gameMenuMatcher = MapEnum.getMatcher(input, MapEnum.MAP_MOVING)) != null)
                 new MapMenu().mapMoving(gameMenuMatcher);
             else if ((gameMenuMatcher = MapEnum.getMatcher(input, MapEnum.MAP_DETAILS)) != null)
                 new MapMenu().mapDetails(gameMenuMatcher);
+
             else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE)) != null)
                 tradeInputCheck(gameMenuMatcher);
             else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE_ACCEPT)) != null)
@@ -72,6 +80,9 @@ public class GameMenu {
                 setFoodRate(gameMenuMatcher);
             else if (GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_FOOD_RATE) != null)
                 System.out.println(gameMenuController.showFoodRate());
+
+            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.DROP_UNIT)) != null)
+                dropUnit(gameMenuMatcher);
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SELECT_UNIT)) != null)
                 selectUnit(gameMenuMatcher);
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.MOVE_UNIT)) != null)
@@ -95,23 +106,40 @@ public class GameMenu {
                 System.out.println(unitMenuController.patrolStop(false, unitMenuController.patX1, unitMenuController.patY1, unitMenuController.patX2, unitMenuController.patY2).getOutput());
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUILD_EQUIPMENT)) != null)
                 System.out.println(unitMenuController.buildEquipment(gameMenuMatcher.group("equipment")).getOutput());
+
             else if (GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_PRICE_LIST) != null)
                 showPriceList();
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SELL_ITEM)) != null)
                 sellItem(gameMenuMatcher);
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.BUY_ITEM)) != null)
                 buyItem(gameMenuMatcher);
-            else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.DROP_UNIT)) != null)
-                dropUnit(gameMenuMatcher);
-            if ((gameMenuMatcher = BuildingCommandsEnum.getMatcher(input, BuildingCommandsEnum.DROP_BUILDING)) != null) {
+
+
+            else if ((gameMenuMatcher = BuildingCommandsEnum.getMatcher(input, BuildingCommandsEnum.DROP_BUILDING)) != null)
                 dropBuilding(gameMenuMatcher);
-            } else if ((gameMenuMatcher = BuildingCommandsEnum.getMatcher(input, BuildingCommandsEnum.SELECT_BUILDING)) != null)
-                buildingController.selectBuilding(Integer.parseInt(gameMenuMatcher.group("-x")), Integer.parseInt(gameMenuMatcher.group("-y")));
+            else if ((gameMenuMatcher = BuildingCommandsEnum.getMatcher(input, BuildingCommandsEnum.SELECT_BUILDING)) != null)
+                selectBuilding(gameMenuMatcher);
             else if (BuildingCommandsEnum.getMatcher(input, BuildingCommandsEnum.REPAIR) != null)
-                System.out.println(buildingController.repair());
+                repair();
             else
                 System.out.println("invalid command!");
         }
+    }
+
+    private void repair() {
+        if (buildingController.isBuildingSelected())
+            System.out.println(buildingController.repair());
+        else
+            System.out.println("you do not select any building!,select your building first");
+    }
+
+    private void selectBuilding(Matcher gameMenuMatcher) {
+        int x = Integer.parseInt(gameMenuMatcher.group("x"));
+        int y = Integer.parseInt(gameMenuMatcher.group("y"));
+        if (buildingController.selectBuilding(x,y))
+            System.out.println("building selected successfully!");
+        else
+            System.out.println("there is not any building on selected position!");
     }
 
     private void tradeAccept(Matcher gameMenuMatcher) {
@@ -126,7 +154,7 @@ public class GameMenu {
     private void tradeInputCheck(Matcher gameMenuMatcher) {
         String product = gameMenuMatcher.group("product");
         if (tradingMenuController.productInputCheck(product)) {
-            int resourceAmount = Integer.parseInt(gameMenuMatcher.group("resourceAmount]"));
+            int resourceAmount = Integer.parseInt(gameMenuMatcher.group("resourceAmount"));
             String playerMessage = gameMenuMatcher.group("message");
             int price = Integer.parseInt(gameMenuMatcher.group("price"));
             System.out.println("select one of these players to send the trade request:\nuse \"choose player -u <username>\" command");
@@ -154,11 +182,13 @@ public class GameMenu {
         int y = Integer.parseInt(gameMenuMatcher.group("y"));
         String type = gameMenuMatcher.group("type");
         if (buildingController.checkTheLand(x,y)) {
-            if (!buildingController.checkForBuildingMaterial(type))
+            if (!buildingController.checkForBuildingMaterial(type)) {
                 System.out.println(BuildingStatusOutput.NOT_ENOUGH_RESOURCES.getOutput());
+            }
             else {
                 buildingController.buildingTypeFinder(x, y, type);
             }
+            return;
         }
         System.out.println(BuildingStatusOutput.CAN_NOT_DROP_BUILDING.getOutput());
     }
@@ -167,31 +197,41 @@ public class GameMenu {
         int x = Integer.parseInt(gameMenuMatcher.group("x"));
         int y = Integer.parseInt(gameMenuMatcher.group("y"));
         int count = Integer.parseInt(gameMenuMatcher.group("count"));
-        for (int i = 0; i != count; i++) {
+        String unitName = gameMenuMatcher.group("name");
+        for (int i = 0; i < count; i++) {
             //exception mikhore ehtmaln
-            System.out.println(dropUnitController.dropUnit(gameMenuMatcher.group("name"), x, y));
+            System.out.println(unitMenuController.dropUnit(unitName, x, y,count).getOutput());
         }
     }
 
     private void buyItem(Matcher gameMenuMatcher) {
-        int number = Integer.parseInt(gameMenuMatcher.group("number"));
-        System.out.println(marketController.buy(gameMenuMatcher.group("item"), number).getOutput());
+        if (buildingController.isPlayerHaveStore()) {
+            int number = Integer.parseInt(gameMenuMatcher.group("number"));
+            System.out.println(marketController.buy(gameMenuMatcher.group("item"), number).getOutput());
+        } else
+            System.out.println("you don't build the store so you can't use store!");
     }
 
     private void sellItem(Matcher gameMenuMatcher) {
-        int number = Integer.parseInt(gameMenuMatcher.group("number"));
-        System.out.println(marketController.sell(gameMenuMatcher.group("item"), number).getOutput());
+        if (buildingController.isPlayerHaveStore()) {
+            int number = Integer.parseInt(gameMenuMatcher.group("number"));
+            System.out.println(marketController.sell(gameMenuMatcher.group("item"), number).getOutput());
+        } else
+            System.out.println("you don't build the store so you can't use store!");
     }
 
     private void showPriceList() {
-        System.out.println("Source  " + "number  " + "sell  " + "buy");
-        System.out.println("______  " + "_____  " + "_____  " + "___  ");
-        HashMap<String, Integer> test = marketController.show1();
-        HashMap<String, Integer> test1 = marketController.show2();
-        HashMap<String, Integer> test2 = marketController.show3();
-        for (String key : test.keySet()) {
-            System.out.println(key + "   " + test.get(key) + "     " + test1.get(key) + "     " + test2.get(key));
-        }
+        if (buildingController.isPlayerHaveStore()) {
+            System.out.println("Source  " + "number  " + "sell  " + "buy");
+            System.out.println("______  " + "_____  " + "_____  " + "___  ");
+            HashMap<String, Integer> test = marketController.show1();
+            HashMap<String, Integer> test1 = marketController.show2();
+            HashMap<String, Integer> test2 = marketController.show3();
+            for (String key : test.keySet()) {
+                System.out.println(key + "   " + test.get(key) + "     " + test1.get(key) + "     " + test2.get(key));
+            }
+        } else
+            System.out.println("you don't build the store so you can't use store!");
     }
 
     private void patrolUnit(Matcher gameMenuMatcher) {
@@ -199,24 +239,36 @@ public class GameMenu {
         int y1 = Integer.parseInt(gameMenuMatcher.group("y1"));
         int x2 = Integer.parseInt(gameMenuMatcher.group("x2"));
         int y2 = Integer.parseInt(gameMenuMatcher.group("y2"));
-        System.out.println(unitMenuController.patrolUnit(x1, y1, x2, y2).getOutput());
+        if (unitMenuController.isUnitSelected())
+            System.out.println(unitMenuController.patrolUnit(x1, y1, x2, y2).getOutput());
+        else
+            System.out.println(UnitMenuOutput.UNIT_NOT_SELECTED.getOutput());
     }
 
     private void digDitch(Matcher gameMenuMatcher) {
         int x = Integer.parseInt(gameMenuMatcher.group("x"));
         int y = Integer.parseInt(gameMenuMatcher.group("y"));
-        System.out.println(unitMenuController.digDitch(x, y).getOutput());
+        if (unitMenuController.isUnitSelected())
+            System.out.println(unitMenuController.digDitch(x, y).getOutput());
+        else
+            System.out.println(UnitMenuOutput.UNIT_NOT_SELECTED.getOutput());
     }
 
     private void pourOil(Matcher gameMenuMatcher) {
         String direction = gameMenuMatcher.group("direction");
-        System.out.println(unitMenuController.pourOil(direction).getOutput());
+        if (unitMenuController.isUnitSelected())
+            System.out.println(unitMenuController.pourOil(direction).getOutput());
+        else
+            System.out.println(UnitMenuOutput.UNIT_NOT_SELECTED.getOutput());
     }
 
     private void airAttack(Matcher gameMenuMatcher) {
         int x = Integer.parseInt(gameMenuMatcher.group("x"));
         int y = Integer.parseInt(gameMenuMatcher.group("y"));
-        System.out.println(unitMenuController.airAttack(x, y).getOutput());
+        if (unitMenuController.isUnitSelected())
+            System.out.println(unitMenuController.airAttack(x, y).getOutput());
+        else
+            System.out.println(UnitMenuOutput.UNIT_NOT_SELECTED.getOutput());
     }
 
     private void setState(Matcher gameMenuMatcher) {
@@ -229,13 +281,19 @@ public class GameMenu {
     private void digTunnel(Matcher gameMenuMatcher) {
         int x = Integer.parseInt(gameMenuMatcher.group("x"));
         int y = Integer.parseInt(gameMenuMatcher.group("y"));
-        System.out.println(unitMenuController.digTunnel(x, y).getOutput());
+        if (unitMenuController.isUnitSelected())
+            System.out.println(unitMenuController.digTunnel(x, y).getOutput());
+        else
+            System.out.println(UnitMenuOutput.UNIT_NOT_SELECTED.getOutput());
     }
 
     private void moveUnit(Matcher gameMenuMatcher) {
         int x = Integer.parseInt(gameMenuMatcher.group("x"));
         int y = Integer.parseInt(gameMenuMatcher.group("y"));
-        System.out.println(unitMenuController.moveUnit(x, y).getOutput());
+        if (unitMenuController.isUnitSelected())
+            System.out.println(unitMenuController.moveUnit(x, y).getOutput());
+        else
+            System.out.println(UnitMenuOutput.UNIT_NOT_SELECTED.getOutput());
     }
 
     private void selectUnit(Matcher gameMenuMatcher) {
@@ -248,6 +306,7 @@ public class GameMenu {
         int rateFood = Integer.parseInt(gameMenuMatcher.group("foodRate"));
         if (gameMenuController.setFoodRateCheckInput(rateFood)) {
             gameMenuController.setFoodRate(rateFood);
+            System.out.println("food rate set successfully");
         } else
             System.out.println("invalid input!");
     }
@@ -262,6 +321,7 @@ public class GameMenu {
         int rateNumber = Integer.parseInt(gameMenuMatcher.group("fearRate"));
         if (gameMenuController.setFearRateCheckInput(rateNumber)) {
             gameMenuController.setFearRate(rateNumber);
+            System.out.println("fear rate set successfully!");
         } else
             System.out.println("invalid input!");
     }
@@ -270,6 +330,7 @@ public class GameMenu {
         int tax = Integer.parseInt(gameMenuMatcher.group("taxRate"));
         if (gameMenuController.setTaxRateCheckInput(tax)) {
             gameMenuController.setTaxRate(tax);
+            System.out.println("tax rate set successfully");
         } else {
             System.out.println("your input is invalid!");
         }

@@ -1,17 +1,16 @@
 //this is class is completed! please don't touch my class!
-package org.example.view;
+package org.example.view.userView;
 
 import org.example.InputScanner;
-import org.example.controller.MainMenuController;
+import org.example.view.MapMenu;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
-import java.io.IOException;
 import java.util.regex.Matcher;
 
 public class MainMenu {
-    public void run() throws IOException {
+    public void run()  {
         Matcher mainMenuMatcher;
         String userInput;
         System.out.println(SignupMenuOutput.SHOW_MAIN_MENU_OPTIONS.getOutput());
@@ -27,7 +26,7 @@ public class MainMenu {
             } else if (LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.FORGET_PASSWORD) != null) {
                 forgetPassword();
             } else if ((mainMenuMatcher = SignupMenuEnum.getMatcher(userInput, SignupMenuEnum.CREATE_MAP)) != null) {
-                new MapMenu().run(mainMenuMatcher);
+                new MapMenu().run();
             } else {
                 System.out.println("Invalid command!");
             }

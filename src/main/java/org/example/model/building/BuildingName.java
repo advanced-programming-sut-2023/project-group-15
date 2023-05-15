@@ -25,9 +25,8 @@ public enum BuildingName {
     DIARY(10, WOOD, 0, null, 1, CHEESE, VEST, 2, "productive", 10),
     OIL_SMELTLER(10, IRON, 100, GOLD_COIN, 1, OIL_POT, null, 2, "productive", 15),
     OX_TETHER(5, WOOD, 0, null, 1, "productive", 10),
-
     ARMOURY(5, WOOD, 100, "store", 20),
-    SOURCE_STORE(5, WOOD, 500, "store", 15),
+    SOURCE_STORE(0, WOOD, 500, "store", 15),
     FOODSTORE(5, WOOD, 500, "store", 15),
     LOOKOUT_TOWER(10, 0, ROCK, null, 30, 30, "war", 30),
     PERMETER_TOWER(10, 0, ROCK, null, 30, 30, "war", 30),

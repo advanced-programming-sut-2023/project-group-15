@@ -12,7 +12,7 @@ public class MapMenuController {
     private final Tile[][] currentUserMap;
 
     public MapMenuController() {
-        this.currentUserMap = GameInformation.getGameMap();
+        this.currentUserMap = GameInformation.getCurrentPlayerMap();
     }
 
     public int getxStart() {
@@ -56,35 +56,53 @@ public class MapMenuController {
             for (int j = yS; j < yE; j++) {
                 if (GameInformation.getCurrentPlayerMap()[i][j].getSoldier() != null) {
                     System.out.print("S ");
-                    continue;
                 } else if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding() != null) {
                     System.out.print("B ");
-                    continue;
-                } else
+                } else if (GameInformation.getCurrentPlayerMap()[i][j].getLandType() != null) {
                     System.out.print(GameInformation.getCurrentPlayerMap()[i][j].getLandType().getMapId() + " ");
+                } else
+                    System.out.print("D ");
             }
             System.out.println();
         }
     }
 
     public void moving(Matcher matcher) {
-        int x = 0, y = 0;
-        for (int i = 0; i < matcher.groupCount(); i++) {
-            if (matcher.group(i) == null)
-                continue;
-            if (matcher.group(i).equals("right"))
-                x = Integer.parseInt(matcher.group(i + 1));
-            else if (matcher.group(i).equals("left"))
-                x = -Integer.parseInt(matcher.group(i + 1));
-            else if (matcher.group(i).equals("up"))
-                y = Integer.parseInt(matcher.group(i + 1));
-            else if (matcher.group(i).equals("down"))
-                y = -Integer.parseInt(matcher.group(i + 1));
-            showMap(xStart + x, yStart + y);
+        int x,y;
+        x = findX(matcher);
+        y = findY(matcher);
+        showMap(xStart + x, yStart + y);
+    }
+
+    private int findY(Matcher matcher) {
+        if (matcher.group("n") != null) {
+            if (matcher.group("un") != null)
+                return Integer.parseInt(matcher.group("un"));
+            else
+                return  1;
+        } else {
+            if (matcher.group("dn") != null)
+                return  -Integer.parseInt(matcher.group("dn"));
+            else
+                return  -1;
         }
     }
 
-    public String showDetails(int x,int y) {
+    private int findX(Matcher matcher) {
+        if (matcher.group("l") != null) {
+            if (matcher.group("ln") != null)
+                return  -Integer.parseInt(matcher.group("ln"));
+            else
+                return  -1;
+        } else {
+            if (matcher.group("rn") != null)
+                return Integer.parseInt(matcher.group("rn"));
+            else
+                return  1;
+        }
+    }
+
+    public String showDetails(int x, int y) {
         int landTypeCounter = 0;
         Tile currentTile = currentUserMap[x][y];
         String answer = "LandType : ";
@@ -107,6 +125,15 @@ public class MapMenuController {
 
     public boolean checkMatcher(Matcher matcher) {
         return matcher.group("x") != null && matcher.group("y") != null;
+    }
+
+    public boolean checkMovingMapArguments(Matcher matcher) {
+        if (matcher.group("l") != null && matcher.group("r") != null) {
+            return false;
+        } else if (matcher.group("u") != null && matcher.group("d") != null) {
+            return false;
+        } else
+            return true;
     }
 }
 

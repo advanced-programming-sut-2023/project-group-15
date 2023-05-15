@@ -4,15 +4,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum BuildingCommandsEnum {
-    DROP_BUILDING("drop building -((x|y) (\\d+) -(x|y) (\\d+) (-type) ([a-z]+))" +
-            "|((-type) ([a-z]+) -(x|y) (\\d+) -(x|y) (\\d+))" +
-            "|(-(x|y) (\\d+) (-type) ([a-z]+) -(x|y) (\\d+))"),
-    DROP_BUILDING2("^\\s*drop\\s+building\\s+-((x|y)\\s+(\\\\d+)\\s+-(x|y)\\s+(\\d+)\\s+(-type)\\s+([a-z]+))" +
-            "|((-type)\\s+([a-z]+)\\s+-(x|y)\\s+(\\d+)\\s+-(x|y)\\s+(\\d+))" +
-            "|(-(x|y)\\s+(\\d+)\\s+(-type)\\s+([a-z]+)\\s+-(x|y)\\s+(\\d+))\\s*$"),
-    SELECT_BUILDING("^\\s*select\\s*building\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*))*\\s*$"),
+    DROP_BUILDING("^\\s*drop\\s+building\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*)|(-t\\s+(?<type>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*)){3}\\s*$$"),
+    SELECT_BUILDING("^\\s*select\\s*building\\s+((-x\\s+(?<x>\\S*)\\s*)|(-y\\s+(?<y>\\S*)\\s*)){2}\\s*$"),
     REPAIR("^\\s*repair\\s*$"),
-    CREATE_UNIT("\\s*create\\s+unit\\s+((-t\\s+(?<type>\\S+)\\s*|(-c\\s+(?<count>\\d+)\\s*))*$"),
+    CREATE_UNIT("\\s*create\\s+unit\\s+((-t\\s+(?<type>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*|(-c\\s+(?<count>\\d+)\\s*))*$"),
 
     ;
     private final String command;

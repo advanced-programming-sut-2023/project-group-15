@@ -15,58 +15,38 @@ import java.util.regex.Matcher;
 
 public class BuildingController {
     private final Government government;
+    private Building selectedBuilding;
     private String type;
     private String coordinateX;
     private String coordinateY;
-    private Building selectedBuilding;
 
     public BuildingController(String playerName) {
         this.government = Government.findGovernmentWithUsername(playerName);
         this.type = null;
-        this.coordinateX = null;
-        this.coordinateY = null;
+        this.selectedBuilding = null;
     }
 
     public String getType() {
         return type;
     }
 
-    public String getCoordinateX() {
-        return coordinateX;
-    }
-
-    public String getCoordinateY() {
-        return coordinateY;
-    }
-
     public void setType(String type) {
         this.type = type;
-    }
-
-    public void setCoordinateX(String coordinateX) {
-        this.coordinateX = coordinateX;
-    }
-
-    public void setCoordinateY(String coordinateY) {
-        this.coordinateY = coordinateY;
     }
 
     public boolean checkTheLand(int x, int y) {
         Tile currentTile = GameInformation.getCurrentPlayer().getMap()[x][y];
         if (currentTile.isRock())
             return false;
-        if (GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null)
-            return false;
-        else return currentTile.getLandType().isBuildingStatus();
+        return GameInformation.getCurrentPlayerMap()[x][y].getBuilding() == null;
     }
 
-    public void selectBuilding(int x, int y) {
-        for (int i = 0; i < GameInformation.getCurrentPlayerMap().length; i++) {
-            for (int j = 0; j < GameInformation.getCurrentPlayerMap()[0].length; j++) {
-                if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding() != null)
-                    selectedBuilding = GameInformation.getCurrentPlayerMap()[i][j].getBuilding();
-            }
+    public boolean selectBuilding(int x, int y) {
+        if (GameInformation.getCurrentPlayerMap()[x][y].getBuilding() != null) {
+            this.selectedBuilding = GameInformation.getCurrentPlayerMap()[x][y].getBuilding();
+            return true;
         }
+        return false;
     }
 
     public void selectForChangingTax(int tax) {
@@ -93,6 +73,7 @@ public class BuildingController {
                             building.getNumberOfWorkers(), building.getRate(), building.getGood1(), building.getGood2());
                     GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                     GameInformation.getAllBuildings().add(newBuilding);
+                    government.addBuiltBuilding(newBuilding);
                 }
             }
         }
@@ -105,17 +86,8 @@ public class BuildingController {
                         , building.getNumberOfMaterial1(), building.getNumberOfMaterial2(), building.getCapacity());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
+                government.addBuiltBuilding(newBuilding);
             }
-    }
-    public String checkForWorkers(BuildingName buildingName)
-    {
-        if(government.getPeople() >= buildingName.getNumberOfWorkers()) {
-            government.reducePeople(buildingName.getNumberOfWorkers());
-            government.addWorker(buildingName.getNumberOfWorkers());
-            return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
-
-        }
-        return BuildingStatusOutput.DROP_FORBID.getOutput();
     }
 
     public void dropCityBuilding(int x, int y, String name) {
@@ -127,6 +99,7 @@ public class BuildingController {
                 GameInformation.getAllBuildings().add(newBuilding);
                 if(newBuilding.getName().equals("HOUSE"))
                     government.addPeople(9);
+                government.addBuiltBuilding(newBuilding);
             }
 
     }
@@ -138,6 +111,7 @@ public class BuildingController {
                         building.getNumberOfMaterial1(), building.getNumberOfMaterial2(), building.getFireRange(), building.getDefendRange());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
+                government.addBuiltBuilding(newBuilding);
             }
     }
 
@@ -148,6 +122,7 @@ public class BuildingController {
                         building.getMaterial2Name(), building.getNumberOfMaterial1(), building.getNumberOfMaterial(), building.getRate());
                 GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(newBuilding);
                 GameInformation.getAllBuildings().add(newBuilding);
+                government.addBuiltBuilding(newBuilding);
             }
         }
     }
@@ -158,6 +133,8 @@ public class BuildingController {
                     building.getNumberOfMaterial1(), building.getNumberOfMaterial2(), building.getNumberOfWorkers());
             GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(market);
             GameInformation.getAllBuildings().add(market);
+            government.addBuiltBuilding(market);
+            government.setPayerMarket((Market)market);
         }
     }
 
@@ -166,15 +143,31 @@ public class BuildingController {
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
                 status = checkForSources(building.getMaterial1Name(), building.getNumberOfMaterial1());
-                if (!status.equals("success"))
+                if (!status.equals(GameInformationOutput.SUCCESS.getOutput()))
                     return false;
                 else if (building.getMaterial2Name() != null)
                     status = checkForSources(building.getMaterial2Name(), building.getNumberOfMaterial2());
-                if (status.equals("success"))
+                if (status.equals(GameInformationOutput.SUCCESS.getOutput()))
                     return true;
             }
         }
         return false;
+    }
+    public static String checkForSources(Products product, int amount) {
+        int current;
+        Storage store = null;
+        for(StoreProducts storeProduct : StoreProducts.values()) {
+            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
+                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , GameInformation.getCurrentPlayer());
+            }
+        }
+        if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
+            current = store.getGoods().get(product);
+            store.getGoods().remove(product);
+            store.getGoods().put(product, current - amount);
+            return GameInformationOutput.SUCCESS.getOutput();
+        }
+        return GameInformationOutput.NOT_ENOUGH.getOutput();
     }
 
     public String checkParameters(int x, int y, String name) {
@@ -195,6 +188,8 @@ public class BuildingController {
             dropPopularityBuilding(x, y, name);
         else if (type.equals("market"))
             dropMarket(x, y, name);
+        else if(type.equals("store"))
+            dropStorageBuilding(x,y,name);
     }
 
     public String repair() {
@@ -215,22 +210,23 @@ public class BuildingController {
             return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
 
     }
+    public boolean isPlayerHaveStore() {
+        return government.isStoreBuilt();
+    }
 
-    public static String checkForSources(Products product, int amount) {
-        int current;
-        Storage store = null;
-        for(StoreProducts storeProduct : StoreProducts.values()) {
-            if (String.valueOf(product).equals(String.valueOf(storeProduct))) {
-                store = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()) , GameInformation.getCurrentPlayer());
-            }
+    public String checkForWorkers(BuildingName buildingName)
+    {
+        if(government.getPeople() >= buildingName.getNumberOfWorkers()) {
+            government.reducePeople(buildingName.getNumberOfWorkers());
+            government.addWorker(buildingName.getNumberOfWorkers());
+            return BuildingStatusOutput.CHECKED_SUCCESSFULLY.getOutput();
+
         }
-        if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
-            current = store.getGoods().get(product);
-            store.getGoods().remove(product);
-            store.getGoods().put(product, current - amount);
-            return GameInformationOutput.SUCCESS.getOutput();
-        }
-        return GameInformationOutput.NOT_ENOUGH.getOutput();
+        return BuildingStatusOutput.DROP_FORBID.getOutput();
+    }
+
+    public boolean isBuildingSelected() {
+        return this.selectedBuilding != null;
     }
 }
 

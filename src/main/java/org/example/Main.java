@@ -1,28 +1,19 @@
 package org.example;
 
-import org.example.controller.MainMenuController;
-import org.example.model.gameData.GameDataBase;
 
+import org.example.controller.userControllers.MainMenuController;
 import org.example.model.User;
 import org.example.model.gameData.GameInformation;
 
-import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args)  {
         System.out.println("Welcome to the game!");
         new MainMenuController().checkJsonDirectory();
-        for (User user : GameDataBase.getAllUsers()) {
-            System.out.println("username: " + user.getUsername());
-            System.out.println("password: " + user.getPassword());
-            System.out.println("nickname: "+ user.getNickname());
-            System.out.println("email: " + user.getEmail());
-            System.out.println("slogan: " + user.getSlogan());
-            System.out.println("user number: "+ user.getUserNO());
-        }
-        for (User user: GameInformation.getAllPlayers()) {
-            System.out.println(user.getUsername());
-            System.out.println(user.getUserNO());
+        for (User player: GameInformation.getAllPlayers()) {
+            System.out.print(player.getUsername());
+            System.out.println(player.getUserNO());
         }
 //
         //new GameMenu().run();

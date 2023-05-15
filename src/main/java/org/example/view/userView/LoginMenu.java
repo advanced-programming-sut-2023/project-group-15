@@ -1,7 +1,14 @@
-package org.example.view;
+package org.example.view.userView;
 
 import org.example.InputScanner;
 import org.example.controller.*;
+import org.example.controller.userControllers.LoginMenuController;
+import org.example.controller.userControllers.ProfileMenuController;
+import org.example.controller.userControllers.SignupMenuController;
+import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.GameInformation;
+import org.example.view.GameMenu;
+import org.example.view.GameStartMenu;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.commands.ProfileMenuEnum;
@@ -21,6 +28,7 @@ public class LoginMenu extends MainMenu {
     public LoginMenu() {
     }
     public void run() {
+        GameInformation.setCurrentPlayer(GameDataBase.getUserByUsername(loginMenuController.getUsername()));
         String userInput;
         System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());
         ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
@@ -57,7 +65,6 @@ public class LoginMenu extends MainMenu {
                 gameStartMenu.startNewGame();
             } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
                 gameStartMenu.addPlayer(loginMenuController.getUsername(),loginMenuMatcher);
-//                new GameStartMenu(loginMenuController).addPlayer(loginMenuMatcher);
             } else if (GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ENTER_GAME)!=null) {
                 new GameMenu(loginMenuController).run();
 //                new UserTurn(loginMenuController).enterGame();

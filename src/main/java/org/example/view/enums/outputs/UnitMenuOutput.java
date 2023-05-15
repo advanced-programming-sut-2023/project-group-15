@@ -5,7 +5,7 @@ public enum UnitMenuOutput {
     UNIT_DO_NOT_ALLOWED_PLACE_THERE("unit don't allowed to place there!"),
     UNIT_FOUND("The soldier was chosen...\nwhat's your next step?"),
     UNIT_NOT_FOUND_AND_CANNOT_MOVE("Your request cannot be processed (there is no soldier to move)\ntry again"),
-    OUT_OF_BOUNDS("Your destination is beyond the soldier's power\ntry again"),
+    BEYOND_SOLDIER_POWER("Your destination is beyond the soldier's power\ntry again"),
     SUCCESSFUL_MOVE("successful move"),
     WRONG_UNIT("Choose the right unit(tunneler)!"),
     SUCCESSFUL_DIG("successful dig tunnel..."),
@@ -34,7 +34,9 @@ public enum UnitMenuOutput {
     NOT_ENOUGH_RESOURCES("not enough resources"),
     WRONG_BUILDING_EQ("you choose the wrong building"),
     SET_STATE("successful set state"),
-    ;
+    UNIT_NOT_SELECTED("unit not selected!, first you need to select your unit!"),
+    UNIT_START_PATROLLING("unit started patrolling..."),
+    UNIT_STOP_PATROLLING("unit is not patrolling anymore");
     private final String output;
 
     public String getOutput() {

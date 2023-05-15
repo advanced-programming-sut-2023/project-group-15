@@ -190,9 +190,15 @@ public class GameMenuController {
                 for (int i = 0; i != building.size(); i++) {
                     Building building1 = (Building) building.get(i);
                 }
-                government.getUnitWallTarget().setAttackingPower(government.getUnitWallTarget().getAttackingPower() - 1);
-                government.getLauncherUnit().setThrowRange(government.getLauncherUnit().getThrowRageForChanging() - 1);
-                government.getInfantryUnit().setAttackingPower(government.getInfantryUnit().getAttackingPower() - 1);
+                if (government.getUnitWallTargetNumber() != 0) {
+                    government.getUnitWallTarget().setAttackingPower(government.getUnitWallTarget().getAttackingPower() - 1);
+                }
+                if (government.getLauncherUnitNumber() != 0) {
+                    government.getLauncherUnit().setThrowRange(government.getLauncherUnit().getThrowRageForCharging() - 1);
+                }
+                if (government.getInfantryUnitNumber() != 0) {
+                    government.getInfantryUnit().setAttackingPower(government.getInfantryUnit().getAttackingPower() - 1);
+                }
                 break;
             case 1:
                 setAttackingPowers(1);
@@ -213,12 +219,18 @@ public class GameMenuController {
     }
 
     private void setAttackingPowers(int rate) {
-        government.getUnitWallTarget().setAttackingPower(government.getUnitWallTarget().getAttackingPower() + rate);
-        government.getLauncherUnit().setThrowRange(government.getLauncherUnit().getThrowRageForChanging() + rate);
-        government.getInfantryUnit().setAttackingPower(government.getInfantryUnit().getAttackingPower() + rate);
+        if (government.getUnitWallTargetNumber() != 0) {
+            government.getUnitWallTarget().setAttackingPower(government.getUnitWallTarget().getAttackingPower() + rate);
+        }
+        if (government.getLauncherUnitNumber() != 0) {
+            government.getLauncherUnit().setThrowRange(government.getLauncherUnit().getThrowRageForCharging() + rate);
+        }
+        if (government.getInfantryUnitNumber() != 0) {
+            government.getInfantryUnit().setAttackingPower(government.getInfantryUnit().getAttackingPower() + rate);
+        }
     }
 
-    public HashMap foodList() {
+    public HashMap<String, Double> foodList() {
         return government.getFoods();
     }
 
@@ -228,6 +240,18 @@ public class GameMenuController {
 
     public boolean setFoodRateCheckInput(int rateFood) {
         return rateFood >= -2 && rateFood <= 2;
+    }
+
+    public void governmentStatus() {
+        System.out.println("coins: " + government.getCoins());
+        System.out.println("tax rate: " + government.getTaxRate());
+        System.out.println("food rate: " + government.getFoodRate());
+        System.out.println("fear rate: " + government.getFearRate());
+        System.out.println("religion rate: " + government.getReligion());
+        System.out.println("people: " + government.getPeople());
+        System.out.println("workers: " + government.getWorkers());
+        System.out.println("popularity: " + government.getPopularity());
+
     }
 }
 

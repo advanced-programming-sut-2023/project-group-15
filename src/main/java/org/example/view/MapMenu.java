@@ -7,9 +7,13 @@ import org.example.view.enums.commands.MapEnum;
 import java.util.regex.Matcher;
 
 public class MapMenu {
-    private final MapMenuController mapMenuController = new MapMenuController();
+    private final MapMenuController mapMenuController;
 
-    public void run(Matcher matcher) {
+    public MapMenu() {
+        this.mapMenuController = new MapMenuController();
+    }
+
+    public void run() {
         Matcher mapMenuMatcher;
         String command;
         while (true) {
@@ -38,11 +42,12 @@ public class MapMenu {
     }
 
     public boolean checkMapCoordinate(Matcher matcher) {
-        return matcher.group("x") != null && matcher.group("y") == null;
+        return matcher.group("x") != null && matcher.group("y") != null;
     }
 
     public void mapMoving(Matcher gameMenuMatcher) {
-        mapMenuController.moving(gameMenuMatcher);
+        if (mapMenuController.checkMovingMapArguments(gameMenuMatcher))
+            mapMenuController.moving(gameMenuMatcher);
     }
 
     public void mapDetails(Matcher gameMenuMatcher) {

@@ -1,14 +1,10 @@
 package org.example.model;
 
-import org.example.controller.GameDataBaseController;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
-import org.example.model.gameData.Trade;
 
-import java.util.ArrayList;
 import java.util.Objects;
-import java.util.List;
 
 public class User {
     private String username;
@@ -23,7 +19,7 @@ public class User {
     private String slogan;
     private int userNO;
     private boolean stayLoggedIn;
-    private Tile[][] map;
+    private Tile[][] playerMap;
     private Government government;
     public void setGovernment(Government government) {
         this.government = government;
@@ -173,7 +169,7 @@ public class User {
     }
 
     public void setMap(Tile[][] map) {
-        this.map = map;
+        this.playerMap = map;
     }
 
     public static User findUserWithPass(String password) {
@@ -185,7 +181,7 @@ public class User {
     }
 
     public Tile[][] getMap() {
-        return map;
+        return playerMap;
     }
 
     public SecurityQuestion findUserQuestionWithUsername() {

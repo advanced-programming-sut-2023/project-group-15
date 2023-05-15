@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class GameDataBaseController {
+public class jsonController {
 
     public void setJasonFile(User user, boolean flag) {
         setUserInformationToJson(user,flag);
@@ -69,10 +69,6 @@ public class GameDataBaseController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void addUser(User user) {
-        GameDataBase.getAllUsers().add(user);
     }
 
 }

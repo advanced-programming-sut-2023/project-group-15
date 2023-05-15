@@ -1,6 +1,8 @@
-package org.example.controller;
+package org.example.controller.userControllers;
 
 
+import org.example.controller.jsonController;
+import org.example.controller.Utility;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
@@ -154,7 +156,7 @@ public class SignupMenuController extends MainMenuController {
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
         GameDataBase.getAllUsers().add(newUser);
-        new GameDataBaseController().setJasonFile(newUser,false);
+        new jsonController().setJasonFile(newUser,false);
     }
 
     private static Matcher getMatcher(String password, String regex) {

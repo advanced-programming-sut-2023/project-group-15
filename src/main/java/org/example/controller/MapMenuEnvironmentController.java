@@ -6,100 +6,51 @@ import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
 import org.example.model.gameData.GameInformation;
 
-import java.util.regex.Matcher;
-
 
 public class MapMenuEnvironmentController {
 
-    public void setTileTexture(Matcher matcher) {
-        int x, y;
-        String type;
-        if (groupFinder(matcher, "x ") == null || groupFinder(matcher, "y") == null
-                || groupFinder(matcher, "-t") == null)
-            System.out.println("invalid command");
-        else {
-            x = Integer.parseInt(groupFinder(matcher, "x"));
-            y = Integer.parseInt(groupFinder(matcher, "y"));
-            type = groupFinder(matcher, "-t");
-            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
-            for (LandType landType : LandType.values())
-                if (String.valueOf(landType).equals(type))
-                    currentTile.setLandType(landType);
+    public void setTextureOneCoordinate(int x, int y, String type) {
+        Tile currentTile = GameInformation.getGameMap()[x][y];
+        for (LandType landType : LandType.values()) {
+            if (String.valueOf(landType).equals(type))
+                currentTile.setLandType(landType);
         }
     }
 
-
-    public void setTexture(Matcher matcher) {
-        String type;
-        int x1, y1, x2, y2;
-        if (groupFinder(matcher, "x1") == null || groupFinder(matcher, "x2") == null
-                || groupFinder(matcher, "-t") == null || groupFinder(matcher, "y2") == null
-                || groupFinder(matcher, "y1") == null)
-            System.out.println("invalid command");
-        else {
-            x1 = Integer.parseInt(groupFinder(matcher, "x1"));
-            y1 = Integer.parseInt(groupFinder(matcher, "y1"));
-            x2 = Integer.parseInt(groupFinder(matcher, "x2"));
-            y2 = Integer.parseInt(groupFinder(matcher, "y2"));
-            type = groupFinder(matcher, "-t");
-            for (int x = x1; x < x2; x++) {
-                for (int y = y1; y < y2; y++) {
-                    for (LandType landType : LandType.values())
-                        if (String.valueOf(landType).equals(type))
-                            GameInformation.getCurrentPlayer().getMap()[x][y].setLandType(landType);
-                }
+    public void setTextureTwoCoordinate(int x1, int y1, int x2, int y2, String type) {
+        LandType landType = LandType.DEFAULT;
+        for (LandType landType1 : LandType.values()) {
+            if (String.valueOf(landType1).equals(type))
+                landType = landType1;
+        }
+        for (int x = x1; x < x2; x++) {
+            for (int y = y1; y < y2; y++) {
+                GameInformation.getCurrentPlayer().getMap()[x][y].setLandType(landType);
             }
         }
     }
 
-    public void clear(Matcher matcher) {
-        int x, y;
-        if (groupFinder(matcher, "x") == null || groupFinder(matcher, "y") == null
-                || groupFinder(matcher, "-t") == null)
-            System.out.println("invalid command");
-        else {
-            x = Integer.parseInt(groupFinder(matcher, "x"));
-            y = Integer.parseInt(groupFinder(matcher, "y"));
-            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
-            currentTile.setBuilding(null);
-            currentTile.setTree(null);
-            currentTile.setSoldier(null);
-            currentTile.setRock(false, null);
+    public void clear(int x, int y) {
+        Tile currentTile = GameInformation.getGameMap()[x][y];
+        currentTile.setBuilding(null);
+        currentTile.setTree(null);
+        currentTile.setSoldier(null);
+        currentTile.setRock(false, null);
+        currentTile.setLandType(LandType.DEFAULT);
+    }
+
+    public void dropTree(int x, int y, String treeType) {
+        Tile currentTile = GameInformation.getGameMap()[x][y];
+        for (Tree tree : Tree.values()) {
+            if (String.valueOf(tree).equals(treeType))
+                currentTile.setTree(tree);
         }
     }
 
-    public void dropTree(Matcher matcher) {
-        int x, y;
-        String type;
-        if (groupFinder(matcher, "x ") == null || groupFinder(matcher, "y") == null
-                || groupFinder(matcher, "-t") == null)
-            System.out.println("invalid command");
-        else {
-            x = Integer.parseInt(groupFinder(matcher, "x"));
-            y = Integer.parseInt(groupFinder(matcher, "y"));
-            type = groupFinder(matcher, "-t");
-            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
-            for (Tree tree : Tree.values())
-                if (String.valueOf(tree).equals(type))
-                    currentTile.setTree(tree);
-        }
-
-    }
-
-    public void dropRock(Matcher matcher) {
-        int x,y ;
-        String direction;
-        if (groupFinder(matcher, "x") == null || groupFinder(matcher, "y") == null
-                || groupFinder(matcher, "-t") == null)
-            System.out.println("invalid command");
-        else {
-            x = Integer.parseInt(groupFinder(matcher, "x"));
-            y = Integer.parseInt(groupFinder(matcher, "y"));
-            direction = groupFinder(matcher, "-t");
-            Tile currentTile = GameInformation.getCurrentPlayerMap()[x][y];
-            Direction direction1 = findDirection(direction);
-            currentTile.setRock(true, direction1);
-        }
+    public void dropRock(int x, int y, String direction) {
+        Tile currentTile = GameInformation.getGameMap()[x][y];
+        Direction directionI = findDirection(direction);
+        currentTile.setRock(true, directionI);
     }
 
     public static Direction findDirection(String direction) {
@@ -115,16 +66,19 @@ public class MapMenuEnvironmentController {
         return Direction.NULL;
     }
 
-    public String groupFinder(Matcher matcher, String toFind) {
-        while (matcher.find()) {
-            for (int i = 0; i < matcher.groupCount(); i++) {
-                if (matcher.group(i) == null)
-                    continue;
-                if (matcher.group(i).equals(toFind))
-                    return matcher.group(i + 1);
-            }
+    public boolean checkLandType(String type) {
+        for (LandType landType : LandType.values()) {
+            if (String.valueOf(landType).equals(type))
+                return true;
         }
-        return null;
+        return false;
     }
 
+    public boolean treeTypeCheck(String type) {
+        for (Tree tree : Tree.values()) {
+            if (String.valueOf(tree).equals(type))
+                return true;
+        }
+        return false;
+    }
 }

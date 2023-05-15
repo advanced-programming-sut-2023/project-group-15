@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.controller.userControllers;
 
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
@@ -8,7 +8,6 @@ import org.example.view.enums.outputs.LoginMenuOutput;
 
 public class LoginMenuController extends MainMenuController{
     private boolean stayLoggedInFlag = false;
-    private GameDataBaseController gameDataBaseController = new GameDataBaseController();
 
     public LoginMenuOutput loginUser()  {
         if (checkMatchUsername()) {

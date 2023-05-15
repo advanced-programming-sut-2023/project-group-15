@@ -4,8 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum TradingMenuEnum {
-    TRADE("^\\s*trade\\s+((-m\\s+(?<message>\\w+)\\s*)|(-t\\s+(?<resourceType>\\w+)\\s*)|" +
-            "(-a\\s+(?<resourceAmount>\\d+)\\s*)|(-p\\s+(?<price>\\d+))){4}\\s*$"),
+    TRADE("^\\s*trade\\s+((-t\\s+(?<product>\\S+)\\s*)|(-m\\s+(?<message>\\S*)\\s*)|(-a\\s+(?<resourceAmount>\\d+)\\s*)|(-p\\s+(?<price>\\d+)\\s*)){4}\\s*$"),
     TRADE_LIST("^\\s*trade\\s+list\\s*$"),
     TRADE_ACCEPT("^\\s*trade\\s+accept\\s+((-i\\s+(?<number>\\d+)\\s*)|(-m\\s+(?<message>)\\w+)\\s*){2}\\s*$"),
     TRADE_HISTORY("^\\s*trade\\s+history\\s*$"),

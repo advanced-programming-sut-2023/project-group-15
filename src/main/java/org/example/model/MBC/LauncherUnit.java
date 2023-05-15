@@ -1,6 +1,5 @@
 package org.example.model.MBC;
 
-import org.example.model.enums.State;
 
 public class LauncherUnit extends Soldier {
     private int throwRange;
@@ -15,7 +14,7 @@ public class LauncherUnit extends Soldier {
         this.throwRange = throwRange;
     }
 
-    public int getThrowRageForChanging() {
+    public int getThrowRageForCharging() {
         return this.throwRange;
     }
 

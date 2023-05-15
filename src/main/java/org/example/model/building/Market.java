@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.example.model.enums.*;
 
 public class Market extends Building {
-    private static HashMap<String, Integer> number = new HashMap<>();
+    private static final HashMap<String, Integer> number = new HashMap<>();
     private static final HashMap<String, Integer> sellCoin = new HashMap<>();
     private static final HashMap<String, Integer> buyCoin = new HashMap<>();
     private int numberOfWorkers;
@@ -15,10 +15,10 @@ public class Market extends Building {
                   int numberOfMaterial2, int numberOfWorkers) {
         super(name, hp, xCoordinate, yCoordinate, material1, material2, numberOfMaterial1, numberOfMaterial2);
         this.numberOfWorkers = numberOfWorkers;
+        this.setMarket();
     }
 
-    public void setMarket() {
-
+    private void setMarket() {
         number.put("Apple", 10);
         number.put("Hop", 0);
         number.put("Bread", 0);
@@ -35,7 +35,6 @@ public class Market extends Building {
         number.put("Wood", 0);
         number.put("Vest", 0);
         number.put("Horse", 0);
-
         sellCoin.put("Apple", 10);
         sellCoin.put("Hop", 5);
         sellCoin.put("Bread", 15);
@@ -52,7 +51,6 @@ public class Market extends Building {
         sellCoin.put("Wood", 15);
         sellCoin.put("Vest", 40);
         sellCoin.put("Horse", 60);
-
         buyCoin.put("Apple", 15);
         buyCoin.put("Hop", 10);
         buyCoin.put("Bread", 20);

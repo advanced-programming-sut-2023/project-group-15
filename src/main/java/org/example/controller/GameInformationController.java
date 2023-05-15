@@ -22,24 +22,44 @@ public class GameInformationController {
                 filePath = FilePaths.Map4.getFilePaths();
                 break;
         }
-        GameInformation.setMapGame(mapSize,filePath);
+        GameInformation.setMapGame(mapSize, filePath);
     }
 
-    public void generateEachPlayerMap(User player,int mapSize) {
+    public void generateEachPlayerMap(User player, int mapSize) {
         int playerNumber = player.getUserNO();
-        Tile[][] playerMap = new Tile[mapSize / 2][];
-        if (playerNumber <= 4) {
-            for (int i = 0; i < mapSize / 2; i++) {
-                for (int j = 0; j < mapSize / 4; j++)
-                    playerMap[i][j] = GameInformation.getGameMap()[i][(playerNumber - 1) * mapSize / 4];
+        int i = 0;
+        int j = findJStart(playerNumber,mapSize);
+        int iFactor = mapSize / 2;
+        int jFactor = mapSize / 4;
+        Tile[][] playerMap = new Tile[iFactor][jFactor];
+        if (playerNumber % 2 == 0) {
+            i += iFactor;
+        }
+        int iCondition = iFactor + i;
+        int jCondition = jFactor + j;
+        int playerMapXCoordinate = 0;
+        int playerMapYCoordinate;
+        for (int i1 = i;i1<iCondition;i1++) {
+            playerMapYCoordinate = 0;
+            for (int j1 = j ;j1 < jCondition ; j1++) {
+                playerMap[playerMapXCoordinate][playerMapYCoordinate] = GameInformation.getGameMap()[i1][j1];
+                playerMapYCoordinate ++;
             }
-        } else {
-            for (int i = 0; i < mapSize / 2; i++) {
-                for (int j = 0; j < mapSize / 4; j++) {
-                    playerMap[i][j] = GameInformation.getGameMap()[i + mapSize / 2][((playerNumber % 4) - 1) * mapSize / 4];
-                }
-            }
+            playerMapXCoordinate ++ ;
         }
         player.setMap(playerMap);
+    }
+
+    private int findJStart(int playerNum,int mapSize) {
+        int jFactor = mapSize / 4 ;
+        if (playerNum<3) {
+            return 0;
+        } else if (playerNum<5) {
+            return jFactor ;
+        } else if (playerNum<7) {
+            return (jFactor*2);
+        } else if (playerNum<9) {
+            return (jFactor*3);
+        } else return 0;
     }
 }

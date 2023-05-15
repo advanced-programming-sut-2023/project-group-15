@@ -31,6 +31,7 @@ public enum UnitName {
     private final double cost;
     private final String type;
 
+
     public int getSpeed() {
         return this.speed;
     }
@@ -92,7 +93,6 @@ public enum UnitName {
                 return unitName;
         return null;
     }
-
     public double getCost() {
         return cost;
     }

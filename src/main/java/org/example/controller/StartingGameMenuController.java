@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.controller.userControllers.LoginMenuController;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
@@ -10,22 +11,22 @@ import org.example.view.enums.outputs.GameStartMenuOutput;
 public class StartingGameMenuController {
     private final User gameOwner;
     private int userNumberForMapSelection = 2;
-    private final GameInformationController controller = new GameInformationController();
+    private final GameInformationController gameInformationController = new GameInformationController();
     public StartingGameMenuController(LoginMenuController controller) {
         this.gameOwner = GameDataBase.getUserByUsername(controller.getUsername());
     }
     public GameStartMenuOutput newGame(int mapSize,int mapNumber) {
-        controller.setMap(mapSize, mapNumber);
+        gameInformationController.setMap(mapSize, mapNumber);
         GameInformation.setNewGameAccess(false);
         gameOwner.setUserNO(1);
-        controller.generateEachPlayerMap(gameOwner,1);
+        gameInformationController.generateEachPlayerMap(gameOwner,mapSize);
         gameOwner.setGovernment(new Government(gameOwner.getUsername()));
         GameInformation.addPlayer(gameOwner);
         return GameStartMenuOutput.GAME_STARTED_SUCCESSFULLY;
     }
     public GameStartMenuOutput addUser(String gameOwner,String playerToBeAdded) {
         User owner = GameDataBase.getUserByUsername(gameOwner);
-        if (GameInformation.getAllPlayers().size()>8) {
+        if (GameInformation.getAllPlayers().size()>7) {
             return GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL;
         } else if (GameInformation.isNewGameAccess()) {
             return GameStartMenuOutput.GAME_IS_NOT_STARTED;
@@ -37,7 +38,7 @@ public class StartingGameMenuController {
             newPlayer.setGovernment(new Government(newPlayer.getUsername()));
             GameInformation.addPlayer(newPlayer);
             newPlayer.setUserNO(userNumberForMapSelection);
-            controller.generateEachPlayerMap(newPlayer,userNumberForMapSelection);
+            gameInformationController.generateEachPlayerMap(newPlayer,GameInformation.getGameMap().length);
             userNumberForMapSelection++;
             return GameStartMenuOutput.ADD_USER_SUCCESS;
         }

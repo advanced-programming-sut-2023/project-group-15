@@ -16,7 +16,6 @@ public class Trade {
     private final double price;
     private boolean accepted;
     private final static ArrayList<Trade> allTrades = new ArrayList<>();
-
     public Trade(User sender, User receiver, int amount, Products product, String message, double price) {
         this.sender = sender;
         this.receiver = receiver;
@@ -32,8 +31,6 @@ public class Trade {
     public static ArrayList<Trade> getAllTrades() {
         return allTrades;
     }
-
-
 
     public void acceptReq() {
         this.accepted = true;

@@ -3,6 +3,8 @@ package org.example.model.gameData;
 import org.example.model.MBC.InfantryUnit;
 import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.UnitWallTarget;
+import org.example.model.building.Building;
+import org.example.model.building.Market;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,33 +14,82 @@ public class Government {
     private final String owner;
     private int people;
     private int workers;
+    private Market market;
     private ArrayList<InfantryUnit> infantryUnit;
     private ArrayList<LauncherUnit> launcherUnit;
     private ArrayList<UnitWallTarget> unitWallTarget;
     private final List<Trade> tradeSendList;
     private final List<Trade> tradeReqList;
-    private final List<Trade> tradeHistoryList;
     private int popularity;
     private int foodRate;
     private int taxRate;
     private int fearRate;
+    private int religion;
     private double coins;
-    private final HashMap<String, Double> foods = new HashMap<>();
+    private boolean storeBuilt;
+    private final ArrayList<Building> builtBuildings;
+    private final HashMap<String, Double> foods;
     private static final ArrayList<Government> allGovernments = new ArrayList<>();
+    private static final List<Trade> tradeHistoryList = new ArrayList<>();
 
     public Government(String owner) {
         this.owner = owner;
         this.coins = 100.00;
         this.people = 50;
         this.workers = 0;
+        this.fearRate = 0;
+        this.foodRate = -8;
+        this.taxRate = 0;
+        this.religion = 0;
+        this.popularity = -8;
+        this.storeBuilt = false;
+        this.market = null;
+        this.builtBuildings = new ArrayList<>();
+        this.newUnitForGovernment();
+        this.tradeReqList = new ArrayList<>();
+        this.tradeSendList = new ArrayList<>();
+        this.foods = new HashMap<>();
+        setPrimitiveFoods();
+        allGovernments.add(this);
+    }
+
+    private void newUnitForGovernment() {
         this.infantryUnit = new ArrayList<>();
         this.launcherUnit = new ArrayList<>();
         this.unitWallTarget = new ArrayList<>();
-        this.tradeHistoryList = new ArrayList<>();
-        this.tradeReqList = new ArrayList<>();
-        this.tradeSendList = new ArrayList<>();
-        allGovernments.add(this);
     }
+
+    public Market playerMarket() {
+        return market;
+    }
+
+    public void setPayerMarket(Market market) {
+        this.market = market;
+        this.storeBuilt = true;
+    }
+
+    public ArrayList<Building> getAllBuiltBuildings() {
+        return builtBuildings;
+    }
+    public void addBuiltBuilding(Building building) {
+        this.getAllBuiltBuildings().add(building);
+    }
+    public int getReligion() {
+        return religion;
+    }
+
+    public void setReligion(int religion) {
+        this.religion = religion;
+    }
+
+
+    private void setPrimitiveFoods() {
+        this.foods.put("Apple", 0.00);
+        this.foods.put("Hop", 0.00);
+        this.foods.put("Bread", 0.00);
+        this.foods.put("Cheese", 0.00);
+    }
+
     public String getOwner() {
         return owner;
     }
@@ -57,10 +108,7 @@ public class Government {
 
 
     public void foodList() {
-        foods.put("Apple", 0.00);
-        foods.put("Hop", 0.00);
-        foods.put("Bread", 0.00);
-        foods.put("Cheese", 0.00);
+
     }
     public void setCoins(double coin) {
         this.coins = coin;
@@ -265,7 +313,11 @@ public class Government {
         return tradeReqList;
     }
 
-    public List<Trade> getTradeHistoryList() {
+    public static List<Trade> getTradeHistoryList() {
         return tradeHistoryList;
+    }
+
+    public boolean isStoreBuilt() {
+        return this.storeBuilt;
     }
 }

@@ -7,7 +7,7 @@ import org.example.model.building.Building;
 import org.example.model.MBC.Soldier;
 public class Tile {
     private Building building;
-    private LandType landType;
+    private LandType landType = LandType.DEFAULT;
     private int numberOfSoldiers;
     private Soldier soldier;
     private Tree tree;
@@ -83,5 +83,9 @@ public class Tile {
 
     public Direction getRockDirection() {
         return rockDirection;
+    }
+
+    public char getSign() {
+        return '#';
     }
 }

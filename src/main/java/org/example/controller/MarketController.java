@@ -7,29 +7,28 @@ import org.example.view.enums.outputs.GameMenuOutput;
 import java.util.HashMap;
 
 public class MarketController {
-    public Market market;
     public Government government;
 
     public MarketController(String playerName) {
         government = Government.findGovernmentWithUsername(playerName);
     }
 
-    public HashMap show1() {
-        return market.getNumber();
+    public HashMap<String,Integer> show1() {
+        return government.playerMarket().getNumber();
     }
 
-    public HashMap show2() {
-        return market.getSellCoin();
+    public HashMap<String,Integer> show2() {
+        return government.playerMarket().getSellCoin();
     }
 
-    public HashMap show3() {
-        return market.getBuyCoin();
+    public HashMap<String,Integer> show3() {
+        return government.playerMarket().getBuyCoin();
     }
 
     public GameMenuOutput sell(String item, int number) {
-        if (market.getNumberOfItem(item) >= number) {
-            market.sellItemNumber(item, number);
-            government.InCoin(number * market.getSellCoin(item));
+        if (government.playerMarket().getNumberOfItem(item) >= number) {
+            government.playerMarket().sellItemNumber(item, number);
+            government.InCoin(number * government.playerMarket().getSellCoin(item));
             government.removeFood(item, number);
             return GameMenuOutput.SUCCESSFUL_SELL;
         } else
@@ -37,9 +36,9 @@ public class MarketController {
     }
 
     public GameMenuOutput buy(String item, int number) {
-        if (government.getCoins() >= number * market.getBuyCoin(item)) {
-            market.buyItemNumber(item, number);
-            government.deCoin(number * market.getBuyCoin(item));
+        if (government.getCoins() >= number * government.playerMarket().getBuyCoin(item)) {
+            government.playerMarket().buyItemNumber(item, number);
+            government.deCoin(number * government.playerMarket().getBuyCoin(item));
             government.addFood(item, number);
             return GameMenuOutput.SUCCESSFUL_BUY;
         } else

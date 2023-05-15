@@ -1,8 +1,8 @@
 package org.example.view;
 
 import org.example.InputScanner;
-import org.example.controller.LoginMenuController;
 import org.example.controller.StartingGameMenuController;
+import org.example.controller.userControllers.LoginMenuController;
 import org.example.model.gameData.GameInformation;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.outputs.GameStartMenuOutput;
