@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 import static org.example.controller.Utility.groupFinder;
 
 public class TradingMenuController {
-    private Government government;
+    private final Government government;
 
     public TradingMenuController(String playerName) {
         this.government = Government.findGovernmentWithUsername(playerName);
@@ -28,69 +28,42 @@ public class TradingMenuController {
             System.out.println("User " + entry.getKey().getUsername() + ", UserNo: " + entry.getValue());
     }
 
-    public void sendTradeRequest(String recourseType,int recourseAmount,String messageI,double priceI) {
+    public void sendTradeRequest(String recourseType,int recourseAmount,String messageI,double priceI,String receiverI) {
         Products product = Products.getProductByName(recourseType);
-        double price = priceI;
-        int amount = recourseAmount;
-        String message = messageI;
-//        User receiver = GameDataBase.getUserByUsername(name);
-//        User sender = GameDataBase.getCurrentUser();
-//        Trade newTrade = new Trade(sender, receiver, amount, product, message, price);
-//        sender.getTradeSendList().add(newTrade);
-//        receiver.getTradeReqList().add(newTrade);
+        User receiver = GameDataBase.getUserByUsername(receiverI);
+        User sender = GameDataBase.getUserByUsername(this.government.getOwner());
+        Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
+        sender.getGovernment().getTradeSendList().add(newTrade);
+        receiver.getGovernment().getTradeReqList().add(newTrade);
     }
 
     public void showTradeList() {
-        User user = GameInformation.getCurrentPlayer();
-//        for (int i = 0; i < GameInformation.getCurrentPlayer().getTradeSendList().size(); i++) {
-//            if (i == 0)
-//                System.out.println("--------------------------------------------------------------------------");
-//            System.out.println("No." + (i + 1) + ":" + user.getTradeSendList().get(i));
-//        }
+        Trade.showTrades();
     }
 
     public void showTradeHistory() {
-        User user = GameInformation.getCurrentPlayer();
-//        if (user.getTradeHistoryList().size() == 0)
-//            System.out.println("\nTrade History List Is Empty!!!");
-//        for (int i = 0; i < user.getTradeHistoryList().size(); i++) {
-//            if (i == 0)
-//                System.out.println("----------------------------------History of accepted trade:------------------------------------------");
-//            System.out.println("No." + (i + 1) + ":" + user.getTradeHistoryList().get(i));
-//        }
+        Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
     }
 
-    public void acceptRequest(Matcher matcher) {
-        Trade trade = null;
-        if (groupFinder(matcher, "id") == null) {
-            System.out.println("invalid command");
-            return;
-        }
-        int id = Integer.parseInt(groupFinder(matcher, "id"));
-//        trade = GameInformation.getCurrentPlayer().getTradeReqList().get(id);
+    public GameInformationOutput acceptRequest(int id,String message) {
+        Trade trade = Trade.findTradeWithID(id);
         Storage storage = null;
         String message1 = BuildingController.checkForSources(trade.getProduct(), trade.getAmount());
         if (message1.equals(GameInformationOutput.NOT_ENOUGH.getOutput())) {
-            System.out.println(message1);
-            return;
+            return GameInformationOutput.NOT_ENOUGH;
         }
-        if (trade.getSender().getGovernment().getCoins() < trade.getAmount() * trade.getPrice()) {
-            System.out.println("not enough coins for the trade sender");
-            return;
+        else if (trade.getSender().getGovernment().getCoins() < trade.getAmount() * trade.getPrice()) {
+            return GameInformationOutput.NOT_ENOUGH_COIN;
         }
-
-        if (message1.equals(GameInformationOutput.SUCCESS.getOutput())) {
+        else if (message1.equals(GameInformationOutput.SUCCESS.getOutput())) {
+            //hess mikonm eshtbas
             for (StoreProducts storeProducts : StoreProducts.values())
                 if (trade.getProduct().name().equals(String.valueOf(storeProducts)))
                     storage = (Storage) GameInformation.findBuilding(storeProducts.getStoreType(), trade.getSender());
             storage.addonStorageWithAmount(trade.getProduct(), trade.getAmount());
-//            trade.getSender().getTradeHistoryList().add(trade);
-//            trade.getReceiver().getTradeHistoryList().add(trade);
-//            trade.getSender().getTradeSendList().remove(trade);
-//            trade.getReceiver().getTradeReqList().remove(trade);
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
-
         }
+        return GameInformationOutput.ACCEPTED_SUCCESSFULLY;
     }
 
     public static void listOfNewOrders() {
@@ -107,5 +80,27 @@ public class TradingMenuController {
 
     public boolean productInputCheck(String product) {
         return Products.findProduct(product) != null;
+    }
+
+    public void showPlayers() {
+        for (User player : GameInformation.getAllPlayers()) {
+            System.out.println(player.getUsername());
+        }
+    }
+
+    public boolean selectReceiver(String username) {
+        for (User player:GameInformation.getAllPlayers()) {
+            if (player.getUsername().equals(username))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean tradeIdCheck(int id) {
+        for (Trade trade:Trade.getAllTrades()) {
+            if (trade.getTradeID()==id)
+                return true;
+        }
+        return false;
     }
 }

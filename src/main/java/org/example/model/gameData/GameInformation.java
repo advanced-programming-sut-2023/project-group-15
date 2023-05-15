@@ -16,7 +16,17 @@ import java.util.HashMap;
 
 public class GameInformation {
     private static int mapGameSize;
-    private final static Tile[][] gameMap = new Tile[200][200];
+    private static boolean newGameAccess = true;
+
+    public static boolean isNewGameAccess() {
+        return newGameAccess;
+    }
+
+    public static void setNewGameAccess(boolean newGameAccess) {
+        GameInformation.newGameAccess = newGameAccess;
+    }
+
+    private final static Tile[][] gameMap = new Tile[400][400];
     private final static ArrayList<User> allPlayers = new ArrayList<>();
     public static ArrayList<User> getAllPlayers() {
         return allPlayers;

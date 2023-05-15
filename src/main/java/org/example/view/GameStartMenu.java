@@ -15,11 +15,11 @@ public class GameStartMenu{
         startingGameMenuController = new StartingGameMenuController(controller);
     }
 
-    public void addPlayer(Matcher loginMenuMatcher) {
+    public void addPlayer(String owner,Matcher loginMenuMatcher) {
         String playerToBeAdded = loginMenuMatcher.group("name");
         if (GameInformation.checkPlayer(playerToBeAdded)){
             if (!GameInformation.checkPlayerExist(playerToBeAdded)) {
-                System.out.println(startingGameMenuController.addUser(playerToBeAdded).getOutput());
+                System.out.println(startingGameMenuController.addUser(owner,playerToBeAdded).getOutput());
                 return;
             }
             System.out.println("the player is already in the game!");
@@ -38,7 +38,8 @@ public class GameStartMenu{
                     if (checkSelectMapInputs(matcher)) {
                         int mapSize = Integer.parseInt(matcher.group("area"));
                         int mapNumber = Integer.parseInt(matcher.group("type"));
-                        startingGameMenuController.newGame(mapSize,mapNumber);
+                        System.out.println(startingGameMenuController.newGame(mapSize,mapNumber).getOutput());
+                        new MapChangesEnvironment().run();
                         return;
                     } else {
                         System.out.println("your inputs are not valid!,\ntry again or enter \"quit\" to cancel the process!");

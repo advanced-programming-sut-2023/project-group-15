@@ -5,9 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum MapEnum {
-    MAP_MOVING("map ((left|right) (\\d+)*(\\s+)*(up|down)(\\s+)*(\\d+)*)" +
-            "|map ((up|down) (\\d+)*(\\s+)*(left|right)(\\s+)*(\\d+)*)"),
-
+    MAP_MOVING("^\\s*map\\s+((left|right)\\s+(\\d+)*(\\s+)*(up|down)(\\s+)*(\\d+)*)\\s*$|^\\s*map\\s+((up|down)\\s+(\\d+)*(\\s+)*(left|right)(\\s+)*(\\d+)*)\\s*$"),
     MAP_DETAILS("^\\s*show\\s+details\\s+((-x\\s*(?<x>\\d+)\\s*)|(-y\\s*(?<y>\\d+)\\s*))+\\s*$"),
     SET_TEXTURE("^\\s*set\\s*texture\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*)|(-t\\s+(?<type>[a-z ]+)))*\\s*$"),
     SET_TEXTURE2("^\\s*set\\s*texture\\s+((-x1\\s+(?<x1>\\d+)\\s*)|(-y1\\s+(?<y1>\\d+)\\s*)|(-y2\\s+(?<y2>\\d+)\\s*)|(-x2\\s+(?<x2>\\d+)\\s*)|(-t\\s+(?<type>[a-z ]+)))*\\s*$"),

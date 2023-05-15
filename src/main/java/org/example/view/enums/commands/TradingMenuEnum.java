@@ -13,7 +13,7 @@ public enum TradingMenuEnum {
     BUY("^\\s*buy\\s+((-i\\s+(?<name>\\w+)\\s*)|(-a\\s+(?<amount>\\d+)\\s*))*\\s*$"),
     SELECT_USER("^\\s*select\\s+user\\s+-u\\s+(?<username>\\S+)\\s*$"),
     SELL("^\\s*sell\\s+((-i\\s+(?<item>\\w+)\\s*)|(-a\\s+(?<amount>\\d+)\\s*))*\\s*$"),
-
+    CHOOSE_PLAYER("^\\s*choose\\s+player\\s+-u\\s+(?<username>[^\\\"]\\S*|\\\"[^\\\"]+\\\")\\s*$"),
     ;
     private final String regex;
 

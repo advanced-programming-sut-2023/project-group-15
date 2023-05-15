@@ -10,6 +10,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 
 import org.example.controller.GameMenuController;
+import org.example.view.enums.commands.MapEnum;
 import org.example.view.enums.commands.TradingMenuEnum;
 import org.example.view.enums.outputs.BuildingStatusOutput;
 
@@ -42,21 +43,19 @@ public class GameMenu {
                 System.out.println("changing the turn!!");
                 //TODO:
             } else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_MAP)) != null)
-                new MapMenu().run(gameMenuMatcher);
-
-
+                new MapMenu().showMap(gameMenuMatcher);
+            else if ((gameMenuMatcher = MapEnum.getMatcher(input, MapEnum.MAP_MOVING)) != null)
+                new MapMenu().mapMoving(gameMenuMatcher);
+            else if ((gameMenuMatcher = MapEnum.getMatcher(input, MapEnum.MAP_DETAILS)) != null)
+                new MapMenu().mapDetails(gameMenuMatcher);
             else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE)) != null)
                 tradeInputCheck(gameMenuMatcher);
             else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE_ACCEPT)) != null)
-                System.out.println("comment");
-//                tradingMenuController.acceptRequest();
-            else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE_HISTORY)) != null)
+                tradeAccept(gameMenuMatcher);
+            else if (TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE_HISTORY) != null)
                 tradingMenuController.showTradeHistory();
-            else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE_LIST)) != null)
+            else if (TradingMenuEnum.getMatcher(input, TradingMenuEnum.TRADE_LIST) != null)
                 tradingMenuController.showTradeList();
-
-
-
             else if ((gameMenuMatcher = GameMenuEnum.getMatcher(input, GameMenuEnum.SET_TAX_RATE)) != null)
                 setTaxRate(gameMenuMatcher);
             else if (GameMenuEnum.getMatcher(input, GameMenuEnum.SHOW_TAX_RATE) != null)
@@ -115,17 +114,38 @@ public class GameMenu {
         }
     }
 
+    private void tradeAccept(Matcher gameMenuMatcher) {
+        int id = Integer.parseInt(gameMenuMatcher.group("number"));
+        String message = gameMenuMatcher.group("message");
+        if (tradingMenuController.tradeIdCheck(id)) {
+            System.out.println(tradingMenuController.acceptRequest(id,message));
+        }
+        System.out.println("your input id is invalid!");
+    }
+
     private void tradeInputCheck(Matcher gameMenuMatcher) {
         String product = gameMenuMatcher.group("product");
         if (tradingMenuController.productInputCheck(product)) {
             int resourceAmount = Integer.parseInt(gameMenuMatcher.group("resourceAmount]"));
             String playerMessage = gameMenuMatcher.group("message");
             int price = Integer.parseInt(gameMenuMatcher.group("price"));
-            //TODO: find the receiver....
-            tradingMenuController.sendTradeRequest(product,resourceAmount,playerMessage,price);
+            System.out.println("select one of these players to send the trade request:\nuse \"choose player -u <username>\" command");
+            tradingMenuController.showPlayers();
+            while (true) {
+                String input = InputScanner.getScanner().nextLine();
+                if (input.matches("^\\s*quit\\s*$"))
+                    return;
+                else if ((gameMenuMatcher = TradingMenuEnum.getMatcher(input,TradingMenuEnum.CHOOSE_PLAYER))!=null) {
+                    String receiver = gameMenuMatcher.group("username");
+                    if (tradingMenuController.selectReceiver(receiver)) {
+                        tradingMenuController.sendTradeRequest(product,resourceAmount,playerMessage,price,receiver);
+                        System.out.println("trade request sent successfully!");
+                    }
+                    else System.out.println("the username you entered is not a player in the game!");
+                }
+            }
         } else {
             System.out.println("your product input is invalid!");
-            return;
         }
     }
 

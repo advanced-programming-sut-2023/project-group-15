@@ -7,23 +7,12 @@ import java.util.regex.Matcher;
 
 public class MapMenuController {
 
-    private static int xStart = 0;
-    private static int yStart = 0;
-    private static Tile[][] currentUserMap;
+    private int xStart;
+    private int yStart;
+    private final Tile[][] currentUserMap;
 
     public MapMenuController() {
-        currentUserMap = GameInformation.gameMap;
-    }
-
-    public void setStartingPoint(Matcher matcher) {
-        if (matcher.group("x") != null)
-            xStart = Integer.parseInt(matcher.group("x"));
-        else
-            xStart = -1;
-        if (matcher.group("y") != null)
-            yStart = Integer.parseInt(matcher.group("y"));
-        else
-            yStart = -1;
+        this.currentUserMap = GameInformation.getGameMap();
     }
 
     public int getxStart() {
@@ -32,6 +21,14 @@ public class MapMenuController {
 
     public int getyStart() {
         return yStart;
+    }
+
+    public void setxStart(int xStart) {
+        this.xStart = xStart;
+    }
+
+    public void setyStart(int yStart) {
+        this.yStart = yStart;
     }
 
     public void showMap(int x, int y) {
@@ -87,9 +84,7 @@ public class MapMenuController {
         }
     }
 
-    public String showDetails(Matcher matcher) {
-        int x = Integer.parseInt(matcher.group("x"));
-        int y = Integer.parseInt(matcher.group("y"));
+    public String showDetails(int x,int y) {
         int landTypeCounter = 0;
         Tile currentTile = currentUserMap[x][y];
         String answer = "LandType : ";

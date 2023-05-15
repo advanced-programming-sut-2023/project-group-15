@@ -25,8 +25,8 @@ public class GameInformationController {
         GameInformation.setMapGame(mapSize,filePath);
     }
 
-    public void generateEachPlayerMap(int mapSize) {
-        int playerNumber = GameInformation.getCurrentPlayerNo();
+    public void generateEachPlayerMap(User player,int mapSize) {
+        int playerNumber = player.getUserNO();
         Tile[][] playerMap = new Tile[mapSize / 2][];
         if (playerNumber <= 4) {
             for (int i = 0; i < mapSize / 2; i++) {
@@ -40,6 +40,6 @@ public class GameInformationController {
                 }
             }
         }
-        GameInformation.getCurrentPlayer().setMap(playerMap);
+        player.setMap(playerMap);
     }
 }

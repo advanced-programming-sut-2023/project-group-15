@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 
 public class LoginMenu extends MainMenu {
     private final LoginMenuController loginMenuController = new ProfileMenuController();
+    private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
     private Matcher loginMenuMatcher;
     public LoginMenu(Matcher loginMenuMatcher) {
         this.loginMenuMatcher = loginMenuMatcher;
@@ -52,11 +53,14 @@ public class LoginMenu extends MainMenu {
             } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
                 profileMenu.displayUserInfo();
             } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.START_NEW_GAME))!=null) {
-                new GameStartMenu(loginMenuController).startNewGame();
+                GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
+                gameStartMenu.startNewGame();
             } else if((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ADD_PLAYER)) != null) {
-                new GameStartMenu(loginMenuController).addPlayer(loginMenuMatcher);
+                gameStartMenu.addPlayer(loginMenuController.getUsername(),loginMenuMatcher);
+//                new GameStartMenu(loginMenuController).addPlayer(loginMenuMatcher);
             } else if (GameStartMenuEnum.getMatcher(userInput,GameStartMenuEnum.ENTER_GAME)!=null) {
-                new UserTurn(loginMenuController).enterGame();
+                new GameMenu(loginMenuController).run();
+//                new UserTurn(loginMenuController).enterGame();
             } else if (ProfileMenuEnum.getMatcher(userInput,ProfileMenuEnum.LOGOUT)!= null) {
                 System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
                 break;

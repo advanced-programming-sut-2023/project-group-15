@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum GameMenuEnum {
-    SHOW_MAP("^\\s*show\\s+map\\s+-(x|y)\\s+(\\d+)\\s+-(x|y)\\s+(\\d+)\\s*$"),
+    SHOW_MAP("^\\s*show\\s+map\\s+((-x\\s+(?<x>\\d+)\\s*)|(-y\\s+(?<y>\\d+)\\s*))*\\s*$"),
     SET_TAX_RATE("^\\s*tax\\s+rate\\s+-r\\s+(?<taxRate>-3|-2|-1|0|[1-8])\\s*$"),
     SET_FOOD_RATE("^\\s*food\\s+rate\\s+-r\\s+(?<foodRate>-2|-1|0|1|2)\\s*$"),
     SET_FEAR_RATE("^\\s*fear\\s+rate\\s+-r\\s+(?<fearRate>-5|-4|-3|-2|-1|0|[1-5])\\s*$"),
