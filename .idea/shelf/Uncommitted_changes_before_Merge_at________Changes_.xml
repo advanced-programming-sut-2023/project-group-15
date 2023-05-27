@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Merge_at_۰۸_۰۵_۲۰۲۳_۰۲_۵۲_بعدازظهر_[Changes]" date="1683544952599" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_۰۸_۰۵_۲۰۲۳_۰۲_۵۲_بعدازظهر_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Merge at ۰۸/۰۵/۲۰۲۳ ۰۲:۵۲ بعدازظهر [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="target/classes/org/example/model/gameData/GameDataBase.class" />
-    <option name="AFTER_PATH" value="target/classes/org/example/model/gameData/GameDataBase.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_۰۸_۰۵_۲۰۲۳_۰۲_۵۲_بعدازظهر_[Changes]/GameDataBase.class" />
-  </binary>
-</changelist>
