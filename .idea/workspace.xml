@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" afterDir="false" />
@@ -32,26 +20,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_9_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_9_40_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameMenuEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameMenuEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +36,8 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -105,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_directory_selection": "C:/Users/Raya/Desktop/project2-group-15/src/main/java",
-    "last_opened_file_path": "C:/Users/Raya/Desktop/project",
+    "last_opened_file_path": "C:/Users/Raya/Desktop/project3-group-15/src/main/resources/FXML",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -121,6 +94,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Raya\Desktop\project3-group-15\src\main\resources\FXML" />
       <recent name="C:\Users\Raya\Desktop\project2-group-15\src\main\resources\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -131,7 +105,20 @@
       <recent name="org.example.veiw.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainMenu">
+  <component name="RunManager" selected="Application.ProfileMenu">
+    <configuration name="LoginMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.LoginMenu" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.view.userView.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="untitled" />
@@ -158,32 +145,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainMenuControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ProfileMenu" />
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.controller.*" />
+          <option name="PATTERN" value="org.example.view.userView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.example.controller.MainMenuControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProfileMenuControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.example.controller.ProfileMenuControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProfileMenu" />
+        <item itemvalue="Application.LoginMenu" />
         <item itemvalue="Application.MainMenu" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SignupMenuControllerTest" />
-        <item itemvalue="JUnit.MainMenuControllerTest" />
-        <item itemvalue="JUnit.ProfileMenuControllerTest" />
       </list>
     </recent_temporary>
   </component>
