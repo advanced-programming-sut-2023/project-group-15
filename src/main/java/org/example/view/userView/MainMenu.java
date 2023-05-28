@@ -1,16 +1,38 @@
 //this is class is completed! please don't touch my class!
 package org.example.view.userView;
 
-import org.example.InputScanner;
-import org.example.view.MapMenu;
-import org.example.view.enums.commands.LoginMenuEnum;
-import org.example.view.enums.commands.SignupMenuEnum;
-import org.example.view.enums.outputs.SignupMenuOutput;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
-import java.util.regex.Matcher;
+import java.net.URL;
 
-public class MainMenu {
-    public void run()  {
+public class MainMenu extends Application {
+    public static Stage stage;
+    @Override
+    public void start (Stage stage) throws Exception
+    {
+        MainMenu.stage = stage ;
+        URL url = MainMenu.class.getResource("/FXML/MainMenu.fxml");
+        Pane pane = FXMLLoader.load(url);
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
+
+
+
+    }
+
+    public void signUp(MouseEvent mouseEvent) throws Exception{
+        new SignupMenu().start(MainMenu.stage);
+    }
+
+    public void login(MouseEvent mouseEvent) {
+    }
+    /*public void run()  {
         Matcher mainMenuMatcher;
         String userInput;
         System.out.println(SignupMenuOutput.SHOW_MAIN_MENU_OPTIONS.getOutput());
@@ -31,12 +53,18 @@ public class MainMenu {
                 System.out.println("Invalid command!");
             }
         }
-    }
+    }*/
 
-    private void forgetPassword() {
+  /*  private void forgetPassword() {
         System.out.println("enter your username:");
         String input = InputScanner.getScanner().nextLine();
         new LoginMenu().forgetPassword(input);
     }
 
+    public void signUp(MouseEvent mouseEvent) {
+
+    }
+
+    public void login(MouseEvent mouseEvent) {
+    }*/
 }

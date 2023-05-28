@@ -86,6 +86,10 @@ public class SignupMenuController extends MainMenuController {
     public void selectSlogan(String input) {
         this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
     }
+    public void userSlogan(String input)
+    {
+        this.setSlogan(input);
+    }
 
     public String generateRandomPassword() {
         String password;

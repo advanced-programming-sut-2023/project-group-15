@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
+   <children>
+      <Pane layoutX="193.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField layoutX="25.0" layoutY="49.0" promptText="nickname" />
+            <TextField layoutX="26.0" layoutY="94.0" promptText="email" />
+            <PasswordField layoutX="25.0" promptText="password" />
+            <ChoiceBox layoutX="25.0" layoutY="136.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <CheckBox layoutX="495.0" layoutY="322.0" mnemonicParsing="false" text="slogan" onMouseClicked="#slogan"/>
+      <TextField layoutX="216.0" layoutY="43.0" promptText="username" />
+      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" text="random slogan"  />
+      <Button layoutX="263.0" layoutY="286.0" mnemonicParsing="false" text="sing up" />
+   </children>
+</AnchorPane>

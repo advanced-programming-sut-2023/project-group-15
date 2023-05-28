@@ -1,18 +1,36 @@
 //this class is completed!
 package org.example.view.userView;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import java.net.URL;
+import java.util.Optional;
 import java.util.regex.Matcher;
 
-public class SignupMenu extends MainMenu {
+public class SignupMenu extends  Application {
+    public void start (Stage stage ) throws Exception
+    {
+        URL url = SignupMenu.class.getResource("/FXML/SignUp.fxml");
+        Pane pane = FXMLLoader.load(url);
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
+
+    }
     private final SignupMenuController signupMenuController = new SignupMenuController();
     private boolean questionFlag = true;
 
-    public void run(Matcher signupMenuMatcher)  {
+   /* public void run(Matcher signupMenuMatcher)  {
         SignupMenuOutput status;
         classifyParameters(signupMenuMatcher);
         status = usernameCheck();
@@ -44,7 +62,7 @@ public class SignupMenu extends MainMenu {
         } else {
             System.out.println(status.getOutput());
         }
-    }
+    }*/
 
     private SignupMenuOutput sloganCheck() {
         if (signupMenuController.getSlogan() == null) {
@@ -148,5 +166,16 @@ public class SignupMenu extends MainMenu {
         signupMenuController.setClipBoard(matcher.group("configuration"));
         signupMenuController.setEmail(matcher.group("email"));
         signupMenuController.setSlogan(matcher.group("slogan"));
+    }
+
+    public void slogan(MouseEvent mouseEvent) {
+        TextInputDialog sloganInput = new TextInputDialog();
+        sloganInput.setHeaderText("slogan");
+        sloganInput.setContentText("enter your slogan");
+        Optional<String> result = sloganInput.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.userSlogan(sloganInput.getEditor().getText());
+        }
+
     }
 }

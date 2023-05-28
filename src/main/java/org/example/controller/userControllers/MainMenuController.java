@@ -128,7 +128,7 @@ public class MainMenuController {
             checkUsersFlag();
         } else {
             new File("d:/json").mkdirs();
-            new MainMenu().run();
+          //  new MainMenu().run();
         }
     }
 
@@ -150,12 +150,12 @@ public class MainMenuController {
                     String rank = String.valueOf(jsonobject.get("rank"));
                     String highScore = String.valueOf(jsonobject.get("HighScore"));
                     new LoginMenu().loggedInUserInformation(name,password,nickname,email,slogan,passwordRecoveryQuestion,passwordRecoveryAnswer,rank,highScore);
-                    new MainMenu().run();
+                    //new MainMenu().run();
                     return;
                 }
                 jsonParser.next();
             }
-            new MainMenu().run();
+           // new MainMenu().run();
         } catch (JSONException e) {
             System.out.println(e);
         } catch (IOException e) {
