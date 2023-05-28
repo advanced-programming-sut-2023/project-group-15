@@ -2,9 +2,14 @@
 package org.example.view.userView;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -18,8 +23,20 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 
 public class SignupMenu extends  Application {
+    private static Stage stage;
+    public TextField email;
+    public Label errorEmail;
+    public TextField nickname;
+    public Label errorNickname;
+    public ChoiceBox box;
+    protected
+    String successfulMessage = String.format("=-fx-text-fill: Green;");
+    String errorMessage = String.format("-fx-text-fill: RED;");
+    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
+    String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
     public void start (Stage stage ) throws Exception
     {
+        SignupMenu.stage = stage;
         URL url = SignupMenu.class.getResource("/FXML/SignUp.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(pane);
@@ -176,6 +193,51 @@ public class SignupMenu extends  Application {
         if (result.isPresent()) {
             signupMenuController.userSlogan(sloganInput.getEditor().getText());
         }
+
+    }
+
+    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
+        new MainMenu().start(SignupMenu.stage);
+    }
+
+
+    public void signup(MouseEvent mouseEvent) throws InterruptedException{
+        if(email.getText().isBlank()) {
+            errorEmail.setStyle(errorMessage);
+            errorEmail.setText("email field is blank");
+            email.setStyle(errorStyle);
+        }
+        if(!email.getText().isBlank()&& SignupMenuController.emailCheck(email.getText()).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){
+            errorEmail.setText("");
+            email.setStyle(successStyle);
+        }
+        else{
+            String emailField = email.getText();
+            switch (SignupMenuController.emailCheck(emailField)){
+                case DUPLICATE_EMAIL_ERROR :
+                    errorEmail.setStyle(errorMessage);
+                    errorEmail.setText("this email exists");
+                    email.setStyle(errorStyle);
+                    break;
+                case INVALID_EMAIL_FORMAT:
+                    errorEmail.setStyle(errorMessage);
+                    errorEmail.setText("(something@something.something)!");
+                    email.setStyle(errorStyle);
+            }
+        }
+
+        if(nickname.getText().isBlank()){
+            errorNickname.setStyle(errorMessage);
+            errorNickname.setText("nickname field is blank");
+            nickname.setStyle(errorStyle);
+        }
+
+        if(!nickname.getText().isBlank() ){
+            errorNickname.setText("");
+            nickname.setStyle(successStyle);
+        }
+
+
 
     }
 }

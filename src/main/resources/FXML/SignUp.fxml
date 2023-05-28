@@ -3,25 +3,65 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../java/org/example/Css/MainMenuStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
    <children>
-      <Pane layoutX="193.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0">
+      <Pane layoutX="73.0" prefHeight="319.0" prefWidth="454.0">
          <children>
-            <TextField layoutX="25.0" layoutY="49.0" promptText="nickname" />
-            <TextField layoutX="26.0" layoutY="94.0" promptText="email" />
-            <PasswordField layoutX="25.0" promptText="password" />
-            <ChoiceBox layoutX="25.0" layoutY="136.0" prefWidth="150.0" />
+            <TextField id="email" fx:id="email" layoutX="206.0" layoutY="175.0" prefHeight="25.0" prefWidth="171.0" promptText="email" />
+            <ChoiceBox fx:id="box" layoutX="123.0" layoutY="280.0" prefHeight="25.0" prefWidth="251.0" >
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="What's my father's name?" />
+                  <String fx:value="What's my brother's name?" />
+                  <String fx:value="What's my laptop model?" />
+                  <String fx:value="What's my cellphone model?" />
+                  <String fx:value="What's my hair color?" />
+                  <String fx:value="What's my age?" />
+               </FXCollections>
+            </items>
+            </ChoiceBox>
+            <TextField id="nickname" fx:id="nickname" layoutX="206.0" layoutY="229.0" prefHeight="25.0" prefWidth="171.0" promptText="nickname" />
+            <PasswordField id="password" fx:id="password" layoutX="206.0" layoutY="121.0" prefHeight="25.0" prefWidth="171.0" promptText="password" />
+            <TextField id="username" fx:id="username" layoutX="206.0" layoutY="70.0" prefHeight="25.0" prefWidth="171.0" promptText="username" />
+            <Label layoutX="123.0" layoutY="123.0" text="password">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="126.0" layoutY="178.0" text="email">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="127.0" layoutY="233.0" text="nickname" />
+            <Label layoutX="125.0" layoutY="72.0" text="username">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="152.0" layoutY="14.0" text="Signup Menu">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="erroringMessage" layoutX="123.0" layoutY="95.0" prefHeight="17.0" prefWidth="251.0" />
+            <Label fx:id="erroringMessage" layoutX="123.0" layoutY="146.0" prefHeight="17.0" prefWidth="251.0" />
+            <Label fx:id="errorEmail" layoutX="123.0" layoutY="200.0" prefHeight="17.0" prefWidth="251.0" textFill="red" />
+            <Label fx:id="errorNickname" layoutX="123.0" layoutY="254.0" prefHeight="17.0" prefWidth="251.0" />
          </children>
       </Pane>
-      <CheckBox layoutX="495.0" layoutY="322.0" mnemonicParsing="false" text="slogan" onMouseClicked="#slogan"/>
-      <TextField layoutX="216.0" layoutY="43.0" promptText="username" />
-      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" text="random slogan"  />
-      <Button layoutX="263.0" layoutY="286.0" mnemonicParsing="false" text="sing up" />
+      <CheckBox layoutX="495.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#slogan" text="slogan" />
+      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" text="random slogan" />
+      <Button layoutX="254.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#signup" prefHeight="53.0" prefWidth="110.0" text="sing up">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" text="Back" />
    </children>
 </AnchorPane>

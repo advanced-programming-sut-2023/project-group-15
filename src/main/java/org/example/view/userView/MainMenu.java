@@ -4,10 +4,13 @@ package org.example.view.userView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 
 public class MainMenu extends Application {
@@ -30,7 +33,8 @@ public class MainMenu extends Application {
         new SignupMenu().start(MainMenu.stage);
     }
 
-    public void login(MouseEvent mouseEvent) {
+    public void login(MouseEvent mouseEvent) throws Exception {
+        new LoginMenu().start(MainMenu.stage);
     }
     /*public void run()  {
         Matcher mainMenuMatcher;

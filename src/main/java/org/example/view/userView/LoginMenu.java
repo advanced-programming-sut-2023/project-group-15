@@ -1,30 +1,44 @@
 //this class is completed!
 package org.example.view.userView;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.*;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.ProfileMenuController;
 import org.example.controller.userControllers.SignupMenuController;
-import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.GameInformation;
-import org.example.view.GameMenu;
 import org.example.view.GameStartMenu;
-import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.commands.LoginMenuEnum;
-import org.example.view.enums.commands.ProfileMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
-import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+import java.net.URL;
 import java.util.regex.Matcher;
 
 public class LoginMenu extends MainMenu {
     private final LoginMenuController loginMenuController = new ProfileMenuController();
     private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
     private Matcher loginMenuMatcher;
+    public static Stage stage;
+    @Override
+    public void start (Stage stage) throws Exception
+    {
+        LoginMenu.stage = stage ;
+        URL url = MainMenu.class.getResource("/FXML/Login.fxml");
+        Pane pane = FXMLLoader.load(url);
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
 
-    public void run() {
+
+
+    }
+
+ /*   public void run() {
         GameInformation.setCurrentPlayer(GameDataBase.getUserByUsername(loginMenuController.getUsername()));
         String userInput;
         System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());
@@ -72,13 +86,13 @@ public class LoginMenu extends MainMenu {
             }
         }
     }
-
+*/
     public void loginInCheck(Matcher matcher) {
         classify(matcher);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
-            run();
+          //  run();
         } else
             System.out.println(status.getOutput());
     }
@@ -147,6 +161,14 @@ public class LoginMenu extends MainMenu {
         loginMenuController.setPassRecoveryAnswer(passwordRecoveryAnswer);
         loginMenuController.setRank(Integer.parseInt(rank));
         loginMenuController.setHighScore(Integer.parseInt(highScore));
-        run();
+       // run();
+    }
+
+    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
+        new MainMenu().start(LoginMenu.stage);
+    }
+
+    public void forgotPassword(MouseEvent mouseEvent) throws Exception{
+        new ForgotPassword().start(LoginMenu.stage);
     }
 }
