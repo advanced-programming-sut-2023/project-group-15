@@ -1,5 +1,6 @@
 package org.example.model;
 
+import javafx.scene.image.Image;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
@@ -21,6 +22,7 @@ public class User {
     private boolean stayLoggedIn;
     private Tile[][] playerMap;
     private Government government;
+    private Image avatar;
     public void setGovernment(Government government) {
         this.government = government;
     }
@@ -170,6 +172,14 @@ public class User {
 
     public void setMap(Tile[][] map) {
         this.playerMap = map;
+    }
+
+    public Image getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Image avatar) {
+        this.avatar = avatar;
     }
 
     public static User findUserWithPass(String password) {
