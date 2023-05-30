@@ -29,7 +29,7 @@ public class ProfileMenu extends Application {
         stage.setScene(scene);
         stage.show();
 
-    }
+    }/*
     private final ProfileMenuController profileMenuController;
     public ProfileMenu(LoginMenuController currentUserController) {
         this.profileMenuController = (ProfileMenuController) currentUserController;
@@ -141,4 +141,6 @@ public class ProfileMenu extends Application {
             alert.setTitle("please enter a slogan");
         }
     }
+
+   */
 }

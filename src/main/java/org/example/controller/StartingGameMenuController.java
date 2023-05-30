@@ -50,4 +50,6 @@ public class StartingGameMenuController {
     public boolean newGameCheck() {
         return GameInformation.isNewGameAccess();
     }
+
+
 }

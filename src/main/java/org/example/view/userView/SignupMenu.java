@@ -3,15 +3,16 @@ package org.example.view.userView;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.userControllers.SignupMenuController;
@@ -23,17 +24,40 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 
 public class SignupMenu extends  Application {
-    private static Stage stage;
+    public static Stage stage;
     public TextField email;
     public Label errorEmail;
     public TextField nickname;
     public Label errorNickname;
-    public ChoiceBox box;
+    public TextField passwordShow;
+    public CheckBox chaneMode;
+    public PasswordField password;
+    public Label errorUsername;
+    public TextField username;
+    public int count = 0 ;
+    public Label errorPassword;
+    public Label successfulSignup;
+
+    public 
+    @FXML
+    void changeVisibility(ActionEvent event){
+        if(chaneMode.isSelected()){
+            passwordShow.setText(password.getText());
+            passwordShow.setVisible(true);
+            password.setVisible(false);
+            return;
+        }
+        password.setText(passwordShow.getText());
+        password.setVisible(true);
+        passwordShow.setVisible(false);
+    }
     protected
-    String successfulMessage = String.format("=-fx-text-fill: Green;");
+    String successfulMessage = String.format("-fx-text-fill: Green;");
     String errorMessage = String.format("-fx-text-fill: RED;");
     String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
     String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
+
+    @Override
     public void start (Stage stage ) throws Exception
     {
         SignupMenu.stage = stage;
@@ -81,7 +105,7 @@ public class SignupMenu extends  Application {
         }
     }*/
 
-    private SignupMenuOutput sloganCheck() {
+   /* private SignupMenuOutput sloganCheck() {
         if (signupMenuController.getSlogan() == null) {
             signupMenuController.setSlogan("empty");
             return SignupMenuOutput.CHECKED_SUCCESSFULLY;
@@ -101,8 +125,9 @@ public class SignupMenu extends  Application {
             }
         }
         return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-    }
+    }*/
 
+ /*   @FXML
     private SignupMenuOutput pickQuestion() {
         Matcher signupMenuMatcher;
         System.out.println("pick a question from these questions:");
@@ -120,63 +145,54 @@ public class SignupMenu extends  Application {
             } else
                 System.out.println("invalid command!,\ntry again!\ntype \"quit\" to cancel the process");
         }
+    }*/
+
+    private void passwordCheck() {
+        switch (SignupMenuController.passwordCheckErrors(password.getText())){
+            case ERROR_PASSWORD_IS_TOO_SHORT :
+                errorPassword.setStyle(errorMessage);
+                errorPassword.setText("password must contains as least 6 characters");
+                password.setStyle(errorStyle);
+                break;
+            case CHECKED_SUCCESSFULLY:
+                errorPassword.setStyle(successfulMessage);
+                errorPassword.setText("");
+                password.setStyle(successStyle);
+                signupMenuController.setPassword(password.getText());
+                break;
+            default:
+                errorPassword.setStyle(errorMessage);
+                errorPassword.setText("password must contains at least a large,small,special characters,digit");
+                password.setStyle(errorStyle);
+        }
     }
 
-    private SignupMenuOutput passwordCheck() {
-        if (signupMenuController.getPassword().matches("\\s*random\\s*")) {
-            signupMenuController.setPassword(signupMenuController.generateRandomPassword());
-            System.out.println("your password is: " + signupMenuController.getPassword());
-            while (true) {
-                System.out.println("re-enter your password please: ");
-                String verification = InputScanner.getScanner().nextLine();
-                if (signupMenuController.randomPasswordVerification(verification)) {
-                    SignupMenuOutput output = pickQuestion();
-                    questionFlag = false;
-                    return output;
-                } else if (verification.matches("^\\s*quit\\s*$")) {
-                    return SignupMenuOutput.QUIT_FROM_PROCESS;
-                } else {
-                    System.out.println("doesn't matched to the password!, try again! or enter \"quit\" to exit");
-                }
-            }
-        }
-        SignupMenuOutput status = SignupMenuController.passwordCheckErrors(signupMenuController.getPassword());
-        if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-            if (signupMenuController.checkPasswordWithConfiguration())
-                return status;
-            return SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION;
-        }
-        return status;
-    }
-
-    private SignupMenuOutput usernameCheck() {
-        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(signupMenuController.getUsername());
+    private void usernameCheck() {
+        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(username.getText());
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
-            while (true) {
-                signupMenuController.usernameSuggestionGenerator();
-                System.out.println("there's another user with this username!,\n" +
-                        "you can use\"" + signupMenuController.getUsername() + "\" or quit the registration process or try something else!");
-                System.out.println("1.accept the suggested username,\n" +
-                        "2.quit,\n" +
-                        "3.try another username,\n" +
-                        "type the number here: ");
-                if (InputScanner.getScanner().nextLine().matches("^\\s*1\\s*$"))
-                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-                else if (InputScanner.getScanner().nextLine().matches("^\\s*2\\s*$"))
-                    return SignupMenuOutput.QUIT_FROM_PROCESS;
-                else if (InputScanner.getScanner().nextLine().matches("^\\s*3\\s*$")) {
-                    signupMenuController.setUsername(InputScanner.getScanner().nextLine());
-                    usernameCheck();
-                } else
-                    System.out.println(SignupMenuOutput.INVALID_COMMAND);
-            }
-        } else if (result.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {
-            return SignupMenuOutput.QUIT_FROM_PROCESS;
-        } else
-            return result;
+            signupMenuController.usernameSuggestionGenerator();
+            errorUsername.setStyle(errorMessage);
+            errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
+            username.setStyle(errorStyle);
+    }
+        if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT))
+        {
+            errorUsername.setStyle(errorMessage);
+            errorUsername.setText("invalid username , must contains letters , digits , _ !");
+            username.setStyle(errorStyle);
+        }
+
+        if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY))
+        {
+            errorUsername.setStyle(successfulMessage);
+            errorUsername.setText("");
+            username.setStyle(successStyle);
+            signupMenuController.setUsername(username.getText());
+        }
+
     }
 
-    public void classifyParameters(Matcher matcher) {
+   /* public void classifyParameters(Matcher matcher) {
         signupMenuController.setUsername(matcher.group("username"));
         signupMenuController.setPassword(matcher.group("password"));
         signupMenuController.setNickname(matcher.group("nickname"));
@@ -184,14 +200,14 @@ public class SignupMenu extends  Application {
         signupMenuController.setEmail(matcher.group("email"));
         signupMenuController.setSlogan(matcher.group("slogan"));
     }
-
+*/
     public void slogan(MouseEvent mouseEvent) {
         TextInputDialog sloganInput = new TextInputDialog();
         sloganInput.setHeaderText("slogan");
         sloganInput.setContentText("enter your slogan");
         Optional<String> result = sloganInput.showAndWait();
         if (result.isPresent()) {
-            signupMenuController.userSlogan(sloganInput.getEditor().getText());
+            signupMenuController.setSlogan(sloganInput.getEditor().getText());
         }
 
     }
@@ -201,13 +217,14 @@ public class SignupMenu extends  Application {
     }
 
 
-    public void signup(MouseEvent mouseEvent) throws InterruptedException{
+    public void signup(MouseEvent mouseEvent) throws Exception{
         if(email.getText().isBlank()) {
             errorEmail.setStyle(errorMessage);
             errorEmail.setText("email field is blank");
             email.setStyle(errorStyle);
         }
         if(!email.getText().isBlank()&& SignupMenuController.emailCheck(email.getText()).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){
+            signupMenuController.setEmail(email.getText());
             errorEmail.setText("");
             email.setStyle(successStyle);
         }
@@ -226,18 +243,136 @@ public class SignupMenu extends  Application {
             }
         }
 
-        if(nickname.getText().isBlank()){
+        if(nickname.getText().isBlank()) {
             errorNickname.setStyle(errorMessage);
             errorNickname.setText("nickname field is blank");
             nickname.setStyle(errorStyle);
         }
 
         if(!nickname.getText().isBlank() ){
+            signupMenuController.setNickname(nickname.getText());
+
             errorNickname.setText("");
             nickname.setStyle(successStyle);
+           // System.out.println(errorNickname.getText());
         }
 
+        if(username.getText().isBlank()) {
+            errorUsername.setStyle(errorMessage);
+            errorUsername.setText("username field is blank");
+            username.setStyle(errorStyle);
+        }
 
+        if(password.getText().isBlank()) {
+            errorPassword.setStyle(errorMessage);
+            errorPassword.setText("password field is blank");
+            password.setStyle(errorStyle);
+        }
+
+        if(!password.getText().isBlank()){
+            passwordCheck();
+        }
+
+        if(!username.getText().isBlank()){
+            passwordCheck();
+        }
+
+        if(errorNickname.getText().equals("") && errorEmail.getText().equals("") && errorPassword.getText().equals("") &&
+                errorUsername.getText().equals("")){
+            System.out.println(signupMenuController.getEmail() + " " +
+                    signupMenuController.getNickname() + signupMenuController.getPassword() + " " + signupMenuController.getUsername());
+            signupMenuController.signingsComplete();
+            successfulSignup.setStyle(successfulMessage);
+            successfulSignup.setText("successful signup");
+            new MainMenu().start(SignupMenu.stage);
+        }
 
     }
+
+
+    @FXML
+    public void initialize(){
+        username.textProperty().addListener((observable , oldText , newText)->{
+            usernameCheck();
+                }
+
+
+                );
+        password.textProperty().addListener((observable , oldText , newText)->{
+            passwordCheck();
+        } );
+    }
+
+
+    public void pickQuestion1(MouseEvent mouseEvent) {
+        TextInputDialog input = new TextInputDialog();
+        input.setHeaderText("Question");
+        input.setContentText("What's my father's name?");
+        Optional<String> result = input.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.setPassRecoveryQuestion("What's my father's name?");
+            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());
+        }
+    }
+
+    public void pickQuestion2(MouseEvent mouseEvent) {
+        TextInputDialog input = new TextInputDialog();
+        input.setHeaderText("Question");
+        input.setContentText("What's my brother's name?");
+        Optional<String> result = input.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.setPassRecoveryQuestion("What's my brother's name?");
+            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());
+        }
+
+    }
+
+    public void pickQuestion3(MouseEvent mouseEvent) {
+        TextInputDialog input = new TextInputDialog();
+        input.setHeaderText("Question");
+        input.setContentText("What's my hair color?");
+        Optional<String> result = input.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.setPassRecoveryQuestion("What's my hair color?");
+            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());
+        }
+
+    }
+    public void pickQuestion4(MouseEvent mouseEvent) {
+        TextInputDialog input = new TextInputDialog();
+        input.setHeaderText("Question");
+        input.setContentText("What's my car color?");
+        Optional<String> result = input.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.setPassRecoveryQuestion("What's my car color?");
+            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());
+        }
+
+    }
+    public void pickQuestion5(MouseEvent mouseEvent) {
+        TextInputDialog input = new TextInputDialog();
+        input.setHeaderText("Question");
+        input.setContentText("What's my favorite food?");
+        Optional<String> result = input.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.setPassRecoveryQuestion("What's my favorite food?");
+            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());
+        }
+
+    }
+
+
+    public void pickQuestion6(MouseEvent mouseEvent) {
+        TextInputDialog input = new TextInputDialog();
+        input.setHeaderText("Question");
+        input.setContentText("What's my cellphone model?");
+        Optional<String> result = input.showAndWait();
+        if (result.isPresent()) {
+            signupMenuController.setPassRecoveryQuestion("What's my cellphone model?");
+            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());
+
+        }
+
+    }
+
 }

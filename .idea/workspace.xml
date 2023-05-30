@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/forgotPassword.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/chooseQuestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" afterDir="false" />
@@ -22,13 +20,26 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_9_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_9_40_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StartingGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StartingGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Images/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +52,8 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -89,7 +100,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -263,7 +274,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/mobina" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

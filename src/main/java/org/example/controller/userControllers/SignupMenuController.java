@@ -15,9 +15,38 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupMenuController extends MainMenuController {
+    public User user;
+
+
+    public void setUsernameSignup(String username){
+        user.setUsername(username);
+    }
+
+    public void setPasswordSignup(String password){
+        user.setPassword(password);
+    }
+
+    public String getUsernameSignup(){
+        return user.getUsername();
+    }
+
+    public void setEmailSignup(String email){
+        user.setEmail(email);
+    }
+
+    public void setNicknameSignup(String nickname){
+        user.setNickname(nickname);
+    }
+
+    public void setPassRecoveryQuestionSignup(String passRecoveryQuestion){
+        user.setPassRecoveryQuestion(passRecoveryQuestion);
+    }
+    public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
+        user.setPassRecoveryAnswer(passRecoveryAnswer);
+    }
     public SignupMenuOutput signupUserCheck() {
         SignupMenuOutput status;
-        if ((status = emailCheck(this.getEmail())) != SignupMenuOutput.CHECKED_SUCCESSFULLY)
+        if ((status = emailCheck(user.getEmail())) != SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         if ((status = nicknameCheck()) != SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
@@ -25,7 +54,7 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public SignupMenuOutput nicknameCheck() {
-        return this.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
+        return user.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
     }
 
     public static SignupMenuOutput usernameCheckErrors(String username) {
@@ -84,11 +113,11 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public void selectSlogan(String input) {
-        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
+        user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
     }
     public void userSlogan(String input)
     {
-        this.setSlogan(input);
+        user.setSlogan(input);
     }
 
     public String generateRandomPassword() {
@@ -108,12 +137,12 @@ public class SignupMenuController extends MainMenuController {
         }
     }
 
-    public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
+  /*  public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
         for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
             if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
-                this.setPassRecoveryQuestion(question);
+                user.setPassRecoveryQuestion(question);
                 if (matcher.group("Qanswer1").equals(matcher.group("Qanswer2"))) {
-                    this.setPassRecoveryAnswer(matcher.group("Qanswer1"));
+                    user.setPassRecoveryAnswer(matcher.group("Qanswer1"));
                     return SignupMenuOutput.CHECKED_SUCCESSFULLY;
                 } else {
                     return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;
@@ -122,15 +151,15 @@ public class SignupMenuController extends MainMenuController {
         }
         return SignupMenuOutput.INVALID_COMMAND;
     }
-
+*/
     public void usernameSuggestionGenerator() {
         while (true) {
             boolean flag = true;
             Random random = new Random();
             char randomChar = (char) (random.nextInt(26) + 'a');
-            this.setUsername(this.getUsername() + randomChar);
+            this.setUsername(user.getUsername() + randomChar);
             for (User user : GameDataBase.getAllUsers()) {
-                if (user.getUsername().equals(this.getUsername())) {
+                if (user.getUsername().equals(user.getUsername())) {
                     flag = false;
                     break;
                 }
@@ -141,7 +170,7 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public boolean randomPasswordVerification(String verification) {
-        return verification.equals(this.getPassword());
+        return verification.equals(user.getPassword());
     }
 
     private static byte[] makeSalt() {
@@ -156,7 +185,7 @@ public class SignupMenuController extends MainMenuController {
             newUser.setSlogan(this.getSlogan());
         }
         if (this.getPassRecoveryQuestion() != null) {
-            newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion().getQuestion());
+            newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion());
             newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());
         }
         GameDataBase.getAllUsers().add(newUser);
@@ -170,8 +199,8 @@ public class SignupMenuController extends MainMenuController {
 
     public void changeForgetPassword() {
         for (User user : GameDataBase.getAllUsers()) {
-            if (user.getUsername().equals(this.getUsername())) {
-                user.setPassword(this.getPassword());
+            if (user.getUsername().equals(user.getUsername())) {
+                user.setPassword(user.getPassword());
             }
         }
     }

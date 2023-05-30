@@ -1,8 +1,14 @@
 //this class is completed!
 package org.example.view.userView;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -20,10 +26,37 @@ import java.net.URL;
 import java.util.regex.Matcher;
 
 public class LoginMenu extends MainMenu {
-    private final LoginMenuController loginMenuController = new ProfileMenuController();
+    private final LoginMenuController loginMenuController = new LoginMenuController();
+
     private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
+    public TextField passwordShow;
+    public CheckBox changeMode;
+    public PasswordField password;
+    public TextField username;
+    public Label errorUsername;
+    public Label errorPassword;
+    public Label successfulLogin;
     private Matcher loginMenuMatcher;
     public static Stage stage;
+
+    @FXML
+    void changeMode(ActionEvent event){
+        if(changeMode.isSelected()){
+            passwordShow.setText(password.getText());
+            passwordShow.setVisible(true);
+            password.setVisible(false);
+            return;
+        }
+        password.setText(passwordShow.getText());
+        password.setVisible(true);
+        passwordShow.setVisible(false);
+    }
+
+    protected
+    String successfulMessage = String.format("-fx-text-fill: Green;");
+    String errorMessage = String.format("-fx-text-fill: RED;");
+    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
+    String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
     @Override
     public void start (Stage stage) throws Exception
     {
@@ -87,24 +120,33 @@ public class LoginMenu extends MainMenu {
         }
     }
 */
-    public void loginInCheck(Matcher matcher) {
-        classify(matcher);
+    public void loginInCheck(String username , String password) {
+        classify(username, password);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
+            successfulLogin.setStyle(successfulMessage);
+            successfulLogin.setText("successful login");
           //  run();
-        } else
-            System.out.println(status.getOutput());
+        } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){
+            successfulLogin.setStyle(errorMessage);
+            successfulLogin.setText("username and password doesn't match");
+        }
+        else if(status.equals(LoginMenuOutput.USER_DOES_NOT_EXIST)){
+            successfulLogin.setStyle(errorMessage);
+            successfulLogin.setText("username doesn't exist");
+        }
+
     }
 
-    private void classify(Matcher matcher) {
-        loginMenuController.setUsername(matcher.group("username"));
-        String password = matcher.group("password");
+    private void classify(String username , String pass) {
+        loginMenuController.setUsername(username);
+        String password = pass;
         byte[] salt = JsonController.makeSalt();
         loginMenuController.setPassword(JsonController.getPassHashSha256(password, salt));
-        loginMenuController.setClipBoard(matcher.group("password"));
-        if (matcher.group("logged") != null)
-            loginMenuController.setStayLoggedInFlag(true);
+        loginMenuController.setClipBoard(password);
+       /* if (matcher.group("logged") != null)
+            loginMenuController.setStayLoggedInFlag(true);*/
     }
 
     protected void forgetPassword(String username) {
@@ -157,7 +199,7 @@ public class LoginMenu extends MainMenu {
         loginMenuController.setNickname(nickname);
         loginMenuController.setEmail(email);
         loginMenuController.setSlogan(slogan);
-        loginMenuController.setPassRecoveryQuestion(loginMenuController.findUserSecurityQuestion(passwordRecoveryQuestion));
+        loginMenuController.setPassRecoveryQuestion(passwordRecoveryQuestion);
         loginMenuController.setPassRecoveryAnswer(passwordRecoveryAnswer);
         loginMenuController.setRank(Integer.parseInt(rank));
         loginMenuController.setHighScore(Integer.parseInt(highScore));
@@ -170,5 +212,25 @@ public class LoginMenu extends MainMenu {
 
     public void forgotPassword(MouseEvent mouseEvent) throws Exception{
         new ForgotPassword().start(LoginMenu.stage);
+    }
+
+
+    public void loginUser(MouseEvent mouseEvent) {
+        if(password.getText().isBlank())
+        {
+            errorPassword.setStyle(errorMessage);
+            errorPassword.setText("password field is blank");
+            password.setStyle(errorStyle);
+        }
+        if(username.getText().isBlank())
+        {
+            errorUsername.setStyle(errorMessage);
+            errorUsername.setText("password field is blank");
+            username.setStyle(errorStyle);
+        }
+        else if(!password.getText().isBlank() && !username.getText().isBlank())
+        {
+            loginInCheck(username.getText() , password.getText());
+        }
     }
 }

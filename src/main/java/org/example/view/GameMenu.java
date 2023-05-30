@@ -16,7 +16,7 @@ import org.example.view.enums.outputs.BuildingStatusOutput;
 import org.example.view.enums.outputs.UnitMenuOutput;
 
 public class GameMenu {
-    private final String player;
+ /*   private final String player;
     private final GameMenuController gameMenuController;
     private final BuildingController buildingController;
     private final UnitMenuController unitMenuController;
@@ -331,4 +331,5 @@ public class GameMenu {
             System.out.println("your input is invalid!");
         }
     }
+    */
 }

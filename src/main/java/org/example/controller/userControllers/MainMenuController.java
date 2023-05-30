@@ -23,7 +23,7 @@ public class MainMenuController {
     private String slogan;
     private String email;
     private String clipBoard;
-    private SecurityQuestion passRecoveryQuestion;
+    private String passRecoveryQuestion;
     private String passRecoveryAnswer;
     private int score;
     private int rank;
@@ -44,7 +44,7 @@ public class MainMenuController {
         this.gameDataBaseController = new JsonController();
     }
 
-    public void setPassRecoveryQuestion(SecurityQuestion passRecoveryQuestion) {
+    public void setPassRecoveryQuestion(String passRecoveryQuestion) {
         this.passRecoveryQuestion = passRecoveryQuestion;
     }
 
@@ -60,7 +60,7 @@ public class MainMenuController {
         this.rank = rank;
     }
 
-    public SecurityQuestion getPassRecoveryQuestion() {
+    public String getPassRecoveryQuestion() {
         return passRecoveryQuestion;
     }
 
