@@ -84,11 +84,12 @@
          </children>
       </Pane>
       <CheckBox layoutX="495.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#slogan" text="slogan" />
-      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" text="random slogan" />
+      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#randomSlogan" text="random slogan" />
       <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" text="Back" />
       <Label fx:id="successfulSignup" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="359.0" prefHeight="17.0" prefWidth="171.0">
          <font>
             <Font size="14.0" />
          </font></Label>
+      <Button layoutX="73.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#randomPassword" prefHeight="25.0" prefWidth="151.0" text="Random Password" />
    </children>
 </AnchorPane>

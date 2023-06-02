@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class ForgotPassword extends Application {
 
-    private static Stage stage;
+    static Stage stage;
 
     @Override
     public void start (Stage stage) throws Exception

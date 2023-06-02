@@ -26,7 +26,6 @@ public class MainMenu extends Application {
         stage.show();
 
 
-
     }
 
     public void signUp(MouseEvent mouseEvent) throws Exception{

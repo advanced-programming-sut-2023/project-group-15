@@ -9,8 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -375,4 +378,11 @@ public class SignupMenu extends  Application {
 
     }
 
+    public void randomPassword(MouseEvent mouseEvent) throws Exception {
+        password.setText(signupMenuController.generateRandomPassword());
+    }
+
+    public void randomSlogan(MouseEvent mouseEvent) throws Exception {
+        new ChooseRandomSlogan().start(SignupMenu.stage);
+    }
 }
