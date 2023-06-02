@@ -29,7 +29,7 @@ public class ChooseAvatar extends Application {
         Image image8 = new Image(getClass().getResource("/Images/Avatars/avatar8.png").toString());
         Image image9 = new Image(getClass().getResource("/Images/Avatars/avatar9.png").toString());
         Image image10 = new Image(getClass().getResource("/Images/Avatars/avatar10.png").toString());
-        //Setting the image view
+
         javafx.scene.image.ImageView imageView1 = new javafx.scene.image.ImageView(image1);
         javafx.scene.image.ImageView imageView2 = new javafx.scene.image.ImageView(image2);
         javafx.scene.image.ImageView imageView3 = new javafx.scene.image.ImageView(image3);
@@ -40,6 +40,8 @@ public class ChooseAvatar extends Application {
         javafx.scene.image.ImageView imageView8 = new javafx.scene.image.ImageView(image8);
         javafx.scene.image.ImageView imageView9 = new javafx.scene.image.ImageView(image9);
         javafx.scene.image.ImageView imageView10 = new javafx.scene.image.ImageView(image10);
+
+
         RadioButton p1 = new RadioButton("1");
         RadioButton p2 = new RadioButton("2");
         RadioButton p3 = new RadioButton("3");
@@ -50,6 +52,8 @@ public class ChooseAvatar extends Application {
         RadioButton p8 = new RadioButton("8");
         RadioButton p9 = new RadioButton("9");
         RadioButton p10 = new RadioButton("10");
+
+
         ToggleGroup tg = new ToggleGroup();
         p1.setToggleGroup(tg);
         p2.setToggleGroup(tg);
@@ -70,7 +74,6 @@ public class ChooseAvatar extends Application {
         gridPane.setVgap(5);
         gridPane.setHgap(5);
 
-        //Setting the Grid alignment
         gridPane.setAlignment(Pos.CENTER);
 
         //Arranging all the nodes in the grid
@@ -159,24 +162,15 @@ public class ChooseAvatar extends Application {
                     alert.showAndWait();
 
 
-                    // change the label
-                    //r1.setText(s + " selected");
-                    //System.out.println(s);
+
                 }
             }
         });
 
-
-        //Creating a scene object
         Scene scene = new Scene(gridPane);
-
-        //Setting title to the Stage
-        stage.setTitle("Grid Pane Example");
-
-        //Adding scene to the stage
+        stage.setTitle("Avatar choose");
         stage.setScene(scene);
 
-        //Displaying the contents of the stage
         stage.show();
 
     }

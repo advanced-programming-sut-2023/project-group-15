@@ -27,7 +27,8 @@ public class MainMenuController {
     private String passRecoveryAnswer;
     private int score;
     private int rank;
-    private User currentUser;
+    User user  =  new User("raya" , "012[Po" , "yaya" , "raya@gmail.com");
+    private User currentUser = user;
 
 
 
