@@ -16,7 +16,7 @@ public class ForgotPassword extends Application {
     public void start (Stage stage) throws Exception
     {
         ForgotPassword.stage = stage ;
-        URL url = MainMenu.class.getResource("/FXML/forgotPassword.fxml");
+        URL url = StartingMenu.class.getResource("/FXML/forgotPassword.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(pane);
         stage.setScene(scene);

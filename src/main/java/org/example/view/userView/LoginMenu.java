@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.*;
 import org.example.controller.userControllers.LoginMenuController;
-import org.example.controller.userControllers.ProfileMenuController;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.view.GameStartMenu;
 import org.example.view.enums.commands.LoginMenuEnum;
@@ -25,7 +24,7 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 import java.net.URL;
 import java.util.regex.Matcher;
 
-public class LoginMenu extends MainMenu {
+public class LoginMenu extends StartingMenu {
     private final LoginMenuController loginMenuController = new LoginMenuController();
 
     private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
@@ -61,7 +60,7 @@ public class LoginMenu extends MainMenu {
     public void start (Stage stage) throws Exception
     {
         LoginMenu.stage = stage ;
-        URL url = MainMenu.class.getResource("/FXML/Login.fxml");
+        URL url = StartingMenu.class.getResource("/FXML/Login.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
@@ -120,14 +119,14 @@ public class LoginMenu extends MainMenu {
         }
     }
 */
-    public void loginInCheck(String username , String password) {
+    public void loginInCheck(String username , String password) throws Exception {
         classify(username, password);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
             successfulLogin.setStyle(successfulMessage);
             successfulLogin.setText("successful login");
-          //  run();
+            new MainMenu().start(StartingMenu.stage);
         } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){
             successfulLogin.setStyle(errorMessage);
             successfulLogin.setText("username and password doesn't match");
@@ -207,7 +206,7 @@ public class LoginMenu extends MainMenu {
     }
 
     public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
-        new MainMenu().start(LoginMenu.stage);
+        new StartingMenu().start(LoginMenu.stage);
     }
 
     public void forgotPassword(MouseEvent mouseEvent) throws Exception{
@@ -215,7 +214,7 @@ public class LoginMenu extends MainMenu {
     }
 
 
-    public void loginUser(MouseEvent mouseEvent) {
+    public void loginUser(MouseEvent mouseEvent) throws Exception {
         if(password.getText().isBlank())
         {
             errorPassword.setStyle(errorMessage);

@@ -2,28 +2,21 @@
 package org.example.view.userView;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
-import org.example.InputScanner;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
-import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.net.URL;
 import java.util.Optional;
-import java.util.regex.Matcher;
 
 public class SignupMenu extends  Application {
     public static Stage stage;
@@ -221,7 +214,7 @@ public class SignupMenu extends  Application {
     }
 
     public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
-        new MainMenu().start(SignupMenu.stage);
+        new StartingMenu().start(SignupMenu.stage);
     }
 
 
@@ -292,7 +285,7 @@ public class SignupMenu extends  Application {
             signupMenuController.signingsComplete();
             successfulSignup.setStyle(styles.getSuccessfulMessage());
             successfulSignup.setText("successful signup");
-            new MainMenu().start(SignupMenu.stage);
+
         }
 
     }
@@ -300,20 +293,14 @@ public class SignupMenu extends  Application {
 
     @FXML
     public void initialize(){
-      /*  username.textProperty().addListener((observable , oldText , newText)->{
+        username.textProperty().addListener((observable , oldText , newText)->{
             usernameCheck();
                 }
 
 
-                );*/
-        password.textProperty().addListener((observable , oldValue , newValue)->{
-            System.out.println(newValue.length());
-            if(newValue.length() < 6)
-            {
-                errorPassword.setStyle(styles.getErrorMessage());
-                errorPassword.setText("password must contains as least 6 characters");
-                password.setStyle(styles.getErrorStyle());
-            }
+                );
+        password.textProperty().addListener((observable , oldText , newText)->{
+            passwordCheck();
         } );
     }
 

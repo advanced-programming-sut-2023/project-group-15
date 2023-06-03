@@ -15,34 +15,31 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import org.example.controller.userControllers.LoginMenuController;
+import org.example.controller.userControllers.MainMenuController;
 import org.example.controller.userControllers.ProfileMenuController;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
-import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
-import java.util.regex.Matcher;
 
 public class ProfileMenu extends Application {
     TextInputDialog newUsername = new TextInputDialog();
     SignupMenuController signupMenuController = new SignupMenuController();
     Styles styles = new Styles();
-    private ProfileMenuController profileMenuController;
-    Label slogan = new Label(profileMenuController.getCurrentUser().getSlogan());
+    private ProfileMenuController profileMenuController = new ProfileMenuController();
+    private MainMenuController mainMenuController = new MainMenuController();
+    Label slogan = new Label(mainMenuController.getCurrentUser().getSlogan());
 
     public void start(Stage stage) throws Exception {
-        MainMenu.stage = stage;
-        URL url = MainMenu.class.getResource("/FXML/ProfileMenu.fxml");
+        StartingMenu.stage = stage;
+        URL url = StartingMenu.class.getResource("/FXML/ProfileMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.getChildren().add(slogan);
         Scene scene = new Scene(pane);
@@ -254,7 +251,7 @@ public class ProfileMenu extends Application {
     }
 
     public void chooseAvatar(MouseEvent mouseEvent) throws Exception{
-        new ChooseAvatar().start(MainMenu.stage);
+        new ChooseAvatar().start(StartingMenu.stage);
     }
 
     public void removeSlogan(MouseEvent mouseEvent) {
