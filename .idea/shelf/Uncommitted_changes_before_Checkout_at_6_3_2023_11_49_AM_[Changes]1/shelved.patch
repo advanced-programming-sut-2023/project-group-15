@@ -1,0 +1,863 @@
+Index: src/main/resources/FXML/SignUp.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.CheckBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"400.0\" prefWidth=\"600.0\" stylesheets=\"@../../java/org/example/Css/MainMenuStyle.css\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.SignupMenu\">\r\n   <children>\r\n      <Pane layoutX=\"73.0\" prefHeight=\"319.0\" prefWidth=\"454.0\">\r\n         <children>\r\n            <TextField id=\"email\" fx:id=\"email\" layoutX=\"78.0\" layoutY=\"176.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"email\" />\r\n            <TextField id=\"nickname\" fx:id=\"nickname\" layoutX=\"78.0\" layoutY=\"229.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"nickname\" />\r\n            <PasswordField id=\"password\" fx:id=\"password\" layoutX=\"78.0\" layoutY=\"122.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"password\" />\r\n            <TextField id=\"username\" fx:id=\"username\" layoutX=\"78.0\" layoutY=\"71.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"username\" />\r\n            <Label layoutX=\"1.0\" layoutY=\"124.0\" text=\"password\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font></Label>\r\n            <Label layoutX=\"1.0\" layoutY=\"178.0\" text=\"email\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font></Label>\r\n            <Label layoutX=\"5.0\" layoutY=\"233.0\" text=\"nickname\" />\r\n            <Label layoutY=\"73.0\" text=\"username\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font></Label>\r\n            <Label layoutX=\"152.0\" layoutY=\"14.0\" text=\"Signup Menu\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"24.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label fx:id=\"errorUsername\" layoutX=\"5.0\" layoutY=\"96.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" />\r\n            <Label fx:id=\"errorPassword\" layoutX=\"5.0\" layoutY=\"145.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" />\r\n            <Label fx:id=\"errorEmail\" layoutX=\"5.0\" layoutY=\"201.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" textFill=\"red\" />\r\n            <Label fx:id=\"errorNickname\" layoutX=\"5.0\" layoutY=\"254.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" />\r\n            <TextField fx:id=\"passwordShow\" layoutX=\"78.0\" layoutY=\"122.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"password\" />\r\n            <CheckBox fx:id=\"chaneMode\" layoutX=\"227.0\" layoutY=\"126.0\" mnemonicParsing=\"false\" onAction=\"#changeVisibility\" />\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"94.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion1\" text=\"What's my father's name?\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"134.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion2\" text=\"What's my brother's name?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"200.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion3\" text=\"What's my hair color?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"232.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion4\" text=\"What's my car color?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"262.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion5\" text=\"What's my favorite food?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <Label layoutX=\"303.0\" layoutY=\"58.0\" text=\"Choose Security Question\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Label>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"169.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion6\" text=\"What's my cellphone model?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <Button layoutX=\"172.0\" layoutY=\"305.0\" mnemonicParsing=\"false\" onMouseClicked=\"#signup\" prefHeight=\"53.0\" prefWidth=\"110.0\" text=\"sing up\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </Pane>\r\n      <CheckBox layoutX=\"495.0\" layoutY=\"322.0\" mnemonicParsing=\"false\" onMouseClicked=\"#slogan\" text=\"slogan\" />\r\n      <CheckBox layoutX=\"496.0\" layoutY=\"350.0\" mnemonicParsing=\"false\" text=\"random slogan\" />\r\n      <Button layoutX=\"21.0\" layoutY=\"355.0\" mnemonicParsing=\"false\" onMouseClicked=\"#backToMainMenu\" text=\"Back\" />\r\n      <Label fx:id=\"successfulSignup\" alignment=\"CENTER\" contentDisplay=\"CENTER\" layoutX=\"205.0\" layoutY=\"359.0\" prefHeight=\"17.0\" prefWidth=\"171.0\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font></Label>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/SignUp.fxml b/src/main/resources/FXML/SignUp.fxml
+--- a/src/main/resources/FXML/SignUp.fxml	
++++ b/src/main/resources/FXML/SignUp.fxml	
+@@ -9,9 +9,12 @@
+ <?import javafx.scene.layout.Pane?>
+ <?import javafx.scene.text.Font?>
+ 
++<?import javafx.scene.layout.Background?>
+ <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../java/org/example/Css/MainMenuStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
+    <children>
+       <Pane layoutX="73.0" prefHeight="319.0" prefWidth="454.0">
++
++
+          <children>
+             <TextField id="email" fx:id="email" layoutX="78.0" layoutY="176.0" prefHeight="25.0" prefWidth="171.0" promptText="email" />
+             <TextField id="nickname" fx:id="nickname" layoutX="78.0" layoutY="229.0" prefHeight="25.0" prefWidth="171.0" promptText="nickname" />
+Index: src/main/java/org/example/view/userView/SignupMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//this class is completed!\r\npackage org.example.view.userView;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.event.EventHandler;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.input.KeyEvent;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.Pane;\r\nimport javafx.stage.Popup;\r\nimport javafx.stage.Stage;\r\nimport org.example.InputScanner;\r\nimport org.example.controller.userControllers.SignupMenuController;\r\nimport org.example.view.enums.commands.SignupMenuEnum;\r\nimport org.example.view.enums.outputs.SignupMenuOutput;\r\n\r\nimport java.net.URL;\r\nimport java.util.Optional;\r\nimport java.util.regex.Matcher;\r\n\r\npublic class SignupMenu extends  Application {\r\n    public static Stage stage;\r\n    public TextField email;\r\n    public Label errorEmail;\r\n    public TextField nickname;\r\n    public Label errorNickname;\r\n    public TextField passwordShow;\r\n    public CheckBox chaneMode;\r\n    public PasswordField password;\r\n    public Label errorUsername;\r\n    public TextField username;\r\n    public int count = 0 ;\r\n    public Label errorPassword;\r\n    public Label successfulSignup;\r\n\r\n    public \r\n    @FXML\r\n    void changeVisibility(ActionEvent event){\r\n        if(chaneMode.isSelected()){\r\n            passwordShow.setText(password.getText());\r\n            passwordShow.setVisible(true);\r\n            password.setVisible(false);\r\n            return;\r\n        }\r\n        password.setText(passwordShow.getText());\r\n        password.setVisible(true);\r\n        passwordShow.setVisible(false);\r\n    }\r\n    protected\r\n    String successfulMessage = String.format(\"-fx-text-fill: Green;\");\r\n    String errorMessage = String.format(\"-fx-text-fill: RED;\");\r\n    String errorStyle = String.format(\"-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;\");\r\n    String successStyle = String.format(\"-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;\");\r\n\r\n    @Override\r\n    public void start (Stage stage ) throws Exception\r\n    {\r\n        SignupMenu.stage = stage;\r\n        URL url = SignupMenu.class.getResource(\"/FXML/SignUp.fxml\");\r\n        Pane pane = FXMLLoader.load(url);\r\n        Scene scene = new Scene(pane);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n    }\r\n    private final SignupMenuController signupMenuController = new SignupMenuController();\r\n    private boolean questionFlag = true;\r\n\r\n   /* public void run(Matcher signupMenuMatcher)  {\r\n        SignupMenuOutput status;\r\n        classifyParameters(signupMenuMatcher);\r\n        status = usernameCheck();\r\n        if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {\r\n            status = passwordCheck();\r\n            if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {\r\n                status = sloganCheck();\r\n                if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {\r\n                    status = signupMenuController.signupUserCheck();\r\n                    if (status.equals(SignupMenuOutput.SECURITY_QUESTION)) {\r\n                        if (questionFlag)\r\n                            pickQuestion();\r\n                        signupMenuController.signingsComplete();\r\n                        System.out.println(SignupMenuOutput.USER_CREATED_SUCCESSFULLY.getOutput());\r\n                        return;\r\n                    } else\r\n                        System.out.println(status.getOutput());\r\n                } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {\r\n                    return;\r\n                } else\r\n                    System.out.println(status.getOutput());\r\n            } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {\r\n                return;\r\n            } else {\r\n                System.out.println(status.getOutput());\r\n            }\r\n        } else if (status.equals(SignupMenuOutput.QUIT_FROM_PROCESS)) {\r\n            return;\r\n        } else {\r\n            System.out.println(status.getOutput());\r\n        }\r\n    }*/\r\n\r\n   /* private SignupMenuOutput sloganCheck() {\r\n        if (signupMenuController.getSlogan() == null) {\r\n            signupMenuController.setSlogan(\"empty\");\r\n            return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n        }\r\n        else if (signupMenuController.getSlogan().matches(\"\\\\s*random\\\\s*\")) {\r\n            signupMenuController.showSlogans();\r\n            System.out.println(\"choose one of these slogans (enter the number):\");\r\n            while (true) {\r\n                String input = InputScanner.getScanner().nextLine();\r\n                if (Integer.parseInt(input) <= 11 || Integer.parseInt(input) >= 1) {\r\n                    signupMenuController.selectSlogan(input);\r\n                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n                } else if (input.matches(\"^\\\\s*quit\\\\s*$\")) {\r\n                    return SignupMenuOutput.QUIT_FROM_PROCESS;\r\n                } else\r\n                    System.out.println(\"you entered invalid input, try again! or enter \\\"quit\\\" to exit\");\r\n            }\r\n        }\r\n        return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n    }*/\r\n\r\n /*   @FXML\r\n    private SignupMenuOutput pickQuestion() {\r\n        Matcher signupMenuMatcher;\r\n        System.out.println(\"pick a question from these questions:\");\r\n        signupMenuController.showQuestions();\r\n        while (true) {\r\n            String input = InputScanner.getScanner().nextLine();\r\n            if ((signupMenuMatcher = SignupMenuEnum.getMatcher(input, SignupMenuEnum.PICK_QUESTION)) != null) {\r\n                SignupMenuOutput status = signupMenuController.pickSecurityQuestion(signupMenuMatcher);\r\n                if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {\r\n                    return status;\r\n                } else\r\n                    System.out.println(status.getOutput());\r\n            } else if (input.matches(\"^\\\\s*quit\\\\s*$\")) {\r\n                return SignupMenuOutput.QUIT_FROM_PROCESS;\r\n            } else\r\n                System.out.println(\"invalid command!,\\ntry again!\\ntype \\\"quit\\\" to cancel the process\");\r\n        }\r\n    }*/\r\n\r\n    private void passwordCheck() {\r\n        switch (SignupMenuController.passwordCheckErrors(password.getText())){\r\n            case ERROR_PASSWORD_IS_TOO_SHORT :\r\n                errorPassword.setStyle(errorMessage);\r\n                errorPassword.setText(\"password must contains as least 6 characters\");\r\n                password.setStyle(errorStyle);\r\n                break;\r\n            case CHECKED_SUCCESSFULLY:\r\n                errorPassword.setStyle(successfulMessage);\r\n                errorPassword.setText(\"\");\r\n                password.setStyle(successStyle);\r\n                signupMenuController.setPassword(password.getText());\r\n                break;\r\n            default:\r\n                errorPassword.setStyle(errorMessage);\r\n                errorPassword.setText(\"password must contains at least a large,small,special characters,digit\");\r\n                password.setStyle(errorStyle);\r\n        }\r\n    }\r\n\r\n    private void usernameCheck() {\r\n        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(username.getText());\r\n        if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {\r\n            signupMenuController.usernameSuggestionGenerator();\r\n            errorUsername.setStyle(errorMessage);\r\n            errorUsername.setText(\"this username exists you can use \" + signupMenuController.getUsername());\r\n            username.setStyle(errorStyle);\r\n    }\r\n        if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT))\r\n        {\r\n            errorUsername.setStyle(errorMessage);\r\n            errorUsername.setText(\"invalid username , must contains letters , digits , _ !\");\r\n            username.setStyle(errorStyle);\r\n        }\r\n\r\n        if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY))\r\n        {\r\n            errorUsername.setStyle(successfulMessage);\r\n            errorUsername.setText(\"\");\r\n            username.setStyle(successStyle);\r\n            signupMenuController.setUsername(username.getText());\r\n        }\r\n\r\n    }\r\n\r\n   /* public void classifyParameters(Matcher matcher) {\r\n        signupMenuController.setUsername(matcher.group(\"username\"));\r\n        signupMenuController.setPassword(matcher.group(\"password\"));\r\n        signupMenuController.setNickname(matcher.group(\"nickname\"));\r\n        signupMenuController.setClipBoard(matcher.group(\"configuration\"));\r\n        signupMenuController.setEmail(matcher.group(\"email\"));\r\n        signupMenuController.setSlogan(matcher.group(\"slogan\"));\r\n    }\r\n*/\r\n    public void slogan(MouseEvent mouseEvent) {\r\n        TextInputDialog sloganInput = new TextInputDialog();\r\n        sloganInput.setHeaderText(\"slogan\");\r\n        sloganInput.setContentText(\"enter your slogan\");\r\n        Optional<String> result = sloganInput.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setSlogan(sloganInput.getEditor().getText());\r\n        }\r\n\r\n    }\r\n\r\n    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {\r\n        new MainMenu().start(SignupMenu.stage);\r\n    }\r\n\r\n\r\n    public void signup(MouseEvent mouseEvent) throws Exception{\r\n        if(email.getText().isBlank()) {\r\n            errorEmail.setStyle(errorMessage);\r\n            errorEmail.setText(\"email field is blank\");\r\n            email.setStyle(errorStyle);\r\n        }\r\n        if(!email.getText().isBlank()&& SignupMenuController.emailCheck(email.getText()).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){\r\n            signupMenuController.setEmail(email.getText());\r\n            errorEmail.setText(\"\");\r\n            email.setStyle(successStyle);\r\n        }\r\n        else{\r\n            String emailField = email.getText();\r\n            switch (SignupMenuController.emailCheck(emailField)){\r\n                case DUPLICATE_EMAIL_ERROR :\r\n                    errorEmail.setStyle(errorMessage);\r\n                    errorEmail.setText(\"this email exists\");\r\n                    email.setStyle(errorStyle);\r\n                    break;\r\n                case INVALID_EMAIL_FORMAT:\r\n                    errorEmail.setStyle(errorMessage);\r\n                    errorEmail.setText(\"(something@something.something)!\");\r\n                    email.setStyle(errorStyle);\r\n            }\r\n        }\r\n\r\n        if(nickname.getText().isBlank()) {\r\n            errorNickname.setStyle(errorMessage);\r\n            errorNickname.setText(\"nickname field is blank\");\r\n            nickname.setStyle(errorStyle);\r\n        }\r\n\r\n        if(!nickname.getText().isBlank() ){\r\n            signupMenuController.setNickname(nickname.getText());\r\n\r\n            errorNickname.setText(\"\");\r\n            nickname.setStyle(successStyle);\r\n           // System.out.println(errorNickname.getText());\r\n        }\r\n\r\n        if(username.getText().isBlank()) {\r\n            errorUsername.setStyle(errorMessage);\r\n            errorUsername.setText(\"username field is blank\");\r\n            username.setStyle(errorStyle);\r\n        }\r\n\r\n        if(password.getText().isBlank()) {\r\n            errorPassword.setStyle(errorMessage);\r\n            errorPassword.setText(\"password field is blank\");\r\n            password.setStyle(errorStyle);\r\n        }\r\n\r\n        if(!password.getText().isBlank()){\r\n            passwordCheck();\r\n        }\r\n\r\n        if(!username.getText().isBlank()){\r\n            passwordCheck();\r\n        }\r\n\r\n        if(errorNickname.getText().equals(\"\") && errorEmail.getText().equals(\"\") && errorPassword.getText().equals(\"\") &&\r\n                errorUsername.getText().equals(\"\")){\r\n            System.out.println(signupMenuController.getEmail() + \" \" +\r\n                    signupMenuController.getNickname() + signupMenuController.getPassword() + \" \" + signupMenuController.getUsername());\r\n            signupMenuController.signingsComplete();\r\n            successfulSignup.setStyle(successfulMessage);\r\n            successfulSignup.setText(\"successful signup\");\r\n            new MainMenu().start(SignupMenu.stage);\r\n        }\r\n\r\n    }\r\n\r\n\r\n    @FXML\r\n    public void initialize(){\r\n        username.textProperty().addListener((observable , oldText , newText)->{\r\n            usernameCheck();\r\n                }\r\n\r\n\r\n                );\r\n        password.textProperty().addListener((observable , oldText , newText)->{\r\n            passwordCheck();\r\n        } );\r\n    }\r\n\r\n\r\n    public void pickQuestion1(MouseEvent mouseEvent) {\r\n        TextInputDialog input = new TextInputDialog();\r\n        input.setHeaderText(\"Question\");\r\n        input.setContentText(\"What's my father's name?\");\r\n        Optional<String> result = input.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setPassRecoveryQuestion(\"What's my father's name?\");\r\n            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());\r\n        }\r\n    }\r\n\r\n    public void pickQuestion2(MouseEvent mouseEvent) {\r\n        TextInputDialog input = new TextInputDialog();\r\n        input.setHeaderText(\"Question\");\r\n        input.setContentText(\"What's my brother's name?\");\r\n        Optional<String> result = input.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setPassRecoveryQuestion(\"What's my brother's name?\");\r\n            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());\r\n        }\r\n\r\n    }\r\n\r\n    public void pickQuestion3(MouseEvent mouseEvent) {\r\n        TextInputDialog input = new TextInputDialog();\r\n        input.setHeaderText(\"Question\");\r\n        input.setContentText(\"What's my hair color?\");\r\n        Optional<String> result = input.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setPassRecoveryQuestion(\"What's my hair color?\");\r\n            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());\r\n        }\r\n\r\n    }\r\n    public void pickQuestion4(MouseEvent mouseEvent) {\r\n        TextInputDialog input = new TextInputDialog();\r\n        input.setHeaderText(\"Question\");\r\n        input.setContentText(\"What's my car color?\");\r\n        Optional<String> result = input.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setPassRecoveryQuestion(\"What's my car color?\");\r\n            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());\r\n        }\r\n\r\n    }\r\n    public void pickQuestion5(MouseEvent mouseEvent) {\r\n        TextInputDialog input = new TextInputDialog();\r\n        input.setHeaderText(\"Question\");\r\n        input.setContentText(\"What's my favorite food?\");\r\n        Optional<String> result = input.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setPassRecoveryQuestion(\"What's my favorite food?\");\r\n            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());\r\n        }\r\n\r\n    }\r\n\r\n\r\n    public void pickQuestion6(MouseEvent mouseEvent) {\r\n        TextInputDialog input = new TextInputDialog();\r\n        input.setHeaderText(\"Question\");\r\n        input.setContentText(\"What's my cellphone model?\");\r\n        Optional<String> result = input.showAndWait();\r\n        if (result.isPresent()) {\r\n            signupMenuController.setPassRecoveryQuestion(\"What's my cellphone model?\");\r\n            signupMenuController.setPassRecoveryAnswer(input.getEditor().getText());\r\n\r\n        }\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/SignupMenu.java b/src/main/java/org/example/view/userView/SignupMenu.java
+--- a/src/main/java/org/example/view/userView/SignupMenu.java	
++++ b/src/main/java/org/example/view/userView/SignupMenu.java	
+@@ -9,13 +9,15 @@
+ import javafx.fxml.FXMLLoader;
+ import javafx.scene.Scene;
+ import javafx.scene.control.*;
++import javafx.scene.image.Image;
+ import javafx.scene.input.KeyEvent;
+ import javafx.scene.input.MouseEvent;
+-import javafx.scene.layout.Pane;
++import javafx.scene.layout.*;
+ import javafx.stage.Popup;
+ import javafx.stage.Stage;
+ import org.example.InputScanner;
+ import org.example.controller.userControllers.SignupMenuController;
++import org.example.model.Styles;
+ import org.example.view.enums.commands.SignupMenuEnum;
+ import org.example.view.enums.outputs.SignupMenuOutput;
+ 
+@@ -37,6 +39,7 @@
+     public int count = 0 ;
+     public Label errorPassword;
+     public Label successfulSignup;
++    Styles styles = new Styles();
+ 
+     public 
+     @FXML
+@@ -51,11 +54,8 @@
+         password.setVisible(true);
+         passwordShow.setVisible(false);
+     }
+-    protected
+-    String successfulMessage = String.format("-fx-text-fill: Green;");
+-    String errorMessage = String.format("-fx-text-fill: RED;");
+-    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
+-    String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
++
++
+ 
+     @Override
+     public void start (Stage stage ) throws Exception
+@@ -63,6 +63,14 @@
+         SignupMenu.stage = stage;
+         URL url = SignupMenu.class.getResource("/FXML/SignUp.fxml");
+         Pane pane = FXMLLoader.load(url);
++        Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
++        BackgroundImage bImg = new BackgroundImage(background,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundRepeat.NO_REPEAT,
++                BackgroundPosition.DEFAULT,
++                BackgroundSize.DEFAULT);
++        Background bGround = new Background(bImg);
++        pane.setBackground(bGround);
+         Scene scene = new Scene(pane);
+         stage.setScene(scene);
+         stage.show();
+@@ -150,20 +158,20 @@
+     private void passwordCheck() {
+         switch (SignupMenuController.passwordCheckErrors(password.getText())){
+             case ERROR_PASSWORD_IS_TOO_SHORT :
+-                errorPassword.setStyle(errorMessage);
++                errorPassword.setStyle(styles.getErrorMessage());
+                 errorPassword.setText("password must contains as least 6 characters");
+-                password.setStyle(errorStyle);
++                password.setStyle(styles.getErrorStyle());
+                 break;
+             case CHECKED_SUCCESSFULLY:
+-                errorPassword.setStyle(successfulMessage);
++                errorPassword.setStyle(styles.getSuccessfulMessage());
+                 errorPassword.setText("");
+-                password.setStyle(successStyle);
++                password.setStyle(styles.getSuccessfulMessage());
+                 signupMenuController.setPassword(password.getText());
+                 break;
+             default:
+-                errorPassword.setStyle(errorMessage);
++                errorPassword.setStyle(styles.getErrorMessage());
+                 errorPassword.setText("password must contains at least a large,small,special characters,digit");
+-                password.setStyle(errorStyle);
++                password.setStyle(styles.getErrorStyle());
+         }
+     }
+ 
+@@ -171,22 +179,22 @@
+         SignupMenuOutput result = SignupMenuController.usernameCheckErrors(username.getText());
+         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
+             signupMenuController.usernameSuggestionGenerator();
+-            errorUsername.setStyle(errorMessage);
++            errorUsername.setStyle(styles.getErrorMessage());
+             errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
+-            username.setStyle(errorStyle);
++            username.setStyle(styles.getErrorStyle());
+     }
+         if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT))
+         {
+-            errorUsername.setStyle(errorMessage);
++            errorUsername.setStyle(styles.getErrorMessage());
+             errorUsername.setText("invalid username , must contains letters , digits , _ !");
+-            username.setStyle(errorStyle);
++            username.setStyle(styles.getErrorStyle());
+         }
+ 
+         if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY))
+         {
+-            errorUsername.setStyle(successfulMessage);
++            errorUsername.setStyle(styles.getSuccessfulMessage());
+             errorUsername.setText("");
+-            username.setStyle(successStyle);
++            username.setStyle(styles.getSuccessStyle());
+             signupMenuController.setUsername(username.getText());
+         }
+ 
+@@ -219,54 +227,54 @@
+ 
+     public void signup(MouseEvent mouseEvent) throws Exception{
+         if(email.getText().isBlank()) {
+-            errorEmail.setStyle(errorMessage);
++            errorEmail.setStyle(styles.getErrorMessage());
+             errorEmail.setText("email field is blank");
+-            email.setStyle(errorStyle);
++            email.setStyle(styles.getErrorStyle());
+         }
+         if(!email.getText().isBlank()&& SignupMenuController.emailCheck(email.getText()).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){
+             signupMenuController.setEmail(email.getText());
+             errorEmail.setText("");
+-            email.setStyle(successStyle);
++            email.setStyle(styles.getSuccessStyle());
+         }
+         else{
+             String emailField = email.getText();
+             switch (SignupMenuController.emailCheck(emailField)){
+                 case DUPLICATE_EMAIL_ERROR :
+-                    errorEmail.setStyle(errorMessage);
++                    errorEmail.setStyle(styles.getErrorMessage());
+                     errorEmail.setText("this email exists");
+-                    email.setStyle(errorStyle);
++                    email.setStyle(styles.getErrorStyle());
+                     break;
+                 case INVALID_EMAIL_FORMAT:
+-                    errorEmail.setStyle(errorMessage);
++                    errorEmail.setStyle(styles.getErrorMessage());
+                     errorEmail.setText("(something@something.something)!");
+-                    email.setStyle(errorStyle);
++                    email.setStyle(styles.getErrorStyle());
+             }
+         }
+ 
+         if(nickname.getText().isBlank()) {
+-            errorNickname.setStyle(errorMessage);
++            errorNickname.setStyle(styles.getErrorMessage());
+             errorNickname.setText("nickname field is blank");
+-            nickname.setStyle(errorStyle);
++            nickname.setStyle(styles.getErrorStyle());
+         }
+ 
+         if(!nickname.getText().isBlank() ){
+             signupMenuController.setNickname(nickname.getText());
+ 
+             errorNickname.setText("");
+-            nickname.setStyle(successStyle);
++            nickname.setStyle(styles.getSuccessStyle());
+            // System.out.println(errorNickname.getText());
+         }
+ 
+         if(username.getText().isBlank()) {
+-            errorUsername.setStyle(errorMessage);
++            errorUsername.setStyle(styles.getErrorMessage());
+             errorUsername.setText("username field is blank");
+-            username.setStyle(errorStyle);
++            username.setStyle(styles.getErrorStyle());
+         }
+ 
+         if(password.getText().isBlank()) {
+-            errorPassword.setStyle(errorMessage);
++            errorPassword.setStyle(styles.getErrorMessage());
+             errorPassword.setText("password field is blank");
+-            password.setStyle(errorStyle);
++            password.setStyle(styles.getErrorStyle());
+         }
+ 
+         if(!password.getText().isBlank()){
+@@ -282,7 +290,7 @@
+             System.out.println(signupMenuController.getEmail() + " " +
+                     signupMenuController.getNickname() + signupMenuController.getPassword() + " " + signupMenuController.getUsername());
+             signupMenuController.signingsComplete();
+-            successfulSignup.setStyle(successfulMessage);
++            successfulSignup.setStyle(styles.getSuccessfulMessage());
+             successfulSignup.setText("successful signup");
+             new MainMenu().start(SignupMenu.stage);
+         }
+@@ -292,14 +300,20 @@
+ 
+     @FXML
+     public void initialize(){
+-        username.textProperty().addListener((observable , oldText , newText)->{
++      /*  username.textProperty().addListener((observable , oldText , newText)->{
+             usernameCheck();
+                 }
+ 
+ 
+-                );
+-        password.textProperty().addListener((observable , oldText , newText)->{
+-            passwordCheck();
++                );*/
++        password.textProperty().addListener((observable , oldValue , newValue)->{
++            System.out.println(newValue.length());
++            if(newValue.length() < 6)
++            {
++                errorPassword.setStyle(styles.getErrorMessage());
++                errorPassword.setText("password must contains as least 6 characters");
++                password.setStyle(styles.getErrorStyle());
++            }
+         } );
+     }
+ 
+Index: src/main/java/org/example/view/userView/ProfileMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//this class is completed!\r\npackage org.example.view.userView;\r\n\r\n\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.DialogPane;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextInputDialog;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.Pane;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.stage.Stage;\r\nimport org.example.controller.userControllers.LoginMenuController;\r\nimport org.example.controller.userControllers.ProfileMenuController;\r\nimport org.example.view.enums.outputs.ProfileMenuOutput;\r\n\r\nimport java.net.URL;\r\nimport java.util.Optional;\r\nimport java.util.regex.Matcher;\r\n\r\npublic class ProfileMenu extends Application {\r\n    public void start (Stage stage) throws Exception\r\n    {\r\n        MainMenu.stage = stage ;\r\n        URL url = MainMenu.class.getResource(\"/FXML/ProfileMenu.fxml\");\r\n        Pane pane = FXMLLoader.load(url);\r\n        Scene scene = new Scene(pane);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n    }\r\n    private ProfileMenuController profileMenuController;\r\n    /*public ProfileMenu(LoginMenuController currentUserController) {\r\n        this.profileMenuController = (ProfileMenuController) currentUserController;\r\n    }*/\r\n\r\n    public ProfileMenu() {\r\n\r\n    }\r\n\r\n    protected void changeUserUsername(Matcher matcher) {\r\n        String username = matcher.group(\"username\");\r\n        System.out.println(profileMenuController.changeUsername(username).getOutput());\r\n    }\r\n    protected void changeUserPassword(Matcher matcher) {\r\n        String oldPass = matcher.group(\"oldPass\");\r\n        String newPass = matcher.group(\"newPass\");\r\n        System.out.println(profileMenuController.changePassword(oldPass,newPass).getOutput());\r\n    }\r\n    protected void changeUserNickname(Matcher matcher) {\r\n        String nickName = matcher.group(\"nickname\");\r\n        System.out.println(profileMenuController.changeNickname(nickName).getOutput());\r\n    }\r\n    protected void changeUserEmail(Matcher matcher) {\r\n        String email = matcher.group(\"email\");\r\n        System.out.println(profileMenuController.changeEmail(email).getOutput());\r\n    }\r\n    public void profileDisplay()\r\n    {\r\n        VBox vbox = new VBox();\r\n        vbox.setAlignment(Pos.CENTER);\r\n        Label username = new Label(profileMenuController.getCurrentUser().getUsername());\r\n        Label password = new Label(profileMenuController.getCurrentUser().getPassword());\r\n        Label nickname = new Label(profileMenuController.getCurrentUser().getNickname());\r\n        Label email = new Label(profileMenuController.getEmail());\r\n        vbox.getChildren().addAll(username , password , nickname , email);\r\n        Pane pane = new Pane();\r\n        Stage stage = new Stage();\r\n        Scene scene = new Scene(vbox , 300 , 300);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n\r\n\r\n    public void changeEmail(MouseEvent mouseEvent) {\r\n\r\n        TextInputDialog sloganInput = new TextInputDialog();\r\n        sloganInput.setHeaderText(\"new slogan\");\r\n        sloganInput.setContentText(\"enter new slogan\");\r\n        Optional<String> result = sloganInput.showAndWait();\r\n        String userInput;\r\n        if(result.isPresent())\r\n        {\r\n            userInput =String.valueOf(result);\r\n            switch (profileMenuController.changeEmail(userInput))\r\n            {\r\n                case EMAIL_CHANGED_SUCCESSFULLY:\r\n                    Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n                    alert.setTitle(\"email changed\");\r\n                    alert.setContentText(\"your email updated successfully\");\r\n                    alert.showAndWait();\r\n                    break;\r\n                case INVALID_NEW_EMAIL:\r\n\r\n                Alert alert2 = new Alert(Alert.AlertType.ERROR);\r\n                alert2.setTitle(\"email change error\");\r\n                alert2.setContentText(\"please enter a valid username\");\r\n                alert2.showAndWait();\r\n            }\r\n        }\r\n\r\n        else\r\n        {\r\n            Alert alert = new Alert(Alert.AlertType.ERROR);\r\n            alert.setTitle(\"email is empty\");\r\n            alert.setContentText(\"please enter a email\");\r\n            alert.showAndWait();\r\n        }\r\n    }\r\n\r\n    public void changeUsername(MouseEvent mouseEvent) {\r\n        TextInputDialog newUsername = new TextInputDialog();\r\n        newUsername.setTitle(\"new username\");\r\n        newUsername.setContentText(\"please enter your new username\");\r\n        Optional<String> result = newUsername.showAndWait();\r\n        String userInput;\r\n        if(result.isPresent())\r\n        {\r\n            userInput = String.valueOf(result);\r\n            switch (profileMenuController.changeUsername(userInput)) {\r\n                case INVALID_NEW_USERNAME:\r\n                    Alert alert = new Alert(Alert.AlertType.ERROR);\r\n                    alert.setTitle(\"username change\");\r\n                    alert.setContentText(\"please enter a valid username\");\r\n                    alert.showAndWait();\r\n                    break;\r\n\r\n            }\r\n\r\n        }\r\n    }\r\n\r\n    public void changeNickname(MouseEvent mouseEvent) {\r\n\r\n        TextInputDialog sloganInput = new TextInputDialog();\r\n        sloganInput.setHeaderText(\"new nickname\");\r\n        sloganInput.setContentText(\"enter new nickname\");\r\n        Optional<String> result = sloganInput.showAndWait();\r\n        if(result.isPresent())\r\n        {\r\n            profileMenuController.changeNickname(String.valueOf(result));\r\n        }\r\n        else {\r\n            Alert alert = new Alert(Alert.AlertType.ERROR);\r\n            alert.setTitle(\"please enter a nickname\");\r\n        }\r\n\r\n    }\r\n\r\n    public void changePassword(MouseEvent mouseEvent) {\r\n        //TODO check letter by letter and have input for both new and old password\r\n        TextInputDialog passwordDialog = new TextInputDialog();\r\n        passwordDialog.setTitle(\"password change\");\r\n\r\n    }\r\n\r\n    public void chooseAvatar(MouseEvent mouseEvent) throws Exception{\r\n        new ChooseAvatar().start(MainMenu.stage);\r\n    }\r\n\r\n    public void removeSlogan(MouseEvent mouseEvent) {\r\n        profileMenuController.removeSlogan();\r\n        Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n        alert.setTitle(\"remove slogan\");\r\n        alert.setContentText(\"your slogan removed successfully\");\r\n    }\r\n\r\n    public void changeSlogan(MouseEvent mouseEvent) {\r\n        TextInputDialog sloganInput = new TextInputDialog();\r\n        sloganInput.setHeaderText(\"new slogan\");\r\n        sloganInput.setContentText(\"enter new slogan\");\r\n        Optional<String> result = sloganInput.showAndWait();\r\n        if(result.isPresent()) {\r\n            profileMenuController.changeSlogan(String.valueOf(result));\r\n            Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n            alert.setTitle(\"slogan change\");\r\n            alert.setContentText(\"your slogan was changed successfully\");\r\n            alert.showAndWait();\r\n        }\r\n        else {\r\n            Alert alert = new Alert(Alert.AlertType.ERROR);\r\n            alert.setTitle(\"please enter a slogan\");\r\n            alert.showAndWait();\r\n        }\r\n    }\r\n  /*  public void initialize(){\r\n        username.textProperty().addListener((observable , oldText , newText)->{\r\n                    usernameCheck();\r\n                }\r\n\r\n\r\n        );\r\n        password.textProperty().addListener((observable , oldText , newText)->{\r\n            passwordCheck();\r\n        } );\r\n    }*/\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/ProfileMenu.java b/src/main/java/org/example/view/userView/ProfileMenu.java
+--- a/src/main/java/org/example/view/userView/ProfileMenu.java	
++++ b/src/main/java/org/example/view/userView/ProfileMenu.java	
+@@ -3,37 +3,56 @@
+ 
+ 
+ import javafx.application.Application;
++import javafx.collections.ObservableList;
+ import javafx.fxml.FXMLLoader;
++import javafx.geometry.Insets;
+ import javafx.geometry.Pos;
++import javafx.scene.Group;
+ import javafx.scene.Scene;
+-import javafx.scene.control.Alert;
+-import javafx.scene.control.DialogPane;
+-import javafx.scene.control.Label;
+-import javafx.scene.control.TextInputDialog;
++import javafx.scene.control.*;
++import javafx.scene.control.cell.MapValueFactory;
++import javafx.scene.control.cell.TextFieldTableCell;
+ import javafx.scene.input.MouseEvent;
+ import javafx.scene.layout.Pane;
+ import javafx.scene.layout.VBox;
++import javafx.scene.paint.Color;
++import javafx.scene.text.Font;
+ import javafx.stage.Stage;
++import javafx.util.Callback;
++import javafx.util.StringConverter;
+ import org.example.controller.userControllers.LoginMenuController;
+ import org.example.controller.userControllers.ProfileMenuController;
++import org.example.controller.userControllers.SignupMenuController;
++import org.example.model.Styles;
+ import org.example.view.enums.outputs.ProfileMenuOutput;
++import org.example.view.enums.outputs.SignupMenuOutput;
+ 
+ import java.net.URL;
++import java.util.ArrayList;
++import java.util.Map;
+ import java.util.Optional;
+ import java.util.regex.Matcher;
+ 
+ public class ProfileMenu extends Application {
+-    public void start (Stage stage) throws Exception
+-    {
+-        MainMenu.stage = stage ;
++    TextInputDialog newUsername = new TextInputDialog();
++    SignupMenuController signupMenuController = new SignupMenuController();
++    Styles styles = new Styles();
++    private ProfileMenuController profileMenuController;
++    Label slogan = new Label(profileMenuController.getCurrentUser().getSlogan());
++
++    public void start(Stage stage) throws Exception {
++        MainMenu.stage = stage;
+         URL url = MainMenu.class.getResource("/FXML/ProfileMenu.fxml");
+         Pane pane = FXMLLoader.load(url);
++        pane.getChildren().add(slogan);
+         Scene scene = new Scene(pane);
+         stage.setScene(scene);
++        //  stage.setResizable(false);
+         stage.show();
+ 
+     }
+-    private ProfileMenuController profileMenuController;
++
++
+     /*public ProfileMenu(LoginMenuController currentUserController) {
+         this.profileMenuController = (ProfileMenuController) currentUserController;
+     }*/
+@@ -42,53 +61,49 @@
+ 
+     }
+ 
+-    protected void changeUserUsername(Matcher matcher) {
+-        String username = matcher.group("username");
+-        System.out.println(profileMenuController.changeUsername(username).getOutput());
+-    }
+-    protected void changeUserPassword(Matcher matcher) {
+-        String oldPass = matcher.group("oldPass");
+-        String newPass = matcher.group("newPass");
+-        System.out.println(profileMenuController.changePassword(oldPass,newPass).getOutput());
+-    }
+-    protected void changeUserNickname(Matcher matcher) {
+-        String nickName = matcher.group("nickname");
+-        System.out.println(profileMenuController.changeNickname(nickName).getOutput());
+-    }
+-    protected void changeUserEmail(Matcher matcher) {
+-        String email = matcher.group("email");
+-        System.out.println(profileMenuController.changeEmail(email).getOutput());
+-    }
+-    public void profileDisplay()
+-    {
++    /* protected void changeUserUsername(Matcher matcher) {
++         String username = matcher.group("username");
++         System.out.println(profileMenuController.changeUsername(username).getOutput());
++     }
++     protected void changeUserPassword(Matcher matcher) {
++         String oldPass = matcher.group("oldPass");
++         String newPass = matcher.group("newPass");
++         System.out.println(profileMenuController.changePassword(oldPass,newPass).getOutput());
++     }
++     protected void changeUserNickname(Matcher matcher) {
++         String nickName = matcher.group("nickname");
++         System.out.println(profileMenuController.changeNickname(nickName).getOutput());
++     }
++     protected void changeUserEmail(Matcher matcher) {
++         String email = matcher.group("email");
++         System.out.println(profileMenuController.changeEmail(email).getOutput());
++     }*/
++    public void profileDisplay() {
+         VBox vbox = new VBox();
+         vbox.setAlignment(Pos.CENTER);
+         Label username = new Label(profileMenuController.getCurrentUser().getUsername());
+         Label password = new Label(profileMenuController.getCurrentUser().getPassword());
+         Label nickname = new Label(profileMenuController.getCurrentUser().getNickname());
+         Label email = new Label(profileMenuController.getEmail());
+-        vbox.getChildren().addAll(username , password , nickname , email);
++        vbox.getChildren().addAll(username, password, nickname, email);
+         Pane pane = new Pane();
+         Stage stage = new Stage();
+-        Scene scene = new Scene(vbox , 300 , 300);
++        Scene scene = new Scene(vbox, 300, 300);
+         stage.setScene(scene);
+         stage.show();
+     }
+ 
+ 
+-
+     public void changeEmail(MouseEvent mouseEvent) {
+ 
+         TextInputDialog sloganInput = new TextInputDialog();
+-        sloganInput.setHeaderText("new slogan");
+-        sloganInput.setContentText("enter new slogan");
++        sloganInput.setHeaderText("new email");
++        sloganInput.setContentText("enter new email");
+         Optional<String> result = sloganInput.showAndWait();
+         String userInput;
+-        if(result.isPresent())
+-        {
+-            userInput =String.valueOf(result);
+-            switch (profileMenuController.changeEmail(userInput))
+-            {
++        if (result.isPresent()) {
++            userInput = String.valueOf(result);
++            switch (profileMenuController.changeEmail(userInput)) {
+                 case EMAIL_CHANGED_SUCCESSFULLY:
+                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                     alert.setTitle("email changed");
+@@ -97,15 +112,12 @@
+                     break;
+                 case INVALID_NEW_EMAIL:
+ 
+-                Alert alert2 = new Alert(Alert.AlertType.ERROR);
+-                alert2.setTitle("email change error");
+-                alert2.setContentText("please enter a valid username");
+-                alert2.showAndWait();
++                    Alert alert2 = new Alert(Alert.AlertType.ERROR);
++                    alert2.setTitle("email change error");
++                    alert2.setContentText("please enter a valid username");
++                    alert2.showAndWait();
+             }
+-        }
+-
+-        else
+-        {
++        } else {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+             alert.setTitle("email is empty");
+             alert.setContentText("please enter a email");
+@@ -114,25 +126,46 @@
+     }
+ 
+     public void changeUsername(MouseEvent mouseEvent) {
+-        TextInputDialog newUsername = new TextInputDialog();
++
+         newUsername.setTitle("new username");
+         newUsername.setContentText("please enter your new username");
+         Optional<String> result = newUsername.showAndWait();
++        TextField username = newUsername.getEditor();
++        username.textProperty().addListener((observable, oldValue, newValue) ->
++        {
++            usernameCheck();
++        });
+         String userInput;
+-        if(result.isPresent())
+-        {
++        if (result.isPresent()) {
+             userInput = String.valueOf(result);
+-            switch (profileMenuController.changeUsername(userInput)) {
+-                case INVALID_NEW_USERNAME:
+-                    Alert alert = new Alert(Alert.AlertType.ERROR);
+-                    alert.setTitle("username change");
+-                    alert.setContentText("please enter a valid username");
+-                    alert.showAndWait();
+-                    break;
++
+ 
+-            }
++        }
++    }
+ 
++    private void usernameCheck() {
++        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(newUsername.getResult());
++        Label errorUsername = new Label();
++        if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
++            signupMenuController.usernameSuggestionGenerator();
++
++            errorUsername.setStyle(styles.getErrorMessage());
++            errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
++            newUsername.getEditor().setStyle(styles.getErrorStyle());
+         }
++        if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT)) {
++            errorUsername.setStyle(styles.getErrorMessage());
++            errorUsername.setText("invalid username , must contains letters , digits , _ !");
++            newUsername.getEditor().setStyle(styles.getErrorStyle());
++        }
++
++        if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
++            errorUsername.setStyle(styles.getSuccessfulMessage());
++            errorUsername.setText("");
++            newUsername.getEditor().setStyle(styles.getSuccessStyle());
++            signupMenuController.setUsername(newUsername.getEditor().getText());
++        }
++
+     }
+ 
+     public void changeNickname(MouseEvent mouseEvent) {
+@@ -141,17 +174,77 @@
+         sloganInput.setHeaderText("new nickname");
+         sloganInput.setContentText("enter new nickname");
+         Optional<String> result = sloganInput.showAndWait();
+-        if(result.isPresent())
+-        {
++        if (result.isPresent()) {
+             profileMenuController.changeNickname(String.valueOf(result));
+-        }
+-        else {
++        } else {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+             alert.setTitle("please enter a nickname");
+         }
+ 
+     }
+ 
++    public void ScoreBoard(Stage stage) {
++        Scene scene = new Scene(new Group());
++        stage.setTitle("AA High Scores Table");
++        stage.setWidth(350);
++        stage.setHeight(500);
++
++        final Label label = new Label("Highest Score");
++        label.setFont(new Font("Arial", 20));
++
++        TableColumn<Map, String> firstDataColumn = new TableColumn<>("Rank");
++        TableColumn<Map, String> secondDataColumn = new TableColumn<>("Name");
++        firstDataColumn.setCellValueFactory(new MapValueFactory("player"));
++        firstDataColumn.setMinWidth(150);
++
++        secondDataColumn.setCellValueFactory(new MapValueFactory("score"));
++        secondDataColumn.setMinWidth(100);
++        javafx.scene.control.TableView tableView = new javafx.scene.control.TableView<>(generateDataInMap());
++
++        tableView.setEditable(true);
++        Callback<TableColumn<Map, String>, TableCell<Map, String>>
++                cellFactoryForMap = (TableColumn<Map, String> p) ->
++                new TextFieldTableCell(new StringConverter() {
++                    @Override
++                    public String toString(Object t) {
++                        return t.toString();
++                    }
++
++                    @Override
++                    public Object fromString(String string) {
++                        return string;
++                    }
++                });
++        firstDataColumn.setCellFactory(cellFactoryForMap);
++        secondDataColumn.setCellFactory(cellFactoryForMap);
++        tableView.getSelectionModel().setCellSelectionEnabled(true);
++        tableView.getColumns().setAll(firstDataColumn, secondDataColumn);
++        final VBox vbox = new VBox();
++
++        vbox.setSpacing(1);
++        vbox.setPadding(new Insets(10, 0, 0, 10));
++        vbox.getChildren().addAll(label, tableView);
++
++        ((Group) scene.getRoot()).getChildren().addAll(vbox);
++
++        stage.setScene(scene);
++
++        stage.show();
++    }
++   /* private ObservableList<Map> generateDataInMap(){
++        List<Header> headerList = new ArrayList<>();
++        headers.map().entrySet().forEach(e -> {
++            headerList.add(new Header(e.getKey(), e.getValue().get(0)));
++        });
++
++        ObservableList<Header> list
++                = FXCollections.observableArrayList(headerList);
++        responseHeadersTableView.setItems(list);
++
++}*
++
++
++
+     public void changePassword(MouseEvent mouseEvent) {
+         //TODO check letter by letter and have input for both new and old password
+         TextInputDialog passwordDialog = new TextInputDialog();
+Index: src/main/resources/FXML/ProfileMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<AnchorPane prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.ProfileMenu\">\r\n   <children>\r\n      <ImageView fitHeight=\"411.0\" fitWidth=\"600.0\" layoutY=\"30.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Images/04.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <Pane layoutX=\"200.0\" layoutY=\"72.0\" prefHeight=\"200.0\" prefWidth=\"200.0\">\r\n         <children>\r\n            <VBox layoutX=\"50.0\" layoutY=\"-9.0\" prefHeight=\"318.0\" prefWidth=\"149.0\" spacing=\"30.0\">\r\n               <children>\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#profileDisplay\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"profile display\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#changeUsername\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change username\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#changePassword\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change password\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#chooseAvatar\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"choose avatar\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#changeEmail\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change email\" />\r\n                  <Button mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change nickname\" />\r\n               </children>\r\n               <padding>\r\n                  <Insets top=\"10.0\" />\r\n               </padding>\r\n            </VBox>\r\n         </children>\r\n      </Pane>\r\n      <Button layoutX=\"14.0\" layoutY=\"326.0\" mnemonicParsing=\"false\" onMouseClicked=\"#changeSlogan\" text=\"change slogan\" />\r\n      <Button layoutX=\"13.0\" layoutY=\"364.0\" mnemonicParsing=\"false\" onMouseClicked=\"#removeSlogan\" text=\"remove slogan\" />\r\n      <Label layoutX=\"273.0\" layoutY=\"29.0\" text=\"slogan\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/ProfileMenu.fxml b/src/main/resources/FXML/ProfileMenu.fxml
+--- a/src/main/resources/FXML/ProfileMenu.fxml	
++++ b/src/main/resources/FXML/ProfileMenu.fxml	
+@@ -6,21 +6,31 @@
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.layout.StackPane?>
+ <?import javafx.scene.layout.VBox?>
+ 
+-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
++<AnchorPane prefHeight="349.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
+    <children>
+-      <ImageView fitHeight="411.0" fitWidth="600.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@../Images/04.jpg" />
+-         </image>
+-      </ImageView>
+-      <Pane layoutX="200.0" layoutY="72.0" prefHeight="200.0" prefWidth="200.0">
+-         <children>
+-            <VBox layoutX="50.0" layoutY="-9.0" prefHeight="318.0" prefWidth="149.0" spacing="30.0">
++      <StackPane prefHeight="349.0" prefWidth="600.0">
++         <children>
++            <ImageView fitHeight="411.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
++               <image>
++                  <Image url="@../Images/04.jpg" />
++               </image>
++            </ImageView>
++            <VBox alignment="CENTER" prefHeight="318.0" prefWidth="149.0" spacing="20.0" StackPane.alignment="CENTER">
+                <children>
+                   <Button mnemonicParsing="false" onMouseClicked="#profileDisplay" prefHeight="30.0" prefWidth="150.0" text="profile display" />
++                  <StackPane alignment="BOTTOM_RIGHT">
++                     <children>
++                        <Button alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#removeSlogan" text="remove slogan" />
++                        <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#changeSlogan" text="change slogan" StackPane.alignment="BASELINE_RIGHT">
++                           <StackPane.margin>
++                              <Insets />
++                           </StackPane.margin>
++                        </Button>
++                     </children>
++                  </StackPane>
+                   <Button mnemonicParsing="false" onMouseClicked="#changeUsername" prefHeight="30.0" prefWidth="150.0" text="change username" />
+                   <Button mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="30.0" prefWidth="150.0" text="change password" />
+                   <Button mnemonicParsing="false" onMouseClicked="#chooseAvatar" prefHeight="30.0" prefWidth="150.0" text="choose avatar" />
+@@ -28,13 +38,10 @@
+                   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="change nickname" />
+                </children>
+                <padding>
+-                  <Insets top="10.0" />
++                  <Insets top="15.0" />
+                </padding>
+             </VBox>
+          </children>
+-      </Pane>
+-      <Button layoutX="14.0" layoutY="326.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" text="change slogan" />
+-      <Button layoutX="13.0" layoutY="364.0" mnemonicParsing="false" onMouseClicked="#removeSlogan" text="remove slogan" />
+-      <Label layoutX="273.0" layoutY="29.0" text="slogan" />
++      </StackPane>
+    </children>
+ </AnchorPane>
+Index: target/classes/FXML/SignUp.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.CheckBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"400.0\" prefWidth=\"600.0\" stylesheets=\"@../../java/org/example/Css/MainMenuStyle.css\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.SignupMenu\">\r\n   <children>\r\n      <Pane layoutX=\"73.0\" prefHeight=\"319.0\" prefWidth=\"454.0\">\r\n         <children>\r\n            <TextField id=\"email\" fx:id=\"email\" layoutX=\"78.0\" layoutY=\"176.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"email\" />\r\n            <TextField id=\"nickname\" fx:id=\"nickname\" layoutX=\"78.0\" layoutY=\"229.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"nickname\" />\r\n            <PasswordField id=\"password\" fx:id=\"password\" layoutX=\"78.0\" layoutY=\"122.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"password\" />\r\n            <TextField id=\"username\" fx:id=\"username\" layoutX=\"78.0\" layoutY=\"71.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"username\" />\r\n            <Label layoutX=\"1.0\" layoutY=\"124.0\" text=\"password\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font></Label>\r\n            <Label layoutX=\"1.0\" layoutY=\"178.0\" text=\"email\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font></Label>\r\n            <Label layoutX=\"5.0\" layoutY=\"233.0\" text=\"nickname\" />\r\n            <Label layoutY=\"73.0\" text=\"username\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font></Label>\r\n            <Label layoutX=\"152.0\" layoutY=\"14.0\" text=\"Signup Menu\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"24.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label fx:id=\"errorUsername\" layoutX=\"5.0\" layoutY=\"96.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" />\r\n            <Label fx:id=\"errorPassword\" layoutX=\"5.0\" layoutY=\"145.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" />\r\n            <Label fx:id=\"errorEmail\" layoutX=\"5.0\" layoutY=\"201.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" textFill=\"red\" />\r\n            <Label fx:id=\"errorNickname\" layoutX=\"5.0\" layoutY=\"254.0\" prefHeight=\"17.0\" prefWidth=\"251.0\" />\r\n            <TextField fx:id=\"passwordShow\" layoutX=\"78.0\" layoutY=\"122.0\" prefHeight=\"25.0\" prefWidth=\"171.0\" promptText=\"password\" />\r\n            <CheckBox fx:id=\"chaneMode\" layoutX=\"227.0\" layoutY=\"126.0\" mnemonicParsing=\"false\" onAction=\"#changeVisibility\" />\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"94.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion1\" text=\"What's my father's name?\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"134.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion2\" text=\"What's my brother's name?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"200.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion3\" text=\"What's my hair color?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"232.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion4\" text=\"What's my car color?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"262.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion5\" text=\"What's my favorite food?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <Label layoutX=\"303.0\" layoutY=\"58.0\" text=\"Choose Security Question\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Label>\r\n            <CheckBox layoutX=\"303.0\" layoutY=\"169.0\" mnemonicParsing=\"false\" onMouseClicked=\"#pickQuestion6\" text=\"What's my cellphone model?\">\r\n               <font>\r\n                  <Font size=\"13.0\" />\r\n               </font>\r\n            </CheckBox>\r\n            <Button layoutX=\"172.0\" layoutY=\"305.0\" mnemonicParsing=\"false\" onMouseClicked=\"#signup\" prefHeight=\"53.0\" prefWidth=\"110.0\" text=\"sing up\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </Pane>\r\n      <CheckBox layoutX=\"495.0\" layoutY=\"322.0\" mnemonicParsing=\"false\" onMouseClicked=\"#slogan\" text=\"slogan\" />\r\n      <CheckBox layoutX=\"496.0\" layoutY=\"350.0\" mnemonicParsing=\"false\" text=\"random slogan\" />\r\n      <Button layoutX=\"21.0\" layoutY=\"355.0\" mnemonicParsing=\"false\" onMouseClicked=\"#backToMainMenu\" text=\"Back\" />\r\n      <Label fx:id=\"successfulSignup\" alignment=\"CENTER\" contentDisplay=\"CENTER\" layoutX=\"205.0\" layoutY=\"359.0\" prefHeight=\"17.0\" prefWidth=\"171.0\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font></Label>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/FXML/SignUp.fxml b/target/classes/FXML/SignUp.fxml
+--- a/target/classes/FXML/SignUp.fxml	
++++ b/target/classes/FXML/SignUp.fxml	
+@@ -9,9 +9,12 @@
+ <?import javafx.scene.layout.Pane?>
+ <?import javafx.scene.text.Font?>
+ 
++<?import javafx.scene.layout.Background?>
+ <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../java/org/example/Css/MainMenuStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
+    <children>
+       <Pane layoutX="73.0" prefHeight="319.0" prefWidth="454.0">
++
++
+          <children>
+             <TextField id="email" fx:id="email" layoutX="78.0" layoutY="176.0" prefHeight="25.0" prefWidth="171.0" promptText="email" />
+             <TextField id="nickname" fx:id="nickname" layoutX="78.0" layoutY="229.0" prefHeight="25.0" prefWidth="171.0" promptText="nickname" />
+Index: target/classes/FXML/ProfileMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<AnchorPane prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.ProfileMenu\">\r\n   <children>\r\n      <ImageView fitHeight=\"411.0\" fitWidth=\"600.0\" layoutY=\"30.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Images/04.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <Pane layoutX=\"200.0\" layoutY=\"72.0\" prefHeight=\"200.0\" prefWidth=\"200.0\">\r\n         <children>\r\n            <VBox layoutX=\"50.0\" layoutY=\"-9.0\" prefHeight=\"318.0\" prefWidth=\"149.0\" spacing=\"30.0\">\r\n               <children>\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#profileDisplay\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"profile display\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#changeUsername\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change username\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#changePassword\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change password\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#chooseAvatar\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"choose avatar\" />\r\n                  <Button mnemonicParsing=\"false\" onMouseClicked=\"#changeEmail\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change email\" />\r\n                  <Button mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"150.0\" text=\"change nickname\" />\r\n               </children>\r\n               <padding>\r\n                  <Insets top=\"10.0\" />\r\n               </padding>\r\n            </VBox>\r\n         </children>\r\n      </Pane>\r\n      <Button layoutX=\"14.0\" layoutY=\"326.0\" mnemonicParsing=\"false\" onMouseClicked=\"#changeSlogan\" text=\"change slogan\" />\r\n      <Button layoutX=\"13.0\" layoutY=\"364.0\" mnemonicParsing=\"false\" onMouseClicked=\"#removeSlogan\" text=\"remove slogan\" />\r\n      <Label layoutX=\"273.0\" layoutY=\"29.0\" text=\"slogan\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/FXML/ProfileMenu.fxml b/target/classes/FXML/ProfileMenu.fxml
+--- a/target/classes/FXML/ProfileMenu.fxml	
++++ b/target/classes/FXML/ProfileMenu.fxml	
+@@ -6,21 +6,31 @@
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.layout.StackPane?>
+ <?import javafx.scene.layout.VBox?>
+ 
+-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
++<AnchorPane prefHeight="349.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
+    <children>
+-      <ImageView fitHeight="411.0" fitWidth="600.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@../Images/04.jpg" />
+-         </image>
+-      </ImageView>
+-      <Pane layoutX="200.0" layoutY="72.0" prefHeight="200.0" prefWidth="200.0">
+-         <children>
+-            <VBox layoutX="50.0" layoutY="-9.0" prefHeight="318.0" prefWidth="149.0" spacing="30.0">
++      <StackPane prefHeight="349.0" prefWidth="600.0">
++         <children>
++            <ImageView fitHeight="411.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
++               <image>
++                  <Image url="@../Images/04.jpg" />
++               </image>
++            </ImageView>
++            <VBox alignment="CENTER" prefHeight="318.0" prefWidth="149.0" spacing="20.0" StackPane.alignment="CENTER">
+                <children>
+                   <Button mnemonicParsing="false" onMouseClicked="#profileDisplay" prefHeight="30.0" prefWidth="150.0" text="profile display" />
++                  <StackPane alignment="BOTTOM_RIGHT">
++                     <children>
++                        <Button alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#removeSlogan" text="remove slogan" />
++                        <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#changeSlogan" text="change slogan" StackPane.alignment="BASELINE_RIGHT">
++                           <StackPane.margin>
++                              <Insets />
++                           </StackPane.margin>
++                        </Button>
++                     </children>
++                  </StackPane>
+                   <Button mnemonicParsing="false" onMouseClicked="#changeUsername" prefHeight="30.0" prefWidth="150.0" text="change username" />
+                   <Button mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="30.0" prefWidth="150.0" text="change password" />
+                   <Button mnemonicParsing="false" onMouseClicked="#chooseAvatar" prefHeight="30.0" prefWidth="150.0" text="choose avatar" />
+@@ -28,13 +38,11 @@
+                   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="change nickname" />
+                </children>
+                <padding>
+-                  <Insets top="10.0" />
++                  <Insets top="15.0" />
+                </padding>
+             </VBox>
+          </children>
+-      </Pane>
+-      <Button layoutX="14.0" layoutY="326.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" text="change slogan" />
+-      <Button layoutX="13.0" layoutY="364.0" mnemonicParsing="false" onMouseClicked="#removeSlogan" text="remove slogan" />
+-      <Label layoutX="273.0" layoutY="29.0" text="slogan" />
++      </StackPane>
++      <Label text="slogan" />
+    </children>
+ </AnchorPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"...\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/04.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar1.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar10.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar2.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar3.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar5.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar6.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar7.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar8.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avater4.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Images/Avatars/avater9.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"module-info\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"raya\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OdNK38UNz2OrnIqCzmN0SMvyKl\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_directory_selection\": \"C:/Users/Raya/Desktop/project2-group-15/src/main/java\",\r\n    \"last_opened_file_path\": \"C:/Users/Raya/Desktop/ProjectGroup15/src/main/resources\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\r\n    \"settings.editor.selected.configurable\": \"reference.settings.project.maven.repository.indices\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Raya\\Desktop\\ProjectGroup15\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\Raya\\Desktop\\project2-group-15\\src\\main\\resources\\Images\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\mobin\\Desktop\\project2\\src\\main\\java\\org\\example\" />\r\n      <recent name=\"C:\\Users\\Raya\\Desktop\\project2-group-15\\src\\main\\java\\org\\example\\view\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example.view\" />\r\n      <recent name=\"org.example.veiw.enums\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.MainMenu\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainMenu\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.view.userView.MainMenu\" />\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.view.userView.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainMenuControllerTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.controller.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"org.example.controller\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.controller.MainMenuControllerTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ProfileMenuControllerTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.controller.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"org.example.controller\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.controller.ProfileMenuControllerTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SignupMenuControllerTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.controller.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"org.example.controller\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.controller.SignupMenuControllerTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MainMenu\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"JUnit.SignupMenuControllerTest\" />\r\n        <item itemvalue=\"JUnit.MainMenuControllerTest\" />\r\n        <item itemvalue=\"JUnit.ProfileMenuControllerTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\" />\r\n      <created>1681886432173</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681886432173</updated>\r\n      <workItem from=\"1681886433354\" duration=\"78000\" />\r\n      <workItem from=\"1681886686257\" duration=\"2512000\" />\r\n      <workItem from=\"1682084994720\" duration=\"4296000\" />\r\n      <workItem from=\"1683312609400\" duration=\"2559000\" />\r\n      <workItem from=\"1683355289916\" duration=\"474000\" />\r\n      <workItem from=\"1683368615141\" duration=\"198000\" />\r\n      <workItem from=\"1683965428349\" duration=\"17043000\" />\r\n      <workItem from=\"1684039751662\" duration=\"6598000\" />\r\n      <workItem from=\"1684046655874\" duration=\"3000\" />\r\n      <workItem from=\"1684046673639\" duration=\"25896000\" />\r\n      <workItem from=\"1684095486195\" duration=\"10880000\" />\r\n      <workItem from=\"1684127082624\" duration=\"37420000\" />\r\n      <workItem from=\"1684179901926\" duration=\"17000\" />\r\n      <workItem from=\"1684180128954\" duration=\"154000\" />\r\n      <workItem from=\"1684198629893\" duration=\"862000\" />\r\n      <workItem from=\"1684822355049\" duration=\"4777000\" />\r\n      <workItem from=\"1684848886064\" duration=\"138000\" />\r\n      <workItem from=\"1684853887629\" duration=\"38000\" />\r\n      <workItem from=\"1684855759036\" duration=\"29000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۱\" summary=\"creating files...\">\r\n      <created>1681886768892</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <updated>1681886768892</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۲\" summary=\"creating files...\">\r\n      <created>1682085187908</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <updated>1682085187908</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۳\" summary=\"creating files...\">\r\n      <created>1682085989441</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <updated>1682085989441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"creating files...\">\r\n      <created>1682100710982</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100710982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"creating files...\">\r\n      <created>1682100873720</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100873720</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/mobina\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creating files...\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"creating files...\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>\r\n          <line>8</line>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>\r\n          <line>9</line>\r\n          <option name=\"timeStamp\" value=\"5\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>\r\n          <line>32</line>\r\n          <option name=\"timeStamp\" value=\"10\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>\r\n          <line>13</line>\r\n          <option name=\"timeStamp\" value=\"11\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>\r\n          <line>6</line>\r\n          <option name=\"timeStamp\" value=\"12\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>\r\n          <line>16</line>\r\n          <properties class=\"org.example.view.enums.commands.MapMenuEnum\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"8\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>\r\n          <line>8</line>\r\n          <properties class=\"org.example.controller.MapMenuController\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"9\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$MainMenuControllerTest.ic\" NAME=\"MainMenuControllerTest Coverage Results\" MODIFIED=\"1684826993894\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$ProfileMenuControllerTest.ic\" NAME=\"ProfileMenuControllerTest Coverage Results\" MODIFIED=\"1684172775802\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$ProfileMenuControllerTest_changeUsernameTests.ic\" NAME=\"ProfileMenuControllerTest.changeUsernameTests Coverage Results\" MODIFIED=\"1684172861618\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic\" NAME=\"SignupMenuControllerTest.changeForgetPasswordTests Coverage Results\" MODIFIED=\"1684173056920\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$Main.ic\" NAME=\"Main Coverage Results\" MODIFIED=\"1684167396630\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$SignupMenuControllerTest.ic\" NAME=\"SignupMenuControllerTest Coverage Results\" MODIFIED=\"1684827005041\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,21 +5,23 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="...">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/04.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar1.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar10.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar2.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar3.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar5.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar6.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar7.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar8.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avater4.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avater9.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Styles.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/avatar1.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_2_2023_1_06_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_2_2023_1_06_PM__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_2_2023_1_06_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_2_2023_1_06_PM__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_2_2023_8_17_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_2_2023_8_17_AM__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_2023_7_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_2023_7_48_AM__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,8 +33,8 @@
+       <list>
+         <option value="Enum" />
+         <option value="module-info" />
+-        <option value="Class" />
+         <option value="FxmlFile" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+@@ -73,7 +75,7 @@
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "WebServerToolWindowFactoryState": "false",
+     "last_directory_selection": "C:/Users/Raya/Desktop/project2-group-15/src/main/java",
+-    "last_opened_file_path": "C:/Users/Raya/Desktop/ProjectGroup15/src/main/resources",
++    "last_opened_file_path": "C:/Users/Raya/Desktop/ProjectGroup15",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+@@ -89,6 +91,7 @@
+ }]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\Raya\Desktop\ProjectGroup15\src\main\resources\Images" />
+       <recent name="C:\Users\Raya\Desktop\ProjectGroup15\src\main\resources" />
+       <recent name="C:\Users\Raya\Desktop\project2-group-15\src\main\resources\Images" />
+     </key>
+@@ -128,32 +131,28 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MainMenuControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="ProfileMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ProfileMenu" />
+       <module name="untitled" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="org.example.controller.*" />
++          <option name="PATTERN" value="org.example.view.userView.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="org.example.controller" />
+-      <option name="MAIN_CLASS_NAME" value="org.example.controller.MainMenuControllerTest" />
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="ProfileMenuControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="SignupMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.SignupMenu" />
+       <module name="untitled" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="org.example.controller.*" />
++          <option name="PATTERN" value="org.example.view.userView.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="org.example.controller" />
+-      <option name="MAIN_CLASS_NAME" value="org.example.controller.ProfileMenuControllerTest" />
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -176,10 +175,10 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.MainMenu" />
++        <item itemvalue="Application.ProfileMenu" />
++        <item itemvalue="Application.SignupMenu" />
+         <item itemvalue="Application.Main" />
+         <item itemvalue="JUnit.SignupMenuControllerTest" />
+-        <item itemvalue="JUnit.MainMenuControllerTest" />
+-        <item itemvalue="JUnit.ProfileMenuControllerTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -303,6 +302,16 @@
+           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+           <line>6</line>
+           <option name="timeStamp" value="12" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java</url>
++          <line>164</line>
++          <option name="timeStamp" value="13" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java</url>
++          <line>159</line>
++          <option name="timeStamp" value="14" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-method">
+           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>

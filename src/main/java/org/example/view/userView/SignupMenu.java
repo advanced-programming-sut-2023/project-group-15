@@ -9,13 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.userControllers.SignupMenuController;
+import org.example.model.Styles;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
@@ -37,6 +39,7 @@ public class SignupMenu extends  Application {
     public int count = 0 ;
     public Label errorPassword;
     public Label successfulSignup;
+    Styles styles = new Styles();
 
     public 
     @FXML
@@ -51,11 +54,8 @@ public class SignupMenu extends  Application {
         password.setVisible(true);
         passwordShow.setVisible(false);
     }
-    protected
-    String successfulMessage = String.format("-fx-text-fill: Green;");
-    String errorMessage = String.format("-fx-text-fill: RED;");
-    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
-    String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
+
+
 
     @Override
     public void start (Stage stage ) throws Exception
@@ -63,6 +63,14 @@ public class SignupMenu extends  Application {
         SignupMenu.stage = stage;
         URL url = SignupMenu.class.getResource("/FXML/SignUp.fxml");
         Pane pane = FXMLLoader.load(url);
+        Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
+        BackgroundImage bImg = new BackgroundImage(background,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bGround = new Background(bImg);
+        pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
@@ -150,20 +158,20 @@ public class SignupMenu extends  Application {
     private void passwordCheck() {
         switch (SignupMenuController.passwordCheckErrors(password.getText())){
             case ERROR_PASSWORD_IS_TOO_SHORT :
-                errorPassword.setStyle(errorMessage);
+                errorPassword.setStyle(styles.getErrorMessage());
                 errorPassword.setText("password must contains as least 6 characters");
-                password.setStyle(errorStyle);
+                password.setStyle(styles.getErrorStyle());
                 break;
             case CHECKED_SUCCESSFULLY:
-                errorPassword.setStyle(successfulMessage);
+                errorPassword.setStyle(styles.getSuccessfulMessage());
                 errorPassword.setText("");
-                password.setStyle(successStyle);
+                password.setStyle(styles.getSuccessfulMessage());
                 signupMenuController.setPassword(password.getText());
                 break;
             default:
-                errorPassword.setStyle(errorMessage);
+                errorPassword.setStyle(styles.getErrorMessage());
                 errorPassword.setText("password must contains at least a large,small,special characters,digit");
-                password.setStyle(errorStyle);
+                password.setStyle(styles.getErrorStyle());
         }
     }
 
@@ -171,22 +179,22 @@ public class SignupMenu extends  Application {
         SignupMenuOutput result = SignupMenuController.usernameCheckErrors(username.getText());
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
             signupMenuController.usernameSuggestionGenerator();
-            errorUsername.setStyle(errorMessage);
+            errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
-            username.setStyle(errorStyle);
+            username.setStyle(styles.getErrorStyle());
     }
         if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT))
         {
-            errorUsername.setStyle(errorMessage);
+            errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("invalid username , must contains letters , digits , _ !");
-            username.setStyle(errorStyle);
+            username.setStyle(styles.getErrorStyle());
         }
 
         if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY))
         {
-            errorUsername.setStyle(successfulMessage);
+            errorUsername.setStyle(styles.getSuccessfulMessage());
             errorUsername.setText("");
-            username.setStyle(successStyle);
+            username.setStyle(styles.getSuccessStyle());
             signupMenuController.setUsername(username.getText());
         }
 
@@ -219,54 +227,54 @@ public class SignupMenu extends  Application {
 
     public void signup(MouseEvent mouseEvent) throws Exception{
         if(email.getText().isBlank()) {
-            errorEmail.setStyle(errorMessage);
+            errorEmail.setStyle(styles.getErrorMessage());
             errorEmail.setText("email field is blank");
-            email.setStyle(errorStyle);
+            email.setStyle(styles.getErrorStyle());
         }
         if(!email.getText().isBlank()&& SignupMenuController.emailCheck(email.getText()).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)){
             signupMenuController.setEmail(email.getText());
             errorEmail.setText("");
-            email.setStyle(successStyle);
+            email.setStyle(styles.getSuccessStyle());
         }
         else{
             String emailField = email.getText();
             switch (SignupMenuController.emailCheck(emailField)){
                 case DUPLICATE_EMAIL_ERROR :
-                    errorEmail.setStyle(errorMessage);
+                    errorEmail.setStyle(styles.getErrorMessage());
                     errorEmail.setText("this email exists");
-                    email.setStyle(errorStyle);
+                    email.setStyle(styles.getErrorStyle());
                     break;
                 case INVALID_EMAIL_FORMAT:
-                    errorEmail.setStyle(errorMessage);
+                    errorEmail.setStyle(styles.getErrorMessage());
                     errorEmail.setText("(something@something.something)!");
-                    email.setStyle(errorStyle);
+                    email.setStyle(styles.getErrorStyle());
             }
         }
 
         if(nickname.getText().isBlank()) {
-            errorNickname.setStyle(errorMessage);
+            errorNickname.setStyle(styles.getErrorMessage());
             errorNickname.setText("nickname field is blank");
-            nickname.setStyle(errorStyle);
+            nickname.setStyle(styles.getErrorStyle());
         }
 
         if(!nickname.getText().isBlank() ){
             signupMenuController.setNickname(nickname.getText());
 
             errorNickname.setText("");
-            nickname.setStyle(successStyle);
+            nickname.setStyle(styles.getSuccessStyle());
            // System.out.println(errorNickname.getText());
         }
 
         if(username.getText().isBlank()) {
-            errorUsername.setStyle(errorMessage);
+            errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("username field is blank");
-            username.setStyle(errorStyle);
+            username.setStyle(styles.getErrorStyle());
         }
 
         if(password.getText().isBlank()) {
-            errorPassword.setStyle(errorMessage);
+            errorPassword.setStyle(styles.getErrorMessage());
             errorPassword.setText("password field is blank");
-            password.setStyle(errorStyle);
+            password.setStyle(styles.getErrorStyle());
         }
 
         if(!password.getText().isBlank()){
@@ -282,7 +290,7 @@ public class SignupMenu extends  Application {
             System.out.println(signupMenuController.getEmail() + " " +
                     signupMenuController.getNickname() + signupMenuController.getPassword() + " " + signupMenuController.getUsername());
             signupMenuController.signingsComplete();
-            successfulSignup.setStyle(successfulMessage);
+            successfulSignup.setStyle(styles.getSuccessfulMessage());
             successfulSignup.setText("successful signup");
             new MainMenu().start(SignupMenu.stage);
         }
@@ -292,14 +300,20 @@ public class SignupMenu extends  Application {
 
     @FXML
     public void initialize(){
-        username.textProperty().addListener((observable , oldText , newText)->{
+      /*  username.textProperty().addListener((observable , oldText , newText)->{
             usernameCheck();
                 }
 
 
-                );
-        password.textProperty().addListener((observable , oldText , newText)->{
-            passwordCheck();
+                );*/
+        password.textProperty().addListener((observable , oldValue , newValue)->{
+            System.out.println(newValue.length());
+            if(newValue.length() < 6)
+            {
+                errorPassword.setStyle(styles.getErrorMessage());
+                errorPassword.setText("password must contains as least 6 characters");
+                password.setStyle(styles.getErrorStyle());
+            }
         } );
     }
 
