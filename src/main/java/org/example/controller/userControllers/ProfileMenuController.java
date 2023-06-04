@@ -66,8 +66,8 @@ public class ProfileMenuController extends LoginMenuController {
     }
 
     public ProfileMenuOutput removeSlogan() {
-        User.findUserWithPass(this.getPassword()).setSlogan("empty");
-        this.setSlogan("empty");
+        User.findUserWithPass(this.getPassword()).setSlogan("slogan is empty");
+        this.setSlogan("slogan is empty");
         moveDataToFile();
         return ProfileMenuOutput.SLOGAN_REMOVED_SUCCESSFULLY;
     }
@@ -103,4 +103,6 @@ public class ProfileMenuController extends LoginMenuController {
         JsonController.deleteFile();
         JsonController.setJasonFileForAllUsers();
     }
+
+
 }

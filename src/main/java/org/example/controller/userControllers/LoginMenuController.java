@@ -84,5 +84,6 @@ public class LoginMenuController extends MainMenuController {
         this.setStayLoggedInFlag(false);
         ProfileMenuController.moveDataToFile();
     }
+
 }
 

@@ -2,6 +2,7 @@
 package org.example.controller.userControllers;
 
 import org.example.controller.JsonController;
+import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.view.userView.LoginMenu;
 import org.example.view.userView.MainMenu;
@@ -22,10 +23,12 @@ public class MainMenuController {
     private String slogan;
     private String email;
     private String clipBoard;
-    private SecurityQuestion passRecoveryQuestion;
+    private String passRecoveryQuestion;
     private String passRecoveryAnswer;
     private int score;
     private int rank;
+    private User currentUser;
+
 
 
     public MainMenuController() {
@@ -41,7 +44,7 @@ public class MainMenuController {
         this.gameDataBaseController = new JsonController();
     }
 
-    public void setPassRecoveryQuestion(SecurityQuestion passRecoveryQuestion) {
+    public void setPassRecoveryQuestion(String passRecoveryQuestion) {
         this.passRecoveryQuestion = passRecoveryQuestion;
     }
 
@@ -57,7 +60,7 @@ public class MainMenuController {
         this.rank = rank;
     }
 
-    public SecurityQuestion getPassRecoveryQuestion() {
+    public String getPassRecoveryQuestion() {
         return passRecoveryQuestion;
     }
 
@@ -119,6 +122,14 @@ public class MainMenuController {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 
     public void checkJsonDirectory()  {

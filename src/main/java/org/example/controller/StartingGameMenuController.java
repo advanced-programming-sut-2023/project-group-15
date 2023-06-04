@@ -10,13 +10,10 @@ import org.example.view.enums.outputs.GameStartMenuOutput;
 
 
 public class StartingGameMenuController {
-    private final User gameOwner;
+    private User gameOwner;
     private int userNumberForMapSelection = 2;
     private final GameInformationController gameInformationController = new GameInformationController();
 
-    public StartingGameMenuController(LoginMenuController controller) {
-        this.gameOwner = GameDataBase.getUserByUsername(controller.getUsername());
-    }
 
     public GameStartMenuOutput newGame(int mapSize, int mapNumber) {
         gameInformationController.setMap(mapSize, mapNumber);
@@ -49,5 +46,13 @@ public class StartingGameMenuController {
 
     public boolean newGameCheck() {
         return GameInformation.isNewGameAccess();
+    }
+
+    public void setGameOwner(User gameOwner) {
+        this.gameOwner = gameOwner;
+    }
+
+    public User getGameOwner() {
+        return gameOwner;
     }
 }

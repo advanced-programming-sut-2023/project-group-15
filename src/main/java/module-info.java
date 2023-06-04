@@ -7,5 +7,7 @@ module project {
 
 
     opens org.example.view.userView to javafx.fxml;
+    opens org.example.view.controller to javafx.fxml;
     exports org.example.view.userView;
+    exports org.example.view.controller;
 }

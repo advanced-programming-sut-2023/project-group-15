@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.view.userView.ChooseQuestion">
+   <CheckBox layoutX="237.0" layoutY="77.0" mnemonicParsing="false" text="What's my father's name?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="14.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="211.0" mnemonicParsing="false" text="What's my hair color?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="113.0" mnemonicParsing="false" text="What's my brother's name?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="143.0" mnemonicParsing="false" text="What's my laptop model?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="176.0" mnemonicParsing="false" text="What's my cellphone model?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="240.0" mnemonicParsing="false" text="What's my car color?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="272.0" mnemonicParsing="false" text="What's my favorite food?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <CheckBox layoutX="237.0" layoutY="306.0" mnemonicParsing="false" text="What's my favorite game?"
+             onMouseClicked="#pickQuestion">
+      <font>
+         <Font size="13.0"/>
+      </font>
+   </CheckBox>
+   <Label layoutX="157.0" layoutY="24.0" text="Choose security Question" onMouseClicked="#pickQuestion">
+      <font>
+         <Font name="System Bold" size="24.0"/>
+      </font>
+   </Label>
+</Pane>

@@ -11,10 +11,7 @@ import org.example.view.enums.outputs.GameStartMenuOutput;
 import java.util.regex.Matcher;
 
 public class GameStartMenu{
-    private final StartingGameMenuController startingGameMenuController;
-    public GameStartMenu(LoginMenuController controller) {
-        startingGameMenuController = new StartingGameMenuController(controller);
-    }
+    private StartingGameMenuController startingGameMenuController;
 
     public void addPlayer(String owner,Matcher loginMenuMatcher) {
         String playerToBeAdded = loginMenuMatcher.group("name");
