@@ -12,9 +12,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -36,12 +36,20 @@ public class ProfileMenu extends Application {
     private ProfileMenuController profileMenuController = new ProfileMenuController();
     private MainMenuController mainMenuController = new MainMenuController();
     Label slogan = new Label(mainMenuController.getCurrentUser().getSlogan());
+    Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
+    BackgroundImage bImg = new BackgroundImage(background,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.DEFAULT,
+            new BackgroundSize(1, 1.0, true, true, false, false));
+    Background bGround = new Background(bImg);
 
     public void start(Stage stage) throws Exception {
         StartingMenu.stage = stage;
         URL url = StartingMenu.class.getResource("/FXML/ProfileMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.getChildren().add(slogan);
+        pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         //  stage.setResizable(false);
