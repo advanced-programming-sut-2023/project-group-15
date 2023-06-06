@@ -111,12 +111,12 @@ public class BuildingController {
 
     public void dropMarket(int x, int y, String name) {
         for (BuildingName building : BuildingName.values()) {
-            Building market = new Market(name, building.getHp(), x, y, building.getMaterial1Name(), building.getMaterial2Name(),
+            Building market = new Marketplace(name, building.getHp(), x, y, building.getMaterial1Name(), building.getMaterial2Name(),
                     building.getNumberOfMaterial1(), building.getNumberOfMaterial2(), building.getNumberOfWorkers());
             GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(market);
             GameInformation.getAllBuildings().add(market);
             government.addBuiltBuilding(market);
-            government.setPayerMarket((Market) market);
+            government.setPayerMarket((Marketplace) market);
         }
     }
 

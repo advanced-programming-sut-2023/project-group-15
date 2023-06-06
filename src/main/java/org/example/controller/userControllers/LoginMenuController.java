@@ -65,6 +65,7 @@ public class LoginMenuController extends MainMenuController {
     public SecurityQuestion findUserSecurityQuestion() {
         for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
+                System.out.println(user.findUserQuestionWithUsername());
                 return user.findUserQuestionWithUsername();
             }
         }

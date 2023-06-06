@@ -3,7 +3,8 @@ module project {
     requires javafx.fxml;
     requires jdk.internal.le;
     requires org.json;
-
+    requires java.datatransfer;
+   // requires java.desktop;
 
 
     opens org.example.view.userView to javafx.fxml;

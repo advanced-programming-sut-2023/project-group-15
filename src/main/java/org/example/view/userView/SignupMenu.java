@@ -22,9 +22,12 @@ import org.example.controller.userControllers.SignupMenuController;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
+
 import java.net.URL;
 import java.util.Optional;
 import java.util.regex.Matcher;
+
+import static org.example.view.userView.ForgotPassword.*;
 
 public class SignupMenu extends  Application {
     public static Stage stage;
@@ -40,6 +43,7 @@ public class SignupMenu extends  Application {
     public int count = 0 ;
     public Label errorPassword;
     public Label successfulSignup;
+    private Popup popup;
 
     public 
     @FXML
@@ -287,6 +291,7 @@ public class SignupMenu extends  Application {
             signupMenuController.signingsComplete();
             successfulSignup.setStyle(successfulMessage);
             successfulSignup.setText("successful signup");
+            popup.show(SignupMenu.stage);
             new MainMenu().start(SignupMenu.stage);
         }
 

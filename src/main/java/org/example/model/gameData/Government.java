@@ -5,7 +5,7 @@ import org.example.model.MBC.InfantryUnit;
 import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
-import org.example.model.building.Market;
+import org.example.model.building.Marketplace;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public class Government {
     private final String owner;
     private int people;
     private int workers;
-    private Market market;
+    private Marketplace market;
     private ArrayList<InfantryUnit> infantryUnit;
     private ArrayList<LauncherUnit> launcherUnit;
     private ArrayList<UnitWallTarget> unitWallTarget;
@@ -60,11 +60,11 @@ public class Government {
         this.unitWallTarget = new ArrayList<>();
     }
 
-    public Market playerMarket() {
+    public Marketplace playerMarket() {
         return market;
     }
 
-    public void setPayerMarket(Market market) {
+    public void setPayerMarket(Marketplace market) {
         this.market = market;
         this.storeBuilt = true;
     }
