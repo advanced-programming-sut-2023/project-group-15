@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class StartingMenu extends Application {
     public static Stage stage;
-    Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
+    Image background = new Image(getClass().getResource("/Images/14.jpg").toString());
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
             BackgroundRepeat.NO_REPEAT,

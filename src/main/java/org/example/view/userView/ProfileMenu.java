@@ -29,10 +29,17 @@ import java.net.URL;
 import java.util.Map;
 import java.util.Optional;
 
+import static org.example.Utility.captchaStringGen;
+import static org.example.Utility.displacementMap;
+
 public class ProfileMenu extends Application {
     TextInputDialog newUsername = new TextInputDialog();
+    PasswordField newPassword = new PasswordField();
     SignupMenuController signupMenuController = new SignupMenuController();
+    private Stage stage1 = new Stage();
+    private boolean captchaCheck = false;
     Styles styles = new Styles();
+    public Label errorPassword;
     private ProfileMenuController profileMenuController = new ProfileMenuController();
     private MainMenuController mainMenuController = new MainMenuController();
     Label slogan = new Label(mainMenuController.getCurrentUser().getSlogan());
@@ -121,6 +128,7 @@ public class ProfileMenu extends Application {
                     alert2.setTitle("email change error");
                     alert2.setContentText("please enter a valid username");
                     alert2.showAndWait();
+                    break;
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -190,7 +198,7 @@ public class ProfileMenu extends Application {
 
     public void ScoreBoard(Stage stage) {
         Scene scene = new Scene(new Group());
-        stage.setTitle("AA High Scores Table");
+        stage.setTitle("StrongHold High Scores Table");
         stage.setWidth(350);
         stage.setHeight(500);
 
@@ -252,9 +260,96 @@ public class ProfileMenu extends Application {
 
 
     public void changePassword(MouseEvent mouseEvent) {
-        //TODO check letter by letter and have input for both new and old password
-        TextInputDialog passwordDialog = new TextInputDialog();
-        passwordDialog.setTitle("password change");
+      Pane pane = new Pane();
+      PasswordField oldPassword = new PasswordField();
+      Label oldPass = new Label();
+      Label newPass = new Label();
+      TextField captchaInput = new TextField();
+      Button submit = new Button();
+      pane.setBackground(bGround);
+        Scene scene = new Scene(pane);
+        pane.setBackground(bGround);
+
+        pane.getChildren().addAll(oldPass , oldPassword , newPass , newPassword , errorPassword);
+        newPassword.textProperty().addListener((observable ,oldValue , newValue)-> {
+            passwordCheck();
+
+        });
+        submit.setOnAction(e ->
+        {
+            if(!oldPassword.getText().isBlank() && !newPassword.getText().isBlank())
+            {
+                if(!oldPassword.getText().equals(mainMenuController.getCurrentUser().getPassword())) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("your current password in no true");
+                    alert.setHeaderText("current password error");
+
+                }
+              else if(errorPassword.getText().equals(""))
+                {
+                    if(!captchaCheck)
+                    captchaShower();
+                    else {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("your password was changed successfully");
+                    }
+                }
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("please fill the required parts");
+            }
+        });
+
+    }
+    public void captchaShower()
+    {
+        Label captchaMessage = new Label("please enter the below captcha");
+        Button submit2 = new Button("submit");
+        TextField captchaInput = new TextField();
+        captchaInput.setId("captcha");
+        Label error = new Label();
+        error.setText("wrong captcha");
+        error.setStyle(styles.getErrorMessage());
+        error.setVisible(false);
+        error.setTranslateY(100);
+        error.setTranslateY(200);
+        Scene scene = new Scene(new Group(), 300, 300);
+        ObservableList content = ((Group) scene.getRoot()).getChildren();
+        String[] captcha;
+        captcha = captchaStringGen();
+        captchaMessage.setTranslateX(50);
+        captchaMessage.setTranslateY(50);
+        submit2.setTranslateX(100);
+        submit2.setTranslateY(200);
+        captchaInput.setTranslateX(50);
+        captchaInput.setTranslateY(70);
+        content.add(displacementMap(captcha[0]));
+        content.addAll(captchaMessage, submit2, captchaInput , error);
+        stage1.setScene(scene);
+        stage1.show();
+        //todo the error labels are not shown
+        submit2.setOnAction(e ->
+        {
+            if (!captchaInput.getText().isBlank()) {
+                if (captchaInput.getText().equals(captcha[0])) {
+                    captchaCheck = true;
+                    stage1.close();
+                }
+
+                else
+                {
+                    error.setVisible(true);
+                    captchaShower();
+                }
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("error");
+                alert.setContentText("please fill the required parts");
+                alert.showAndWait();
+            }
+        });
 
     }
 
@@ -298,6 +393,25 @@ public class ProfileMenu extends Application {
             passwordCheck();
         } );
     }*/
+  private void passwordCheck() {
+      switch (SignupMenuController.passwordCheckErrors(newPassword.getText())) {
+          case ERROR_PASSWORD_IS_TOO_SHORT:
+              errorPassword.setStyle(styles.getErrorMessage());
+              errorPassword.setText("password must contains as least 6 characters");
+              newPassword.setStyle(styles.getErrorStyle());
+              break;
+          case CHECKED_SUCCESSFULLY:
+              errorPassword.setStyle(styles.getSuccessfulMessage());
+              errorPassword.setText("");
+              newPassword.setStyle(styles.getSuccessfulMessage());
+              signupMenuController.setPassword(newPassword.getText());
+              break;
+          default:
+              errorPassword.setStyle(styles.getErrorMessage());
+              errorPassword.setText("password must contains at least a large,small,special characters,digit");
+              newPassword.setStyle(styles.getErrorStyle());
+      }
+  }
 
 
 }

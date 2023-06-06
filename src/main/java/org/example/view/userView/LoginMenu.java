@@ -78,6 +78,7 @@ public class LoginMenu extends StartingMenu {
         pane.setBackground(bGround);
         String[] captcha;
         captcha = captchaStringGen();
+
         content.add(displacementMap(captcha[0]));
         content.add(pane);
 

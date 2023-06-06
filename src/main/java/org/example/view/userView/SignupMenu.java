@@ -306,7 +306,6 @@ public class SignupMenu extends  Application {
         if (errorNickname.getText().equals("") && errorEmail.getText().equals("") && errorPassword.getText().equals("") &&
                 errorUsername.getText().equals("") && security) {
             if(!slogan)
-                System.out.println("hello");
                 signupMenuController.setSlogan("slogan is empty");
             signupMenuController.signingsComplete();
             successfulSignup.setStyle(styles.getSuccessfulMessage());
