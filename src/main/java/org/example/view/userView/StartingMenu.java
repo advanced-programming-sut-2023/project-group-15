@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import org.example.controller.userControllers.MainMenuController;
+import org.example.model.gameData.GameDataBase;
 
 import java.net.URL;
 
@@ -23,6 +25,8 @@ public class StartingMenu extends Application {
     @Override
     public void start (Stage stage) throws Exception
     {
+        new MainMenuController().checkJsonDirectory();
+        System.out.println(GameDataBase.getAllUsers());
         StartingMenu.stage = stage ;
         URL url = StartingMenu.class.getResource("/FXML/StartingMenu.fxml");
         Pane pane = FXMLLoader.load(url);

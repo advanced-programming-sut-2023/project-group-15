@@ -4,10 +4,12 @@ import javafx.scene.image.Image;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.Government;
+import org.example.view.userView.ChooseAvatar;
 
 import java.util.Objects;
 
 public class User {
+    ChooseAvatar chooseAvatar = new ChooseAvatar();
     private String username;
     private String password;
     private String clipBoard;
@@ -41,6 +43,7 @@ public class User {
         this.highScore = highScore;
         this.stayLoggedIn = false;
         this.slogan = "the slogan is empty";
+        this.avatar = chooseAvatar.getImage6();
     }
 
     public String getClipBoard() {

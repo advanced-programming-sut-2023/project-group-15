@@ -16,30 +16,37 @@ import javafx.stage.Stage;
 import org.example.controller.userControllers.MainMenuController;
 
 public class ChooseAvatar extends Application {
-    MainMenuController mainMenuController = new MainMenuController();
+    Image image1 = new Image(getClass().getResource("/Images/Avatars/avatar1.png").toString());
+    Image image2 = new Image(getClass().getResource("/Images/Avatars/avatar2.png").toString());
+    Image image3 = new Image(getClass().getResource("/Images/Avatars/avatar3.png").toString());
+    Image image4 = new Image(getClass().getResource("/Images/Avatars/avatar4.png").toString());
+    Image image5 = new Image(getClass().getResource("/Images/Avatars/avatar5.png").toString());
+    Image image6 = new Image(getClass().getResource("/Images/Avatars/avatar6.png").toString());
+    Image image7 = new Image(getClass().getResource("/Images/Avatars/avatar7.png").toString());
+    Image image8 = new Image(getClass().getResource("/Images/Avatars/avatar8.png").toString());
+    Image image9 = new Image(getClass().getResource("/Images/Avatars/avatar9.png").toString());
+    Image image10 = new Image(getClass().getResource("/Images/Avatars/avatar10.png").toString());
+
+    javafx.scene.image.ImageView imageView1 = new javafx.scene.image.ImageView(image1);
+    javafx.scene.image.ImageView imageView2 = new javafx.scene.image.ImageView(image2);
+    javafx.scene.image.ImageView imageView3 = new javafx.scene.image.ImageView(image3);
+    javafx.scene.image.ImageView imageView4 = new javafx.scene.image.ImageView(image4);
+    javafx.scene.image.ImageView imageView5 = new javafx.scene.image.ImageView(image5);
+    javafx.scene.image.ImageView imageView6 = new javafx.scene.image.ImageView(image6);
+    javafx.scene.image.ImageView imageView7 = new javafx.scene.image.ImageView(image7);
+    javafx.scene.image.ImageView imageView8 = new javafx.scene.image.ImageView(image8);
+    javafx.scene.image.ImageView imageView9 = new javafx.scene.image.ImageView(image9);
+    javafx.scene.image.ImageView imageView10 = new javafx.scene.image.ImageView(image10);
+
+    public Image getImage6() {
+        return image6;
+    }
+
+    public void setImage6(Image image6) {
+        this.image6 = image6;
+    }
 
     public void start(Stage stage) throws Exception {
-        Image image1 = new Image(getClass().getResource("/Images/Avatars/avatar1.png").toString());
-        Image image2 = new Image(getClass().getResource("/Images/Avatars/avatar2.png").toString());
-        Image image3 = new Image(getClass().getResource("/Images/Avatars/avatar3.png").toString());
-        Image image4 = new Image(getClass().getResource("/Images/Avatars/avatar4.png").toString());
-        Image image5 = new Image(getClass().getResource("/Images/Avatars/avatar5.png").toString());
-        Image image6 = new Image(getClass().getResource("/Images/Avatars/avatar6.png").toString());
-        Image image7 = new Image(getClass().getResource("/Images/Avatars/avatar7.png").toString());
-        Image image8 = new Image(getClass().getResource("/Images/Avatars/avatar8.png").toString());
-        Image image9 = new Image(getClass().getResource("/Images/Avatars/avatar9.png").toString());
-        Image image10 = new Image(getClass().getResource("/Images/Avatars/avatar10.png").toString());
-
-        javafx.scene.image.ImageView imageView1 = new javafx.scene.image.ImageView(image1);
-        javafx.scene.image.ImageView imageView2 = new javafx.scene.image.ImageView(image2);
-        javafx.scene.image.ImageView imageView3 = new javafx.scene.image.ImageView(image3);
-        javafx.scene.image.ImageView imageView4 = new javafx.scene.image.ImageView(image4);
-        javafx.scene.image.ImageView imageView5 = new javafx.scene.image.ImageView(image5);
-        javafx.scene.image.ImageView imageView6 = new javafx.scene.image.ImageView(image6);
-        javafx.scene.image.ImageView imageView7 = new javafx.scene.image.ImageView(image7);
-        javafx.scene.image.ImageView imageView8 = new javafx.scene.image.ImageView(image8);
-        javafx.scene.image.ImageView imageView9 = new javafx.scene.image.ImageView(image9);
-        javafx.scene.image.ImageView imageView10 = new javafx.scene.image.ImageView(image10);
 
 
         RadioButton p1 = new RadioButton("1");
@@ -66,7 +73,7 @@ public class ChooseAvatar extends Application {
         p9.setToggleGroup(tg);
         p10.setToggleGroup(tg);
         javafx.scene.layout.GridPane gridPane = new javafx.scene.layout.GridPane();
-        gridPane.setGridLinesVisible(true);
+        gridPane.setGridLinesVisible(false);
         gridPane.setMinSize(400, 200);
 
         //Setting the padding
@@ -127,34 +134,34 @@ public class ChooseAvatar extends Application {
                     String s = rb.getText();
                     switch (s) {
                         case ("1"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView1.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView1.getImage());
                             break;
                         case ("2"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView2.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView2.getImage());
                             break;
                         case ("3"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView3.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView3.getImage());
                             break;
                         case ("4"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView4.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView4.getImage());
                             break;
                         case ("5"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView5.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView5.getImage());
                             break;
                         case ("6"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView6.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView6.getImage());
                             break;
                         case ("7"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView7.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView7.getImage());
                             break;
                         case ("8"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView8.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView8.getImage());
                             break;
                         case ("9"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView9.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView9.getImage());
                             break;
                         case ("10"):
-                            mainMenuController.getCurrentUser().setAvatar(imageView10.getImage());
+                            MainMenuController.getCurrentUser().setAvatar(imageView10.getImage());
                             break;
                     }
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);

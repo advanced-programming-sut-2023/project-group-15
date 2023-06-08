@@ -118,7 +118,8 @@ public class ProfileMenu extends Application {
         Optional<String> result = sloganInput.showAndWait();
         String userInput;
         if (result.isPresent()) {
-            userInput = String.valueOf(result);
+            userInput = sloganInput.getEditor().getText();
+            System.out.println(userInput);
             switch (profileMenuController.changeEmail(userInput)) {
                 case EMAIL_CHANGED_SUCCESSFULLY:
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -130,7 +131,7 @@ public class ProfileMenu extends Application {
 
                     Alert alert2 = new Alert(Alert.AlertType.ERROR);
                     alert2.setTitle("email change error");
-                    alert2.setContentText("please enter a valid username");
+                    alert2.setContentText("please enter a valid email");
                     alert2.showAndWait();
                     break;
             }
@@ -148,24 +149,16 @@ public class ProfileMenu extends Application {
         newUsername.setContentText("please enter your new username");
         Optional<String> result = newUsername.showAndWait();
         TextField username = newUsername.getEditor();
-        username.textProperty().addListener((observable, oldValue, newValue) ->
-        {
-            usernameCheck();
-        });
+
         String userInput;
-        if (result.isPresent()) {
-            userInput = String.valueOf(result);
 
-
-        }
     }
 
     private void usernameCheck() {
-        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(newUsername.getResult());
+        SignupMenuOutput result = SignupMenuController.usernameCheckErrors(newUsername.getEditor().getText());
         Label errorUsername = new Label();
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
             signupMenuController.usernameSuggestionGenerator();
-
             errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
             newUsername.getEditor().setStyle(styles.getErrorStyle());
@@ -187,12 +180,12 @@ public class ProfileMenu extends Application {
 
     public void changeNickname(MouseEvent mouseEvent) {
 
-        TextInputDialog sloganInput = new TextInputDialog();
-        sloganInput.setHeaderText("new nickname");
-        sloganInput.setContentText("enter new nickname");
-        Optional<String> result = sloganInput.showAndWait();
+        TextInputDialog nicknameInput = new TextInputDialog();
+        nicknameInput.setHeaderText("new nickname");
+        nicknameInput.setContentText("enter new nickname");
+        Optional<String> result = nicknameInput.showAndWait();
         if (result.isPresent()) {
-            profileMenuController.changeNickname(String.valueOf(result));
+            profileMenuController.changeNickname(nicknameInput.getEditor().getText());
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("please enter a nickname");
@@ -395,17 +388,17 @@ public class ProfileMenu extends Application {
             alert.showAndWait();
         }
     }
-  /*  public void initialize(){
-        username.textProperty().addListener((observable , oldText , newText)->{
+   public void initialize(){
+        newUsername.getEditor().textProperty().addListener((observable , oldText , newText)->{
                     usernameCheck();
                 }
 
 
         );
-        password.textProperty().addListener((observable , oldText , newText)->{
+        newPassword.textProperty().addListener((observable , oldText , newText)->{
             passwordCheck();
         } );
-    }*/
+    }
   private void passwordCheck() {
       switch (SignupMenuController.passwordCheckErrors(newPassword.getText())) {
           case ERROR_PASSWORD_IS_TOO_SHORT:

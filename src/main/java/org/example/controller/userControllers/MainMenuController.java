@@ -25,7 +25,7 @@ public class MainMenuController {
     private String passRecoveryAnswer;
     private int score;
     private int rank;
-    private static User currentUser1;
+    private static User currentUser;
 
 
 
@@ -123,11 +123,11 @@ public class MainMenuController {
     }
 
     public static User getCurrentUser() {
-        return currentUser1;
+        return currentUser;
     }
 
     public static void setCurrentUser(User currentUser) {
-        currentUser1 = currentUser;
+        MainMenuController.currentUser = currentUser;
     }
 
     public void checkJsonDirectory()  {

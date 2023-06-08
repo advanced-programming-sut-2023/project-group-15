@@ -19,7 +19,7 @@
                   <Button mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="30.0" prefWidth="150.0" text="change password" />
                   <Button mnemonicParsing="false" onMouseClicked="#chooseAvatar" prefHeight="30.0" prefWidth="150.0" text="choose avatar" />
                   <Button mnemonicParsing="false" onMouseClicked="#changeEmail" prefHeight="30.0" prefWidth="150.0" text="change email" />
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="change nickname" />
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="change nickname" onMouseClicked="#changeNickname" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
