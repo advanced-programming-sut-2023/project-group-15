@@ -36,7 +36,7 @@ public class Utility {
         FloatMap map = new FloatMap();
         map.setWidth(w);
         map.setHeight(h);
-        // System.out.println(captcha);
+        System.out.println(captcha);
 
         for (int i = 0; i < w; i++) {
             double v = (Math.sin(i / 20.0 * Math.PI) - 0.2) / 8.0;
@@ -60,7 +60,7 @@ public class Utility {
 
         g.getChildren().add(t);
 
-        g.setEffect(dm);
+       // g.setEffect(dm);
         g.setTranslateX(-30);
         g.setTranslateY(60);
 

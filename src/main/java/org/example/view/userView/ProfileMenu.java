@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
@@ -35,14 +36,14 @@ import static org.example.Utility.displacementMap;
 public class ProfileMenu extends Application {
     TextInputDialog newUsername = new TextInputDialog();
     PasswordField newPassword = new PasswordField();
+
     SignupMenuController signupMenuController = new SignupMenuController();
     private Stage stage1 = new Stage();
     private boolean captchaCheck = false;
     Styles styles = new Styles();
-    public Label errorPassword;
+    public Label errorPassword = new Label();
     private ProfileMenuController profileMenuController = new ProfileMenuController();
-    private MainMenuController mainMenuController = new MainMenuController();
-    Label slogan = new Label(mainMenuController.getCurrentUser().getSlogan());
+    Label slogan = new Label(MainMenuController.getCurrentUser().getSlogan());
     Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
@@ -93,14 +94,17 @@ public class ProfileMenu extends Application {
     public void profileDisplay() {
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
-        Label username = new Label(profileMenuController.getCurrentUser().getUsername());
-        Label password = new Label(profileMenuController.getCurrentUser().getPassword());
-        Label nickname = new Label(profileMenuController.getCurrentUser().getNickname());
-        Label email = new Label(profileMenuController.getEmail());
-        vbox.getChildren().addAll(username, password, nickname, email);
+        Label username = new Label(MainMenuController.getCurrentUser().getUsername());
+        //Label password = new Label(MainMenuController.getCurrentUser().getPassword());
+        Label nickname = new Label(MainMenuController.getCurrentUser().getNickname());
+        Label email = new Label(MainMenuController.getEmail());
+        ImageView avatar = new ImageView(MainMenuController.getCurrentUser().getAvatar());
         Pane pane = new Pane();
+        vbox.getChildren().addAll(username, nickname, email );
+        pane.getChildren().addAll(vbox , avatar);
+        vbox.setBackground(bGround);
         Stage stage = new Stage();
-        Scene scene = new Scene(vbox, 300, 300);
+        Scene scene = new Scene(pane, 300, 300);
         stage.setScene(scene);
         stage.show();
     }
@@ -261,16 +265,25 @@ public class ProfileMenu extends Application {
 
     public void changePassword(MouseEvent mouseEvent) {
       Pane pane = new Pane();
+      newPassword.setId("password");
       PasswordField oldPassword = new PasswordField();
+      oldPassword.setId("password");
       Label oldPass = new Label();
+      oldPass.setText("current password");
       Label newPass = new Label();
-      TextField captchaInput = new TextField();
+      newPass.setText("new password");
       Button submit = new Button();
       pane.setBackground(bGround);
-        Scene scene = new Scene(pane);
-        pane.setBackground(bGround);
-
+        Scene scene = new Scene(pane , 300 , 200);
+        oldPass.setTranslateX(20);
+        oldPass.setTranslateY(50);
+        oldPassword.setTranslateX(60);
+        oldPass.setTranslateY(50);
+        newPassword.setTranslateX(100);
+        oldPassword.setTranslateY(60);
         pane.getChildren().addAll(oldPass , oldPassword , newPass , newPassword , errorPassword);
+        stage1.setScene(scene);
+        stage1.show();
         newPassword.textProperty().addListener((observable ,oldValue , newValue)-> {
             passwordCheck();
 
@@ -279,7 +292,7 @@ public class ProfileMenu extends Application {
         {
             if(!oldPassword.getText().isBlank() && !newPassword.getText().isBlank())
             {
-                if(!oldPassword.getText().equals(mainMenuController.getCurrentUser().getPassword())) {
+                if(!oldPassword.getText().equals(MainMenuController.getCurrentUser().getPassword())) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("your current password in no true");
                     alert.setHeaderText("current password error");

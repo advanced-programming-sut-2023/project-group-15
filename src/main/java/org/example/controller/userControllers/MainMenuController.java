@@ -19,14 +19,13 @@ public class MainMenuController {
     private String password;
     private String nickname;
     private String slogan;
-    private String email;
+    private static String email;
     private String clipBoard;
     private String passRecoveryQuestion;
     private String passRecoveryAnswer;
     private int score;
     private int rank;
-    User user  =  new User("raya" , "012[Po" , "yaya" , "raya@gmail.com");
-    private User currentUser = user;
+    private static User currentUser1;
 
 
 
@@ -99,7 +98,7 @@ public class MainMenuController {
         return slogan;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
@@ -123,12 +122,12 @@ public class MainMenuController {
         this.email = email;
     }
 
-    public User getCurrentUser() {
-        return currentUser;
+    public static User getCurrentUser() {
+        return currentUser1;
     }
 
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
+    public static void setCurrentUser(User currentUser) {
+        currentUser1 = currentUser;
     }
 
     public void checkJsonDirectory()  {

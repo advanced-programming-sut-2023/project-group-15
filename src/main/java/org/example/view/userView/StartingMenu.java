@@ -65,16 +65,6 @@ public class StartingMenu extends Application {
         }
     }*/
 
-  /*  private void forgetPassword() {
-        System.out.println("enter your username:");
-        String input = InputScanner.getScanner().nextLine();
-        new LoginMenu().forgetPassword(input);
-    }
 
-    public void signUp(MouseEvent mouseEvent) {
 
-    }
-
-    public void login(MouseEvent mouseEvent) {
-    }*/
 }

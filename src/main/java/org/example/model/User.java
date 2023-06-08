@@ -40,7 +40,7 @@ public class User {
         this.email = email;
         this.highScore = highScore;
         this.stayLoggedIn = false;
-        this.slogan = "empty";
+        this.slogan = "the slogan is empty";
     }
 
     public String getClipBoard() {

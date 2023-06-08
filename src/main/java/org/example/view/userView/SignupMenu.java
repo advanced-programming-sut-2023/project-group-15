@@ -42,8 +42,9 @@ public class SignupMenu extends  Application {
     public TextField nickname;
     public Label errorNickname;
     private boolean slogan = false;
+    private boolean randomPass = false;
     public TextField passwordShow;
-    public CheckBox chaneMode;
+    public CheckBox showPass;
     public PasswordField password;
     public Label errorUsername;
     public TextField username;
@@ -53,6 +54,7 @@ public class SignupMenu extends  Application {
     Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
     Boolean submitted = false;
     private boolean security = false;
+    String randomPassword;
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
             BackgroundRepeat.NO_REPEAT,
@@ -61,19 +63,24 @@ public class SignupMenu extends  Application {
     Background bGround = new Background(bImg);
     Styles styles = new Styles();
 
+
+
     public
     @FXML
     void changeVisibility(ActionEvent event) {
-      /*  if (chaneMode.isSelected()) {
-            passwordShow.setText(password.getText());
-            passwordShow.setVisible(true);
-            password.setVisible(false);
-            return;
-        }
+           /* if(showPass.isSelected()) {
+                passwordShow.setText(password.getText());
+                password.setVisible(false);
+                passwordShow.setVisible(true);
+                return;
+            }
+
         password.setText(passwordShow.getText());
         password.setVisible(true);
         passwordShow.setVisible(false);*/
+
     }
+
 
 
     @Override
@@ -274,6 +281,15 @@ public class SignupMenu extends  Application {
             errorNickname.setText("nickname field is blank");
             nickname.setStyle(styles.getErrorStyle());
         }
+        if(randomPass)
+        {
+            if(!password.getText().equals(randomPassword));
+            {
+                errorPassword.setStyle(styles.getErrorMessage());
+                errorPassword.setText("you haven't entered the random password");
+                password.setStyle(styles.getErrorStyle());
+            }
+        }
 
         if (!nickname.getText().isBlank()) {
             signupMenuController.setNickname(nickname.getText());
@@ -310,6 +326,8 @@ public class SignupMenu extends  Application {
             signupMenuController.signingsComplete();
             successfulSignup.setStyle(styles.getSuccessfulMessage());
             successfulSignup.setText("successful signup");
+            successfulSignup.setVisible(true);
+            new StartingMenu().start(stage);
 
         }
 
@@ -532,10 +550,10 @@ public class SignupMenu extends  Application {
     public void chooseSlogan(MouseEvent mouseEvent) {
         RadioButton slogan1 = new RadioButton("Build. Defend. Conquer.");
         RadioButton slogan2 = new RadioButton("Create Your Own Kingdom and Conquer the World.");
-        RadioButton slogan3 = new RadioButton("Fight for Your Place in History.");
-        RadioButton slogan4 = new RadioButton("Battle for Supremacy in the Middle Ages.");
+        RadioButton slogan3 = new RadioButton("The desert is a cruel place to fight mi'lord, are you sure you have the heart for it?");
+        RadioButton slogan4 = new RadioButton("Prepare for battle! My banner will fly atop your keep before this day is out.");
         RadioButton slogan5 = new RadioButton("Raise Your Siege Skills and Crush Your Enemy.");
-        RadioButton slogan6 = new RadioButton("Protect Your Land and People.");
+        RadioButton slogan6 = new RadioButton("Prepare for battle! My banner will fly atop your keep before this day is out.");
         ToggleGroup tg = new ToggleGroup();
         slogan1.setToggleGroup(tg);
         slogan2.setToggleGroup(tg);
@@ -571,4 +589,28 @@ public class SignupMenu extends  Application {
             }
         });
     }
+    public void randomPassword(MouseEvent mouseEvent) throws Exception {
+        Pane pane = new Pane();
+        Label label = new Label();
+        randomPassword = signupMenuController.generateRandomPassword();
+        label.setText("your password is " + randomPassword + " please enter it in the password field");
+        randomPass = true;
+        pane.getChildren().add(label);
+        Scene scene = new Scene(pane);
+        Stage passStage = new Stage();
+        passStage.setScene(scene);
+        passStage.showAndWait();
+    }
+
+   public void randomSlogan(MouseEvent mouseEvent) throws Exception {
+       Random random = new Random();
+       int rand = 0;
+       while (true){
+           rand = random.nextInt(11);
+           if(rand !=0) break;
+       }
+       signupMenuController.selectSlogan(String.valueOf(rand));
+
+   }
+
 }

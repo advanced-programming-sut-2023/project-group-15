@@ -113,7 +113,7 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public void selectSlogan(String input) {
-        user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
+        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
     }
     public void userSlogan(String input)
     {

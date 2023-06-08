@@ -18,8 +18,11 @@ import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.*;
 import org.example.controller.userControllers.LoginMenuController;
+import org.example.controller.userControllers.MainMenuController;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
+import org.example.model.User;
+import org.example.model.gameData.GameDataBase;
 import org.example.view.GameStartMenu;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
@@ -43,6 +46,7 @@ public class LoginMenu extends StartingMenu {
     public Label errorPassword;
     public Label successfulLogin;
     private Matcher loginMenuMatcher;
+    MainMenuController mainMenuController = new MainMenuController();
     public static Stage stage;
     Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
     BackgroundImage bImg = new BackgroundImage(background,
@@ -145,6 +149,15 @@ public class LoginMenu extends StartingMenu {
             System.out.println(status.getOutput());
             successfulLogin.setStyle(styles.getSuccessfulMessage());
             successfulLogin.setText("successful login");
+            for(User user : GameDataBase.getAllUsers()) {
+                if (user.getUsername().equals(username)) {
+                    System.out.println(user.getUsername());
+                    System.out.println("Current user will be set on: "+user);
+                    MainMenuController.setCurrentUser(user);
+                    System.out.println("Current user is :" +MainMenuController.getCurrentUser());
+                    //System.out.println(MainMenuController.getCurrentUser().getUsername());
+                }
+            }
             new MainMenu().start(StartingMenu.stage);
         } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){
             successfulLogin.setStyle(styles.getErrorMessage());
@@ -221,6 +234,7 @@ public class LoginMenu extends StartingMenu {
         loginMenuController.setPassRecoveryAnswer(passwordRecoveryAnswer);
         loginMenuController.setRank(Integer.parseInt(rank));
         loginMenuController.setHighScore(Integer.parseInt(highScore));
+
        // run();
     }
 
