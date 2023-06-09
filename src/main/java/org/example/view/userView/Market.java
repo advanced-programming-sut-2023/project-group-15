@@ -9,14 +9,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.example.controller.MarketController;
 import org.example.controller.userControllers.SignupMenuController;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -40,6 +46,8 @@ public class Market extends Application implements Initializable {
     public ImageView lather;
     public ImageView mace;
     public ImageView cheese;
+    public ImageView image;
+    public ImageView image1;
 
     Pane pane;
     private static Stage stage;
@@ -50,7 +58,7 @@ public class Market extends Application implements Initializable {
     public
     String successfulMessage = String.format("-fx-text-fill: Black;");
     @FXML
-    public void showResource(MouseEvent mouseEvent) {
+    public void showResource(MouseEvent mouseEvent) throws FileNotFoundException {
 
         if(apple.isPressed())
             setName("apple");
@@ -93,14 +101,32 @@ public class Market extends Application implements Initializable {
             HashMap<String, Integer> buyCoin = new HashMap<>(marketController.show3());
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/ResourcesOfMarket.fxml"));
 
-            Label nameItem = new Label();
+            Image back = new Image(getClass().getResource("/images/0_0img22.png").toString());
+            ImageView backIcon = new ImageView(back);
+            backIcon.setLayoutX(26.0);
+            backIcon.setLayoutY(114.0);
             Label numberOfProduct = new Label();
-            nameItem.setLayoutX(210.0);
-            nameItem.setLayoutY(75.0);
-            numberOfProduct.setLayoutX(210.0);
-            numberOfProduct.setLayoutY(120.0);
-            Button sellItem = new Button("sell      " + buyCoin.get(name));
-            Button buyItem = new Button("buy        " + sellCoin.get(name));
+            numberOfProduct.setLayoutX(230.0);
+            numberOfProduct.setLayoutY(115.0);
+            Text sellLable = new Text("sell      " + buyCoin.get(name));
+            sellLable.setFont(Font.font("Century",14));
+            sellLable.setLayoutX(330.0);
+            sellLable.setLayoutY(85);
+            Image button = new Image((getClass().getResource("/images/0_0img47.png").toString()));
+            ImageView sellItem = new ImageView(button);
+            Text buyLable = new Text("buy        " + sellCoin.get(name));
+            buyLable.setFont(Font.font("Century",14));
+            buyLable.setLayoutX(330.0);
+            buyLable.setLayoutY(130.0);
+            ImageView buyItem = new ImageView(button);
+            String address = "/images/"+name+".png";
+            System.out.println(address);
+            Image image2 = new Image((getClass().getResource(address).toString()));
+            ImageView imageView = new ImageView(image2);
+            imageView.setLayoutX(220.0);
+            imageView.setLayoutY(58);
+          //  imageView.setPreserveRatio(true);
+           // imageView.setLayoutX(0);
             Label successSell = new Label("successful sell...");
             Label successBuy = new Label("successful buy...");
             Label errorSell = new Label("error sell!");
@@ -112,77 +138,82 @@ public class Market extends Application implements Initializable {
             errorSell.setStyle(errorMessage);
             Popup popupMessage = new Popup();
             Stage stage = new Stage();
-            EventHandler<ActionEvent> sell = new EventHandler<ActionEvent>() {
-
-                public void handle(ActionEvent e)
-                {
-                  switch (marketController.sell(name,1)){
-                      case SUCCESSFUL_SELL : System.out.println("successful");
-                          HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
-                          System.out.println(newNumber.get(name));
-                          numberOfProduct.setText("number: " + (newNumber.get(name)));
-                          popupMessage.setX(730);
-                          popupMessage.setY(280);
-                          popupMessage.getContent().add(successSell);
-                          break;
-                      default:
-                          popupMessage.setX(730);
-                          popupMessage.setY(280);
-                          popupMessage.getContent().add(errorSell);
-                  }
-
-                    if (!popupMessage.isShowing())
-                        popupMessage.show(stage);
-                    else
-                        popupMessage.hide();
+            EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
+                stage.close();
+            };
+            EventHandler<MouseEvent> sell = (EventHandler<MouseEvent>) e -> {
+                switch (marketController.sell(name, 1)) {
+                    case SUCCESSFUL_SELL:
+                        System.out.println("successful");
+                        HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
+                        System.out.println(newNumber.get(name));
+                        numberOfProduct.setText(String.valueOf(newNumber.get(name)));
+                        popupMessage.setX(730);
+                        popupMessage.setY(260);
+                        popupMessage.getContent().add(successSell);
+                        break;
+                    default:
+                        popupMessage.setX(730);
+                        popupMessage.setY(260);
+                        popupMessage.getContent().add(errorSell);
                 }
+
+                if (!popupMessage.isShowing())
+                    popupMessage.show(stage);
+                else
+                    popupMessage.hide();
             };
 
-            EventHandler<ActionEvent> buy = new EventHandler<ActionEvent>() {
-                public void handle(ActionEvent e)
-                {
+            EventHandler<MouseEvent> buy = (EventHandler<MouseEvent>) e ->{
+
                     switch (marketController.buy(name,1)){
                         case SUCCESSFUL_BUY : System.out.println("successful");
                             HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
-                            numberOfProduct.setText(("number: " + newNumber.get(name)));
+                            numberOfProduct.setText(String.valueOf((newNumber.get(name))));
                             popupMessage.setX(730);
-                            popupMessage.setY(280);
+                            popupMessage.setY(260);
                             popupMessage.getContent().add(successSell);
                             break;
                         default:
                             popupMessage.setX(730);
-                            popupMessage.setY(280);
+                            popupMessage.setY(260);
                             popupMessage.getContent().add(errorBuy);
                     }
-                }
+
             };
-            buyItem.setOnAction(buy);
-            sellItem.setOnAction(sell);
-            nameItem.setText(name);
-            nameItem.setFont(Font.font("century"));
-            numberOfProduct.setText("number: " + (number.get(name)));
-            numberOfProduct.setFont(Font.font("century"));
+            buyLable.setOnMouseClicked(buy);
+            sellLable.setOnMouseClicked(sell);
+            backIcon.setOnMouseClicked(backToGame);
+            buyItem.setOnMouseClicked(buy);
+            sellItem.setOnMouseClicked(sell);
+            numberOfProduct.setText(String.valueOf((number.get(name))));
+            numberOfProduct.setFont(Font.font("century",18));
             sellItem.setLayoutX(300.0);
             sellItem.setLayoutY(65.0);
             buyItem.setLayoutX(300.0);
             buyItem.setLayoutY(110.0);
-            sellItem.setMinSize(156.0 , 35.0);
-            buyItem.setMinSize(156.0 , 35.0);
+          //  sellItem.setMinSize(156.0 , 35.0);
+          //  buyItem.setMinSize(156.0 , 35.0);
+
 
             Pane pane = fxmlLoader.load();
-
             pane.getChildren().add(sellItem);
+            pane.getChildren().add(imageView);
+            pane.getChildren().add(sellLable);
             pane.getChildren().add(buyItem);
+            pane.getChildren().add(buyLable);
             pane.getChildren().add(numberOfProduct);
-            pane.getChildren().add(nameItem);
-          //  pane.getChildren().add(confirm);
-
-
+            pane.getChildren().add(backIcon);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("Resource");
             stage.setScene(new Scene(pane));
             stage.show();
         } catch (Exception e){
-            System.out.println("can not");
+            System.out.println(e);
+
+            Image image2 = new Image((getClass().getResource("/images/0_0img47.png").toString()));
+            ImageView imageView = new ImageView(image2);
+            imageView.setPreserveRatio(true);
         }
     }
 
@@ -194,6 +225,7 @@ public class Market extends Application implements Initializable {
         pane = FXMLLoader.load(url);
 
         Scene scene = new Scene(pane);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
 
@@ -210,6 +242,10 @@ public class Market extends Application implements Initializable {
 
     public static void setName(String name) {
         Market.name = name;
+    }
+
+    public void backToGame(MouseEvent event) {
+        stage.close();
     }
 }
 

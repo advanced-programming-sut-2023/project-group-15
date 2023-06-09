@@ -9,6 +9,7 @@ import org.example.model.enums.Slogans;
 import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
+import org.example.view.userView.ForgotPassword;
 
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -16,8 +17,6 @@ import java.util.regex.Pattern;
 
 public class SignupMenuController extends MainMenuController {
     public User user;
-
-
     public void setUsernameSignup(String username){
         user.setUsername(username);
     }

@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.view.userView;
 
 import javafx.application.Application;
@@ -22,12 +21,9 @@ import org.example.controller.userControllers.SignupMenuController;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
-
 import java.net.URL;
 import java.util.Optional;
 import java.util.regex.Matcher;
-
-import static org.example.view.userView.ForgotPassword.*;
 
 public class SignupMenu extends  Application {
     public static Stage stage;
@@ -43,9 +39,8 @@ public class SignupMenu extends  Application {
     public int count = 0 ;
     public Label errorPassword;
     public Label successfulSignup;
-    private Popup popup;
 
-    public 
+    public
     @FXML
     void changeVisibility(ActionEvent event){
         if(chaneMode.isSelected()){
@@ -181,7 +176,7 @@ public class SignupMenu extends  Application {
             errorUsername.setStyle(errorMessage);
             errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
             username.setStyle(errorStyle);
-    }
+        }
         if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT))
         {
             errorUsername.setStyle(errorMessage);
@@ -199,15 +194,15 @@ public class SignupMenu extends  Application {
 
     }
 
-   /* public void classifyParameters(Matcher matcher) {
-        signupMenuController.setUsername(matcher.group("username"));
-        signupMenuController.setPassword(matcher.group("password"));
-        signupMenuController.setNickname(matcher.group("nickname"));
-        signupMenuController.setClipBoard(matcher.group("configuration"));
-        signupMenuController.setEmail(matcher.group("email"));
-        signupMenuController.setSlogan(matcher.group("slogan"));
-    }
-*/
+    /* public void classifyParameters(Matcher matcher) {
+         signupMenuController.setUsername(matcher.group("username"));
+         signupMenuController.setPassword(matcher.group("password"));
+         signupMenuController.setNickname(matcher.group("nickname"));
+         signupMenuController.setClipBoard(matcher.group("configuration"));
+         signupMenuController.setEmail(matcher.group("email"));
+         signupMenuController.setSlogan(matcher.group("slogan"));
+     }
+ */
     public void slogan(MouseEvent mouseEvent) {
         TextInputDialog sloganInput = new TextInputDialog();
         sloganInput.setHeaderText("slogan");
@@ -261,7 +256,7 @@ public class SignupMenu extends  Application {
 
             errorNickname.setText("");
             nickname.setStyle(successStyle);
-           // System.out.println(errorNickname.getText());
+            // System.out.println(errorNickname.getText());
         }
 
         if(username.getText().isBlank()) {
@@ -291,7 +286,6 @@ public class SignupMenu extends  Application {
             signupMenuController.signingsComplete();
             successfulSignup.setStyle(successfulMessage);
             successfulSignup.setText("successful signup");
-            popup.show(SignupMenu.stage);
             new MainMenu().start(SignupMenu.stage);
         }
 
@@ -301,11 +295,11 @@ public class SignupMenu extends  Application {
     @FXML
     public void initialize(){
         username.textProperty().addListener((observable , oldText , newText)->{
-            usernameCheck();
+                    usernameCheck();
                 }
 
 
-                );
+        );
         password.textProperty().addListener((observable , oldText , newText)->{
             passwordCheck();
         } );

@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -19,6 +21,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.example.controller.MarketController;
 
 import java.net.URL;
@@ -36,9 +39,18 @@ MarketController marketController = new MarketController();
         public void showMarket(MouseEvent mouseEvent) {
                 try {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Market.fxml"));
-                        Parent root = (Parent) fxmlLoader.load();
+                        Image image2 = new Image((getClass().getResource("/images/0_0img26.png").toString()));
+                        ImageView imageView = new ImageView(image2);
+                        imageView.setLayoutX(398.0);
+                        Pane root = fxmlLoader.load();
                         Stage stage = new Stage();
+                        EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
+                                stage.close();
+                        };
+                        imageView.setOnMouseClicked(backToGame);
                         stage.setTitle("market");
+                        root.getChildren().add(imageView);
+                        stage.initStyle(StageStyle.UNDECORATED);
                         stage.setScene(new Scene(root));
                         stage.show();
                      /*   HashMap<String, Integer> number = new HashMap<>(marketController.show1());
@@ -49,8 +61,9 @@ MarketController marketController = new MarketController();
                         Scene scene = new Scene(pane);
                         stage.setScene(scene);
                         stage.show();*/
+
                 } catch (Exception e){
-                        System.out.println("can not");
+                        System.out.println(e);
                 }
         }
 
@@ -82,4 +95,5 @@ MarketController marketController = new MarketController();
                         System.out.println("can not");
                 }
         }
+
 }

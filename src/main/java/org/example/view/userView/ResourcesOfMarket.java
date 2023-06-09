@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -14,6 +16,7 @@ import java.net.URL;
 import java.util.HashMap;
 
 public class ResourcesOfMarket extends Application {
+    public ImageView image;
     private String name ;
     private static Stage stage;
     private final MarketController marketController = new MarketController();
@@ -33,6 +36,10 @@ public class ResourcesOfMarket extends Application {
         numberOfProduct.setLayoutY(101.0);
         Button sellItem = new Button("sell   " + sellCoin.get(marketController.getName()));
         Button buyItem = new Button("sell   " + sellCoin.get(marketController.getName()));
+
+
+
+
         sellItem.setLayoutX(300.0);
         sellItem.setLayoutY(115.0);
         buyItem.setLayoutX(300.0);

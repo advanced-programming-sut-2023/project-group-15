@@ -4,68 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="last commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/ResourcesOfMarket.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/BackOfResources.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5976(1).PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5977.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5978.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5986.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5987.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5988(1).PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5988.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5990.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5994.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5996.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5997(1).JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5997.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5998.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6001.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6002.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6003.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6005(1).PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6005.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6009.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6010.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6012.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6013.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_6014.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/show.png" afterDir="false" />
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbeh(add ForgotPassword and market)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/archer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/bread.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/cheese.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/cion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/flour.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/iron.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/lather.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/mace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/meat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pitch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/rock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/spear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/sword.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/vest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/wheat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/wood.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_19_0_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_19_0_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_19_0_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_19_0_2_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Images/aks.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/aks.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Images/sell.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/sell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/BuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MarketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/Marketplace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/forgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/forgotPassword.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Market.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ResourcesOfMarket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/ResourcesOfMarket.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5976(1).PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5977.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5978.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5986.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5987.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5988(1).PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5988.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5990.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5994.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_5998.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6001.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6002.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6003.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6005(1).PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6005.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6009.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6010.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6012.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6013.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/IMG_6014.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/model/UserTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/view/enums/SignupMenuEnumTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +77,8 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -148,7 +148,7 @@
       <recent name="org.example.veiw.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ForgotPassword">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="ChooseAvatar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ChooseAvatar" />
       <module name="untitled" />
@@ -216,10 +216,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ForgotPassword" />
-        <item itemvalue="Application.SignupMenu" />
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.Market" />
+        <item itemvalue="Application.SignupMenu" />
+        <item itemvalue="Application.ForgotPassword" />
         <item itemvalue="Application.ChooseAvatar" />
       </list>
     </recent_temporary>
@@ -298,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685729803541</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="3shanbeh(add ForgotPassword and market)">
+      <created>1686051682000</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686051682000</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +322,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/mobina" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -331,7 +338,8 @@
     <MESSAGE value="creating files..." />
     <MESSAGE value="3shanbeh" />
     <MESSAGE value="last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="last commit" />
+    <MESSAGE value="3shanbeh(add ForgotPassword and market)" />
+    <option name="LAST_COMMIT_MESSAGE" value="3shanbeh(add ForgotPassword and market)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
