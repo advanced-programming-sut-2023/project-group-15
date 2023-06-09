@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class StartingMenu extends Application {
     public static Stage stage;
-    Image background = new Image(getClass().getResource("/Images/14.jpg").toString());
+    Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
             BackgroundRepeat.NO_REPEAT,
@@ -26,7 +26,7 @@ public class StartingMenu extends Application {
     public void start (Stage stage) throws Exception
     {
         new MainMenuController().checkJsonDirectory();
-        System.out.println(GameDataBase.getAllUsers());
+        //System.out.println(GameDataBase.getAllUsers());
         StartingMenu.stage = stage ;
         URL url = StartingMenu.class.getResource("/FXML/StartingMenu.fxml");
         Pane pane = FXMLLoader.load(url);

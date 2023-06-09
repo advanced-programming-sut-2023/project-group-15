@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import org.example.controller.userControllers.MainMenuController;
 import org.example.model.gameData.GameDataBase;
 
+import java.net.URL;
+
 public class MainMenu extends Application {
 
     Image background = new Image(getClass().getResource("/Images/05.jpg").toString());
@@ -20,8 +22,8 @@ public class MainMenu extends Application {
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
     public void start (Stage stage) throws Exception{
-
-        Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/MainMenu.fxml"));
+        URL url = MainMenu.class.getResource("/FXML/MainMenu.fxml");
+        Pane pane = FXMLLoader.load(url);
         pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);

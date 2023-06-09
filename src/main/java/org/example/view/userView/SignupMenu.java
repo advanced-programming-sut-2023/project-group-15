@@ -89,7 +89,6 @@ public class SignupMenu extends  Application {
         URL url = SignupMenu.class.getResource("/FXML/SignUp.fxml");
         Pane pane = FXMLLoader.load(url);
 
-
         pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
@@ -285,6 +284,7 @@ public class SignupMenu extends  Application {
         {
             if(!password.getText().equals(randomPassword));
             {
+                System.out.println("hhhh");
                 errorPassword.setStyle(styles.getErrorMessage());
                 errorPassword.setText("you haven't entered the random password");
                 password.setStyle(styles.getErrorStyle());
@@ -439,7 +439,9 @@ public class SignupMenu extends  Application {
 
                 else
                 {
-                    error.setVisible(true);
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("wrong captcha");
+                    alert.show();
                     captchaShower();
                 }
 
@@ -464,7 +466,6 @@ public class SignupMenu extends  Application {
         username.textProperty().addListener((observable, oldText, newText) -> {
             usernameCheck();
                 }
-
 
         );
         password.textProperty().addListener((observable, oldText, newText) -> {
@@ -595,7 +596,9 @@ public class SignupMenu extends  Application {
         randomPassword = signupMenuController.generateRandomPassword();
         label.setText("your password is " + randomPassword + " please enter it in the password field");
         randomPass = true;
+        System.out.println("random became true");
         pane.getChildren().add(label);
+        //pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         Stage passStage = new Stage();
         passStage.setScene(scene);

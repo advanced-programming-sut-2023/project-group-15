@@ -41,7 +41,7 @@ public class SignupMenuController extends MainMenuController {
     public void setPassRecoveryQuestionSignup(String passRecoveryQuestion){
         user.setPassRecoveryQuestion(passRecoveryQuestion);
     }
-    public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
+    /*public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
         user.setPassRecoveryAnswer(passRecoveryAnswer);
     }
     public SignupMenuOutput signupUserCheck() {
@@ -51,7 +51,7 @@ public class SignupMenuController extends MainMenuController {
         if ((status = nicknameCheck()) != SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
-    }
+    }*/
 
     public SignupMenuOutput nicknameCheck() {
         return user.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;

@@ -7,10 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -48,6 +45,7 @@ public class LoginMenu extends StartingMenu {
     private Matcher loginMenuMatcher;
     MainMenuController mainMenuController = new MainMenuController();
     public static Stage stage;
+    private static Stage stage1 = new Stage();
     Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
@@ -158,7 +156,8 @@ public class LoginMenu extends StartingMenu {
                     //System.out.println(MainMenuController.getCurrentUser().getUsername());
                 }
             }
-            new MainMenu().start(StartingMenu.stage);
+            captchaShower();
+            //new MainMenu().start(StartingMenu.stage);
         } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){
             successfulLogin.setStyle(styles.getErrorMessage());
             successfulLogin.setText("username and password doesn't match");
@@ -199,7 +198,7 @@ public class LoginMenu extends StartingMenu {
         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
     }*/
 
-    private void resettingUserPassword(String username) {
+   /* private void resettingUserPassword(String username) {
         System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());
         String newPassword = InputScanner.getScanner().nextLine();
         SignupMenuController signupMenuController = new SignupMenuController();
@@ -222,7 +221,7 @@ public class LoginMenu extends StartingMenu {
                     System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());
             }
         }
-    }
+    }*/
 
     public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {
         loginMenuController.setUsername(name);
@@ -247,10 +246,45 @@ public class LoginMenu extends StartingMenu {
     }
     public void captchaShower()
     {
+        Label captchaMessage = new Label("please enter the below captcha");
+        Button submit2 = new Button("submit");
+        TextField captchaInput = new TextField();
+        captchaInput.setId("captcha");
         Scene scene = new Scene(new Group(), 300, 300);
         ObservableList content = ((Group) scene.getRoot()).getChildren();
         String[] captcha;
         captcha = captchaStringGen();
+        captchaMessage.setTranslateX(50);
+        captchaMessage.setTranslateY(50);
+        submit2.setTranslateX(100);
+        submit2.setTranslateY(200);
+        captchaInput.setTranslateX(50);
+        captchaInput.setTranslateY(70);
+        content.add(displacementMap(captcha[0]));
+        content.addAll(captchaMessage, submit2, captchaInput);
+        stage1.setScene(scene);
+        stage1.show();
+        //todo the error labels are not shown
+        submit2.setOnAction(e ->
+        {
+            if (!captchaInput.getText().isBlank()) {
+                if (captchaInput.getText().equals(captcha[0])) {
+                    stage1.close();
+                    try {
+                        new MainMenu().start(stage);
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("captcha error");
+                    alert.show();
+                    captchaShower();
+                }
+
+
+            }
+        });
     }
 
 

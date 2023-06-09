@@ -3,6 +3,7 @@ package org.example.controller;
 
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
+import org.example.view.userView.ChooseAvatar;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -64,7 +65,7 @@ public class JsonController {
                         String.valueOf(jsonobject.get("Password recovery question:")),
                         String.valueOf(jsonobject.get("Password recover answer:")),
                         String.valueOf(jsonobject.get("rank")),
-                        String.valueOf(jsonobject.get("HighScore")));
+                        String.valueOf(jsonobject.get("HighScore")) , new ChooseAvatar().getImage6());
                 GameDataBase.getAllUsers().add(user);
                 jsonParser.next();
             }

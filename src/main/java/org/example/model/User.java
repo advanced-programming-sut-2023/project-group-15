@@ -31,7 +31,7 @@ public class User {
     private int turn;
     int lastOrderIndex = 0;
 
-    public User(String username, String password, String nickname, String email, String passRecoveryQuestion, String passRecoveryAnswer, int rank, int highScore) {
+    public User(String username, String password, String nickname, String email, String passRecoveryQuestion, String passRecoveryAnswer, int rank, int highScore , Image image) {
         this.userNO = 0;
         this.username = username;
         this.password = password;
@@ -43,7 +43,7 @@ public class User {
         this.highScore = highScore;
         this.stayLoggedIn = false;
         this.slogan = "the slogan is empty";
-        this.avatar = chooseAvatar.getImage6();
+        this.avatar = image;
     }
 
     public String getClipBoard() {
@@ -54,7 +54,7 @@ public class User {
         this.clipBoard = clipBoard;
     }
 
-    public User(String username, String password, String nickname, String email, String slogan, String passRecoveryQuestion, String passRecoveryAnswer, String rank, String highScore) {
+    public User(String username, String password, String nickname, String email, String slogan, String passRecoveryQuestion, String passRecoveryAnswer, String rank, String highScore , Image image ) {
         this.userNO = 0;
         this.username = username;
         this.password = password;
@@ -66,6 +66,7 @@ public class User {
         this.email = email;
         this.highScore = Integer.parseInt(highScore);
         this.stayLoggedIn = false;
+        this.avatar = image;
     }
 
     public User(String username, String password, String nickname, String email) {

@@ -36,6 +36,7 @@ import static org.example.Utility.displacementMap;
 public class ProfileMenu extends Application {
     TextInputDialog newUsername = new TextInputDialog();
     PasswordField newPassword = new PasswordField();
+    Label errorUsername = new Label();
 
     SignupMenuController signupMenuController = new SignupMenuController();
     private Stage stage1 = new Stage();
@@ -97,12 +98,12 @@ public class ProfileMenu extends Application {
         Label username = new Label(MainMenuController.getCurrentUser().getUsername());
         //Label password = new Label(MainMenuController.getCurrentUser().getPassword());
         Label nickname = new Label(MainMenuController.getCurrentUser().getNickname());
-        Label email = new Label(MainMenuController.getEmail());
+        Label email = new Label(MainMenuController.getCurrentUser().getEmail());
         ImageView avatar = new ImageView(MainMenuController.getCurrentUser().getAvatar());
         Pane pane = new Pane();
         vbox.getChildren().addAll(username, nickname, email );
         pane.getChildren().addAll(vbox , avatar);
-        vbox.setBackground(bGround);
+        //pane.setBackground(bGround);
         Stage stage = new Stage();
         Scene scene = new Scene(pane, 300, 300);
         stage.setScene(scene);
@@ -148,16 +149,28 @@ public class ProfileMenu extends Application {
         newUsername.setTitle("new username");
         newUsername.setContentText("please enter your new username");
         Optional<String> result = newUsername.showAndWait();
-        TextField username = newUsername.getEditor();
+        if(result.isPresent() && errorUsername.equals("") )
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("username change");
+            alert.setContentText("your username was changed was successfully");
+            alert.showAndWait();
+            MainMenuController.getCurrentUser().setUsername(newUsername.getEditor().getText());
 
-        String userInput;
+        }
+        newUsername.getEditor().textProperty().addListener((observable , oldText , newText) ->
+        {
+            usernameCheck();
+
+        });
 
     }
 
     private void usernameCheck() {
         SignupMenuOutput result = SignupMenuController.usernameCheckErrors(newUsername.getEditor().getText());
-        Label errorUsername = new Label();
+
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
+           // System.out.println("hello");
             signupMenuController.usernameSuggestionGenerator();
             errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
@@ -173,7 +186,11 @@ public class ProfileMenu extends Application {
             errorUsername.setStyle(styles.getSuccessfulMessage());
             errorUsername.setText("");
             newUsername.getEditor().setStyle(styles.getSuccessStyle());
-            signupMenuController.setUsername(newUsername.getEditor().getText());
+          /*  Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("username change");
+            alert.setContentText("your username was changed was successfully");
+            alert.showAndWait();
+            MainMenuController.getCurrentUser().setUsername(newUsername.getEditor().getText());*/
         }
 
     }
@@ -287,7 +304,7 @@ public class ProfileMenu extends Application {
             {
                 if(!oldPassword.getText().equals(MainMenuController.getCurrentUser().getPassword())) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("your current password in no true");
+                    alert.setContentText("your current password in not true");
                     alert.setHeaderText("current password error");
 
                 }
@@ -345,7 +362,9 @@ public class ProfileMenu extends Application {
 
                 else
                 {
-                    error.setVisible(true);
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("error");
+                    alert.setContentText("wrong captcha");
                     captchaShower();
                 }
 
