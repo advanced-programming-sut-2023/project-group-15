@@ -167,6 +167,7 @@ public class ChooseAvatar extends Application {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("your avatar has been chosen successfully");
                     alert.showAndWait();
+                    stage.close();
 
 
 

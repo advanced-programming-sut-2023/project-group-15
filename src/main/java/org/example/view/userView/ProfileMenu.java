@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -46,12 +47,20 @@ public class ProfileMenu extends Application {
     private ProfileMenuController profileMenuController = new ProfileMenuController();
     Label slogan = new Label(MainMenuController.getCurrentUser().getSlogan());
     Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
+    Image profileDBackground = new Image(getClass().getResource("/Images/02.jpg").toString());
+    BackgroundImage dbImg = new BackgroundImage(profileDBackground,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.DEFAULT,
+            new BackgroundSize(1, 1.0, true, true, false, false));
+
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
             BackgroundRepeat.NO_REPEAT,
             BackgroundPosition.DEFAULT,
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
+    Background dbGround = new Background(dbImg);
 
     public void start(Stage stage) throws Exception {
         StartingMenu.stage = stage;
@@ -95,12 +104,20 @@ public class ProfileMenu extends Application {
     public void profileDisplay() {
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
-        Label username = new Label(MainMenuController.getCurrentUser().getUsername());
+        Label username = new Label(" your username: " + MainMenuController.getCurrentUser().getUsername());
         //Label password = new Label(MainMenuController.getCurrentUser().getPassword());
-        Label nickname = new Label(MainMenuController.getCurrentUser().getNickname());
-        Label email = new Label(MainMenuController.getCurrentUser().getEmail());
+        Label nickname = new Label( " your nickname: " +MainMenuController.getCurrentUser().getNickname());
+        Label email = new Label("your email: " + MainMenuController.getCurrentUser().getEmail());;
         ImageView avatar = new ImageView(MainMenuController.getCurrentUser().getAvatar());
+        Background background = new Background(new BackgroundFill(Color.WHEAT, CornerRadii.EMPTY, Insets.EMPTY));
         Pane pane = new Pane();
+        pane.setBackground(dbGround);
+        vbox.setPadding(new Insets(5, 5, 5, 5));
+        vbox.setTranslateX(50);
+        vbox.setBackground(background);
+        vbox.setTranslateY(60);
+        avatar.setX(150);
+        avatar.setY(150);
         vbox.getChildren().addAll(username, nickname, email );
         pane.getChildren().addAll(vbox , avatar);
         //pane.setBackground(bGround);
@@ -379,7 +396,8 @@ public class ProfileMenu extends Application {
     }
 
     public void chooseAvatar(MouseEvent mouseEvent) throws Exception{
-        new ChooseAvatar().start(StartingMenu.stage);
+        Stage avatarStage = new Stage();
+        new ChooseAvatar().start(avatarStage);
     }
 
     public void removeSlogan(MouseEvent mouseEvent) {

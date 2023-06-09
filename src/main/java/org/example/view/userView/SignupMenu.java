@@ -590,19 +590,10 @@ public class SignupMenu extends  Application {
             }
         });
     }
-    public void randomPassword(MouseEvent mouseEvent) throws Exception {
-        Pane pane = new Pane();
-        Label label = new Label();
-        randomPassword = signupMenuController.generateRandomPassword();
-        label.setText("your password is " + randomPassword + " please enter it in the password field");
-        randomPass = true;
-        System.out.println("random became true");
-        pane.getChildren().add(label);
-        //pane.setBackground(bGround);
-        Scene scene = new Scene(pane);
-        Stage passStage = new Stage();
-        passStage.setScene(scene);
-        passStage.showAndWait();
+    public void randomPassword(MouseEvent mouseEvent)
+    {
+        password.setText(signupMenuController.generateRandomPassword());
+
     }
 
    public void randomSlogan(MouseEvent mouseEvent) throws Exception {
