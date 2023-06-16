@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class AssetSetter {
     private final GamePanel gamePanel;
-    private SuperObject[] allObjects = new SuperObject[10];
+    private final SuperObject[] allObjects = new SuperObject[10];
 
     public AssetSetter(GamePanel gamePanel) {
         this.gamePanel = gamePanel;

@@ -9,9 +9,9 @@ import java.io.InputStreamReader;
 
 
 public class TileManager {
-    private GamePanel gamePanel;
-    private int[][] mapTileNumber;
-    private Tile[] tile = new Tile[20];
+    private final GamePanel gamePanel;
+    private final int[][] mapTileNumber;
+    private final Tile[] tile = new Tile[20];
 
     public TileManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;

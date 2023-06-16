@@ -25,8 +25,6 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
             jPanel.addMouseListener(this);
             jPanel.addMouseMotionListener(this);
         }
-
-
     }
 
     @Override

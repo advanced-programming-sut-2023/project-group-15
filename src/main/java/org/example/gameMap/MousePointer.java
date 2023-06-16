@@ -17,7 +17,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
     private int worldY = 100;
     private final int screenX;
     private final int screenY;
-    private int mouseSpeed = 5;
+    private int mouseSpeed = 15;
 
     public MousePointer(GamePanel gamePanel, KeyHandler keyHandler, MouseHandler mouseHandler) {
         this.gamePanel = gamePanel;
@@ -36,7 +36,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         checkSolidAreas();
         boolean flag = false;
         if (keyHandler.getSprint()) {
-            mouseSpeed += 10;
+            mouseSpeed += 15;
             flag = true;
         }
         if (keyHandler.isUpPressed())
@@ -48,7 +48,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         if (keyHandler.isRightPressed())
             worldX += mouseSpeed;
         if (flag)
-            mouseSpeed -= 10;
+            mouseSpeed -= 15;
     }
 
     private void checkSolidAreas() {

@@ -33,9 +33,18 @@ public class KeyHandler implements KeyListener {
             rightPressed = true;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = true;
-        if (keyCode == KeyEvent.VK_1) // pressing key 1 will show status
+        if (keyCode == KeyEvent.VK_P) {
+            if (gamePanel.getGameState().equals(GameState.playState)) {
+                gamePanel.setGameState(GameState.pauseState);
+            } else if (gamePanel.getGameState().equals(GameState.pauseState)) {
+                gamePanel.getPopupPage().drawPauseScreen();
+                gamePanel.setGameState(GameState.playState);
+            }
+        }
+        if (keyCode == KeyEvent.VK_1) { // pressing key 1 will show status
             this.gamePanel.setGameState(GameState.statusState);
-
+            gamePanel.getPopupPage().drawStatusState();
+        }
     }
 
     @Override
