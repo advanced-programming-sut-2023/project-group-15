@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_19">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -23,13 +23,16 @@
     <orderEntry type="library" name="Maven: net.sf.oval:oval:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.passay:passay:1.6.3" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20230227" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:17.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:17.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:17.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:19.0.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:19.0.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:19.0.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:19.0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:19.0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:19.0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:19.0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:19.0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:21-ea+17" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:win:21-ea+17" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:21-ea+17" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:21-ea+17" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:21-ea+17" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:21-ea+17" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:${junit.version}" level="project" />
   </component>
 </module>
