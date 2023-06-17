@@ -40,13 +40,13 @@ public class KeyHandler implements KeyListener {
             if (gamePanel.getGameState().equals(GameState.playState)) {
                 gamePanel.setGameState(GameState.pauseState);
             } else if (gamePanel.getGameState().equals(GameState.pauseState)) {
-                gamePanel.getPopupPage().drawPauseScreen();
+//                gamePanel.getPopupPage().drawPauseScreen();
                 gamePanel.setGameState(GameState.playState);
             }
         }
         if (keyCode == KeyEvent.VK_1) { // pressing key 1 will show status
             this.gamePanel.setGameState(GameState.statusState);
-            gamePanel.getPopupPage().drawStatusState();
+//            gamePanel.getPopupPage().drawStatusState();
         }
     }
 
@@ -63,7 +63,9 @@ public class KeyHandler implements KeyListener {
             rightPressed = false;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = false;
-
+        if (keyCode == KeyEvent.VK_1) {
+            this.gamePanel.setGameState(GameState.playState);
+        }
     }
 
     public boolean isUpPressed() {

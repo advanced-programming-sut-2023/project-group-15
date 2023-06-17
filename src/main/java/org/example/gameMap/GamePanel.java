@@ -14,12 +14,10 @@ public class GamePanel extends JPanel implements Runnable {
     private final int screenWidth = tileSize * 40; // 48 * 40 = 1920
     private final int screenHeight = tileSize * 22; // 48 * 22 = 1080
     private final int FPS = 60;
-    private final int maxWorldCol = 50;
-    private final int maxWorldRow = 50;
-    private final int worldWidth = tileSize * maxWorldCol;
-    private final int worldHeight = tileSize * maxWorldRow;
+    private final int worldWidth = tileSize * 50; // todo: has to change to user map 200 or 400
+    private final int worldHeight = tileSize * 50;
     private GameState gameState;
-    private PopupPage popupPage;
+    private UI popupPage = new UI(this);
     private final KeyHandler keyHandler = new KeyHandler(this);
     private final AssetSetter assetSetter;
     private final MousePointer mouse = new MousePointer(this, keyHandler,getComponents());
@@ -87,6 +85,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void update() {
         if (gameState == GameState.playState) {
             mouse.update();
+
 //            mouse.updateMouse(graphics2D);
         }
         if (gameState == GameState.pauseState) {
@@ -111,12 +110,12 @@ public class GamePanel extends JPanel implements Runnable {
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics2D = (Graphics2D) graphics;
-        this.popupPage = new PopupPage(this, graphics2D);
         //loading tiles
         tileManager.draw(graphics2D);
         //loading objects
         assetSetter.draw(graphics2D, 23 * tileSize, 7 * tileSize);
         //loading mouse
+        popupPage.draw(graphics2D);
         mouse.draw(graphics2D);
         graphics2D.dispose();
     }
@@ -135,14 +134,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     public int getFPS() {
         return FPS;
-    }
-
-    public int getMaxWorldCol() {
-        return maxWorldCol;
-    }
-
-    public int getMaxWorldRow() {
-        return maxWorldRow;
     }
 
     public int getWorldWidth() {
@@ -185,7 +176,7 @@ public class GamePanel extends JPanel implements Runnable {
         return graphics2D;
     }
 
-    public PopupPage getPopupPage() {
+    public UI getPopupPage() {
         return popupPage;
     }
 }

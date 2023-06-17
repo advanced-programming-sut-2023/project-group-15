@@ -1,10 +1,10 @@
 package org.example.gameMap;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.text.DecimalFormat;
 
-public class PopupPage {
+public class UI extends JPanel {
     Font arial_40, arial_80B;
 //    BufferedImage image;
     GamePanel gamePanel;
@@ -15,16 +15,17 @@ public class PopupPage {
     public boolean gameFinished = false;
     double playTime ;
     DecimalFormat dFormat = new DecimalFormat("#0.00");
-    public PopupPage(GamePanel gamePanel,Graphics2D graphic) {
+    public UI(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        this.g2 = graphic;
         arial_40 = new Font("Arial" , Font.PLAIN, 40);
         arial_80B = new Font("Arial" , Font.BOLD,80);
         // object key ????
         // inserting an object image here but what ????? !
 
     }
-
+    public void paint(Graphics g) {
+        this.g2 = (Graphics2D) g;
+    }
     public void showMessage (String text) {
         message = text;
         messageOn = true;
@@ -67,9 +68,7 @@ public class PopupPage {
     }
 
     public void drawPauseScreen() {
-        this.g2 = gamePanel.getGraphics2D();
-        g2.setFont(arial_40);
-        g2.setColor(Color.WHITE);
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,80F));
         String text = "PAUSED!";
         int length = (int)g2.getFontMetrics().getStringBounds(text,g2).getWidth();
         int x = gamePanel.getScreenWidth()/2 - length/2;

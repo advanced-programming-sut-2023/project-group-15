@@ -17,7 +17,7 @@ public class TileManager {
 
     public TileManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        this.mapTileNumber = new int[gamePanel.getMaxWorldCol()][gamePanel.getMaxWorldRow()];
+        this.mapTileNumber = new int[50][50];
         getTileImage();
         loadMap();
     }
@@ -29,15 +29,15 @@ public class TileManager {
             int col = 0;
             int row = 0;
 
-            while (col < gamePanel.getMaxWorldCol() && row < gamePanel.getMaxWorldRow()) {
+            while (col < 50 && row < 50) {
                 String line = bufferedReader.readLine();
-                while (col < gamePanel.getMaxWorldCol()) {
+                while (col < 50) {
                     String numners[] = line.split(" ");
                     int number = Integer.parseInt(numners[col]);
                     mapTileNumber[col][row] = number;
                     col++;
                 }
-                if (col == gamePanel.getMaxWorldCol()) {
+                if (col == 50) {
                     col = 0;
                     row++;
 
@@ -77,7 +77,7 @@ public class TileManager {
         int worldCol = 0;
         int worldRow = 0;
 
-        while (worldCol < gamePanel.getMaxWorldCol() && worldRow < gamePanel.getMaxWorldRow()) {
+        while (worldCol < 50 && worldRow < 50) {
             int tileNumber = mapTileNumber[worldCol][worldRow];
 
             int worldX = worldCol * gamePanel.getTileSize();
@@ -92,7 +92,7 @@ public class TileManager {
             }
             worldCol++;
 
-            if (worldCol == gamePanel.getMaxWorldCol()) {
+            if (worldCol == 50) {
                 worldCol = 0;
                 worldRow++;
             }
