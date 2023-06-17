@@ -1,4 +1,6 @@
-package org.example.gameMap;
+package org.example.gameMap.objectSetter;
+
+import org.example.gameMap.GamePanel;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

@@ -1,9 +1,7 @@
 package org.example.gameMap;
 
 public class Position {
-
     public static int PROXIMITY_RANGE = 5;
-
     private double x;
     private double y;
 

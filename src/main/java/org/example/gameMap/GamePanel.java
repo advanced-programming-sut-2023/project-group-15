@@ -1,5 +1,10 @@
 package org.example.gameMap;
 
+import org.example.gameMap.keyHandling.KeyHandler;
+import org.example.gameMap.mouseHandling.MousePointer;
+import org.example.gameMap.objectSetter.AssetSetter;
+import org.example.gameMap.tileSetter.TileManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -16,9 +21,8 @@ public class GamePanel extends JPanel implements Runnable {
     private GameState gameState;
     private PopupPage popupPage;
     private final KeyHandler keyHandler = new KeyHandler(this);
-    private final MouseHandler mouseHandler = new MouseHandler(getComponents());
     private final AssetSetter assetSetter;
-    private final MousePointer mouse = new MousePointer(this, keyHandler, mouseHandler);
+    private final MousePointer mouse = new MousePointer(this, keyHandler,getComponents());
     private final TileManager tileManager;
     private Thread gameThread;
     //for FullScreen
@@ -35,8 +39,8 @@ public class GamePanel extends JPanel implements Runnable {
         this.tileManager = new TileManager(this);
         this.assetSetter = new AssetSetter(this);
         this.addKeyListener(keyHandler);
-        this.addMouseListener(mouseHandler);
-        this.addMouseMotionListener(mouseHandler);
+        this.addMouseListener(mouse);
+        this.addMouseMotionListener(mouse);
         this.setFocusable(true);
 //        setUpFullScreen();
         startGameThread();
@@ -83,7 +87,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void update() {
         if (gameState == GameState.playState) {
             mouse.update();
-            mouse.updateMouse(graphics2D);
+//            mouse.updateMouse(graphics2D);
         }
         if (gameState == GameState.pauseState) {
             //todo:pause state...
@@ -103,6 +107,7 @@ public class GamePanel extends JPanel implements Runnable {
         graphics.dispose();
     }
 
+    @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics2D = (Graphics2D) graphics;

@@ -1,4 +1,7 @@
-package org.example.gameMap;
+package org.example.gameMap.keyHandling;
+
+import org.example.gameMap.GamePanel;
+import org.example.gameMap.GameState;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

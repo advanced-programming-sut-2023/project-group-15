@@ -1,4 +1,6 @@
-package org.example.gameMap;
+package org.example.gameMap.objectSetter;
+
+import org.example.gameMap.GamePanel;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -11,7 +13,7 @@ public class SuperObject {
     private String name;
     private int worldX;
     private int worldY;
-    private static ArrayList<SuperObject> settedObjects = new ArrayList<>();
+    private static final ArrayList<SuperObject> setObjects = new ArrayList<>();
 //    public SuperObject(String name) {
 //        this.bufferedImage = findObjectWithName(name).getImage();
 //        this.name = name;
@@ -84,11 +86,11 @@ public class SuperObject {
     }
 
     public void addToSettedObjects() {
-        settedObjects.add(this);
+        setObjects.add(this);
     }
 
     public static ArrayList<SuperObject> getAllSetObjects() {
-        return settedObjects;
+        return setObjects;
     }
 
     public void selectSolidArea() {
@@ -108,7 +110,7 @@ public class SuperObject {
         return solidArea;
     }
 
-    public static ArrayList<SuperObject> getSettedObjects() {
-        return settedObjects;
+    public static ArrayList<SuperObject> getSetObjects() {
+        return setObjects;
     }
 }
