@@ -1,5 +1,9 @@
 package org.example.view.userView;
 
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,8 +26,10 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import org.example.controller.MarketController;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -31,9 +37,12 @@ import java.util.ResourceBundle;
 public class Menu extends Application implements Initializable {
 
         private static Stage stage;
+        public Button button1;
+        public Pane parentFirst;
         @FXML
         private Button button;
-
+        int number = 0 ;
+        Parent parent;
 MarketController marketController = new MarketController();
         @FXML
         public void showMarket(MouseEvent mouseEvent) {
@@ -67,6 +76,27 @@ MarketController marketController = new MarketController();
                 }
         }
 
+        public void clicked(ActionEvent event) throws IOException {
+                ++number;
+                System.out.println(number);
+                if(number%2 == 0){
+                        parentFirst.getChildren().remove(parent);
+                        return;
+                }
+                parent = FXMLLoader.load(getClass().getResource("/FXML/Goverment.fxml"));
+
+                Scene scene = button.getScene();
+                parent.translateXProperty().set(scene.getHeight());
+                parent.setLayoutX(0);
+                parent.setLayoutY(217);
+                parentFirst.getChildren().add(parent);
+                Timeline timeline = new Timeline();
+                KeyValue keyValue = new KeyValue(parent.translateXProperty(), 0, Interpolator.EASE_IN);
+                KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), keyValue);
+                timeline.getKeyFrames().add(keyFrame);
+                timeline.play();
+
+        }
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -79,6 +109,7 @@ MarketController marketController = new MarketController();
                 Pane pane = FXMLLoader.load(url);
                 Scene scene = new Scene(pane);
                 stage.setScene(scene);
+                //stage.setFullScreen(true);
                 stage.show();
         }
 
@@ -95,5 +126,7 @@ MarketController marketController = new MarketController();
                         System.out.println("can not");
                 }
         }
+
+
 
 }

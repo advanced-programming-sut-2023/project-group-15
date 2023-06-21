@@ -122,7 +122,7 @@ public class LoginMenu extends MainMenu {
 */
     public void loginInCheck(String username , String password) {
         classify(username, password);
-        LoginMenuOutput status = loginMenuController.loginUser();
+        LoginMenuOutput status = loginMenuController.loginUser(password);
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
             successfulLogin.setStyle(successfulMessage);
@@ -149,7 +149,7 @@ public class LoginMenu extends MainMenu {
             loginMenuController.setStayLoggedInFlag(true);*/
     }
 
-    protected void forgetPassword(String username) {
+  /*  protected void forgetPassword(String username) {
         loginMenuController.setUsername(username);
         if (loginMenuController.checkMatchUsername()) {
             System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
@@ -167,8 +167,8 @@ public class LoginMenu extends MainMenu {
         }
         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
     }
-
-    private void resettingUserPassword(String username) {
+*/
+ /*   private void resettingUserPassword(String username) {
         System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());
         String newPassword = InputScanner.getScanner().nextLine();
         SignupMenuController signupMenuController = new SignupMenuController();
@@ -191,7 +191,7 @@ public class LoginMenu extends MainMenu {
                     System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());
             }
         }
-    }
+    }*/
 
     public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {
         loginMenuController.setUsername(name);

@@ -8,71 +8,83 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
-    private final Government government;
-    public GameMenuController(String player) {
+    private Government government;
+   /* public GameMenuController(String player) {
         government = Government.findGovernmentWithUsername(player);
-    }
+    }*/
 
-    public String showFoodRate() {
-        String foodRate = "your food rate is " + government.getFoodRate() + "\nmeans: ";
-        switch (government.getFoodRate()) {
+    public String showFoodRate(int number) {
+        String foodRate = "";
+        switch (number) {
             case -2:
-                foodRate += "you feed people 1 unit\nmonthly your popularity decreases by 8 unit";
+                foodRate += "1-set on -2,monthly your popularity decreases by 8 unit";
                 break;
             case -1:
-                foodRate += "you feed people 0.5 unit\nmonthly your popularity decreases by 4 unit";
+                foodRate += "0.5-set on -1,monthly your popularity decreases by 4 unit";
                 break;
             case 0:
-                foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 0 unit";
+                foodRate += "1.5-set on 0,monthly your popularity increases by 0 unit";
                 break;
             case 1:
-                foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 4 unit";
+                foodRate += "1.5-set on 1,monthly your popularity increases by 4 unit";
                 break;
             case 2:
-                foodRate += "you feed people 2 units\nmonthly your popularity increases by 8 unit";
+                foodRate += "2-set on 2,monthly your popularity increases by 8 unit";
                 break;
         }
         return foodRate;
     }
 
-    public String showTaxRate() {
-        String taxRate = "your tax rate is " + government.getTaxRate() + "\nmeans: ";
-        switch (government.getTaxRate()) {
+    public String showTaxRate(int checkTax) {
+        String taxRate = "";
+        switch (checkTax) {
             case -3:
-                taxRate += "0 tax\nyou give people 1 coin\nmonthly your popularity increases by 7 unit";
+                taxRate += "0>1>set on -3,nmonthly your popularity increases by 7 unit";
+                        //"0 tax\nyou give people 1 coin\nmonthly your popularity increases by 7 unit";
                 break;
             case -2:
-                taxRate += "0 tax\nyou give people 0.8 coin\nmonthly your popularity increases by 5 unit";
+                taxRate += "0>0.8>set on -2,monthly your popularity increases by 5 unit";
+                        //"0 tax\nyou give people 0.8 coin\nmonthly your popularity increases by 5 unit";
                 break;
             case -1:
-                taxRate += "0 tax\nyou give people 0.6 coin\nmonthly your popularity increases by 3 unit";
+                taxRate += "0>0.6>set on -1,monthly your popularity increases by 3 unit";
+                        //"0 tax\nyou give people 0.6 coin\nmonthly your popularity increases by 3 unit";
                 break;
             case 0:
-                taxRate += "0 tax\nyou give people 0 coin\nmonthly your popularity increases by 1 unit";
+                taxRate += "0>0>set on 0,monthly your popularity increases by 1 unit";
+                        //"0 tax\nyou give people 0 coin\nmonthly your popularity increases by 1 unit";
                 break;
             case 1:
-                taxRate += "0.6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 2 unit";
+                taxRate += "0>0>set on 1,monthly your popularity decreases by 2 unit";
+                        //"0.6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 2 unit";
                 break;
             case 2:
-                taxRate += "0.8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 4 unit";
+                taxRate += "0>0>set on 2,monthly your popularity decreases by 4 unit";
+                        //"0.8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 4 unit";
                 break;
             case 3:
-                taxRate += "1 tax\nyou give people 0 coin\nmonthly your popularity decreases by 6 unit";
+                taxRate += "1>0>set on 3,monthly your popularity decreases by 6 unit";
+                        //"1 tax\nyou give people 0 coin\nmonthly your popularity decreases by 6 unit";
                 break;
             case 4:
-                taxRate += "1/2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 8 unit";
+                taxRate += "1/2>0>set on 4,monthly your popularity decreases by 8 unit";
+                        //"1/2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 8 unit";
                 break;
             case 5:
-                taxRate += "1/4 tax\nyou give people 0 coin\nmonthly your popularity decreases by 12 unit";
+                taxRate += "1/4>0>set on 5,monthly your popularity decreases by 12 unit";
+                        //"1/4 tax\nyou give people 0 coin\nmonthly your popularity decreases by 12 unit";
                 break;
             case 6:
-                taxRate += "1/6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 16 unit";
+                taxRate += "1/6>0>set on 6,monthly your popularity decreases by 16 unit";
+                        //"1/6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 16 unit";
                 break;
             case 7:
-                taxRate += "1/8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 20 unit";
+                taxRate += "1/8>0>set on 7,monthly your popularity decreases by 20 unit";
+                        //"1/8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 20 unit";
                 break;
             case 8:
-                taxRate += "2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 24 unit";
+                taxRate += "2>0>set on 8,monthly your popularity decreases by 24 unit";
+                        //"2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 24 unit";
         }
         return taxRate;
     }

@@ -179,5 +179,6 @@
             <Font name="Century" size="14.0" />
          </font>
       </Label>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="402.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

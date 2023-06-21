@@ -196,10 +196,10 @@ public class SignupMenuController extends MainMenuController {
         return matcher.matches() ? matcher : null;
     }
 
-    public void changeForgetPassword() {
+    public void changeForgetPassword(String username , String password) {
         for (User user : GameDataBase.getAllUsers()) {
-            if (user.getUsername().equals(user.getUsername())) {
-                user.setPassword(user.getPassword());
+            if (user.getUsername().equals(username)) {
+                user.setPassword(password);
             }
         }
     }
