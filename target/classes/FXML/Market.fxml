@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.Market">
+   <children>
+      <ImageView fitHeight="588.0" fitWidth="441.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/IMG_5997(1).JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wood" fitHeight="42.0" fitWidth="43.0" layoutX="71.0" layoutY="78.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/wood.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bread" fitHeight="29.0" fitWidth="44.0" layoutX="335.0" layoutY="316.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bread.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="apple" fitHeight="29.0" fitWidth="44.0" layoutX="71.0" layoutY="440.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/apple.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="iron" fitHeight="33.0" fitWidth="39.0" layoutX="335.0" layoutY="253.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iron.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rock" fitHeight="29.0" fitWidth="33.0" layoutX="77.0" layoutY="196.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="spear" fitHeight="43.0" fitWidth="41.0" layoutX="329.0" layoutY="367.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/spear.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="meat" fitHeight="33.0" fitWidth="46.0" layoutX="330.0" layoutY="130.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/meat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="vest" fitHeight="43.0" fitWidth="41.0" layoutX="331.0" layoutY="71.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/vest.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="archer" fitHeight="35.0" fitWidth="42.0" layoutX="71.0" layoutY="371.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/archer.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sword" fitHeight="37.0" fitWidth="38.0" layoutX="335.0" layoutY="436.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wheat" fitHeight="48.0" fitWidth="16.0" layoutX="85.0" layoutY="250.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/wheat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pitch" fitHeight="33.0" fitWidth="29.0" layoutX="79.0" layoutY="314.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pitch.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hop" fitHeight="35.0" fitWidth="27.0" layoutX="82.0" layoutY="138.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hop.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lather" fitHeight="40.0" fitWidth="26.0" layoutX="81.0" layoutY="491.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lather.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="175.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Market" wrappingWidth="83.82475280761707">
+         <font>
+            <Font name="Century" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="mace" fitHeight="40.0" fitWidth="42.0" layoutX="333.0" layoutY="190.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mace.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="129.0" layoutY="87.0" text="Wood">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="126.0" layoutY="502.0" text="Lather Armor">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="445.0" text="Apple">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="384.0" text="Archer">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="320.0" text="Pitch">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="261.0" text="Wheat">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="201.0" text="Rock">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="146.0" text="Hop">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="87.0" text="Vest">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="272.0" layoutY="445.0" text="Sword">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="274.0" layoutY="384.0" text="Spear">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="274.0" layoutY="321.0" text="Bread">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="261.0" text="Iron">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="276.0" layoutY="201.0" text="Mace">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="146.0" text="Meat">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="cheese" fitHeight="29.0" fitWidth="36.0" layoutX="336.0" layoutY="497.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cheese.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="272.0" layoutY="502.0" text="Cheese">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
