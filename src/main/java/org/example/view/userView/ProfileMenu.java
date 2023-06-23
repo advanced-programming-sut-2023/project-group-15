@@ -25,6 +25,8 @@ import org.example.controller.userControllers.MainMenuController;
 import org.example.controller.userControllers.ProfileMenuController;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
+import org.example.view.ScoreBoard;
+import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.net.URL;
@@ -37,7 +39,7 @@ import static org.example.Utility.displacementMap;
 public class ProfileMenu extends Application {
     TextInputDialog newUsername = new TextInputDialog();
     PasswordField newPassword = new PasswordField();
-    Label errorUsername = new Label();
+    boolean nameChanged = true;
 
     SignupMenuController signupMenuController = new SignupMenuController();
     private Stage stage1 = new Stage();
@@ -166,13 +168,23 @@ public class ProfileMenu extends Application {
         newUsername.setTitle("new username");
         newUsername.setContentText("please enter your new username");
         Optional<String> result = newUsername.showAndWait();
-        if(result.isPresent() && errorUsername.equals("") )
+        if(newUsername.resultProperty().getValue() != null)
         {
+            System.out.println("ok press");
+            System.out.println(SignupMenuController.usernameCheckErrors(newUsername.getEditor().getText()));
+            if(SignupMenuController.usernameCheckErrors(newUsername.getEditor().getText()).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+                nameChanged = true;
+            }
+
+        if(nameChanged) {
+            System.out.println(profileMenuController.changeUsername(newUsername.getEditor().getText()));
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("username change");
             alert.setContentText("your username was changed was successfully");
             alert.showAndWait();
-            MainMenuController.getCurrentUser().setUsername(newUsername.getEditor().getText());
+
+            //MainMenuController.getCurrentUser().setUsername(newUsername.getEditor().getText());
+        }
 
         }
         newUsername.getEditor().textProperty().addListener((observable , oldText , newText) ->
@@ -187,30 +199,36 @@ public class ProfileMenu extends Application {
         SignupMenuOutput result = SignupMenuController.usernameCheckErrors(newUsername.getEditor().getText());
 
         if (result.equals(SignupMenuOutput.USERNAME_EXISTS)) {
+            nameChanged = false;
            // System.out.println("hello");
             signupMenuController.usernameSuggestionGenerator();
-            errorUsername.setStyle(styles.getErrorMessage());
-            errorUsername.setText("this username exists you can use " + signupMenuController.getUsername());
-            newUsername.getEditor().setStyle(styles.getErrorStyle());
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("this username exists you can use" + signupMenuController.getUsername());
+            alert.showAndWait();
         }
         if (result.equals(SignupMenuOutput.INVALID_USERNAME_FORMAT)) {
-            errorUsername.setStyle(styles.getErrorMessage());
-            errorUsername.setText("invalid username , must contains letters , digits , _ !");
-            newUsername.getEditor().setStyle(styles.getErrorStyle());
+            nameChanged = false;
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            System.out.println("checked u");
+            alert.setTitle("Error");
+            alert.setContentText("invalid username , must contains letters , digits , _ !");
+            alert.showAndWait();
         }
 
-        if (result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
-            errorUsername.setStyle(styles.getSuccessfulMessage());
-            errorUsername.setText("");
-            newUsername.getEditor().setStyle(styles.getSuccessStyle());
+       /* if ( newUsername.resultProperty().getValue() != null && result.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
+            System.out.println("checked s");
+            nameChanged = true;*/
           /*  Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("username change");
             alert.setContentText("your username was changed was successfully");
             alert.showAndWait();
-            MainMenuController.getCurrentUser().setUsername(newUsername.getEditor().getText());*/
-        }
+            MainMenuController.getCurrentUser().setUsername(newUsername.getEditor().getText());
+        }*/
 
     }
+
+
 
     public void changeNickname(MouseEvent mouseEvent) {
 
@@ -290,25 +308,34 @@ public class ProfileMenu extends Application {
 
 
 
-    public void changePassword(MouseEvent mouseEvent) {
-      Pane pane = new Pane();
+    public void changePassword(MouseEvent mouseEvent) throws Exception {
+        Pane pane = new Pane();
       newPassword.setId("password");
       PasswordField oldPassword = new PasswordField();
       oldPassword.setId("password");
       Label oldPass = new Label();
-      oldPass.setText("current password");
+      oldPass.setText("current password: ");
       Label newPass = new Label();
-      newPass.setText("new password");
+      newPass.setText("new password:   ");
       Button submit = new Button();
+      submit.setText("save");
       pane.setBackground(bGround);
         Scene scene = new Scene(pane , 300 , 200);
-        oldPass.setTranslateX(20);
-        oldPass.setTranslateY(50);
-        oldPassword.setTranslateX(60);
-        oldPass.setTranslateY(50);
-        newPassword.setTranslateX(100);
-        oldPassword.setTranslateY(60);
-        pane.getChildren().addAll(oldPass , oldPassword , newPass , newPassword , errorPassword);
+        oldPass.setTranslateX(5);
+        oldPass.setTranslateY(20);
+        oldPassword.setTranslateX(103);
+        oldPassword.setTranslateY(20);
+        newPass.setTranslateX(5);
+        newPass.setTranslateY(101);
+        newPassword.setTranslateX(103);
+        newPassword.setTranslateY(100);
+        submit.setTranslateX(150);
+        submit.setTranslateY(150);
+        oldPass.setStyle("-fx-background-color: wheat");
+        newPass.setStyle("-fx-background-color: wheat");
+        oldPass.setTextFill(Color.BLACK);
+        oldPass.setTextFill(Color.BLACK);
+        pane.getChildren().addAll(oldPass , oldPassword ,submit, newPass , newPassword , errorPassword);
         stage1.setScene(scene);
         stage1.show();
         newPassword.textProperty().addListener((observable ,oldValue , newValue)-> {
@@ -317,6 +344,7 @@ public class ProfileMenu extends Application {
         });
         submit.setOnAction(e ->
         {
+            System.out.println("hello");
             if(!oldPassword.getText().isBlank() && !newPassword.getText().isBlank())
             {
                 if(!oldPassword.getText().equals(MainMenuController.getCurrentUser().getPassword())) {
@@ -327,6 +355,7 @@ public class ProfileMenu extends Application {
                 }
               else if(errorPassword.getText().equals(""))
                 {
+                    System.out.println("1");
                     if(!captchaCheck)
                     captchaShower();
                     else {
@@ -444,8 +473,10 @@ public class ProfileMenu extends Application {
               newPassword.setStyle(styles.getErrorStyle());
               break;
           case CHECKED_SUCCESSFULLY:
+              System.out.println("checked successfully");
               errorPassword.setStyle(styles.getSuccessfulMessage());
               errorPassword.setText("");
+              System.out.println(errorPassword.getText());
               newPassword.setStyle(styles.getSuccessfulMessage());
               signupMenuController.setPassword(newPassword.getText());
               break;
@@ -457,4 +488,7 @@ public class ProfileMenu extends Application {
   }
 
 
+    public void showScoreboard(MouseEvent mouseEvent) {
+        new ScoreBoard().start(new Stage());
+    }
 }

@@ -33,7 +33,6 @@ public static Stage stage;
         sloganInput.setContentText("enter your anwer");
         Optional<String> result = sloganInput.showAndWait();
         if (result.isPresent()) {
-            signupMenuController.userSlogan(sloganInput.getEditor().getText());
             new SignupMenu().start(ChooseQuestion.stage);
         }
     }

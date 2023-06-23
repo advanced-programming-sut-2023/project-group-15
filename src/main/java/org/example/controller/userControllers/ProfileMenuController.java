@@ -13,7 +13,6 @@ public class ProfileMenuController extends LoginMenuController {
     User currentUser = MainMenuController.getCurrentUser();
 
     public ProfileMenuOutput changeUsername(String username) {
-        currentUser.setUsername(username);
         if (SignupMenuController.usernameCheckErrors(username).equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {
             /*for (User user : GameDataBase.getAllUsers()) {
                 if (user.getUsername().equals(this.getUsername())) {

@@ -601,9 +601,11 @@ public class SignupMenu extends  Application {
        int rand = 0;
        while (true){
            rand = random.nextInt(11);
-           if(rand !=0) break;
+           if(rand !=0 && rand < 7) break;
        }
+        slogan = true;
        signupMenuController.selectSlogan(String.valueOf(rand));
+
 
    }
 

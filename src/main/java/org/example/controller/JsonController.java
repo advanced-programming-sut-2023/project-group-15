@@ -25,6 +25,7 @@ public class JsonController {
 
     public static void setJasonFileForAllUsers() {
         for (User user : GameDataBase.getAllUsers()) {
+            System.out.println(user.getUsername());
             setUserInformationToJson(user,user.isStayLoggedIn());
         }
     }

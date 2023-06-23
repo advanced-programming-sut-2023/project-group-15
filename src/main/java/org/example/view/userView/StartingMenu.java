@@ -10,6 +10,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.MainMenuController;
 import org.example.model.gameData.GameDataBase;
+import org.example.view.ScoreBoard;
 
 import java.net.URL;
 
@@ -26,7 +27,6 @@ public class StartingMenu extends Application {
     public void start (Stage stage) throws Exception
     {
         new MainMenuController().checkJsonDirectory();
-        //System.out.println(GameDataBase.getAllUsers());
         StartingMenu.stage = stage ;
         URL url = StartingMenu.class.getResource("/FXML/StartingMenu.fxml");
         Pane pane = FXMLLoader.load(url);
@@ -45,6 +45,10 @@ public class StartingMenu extends Application {
 
     public void login(MouseEvent mouseEvent) throws Exception {
         new LoginMenu().start(StartingMenu.stage);
+    }
+
+    public void exit(MouseEvent mouseEvent) {
+        stage.close();
     }
     /*public void run()  {
         Matcher mainMenuMatcher;

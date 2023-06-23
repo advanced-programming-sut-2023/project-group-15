@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupMenuController extends MainMenuController {
-    public User user;
+    public User user = ProfileMenuController.getCurrentUser();
 
 
     public void setUsernameSignup(String username){
@@ -113,6 +113,9 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public void selectSlogan(String input) {
+        System.out.println(Slogans.getAllSlogans().get(Integer.parseInt(input) -1).getSlogan());
+        System.out.println(this.getNickname());
+       // user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) -1).getSlogan());
         this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
     }
     public void userSlogan(String input)
