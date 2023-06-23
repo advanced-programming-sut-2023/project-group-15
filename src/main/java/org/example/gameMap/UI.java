@@ -15,6 +15,9 @@ public class UI extends JPanel {
     public boolean gameFinished = false;
     double playTime ;
     DecimalFormat dFormat = new DecimalFormat("#0.00");
+    private int slotCol;
+    private int slotRow;
+
     public UI(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         arial_40 = new Font("Arial" , Font.PLAIN, 40);
@@ -69,6 +72,15 @@ public class UI extends JPanel {
         final int frameWidth = gamePanel.getTileSize()*6;
         final int frameHeight = gamePanel.getTileSize()*5;
         drawSubWindow(frameX,frameY,frameWidth,frameHeight);
+        //cursor
+        int cursorX = frameX + (gamePanel.getTileSize() + slotCol);
+        int cursorY = frameY + (gamePanel.getTileSize() + slotRow);
+        int cursorWidth = gamePanel.getTileSize();
+        int cursorHeight = gamePanel.getTileSize();
+        //drawing
+        g2.setColor(Color.WHITE);
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(cursorX,cursorY,cursorWidth,cursorHeight,10,10);
     }
 
     public void drawStatusState() {
@@ -77,32 +89,36 @@ public class UI extends JPanel {
         final int frameWidth = gamePanel.getTileSize()*7;
         final int frameHeight = gamePanel.getTileSize()*11;
         drawSubWindow(frameX,frameY,frameWidth,frameHeight);
-        frameX += gamePanel.getTileSize();
-        frameY += gamePanel.getTileSize() + 10;
+        printStatus();
+    }
+
+    private void printStatus() {
+        int x = gamePanel.getTileSize()*3;
+        int y = gamePanel.getTileSize()*2 + 10;
         g2.setFont(arial_80B);
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN,40F));
-        printString("Status: ",frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString("Status: ",x,y);
+        y += gamePanel.getTileSize()+ 10;
         String stringToPrint = "Level: "+String.valueOf(gamePanel.getPlayerStatus().getLevel());
-        printString(stringToPrint,frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString(stringToPrint,x,y);
+        y += gamePanel.getTileSize()+ 10;
         stringToPrint = "Coin: "+String.valueOf(gamePanel.getPlayerStatus().getCoin());
-        printString(stringToPrint,frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString(stringToPrint,x,y);
+        y += gamePanel.getTileSize()+ 10;
         stringToPrint = "Tax Rate: "+String.valueOf(gamePanel.getPlayerStatus().getTaxRate());
-        printString(stringToPrint,frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString(stringToPrint,x,y);
+        y += gamePanel.getTileSize()+ 10;
         stringToPrint = "Fear Rate: "+String.valueOf(gamePanel.getPlayerStatus().getFearRate());
-        printString(stringToPrint,frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString(stringToPrint,x,y);
+        y += gamePanel.getTileSize()+ 10;
         stringToPrint = "Food Rate: "+String.valueOf(gamePanel.getPlayerStatus().getFoodRate());
-        printString(stringToPrint,frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString(stringToPrint,x,y);
+        y += gamePanel.getTileSize()+ 10;
         stringToPrint = "Religion: "+String.valueOf(gamePanel.getPlayerStatus().getReligion());
-        printString(stringToPrint,frameX,frameY);
-        frameY += gamePanel.getTileSize()+ 10;
+        printString(stringToPrint,x,y);
+        y += gamePanel.getTileSize()+ 10;
         stringToPrint = "Popularity: "+String.valueOf(gamePanel.getPlayerStatus().getPopularity());
-        printString(stringToPrint,frameX,frameY);
+        printString(stringToPrint,x,y);
     }
 
     private void printString(String stringToPrint, int frameX, int frameY) {
@@ -129,4 +145,26 @@ public class UI extends JPanel {
         g2.drawString(text,x,y);
     }
 
+    public int getSlotCol() {
+        return slotCol;
+    }
+
+    public int getSlotRow() {
+        return slotRow;
+    }
+
+    public void setSlotCol(int slotCol) {
+        this.slotCol = slotCol;
+    }
+
+    public void setSlotRow(int slotRow) {
+        this.slotRow = slotRow;
+    }
+    public void reduceSlotCol() {
+        this.slotCol--;
+    }
+    public void reduceSlotRow() {
+        this.slotRow--;
+    }
+    
 }
