@@ -1,0 +1,1571 @@
+Index: src/main/java/org/example/Css/MainMenuStyle.css
+===================================================================
+diff --git a/src/main/java/org/example/Css/MainMenuStyle.css b/src/main/java/org/example/Css/MainMenuStyle.css
+deleted file mode 100644
+--- a/src/main/java/org/example/Css/MainMenuStyle.css	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ /dev/null	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
+@@ -1,3 +0,0 @@
+-.root  {
+-          -fx-background-image: url("@../images/IMG_5977.png");
+-      }
+\ No newline at end of file
+Index: src/main/java/org/example/view/userView/LoginMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//this class is completed!\r\npackage org.example.view.userView;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.CheckBox;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.PasswordField;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.Pane;\r\nimport javafx.stage.Stage;\r\nimport org.example.InputScanner;\r\nimport org.example.controller.*;\r\nimport org.example.controller.userControllers.LoginMenuController;\r\nimport org.example.controller.userControllers.ProfileMenuController;\r\nimport org.example.controller.userControllers.SignupMenuController;\r\nimport org.example.view.GameStartMenu;\r\nimport org.example.view.enums.commands.LoginMenuEnum;\r\nimport org.example.view.enums.outputs.LoginMenuOutput;\r\nimport org.example.view.enums.outputs.SignupMenuOutput;\r\n\r\nimport java.net.URL;\r\nimport java.util.regex.Matcher;\r\n\r\npublic class LoginMenu extends MainMenu {\r\n    private final LoginMenuController loginMenuController = new LoginMenuController();\r\n\r\n    private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);\r\n    public TextField passwordShow;\r\n    public CheckBox changeMode;\r\n    public PasswordField password;\r\n    public TextField username;\r\n    public Label errorUsername;\r\n    public Label errorPassword;\r\n    public Label successfulLogin;\r\n    private Matcher loginMenuMatcher;\r\n    public static Stage stage;\r\n\r\n    @FXML\r\n    void changeMode(ActionEvent event){\r\n        if(changeMode.isSelected()){\r\n            passwordShow.setText(password.getText());\r\n            passwordShow.setVisible(true);\r\n            password.setVisible(false);\r\n            return;\r\n        }\r\n        password.setText(passwordShow.getText());\r\n        password.setVisible(true);\r\n        passwordShow.setVisible(false);\r\n    }\r\n\r\n    protected\r\n    String successfulMessage = String.format(\"-fx-text-fill: Green;\");\r\n    String errorMessage = String.format(\"-fx-text-fill: RED;\");\r\n    String errorStyle = String.format(\"-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;\");\r\n    String successStyle = String.format(\"-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;\");\r\n    @Override\r\n    public void start (Stage stage) throws Exception\r\n    {\r\n        LoginMenu.stage = stage ;\r\n        URL url = MainMenu.class.getResource(\"/FXML/Login.fxml\");\r\n        Pane pane = FXMLLoader.load(url);\r\n        Scene scene = new Scene(pane);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n\r\n\r\n    }\r\n\r\n /*   public void run() {\r\n        GameInformation.setCurrentPlayer(GameDataBase.getUserByUsername(loginMenuController.getUsername()));\r\n        String userInput;\r\n        System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());\r\n        ProfileMenu profileMenu = new ProfileMenu(loginMenuController);\r\n        while (true) {\r\n            userInput = InputScanner.getScanner().nextLine();\r\n            if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex())) {\r\n                loginMenuController.logOut();\r\n                return;\r\n            } else if (userInput.matches(LoginMenuEnum.EXIT.getRegex())) {\r\n                System.exit(0);\r\n            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {\r\n                profileMenu.changeUserUsername(loginMenuMatcher);\r\n            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PASSWORD)) != null) {\r\n                profileMenu.changeUserPassword(loginMenuMatcher);\r\n            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_EMAIL)) != null) {\r\n                profileMenu.changeUserEmail(loginMenuMatcher);\r\n            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_NICKNAME)) != null) {\r\n                profileMenu.changeUserNickname(loginMenuMatcher);\r\n            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_SLOGAN)) != null) {\r\n                profileMenu.changeUserSlogan(loginMenuMatcher);\r\n            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.REMOVE_SLOGAN) != null) {\r\n                profileMenu.removeUserSlogan();\r\n            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_PROFILE) != null) {\r\n                profileMenu.displayUserProfile();\r\n            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_SLOGAN) != null) {\r\n                profileMenu.displayUserSlogan();\r\n            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_RANK) != null) {\r\n                profileMenu.displayUserRank();\r\n            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {\r\n                profileMenu.displayUserInfo();\r\n            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.START_NEW_GAME)) != null) {\r\n                GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);\r\n                gameStartMenu.startNewGame();\r\n            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ADD_PLAYER)) != null) {\r\n                gameStartMenu.addPlayer(loginMenuController.getUsername(), loginMenuMatcher);\r\n            } else if (GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ENTER_GAME) != null) {\r\n                new GameMenu(loginMenuController).run();\r\n//                new UserTurn(loginMenuController).enterGame();\r\n            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.LOGOUT) != null) {\r\n                System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());\r\n                break;\r\n            } else {\r\n                System.out.println(ProfileMenuOutput.INVALID_COMMAND.getOutput());\r\n            }\r\n        }\r\n    }\r\n*/\r\n    public void loginInCheck(String username , String password) {\r\n        classify(username, password);\r\n        LoginMenuOutput status = loginMenuController.loginUser();\r\n        if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {\r\n            System.out.println(status.getOutput());\r\n            successfulLogin.setStyle(successfulMessage);\r\n            successfulLogin.setText(\"successful login\");\r\n          //  run();\r\n        } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){\r\n            successfulLogin.setStyle(errorMessage);\r\n            successfulLogin.setText(\"username and password doesn't match\");\r\n        }\r\n        else if(status.equals(LoginMenuOutput.USER_DOES_NOT_EXIST)){\r\n            successfulLogin.setStyle(errorMessage);\r\n            successfulLogin.setText(\"username doesn't exist\");\r\n        }\r\n\r\n    }\r\n\r\n    private void classify(String username , String pass) {\r\n        loginMenuController.setUsername(username);\r\n        String password = pass;\r\n        byte[] salt = JsonController.makeSalt();\r\n        loginMenuController.setPassword(JsonController.getPassHashSha256(password, salt));\r\n        loginMenuController.setClipBoard(password);\r\n       /* if (matcher.group(\"logged\") != null)\r\n            loginMenuController.setStayLoggedInFlag(true);*/\r\n    }\r\n\r\n    protected void forgetPassword(String username) {\r\n        loginMenuController.setUsername(username);\r\n        if (loginMenuController.checkMatchUsername()) {\r\n            System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());\r\n            while (true) {\r\n                String answer = InputScanner.getScanner().nextLine();\r\n                byte[] salt = JsonController.makeSalt();\r\n                answer = JsonController.getPassHashSha256(answer, salt);\r\n                if (loginMenuController.checkSecurityQuestion(answer)) {\r\n                    resettingUserPassword(username);\r\n                } else if (LoginMenuEnum.getMatcher(answer, LoginMenuEnum.QUIT_THE_PROCESS) != null) {\r\n                    break;\r\n                } else\r\n                    System.out.println(LoginMenuOutput.WRONG_ANSWER_FOR_SECURITY_QUESTION.getOutput());\r\n            }\r\n        }\r\n        System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());\r\n    }\r\n\r\n    private void resettingUserPassword(String username) {\r\n        System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());\r\n        String newPassword = InputScanner.getScanner().nextLine();\r\n        SignupMenuController signupMenuController = new SignupMenuController();\r\n        signupMenuController.setUsername(username);\r\n        signupMenuController.setPassword(newPassword);\r\n        SignupMenuOutput status = SignupMenuController.passwordCheckErrors(newPassword);\r\n        if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {\r\n            System.out.println(LoginMenuOutput.ENTER_YOUR_PASSWORD_AGAIN.getOutput());\r\n            while (true) {\r\n                newPassword = InputScanner.getScanner().nextLine();\r\n                signupMenuController.setClipBoard(newPassword);\r\n                if (signupMenuController.checkPasswordWithConfiguration()) {\r\n                    System.out.println(LoginMenuOutput.PASSWORD_SET_SUCCESSFULLY.getOutput());\r\n                    signupMenuController.setPassword(newPassword);\r\n                    signupMenuController.changeForgetPassword();\r\n                    return;\r\n                } else if (newPassword.matches(LoginMenuEnum.QUIT_THE_PROCESS.getRegex())) {\r\n                    return;\r\n                } else\r\n                    System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());\r\n            }\r\n        }\r\n    }\r\n\r\n    public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {\r\n        loginMenuController.setUsername(name);\r\n        loginMenuController.setPassword(password);\r\n        loginMenuController.setNickname(nickname);\r\n        loginMenuController.setEmail(email);\r\n        loginMenuController.setSlogan(slogan);\r\n        loginMenuController.setPassRecoveryQuestion(passwordRecoveryQuestion);\r\n        loginMenuController.setPassRecoveryAnswer(passwordRecoveryAnswer);\r\n        loginMenuController.setRank(Integer.parseInt(rank));\r\n        loginMenuController.setHighScore(Integer.parseInt(highScore));\r\n       // run();\r\n    }\r\n\r\n    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {\r\n        new MainMenu().start(LoginMenu.stage);\r\n    }\r\n\r\n    public void forgotPassword(MouseEvent mouseEvent) throws Exception{\r\n        new ForgotPassword().start(LoginMenu.stage);\r\n    }\r\n\r\n\r\n    public void loginUser(MouseEvent mouseEvent) {\r\n        if(password.getText().isBlank())\r\n        {\r\n            errorPassword.setStyle(errorMessage);\r\n            errorPassword.setText(\"password field is blank\");\r\n            password.setStyle(errorStyle);\r\n        }\r\n        if(username.getText().isBlank())\r\n        {\r\n            errorUsername.setStyle(errorMessage);\r\n            errorUsername.setText(\"password field is blank\");\r\n            username.setStyle(errorStyle);\r\n        }\r\n        else if(!password.getText().isBlank() && !username.getText().isBlank())\r\n        {\r\n            loginInCheck(username.getText() , password.getText());\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/LoginMenu.java b/src/main/java/org/example/view/userView/LoginMenu.java
+--- a/src/main/java/org/example/view/userView/LoginMenu.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/view/userView/LoginMenu.java	(date 1687555938240)
+@@ -122,7 +122,7 @@
+ */
+     public void loginInCheck(String username , String password) {
+         classify(username, password);
+-        LoginMenuOutput status = loginMenuController.loginUser();
++        LoginMenuOutput status = loginMenuController.loginUser(password);
+         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
+             System.out.println(status.getOutput());
+             successfulLogin.setStyle(successfulMessage);
+@@ -149,7 +149,7 @@
+             loginMenuController.setStayLoggedInFlag(true);*/
+     }
+ 
+-    protected void forgetPassword(String username) {
++  /*  protected void forgetPassword(String username) {
+         loginMenuController.setUsername(username);
+         if (loginMenuController.checkMatchUsername()) {
+             System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
+@@ -167,8 +167,8 @@
+         }
+         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
+     }
+-
+-    private void resettingUserPassword(String username) {
++*/
++ /*   private void resettingUserPassword(String username) {
+         System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());
+         String newPassword = InputScanner.getScanner().nextLine();
+         SignupMenuController signupMenuController = new SignupMenuController();
+@@ -191,7 +191,7 @@
+                     System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());
+             }
+         }
+-    }
++    }*/
+ 
+     public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {
+         loginMenuController.setUsername(name);
+Index: src/main/java/org/example/view/userView/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.view.userView;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.event.EventHandler;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.FlowPane;\r\nimport javafx.scene.layout.HBox;\r\nimport javafx.scene.layout.Pane;\r\nimport javafx.scene.layout.StackPane;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.shape.Circle;\r\nimport javafx.stage.Popup;\r\nimport javafx.stage.Stage;\r\nimport javafx.stage.StageStyle;\r\nimport org.example.controller.MarketController;\r\n\r\nimport java.net.URL;\r\nimport java.util.HashMap;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class Menu extends Application implements Initializable {\r\n\r\n        private static Stage stage;\r\n        @FXML\r\n        private Button button;\r\n\r\nMarketController marketController = new MarketController();\r\n        @FXML\r\n        public void showMarket(MouseEvent mouseEvent) {\r\n                try {\r\n                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(\"/FXML/Market.fxml\"));\r\n                        Image image2 = new Image((getClass().getResource(\"/images/0_0img26.png\").toString()));\r\n                        ImageView imageView = new ImageView(image2);\r\n                        imageView.setLayoutX(398.0);\r\n                        Pane root = fxmlLoader.load();\r\n                        Stage stage = new Stage();\r\n                        EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {\r\n                                stage.close();\r\n                        };\r\n                        imageView.setOnMouseClicked(backToGame);\r\n                        stage.setTitle(\"market\");\r\n                        root.getChildren().add(imageView);\r\n                        stage.initStyle(StageStyle.UNDECORATED);\r\n                        stage.setScene(new Scene(root));\r\n                        stage.show();\r\n                     /*   HashMap<String, Integer> number = new HashMap<>(marketController.show1());\r\n\r\n                       // Market.stage = stage;\r\n                        URL url = SignupMenu.class.getResource(\"/FXML/Market.fxml\");\r\n                        Pane pane = FXMLLoader.load(url);\r\n                        Scene scene = new Scene(pane);\r\n                        stage.setScene(scene);\r\n                        stage.show();*/\r\n\r\n                } catch (Exception e){\r\n                        System.out.println(e);\r\n                }\r\n        }\r\n\r\n        @Override\r\n        public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n        }\r\n\r\n        @Override\r\n        public void start(Stage stage) throws Exception {\r\n                Menu.stage = stage;\r\n                URL url = SignupMenu.class.getResource(\"/FXML/Menu.fxml\");\r\n                Pane pane = FXMLLoader.load(url);\r\n                Scene scene = new Scene(pane);\r\n                stage.setScene(scene);\r\n                stage.show();\r\n        }\r\n\r\n        @FXML\r\n        public void showGovermentMenu(MouseEvent mouseEvent) {\r\n                try {\r\n                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(\"/FXML/Goverment.fxml\"));\r\n                        Parent root = (Parent) fxmlLoader.load();\r\n                        Stage stage = new Stage();\r\n                        stage.setTitle(\"market\");\r\n                        stage.setScene(new Scene(root));\r\n                        stage.show();\r\n                }catch (Exception e){\r\n                        System.out.println(\"can not\");\r\n                }\r\n        }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/Menu.java b/src/main/java/org/example/view/userView/Menu.java
+--- a/src/main/java/org/example/view/userView/Menu.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/view/userView/Menu.java	(date 1687555938241)
+@@ -1,5 +1,9 @@
+ package org.example.view.userView;
+ 
++import javafx.animation.Interpolator;
++import javafx.animation.KeyFrame;
++import javafx.animation.KeyValue;
++import javafx.animation.Timeline;
+ import javafx.application.Application;
+ import javafx.event.ActionEvent;
+ import javafx.event.EventHandler;
+@@ -22,8 +26,10 @@
+ import javafx.stage.Popup;
+ import javafx.stage.Stage;
+ import javafx.stage.StageStyle;
++import javafx.util.Duration;
+ import org.example.controller.MarketController;
+ 
++import java.io.IOException;
+ import java.net.URL;
+ import java.util.HashMap;
+ import java.util.ResourceBundle;
+@@ -31,9 +37,12 @@
+ public class Menu extends Application implements Initializable {
+ 
+         private static Stage stage;
++        public Button button1;
++        public Pane parentFirst;
+         @FXML
+         private Button button;
+-
++        int number = 0 ;
++        Parent parent;
+ MarketController marketController = new MarketController();
+         @FXML
+         public void showMarket(MouseEvent mouseEvent) {
+@@ -67,6 +76,27 @@
+                 }
+         }
+ 
++        public void clicked(ActionEvent event) throws IOException {
++                ++number;
++                System.out.println(number);
++                if(number%2 == 0){
++                        parentFirst.getChildren().remove(parent);
++                        return;
++                }
++                parent = FXMLLoader.load(getClass().getResource("/FXML/Goverment.fxml"));
++
++                Scene scene = button.getScene();
++                parent.translateXProperty().set(scene.getHeight());
++                parent.setLayoutX(0);
++                parent.setLayoutY(217);
++                parentFirst.getChildren().add(parent);
++                Timeline timeline = new Timeline();
++                KeyValue keyValue = new KeyValue(parent.translateXProperty(), 0, Interpolator.EASE_IN);
++                KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), keyValue);
++                timeline.getKeyFrames().add(keyFrame);
++                timeline.play();
++
++        }
+         @Override
+         public void initialize(URL url, ResourceBundle resourceBundle) {
+ 
+@@ -79,6 +109,7 @@
+                 Pane pane = FXMLLoader.load(url);
+                 Scene scene = new Scene(pane);
+                 stage.setScene(scene);
++                //stage.setFullScreen(true);
+                 stage.show();
+         }
+ 
+@@ -96,4 +127,6 @@
+                 }
+         }
+ 
++
++
+ }
+\ No newline at end of file
+Index: src/main/resources/FXML/Menu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.Pane?>\r\n\r\n<Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.Menu\">\r\n   <children>\r\n      <Button fx:id=\"button\" layoutX=\"249.0\" layoutY=\"154.0\" mnemonicParsing=\"false\" onMouseClicked=\"#showMarket\" prefHeight=\"63.0\" prefWidth=\"103.0\" text=\"Market\" />\r\n      <ImageView fx:id=\"showUp\" fitHeight=\"35.0\" fitWidth=\"72.0\" layoutX=\"14.0\" layoutY=\"351.0\" onMouseClicked=\"#showGovermentMenu\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/show.png\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</Pane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/Menu.fxml b/src/main/resources/FXML/Menu.fxml
+--- a/src/main/resources/FXML/Menu.fxml	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/resources/FXML/Menu.fxml	(date 1687555938256)
+@@ -1,17 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+ <?import javafx.scene.control.Button?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.Pane?>
+ 
+-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.Menu">
++<Pane fx:id="parentFirst" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.Menu">
+    <children>
+       <Button fx:id="button" layoutX="249.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#showMarket" prefHeight="63.0" prefWidth="103.0" text="Market" />
+-      <ImageView fx:id="showUp" fitHeight="35.0" fitWidth="72.0" layoutX="14.0" layoutY="351.0" onMouseClicked="#showGovermentMenu" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@../images/show.png" />
+-         </image>
+-      </ImageView>
++      <Button fx:id="button1" layoutX="572.0" layoutY="271.0" mnemonicParsing="false" onAction="#clicked" prefHeight="129.0" prefWidth="29.0" style="-fx-background-color: black;" text="Button" textFill="#faf8f8" />
+    </children>
+ </Pane>
+Index: src/main/java/org/example/view/userView/GameInformationMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/GameInformationMenu.java b/src/main/java/org/example/view/userView/GameInformationMenu.java
+new file mode 100644
+--- /dev/null	(date 1687555938238)
++++ b/src/main/java/org/example/view/userView/GameInformationMenu.java	(date 1687555938238)
+@@ -0,0 +1,24 @@
++package org.example.view.userView;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.layout.Pane;
++import javafx.stage.Stage;
++
++import java.net.URL;
++
++public class GameInformationMenu extends Application {
++    private static Stage stage;
++
++    @Override
++    public void start(Stage stage) throws Exception {
++        GameInformationMenu.stage = stage;
++        URL url = SignupMenu.class.getResource("/FXML/GameInformation.fxml");
++        Pane pane = FXMLLoader.load(url);
++        Scene scene = new Scene(pane);
++        stage.setScene(scene);
++        //stage.setFullScreen(true);
++        stage.show();
++    }
++}
+Index: src/main/resources/FXML/Market.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"588.0\" prefWidth=\"433.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.Market\">\r\n   <children>\r\n      <ImageView fitHeight=\"588.0\" fitWidth=\"441.0\" layoutX=\"-3.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/IMG_5997(1).JPG\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"wood\" fitHeight=\"42.0\" fitWidth=\"43.0\" layoutX=\"71.0\" layoutY=\"78.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/wood.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"bread\" fitHeight=\"29.0\" fitWidth=\"44.0\" layoutX=\"335.0\" layoutY=\"316.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/bread.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"apple\" fitHeight=\"29.0\" fitWidth=\"44.0\" layoutX=\"71.0\" layoutY=\"440.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/apple.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"iron\" fitHeight=\"33.0\" fitWidth=\"39.0\" layoutX=\"335.0\" layoutY=\"253.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/iron.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"rock\" fitHeight=\"29.0\" fitWidth=\"33.0\" layoutX=\"77.0\" layoutY=\"196.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/rock.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"spear\" fitHeight=\"43.0\" fitWidth=\"41.0\" layoutX=\"329.0\" layoutY=\"367.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/spear.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"meat\" fitHeight=\"33.0\" fitWidth=\"46.0\" layoutX=\"330.0\" layoutY=\"130.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/meat.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"vest\" fitHeight=\"43.0\" fitWidth=\"41.0\" layoutX=\"331.0\" layoutY=\"71.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/vest.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"archer\" fitHeight=\"35.0\" fitWidth=\"42.0\" layoutX=\"71.0\" layoutY=\"371.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/archer.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"sword\" fitHeight=\"37.0\" fitWidth=\"38.0\" layoutX=\"335.0\" layoutY=\"436.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/sword.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"wheat\" fitHeight=\"48.0\" fitWidth=\"16.0\" layoutX=\"85.0\" layoutY=\"250.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/wheat.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"pitch\" fitHeight=\"33.0\" fitWidth=\"29.0\" layoutX=\"79.0\" layoutY=\"314.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/pitch.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"hop\" fitHeight=\"35.0\" fitWidth=\"27.0\" layoutX=\"82.0\" layoutY=\"138.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/hop.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fx:id=\"lather\" fitHeight=\"40.0\" fitWidth=\"26.0\" layoutX=\"81.0\" layoutY=\"491.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/lather.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text layoutX=\"175.0\" layoutY=\"54.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Market\" wrappingWidth=\"83.82475280761707\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"24.0\" />\r\n         </font>\r\n      </Text>\r\n      <ImageView fx:id=\"mace\" fitHeight=\"40.0\" fitWidth=\"42.0\" layoutX=\"333.0\" layoutY=\"190.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/mace.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Label layoutX=\"129.0\" layoutY=\"87.0\" text=\"Wood\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"126.0\" layoutY=\"502.0\" text=\"Lather Armor\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"129.0\" layoutY=\"445.0\" text=\"Apple\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"129.0\" layoutY=\"384.0\" text=\"Archer\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"129.0\" layoutY=\"320.0\" text=\"Pitch\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"129.0\" layoutY=\"261.0\" text=\"Wheat\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"129.0\" layoutY=\"201.0\" text=\"Rock\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"129.0\" layoutY=\"146.0\" text=\"Hop\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"279.0\" layoutY=\"87.0\" text=\"Vest\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"272.0\" layoutY=\"445.0\" text=\"Sword\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"274.0\" layoutY=\"384.0\" text=\"Spear\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"274.0\" layoutY=\"321.0\" text=\"Bread\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"280.0\" layoutY=\"261.0\" text=\"Iron\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"276.0\" layoutY=\"201.0\" text=\"Mace\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"277.0\" layoutY=\"146.0\" text=\"Meat\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <ImageView fx:id=\"cheese\" fitHeight=\"29.0\" fitWidth=\"36.0\" layoutX=\"336.0\" layoutY=\"497.0\" onMousePressed=\"#showResource\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/cheese.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Label layoutX=\"272.0\" layoutY=\"502.0\" text=\"Cheese\">\r\n         <font>\r\n            <Font name=\"Century\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n   </children>\r\n</Pane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/Market.fxml b/src/main/resources/FXML/Market.fxml
+--- a/src/main/resources/FXML/Market.fxml	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/resources/FXML/Market.fxml	(date 1687555938255)
+@@ -179,5 +179,6 @@
+             <Font name="Century" size="14.0" />
+          </font>
+       </Label>
++      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="402.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+ </Pane>
+Index: src/main/resources/FXML/Goverment.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.layout.AnchorPane?>\r\n\r\n\r\n<AnchorPane prefHeight=\"100.0\" prefWidth=\"219.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.GovermentMenu\">\r\n\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/Goverment.fxml b/src/main/resources/FXML/Goverment.fxml
+--- a/src/main/resources/FXML/Goverment.fxml	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/resources/FXML/Goverment.fxml	(date 1687555938254)
+@@ -1,8 +1,20 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.layout.AnchorPane?>
+-
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.Pane?>
+ 
+-<AnchorPane prefHeight="100.0" prefWidth="219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovermentMenu">
+-
+-</AnchorPane>
++<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="192.0" prefWidth="571.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovermentMenu">
++   <children>
++      <ImageView fitHeight="126.0" fitWidth="571.0" layoutY="66.0" pickOnBounds="true">
++         <image>
++            <Image url="@../images/0_0img0.png" />
++         </image>
++      </ImageView>
++      <ImageView fitHeight="31.0" fitWidth="27.0" layoutX="364.0" layoutY="86.0" onMouseClicked="#gameInformation" pickOnBounds="true">
++         <image>
++            <Image url="@../images/0_0img25.png" />
++         </image>
++      </ImageView>
++   </children>
++</Pane>
+Index: src/main/java/org/example/view/userView/SetRate.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/SetRate.java b/src/main/java/org/example/view/userView/SetRate.java
+new file mode 100644
+--- /dev/null	(date 1687555938241)
++++ b/src/main/java/org/example/view/userView/SetRate.java	(date 1687555938241)
+@@ -0,0 +1,47 @@
++package org.example.view.userView;
++
++import javafx.application.Application;
++import javafx.event.ActionEvent;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.scene.input.MouseEvent;
++import javafx.scene.layout.Pane;
++import javafx.stage.Stage;
++
++import java.net.URL;
++
++public class SetRate extends Application {
++
++    private static Stage stage;
++    public Button setTaxRate;
++    public Button setFoodRate;
++    public Button setFearRate;
++
++    @Override
++    public void start(Stage stage) throws Exception {
++        SetRate.stage = stage;
++        URL url = SignupMenu.class.getResource("/FXML/setRateOptions.fxml");
++        Pane pane = FXMLLoader.load(url);
++        Scene scene = new Scene(pane);
++        scene.getStylesheets().add(getClass().getResource("/Css/setRateOptions.css").toExternalForm());
++        stage.setScene(scene);
++        //stage.setFullScreen(true);
++        stage.show();
++    }
++
++    public void setRate(ActionEvent event) {
++    }
++
++    public void backToSetRate(MouseEvent event) {
++    }
++
++    public void setFearRate(ActionEvent event) {
++    }
++
++    public void setFoodRate(ActionEvent event) {
++    }
++
++    public void setTaxRate(ActionEvent event) {
++    }
++}
+Index: src/main/resources/FXML/forgotPassword.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.ForgotPassword\">\r\n   <children>\r\n      <Label layoutX=\"213.0\" layoutY=\"34.0\" text=\"Forgot My Password\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"199.0\" layoutY=\"124.0\" text=\"username\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"199.0\" layoutY=\"239.0\" text=\"new password\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button layoutX=\"256.0\" layoutY=\"299.0\" mnemonicParsing=\"false\" onMouseClicked=\"#confirmChangePassword\" prefHeight=\"49.0\" prefWidth=\"88.0\" text=\"Confirm\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font>\r\n      </Button>\r\n      <PasswordField fx:id=\"passwordField\" layoutX=\"300.0\" layoutY=\"237.0\" />\r\n      <Label fx:id=\"errorPassword\" layoutX=\"199.0\" layoutY=\"272.0\" prefHeight=\"17.0\" prefWidth=\"298.0\" />\r\n      <Label fx:id=\"changePassword\" alignment=\"CENTER\" contentDisplay=\"CENTER\" layoutX=\"218.0\" layoutY=\"360.0\" prefHeight=\"17.0\" prefWidth=\"156.0\" />\r\n   </children>\r\n</Pane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/forgotPassword.fxml b/src/main/resources/FXML/forgotPassword.fxml
+--- a/src/main/resources/FXML/forgotPassword.fxml	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/resources/FXML/forgotPassword.fxml	(date 1687555938256)
+@@ -31,5 +31,7 @@
+       <PasswordField fx:id="passwordField" layoutX="300.0" layoutY="237.0" />
+       <Label fx:id="errorPassword" layoutX="199.0" layoutY="272.0" prefHeight="17.0" prefWidth="298.0" />
+       <Label fx:id="changePassword" alignment="CENTER" contentDisplay="CENTER" layoutX="218.0" layoutY="360.0" prefHeight="17.0" prefWidth="156.0" />
++      <Label fx:id="errorUsername" layoutX="204.0" layoutY="151.0" prefHeight="17.0" prefWidth="234.0" text=" " />
++      <Label fx:id="errorAnswer" layoutX="213.0" layoutY="210.0" prefHeight="17.0" prefWidth="234.0" />
+    </children>
+ </Pane>
+Index: src/main/resources/Css/MainMenuStyle.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/Css/MainMenuStyle.css b/src/main/resources/Css/MainMenuStyle.css
+new file mode 100644
+--- /dev/null	(date 1687555938244)
++++ b/src/main/resources/Css/MainMenuStyle.css	(date 1687555938244)
+@@ -0,0 +1,19 @@
++#custom .thumb {
++    -fx-background-image :url("0_0img279.png");
++    -fx-background-color: transparent;
++
++    -fx-pref-height: 35;
++
++}
++
++#custom .track {
++   -fx-background-image :url("track.png");
++   -fx-background-size: 170;
++   -fx-pref-height: 35;
++   -fx-pref-width: 900;
++}
++
++.root{
++-fx-background-image:url("0_0img6.png");
++-fx-background-size: 599 152;
++}
+\ No newline at end of file
+Index: src/main/java/org/example/controller/GameMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.controller;\r\n\r\nimport org.example.model.building.Building;\r\nimport org.example.model.gameData.GameInformation;\r\nimport org.example.model.gameData.Government;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\n\r\npublic class GameMenuController {\r\n    private final Government government;\r\n    public GameMenuController(String player) {\r\n        government = Government.findGovernmentWithUsername(player);\r\n    }\r\n\r\n    public String showFoodRate() {\r\n        String foodRate = \"your food rate is \" + government.getFoodRate() + \"\\nmeans: \";\r\n        switch (government.getFoodRate()) {\r\n            case -2:\r\n                foodRate += \"you feed people 1 unit\\nmonthly your popularity decreases by 8 unit\";\r\n                break;\r\n            case -1:\r\n                foodRate += \"you feed people 0.5 unit\\nmonthly your popularity decreases by 4 unit\";\r\n                break;\r\n            case 0:\r\n                foodRate += \"you feed people 1.5 unit\\nmonthly your popularity increases by 0 unit\";\r\n                break;\r\n            case 1:\r\n                foodRate += \"you feed people 1.5 unit\\nmonthly your popularity increases by 4 unit\";\r\n                break;\r\n            case 2:\r\n                foodRate += \"you feed people 2 units\\nmonthly your popularity increases by 8 unit\";\r\n                break;\r\n        }\r\n        return foodRate;\r\n    }\r\n\r\n    public String showTaxRate() {\r\n        String taxRate = \"your tax rate is \" + government.getTaxRate() + \"\\nmeans: \";\r\n        switch (government.getTaxRate()) {\r\n            case -3:\r\n                taxRate += \"0 tax\\nyou give people 1 coin\\nmonthly your popularity increases by 7 unit\";\r\n                break;\r\n            case -2:\r\n                taxRate += \"0 tax\\nyou give people 0.8 coin\\nmonthly your popularity increases by 5 unit\";\r\n                break;\r\n            case -1:\r\n                taxRate += \"0 tax\\nyou give people 0.6 coin\\nmonthly your popularity increases by 3 unit\";\r\n                break;\r\n            case 0:\r\n                taxRate += \"0 tax\\nyou give people 0 coin\\nmonthly your popularity increases by 1 unit\";\r\n                break;\r\n            case 1:\r\n                taxRate += \"0.6 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 2 unit\";\r\n                break;\r\n            case 2:\r\n                taxRate += \"0.8 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 4 unit\";\r\n                break;\r\n            case 3:\r\n                taxRate += \"1 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 6 unit\";\r\n                break;\r\n            case 4:\r\n                taxRate += \"1/2 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 8 unit\";\r\n                break;\r\n            case 5:\r\n                taxRate += \"1/4 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 12 unit\";\r\n                break;\r\n            case 6:\r\n                taxRate += \"1/6 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 16 unit\";\r\n                break;\r\n            case 7:\r\n                taxRate += \"1/8 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 20 unit\";\r\n                break;\r\n            case 8:\r\n                taxRate += \"2 tax\\nyou give people 0 coin\\nmonthly your popularity decreases by 24 unit\";\r\n        }\r\n        return taxRate;\r\n    }\r\n\r\n    public void setFoodRate(int rate) {\r\n        if (government.checkFoodVariety() == 0)\r\n            rate = -2;\r\n        switch (rate) {\r\n            case -2:\r\n                government.setPopularity(government.getPopularity() - 8 + government.checkFoodVariety());\r\n                government.setFoodRate(-2);\r\n                break;\r\n            case -1:\r\n                government.setPopularity(government.getPopularity() - 4 + government.checkFoodVariety());\r\n                government.changeFoodGivingPeople(0.5);\r\n                government.setFoodRate(-1);\r\n                break;\r\n            case 0:\r\n                government.changeFoodGivingPeople(1.0);\r\n                government.setFoodRate(0);\r\n                break;\r\n            case 1:\r\n                government.setPopularity(government.getPopularity() + 4 + government.checkFoodVariety());\r\n                government.changeFoodGivingPeople(1.5);\r\n                government.setFoodRate(1);\r\n                break;\r\n            case 2:\r\n                government.setPopularity(government.getPopularity() + 8 + government.checkFoodVariety());\r\n                government.changeFoodGivingPeople(2.0);\r\n                government.setFoodRate(2);\r\n                break;\r\n        }\r\n    }\r\n    public void setTaxRate(int rate) {\r\n        if (Double.compare(government.getCoins(), 0.00) == 0)\r\n            government.setTaxRate(0);\r\n        else {\r\n            switch (rate) {\r\n                case -3:\r\n                    government.setCoins(government.getCoins() - government.getPeople());\r\n                    government.setTaxRate(-3);\r\n                    break;\r\n                case -2:\r\n                    government.setCoins(government.getCoins() - 0.8 * government.getPeople());\r\n                    government.setTaxRate(-2);\r\n                    break;\r\n                case -1:\r\n                    government.setCoins(government.getCoins() - 0.6 * government.getPeople());\r\n                    government.setTaxRate(-1);\r\n                    break;\r\n                case 1:\r\n                    government.setCoins(government.getCoins() + 0.6 * government.getPeople());\r\n                    government.setTaxRate(1);\r\n                    break;\r\n                case 2:\r\n                    government.setCoins(government.getCoins() + 0.8 * government.getPeople());\r\n                    government.setTaxRate(2);\r\n                    break;\r\n                case 3:\r\n                    government.setCoins(government.getCoins() + government.getPeople());\r\n                    government.setTaxRate(3);\r\n                    break;\r\n                case 4:\r\n                    government.setCoins(government.getCoins() + 0.5 * government.getPeople());\r\n                    government.setTaxRate(4);\r\n                    break;\r\n                case 5:\r\n                    government.setCoins(government.getCoins() + 0.25 * government.getPeople());\r\n                    government.setTaxRate(5);\r\n                    break;\r\n                case 6:\r\n                    government.setCoins(government.getCoins() + 0.17 * government.getPeople());\r\n                    government.setTaxRate(6);\r\n                    break;\r\n                case 7:\r\n                    government.setCoins(government.getCoins() + 0.13 * government.getPeople());\r\n                    government.setTaxRate(7);\r\n                    break;\r\n                case 8:\r\n                    government.setCoins(government.getCoins() + 2 * government.getPeople());\r\n                    government.setTaxRate(8);\r\n                    break;\r\n            }\r\n        }\r\n    }\r\n\r\n    public boolean setTaxRateCheckInput(int rate) {\r\n        return rate <= 8 && rate >= -3;\r\n    }\r\n\r\n    public boolean setFearRateCheckInput(int rate) {\r\n        return rate <= 5 && rate >= -5;\r\n    }\r\n\r\n\r\n    public void religionAccordingToChurch() {\r\n        int number = government.getPeople() / 4;\r\n        government.setPopularity(government.getPopularity() + 2 * number + 1);\r\n    }\r\n\r\n    public void religionAccordingToCathedral() {\r\n        int number = government.getPeople() / 4;\r\n        government.setPopularity(government.getPopularity() + 2 * number + 2);\r\n    }\r\n\r\n    public void setFearRate(int rate) {\r\n        government.setFearRate(rate);\r\n        ArrayList<Building> building = GameInformation.getAllBuildings();\r\n        switch (rate) {\r\n            //TODO: add code to Increase in the production of buildings by workers\r\n            case -5, -4, -3, -2, -1, 0:\r\n                for (int i = 0; i != building.size(); i++) {\r\n                    Building building1 = (Building) building.get(i);\r\n                }\r\n                if (government.getUnitWallTargetNumber() != 0) {\r\n                    government.getUnitWallTarget().setAttackingPower(government.getUnitWallTarget().getAttackingPower() - 1);\r\n                }\r\n                if (government.getLauncherUnitNumber() != 0) {\r\n                    government.getLauncherUnit().setThrowRange(government.getLauncherUnit().getThrowRageForCharging() - 1);\r\n                }\r\n                if (government.getInfantryUnitNumber() != 0) {\r\n                    government.getInfantryUnit().setAttackingPower(government.getInfantryUnit().getAttackingPower() - 1);\r\n                }\r\n                break;\r\n            case 1:\r\n                setAttackingPowers(1);\r\n                break;\r\n            case 2:\r\n                setAttackingPowers(2);\r\n                break;\r\n            case 3:\r\n                setAttackingPowers(3);\r\n                break;\r\n            case 4:\r\n                setAttackingPowers(4);\r\n                break;\r\n            case 5:\r\n                setAttackingPowers(5);\r\n                break;\r\n        }\r\n    }\r\n\r\n    private void setAttackingPowers(int rate) {\r\n        if (government.getUnitWallTargetNumber() != 0) {\r\n            government.getUnitWallTarget().setAttackingPower(government.getUnitWallTarget().getAttackingPower() + rate);\r\n        }\r\n        if (government.getLauncherUnitNumber() != 0) {\r\n            government.getLauncherUnit().setThrowRange(government.getLauncherUnit().getThrowRageForCharging() + rate);\r\n        }\r\n        if (government.getInfantryUnitNumber() != 0) {\r\n            government.getInfantryUnit().setAttackingPower(government.getInfantryUnit().getAttackingPower() + rate);\r\n        }\r\n    }\r\n\r\n    public HashMap<String, Double> foodList() {\r\n        return government.getFoods();\r\n    }\r\n\r\n    public int showPopularity() {\r\n        return government.getPopularity();\r\n    }\r\n\r\n    public boolean setFoodRateCheckInput(int rateFood) {\r\n        return rateFood >= -2 && rateFood <= 2;\r\n    }\r\n\r\n    public void governmentStatus() {\r\n        System.out.println(\"coins: \" + government.getCoins());\r\n        System.out.println(\"tax rate: \" + government.getTaxRate());\r\n        System.out.println(\"food rate: \" + government.getFoodRate());\r\n        System.out.println(\"fear rate: \" + government.getFearRate());\r\n        System.out.println(\"religion rate: \" + government.getReligion());\r\n        System.out.println(\"people: \" + government.getPeople());\r\n        System.out.println(\"workers: \" + government.getWorkers());\r\n        System.out.println(\"popularity: \" + government.getPopularity());\r\n\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/controller/GameMenuController.java b/src/main/java/org/example/controller/GameMenuController.java
+--- a/src/main/java/org/example/controller/GameMenuController.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/controller/GameMenuController.java	(date 1687555938234)
+@@ -8,71 +8,83 @@
+ import java.util.HashMap;
+ 
+ public class GameMenuController {
+-    private final Government government;
+-    public GameMenuController(String player) {
++    private Government government;
++   /* public GameMenuController(String player) {
+         government = Government.findGovernmentWithUsername(player);
+-    }
++    }*/
+ 
+-    public String showFoodRate() {
+-        String foodRate = "your food rate is " + government.getFoodRate() + "\nmeans: ";
+-        switch (government.getFoodRate()) {
++    public String showFoodRate(int number) {
++        String foodRate = "";
++        switch (number) {
+             case -2:
+-                foodRate += "you feed people 1 unit\nmonthly your popularity decreases by 8 unit";
++                foodRate += "1-set on -2,monthly your popularity decreases by 8 unit";
+                 break;
+             case -1:
+-                foodRate += "you feed people 0.5 unit\nmonthly your popularity decreases by 4 unit";
++                foodRate += "0.5-set on -1,monthly your popularity decreases by 4 unit";
+                 break;
+             case 0:
+-                foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 0 unit";
++                foodRate += "1.5-set on 0,monthly your popularity increases by 0 unit";
+                 break;
+             case 1:
+-                foodRate += "you feed people 1.5 unit\nmonthly your popularity increases by 4 unit";
++                foodRate += "1.5-set on 1,monthly your popularity increases by 4 unit";
+                 break;
+             case 2:
+-                foodRate += "you feed people 2 units\nmonthly your popularity increases by 8 unit";
++                foodRate += "2-set on 2,monthly your popularity increases by 8 unit";
+                 break;
+         }
+         return foodRate;
+     }
+ 
+-    public String showTaxRate() {
+-        String taxRate = "your tax rate is " + government.getTaxRate() + "\nmeans: ";
+-        switch (government.getTaxRate()) {
++    public String showTaxRate(int checkTax) {
++        String taxRate = "";
++        switch (checkTax) {
+             case -3:
+-                taxRate += "0 tax\nyou give people 1 coin\nmonthly your popularity increases by 7 unit";
++                taxRate += "0>1>set on -3,nmonthly your popularity increases by 7 unit";
++                        //"0 tax\nyou give people 1 coin\nmonthly your popularity increases by 7 unit";
+                 break;
+             case -2:
+-                taxRate += "0 tax\nyou give people 0.8 coin\nmonthly your popularity increases by 5 unit";
++                taxRate += "0>0.8>set on -2,monthly your popularity increases by 5 unit";
++                        //"0 tax\nyou give people 0.8 coin\nmonthly your popularity increases by 5 unit";
+                 break;
+             case -1:
+-                taxRate += "0 tax\nyou give people 0.6 coin\nmonthly your popularity increases by 3 unit";
++                taxRate += "0>0.6>set on -1,monthly your popularity increases by 3 unit";
++                        //"0 tax\nyou give people 0.6 coin\nmonthly your popularity increases by 3 unit";
+                 break;
+             case 0:
+-                taxRate += "0 tax\nyou give people 0 coin\nmonthly your popularity increases by 1 unit";
++                taxRate += "0>0>set on 0,monthly your popularity increases by 1 unit";
++                        //"0 tax\nyou give people 0 coin\nmonthly your popularity increases by 1 unit";
+                 break;
+             case 1:
+-                taxRate += "0.6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 2 unit";
++                taxRate += "0>0>set on 1,monthly your popularity decreases by 2 unit";
++                        //"0.6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 2 unit";
+                 break;
+             case 2:
+-                taxRate += "0.8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 4 unit";
++                taxRate += "0>0>set on 2,monthly your popularity decreases by 4 unit";
++                        //"0.8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 4 unit";
+                 break;
+             case 3:
+-                taxRate += "1 tax\nyou give people 0 coin\nmonthly your popularity decreases by 6 unit";
++                taxRate += "1>0>set on 3,monthly your popularity decreases by 6 unit";
++                        //"1 tax\nyou give people 0 coin\nmonthly your popularity decreases by 6 unit";
+                 break;
+             case 4:
+-                taxRate += "1/2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 8 unit";
++                taxRate += "1/2>0>set on 4,monthly your popularity decreases by 8 unit";
++                        //"1/2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 8 unit";
+                 break;
+             case 5:
+-                taxRate += "1/4 tax\nyou give people 0 coin\nmonthly your popularity decreases by 12 unit";
++                taxRate += "1/4>0>set on 5,monthly your popularity decreases by 12 unit";
++                        //"1/4 tax\nyou give people 0 coin\nmonthly your popularity decreases by 12 unit";
+                 break;
+             case 6:
+-                taxRate += "1/6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 16 unit";
++                taxRate += "1/6>0>set on 6,monthly your popularity decreases by 16 unit";
++                        //"1/6 tax\nyou give people 0 coin\nmonthly your popularity decreases by 16 unit";
+                 break;
+             case 7:
+-                taxRate += "1/8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 20 unit";
++                taxRate += "1/8>0>set on 7,monthly your popularity decreases by 20 unit";
++                        //"1/8 tax\nyou give people 0 coin\nmonthly your popularity decreases by 20 unit";
+                 break;
+             case 8:
+-                taxRate += "2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 24 unit";
++                taxRate += "2>0>set on 8,monthly your popularity decreases by 24 unit";
++                        //"2 tax\nyou give people 0 coin\nmonthly your popularity decreases by 24 unit";
+         }
+         return taxRate;
+     }
+Index: target/classes/FXML/forgotPassword.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.example.view.userView.ForgotPassword\">\r\n   <children>\r\n      <Label layoutX=\"213.0\" layoutY=\"34.0\" text=\"Forgot My Password\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"199.0\" layoutY=\"124.0\" text=\"username\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"199.0\" layoutY=\"239.0\" text=\"new password\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button layoutX=\"256.0\" layoutY=\"299.0\" mnemonicParsing=\"false\" onMouseClicked=\"#confirmChangePassword\" prefHeight=\"49.0\" prefWidth=\"88.0\" text=\"Confirm\">\r\n         <font>\r\n            <Font size=\"14.0\" />\r\n         </font>\r\n      </Button>\r\n      <PasswordField fx:id=\"passwordField\" layoutX=\"300.0\" layoutY=\"237.0\" />\r\n      <Label fx:id=\"errorPassword\" layoutX=\"199.0\" layoutY=\"272.0\" prefHeight=\"17.0\" prefWidth=\"298.0\" />\r\n      <Label fx:id=\"changePassword\" alignment=\"CENTER\" contentDisplay=\"CENTER\" layoutX=\"218.0\" layoutY=\"360.0\" prefHeight=\"17.0\" prefWidth=\"156.0\" />\r\n   </children>\r\n</Pane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/FXML/forgotPassword.fxml b/target/classes/FXML/forgotPassword.fxml
+--- a/target/classes/FXML/forgotPassword.fxml	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/target/classes/FXML/forgotPassword.fxml	(date 1687555938267)
+@@ -31,5 +31,7 @@
+       <PasswordField fx:id="passwordField" layoutX="300.0" layoutY="237.0" />
+       <Label fx:id="errorPassword" layoutX="199.0" layoutY="272.0" prefHeight="17.0" prefWidth="298.0" />
+       <Label fx:id="changePassword" alignment="CENTER" contentDisplay="CENTER" layoutX="218.0" layoutY="360.0" prefHeight="17.0" prefWidth="156.0" />
++      <Label fx:id="errorUsername" layoutX="204.0" layoutY="151.0" prefHeight="17.0" prefWidth="234.0" text=" " />
++      <Label fx:id="errorAnswer" layoutX="213.0" layoutY="210.0" prefHeight="17.0" prefWidth="234.0" />
+    </children>
+ </Pane>
+Index: src/main/resources/Css/setRateOptions.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/Css/setRateOptions.css b/src/main/resources/Css/setRateOptions.css
+new file mode 100644
+--- /dev/null	(date 1687555938252)
++++ b/src/main/resources/Css/setRateOptions.css	(date 1687555938252)
+@@ -0,0 +1,19 @@
++.root{
++-fx-background-image:url("backgroundOfInfoMenu.png");
++-fx-background-size: 600 400;
++}
++
++#fearRateButton{
++-fx-background-image:url("255_255img15.png");
++-fx-background-size: 182 34;
++}
++
++#foodRateButton{
++-fx-background-image:url("255_255img15.png");
++-fx-background-size: 182 34;
++}
++
++#taxRateButton{
++-fx-background-image:url("255_255img15.png");
++-fx-background-size: 182 34;
++}
+\ No newline at end of file
+Index: src/main/resources/Css/setRate.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/Css/setRate.css b/src/main/resources/Css/setRate.css
+new file mode 100644
+--- /dev/null	(date 1687555938251)
++++ b/src/main/resources/Css/setRate.css	(date 1687555938251)
+@@ -0,0 +1,9 @@
++.root{
++-fx-background-image:url("backgroundOfInfoMenu.png");
++-fx-background-size: 600 400;
++}
++
++#setRate{
++-fx-background-image:url("255_255img15.png");
++-fx-background-size: 182 34;
++}
+\ No newline at end of file
+Index: src/main/resources/FXML/GameInformation.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/GameInformation.fxml b/src/main/resources/FXML/GameInformation.fxml
+new file mode 100644
+--- /dev/null	(date 1687555938253)
++++ b/src/main/resources/FXML/GameInformation.fxml	(date 1687555938253)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.layout.AnchorPane?>
++
++<AnchorPane id="custom" prefHeight="152.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GameInformationMenu" />
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"3shanbeh(add ForgotPassword and market)\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/Size.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/Spacing.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/UIComponent.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/UIContainer.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/SuperObject.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/SuperObject.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"module-info\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"mahdi\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OdNK38UNz2OrnIqCzmN0SMvyKl\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;last_directory_selection&quot;: &quot;C:/Users/Raya/Desktop/project2-group-15/src/main/java&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/java/org/example/gameMap/notReadedClasses&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"org.example.gameMap.Ui\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\mahdi.ak\\Documents\\GitHub\\project-group-15\\src\\main\\java\\org\\example\\gameMap\\notReadedClasses\" />\r\n      <recent name=\"C:\\Users\\mobin\\Desktop\\project152\\src\\main\\resources\\images\" />\r\n      <recent name=\"C:\\Users\\mobin\\Desktop\\project152\\src\\main\\java\\org\\example\\Images\" />\r\n      <recent name=\"C:\\Users\\Raya\\Desktop\\project2-group-15\\src\\main\\resources\\Images\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\mobin\\Desktop\\project2\\src\\main\\java\\org\\example\" />\r\n      <recent name=\"C:\\Users\\Raya\\Desktop\\project2-group-15\\src\\main\\java\\org\\example\\view\" />\r\n    </key>\r\n    <key name=\"ExtractSuperBase.RECENT_KEYS\">\r\n      <recent name=\"org.example.gameMap.notReadedClasses\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example.view\" />\r\n      <recent name=\"org.example.veiw.enums\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example.gameMap\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.gameMap.Main\" />\r\n      <module name=\"Game2DMap\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.gameMap.objectSetter.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Market\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.view.userView.Market\" />\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.view.userView.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Menu\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.view.userView.Menu\" />\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.view.userView.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyFrame\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.gameMap.MyFrame\" />\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.gameMap.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SignupMenu\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.view.userView.SignupMenu\" />\r\n      <module name=\"untitled\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.view.userView.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.MyFrame\" />\r\n        <item itemvalue=\"Application.Menu\" />\r\n        <item itemvalue=\"Application.Market\" />\r\n        <item itemvalue=\"Application.SignupMenu\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4908046b-a59d-480a-b0ae-14605eb14fdd\" name=\"Changes\" comment=\"\" />\r\n      <created>1681886432173</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681886432173</updated>\r\n      <workItem from=\"1681886433354\" duration=\"78000\" />\r\n      <workItem from=\"1681886686257\" duration=\"2512000\" />\r\n      <workItem from=\"1682084994720\" duration=\"4296000\" />\r\n      <workItem from=\"1683312609400\" duration=\"2559000\" />\r\n      <workItem from=\"1683355289916\" duration=\"474000\" />\r\n      <workItem from=\"1683368615141\" duration=\"198000\" />\r\n      <workItem from=\"1683965428349\" duration=\"17043000\" />\r\n      <workItem from=\"1684039751662\" duration=\"6598000\" />\r\n      <workItem from=\"1684046655874\" duration=\"3000\" />\r\n      <workItem from=\"1684046673639\" duration=\"25896000\" />\r\n      <workItem from=\"1684095486195\" duration=\"10880000\" />\r\n      <workItem from=\"1684127082624\" duration=\"37420000\" />\r\n      <workItem from=\"1684179901926\" duration=\"17000\" />\r\n      <workItem from=\"1684180128954\" duration=\"154000\" />\r\n      <workItem from=\"1684198629893\" duration=\"862000\" />\r\n      <workItem from=\"1684822355049\" duration=\"4777000\" />\r\n      <workItem from=\"1684848886064\" duration=\"138000\" />\r\n      <workItem from=\"1684853887629\" duration=\"38000\" />\r\n      <workItem from=\"1684855759036\" duration=\"29000\" />\r\n      <workItem from=\"1686932842833\" duration=\"28000\" />\r\n      <workItem from=\"1686933012194\" duration=\"184000\" />\r\n      <workItem from=\"1686933250999\" duration=\"94000\" />\r\n      <workItem from=\"1686933374738\" duration=\"200000\" />\r\n      <workItem from=\"1686933600022\" duration=\"7000\" />\r\n      <workItem from=\"1686933619161\" duration=\"12000\" />\r\n      <workItem from=\"1686933645912\" duration=\"7000\" />\r\n      <workItem from=\"1686933686786\" duration=\"273000\" />\r\n      <workItem from=\"1686933998037\" duration=\"14000\" />\r\n      <workItem from=\"1686934019072\" duration=\"8551000\" />\r\n      <workItem from=\"1687003236306\" duration=\"9361000\" />\r\n      <workItem from=\"1687366023968\" duration=\"552000\" />\r\n      <workItem from=\"1687380012208\" duration=\"998000\" />\r\n      <workItem from=\"1687441083110\" duration=\"713000\" />\r\n      <workItem from=\"1687526843874\" duration=\"2896000\" />\r\n      <workItem from=\"1687551111082\" duration=\"4623000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۱\" summary=\"creating files...\">\r\n      <created>1681886768892</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۱\" />\r\n      <updated>1681886768892</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۲\" summary=\"creating files...\">\r\n      <created>1682085187908</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۲\" />\r\n      <updated>1682085187908</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E−۰۰۰۰۳\" summary=\"creating files...\">\r\n      <created>1682085989441</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E−۰۰۰۰۳\" />\r\n      <updated>1682085989441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"creating files...\">\r\n      <created>1682100710982</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100710982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"creating files...\">\r\n      <created>1682100873720</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682100873720</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"3shanbeh\">\r\n      <created>1685439658220</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685439658220</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"last commit\">\r\n      <created>1685729803541</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685729803541</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"3shanbeh(add ForgotPassword and market)\">\r\n      <created>1686051682000</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1686051682000</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creating files...\" />\r\n    <MESSAGE value=\"3shanbeh\" />\r\n    <MESSAGE value=\"last commit\" />\r\n    <MESSAGE value=\"3shanbeh(add ForgotPassword and market)\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"3shanbeh(add ForgotPassword and market)\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>\r\n          <line>8</line>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>\r\n          <line>9</line>\r\n          <option name=\"timeStamp\" value=\"5\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>\r\n          <line>32</line>\r\n          <option name=\"timeStamp\" value=\"10\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/dropBuildingController.java</url>\r\n          <line>13</line>\r\n          <option name=\"timeStamp\" value=\"11\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>\r\n          <line>6</line>\r\n          <option name=\"timeStamp\" value=\"12\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java</url>\r\n          <line>200</line>\r\n          <option name=\"timeStamp\" value=\"14\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>\r\n          <line>16</line>\r\n          <properties class=\"org.example.view.enums.commands.MapMenuEnum\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"8\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/mapMenuController.java</url>\r\n          <line>8</line>\r\n          <properties class=\"org.example.controller.MapMenuController\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"9\" />\r\n        </line-breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"13\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$SignupMenuControllerTest.ic\" NAME=\"SignupMenuControllerTest Coverage Results\" MODIFIED=\"1684827005041\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$MainMenuControllerTest.ic\" NAME=\"MainMenuControllerTest Coverage Results\" MODIFIED=\"1684826993894\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$ProfileMenuControllerTest_changeUsernameTests.ic\" NAME=\"ProfileMenuControllerTest.changeUsernameTests Coverage Results\" MODIFIED=\"1684172861618\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$ProfileMenuControllerTest.ic\" NAME=\"ProfileMenuControllerTest Coverage Results\" MODIFIED=\"1684172775802\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic\" NAME=\"SignupMenuControllerTest.changeForgetPasswordTests Coverage Results\" MODIFIED=\"1684173056920\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.controller.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/project_group_15$Main.ic\" NAME=\"Main Coverage Results\" MODIFIED=\"1684167396630\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>org.example.*</FILTER>\r\n    </SUITE>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/.idea/workspace.xml	(date 1687555979971)
+@@ -4,17 +4,54 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbeh(add ForgotPassword and market)">
++    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="friday(completed market)">
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GameInformationMenu.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SetRate.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/0_0img279.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/0_0img6.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/255_255img15.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/MainMenuStyle.css" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/Screenshot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/Screenshot1.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/setRate.css" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/setRateOptions.css" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/track.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInformation.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/setRate.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/setRateOptions.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img0.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img126.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img25.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img277.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img606.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img729.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img73.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img92.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img93.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Untitled.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/select.png" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/Size.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/Spacing.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/UIComponent.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Ui/UIContainer.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/SuperObject.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/forgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/forgotPassword.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -26,8 +63,8 @@
+       <list>
+         <option value="Enum" />
+         <option value="module-info" />
+-        <option value="FxmlFile" />
+         <option value="Class" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -67,9 +104,8 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+     &quot;last_directory_selection&quot;: &quot;C:/Users/Raya/Desktop/project2-group-15/src/main/java&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/java/org/example/gameMap/notReadedClasses&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/mobin/Desktop/project152/src/main/resources/images&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+@@ -84,37 +120,29 @@
+   }
+ }</component>
+   <component name="RecentsManager">
+-    <key name="CreateClassDialog.RecentsKey">
+-      <recent name="org.example.gameMap.Ui" />
+-    </key>
+     <key name="CopyFile.RECENT_KEYS">
+-      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\java\org\example\gameMap\notReadedClasses" />
+       <recent name="C:\Users\mobin\Desktop\project152\src\main\resources\images" />
++      <recent name="C:\Users\mobin\Desktop\project152\src\main\resources\Css" />
++      <recent name="C:\Users\mobin\Desktop\project152\src\main\resources" />
+       <recent name="C:\Users\mobin\Desktop\project152\src\main\java\org\example\Images" />
+       <recent name="C:\Users\Raya\Desktop\project2-group-15\src\main\resources\Images" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\mobin\Desktop\project2\src\main\java\org\example" />
+       <recent name="C:\Users\Raya\Desktop\project2-group-15\src\main\java\org\example\view" />
+-    </key>
+-    <key name="ExtractSuperBase.RECENT_KEYS">
+-      <recent name="org.example.gameMap.notReadedClasses" />
+     </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="org.example.view" />
+       <recent name="org.example.veiw.enums" />
+-    </key>
+-    <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="org.example.gameMap" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Main">
+-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="org.example.gameMap.Main" />
+-      <module name="Game2DMap" />
++  <component name="RunManager" selected="Application.GovermentMenu">
++    <configuration name="ForgotPassword" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ForgotPassword" />
++      <module name="untitled" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="org.example.gameMap.objectSetter.*" />
++          <option name="PATTERN" value="org.example.view.userView.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -122,8 +150,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Market" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Market" />
++    <configuration name="GovermentMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.GovermentMenu" />
+       <module name="untitled" />
+       <extension name="coverage">
+         <pattern>
+@@ -135,8 +163,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Menu" />
++    <configuration name="Market" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Market" />
+       <module name="untitled" />
+       <extension name="coverage">
+         <pattern>
+@@ -148,12 +176,12 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MyFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="org.example.gameMap.MyFrame" />
++    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Menu" />
+       <module name="untitled" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="org.example.gameMap.*" />
++          <option name="PATTERN" value="org.example.view.userView.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -176,9 +204,9 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.Main" />
+-        <item itemvalue="Application.MyFrame" />
++        <item itemvalue="Application.GovermentMenu" />
+         <item itemvalue="Application.Menu" />
++        <item itemvalue="Application.ForgotPassword" />
+         <item itemvalue="Application.Market" />
+         <item itemvalue="Application.SignupMenu" />
+       </list>
+@@ -211,22 +239,6 @@
+       <workItem from="1684848886064" duration="138000" />
+       <workItem from="1684853887629" duration="38000" />
+       <workItem from="1684855759036" duration="29000" />
+-      <workItem from="1686932842833" duration="28000" />
+-      <workItem from="1686933012194" duration="184000" />
+-      <workItem from="1686933250999" duration="94000" />
+-      <workItem from="1686933374738" duration="200000" />
+-      <workItem from="1686933600022" duration="7000" />
+-      <workItem from="1686933619161" duration="12000" />
+-      <workItem from="1686933645912" duration="7000" />
+-      <workItem from="1686933686786" duration="273000" />
+-      <workItem from="1686933998037" duration="14000" />
+-      <workItem from="1686934019072" duration="8551000" />
+-      <workItem from="1687003236306" duration="9361000" />
+-      <workItem from="1687366023968" duration="552000" />
+-      <workItem from="1687380012208" duration="998000" />
+-      <workItem from="1687441083110" duration="713000" />
+-      <workItem from="1687526843874" duration="2896000" />
+-      <workItem from="1687551111082" duration="4623000" />
+     </task>
+     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
+       <created>1681886768892</created>
+@@ -281,7 +293,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1686051682000</updated>
+     </task>
+-    <option name="localTasksCounter" value="9" />
++    <task id="LOCAL-00009" summary="friday(completed market)">
++      <created>1686335457951</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1686335457952</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -315,7 +334,8 @@
+     <MESSAGE value="3shanbeh" />
+     <MESSAGE value="last commit" />
+     <MESSAGE value="3shanbeh(add ForgotPassword and market)" />
+-    <option name="LAST_COMMIT_MESSAGE" value="3shanbeh(add ForgotPassword and market)" />
++    <MESSAGE value="friday(completed market)" />
++    <option name="LAST_COMMIT_MESSAGE" value="friday(completed market)" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -346,9 +366,9 @@
+           <option name="timeStamp" value="12" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java</url>
+-          <line>200</line>
+-          <option name="timeStamp" value="14" />
++          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java</url>
++          <line>29</line>
++          <option name="timeStamp" value="15" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-method">
+           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>
+@@ -379,20 +399,20 @@
+     <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest.ic" NAME="SignupMenuControllerTest Coverage Results" MODIFIED="1684827005041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>org.example.controller.*</FILTER>
+     </SUITE>
+-    <SUITE FILE_PATH="coverage/project_group_15$MainMenuControllerTest.ic" NAME="MainMenuControllerTest Coverage Results" MODIFIED="1684826993894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic" NAME="SignupMenuControllerTest.changeForgetPasswordTests Coverage Results" MODIFIED="1684173056920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>org.example.controller.*</FILTER>
++    </SUITE>
++    <SUITE FILE_PATH="coverage/project_group_15$Main.ic" NAME="Main Coverage Results" MODIFIED="1684167396630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>org.example.*</FILTER>
+     </SUITE>
+     <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changeUsernameTests.ic" NAME="ProfileMenuControllerTest.changeUsernameTests Coverage Results" MODIFIED="1684172861618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>org.example.controller.*</FILTER>
+     </SUITE>
+-    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest.ic" NAME="ProfileMenuControllerTest Coverage Results" MODIFIED="1684172775802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++    <SUITE FILE_PATH="coverage/project_group_15$MainMenuControllerTest.ic" NAME="MainMenuControllerTest Coverage Results" MODIFIED="1684826993894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>org.example.controller.*</FILTER>
+     </SUITE>
+-    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic" NAME="SignupMenuControllerTest.changeForgetPasswordTests Coverage Results" MODIFIED="1684173056920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest.ic" NAME="ProfileMenuControllerTest Coverage Results" MODIFIED="1684172775802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>org.example.controller.*</FILTER>
+-    </SUITE>
+-    <SUITE FILE_PATH="coverage/project_group_15$Main.ic" NAME="Main Coverage Results" MODIFIED="1684167396630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+-      <FILTER>org.example.*</FILTER>
+     </SUITE>
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/org/example/view/userView/ForgotPassword.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.view.userView;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.event.EventHandler;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.PasswordField;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.Pane;\r\nimport javafx.stage.Stage;\r\nimport org.example.InputScanner;\r\nimport org.example.controller.JsonController;\r\nimport org.example.controller.userControllers.LoginMenuController;\r\nimport org.example.controller.userControllers.SignupMenuController;\r\nimport org.example.view.enums.commands.LoginMenuEnum;\r\nimport org.example.view.enums.outputs.LoginMenuOutput;\r\nimport org.example.view.enums.outputs.SignupMenuOutput;\r\n\r\nimport java.net.URL;\r\nimport java.util.HashMap;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class ForgotPassword extends Application  {\r\n\r\n    public TextField answerQ;\r\n    public PasswordField passwordField;\r\n    public Label errorPassword;\r\n    public Label changePassword;\r\n    // public PasswordField password;\r\n    Label errorAnswer;\r\n     Label errorUsername;\r\n    \r\n    Label questionCheck;\r\n   \r\n    static Stage stage;\r\n    int number = 0;\r\n    TextField username;\r\n    TextField answer;\r\n    private final SignupMenuController signupMenuController = new SignupMenuController();\r\n    protected\r\n    String successfulMessage = String.format(\"-fx-text-fill: Green;\");\r\n    String errorMessage = String.format(\"-fx-text-fill: RED;\");\r\n    String errorStyle = String.format(\"-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;\");\r\n    String successStyle = String.format(\"-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;\");\r\n    private final LoginMenuController loginMenuController = new LoginMenuController();\r\n\r\n    @Override\r\n    public void start(Stage stage) throws Exception {\r\n        // setQuestionCheck();\r\n        // System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());\r\n        ForgotPassword.stage = stage;\r\n        URL url = MainMenu.class.getResource(\"/FXML/forgotPassword.fxml\");\r\n        questionCheck = new Label();\r\n        questionCheck.setText(\"\");\r\n        Button button = new Button(\"ok\");\r\n        button.setLayoutX(430.0);\r\n        button.setLayoutY(120.0);\r\n        questionCheck.setLayoutY(180.0);\r\n        questionCheck.setLayoutX(150.0);\r\n        username = new TextField();\r\n        username.setLayoutX(273.0);\r\n        username.setLayoutY(120.0);\r\n        errorUsername = new Label();\r\n        errorUsername.setStyle(errorMessage);\r\n        errorUsername.setText(\"\");\r\n        errorUsername.setLayoutX(229.0);\r\n        errorUsername.setLayoutY(155.0);\r\n        answer = new TextField();\r\n        answer.setLayoutX(273.0);\r\n        answer.setLayoutY(181.0);\r\n        errorAnswer = new Label();\r\n        errorAnswer.setStyle(errorMessage);\r\n        errorAnswer.setText(\"\");\r\n        errorAnswer.setLayoutX(229.0);\r\n        errorAnswer.setLayoutY(213.0);\r\n        Button checker = new Button(\"check\");\r\n        checker.setLayoutX(430.0);\r\n        checker.setLayoutY(181.0);\r\n        EventHandler<ActionEvent> sell = new EventHandler<ActionEvent>() {\r\n\r\n            public void handle(ActionEvent e)\r\n            {\r\n                forgetPassword(username.getText());\r\n            }\r\n        };\r\n        EventHandler<ActionEvent> checkAnswer = new EventHandler<ActionEvent>() {\r\n\r\n            public void handle(ActionEvent e)\r\n            {\r\n              //  String answerQ = answer.getText();\r\n                byte[] salt = JsonController.makeSalt();\r\n                String answerQ = JsonController.getPassHashSha256(answer.getText(), salt);\r\n                if (loginMenuController.checkSecurityQuestion(answerQ)) {\r\n                    errorAnswer.setText(\"\");\r\n                    answer.setStyle(successStyle);\r\n                }\r\n                else\r\n                    errorAnswer.setText(\"answer dose not match with the picked question\");\r\n\r\n            }\r\n        };\r\n        checker.setOnAction(checkAnswer);\r\n        button.setOnAction(sell);\r\n        Pane pane = FXMLLoader.load(url);\r\n        pane.getChildren().add(questionCheck);\r\n        pane.getChildren().add(button);\r\n        pane.getChildren().add(username);\r\n        pane.getChildren().add(errorUsername);\r\n        pane.getChildren().add(answer);\r\n        pane.getChildren().add(errorAnswer);\r\n        pane.getChildren().add(checker);\r\n        Scene scene = new Scene(pane);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    protected void forgetPassword(String username1) {\r\n        loginMenuController.setUsername(username.getText());\r\n        if (loginMenuController.checkMatchUsername()) {\r\n            username.setStyle(successStyle);\r\n            errorUsername.setText(\"\");\r\n            questionCheck.setText(loginMenuController.findUserSecurityQuestion().getQuestion());\r\n            System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());\r\n\r\n\r\n        }\r\n        else\r\n        errorUsername.setText(\"username dose not exist\");\r\n\r\n    }\r\n\r\n\r\n\r\n    private void resettingUserPassword(String username) {\r\n        System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());\r\n        String newPassword = passwordField.getText();\r\n        SignupMenuController signupMenuController = new SignupMenuController();\r\n        signupMenuController.setUsername(username);\r\n        signupMenuController.setPassword(newPassword);\r\n        SignupMenuOutput status = SignupMenuController.passwordCheckErrors(newPassword);\r\n        if (status.equals(SignupMenuOutput.CHECKED_SUCCESSFULLY)) {\r\n            System.out.println(LoginMenuOutput.ENTER_YOUR_PASSWORD_AGAIN.getOutput());\r\n\r\n\r\n\r\n        }\r\n    }\r\n\r\n    private void passwordCheck() {\r\n        switch (SignupMenuController.passwordCheckErrors(passwordField.getText())){\r\n            case ERROR_PASSWORD_IS_TOO_SHORT :\r\n                errorPassword.setStyle(errorMessage);\r\n                errorPassword.setText(\"password must contains as least 6 characters\");\r\n                break;\r\n            case CHECKED_SUCCESSFULLY:\r\n                errorPassword.setStyle(successfulMessage);\r\n                errorPassword.setText(\"\");\r\n                passwordField.setStyle(successStyle);\r\n                signupMenuController.setPassword(passwordField.getText());\r\n                break;\r\n            default:\r\n                errorPassword.setStyle(errorMessage);\r\n                errorPassword.setText(\"password must contains at least a large,small,special characters,digit\");\r\n                passwordField.setStyle(errorStyle);\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    public void initialize(){\r\n        passwordField.textProperty().addListener((observable , oldText , newText)->{\r\n            passwordCheck();\r\n        } );\r\n    }\r\n\r\n    public void confirmChangePassword(MouseEvent event) {\r\n        if(errorPassword.getText().equals(\"\")&&errorUsername.getText().equals(\"\")&&errorAnswer.getText().equals(\"\")){\r\n            changePassword.setStyle(successfulMessage);\r\n            changePassword.setText(\"successful\");\r\n        }\r\n\r\n\r\n    }\r\n\r\n\r\n  /*  @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n    }*/\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/ForgotPassword.java b/src/main/java/org/example/view/userView/ForgotPassword.java
+--- a/src/main/java/org/example/view/userView/ForgotPassword.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/view/userView/ForgotPassword.java	(date 1687555938237)
+@@ -32,15 +32,17 @@
+     public PasswordField passwordField;
+     public Label errorPassword;
+     public Label changePassword;
++    Label errorUsername;
++    Label errorAnswer;
++    public static int n1,n2;
+     // public PasswordField password;
+-    Label errorAnswer;
+-     Label errorUsername;
+-    
++    public static String usernameError,answerError = new String();
++
+     Label questionCheck;
+-   
++
+     static Stage stage;
+     int number = 0;
+-    TextField username;
++    public static TextField username;
+     TextField answer;
+     private final SignupMenuController signupMenuController = new SignupMenuController();
+     protected
+@@ -66,11 +68,6 @@
+         username = new TextField();
+         username.setLayoutX(273.0);
+         username.setLayoutY(120.0);
+-        errorUsername = new Label();
+-        errorUsername.setStyle(errorMessage);
+-        errorUsername.setText("");
+-        errorUsername.setLayoutX(229.0);
+-        errorUsername.setLayoutY(155.0);
+         answer = new TextField();
+         answer.setLayoutX(273.0);
+         answer.setLayoutY(181.0);
+@@ -79,9 +76,15 @@
+         errorAnswer.setText("");
+         errorAnswer.setLayoutX(229.0);
+         errorAnswer.setLayoutY(213.0);
++        errorUsername = new Label();
++        errorUsername.setStyle(errorMessage);
++        errorUsername.setText("");
++        errorUsername.setLayoutX(229.0);
++        errorUsername.setLayoutY(155.0);
+         Button checker = new Button("check");
+         checker.setLayoutX(430.0);
+         checker.setLayoutY(181.0);
++
+         EventHandler<ActionEvent> sell = new EventHandler<ActionEvent>() {
+ 
+             public void handle(ActionEvent e)
+@@ -93,15 +96,23 @@
+ 
+             public void handle(ActionEvent e)
+             {
+-              //  String answerQ = answer.getText();
+-                byte[] salt = JsonController.makeSalt();
+-                String answerQ = JsonController.getPassHashSha256(answer.getText(), salt);
+-                if (loginMenuController.checkSecurityQuestion(answerQ)) {
++                //  String answerQ = answer.getText();
++                //  byte[] salt = JsonController.makeSalt();
++                //  String answerQ = JsonController.getPassHashSha256(answer.getText(), salt);
++                System.out.println(answer.getText());
++                System.out.println(loginMenuController.findUserSecurityQuestion());
++                if (loginMenuController.checkSecurityQuestion(answer.getText())) {
+                     errorAnswer.setText("");
+                     answer.setStyle(successStyle);
++                    answerError = "";
++                    n1 = 1;
+                 }
+-                else
++                else{
+                     errorAnswer.setText("answer dose not match with the picked question");
++                    answerError = "answer dose not match with the picked question";
++                    n1 = 0;
++                }
++
+ 
+             }
+         };
+@@ -111,8 +122,8 @@
+         pane.getChildren().add(questionCheck);
+         pane.getChildren().add(button);
+         pane.getChildren().add(username);
+-        pane.getChildren().add(errorUsername);
+         pane.getChildren().add(answer);
++        pane.getChildren().add(errorUsername);
+         pane.getChildren().add(errorAnswer);
+         pane.getChildren().add(checker);
+         Scene scene = new Scene(pane);
+@@ -129,13 +140,21 @@
+         if (loginMenuController.checkMatchUsername()) {
+             username.setStyle(successStyle);
+             errorUsername.setText("");
++            usernameError = "";
++            n2 = 1;
+             questionCheck.setText(loginMenuController.findUserSecurityQuestion().getQuestion());
+             System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
+-
++            signupMenuController.setUsername(username.getText());
+ 
+         }
+-        else
+-        errorUsername.setText("username dose not exist");
++        else{
++            n2 = 0;
++            errorUsername.setText("username dose not exist");
++            usernameError = new String("");
++            usernameError += "username dose not exist";
++            System.out.println(usernameError);
++        }
++
+ 
+     }
+ 
+@@ -183,10 +202,16 @@
+         } );
+     }
+ 
+-    public void confirmChangePassword(MouseEvent event) {
+-        if(errorPassword.getText().equals("")&&errorUsername.getText().equals("")&&errorAnswer.getText().equals("")){
++    public void confirmChangePassword(MouseEvent event) throws Exception {
++        System.out.println(passwordField.getStyle()+n2+n1);
++        System.out.println(answerError + "l" + usernameError);
++        if(passwordField.getStyle().equals(successStyle)&&n1==1&&
++                n2==1){
+             changePassword.setStyle(successfulMessage);
+             changePassword.setText("successful");
++            signupMenuController.setPassword(passwordField.getText());
++            signupMenuController.changeForgetPassword(username.getText(),passwordField.getText());
++            new LoginMenu().start(ForgotPassword.stage);
+         }
+ 
+ 
+@@ -197,4 +222,4 @@
+     public void initialize(URL url, ResourceBundle resourceBundle) {
+ 
+     }*/
+-}
++}
+\ No newline at end of file
+Index: src/main/resources/FXML/setRateOptions.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/setRateOptions.fxml b/src/main/resources/FXML/setRateOptions.fxml
+new file mode 100644
+--- /dev/null	(date 1687555938258)
++++ b/src/main/resources/FXML/setRateOptions.fxml	(date 1687555938258)
+@@ -0,0 +1,27 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.text.Font?>
++
++<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovermentMenu">
++   <children>
++      <Button id="taxRateButton" fx:id="setTaxRate" layoutX="198.0" layoutY="90.0" mnemonicParsing="false" onAction="#setTaxRate" prefHeight="34.0" prefWidth="182.0" stylesheets="@../Css/setRateOptions.css" text="Set Tax Rate" textFill="#e8d087" textOverrun="CLIP">
++         <font>
++            <Font name="Constantia" size="18.0" />
++         </font>
++      </Button>
++      <Button id="foodRateButton" fx:id="setFoodRate" layoutX="198.0" layoutY="239.0" mnemonicParsing="false" onAction="#setFoodRate" prefHeight="34.0" prefWidth="182.0" stylesheets="@../Css/setRateOptions.css" text="Set Food Rate" textFill="#e8d087" textOverrun="CLIP">
++         <font>
++            <Font name="Constantia" size="18.0" />
++         </font>
++      </Button>
++      <Button id="fearRateButton" fx:id="setFearRate" layoutX="198.0" layoutY="165.0" mnemonicParsing="false" onAction="#setFearRate" prefHeight="34.0" prefWidth="182.0" stylesheets="@../Css/setRateOptions.css" text="Set Fear Rate" textFill="#e8d087" textOverrun="CLIP">
++         <font>
++            <Font name="Constantia" size="18.0" />
++         </font>
++      </Button>
++   </children>
++</Pane>
+Index: src/main/java/org/example/controller/UnitMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.controller;\r\n\r\nimport org.example.model.MBC.InfantryUnit;\r\nimport org.example.model.MBC.LauncherUnit;\r\nimport org.example.model.MBC.Soldier;\r\nimport org.example.model.MBC.UnitWallTarget;\r\nimport org.example.model.building.Building;\r\nimport org.example.model.enums.*;\r\nimport org.example.model.gameData.GameInformation;\r\nimport org.example.model.gameData.Government;\r\nimport org.example.view.enums.outputs.GameInformationOutput;\r\nimport org.example.view.enums.outputs.UnitMenuOutput;\r\n\r\n\r\nimport java.util.ArrayList;\r\n\r\n\r\npublic class UnitMenuController {\r\n    private final Government government;\r\n    private Soldier selectedUnit = null;\r\n    private LauncherUnit launcherUnit;\r\n    private UnitWallTarget unitWallTarget;\r\n    private InfantryUnit infantryUnit;\r\n\r\n    public UnitMenuController(String playerName) {\r\n        this.government = Government.findGovernmentWithUsername(playerName);\r\n    }\r\n\r\n    public int x1, y1;\r\n    public int patX1, patX2, patY1, patY2;\r\n\r\n    public UnitMenuOutput selectUnit(int x, int y) {\r\n        if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) {\r\n            this.selectedUnit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();\r\n            if (this.selectedUnit.getType().equals(\"wallTarget\"))\r\n                this.unitWallTarget = (UnitWallTarget) this.selectedUnit;\r\n            else if (this.selectedUnit.getType().equals(\"launcher\"))\r\n                this.launcherUnit = (LauncherUnit) this.selectedUnit;\r\n            else if (this.selectedUnit.getType().equals(\"infantry\"))\r\n                this.infantryUnit = (InfantryUnit) this.selectedUnit;\r\n            return UnitMenuOutput.UNIT_FOUND;\r\n        } else\r\n            return UnitMenuOutput.UNIT_NOT_FOUND;\r\n    }\r\n\r\n    public UnitMenuOutput moveUnit(int x, int y) {\r\n        if (this.selectedUnit.getState().equals(\"STANDING\"))\r\n            return UnitMenuOutput.NOT_IN_A_STATE;\r\n        int deltaX = Math.abs(x - this.selectedUnit.getX());\r\n        int deltaY = Math.abs(y - this.selectedUnit.getY());\r\n        if (GameInformation.getCurrentPlayer().getMap()[x][y].getLandType() != null) {\r\n            LandType landType = GameInformation.getCurrentPlayer().getMap()[x][y].getLandType();\r\n            if (landType.equals(LandType.SHALLOW_WATER) || landType.equals(LandType.RIVER) || landType.equals(LandType.BIG_POND) ||\r\n                    landType.equals(LandType.SEA) || landType.equals(LandType.SMALL_POND) || landType.equals(LandType.ROCK) || landType.equals(LandType.PEBBLE))\r\n                return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;\r\n        }\r\n        int maxMove = this.selectedUnit.getMaxMove();\r\n        if (deltaX > maxMove || deltaY > maxMove) {\r\n            return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n        } else {\r\n            this.selectedUnit.setX(this.selectedUnit.getX() + x);\r\n            this.selectedUnit.setY(this.selectedUnit.getY() + y);\r\n            return UnitMenuOutput.SUCCESSFUL_MOVE;\r\n        }\r\n    }\r\n\r\n    public UnitMenuOutput digTunnel(int x, int y) {\r\n        if (!this.selectedUnit.getName().equalsIgnoreCase(\"TUNNELER\"))\r\n            return UnitMenuOutput.WRONG_UNIT;\r\n        String checkMove = moveUnit(x, y).getOutput();\r\n        if (checkMove.equals(UnitMenuOutput.BEYOND_SOLDIER_POWER.getOutput()))\r\n            return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n        else if (checkMove.equals(UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE.getOutput()))\r\n            return UnitMenuOutput.UNIT_DO_NOT_ALLOWED_PLACE_THERE;\r\n        if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {\r\n            Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();\r\n            switch (building.getName()) {\r\n                case \"perimeter tower\", \"lookout tower\", \"defend turret\", \"square tower\", \"circle tower\":\r\n                    GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(null);\r\n                    return UnitMenuOutput.SUCCESSFUL_DIG;\r\n                default:\r\n                    return UnitMenuOutput.WRONG_BUILDING;\r\n            }\r\n        } else\r\n            return UnitMenuOutput.WRONG_PLACE_FOR_DOG_TUNNEL;\r\n    }\r\n\r\n\r\n    public UnitMenuOutput setState(int x, int y, String state) {\r\n        this.selectedUnit.setState(state);\r\n        if (state.equals(\"offensive\")) {\r\n            this.selectedUnit.setMaxMove(this.selectedUnit.getMaxMove() + 30);\r\n            this.selectedUnit.setAttackingPower(this.selectedUnit.getAttackingPower() + 10);\r\n        }\r\n        return UnitMenuOutput.SET_STATE;\r\n    }\r\n\r\n    public UnitMenuOutput airAttack(int x, int y) {\r\n        if (!this.selectedUnit.getType().equals(\"launcher\"))\r\n            return UnitMenuOutput.WRONG_UNIT_FOR_AIR_ATTACK;\r\n        else {\r\n            int deltaX = x - this.selectedUnit.getX();\r\n            int deltaY = y - this.selectedUnit.getY();\r\n            if (deltaX <= this.launcherUnit.getThrowRageForCharging() && deltaY <= this.launcherUnit.getThrowRageForCharging()) {\r\n                if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) {\r\n                    Building building = GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding();\r\n\r\n\r\n                    if (building.getHp() > this.selectedUnit.getAttackingPower())\r\n\r\n                        building.setHp(building.getHp() - this.selectedUnit.getAttackingPower());\r\n                    else\r\n                        GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(null);\r\n                } else if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) {\r\n                    Soldier unit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();\r\n                    if ((unit.getUnitHp() + unit.getDefense()) > this.selectedUnit.getAttackingPower())\r\n                        unit.setUnitHp(unit.getUnitHp() + unit.getDefense() - this.selectedUnit.getAttackingPower());\r\n                    else\r\n                        GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(null);\r\n                }\r\n\r\n                return UnitMenuOutput.SUCCESSFUL_AIR_ATTACK;\r\n            } else return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n        }\r\n\r\n    }\r\n\r\n    public UnitMenuOutput disbandUnit() {\r\n        ArrayList<Building> building = GameInformation.getAllBuildings();\r\n        for (int i = 0; i != building.size(); i++) {\r\n            Building building1 = building.get(i);\r\n            if (building1.getName().equals(\"Hovel\")) {\r\n                int x = building1.getxCoordinate();\r\n                int y = building1.getyCoordinate();\r\n                moveUnit(x, y);\r\n                this.launcherUnit = null;\r\n                return UnitMenuOutput.UNIT_DISBANDED;\r\n            }\r\n        }\r\n        return UnitMenuOutput.ERROR_DISBAND;\r\n    }\r\n\r\n    public UnitMenuOutput buildEquipment(String equipment) {\r\n        if (this.selectedUnit.getName().equalsIgnoreCase(\"ENGINEER\")) {\r\n            if (equipment.equalsIgnoreCase(\"TREBUCHET\")) {\r\n                if ((BuildingController.checkForSources(Products.WOOD, 10).equals(\r\n                        GameInformationOutput.SUCCESS.getOutput())) && (BuildingController.checkForSources(Products.ROCK, 5).equals(\r\n                        GameInformationOutput.SUCCESS.getOutput())))\r\n                    return UnitMenuOutput.SUCCESSFUL_BUILD_TREBUCHET;\r\n\r\n                else return UnitMenuOutput.NOT_ENOUGH_RESOURCES;\r\n            }\r\n            if (equipment.equalsIgnoreCase(\"CATAPULTS\")) {\r\n                if ((BuildingController.checkForSources(Products.WOOD, 5).equals(\r\n                        GameInformationOutput.SUCCESS.getOutput())) && (BuildingController.checkForSources(Products.ROCK, 5).equals(\r\n                        GameInformationOutput.SUCCESS.getOutput())))\r\n                    return UnitMenuOutput.SUCCESSFUL_BUILD_CATAPULTS;\r\n\r\n                return UnitMenuOutput.NOT_ENOUGH_RESOURCES;\r\n            }\r\n            if (equipment.equalsIgnoreCase(\"PORTABLE SHIELD\")) {\r\n                if (BuildingController.checkForSources(Products.IRON, 10).equals(\r\n                        GameInformationOutput.SUCCESS.getOutput()))\r\n                    return UnitMenuOutput.SUCCESSFUL_BUILD_SHIELD;\r\n\r\n                return UnitMenuOutput.NOT_ENOUGH_RESOURCES;\r\n            }\r\n            if (equipment.equalsIgnoreCase(\"BATTERING RAM\")) {\r\n                if (BuildingController.checkForSources(Products.WOOD, 20).equals(\r\n                        GameInformationOutput.SUCCESS.getOutput()))\r\n                    return UnitMenuOutput.SUCCESSFUL_BUILD_BATTERING_RAM;\r\n\r\n                return UnitMenuOutput.NOT_ENOUGH_RESOURCES;\r\n            }\r\n\r\n            return UnitMenuOutput.WRONG_BUILDING_EQ;\r\n        }\r\n        return UnitMenuOutput.WRONG_UNIT_ENGINEER;\r\n    }\r\n\r\n    public UnitMenuOutput pourOil(String direction) {\r\n        if (this.selectedUnit.getName().equalsIgnoreCase(\"ENGINEER\")) {\r\n            ArrayList<Building> building = GameInformation.getAllBuildings();\r\n            for (int i = 0; i != building.size(); i++) {\r\n                Building building1 = building.get(i);\r\n                if (building1.getName().equals(\"oil smelter\")) {\r\n                    int x = building1.getxCoordinate();\r\n                    int y = building1.getyCoordinate();\r\n                    moveUnit(x, y);\r\n                    moveUnit(this.selectedUnit.getX() - x, this.selectedUnit.getY() - y);\r\n                }\r\n            }\r\n            switch (Direction.valueOf(direction.toUpperCase())) {\r\n                case UP:\r\n                    y1++;\r\n                    break;\r\n                case DOWN:\r\n                    y1--;\r\n                    break;\r\n                case LEFT:\r\n                    x1--;\r\n                    break;\r\n                case RIGHT:\r\n                    x1++;\r\n            }\r\n            return UnitMenuOutput.SUCCESSFUL_POUR_OIL;\r\n        } else return UnitMenuOutput.WRONG_UNIT_ENGINEER;\r\n    }\r\n\r\n    public UnitMenuOutput digDitch(int x, int y) {\r\n        if (this.selectedUnit.getName().equalsIgnoreCase(\"SPEARMEN\")) {\r\n            String checkMove = moveUnit(x, y).getOutput();\r\n            if (checkMove.equals(\"Your destination is beyond the soldier's power\\ntry again\"))\r\n                return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n            else {\r\n                //create ditch\r\n                //GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding();\r\n                return UnitMenuOutput.SUCCESSFUL_DIG_DITCH;\r\n            }\r\n        } else return UnitMenuOutput.WRONG_UNIT_TO_DIG_DITCH;\r\n    }\r\n\r\n    public UnitMenuOutput patrolUnit(int x, int y, int x2, int y2) {\r\n        String checkMove = moveUnit(x, y).getOutput();\r\n        if (checkMove.equals(UnitMenuOutput.BEYOND_SOLDIER_POWER.getOutput())) {\r\n            x1 -= x;\r\n            y1 -= y;\r\n            return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n        }\r\n        String doubleCheck = moveUnit(x2, y2).getOutput();\r\n        if (doubleCheck.equals(UnitMenuOutput.BEYOND_SOLDIER_POWER.getOutput())) {\r\n            x1 = x1 - (x + x2);\r\n            y1 = y1 - (y + y2);\r\n            return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n        }\r\n        System.out.println(UnitMenuOutput.UNIT_START_PATROLLING.getOutput());\r\n        patX1 = x;\r\n        patY1 = y;\r\n        patX2 = x2;\r\n        patY2 = y2;\r\n//        String c = patrolStop(stopPatrolling, x, y, x2, y2).getOutput();\r\n        System.out.println(UnitMenuOutput.UNIT_STOP_PATROLLING.getOutput());\r\n        return UnitMenuOutput.PATROL_UNIT;\r\n    }\r\n\r\n    public UnitMenuOutput patrolStop(boolean stopPatrolling, int x, int y, int x2, int y2) {\r\n        // naghese\r\n        while (stopPatrolling) {\r\n            String checkMove = moveUnit(x, y).getOutput();\r\n            String doubleCheck = moveUnit(x2, y2).getOutput();\r\n        }\r\n        return UnitMenuOutput.PATROL_UNIT;\r\n    }\r\n\r\n    public UnitMenuOutput attackUnit(int x, int y) {\r\n        String checkMove = moveUnit(x, y).toString();\r\n        if (checkMove.equals(\"Your destination is beyond the soldier's power\\ntry again\")) {\r\n            return UnitMenuOutput.BEYOND_SOLDIER_POWER;\r\n        } else {\r\n            if (GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) {\r\n                Soldier unit = GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier();\r\n                if (unit.getUnitHp() + unit.getDefense() > this.selectedUnit.getAttackingPower())\r\n                    unit.setUnitHp(unit.getUnitHp() + unit.getDefense() - this.selectedUnit.getAttackingPower());\r\n                else\r\n                    GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(null);\r\n                return UnitMenuOutput.SUCCESSFUL_ATTACK;\r\n            } else return UnitMenuOutput.UNIT_NOT_FOUND;\r\n        }\r\n    }\r\n\r\n    public UnitMenuOutput wallTarget(int x, int y) {\r\n        Building building;\r\n        Soldier unit;\r\n        if ((GameInformation.getCurrentPlayer().getMap()[x][y].getSoldier() != null) && (this.selectedUnit.getName().equalsIgnoreCase(\"SPEARMEN\") || (this.selectedUnit.getName().equalsIgnoreCase(\"MACEMEN\")))) {\r\n            attackUnit(x, y);\r\n        }\r\n        if ((GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding() != null) && (this.selectedUnit.getName().equalsIgnoreCase(\"SPEARMEN\") || this.selectedUnit.getName().equalsIgnoreCase(\"MACEMEN\") ||\r\n                this.selectedUnit.getName().equalsIgnoreCase(\"LADDERMEN\") || this.selectedUnit.getName().equalsIgnoreCase(\"ASSASSINS\"))) {\r\n            if (GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding().getName().equals(\"Small stone gatehouse\") ||\r\n                    GameInformation.getCurrentPlayer().getMap()[x][y].getBuilding().getName().equals(\"big stone gatehouse\")) {\r\n                return UnitMenuOutput.CONQUERING_AND_OPENING_THE_GATE;\r\n            } else\r\n                return UnitMenuOutput.CONQUERING;\r\n\r\n        }\r\n        return UnitMenuOutput.SUCCESSFUL_ATTACK;\r\n    }\r\n\r\n    public void figuringNearbyUnits(Soldier unit) {\r\n        ArrayList<Soldier> soldiers = GameInformation.getAllSoldiers();\r\n        int numberOfSoldier = 0;\r\n        if (unit.getType().equals(\"infantry\")) {\r\n            for (int i = 0; i != soldiers.size(); i++) {\r\n                Soldier soldier1 = (Soldier) soldiers.get(i);\r\n                if (soldier1.getX() <= unit.getMaxMove() && soldier1.getY() <= unit.getMaxMove()) {\r\n                    attackUnit(soldier1.getX(), soldier1.getY());\r\n                    if (unit.getState().equals(\"defensive\"))\r\n                        return;\r\n                    ++numberOfSoldier;\r\n                    if (numberOfSoldier == 2) return;\r\n                }\r\n            }\r\n            if (unit.getType().equals(\"launcher\")) {\r\n                for (int i = 0; i != soldiers.size(); i++) {\r\n                    Soldier soldier2 = (Soldier) soldiers.get(i);\r\n                    if (soldier2.getX() <= unit.getMaxMove() && soldier2.getY() <= unit.getMaxMove()) {\r\n                        airAttack(soldier2.getX(), soldier2.getY());\r\n                        return;\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    public void attackEnemy(int x, int y, String name) {\r\n        //Checking what the previous user ordered\r\n        //if !pour oil || build Eq || disband\r\n//        if (soldier.getType().equalsIgnoreCase(\"wallTarget\"))\r\n//            wallTarget(x, y);\r\n    }\r\n\r\n    public UnitMenuOutput dropUnit(String name, int x, int y, int count) {\r\n        UnitName type = UnitName.getUnitType(name);\r\n        if (checkLand(x, y)) {\r\n            unitType(type, x, y, count);\r\n            return UnitMenuOutput.SUCCESSFUL_DROP_UNIT;\r\n        } else return UnitMenuOutput.CAN_NOT_DROP_UNIT;\r\n    }\r\n\r\n    public void unitType(UnitName unit, int x, int y, int count) {\r\n        switch (unit.getType()) {\r\n            case \"launcher\":\r\n                createLauncherUnit(unit, x, y, count);\r\n                break;\r\n            case \"infantry\":\r\n                createInfantryUnit(unit, x, y, count);\r\n                break;\r\n            case \"wallTarget\":\r\n                createWallTargetUnit(unit, x, y, count);\r\n                break;\r\n        }\r\n    }\r\n\r\n    private void createWallTargetUnit(UnitName unit, int x, int y, int count) {\r\n        for (int i = 0; i < count; i++) {\r\n            Soldier soldier2 = new UnitWallTarget(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,\r\n                    unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), \"STANDING\");\r\n            GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier2);\r\n            this.government.addUnitWallTarget((UnitWallTarget) soldier2);\r\n            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());\r\n        }\r\n    }\r\n\r\n    private void createInfantryUnit(UnitName unit, int x, int y, int count) {\r\n        for (int i = 0; i < count; i++) {\r\n            Soldier soldier1 = new InfantryUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,\r\n                    unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), \"STANDING\");\r\n            GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);\r\n            this.government.addInfantryUnit((InfantryUnit) soldier1);\r\n            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());\r\n        }\r\n    }\r\n\r\n    private void createLauncherUnit(UnitName unit, int x, int y, int count) {\r\n        for (int i = 0; i < count; i++) {\r\n            Soldier soldier = new LauncherUnit(unit.getSpeed(), unit.getAttackingPower(), unit.getDefense(), x, y,\r\n                    unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), \"STANDING\", unit.getThrowRange());\r\n            GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier);\r\n            this.government.addLauncherUnit((LauncherUnit) soldier);\r\n            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());\r\n        }\r\n    }\r\n\r\n    public static boolean checkLand(int x, int y) {\r\n        LandType landType = GameInformation.getCurrentPlayer().getMap()[x][y].getLandType();\r\n        if (landType == null) return false;\r\n        else {\r\n            switch (landType) {\r\n                case SEA, ROCK, RIVER, SMALL_POND, BIG_POND:\r\n                    return false;\r\n                default:\r\n                    return true;\r\n            }\r\n        }\r\n    }\r\n\r\n    public boolean isUnitSelected() {\r\n        return this.selectedUnit != null;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/controller/UnitMenuController.java b/src/main/java/org/example/controller/UnitMenuController.java
+--- a/src/main/java/org/example/controller/UnitMenuController.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/controller/UnitMenuController.java	(date 1687555938235)
+@@ -347,7 +347,7 @@
+                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
+             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier2);
+             this.government.addUnitWallTarget((UnitWallTarget) soldier2);
+-            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
++            //new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
+         }
+     }
+ 
+@@ -357,7 +357,7 @@
+                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
+             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);
+             this.government.addInfantryUnit((InfantryUnit) soldier1);
+-            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
++           // new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
+         }
+     }
+ 
+@@ -367,7 +367,7 @@
+                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING", unit.getThrowRange());
+             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier);
+             this.government.addLauncherUnit((LauncherUnit) soldier);
+-            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
++            //new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
+         }
+     }
+ 
+Index: src/main/resources/FXML/setRate.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/FXML/setRate.fxml b/src/main/resources/FXML/setRate.fxml
+new file mode 100644
+--- /dev/null	(date 1687555938257)
++++ b/src/main/resources/FXML/setRate.fxml	(date 1687555938257)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.text.Font?>
++
++<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovermentMenu">
++   <children>
++      <Button fx:id="setRate" layoutX="209.0" layoutY="73.0" mnemonicParsing="false" onAction="#setRate" prefHeight="34.0" prefWidth="182.0" text="Set Rate" textFill="#e8d087" textOverrun="CLIP">
++         <font>
++            <Font name="Constantia" size="18.0" />
++         </font></Button>
++   </children>
++</Pane>
+Index: src/main/java/org/example/controller/userControllers/SignupMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//this class is completed!\r\npackage org.example.controller.userControllers;\r\n\r\n\r\nimport org.example.controller.JsonController;\r\nimport org.example.model.User;\r\nimport org.example.model.enums.SecurityQuestion;\r\nimport org.example.model.enums.Slogans;\r\nimport org.example.model.gameData.GameDataBase;\r\nimport org.example.view.enums.commands.SignupMenuEnum;\r\nimport org.example.view.enums.outputs.SignupMenuOutput;\r\nimport org.example.view.userView.ForgotPassword;\r\n\r\nimport java.util.Random;\r\nimport java.util.regex.Matcher;\r\nimport java.util.regex.Pattern;\r\n\r\npublic class SignupMenuController extends MainMenuController {\r\n    public User user;\r\n    public void setUsernameSignup(String username){\r\n        user.setUsername(username);\r\n    }\r\n\r\n    public void setPasswordSignup(String password){\r\n        user.setPassword(password);\r\n    }\r\n\r\n    public String getUsernameSignup(){\r\n        return user.getUsername();\r\n    }\r\n\r\n    public void setEmailSignup(String email){\r\n        user.setEmail(email);\r\n    }\r\n\r\n    public void setNicknameSignup(String nickname){\r\n        user.setNickname(nickname);\r\n    }\r\n\r\n    public void setPassRecoveryQuestionSignup(String passRecoveryQuestion){\r\n        user.setPassRecoveryQuestion(passRecoveryQuestion);\r\n    }\r\n    public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){\r\n        user.setPassRecoveryAnswer(passRecoveryAnswer);\r\n    }\r\n    public SignupMenuOutput signupUserCheck() {\r\n        SignupMenuOutput status;\r\n        if ((status = emailCheck(user.getEmail())) != SignupMenuOutput.CHECKED_SUCCESSFULLY)\r\n            return status;\r\n        if ((status = nicknameCheck()) != SignupMenuOutput.CHECKED_SUCCESSFULLY)\r\n            return status;\r\n        return SignupMenuOutput.SECURITY_QUESTION;\r\n    }\r\n\r\n    public SignupMenuOutput nicknameCheck() {\r\n        return user.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n    }\r\n\r\n    public static SignupMenuOutput usernameCheckErrors(String username) {\r\n        if (username.length() == 0) {\r\n            return SignupMenuOutput.EMPTY_FIELD;\r\n        }\r\n        if (username.matches(\"^\\\\w+$\")) {\r\n            for (User user : GameDataBase.getAllUsers()) {\r\n                if (user.getUsername().equals(username)) {\r\n                    return SignupMenuOutput.USERNAME_EXISTS;\r\n                }\r\n            }\r\n            return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n        }\r\n        return SignupMenuOutput.INVALID_USERNAME_FORMAT;\r\n    }\r\n\r\n    public static SignupMenuOutput passwordCheckErrors(String password) {\r\n        if (password.length() == 0) {\r\n            return SignupMenuOutput.EMPTY_FIELD;\r\n        }\r\n        if (password.length() >= 6) {\r\n            if (SignupMenuEnum.getMatcher(password, SignupMenuEnum.SMALL_CHAR) != null) {\r\n                if (SignupMenuEnum.getMatcher(password, SignupMenuEnum.CAPITAL_CHAR) != null) {\r\n                    if (SignupMenuEnum.getMatcher(password, SignupMenuEnum.DIGITS) != null) {\r\n                        if (SignupMenuEnum.getMatcher(password, SignupMenuEnum.SPECIAL_CHAR) != null) {\r\n                            return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n                        }\r\n                        return SignupMenuOutput.ERROR_PASSWORD_NO_SPECIAL_CHARACTER;\r\n                    }\r\n                    return SignupMenuOutput.ERROR_PASSWORD_NO_DIGITS;\r\n                }\r\n                return SignupMenuOutput.ERROR_PASSWORD_NO_CAPITAL_CHARACTER;\r\n            }\r\n            return SignupMenuOutput.ERROR_PASSWORD_NO_SMALL_CHARACTER;\r\n        }\r\n        return SignupMenuOutput.ERROR_PASSWORD_IS_TOO_SHORT;\r\n    }\r\n\r\n    public boolean checkPasswordWithConfiguration() {\r\n        return this.getPassword().equals(this.getClipBoard());\r\n    }\r\n\r\n    public static SignupMenuOutput emailCheck(String email) {\r\n        if (email.length() == 0) {\r\n            return SignupMenuOutput.EMPTY_FIELD;\r\n        }\r\n        if (email.matches(\"[\\\\w.]+@[\\\\w.]+\\\\.[\\\\w.]+\")) {\r\n            for (User user : GameDataBase.getAllUsers()) {\r\n                if (getMatcher(user.getEmail(), email) != null)\r\n                    return SignupMenuOutput.DUPLICATE_EMAIL_ERROR;\r\n            }\r\n            return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n        }\r\n        return SignupMenuOutput.INVALID_EMAIL_FORMAT;\r\n    }\r\n\r\n    public void selectSlogan(String input) {\r\n        user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());\r\n    }\r\n    public void userSlogan(String input)\r\n    {\r\n        user.setSlogan(input);\r\n    }\r\n\r\n    public String generateRandomPassword() {\r\n        String password;\r\n        String regex = \"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}]).{8,20}$\";\r\n        String charSet = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" + \"abcdefghijklmnopqrstuvwxyz\" + \"1234567890\" + \"!@#$%^&*()_+{}\";\r\n        Random random = new Random();\r\n        while (true) {\r\n            char[] p = new char[8];\r\n            for (int i = 0; i < 8; i++) {\r\n                p[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];\r\n            }\r\n            password = java.lang.String.valueOf(p);\r\n            if (password.matches(regex)) {\r\n                return password;\r\n            }\r\n        }\r\n    }\r\n\r\n  /*  public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {\r\n        for (SecurityQuestion question : SecurityQuestion.allQuestions()) {\r\n            if (question.getQuestionNumber().matches(matcher.group(\"Qnumber\"))) {\r\n                user.setPassRecoveryQuestion(question);\r\n                if (matcher.group(\"Qanswer1\").equals(matcher.group(\"Qanswer2\"))) {\r\n                    user.setPassRecoveryAnswer(matcher.group(\"Qanswer1\"));\r\n                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;\r\n                } else {\r\n                    return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;\r\n                }\r\n            }\r\n        }\r\n        return SignupMenuOutput.INVALID_COMMAND;\r\n    }\r\n*/\r\n    public void usernameSuggestionGenerator() {\r\n        while (true) {\r\n            boolean flag = true;\r\n            Random random = new Random();\r\n            char randomChar = (char) (random.nextInt(26) + 'a');\r\n            this.setUsername(user.getUsername() + randomChar);\r\n            for (User user : GameDataBase.getAllUsers()) {\r\n                if (user.getUsername().equals(user.getUsername())) {\r\n                    flag = false;\r\n                    break;\r\n                }\r\n            }\r\n            if (flag)\r\n                return;\r\n        }\r\n    }\r\n\r\n    public boolean randomPasswordVerification(String verification) {\r\n        return verification.equals(user.getPassword());\r\n    }\r\n\r\n    private static byte[] makeSalt() {\r\n        return new byte[16];\r\n    }\r\n\r\n    public void signingsComplete() {\r\n        byte[] salt = makeSalt();\r\n        String passHash = JsonController.getPassHashSha256(this.getPassword(), salt);\r\n        User newUser = new User(this.getUsername(), passHash, this.getClipBoard(), this.getNickname(), this.getEmail());\r\n        if (!this.getSlogan().equals(\"empty\")) {\r\n            newUser.setSlogan(this.getSlogan());\r\n        }\r\n        if (this.getPassRecoveryQuestion() != null) {\r\n            newUser.setPassRecoveryQuestion(this.getPassRecoveryQuestion());\r\n            newUser.setPassRecoveryAnswer(this.getPassRecoveryAnswer());\r\n        }\r\n        GameDataBase.getAllUsers().add(newUser);\r\n        new JsonController().setJasonFile(newUser, false);\r\n    }\r\n\r\n    private static Matcher getMatcher(String password, String regex) {\r\n        Matcher matcher = Pattern.compile(regex, Pattern.CASE_INSENSITIVE).matcher(password);\r\n        return matcher.matches() ? matcher : null;\r\n    }\r\n\r\n    public void changeForgetPassword() {\r\n        for (User user : GameDataBase.getAllUsers()) {\r\n            if (user.getUsername().equals(user.getUsername())) {\r\n                user.setPassword(user.getPassword());\r\n            }\r\n        }\r\n    }\r\n\r\n    public void showQuestions() {\r\n        SecurityQuestion.questions();\r\n    }\r\n\r\n    public void showSlogans() {\r\n        Slogans.slogans();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/controller/userControllers/SignupMenuController.java b/src/main/java/org/example/controller/userControllers/SignupMenuController.java
+--- a/src/main/java/org/example/controller/userControllers/SignupMenuController.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/controller/userControllers/SignupMenuController.java	(date 1687555938236)
+@@ -196,10 +196,10 @@
+         return matcher.matches() ? matcher : null;
+     }
+ 
+-    public void changeForgetPassword() {
++    public void changeForgetPassword(String username , String password) {
+         for (User user : GameDataBase.getAllUsers()) {
+-            if (user.getUsername().equals(user.getUsername())) {
+-                user.setPassword(user.getPassword());
++            if (user.getUsername().equals(username)) {
++                user.setPassword(password);
+             }
+         }
+     }
+Index: src/main/java/org/example/view/userView/GovermentMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.view.userView;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.layout.Pane;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.net.URL;\r\n\r\npublic class GovermentMenu extends Application {\r\n    private static Stage stage;\r\n\r\n    @Override\r\n    public void start(Stage stage) throws Exception {\r\n        GovermentMenu.stage = stage ;\r\n        URL url = MainMenu.class.getResource(\"/FXML/Goverment.fxml\");\r\n        Pane pane = FXMLLoader.load(url);\r\n        Scene scene = new Scene(pane);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/view/userView/GovermentMenu.java b/src/main/java/org/example/view/userView/GovermentMenu.java
+--- a/src/main/java/org/example/view/userView/GovermentMenu.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/view/userView/GovermentMenu.java	(date 1687555938239)
+@@ -1,16 +1,42 @@
+ package org.example.view.userView;
+ 
+ import javafx.application.Application;
++import javafx.beans.value.ChangeListener;
++import javafx.beans.value.ObservableValue;
++import javafx.event.ActionEvent;
++import javafx.event.EventHandler;
+ import javafx.fxml.FXMLLoader;
++import javafx.fxml.Initializable;
++import javafx.scene.Parent;
+ import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.scene.control.Label;
++import javafx.scene.control.Slider;
++import javafx.scene.image.ImageView;
++import javafx.scene.input.MouseEvent;
+ import javafx.scene.layout.Pane;
++import javafx.scene.text.Font;
+ import javafx.stage.Stage;
++import javafx.stage.StageStyle;
++import org.example.controller.GameMenuController;
+ 
++import java.io.File;
++import java.io.PrintStream;
+ import java.net.URL;
++import java.nio.file.Path;
++import java.nio.file.Paths;
++import java.util.ResourceBundle;
+ 
+-public class GovermentMenu extends Application {
++public class GovermentMenu extends Application implements Initializable {
++    private GameMenuController gameMenuController = new GameMenuController();
+     private static Stage stage;
++    public Button setRate;
++    public Button setTaxRate;
++    public Button setFoodRate;
++    public Button setFearRate;
+ 
++    Pane root;
++    Stage stage1;
+     @Override
+     public void start(Stage stage) throws Exception {
+         GovermentMenu.stage = stage ;
+@@ -19,5 +45,340 @@
+         Scene scene = new Scene(pane);
+         stage.setScene(scene);
+         stage.show();
++    }
++
++   /* public void gameInformation(MouseEvent event) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
++            Pane root = fxmlLoader.load();
++            Slider slider = new Slider();
++            slider.setId("custom");
++            slider.setPrefHeight(25.0);
++            slider.setPrefWidth(180.0);
++            root.getChildren().add(slider);
++            Stage stage = new Stage();
++            stage.initStyle(StageStyle.UNDECORATED);
++            Scene scene = new Scene(root);
++            Path path = Paths.get("/Css/MainMenuStyle.css");
++            String address = String.valueOf(path.toAbsolutePath());
++            System.out.println(address);
++            scene.getStylesheets().add(getClass().getResource("/Css/MainMenuStyle.css").toExternalForm());
++          //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
++            stage.setScene(scene);
++            stage.show();
++        }catch (Exception e){
++            System.out.println(e);
++        }
++    }*/
++
++    public void gameInformation(MouseEvent event) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/setRate.fxml"));
++            Pane root1 = fxmlLoader.load();
++            ImageView backToGameMenu = new ImageView(String.valueOf(getClass().getResource("/images/0_0img73.png")));
++            backToGameMenu.prefWidth(174);
++            backToGameMenu.prefHeight(35);
++            backToGameMenu.setLayoutX(78);
++            backToGameMenu.setLayoutY(299);
++            setRate = new Button();
++            setRate.setId("setRate");
++            Stage stage = new Stage();
++            EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
++                stage.close();
++            };
++            backToGameMenu.setOnMouseClicked(backToGame);
++            stage.initStyle(StageStyle.UNDECORATED);
++            root1.getChildren().add(backToGameMenu);
++            Scene scene = new Scene(root1);
++            Path path = Paths.get("/Css/setRate.css");
++            String address = String.valueOf(path.toAbsolutePath());
++            System.out.println(address);
++            scene.getStylesheets().add(getClass().getResource("/Css/setRate.css").toExternalForm());
++            //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
++            stage.setScene(scene);
++            stage.show();
++        }catch (Exception e){
++            System.out.println(e);
++        }
++    }
++
++    public void setRate(ActionEvent event) throws Exception {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/setRateOptions.fxml"));
++            Pane root = fxmlLoader.load();
++            ImageView backToGameMenu = new ImageView(String.valueOf(getClass().getResource("/images/0_0img73.png")));
++            backToGameMenu.prefWidth(174);
++            backToGameMenu.prefHeight(35);
++            backToGameMenu.setLayoutX(78);
++            backToGameMenu.setLayoutY(299);
++            Stage stage = new Stage();
++            EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
++                stage.close();
++            };
++            backToGameMenu.setOnMouseClicked(backToGame);
++            stage.initStyle(StageStyle.UNDECORATED);
++            root.getChildren().add(backToGameMenu);
++            Scene scene = new Scene(root);
++            Path path = Paths.get("/Css/setRateOptions.css");
++            String address = String.valueOf(path.toAbsolutePath());
++            System.out.println(address);
++            scene.getStylesheets().add(getClass().getResource("/Css/setRateOptions.css").toExternalForm());
++            //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
++            stage.setScene(scene);
++            stage.show();
++        } catch (Exception e) {
++            System.out.println(e);
++        }
++    }
++
++  /*   try {
++      */
++
++
++
++    public void backToSetRate(MouseEvent event) {
++        stage1.close();
++    }
++
++    public void setFearRate(ActionEvent event) {
++     try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
++        Pane root = fxmlLoader.load();
++        Slider slider = new Slider();
++        slider.setId("custom");
++        slider.setPrefHeight(25.0);
++        slider.setPrefWidth(180.0);
++        slider.setLayoutX(312);
++        slider.setLayoutY(69);
++        ImageView left = new ImageView(String.valueOf(getClass().getResource("/images/0_0img22.png")));
++        left.setLayoutX(283);
++        left.setLayoutY(69);
++        left.prefWidth(36);
++        left.prefHeight(30);
++         ImageView right = new ImageView(String.valueOf(getClass().getResource("/images/0_0img277.png")));
++         right.setFitWidth(36);
++         right.setFitHeight(35);
++         right.setLayoutX(486);
++         right.setLayoutY(69);
++         root.getChildren().add(right);
++        root.getChildren().add(left);
++        root.getChildren().add(slider);
++        Stage stage = new Stage();
++        stage.initStyle(StageStyle.UNDECORATED);
++        Scene scene = new Scene(root);
++        Path path = Paths.get("/Css/MainMenuStyle.css");
++        String address = String.valueOf(path.toAbsolutePath());
++        System.out.println(address);
++        scene.getStylesheets().add(getClass().getResource("/Css/MainMenuStyle.css").toExternalForm());
++        //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
++        stage.setScene(scene);
++        stage.show();
++    } catch (Exception e) {
++        System.out.println(e);
++    }
++    }
++
++    Label foodCoins;
++    Label numberOfPeople;
++    Slider foodSlider = new Slider();
++    Label foodInfo;
++    public void setFoodRate(ActionEvent event) {
++        try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
++            Pane root = fxmlLoader.load();
++            foodSlider.setId("custom");
++            foodSlider.setPrefHeight(25.0);
++            foodSlider.setPrefWidth(180.0);
++            foodSlider.setLayoutX(312);
++            foodSlider.setLayoutY(69);
++            foodSlider.setMin(-2);
++            foodSlider.setMax(2);
++            ImageView left = new ImageView(String.valueOf(getClass().getResource("/images/0_0img22.png")));
++            left.setLayoutX(283);
++            left.setLayoutY(69);
++            left.prefWidth(36);
++            left.prefHeight(30);
++            ImageView right = new ImageView(String.valueOf(getClass().getResource("/images/0_0img277.png")));
++            right.setFitWidth(36);
++            right.setFitHeight(35);
++            right.setLayoutX(486);
++            right.setLayoutY(69);
++            ImageView food = new ImageView(String.valueOf(getClass().getResource("/images/0_0img92.png")));
++            food.setFitHeight(80);
++            food.setFitWidth(80);
++            food.setLayoutY(37);
++            food.setLayoutX(46);
++            ImageView foodImage = new ImageView(String.valueOf(getClass().getResource("/images/0_0img93.png")));
++            foodImage.setLayoutX(468);
++            foodImage.setLayoutY(29);
++            foodImage.setFitWidth(35);
++            foodImage.setFitHeight(30);
++            ImageView person = new ImageView(String.valueOf(getClass().getResource("/images/0_0img126.png")));
++            person.setFitHeight(31);
++            person.setFitWidth(30);
++            person.setLayoutY(26);
++            person.setLayoutX(300);
++            Label label = new Label("Set Food Rate");
++            label.setFont(Font.font("Century",24));
++            label.setLayoutX(43);
++            label.setLayoutY(14);
++            foodCoins = new Label("food");
++            foodCoins.setLayoutY(27);
++            foodCoins.setLayoutX(430);
++            foodCoins.setFont(Font.font("Century",18));
++            numberOfPeople = new Label("person");
++            numberOfPeople.setLayoutY(27);
++            numberOfPeople.setLayoutX(330);
++            numberOfPeople.setFont(Font.font("Century",18));
++            foodInfo = new Label("Tax Information");
++            foodInfo.setFont(Font.font("Century",18));
++            foodInfo.setLayoutX(150);
++            foodInfo.setLayoutY(120);
++            Label equal = new Label("=");
++            equal.setFont(Font.font("Century",18));
++            equal.setLayoutY(12);
++            root.getChildren().add(right);
++            root.getChildren().add(left);
++            root.getChildren().add(food);
++            root.getChildren().add(person);
++            root.getChildren().add(foodImage);
++            root.getChildren().add(foodSlider);
++            root.getChildren().add(foodCoins);
++            root.getChildren().add(numberOfPeople);
++            root.getChildren().add(foodInfo);
++            root.getChildren().add(label);
++            Stage stage = new Stage();
++            stage.initStyle(StageStyle.UNDECORATED);
++            Scene scene = new Scene(root);
++            Path path = Paths.get("/Css/MainMenuStyle.css");
++            String address = String.valueOf(path.toAbsolutePath());
++            System.out.println(address);
++            scene.getStylesheets().add(getClass().getResource("/Css/MainMenuStyle.css").toExternalForm());
++            //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
++            stage.setScene(scene);
++            stage.show();
++        } catch (Exception e) {
++            System.out.println(e);
++        }
++    }
++Slider slider = new Slider();
++    Label coins;
++    Label people;
++    Label taxInfo;
++    public void setTaxRate(ActionEvent event) {
++        try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
++            Pane root = fxmlLoader.load();
++            //slider = new Slider();
++            slider.setId("custom");
++            slider.setPrefHeight(25.0);
++            slider.setPrefWidth(180.0);
++            slider.setLayoutX(312);
++            slider.setLayoutY(69);
++            slider.setMin(-3);
++            slider.setMax(8);
++            coins = new Label("coin");
++            coins.setLayoutY(27);
++            coins.setLayoutX(430);
++            coins.setFont(Font.font("Century",18));
++            people = new Label("person");
++            people.setLayoutY(27);
++            people.setLayoutX(350);
++            people.setFont(Font.font("Century",18));
++            Label label = new Label("Set Tax Rate");
++            label.setFont(Font.font("Century",24));
++            label.setLayoutX(43);
++            label.setLayoutY(14);
++            taxInfo = new Label("Tax Information");
++            taxInfo.setFont(Font.font("Century",18));
++            taxInfo.setLayoutX(150);
++            taxInfo.setLayoutY(120);
++            ImageView tax = new ImageView(String.valueOf(getClass().getResource("/images/Untitled.png")));
++            tax.setFitHeight(109);
++            tax.setFitWidth(171);
++            tax.setLayoutY(29);
++            tax.setLayoutX(23);
++            ImageView select = new ImageView(String.valueOf(getClass().getResource("/images/select.png")));
++            select.setFitHeight(30);
++            select.setFitWidth(30);
++            select.setLayoutY(13);
++            select.setLayoutX(555);
++            Stage stage = new Stage();
++            EventHandler<MouseEvent> setTax = (EventHandler<MouseEvent>) e -> {
++                int number = (int) slider.getValue();
++                gameMenuController.setTaxRate(number);
++                stage.close();
++            };
++            select.setOnMouseClicked(setTax);
++            ImageView left = new ImageView(String.valueOf(getClass().getResource("/images/0_0img22.png")));
++            left.setLayoutX(283);
++            left.setLayoutY(69);
++            left.prefWidth(36);
++            left.prefHeight(30);
++            ImageView right = new ImageView(String.valueOf(getClass().getResource("/images/0_0img277.png")));
++            right.setFitWidth(36);
++            right.setFitHeight(35);
++            right.setLayoutX(486);
++            right.setLayoutY(69);
++            ImageView coin = new ImageView(String.valueOf(getClass().getResource("/images/0_0img112.png")));
++            coin.setLayoutX(468);
++            coin.setLayoutY(25);
++            coin.setFitWidth(41);
++            coin.setFitHeight(30);
++            ImageView person = new ImageView(String.valueOf(getClass().getResource("/images/0_0img126.png")));
++            person.setFitHeight(39);
++            person.setFitWidth(31);
++            person.setLayoutY(19);
++            person.setLayoutX(300);
++            root.getChildren().add(person);
++            root.getChildren().add(coin);
++            root.getChildren().add(tax);
++            root.getChildren().add(label);
++            root.getChildren().add(right);
++            root.getChildren().add(left);
++            root.getChildren().add(slider);
++            root.getChildren().add(coins);
++            root.getChildren().add(people);
++            root.getChildren().add(taxInfo);
++            root.getChildren().add(select);
++
++            stage.initStyle(StageStyle.UNDECORATED);
++            Scene scene = new Scene(root);
++            Path path = Paths.get("/Css/MainMenuStyle.css");
++            String address = String.valueOf(path.toAbsolutePath());
++            System.out.println(address);
++            scene.getStylesheets().add(getClass().getResource("/Css/MainMenuStyle.css").toExternalForm());
++            //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
++            stage.setScene(scene);
++            stage.show();
++        } catch (Exception e) {
++            System.out.println(e);
++        }
++    }
++
++    @Override
++    public void initialize(URL url, ResourceBundle resourceBundle) {
++
++        slider.valueProperty().addListener(new ChangeListener<Number>() {
++            @Override
++            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
++                int number1 = (int) slider.getValue();
++                System.out.println(gameMenuController.showTaxRate(number1));
++                String[] splitString = gameMenuController.showTaxRate(number1).split(">");
++                coins.setText(splitString[0]);
++                people.setText(splitString[1]);
++                taxInfo.setText(splitString[2]);
++            }
++        });
++
++        foodSlider.valueProperty().addListener(new ChangeListener<Number>() {
++            @Override
++            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
++                int number1 = (int) foodSlider.getValue();
++                System.out.println(gameMenuController.showFoodRate(number1));
++                String[] splitString = gameMenuController.showFoodRate(number1).split("-");
++                foodCoins.setText(splitString[0]);
++                numberOfPeople.setText("1");
++                foodInfo.setText(splitString[1]);
++            }
++        });
++
+     }
+ }
+Index: src/main/java/org/example/controller/userControllers/LoginMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//this class is completed!\r\npackage org.example.controller.userControllers;\r\n\r\nimport org.example.model.User;\r\nimport org.example.model.enums.SecurityQuestion;\r\nimport org.example.model.gameData.GameDataBase;\r\nimport org.example.view.enums.outputs.LoginMenuOutput;\r\n\r\n\r\npublic class LoginMenuController extends MainMenuController {\r\n    private boolean stayLoggedInFlag = false;\r\n\r\n    public LoginMenuOutput loginUser() {\r\n        if (checkMatchUsername()) {\r\n            if (checkUsernameWithPassword()) {\r\n                if (this.isStayLoggedInFlag()) {\r\n                    GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(true);\r\n                    ProfileMenuController.moveDataToFile();\r\n                }\r\n                return LoginMenuOutput.LOGGED_IN_SUCCESSFULLY;\r\n            }\r\n            return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;\r\n        }\r\n        return LoginMenuOutput.USER_DOES_NOT_EXIST;\r\n    }\r\n\r\n    public boolean checkMatchUsername() {\r\n        for (User user : GameDataBase.getAllUsers()) {\r\n            if (user.getUsername().equals(this.getUsername()))\r\n                return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    private boolean checkUsernameWithPassword() {\r\n        for (User user : GameDataBase.getAllUsers()) {\r\n            if (user.getUsername().equals(this.getUsername())) {\r\n                if (user.getPassword().equals(this.getPassword())) {\r\n                    return true;\r\n                }\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean checkSecurityQuestion(String answer) {\r\n        for (User user : GameDataBase.getAllUsers()) {\r\n            if (user.getUsername().equals(this.getUsername())) {\r\n                if (user.getPassRecoveryAnswer().matches(\"\\\\s*\" + answer + \"\\\\s*\")) {\r\n                    return true;\r\n                }\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean isStayLoggedInFlag() {\r\n        return stayLoggedInFlag;\r\n    }\r\n\r\n    public void setStayLoggedInFlag(boolean stayLoggedInFlag) {\r\n        this.stayLoggedInFlag = stayLoggedInFlag;\r\n    }\r\n\r\n    public SecurityQuestion findUserSecurityQuestion() {\r\n        for (User user : GameDataBase.getAllUsers()) {\r\n            if (user.getUsername().equals(this.getUsername())) {\r\n                System.out.println(user.findUserQuestionWithUsername());\r\n                return user.findUserQuestionWithUsername();\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public SecurityQuestion findUserSecurityQuestion(String question) {\r\n        for (SecurityQuestion securityQuestion : SecurityQuestion.allQuestions()) {\r\n            if (securityQuestion.getQuestion().equals(question))\r\n                return securityQuestion;\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public void logOut() {\r\n        GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(false);\r\n        this.setStayLoggedInFlag(false);\r\n        ProfileMenuController.moveDataToFile();\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/controller/userControllers/LoginMenuController.java b/src/main/java/org/example/controller/userControllers/LoginMenuController.java
+--- a/src/main/java/org/example/controller/userControllers/LoginMenuController.java	(revision 50791cbcb858cc7f27ac308e302cb2d4d3e96c7c)
++++ b/src/main/java/org/example/controller/userControllers/LoginMenuController.java	(date 1687555938235)
+@@ -10,9 +10,10 @@
+ public class LoginMenuController extends MainMenuController {
+     private boolean stayLoggedInFlag = false;
+ 
+-    public LoginMenuOutput loginUser() {
++    public LoginMenuOutput loginUser(String password) {
++        System.out.println(this.getUsername()+password);
+         if (checkMatchUsername()) {
+-            if (checkUsernameWithPassword()) {
++            if (checkUsernameWithPassword(password)) {
+                 if (this.isStayLoggedInFlag()) {
+                     GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(true);
+                     ProfileMenuController.moveDataToFile();
+@@ -32,10 +33,10 @@
+         return false;
+     }
+ 
+-    private boolean checkUsernameWithPassword() {
++    private boolean checkUsernameWithPassword(String password) {
+         for (User user : GameDataBase.getAllUsers()) {
+             if (user.getUsername().equals(this.getUsername())) {
+-                if (user.getPassword().equals(this.getPassword())) {
++                if (user.getPassword().equals(password)) {
+                     return true;
+                 }
+             }
+@@ -65,7 +66,6 @@
+     public SecurityQuestion findUserSecurityQuestion() {
+         for (User user : GameDataBase.getAllUsers()) {
+             if (user.getUsername().equals(this.getUsername())) {
+-                System.out.println(user.findUserQuestionWithUsername());
+                 return user.findUserQuestionWithUsername();
+             }
+         }
+@@ -87,4 +87,3 @@
+     }
+ 
+ }
+-
