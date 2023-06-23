@@ -17,6 +17,7 @@ public class GamePanel extends JPanel implements Runnable {
     private final int worldWidth = tileSize * 50; // todo: has to change to user map 200 or 400
     private final int worldHeight = tileSize * 50;
     private GameState gameState;
+    private PlayerGameStatus playerStatus = new PlayerGameStatus(this);
     private UI popupPage = new UI(this);
     private final KeyHandler keyHandler = new KeyHandler(this);
     private final AssetSetter assetSetter;
@@ -178,5 +179,9 @@ public class GamePanel extends JPanel implements Runnable {
 
     public UI getPopupPage() {
         return popupPage;
+    }
+
+    public PlayerGameStatus getPlayerStatus() {
+        return playerStatus;
     }
 }
