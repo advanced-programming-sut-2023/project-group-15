@@ -26,7 +26,7 @@ public class ResourcesOfMarket extends Application {
         HashMap<String, Integer> sellCoin = new HashMap<>(marketController.show2());
         HashMap<String, Integer> buyCoin = new HashMap<>(marketController.show3());
         ResourcesOfMarket.stage = stage;
-        URL url = SignupMenu.class.getResource("/FXML2/ResourcesOfMarket.fxml");
+        URL url = SignupMenu.class.getResource("/FXML/ResourcesOfMarket.fxml");
         Label nameItem = new Label();
         Label numberOfProduct = new Label();
         nameItem.setLayoutX(105.0);

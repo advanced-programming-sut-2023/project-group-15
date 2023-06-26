@@ -96,7 +96,7 @@ public class Market extends Application implements Initializable {
             HashMap<String, Integer> number = new HashMap<>(marketController.show1());
             HashMap<String, Integer> sellCoin = new HashMap<>(marketController.show2());
             HashMap<String, Integer> buyCoin = new HashMap<>(marketController.show3());
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML2/ResourcesOfMarket.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/ResourcesOfMarket.fxml"));
 
             Image back = new Image(getClass().getResource("/images/0_0img22.png").toString());
             ImageView backIcon = new ImageView(back);
@@ -217,7 +217,7 @@ public class Market extends Application implements Initializable {
     @Override
     public void start(Stage stage) throws IOException {
        Market.stage = stage;
-        URL url = SignupMenu.class.getResource("/FXML2/Market.fxml");
+        URL url = SignupMenu.class.getResource("/FXML/Market.fxml");
 
         pane = FXMLLoader.load(url);
 

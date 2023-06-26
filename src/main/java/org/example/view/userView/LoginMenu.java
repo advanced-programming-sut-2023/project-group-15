@@ -149,11 +149,7 @@ public class LoginMenu extends StartingMenu {
             successfulLogin.setText("successful login");
             for(User user : GameDataBase.getAllUsers()) {
                 if (user.getUsername().equals(username)) {
-                    System.out.println(user.getUsername());
-                    System.out.println("Current user will be set on: "+user);
                     MainMenuController.setCurrentUser(user);
-                    System.out.println("Current user is :" +MainMenuController.getCurrentUser());
-                    //System.out.println(MainMenuController.getCurrentUser().getUsername());
                 }
             }
             captchaShower();

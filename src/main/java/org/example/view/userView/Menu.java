@@ -29,7 +29,7 @@ MarketController marketController = new MarketController();
         @FXML
         public void showMarket(MouseEvent mouseEvent) {
                 try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML2/Market.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Market.fxml"));
                         Image image2 = new Image((getClass().getResource("/images/0_0img26.png").toString()));
                         ImageView imageView = new ImageView(image2);
                         imageView.setLayoutX(398.0);
