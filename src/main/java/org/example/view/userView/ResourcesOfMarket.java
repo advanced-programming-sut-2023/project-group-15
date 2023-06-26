@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -27,7 +26,7 @@ public class ResourcesOfMarket extends Application {
         HashMap<String, Integer> sellCoin = new HashMap<>(marketController.show2());
         HashMap<String, Integer> buyCoin = new HashMap<>(marketController.show3());
         ResourcesOfMarket.stage = stage;
-        URL url = SignupMenu.class.getResource("/FXML/ResourcesOfMarket.fxml");
+        URL url = SignupMenu.class.getResource("/FXML2/ResourcesOfMarket.fxml");
         Label nameItem = new Label();
         Label numberOfProduct = new Label();
         nameItem.setLayoutX(105.0);

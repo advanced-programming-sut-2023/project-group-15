@@ -1,13 +1,11 @@
 package org.example.view.userView;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,7 +19,6 @@ import javafx.stage.StageStyle;
 import org.example.controller.MarketController;
 import org.example.controller.userControllers.SignupMenuController;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -99,7 +96,7 @@ public class Market extends Application implements Initializable {
             HashMap<String, Integer> number = new HashMap<>(marketController.show1());
             HashMap<String, Integer> sellCoin = new HashMap<>(marketController.show2());
             HashMap<String, Integer> buyCoin = new HashMap<>(marketController.show3());
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/ResourcesOfMarket.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML2/ResourcesOfMarket.fxml"));
 
             Image back = new Image(getClass().getResource("/images/0_0img22.png").toString());
             ImageView backIcon = new ImageView(back);
@@ -220,7 +217,7 @@ public class Market extends Application implements Initializable {
     @Override
     public void start(Stage stage) throws IOException {
        Market.stage = stage;
-        URL url = SignupMenu.class.getResource("/FXML/Market.fxml");
+        URL url = SignupMenu.class.getResource("/FXML2/Market.fxml");
 
         pane = FXMLLoader.load(url);
 

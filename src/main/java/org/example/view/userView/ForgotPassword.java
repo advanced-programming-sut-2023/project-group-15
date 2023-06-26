@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,17 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.example.InputScanner;
 import org.example.controller.JsonController;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.SignupMenuController;
-import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.ResourceBundle;
 
 public class ForgotPassword extends Application  {
 
@@ -55,7 +50,7 @@ public class ForgotPassword extends Application  {
         // setQuestionCheck();
         // System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
         ForgotPassword.stage = stage;
-        URL url = MainMenu.class.getResource("/FXML/forgotPassword.fxml");
+        URL url = StartingMenu.class.getResource("/FXML2/forgotPassword.fxml");
         questionCheck = new Label();
         questionCheck.setText("");
         Button button = new Button("ok");

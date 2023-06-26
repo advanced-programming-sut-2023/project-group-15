@@ -1,4 +1,4 @@
-package org.example.gameMap.notReadedClasses;
+/*package org.example.gameMap.notReadedClasses;
 
 
 import org.example.gameMap.Ui.Size;
@@ -44,4 +44,4 @@ public class ImageUtils  {
     }
 
 
-}
+}*/

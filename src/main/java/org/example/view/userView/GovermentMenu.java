@@ -14,7 +14,7 @@ public class GovermentMenu extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         GovermentMenu.stage = stage ;
-        URL url = MainMenu.class.getResource("/FXML/Goverment.fxml");
+        URL url = StartingMenu.class.getResource("/FXML2/Goverment.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(pane);
         stage.setScene(scene);

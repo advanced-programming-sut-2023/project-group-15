@@ -1,22 +1,25 @@
 //this class is completed!
 package org.example.view.userView;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.InputScanner;
 import org.example.controller.*;
 import org.example.controller.userControllers.LoginMenuController;
-import org.example.controller.userControllers.ProfileMenuController;
+import org.example.controller.userControllers.MainMenuController;
 import org.example.controller.userControllers.SignupMenuController;
+import org.example.model.Styles;
+import org.example.model.User;
+import org.example.model.gameData.GameDataBase;
 import org.example.view.GameStartMenu;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
@@ -25,7 +28,10 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 import java.net.URL;
 import java.util.regex.Matcher;
 
-public class LoginMenu extends MainMenu {
+import static org.example.Utility.captchaStringGen;
+import static org.example.Utility.displacementMap;
+
+public class LoginMenu extends StartingMenu {
     private final LoginMenuController loginMenuController = new LoginMenuController();
 
     private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
@@ -37,7 +43,17 @@ public class LoginMenu extends MainMenu {
     public Label errorPassword;
     public Label successfulLogin;
     private Matcher loginMenuMatcher;
+    MainMenuController mainMenuController = new MainMenuController();
     public static Stage stage;
+    private static Stage stage1 = new Stage();
+    Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
+    BackgroundImage bImg = new BackgroundImage(background,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.DEFAULT,
+            new BackgroundSize(1, 1.0, true, true, false, false));
+    Background bGround = new Background(bImg);
+    Styles styles = new Styles();
 
     @FXML
     void changeMode(ActionEvent event){
@@ -52,18 +68,22 @@ public class LoginMenu extends MainMenu {
         passwordShow.setVisible(false);
     }
 
-    protected
-    String successfulMessage = String.format("-fx-text-fill: Green;");
-    String errorMessage = String.format("-fx-text-fill: RED;");
-    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
-    String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
+
     @Override
     public void start (Stage stage) throws Exception
     {
         LoginMenu.stage = stage ;
-        URL url = MainMenu.class.getResource("/FXML/Login.fxml");
+        URL url = StartingMenu.class.getResource("/FXML/Login.fxml");
         Pane pane = FXMLLoader.load(url);
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(new Group(), 600, 400);
+        ObservableList content = ((Group) scene.getRoot()).getChildren();
+        pane.setBackground(bGround);
+        String[] captcha;
+        captcha = captchaStringGen();
+
+        content.add(displacementMap(captcha[0]));
+        content.add(pane);
+
         stage.setScene(scene);
         stage.show();
 
@@ -71,69 +91,79 @@ public class LoginMenu extends MainMenu {
 
     }
 
- /*   public void run() {
-        GameInformation.setCurrentPlayer(GameDataBase.getUserByUsername(loginMenuController.getUsername()));
-        String userInput;
-        System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());
-        ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
-        while (true) {
-            userInput = InputScanner.getScanner().nextLine();
-            if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex())) {
-                loginMenuController.logOut();
-                return;
-            } else if (userInput.matches(LoginMenuEnum.EXIT.getRegex())) {
-                System.exit(0);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
-                profileMenu.changeUserUsername(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PASSWORD)) != null) {
-                profileMenu.changeUserPassword(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_EMAIL)) != null) {
-                profileMenu.changeUserEmail(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_NICKNAME)) != null) {
-                profileMenu.changeUserNickname(loginMenuMatcher);
-            } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_SLOGAN)) != null) {
-                profileMenu.changeUserSlogan(loginMenuMatcher);
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.REMOVE_SLOGAN) != null) {
-                profileMenu.removeUserSlogan();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_PROFILE) != null) {
-                profileMenu.displayUserProfile();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_SLOGAN) != null) {
-                profileMenu.displayUserSlogan();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_RANK) != null) {
-                profileMenu.displayUserRank();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
-                profileMenu.displayUserInfo();
-            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.START_NEW_GAME)) != null) {
-                GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
-                gameStartMenu.startNewGame();
-            } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ADD_PLAYER)) != null) {
-                gameStartMenu.addPlayer(loginMenuController.getUsername(), loginMenuMatcher);
-            } else if (GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ENTER_GAME) != null) {
-                new GameMenu(loginMenuController).run();
-//                new UserTurn(loginMenuController).enterGame();
-            } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.LOGOUT) != null) {
-                System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
-                break;
-            } else {
-                System.out.println(ProfileMenuOutput.INVALID_COMMAND.getOutput());
-            }
-        }
-    }
-*/
-    public void loginInCheck(String username , String password) {
+    /*   public void run() {
+           GameInformation.setCurrentPlayer(GameDataBase.getUserByUsername(loginMenuController.getUsername()));
+           String userInput;
+           System.out.println(LoginMenuOutput.SHOW_OPTIONS.getOutput());
+           ProfileMenu profileMenu = new ProfileMenu(loginMenuController);
+           while (true) {
+               userInput = InputScanner.getScanner().nextLine();
+               if (userInput.matches(LoginMenuEnum.USER_LOGOUT.getRegex())) {
+                   loginMenuController.logOut();
+                   return;
+               } else if (userInput.matches(LoginMenuEnum.EXIT.getRegex())) {
+                   System.exit(0);
+               } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_USERNAME)) != null) {
+                   profileMenu.changeUserUsername(loginMenuMatcher);
+               } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PASSWORD)) != null) {
+                   profileMenu.changeUserPassword(loginMenuMatcher);
+               } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_EMAIL)) != null) {
+                   profileMenu.changeUserEmail(loginMenuMatcher);
+               } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_PROFILE_NICKNAME)) != null) {
+                   profileMenu.changeUserNickname(loginMenuMatcher);
+               } else if ((loginMenuMatcher = ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.CHANGE_SLOGAN)) != null) {
+                   profileMenu.changeUserSlogan(loginMenuMatcher);
+               } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.REMOVE_SLOGAN) != null) {
+                   profileMenu.removeUserSlogan();
+               } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_PROFILE) != null) {
+                   profileMenu.displayUserProfile();
+               } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_SLOGAN) != null) {
+                   profileMenu.displayUserSlogan();
+               } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_USER_RANK) != null) {
+                   profileMenu.displayUserRank();
+               } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.DISPLAY_PROFILE) != null) {
+                   profileMenu.displayUserInfo();
+               } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.START_NEW_GAME)) != null) {
+                   GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
+                   gameStartMenu.startNewGame();
+               } else if ((loginMenuMatcher = GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ADD_PLAYER)) != null) {
+                   gameStartMenu.addPlayer(loginMenuController.getUsername(), loginMenuMatcher);
+               } else if (GameStartMenuEnum.getMatcher(userInput, GameStartMenuEnum.ENTER_GAME) != null) {
+                   new GameMenu(loginMenuController).run();
+   //                new UserTurn(loginMenuController).enterGame();
+               } else if (ProfileMenuEnum.getMatcher(userInput, ProfileMenuEnum.LOGOUT) != null) {
+                   System.out.println(ProfileMenuOutput.LOGGED_OUT_SUCCESSFULLY.getOutput());
+                   break;
+               } else {
+                   System.out.println(ProfileMenuOutput.INVALID_COMMAND.getOutput());
+               }
+           }
+       }
+   */
+    public void loginInCheck(String username , String password) throws Exception {
         classify(username, password);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
-            successfulLogin.setStyle(successfulMessage);
+            successfulLogin.setStyle(styles.getSuccessfulMessage());
             successfulLogin.setText("successful login");
-          //  run();
+            for(User user : GameDataBase.getAllUsers()) {
+                if (user.getUsername().equals(username)) {
+                    System.out.println(user.getUsername());
+                    System.out.println("Current user will be set on: "+user);
+                    MainMenuController.setCurrentUser(user);
+                    System.out.println("Current user is :" +MainMenuController.getCurrentUser());
+                    //System.out.println(MainMenuController.getCurrentUser().getUsername());
+                }
+            }
+            captchaShower();
+            //new MainMenu().start(StartingMenu.stage);
         } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){
-            successfulLogin.setStyle(errorMessage);
+            successfulLogin.setStyle(styles.getErrorMessage());
             successfulLogin.setText("username and password doesn't match");
         }
         else if(status.equals(LoginMenuOutput.USER_DOES_NOT_EXIST)){
-            successfulLogin.setStyle(errorMessage);
+            successfulLogin.setStyle(styles.getErrorMessage());
             successfulLogin.setText("username doesn't exist");
         }
 
@@ -149,7 +179,7 @@ public class LoginMenu extends MainMenu {
             loginMenuController.setStayLoggedInFlag(true);*/
     }
 
-    protected void forgetPassword(String username) {
+    /*protected void forgetPassword(String username) {
         loginMenuController.setUsername(username);
         if (loginMenuController.checkMatchUsername()) {
             System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
@@ -166,9 +196,9 @@ public class LoginMenu extends MainMenu {
             }
         }
         System.out.println(LoginMenuOutput.USER_DOES_NOT_EXIST.getOutput());
-    }
+    }*/
 
-    private void resettingUserPassword(String username) {
+   /* private void resettingUserPassword(String username) {
         System.out.println(LoginMenuOutput.ENTER_YOUR_NEW_PASSWORD.getOutput());
         String newPassword = InputScanner.getScanner().nextLine();
         SignupMenuController signupMenuController = new SignupMenuController();
@@ -191,7 +221,7 @@ public class LoginMenu extends MainMenu {
                     System.out.println(SignupMenuOutput.ERROR_PASSWORD_DONOT_MATCH_WITH_CONFIGURATION.getOutput());
             }
         }
-    }
+    }*/
 
     public void loggedInUserInformation(String name, String password, String nickname, String email, String slogan, String passwordRecoveryQuestion, String passwordRecoveryAnswer, String rank, String highScore) {
         loginMenuController.setUsername(name);
@@ -203,30 +233,73 @@ public class LoginMenu extends MainMenu {
         loginMenuController.setPassRecoveryAnswer(passwordRecoveryAnswer);
         loginMenuController.setRank(Integer.parseInt(rank));
         loginMenuController.setHighScore(Integer.parseInt(highScore));
-       // run();
+
+        // run();
     }
 
     public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
-        new MainMenu().start(LoginMenu.stage);
+        new StartingMenu().start(LoginMenu.stage);
     }
 
     public void forgotPassword(MouseEvent mouseEvent) throws Exception{
         new ForgotPassword().start(LoginMenu.stage);
     }
+    public void captchaShower()
+    {
+        Label captchaMessage = new Label("please enter the below captcha");
+        Button submit2 = new Button("submit");
+        TextField captchaInput = new TextField();
+        captchaInput.setId("captcha");
+        Scene scene = new Scene(new Group(), 300, 300);
+        ObservableList content = ((Group) scene.getRoot()).getChildren();
+        String[] captcha;
+        captcha = captchaStringGen();
+        captchaMessage.setTranslateX(50);
+        captchaMessage.setTranslateY(50);
+        submit2.setTranslateX(100);
+        submit2.setTranslateY(200);
+        captchaInput.setTranslateX(50);
+        captchaInput.setTranslateY(70);
+        content.add(displacementMap(captcha[0]));
+        content.addAll(captchaMessage, submit2, captchaInput);
+        stage1.setScene(scene);
+        stage1.show();
+        //todo the error labels are not shown
+        submit2.setOnAction(e ->
+        {
+            if (!captchaInput.getText().isBlank()) {
+                if (captchaInput.getText().equals(captcha[0])) {
+                    stage1.close();
+                    try {
+                        new MainMenu().start(stage);
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("captcha error");
+                    alert.show();
+                    captchaShower();
+                }
 
 
-    public void loginUser(MouseEvent mouseEvent) {
+            }
+        });
+    }
+
+
+    public void loginUser(MouseEvent mouseEvent) throws Exception {
         if(password.getText().isBlank())
         {
-            errorPassword.setStyle(errorMessage);
+            errorPassword.setStyle(styles.getErrorMessage());
             errorPassword.setText("password field is blank");
-            password.setStyle(errorStyle);
+            password.setStyle(styles.getErrorStyle());
         }
         if(username.getText().isBlank())
         {
-            errorUsername.setStyle(errorMessage);
+            errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("password field is blank");
-            username.setStyle(errorStyle);
+            username.setStyle(styles.getErrorStyle());
         }
         else if(!password.getText().isBlank() && !username.getText().isBlank())
         {
