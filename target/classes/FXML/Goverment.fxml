@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="100.0" prefWidth="219.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovermentMenu">
-
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="192.0" prefWidth="571.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovermentMenu">
+   <children>
+      <ImageView fitHeight="126.0" fitWidth="571.0" layoutY="66.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/0_0img0.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="27.0" layoutX="364.0" layoutY="86.0" onMouseClicked="#gameInformation" pickOnBounds="true">
+         <image>
+            <Image url="@../images/0_0img25.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="productive" fitHeight="26.0" fitWidth="22.0" layoutX="14.0" layoutY="166.0" onMouseClicked="#productiveBuildings" pickOnBounds="true">
+         <image>
+            <Image url="@../images/productive.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="city" fitHeight="26.0" fitWidth="22.0" layoutX="43.0" layoutY="166.0" onMouseClicked="#cityBuildings" pickOnBounds="true">
+         <image>
+            <Image url="@../images/city.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="war" fitHeight="26.0" fitWidth="22.0" layoutX="71.0" layoutY="166.0" onMouseClicked="#warBuildings" pickOnBounds="true">
+         <image>
+            <Image url="@../images/war.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="96.0" layoutY="166.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/build.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="122.0" layoutY="166.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/castle.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="147.0" layoutY="166.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/0_0img24.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="popularity" layoutX="519.0" layoutY="117.0" text="100" textFill="#17bd0c">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="coin" layoutX="508.0" layoutY="134.0" prefHeight="17.0" prefWidth="21.0" textFill="#01960b" />
+      <ImageView fx:id="face" fitHeight="85.0" fitWidth="84.0" layoutX="498.0" layoutY="33.0" onMouseClicked="#showPopularity" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</Pane>

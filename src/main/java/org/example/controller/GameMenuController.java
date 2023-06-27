@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
-    private Government government;
+    Government government ;
    /* public GameMenuController(String player) {
-        government = Government.findGovernmentWithUsername(player);
+       // government = Government.findGovernmentWithUsername(player);
+       government = new Government(player);
     }*/
 
     public String showFoodRate(int number) {
@@ -179,6 +180,10 @@ public class GameMenuController {
         return rate <= 5 && rate >= -5;
     }
 
+    public void setFirsts(){
+        government.setCoins(20.0);
+        government.setPopularity(100);
+    }
 
     public void religionAccordingToChurch() {
         int number = government.getPeople() / 4;
@@ -261,6 +266,22 @@ public class GameMenuController {
         System.out.println("workers: " + government.getWorkers());
         System.out.println("popularity: " + government.getPopularity());
 
+    }
+
+    public double getCoin(){
+        return government.getCoins();
+    }
+
+    public int getFoodRate(){
+        return government.getFoodRate();
+    }
+
+    public int getTaxRate(){
+        return government.getTaxRate();
+    }
+
+    public int getFearRate(){
+        return government.getFearRate();
     }
 }
 

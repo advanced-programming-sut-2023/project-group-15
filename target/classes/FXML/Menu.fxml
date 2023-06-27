@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.Menu">
+<Pane fx:id="parentFirst" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.Menu">
    <children>
       <Button fx:id="button" layoutX="249.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#showMarket" prefHeight="63.0" prefWidth="103.0" text="Market" />
-      <ImageView fx:id="showUp" fitHeight="35.0" fitWidth="72.0" layoutX="14.0" layoutY="351.0" onMouseClicked="#showGovermentMenu" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/show.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="button1" layoutX="572.0" layoutY="271.0" mnemonicParsing="false" onAction="#clicked" prefHeight="129.0" prefWidth="29.0" style="-fx-background-color: black;" text="Button" textFill="#faf8f8" />
    </children>
 </Pane>

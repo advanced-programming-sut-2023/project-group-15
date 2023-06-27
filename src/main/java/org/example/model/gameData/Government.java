@@ -42,7 +42,7 @@ public class Government {
         this.foodRate = -8;
         this.taxRate = 0;
         this.religion = 0;
-        this.popularity = -8;
+        this.popularity = 8;
         this.storeBuilt = false;
         this.market = null;
         this.builtBuildings = new ArrayList<>();

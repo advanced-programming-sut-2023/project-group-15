@@ -5,13 +5,16 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -20,7 +23,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.example.controller.GameMenuController;
 
+import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URL;
 import java.nio.file.Path;
@@ -28,6 +33,9 @@ import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class GovermentMenu extends Application implements Initializable {
+    public Label coin;
+    public Label popularity;
+    public ImageView face;
     private GameMenuController gameMenuController = new GameMenuController();
     private static Stage stage;
     public Button setRate;
@@ -139,16 +147,26 @@ public class GovermentMenu extends Application implements Initializable {
     public void backToSetRate(MouseEvent event) {
         stage1.close();
     }
-
+    Label setFear;
+    Slider fearSlider = new Slider();
     public void setFearRate(ActionEvent event) {
      try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
         Pane root = fxmlLoader.load();
-        Slider slider = new Slider();
-        slider.setId("custom");
-        slider.setPrefHeight(25.0);
-        slider.setPrefWidth(180.0);
-        slider.setLayoutX(312);
-        slider.setLayoutY(69);
+         fearSlider.setId("custom");
+         fearSlider.setPrefHeight(25.0);
+         fearSlider.setPrefWidth(180.0);
+         fearSlider.setLayoutX(312);
+         fearSlider.setLayoutY(69);
+         fearSlider.setMax(5);
+         fearSlider.setMin(-5);
+         Label label = new Label("Set Fear Rate");
+         label.setFont(Font.font("Century",24));
+         label.setLayoutX(43);
+         label.setLayoutY(14);
+         setFear = new Label("Tax Information");
+         setFear.setFont(Font.font("Century",18));
+         setFear.setLayoutX(43);
+         setFear.setLayoutY(50);
         ImageView left = new ImageView(String.valueOf(getClass().getResource("/images/0_0img22.png")));
         left.setLayoutX(283);
         left.setLayoutY(69);
@@ -159,10 +177,24 @@ public class GovermentMenu extends Application implements Initializable {
          right.setFitHeight(35);
          right.setLayoutX(486);
          right.setLayoutY(69);
-         root.getChildren().add(right);
+         ImageView select = new ImageView(String.valueOf(getClass().getResource("/images/select.png")));
+         select.setFitHeight(30);
+         select.setFitWidth(30);
+         select.setLayoutY(13);
+         select.setLayoutX(555);
+         Stage stage = new Stage();
+         EventHandler<MouseEvent> setTax = (EventHandler<MouseEvent>) e -> {
+             int number = (int) slider.getValue();
+             gameMenuController.setFearRate(number);
+             stage.close();
+         };
+         select.setOnMouseClicked(setTax);
+        root.getChildren().add(right);
         root.getChildren().add(left);
-        root.getChildren().add(slider);
-        Stage stage = new Stage();
+        root.getChildren().add(fearSlider);
+        root.getChildren().add(label);
+        root.getChildren().add(setFear);
+        root.getChildren().add(select);
         stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(root);
         Path path = Paths.get("/Css/MainMenuStyle.css");
@@ -216,6 +248,18 @@ public class GovermentMenu extends Application implements Initializable {
             person.setFitWidth(30);
             person.setLayoutY(26);
             person.setLayoutX(300);
+            ImageView select = new ImageView(String.valueOf(getClass().getResource("/images/select.png")));
+            select.setFitHeight(30);
+            select.setFitWidth(30);
+            select.setLayoutY(13);
+            select.setLayoutX(555);
+            Stage stage = new Stage();
+            EventHandler<MouseEvent> setTax = (EventHandler<MouseEvent>) e -> {
+                int number = (int) slider.getValue();
+                gameMenuController.setFoodRate(number);
+                stage.close();
+            };
+            select.setOnMouseClicked(setTax);
             Label label = new Label("Set Food Rate");
             label.setFont(Font.font("Century",24));
             label.setLayoutX(43);
@@ -245,7 +289,7 @@ public class GovermentMenu extends Application implements Initializable {
             root.getChildren().add(numberOfPeople);
             root.getChildren().add(foodInfo);
             root.getChildren().add(label);
-            Stage stage = new Stage();
+            root.getChildren().add(select);
             stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(root);
             Path path = Paths.get("/Css/MainMenuStyle.css");
@@ -380,5 +424,177 @@ Slider slider = new Slider();
             }
         });
 
+        fearSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                int number1 = (int) fearSlider.getValue();
+                System.out.println("n");
+                setFear.setText("Set On " + number1);
+            }
+        });
+
+    }
+
+    public void productiveBuildings(MouseEvent event) {
+
+    }
+
+    public void cityBuildings(MouseEvent event) {
+    }
+
+    public void warBuildings(MouseEvent event) {
+    }
+
+    @FXML
+    public void initialize(){
+        popularity.textProperty().addListener((observable , oldText , newText)->{
+            if(gameMenuController.showPopularity()<=100 && gameMenuController.showPopularity()>=90)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy1.png"))));
+            else if(gameMenuController.showPopularity()<90 && gameMenuController.showPopularity()>=80)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy2.png"))));
+            else if(gameMenuController.showPopularity()<80 && gameMenuController.showPopularity()>=70)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy3.png"))));
+            else if(gameMenuController.showPopularity()<70 && gameMenuController.showPopularity()>=60)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy4.png"))));
+            else if(gameMenuController.showPopularity()<60 && gameMenuController.showPopularity()>=50)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/normal.png"))));
+            else if(gameMenuController.showPopularity()<50 && gameMenuController.showPopularity()>=40)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad1.png"))));
+            else if(gameMenuController.showPopularity()<40 && gameMenuController.showPopularity()>=30)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad2.png"))));
+            else if(gameMenuController.showPopularity()<30 && gameMenuController.showPopularity()>=20)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad3.png"))));
+            else if(gameMenuController.showPopularity()<20 && gameMenuController.showPopularity()>=0)
+                face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad4.png"))));
+                }
+
+
+        );
+
+        coin.setText(String.valueOf(gameMenuController.getCoin()));
+        popularity.setText(String.valueOf(gameMenuController.showPopularity()));
+
+    }
+
+    public void showPopularity(MouseEvent event) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/popularityDetails.fxml"));
+            Pane root = fxmlLoader.load();
+            //slider = new Slider();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            ImageView left;
+            switch (gameMenuController.getTaxRate()){
+                case -3,-2,-1 : left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
+                    left.setLayoutX(339);
+                    left.setLayoutY(48);
+                    left.prefWidth(32);
+                    left.prefHeight(21);
+                    break;
+                case 0,1,2:left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
+                    left.setLayoutX(339);
+                    left.setLayoutY(48);
+                    left.prefWidth(32);
+                    left.prefHeight(21);
+                    break;
+                case 3,4: left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
+                    left.setLayoutX(339);
+                    left.setLayoutY(48);
+                    left.prefWidth(32);
+                    left.prefHeight(21);
+                    break;
+                case 5,6: left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
+                    left.setLayoutX(339);
+                    left.setLayoutY(48);
+                    left.prefWidth(32);
+                    left.prefHeight(21);
+                    break;
+                default:
+                    left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happiest.png")));
+                    left.setLayoutX(339);
+                    left.setLayoutY(48);
+                    left.prefWidth(32);
+                    left.prefHeight(21);
+            }
+            ImageView foodRate;
+            switch (gameMenuController.getTaxRate()){
+                case -2 : foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
+                    foodRate.setLayoutX(339);
+                    foodRate.setLayoutY(88);
+                    foodRate.prefWidth(32);
+                    foodRate.prefHeight(21);
+                    break;
+                case -1:foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
+                    foodRate.setLayoutX(339);
+                    foodRate.setLayoutY(88);
+                    foodRate.prefWidth(32);
+                    foodRate.prefHeight(21);
+                    break;
+                case 0:foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
+                    foodRate.setLayoutX(339);
+                    foodRate.setLayoutY(88);
+                    foodRate.prefWidth(32);
+                    foodRate.prefHeight(21);
+                    break;
+                case 1: foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
+                    foodRate.setLayoutX(339);
+                    foodRate.setLayoutY(88);
+                    foodRate.prefWidth(32);
+                    foodRate.prefHeight(21);
+                    break;
+                default:
+                    foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happiest.png")));
+                    foodRate.setLayoutX(339);
+                    foodRate.setLayoutY(88);
+                    foodRate.prefWidth(32);
+                    foodRate.prefHeight(21);
+            }
+            ImageView fearRate;
+            switch (gameMenuController.getTaxRate()){
+                case -5,-4,-3 : fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
+                    fearRate.setLayoutX(339);
+                    fearRate.setLayoutY(48);
+                    fearRate.prefWidth(32);
+                    fearRate.prefHeight(21);
+                    break;
+                case -2,-1:fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
+                    fearRate.setLayoutX(339);
+                    fearRate.setLayoutY(48);
+                    fearRate.prefWidth(32);
+                    fearRate.prefHeight(21);
+                    break;
+                case 0,1:fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
+                    fearRate.setLayoutX(339);
+                    fearRate.setLayoutY(48);
+                    fearRate.prefWidth(32);
+                    fearRate.prefHeight(21);
+                    break;
+                case 2,3: fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
+                    fearRate.setLayoutX(339);
+                    fearRate.setLayoutY(48);
+                    fearRate.prefWidth(32);
+                    fearRate.prefHeight(21);
+                    break;
+                default:
+                    fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happiest.png")));
+                    fearRate.setLayoutX(339);
+                    fearRate.setLayoutY(48);
+                    fearRate.prefWidth(32);
+                    fearRate.prefHeight(21);
+            }
+            root.getChildren().add(fearRate);
+            root.getChildren().add(foodRate);
+            root.getChildren().add(left);
+            Scene scene = new Scene(root);
+            Path path = Paths.get("/Css/popularityBackground.css");
+            String address = String.valueOf(path.toAbsolutePath());
+            System.out.println(address);
+            scene.getStylesheets().add(getClass().getResource("/Css/popularityBackground.css").toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
