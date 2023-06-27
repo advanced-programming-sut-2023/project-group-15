@@ -6,6 +6,7 @@ import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
 import org.example.model.building.Marketplace;
+import org.example.model.enums.Products;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,10 +33,13 @@ public class Government {
     private final HashMap<String, Double> foods;
     private static final ArrayList<Government> allGovernments = new ArrayList<>();
     private static final List<Trade> tradeHistoryList = new ArrayList<>();
+    private HashMap<Products , Integer> FOODSTORE = new HashMap<>();
+    private HashMap<Products , Integer> ARMOURY = new HashMap<>();
+    private HashMap<Products , Integer> SOURCESTORE =  new HashMap<>();
 
     public Government(String owner) {
         this.owner = owner;
-        this.coins = 100.00;
+        this.coins = 800.00;
         this.people = 50;
         this.workers = 0;
         this.fearRate = 0;
@@ -52,6 +56,19 @@ public class Government {
         this.foods = new HashMap<>();
         setPrimitiveFoods();
         allGovernments.add(this);
+        this.SOURCESTORE.put(Products.WOOD , 200);
+    }
+
+    public HashMap<Products, Integer> getFOODSTORE() {
+        return FOODSTORE;
+    }
+
+    public HashMap<Products, Integer> getARMOURY() {
+        return ARMOURY;
+    }
+
+    public HashMap<Products, Integer> getSOURCESTORE() {
+        return SOURCESTORE;
     }
 
     private void newUnitForGovernment() {

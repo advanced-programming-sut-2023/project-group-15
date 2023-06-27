@@ -60,20 +60,22 @@ public class Trade {
         }
     }
 
-    public static void showTradesHistory(User user) {
+    public static String showTradesHistory(User user) {
         int index = 1;
+        String output = null;
         for (Trade trade : Trade.getAllTrades()) {
             if (trade.getSender().getUsername().equals(user.getUsername()) || trade.getReceiver().getUsername().equals(user.getUsername())) {
-                System.out.println(index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
-                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getSenderMessage() + " trade ID: " + trade.getTradeID());
+                output += index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
+                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getSenderMessage() + " trade ID: " + trade.getTradeID();
                 index++;
-                System.out.print("status: ");
+                output += "\n" + "status: ";
                 if (trade.isAccepted())
-                    System.out.println("accepted!");
+                    output += "accepted!";
                 else
-                    System.out.println("not accepted yet!");
+                    output += "not accepted yet!";
             }
         }
+        return output;
     }
 
     public static Trade findTradeWithID(int id) {

@@ -97,7 +97,6 @@ public class Market extends Application implements Initializable {
             HashMap<String, Integer> sellCoin = new HashMap<>(marketController.show2());
             HashMap<String, Integer> buyCoin = new HashMap<>(marketController.show3());
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/ResourcesOfMarket.fxml"));
-
             Image back = new Image(getClass().getResource("/images1/0_0img22.png").toString());
             ImageView backIcon = new ImageView(back);
             backIcon.setLayoutX(26.0);
@@ -117,7 +116,6 @@ public class Market extends Application implements Initializable {
             buyLable.setLayoutY(130.0);
             ImageView buyItem = new ImageView(button);
             String address = "/images1/"+name+".png";
-            System.out.println(address);
             Image image2 = new Image((getClass().getResource(address).toString()));
             ImageView imageView = new ImageView(image2);
             imageView.setLayoutX(220.0);

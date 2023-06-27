@@ -7,12 +7,13 @@ import java.util.HashMap;
 public class Storage extends Building {
     private final int capacity;
     private int freePlace = 100;
-    private static HashMap<Products, Integer> goods = new HashMap<>();
+    private  HashMap<Products, Integer> goods = new HashMap<>();
 
     public Storage(String name, int hp, int xCoordinate, int yCoordinate, Products material1, Products material2,
-                   int numberOfMaterial1, int numberOfMaterial2, int capacity) {
+                   int numberOfMaterial1, int numberOfMaterial2, int capacity , HashMap<Products , Integer> hashMap) {
         super(name, hp, xCoordinate, yCoordinate, material1, material2, numberOfMaterial1, numberOfMaterial2);
         this.capacity = capacity;
+        this.goods = hashMap;
 
     }
 
@@ -50,7 +51,7 @@ public class Storage extends Building {
         }
     }
 
-    public static HashMap<Products, Integer> getGoods() {
+    public HashMap<Products, Integer> getGoods() {
         return goods;
     }
 }
