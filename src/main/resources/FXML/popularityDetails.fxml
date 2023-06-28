@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.PopularityDetails">
    <children>
-      <Label layoutX="52.0" layoutY="29.0" text="Poularity" textFill="#804b0fe4">
+      <Label layoutX="52.0" layoutY="29.0" text="Popularity" textFill="#804b0fe4">
          <font>
             <Font name="Century" size="30.0" />
          </font>
@@ -33,5 +33,10 @@
             <Font name="Century" size="18.0" />
          </font>
       </Label>
+      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="572.0" layoutY="1.0" onMouseClicked="#closePopularity" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/0_0img26.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

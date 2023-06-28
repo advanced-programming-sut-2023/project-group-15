@@ -49,7 +49,199 @@ public class GovermentMenu extends Application implements Initializable {
     public void start(Stage stage) throws Exception {
         GovermentMenu.stage = stage ;
         URL url = MainMenu.class.getResource("/FXML/Goverment.fxml");
+        ImageView showGardens = new ImageView(String.valueOf(getClass().getResource("/images/productive.png")));
+        showGardens.setLayoutY(166);
+        showGardens.setLayoutX(14);
+        showGardens.setFitWidth(22);
+        showGardens.setFitHeight(26);
+        ImageView showCity = new ImageView(String.valueOf(getClass().getResource("/images/city.png")));
+        showCity.setLayoutY(166);
+        showCity.setLayoutX(43);
+        showCity.setFitWidth(22);
+        showCity.setFitHeight(26);
+        ImageView showDefend = new ImageView(String.valueOf(getClass().getResource("/images/war.png")));
+        showDefend.setLayoutY(166);
+        showDefend.setLayoutX(71);
+        showDefend.setFitWidth(22);
+        showDefend.setFitHeight(26);
+        ImageView showProductive = new ImageView(String.valueOf(getClass().getResource("/images/build.png")));
+        showProductive.setLayoutY(166);
+        showProductive.setLayoutX(96);
+        showProductive.setFitWidth(22);
+        showProductive.setFitHeight(26);
+        ImageView showWar = new ImageView(String.valueOf(getClass().getResource("/images/castle.png")));
+        showWar.setLayoutY(166);
+        showWar.setLayoutX(122);
+        showWar.setFitWidth(22);
+        showWar.setFitHeight(26);
+        ImageView showOthers = new ImageView(String.valueOf(getClass().getResource("/images/0_0img24.png")));
+        showOthers.setLayoutY(166);
+        showOthers.setLayoutX(147);
+        showOthers.setFitWidth(22);
+        showOthers.setFitHeight(26);
         Pane pane = FXMLLoader.load(url);
+
+        ImageView appleGarden = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/APPLE_GARDEN.png")));
+        appleGarden.setLayoutY(97);
+        appleGarden.setLayoutX(34);
+        appleGarden.setFitWidth(69);
+        appleGarden.setFitHeight(57);
+
+        ImageView beerGarden = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/BEER_MAKING.png")));
+        beerGarden.setLayoutY(105);
+        beerGarden.setLayoutX(126);
+        beerGarden.setFitWidth(44);
+        beerGarden.setFitHeight(57);
+
+        ImageView barrak = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/BARRAK.png")));
+        barrak.setLayoutY(105);
+        barrak.setLayoutX(205);
+        barrak.setFitWidth(58);
+        barrak.setFitHeight(57);
+
+        ImageView oat = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/OAT_FARM.png")));
+        oat.setLayoutY(97);
+        oat.setLayoutX(287);
+        oat.setFitWidth(65);
+        oat.setFitHeight(57);
+
+        ImageView cathedral = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/CATHEDRAL.png")));
+        cathedral.setLayoutY(100);
+        cathedral.setLayoutX(33);
+        cathedral.setFitWidth(42);
+        cathedral.setFitHeight(39);
+
+        ImageView mercerany = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/MERCENARY_POST.png")));
+        mercerany.setLayoutY(130);
+        mercerany.setLayoutX(86);
+        mercerany.setFitWidth(42);
+        mercerany.setFitHeight(39);
+
+        ImageView church = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/CHURCH.png")));
+        church.setLayoutY(103);
+        church.setLayoutX(137);
+        church.setFitWidth(42);
+        church.setFitHeight(39);
+
+        ImageView house = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/HOUSE.png")));
+        house.setLayoutY(123);
+        house.setLayoutX(197);
+        house.setFitWidth(42);
+        house.setFitHeight(39);
+
+        ImageView inn = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/INN.png")));
+        inn.setLayoutY(96);
+        inn.setLayoutX(256);
+        inn.setFitWidth(42);
+        inn.setFitHeight(39);
+
+        ImageView market = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/MARKET.png")));
+        market.setLayoutY(115);
+        market.setLayoutX(304);
+        market.setFitWidth(42);
+        market.setFitHeight(39);
+
+        ImageView bigGate = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/BIG_STONE_GATEHOUSE.png")));
+        bigGate.setLayoutY(113);
+        bigGate.setLayoutX(35);
+        bigGate.setFitWidth(41);
+        bigGate.setFitHeight(43);
+
+        ImageView deffendTurret = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/DEFEND_TURRET.png")));
+        deffendTurret.setLayoutY(97);
+        deffendTurret.setLayoutX(81);
+        deffendTurret.setFitWidth(41);
+        deffendTurret.setFitHeight(43);
+
+        ImageView engineerGuid = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/ENGINEER_GUILD.png")));
+        engineerGuid.setLayoutY(115);
+        engineerGuid.setLayoutX(304);
+        engineerGuid.setFitWidth(48);
+        engineerGuid.setFitHeight(50);
+
+        ImageView lookoutTower = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/LOOKOUT_TOWER.png")));
+        lookoutTower.setLayoutY(96);
+        lookoutTower.setLayoutX(169);
+        lookoutTower.setFitWidth(35);
+        lookoutTower.setFitHeight(43);
+
+        ImageView pitchRig = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/PITCH_RIG.png")));
+        pitchRig.setLayoutY(124);
+        pitchRig.setLayoutX(200);
+        pitchRig.setFitWidth(57);
+        pitchRig.setFitHeight(58);
+
+        ImageView poleturner = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/POLETURNER.png")));
+        poleturner.setLayoutY(99);
+        poleturner.setLayoutX(272);
+        poleturner.setFitWidth(50);
+        poleturner.setFitHeight(37);
+
+        ImageView smallGate = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        smallGate.setLayoutY(121);
+        smallGate.setLayoutX(321);
+        smallGate.setFitWidth(37);
+        smallGate.setFitHeight(43);
+
+        ImageView bakery = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        bakery.setLayoutY(121);
+        bakery.setLayoutX(321);
+        bakery.setFitWidth(37);
+        bakery.setFitHeight(43);
+
+        ImageView woodCutter = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        woodCutter.setLayoutY(121);
+        woodCutter.setLayoutX(321);
+        woodCutter.setFitWidth(37);
+        woodCutter.setFitHeight(43);
+
+        ImageView oilSmelter = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        oilSmelter.setLayoutY(122);
+        oilSmelter.setLayoutX(108);
+        oilSmelter.setFitWidth(49);
+        oilSmelter.setFitHeight(43);
+
+        ImageView diary = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        diary.setLayoutY(96);
+        diary.setLayoutX(158);
+        diary.setFitWidth(41);
+        diary.setFitHeight(43);
+
+        ImageView mill = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        mill.setLayoutY(99);
+        mill.setLayoutX(207);
+        mill.setFitWidth(38);
+        mill.setFitHeight(60);
+
+        ImageView ironMine = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        ironMine.setLayoutY(96);
+        ironMine.setLayoutX(239);
+        ironMine.setFitWidth(49);
+        ironMine.setFitHeight(43);
+
+        ImageView blackSmith = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+        blackSmith.setLayoutY(115);
+        blackSmith.setLayoutX(307);
+        blackSmith.setFitWidth(49);
+        blackSmith.setFitHeight(53);
+
+        EventHandler<MouseEvent> garden = (EventHandler<MouseEvent>) e -> {
+            pane.getChildren().add(appleGarden);
+            pane.getChildren().add(beerGarden);
+            pane.getChildren().add(barrak);
+            pane.getChildren().add(oat);
+        };
+
+        showGardens.setOnMouseClicked(garden);
+
+
+
+        pane.getChildren().add(showDefend);
+        pane.getChildren().add(showWar);
+        pane.getChildren().add(showProductive);
+        pane.getChildren().add(showCity);
+        pane.getChildren().add(showOthers);
+        pane.getChildren().add(showGardens);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
@@ -437,6 +629,7 @@ Slider slider = new Slider();
 
     public void productiveBuildings(MouseEvent event) {
 
+
     }
 
     public void cityBuildings(MouseEvent event) {
@@ -481,34 +674,57 @@ Slider slider = new Slider();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/popularityDetails.fxml"));
             Pane root = fxmlLoader.load();
-            //slider = new Slider();
+
+            String good = String.format("-fx-text-fill: Green;");
+            String bad = String.format("-fx-text-fill: RED;");
+            String normal = String.format("-fx-text-fill: YELLOW;");
+
             Stage stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
             ImageView left;
+            Label taxRateLable = new Label(String.valueOf(gameMenuController.getTaxRate()));
+            taxRateLable.setLayoutY(48);
+            taxRateLable.setLayoutX(288);
+            taxRateLable.setFont(Font.font("System" , 18));
+            taxRateLable.setStyle("Bold");
+            Label foodRateLable = new Label(String.valueOf(gameMenuController.getFoodRate()));
+            foodRateLable.setLayoutX(288);
+            foodRateLable.setLayoutY(85);
+            foodRateLable.setFont(Font.font("System" , 18));
+            foodRateLable.setStyle("Bold");
+            Label fearRateLable = new Label(String.valueOf(gameMenuController.getFoodRate()));
+            fearRateLable.setLayoutX(288);
+            fearRateLable.setLayoutY(126);
+            fearRateLable.setFont(Font.font("System" , 18));
+            fearRateLable.setStyle("Bold");
             switch (gameMenuController.getTaxRate()){
                 case -3,-2,-1 : left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
+                    taxRateLable.setStyle(bad);
                     break;
                 case 0,1,2:left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
+                    taxRateLable.setStyle(bad);
                     break;
                 case 3,4: left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
+                    taxRateLable.setStyle(normal);
                     break;
                 case 5,6: left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
+                    taxRateLable.setStyle(good);
                     break;
                 default:
                     left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happiest.png")));
@@ -516,32 +732,37 @@ Slider slider = new Slider();
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
+                    taxRateLable.setStyle(good);
             }
             ImageView foodRate;
-            switch (gameMenuController.getTaxRate()){
+            switch (gameMenuController.getFoodRate()){
                 case -2 : foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
+                    foodRateLable.setStyle(bad);
                     break;
                 case -1:foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
+                    foodRateLable.setStyle(bad);
                     break;
                 case 0:foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
+                    foodRateLable.setStyle(normal);
                     break;
                 case 1: foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
+                    foodRateLable.setStyle(good);
                     break;
                 default:
                     foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happiest.png")));
@@ -549,32 +770,37 @@ Slider slider = new Slider();
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
+                    foodRateLable.setStyle(good);
             }
             ImageView fearRate;
-            switch (gameMenuController.getTaxRate()){
+            switch (gameMenuController.getFearRate()){
                 case -5,-4,-3 : fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
+                    fearRateLable.setStyle(bad);
                     break;
                 case -2,-1:fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
+                    fearRateLable.setStyle(bad);
                     break;
                 case 0,1:fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
+                    fearRateLable.setStyle(normal);
                     break;
                 case 2,3: fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
+                    fearRateLable.setStyle(good);
                     break;
                 default:
                     fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happiest.png")));
@@ -582,7 +808,11 @@ Slider slider = new Slider();
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
+                    fearRateLable.setStyle(good);
             }
+            root.getChildren().add(fearRateLable);
+            root.getChildren().add(foodRateLable);
+            root.getChildren().add(taxRateLable);
             root.getChildren().add(fearRate);
             root.getChildren().add(foodRate);
             root.getChildren().add(left);

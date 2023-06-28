@@ -4,171 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="4shanbe-(goverment and forget password)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/backOfPopularity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/backgroundOfInfoMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_builder.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_builder2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_combat.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_combat2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_economics2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_loading.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/frontend_main.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/popularityBackground.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/popularityDetails.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img101.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img102.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img103.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img104.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img105.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img106.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img107.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img108.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img109.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img110.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img111.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img112.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img113.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img115.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img116.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img117.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img118.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img119.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img99.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/build.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/appleGardden.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/ironMine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/mill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/pitchRig.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/qoatFarm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/quarry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/stable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/woodCutter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/castle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/city.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/happiest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/happy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/sad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/saddest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/popularityIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/productive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/rock (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/save.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/track.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/war.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/0_0img279.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/0_0img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/255_255img15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/MainMenuStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/Screenshot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/Screenshot1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/backgroundOfInfoMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_builder.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_builder2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_combat.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_combat2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_economics2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_loading.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/frontend_main.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/setRate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/setRateOptions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Css/track.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FXML/GameInformation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FXML/setRate.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FXML/setRateOptions.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img101.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img102.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img103.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img104.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img105.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img106.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img107.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img108.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img109.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img110.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img111.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img112.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img113.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img115.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img116.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img117.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img118.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img119.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img126.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img277.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img606.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img729.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img92.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img93.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/0_0img99.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/Untitled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/rock (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/save.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/track.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GameInformationMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SetRate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine___junit_version_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_21_ea_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_21_ea_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_21_ea_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_21_ea_17.xml" beforeDir="false" />
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Goverment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Market.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Market.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ResourcesOfMarket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ResourcesOfMarket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/randomSlogan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/randomSlogan.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/popularityDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/popularityDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/appleGardden.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/castle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/church.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/grave.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/ironMine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/mill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/pitchRig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/qoatFarm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/quarry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/stable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/tallTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/tenet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/tower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/buildings/woodCutter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/castle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/church.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/grave.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/tallTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/tenet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/tower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/controller/MainMenuControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/controller/ProfileMenuControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,27 +81,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "C:/Users/Raya/Desktop/project2-group-15/src/main/java",
-    "last_opened_file_path": "C:/Users/mobin/Desktop/project152/src/main/resources/images/popularity",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Raya/Desktop/project2-group-15/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mobin/Desktop/project152/src/main/resources/images/popularity&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mobin\Desktop\project152\src\main\resources\images\popularity" />
@@ -252,7 +119,7 @@
       <recent name="org.example.veiw.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Menu">
+  <component name="RunManager" selected="Application.GovermentMenu">
     <configuration name="ForgotPassword" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ForgotPassword" />
       <module name="untitled" />
@@ -272,6 +139,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.view.userView.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.gameMap.Main" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.gameMap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -305,26 +185,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.SignupMenu" />
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.view.userView.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GovermentMenu" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.Market" />
-        <item itemvalue="Application.GovermentMenu" />
         <item itemvalue="Application.ForgotPassword" />
-        <item itemvalue="Application.SignupMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -423,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687369736506</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="3shanbe(completing goverment and buildings)">
+      <created>1687880872074</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687880872074</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +333,8 @@
     <MESSAGE value="3shanbeh(add ForgotPassword and market)" />
     <MESSAGE value="friday(completed market)" />
     <MESSAGE value="4shanbe-(goverment and forget password)" />
-    <option name="LAST_COMMIT_MESSAGE" value="4shanbe-(goverment and forget password)" />
+    <MESSAGE value="3shanbe(completing goverment and buildings)" />
+    <option name="LAST_COMMIT_MESSAGE" value="3shanbe(completing goverment and buildings)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
