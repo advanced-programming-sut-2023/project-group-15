@@ -15,10 +15,6 @@ import javafx.stage.Stage;
 import org.example.model.enums.Products;
 import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Government;
-import org.example.model.gameData.Trade;
-import org.example.view.userView.Market;
-
-import java.beans.EventHandler;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -218,7 +214,9 @@ public class TradeRequest extends Application {
             ImageView imageView = new ImageView(image2);
             imageView.setLayoutX(220.0);
             imageView.setLayoutY(58);
-
+        }
+        catch (Exception e) {
+            System.out.println(e);
         }
 
     }

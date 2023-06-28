@@ -49,15 +49,16 @@ public class Trade {
         return tradeID;
     }
 
-    public static void showTrades() {
+    public static String showTrades() {
         int index = 1;
-        for (Trade trade : Trade.getAllTrades()) {
-            if (!trade.isAccepted()) {
-                System.out.println(index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
-                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getSenderMessage() + " trade ID: " + trade.getTradeID());
+        String output = null;
+        for (Trade trade : GameInformation.getCurrentPlayer().getGovernment().getTradeUnacceptedReqList()) {
+                output+= index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
+                        + trade.getProduct() + "(" + trade.getAmount() + ") trade message: " + trade.getSenderMessage() + " trade ID: " + trade.getTradeID();
                 index++;
             }
-        }
+
+        return output;
     }
 
     public static String showTradesHistory(User user) {

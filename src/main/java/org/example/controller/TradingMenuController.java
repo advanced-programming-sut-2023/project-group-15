@@ -27,7 +27,7 @@ public class TradingMenuController {
         User sender = GameDataBase.getUserByUsername(this.government.getOwner());
         Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
         sender.getGovernment().getTradeSendList().add(newTrade);
-        receiver.getGovernment().getTradeReqList().add(newTrade);
+        receiver.getGovernment().getTradeUnacceptedReqList().add(newTrade);
         Government.getTradeHistoryList().add(newTrade);
     }
     public void sendTradeDonate(String recourseType, int recourseAmount, String messageI, double priceI, User chosen) {
@@ -36,7 +36,7 @@ public class TradingMenuController {
         User sender = chosen;
         Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
         sender.getGovernment().getTradeSendList().add(newTrade);
-        receiver.getGovernment().getTradeReqList().add(newTrade);
+        receiver.getGovernment().getTradeUnacceptedReqList().add(newTrade);
         Government.getTradeHistoryList().add(newTrade);
     }
 
@@ -57,8 +57,9 @@ public class TradingMenuController {
     }
 
 
-    public GameInformationOutput acceptRequest(int id, String message) {
-        Trade trade = Trade.findTradeWithID(id);
+    public GameInformationOutput acceptRequest(int index) {
+
+        Trade trade = GameInformation.getCurrentPlayer().getGovernment().getTradeUnacceptedReqList().get(index-1);
         Storage storage = null;
         String message1 = BuildingController.checkForSources(trade.getProduct(), trade.getAmount());
         if (message1.equals(GameInformationOutput.NOT_ENOUGH.getOutput())) {
@@ -72,8 +73,11 @@ public class TradingMenuController {
                     storage = (Storage) GameInformation.findBuilding(storeProducts.getStoreType(), trade.getSender());
             storage.addonStorageWithAmount(trade.getProduct(), trade.getAmount());
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
-            trade.setReceiverMessage(message);
+           double current =  trade.getReceiver().getGovernment().getCoins();
+           trade.getReceiver().getGovernment().setCoins(current+trade.getPrice() * trade.getAmount());
         }
+        trade.getReceiver().getGovernment().getTradeUnacceptedReqList().remove(trade);
+        trade.getReceiver().getGovernment().getTradeAcceptedReqList().add(trade);
         return GameInformationOutput.ACCEPTED_SUCCESSFULLY;
     }
 

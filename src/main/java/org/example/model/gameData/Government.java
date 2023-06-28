@@ -21,7 +21,8 @@ public class Government {
     private ArrayList<LauncherUnit> launcherUnit;
     private ArrayList<UnitWallTarget> unitWallTarget;
     private final List<Trade> tradeSendList;
-    private final List<Trade> tradeReqList;
+    private final List<Trade> tradeUnacceptedReqList;
+    private final List<Trade> tradeAcceptedReqList;
     private int popularity;
     private int foodRate;
     private int taxRate;
@@ -51,12 +52,17 @@ public class Government {
         this.market = null;
         this.builtBuildings = new ArrayList<>();
         this.newUnitForGovernment();
-        this.tradeReqList = new ArrayList<>();
+        this.tradeUnacceptedReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
+        this.tradeAcceptedReqList = new ArrayList<>();
         this.foods = new HashMap<>();
         setPrimitiveFoods();
         allGovernments.add(this);
         this.SOURCESTORE.put(Products.WOOD , 200);
+    }
+
+    public List<Trade> getTradeAcceptedReqList() {
+        return tradeAcceptedReqList;
     }
 
     public HashMap<Products, Integer> getFOODSTORE() {
@@ -81,7 +87,7 @@ public class Government {
         return market;
     }
 
-    public void setPayerMarket(Marketplace market) {
+    public void setPlayerMarket(Marketplace market) {
         this.market = market;
         this.storeBuilt = true;
     }
@@ -312,8 +318,8 @@ public class Government {
         return tradeSendList;
     }
 
-    public List<Trade> getTradeReqList() {
-        return tradeReqList;
+    public List<Trade> getTradeUnacceptedReqList() {
+        return tradeUnacceptedReqList;
     }
 
     public static List<Trade> getTradeHistoryList() {
