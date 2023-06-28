@@ -52,7 +52,7 @@ public class TradingMenuController {
         if (Trade.getAllTrades().isEmpty()) {
             output = "no trade request sent!";
         } else
-            output = Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
+            output += Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
         return output;
     }
 

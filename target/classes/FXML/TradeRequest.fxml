@@ -14,7 +14,7 @@
                 <Image url="@../images1/IMG_5997(1).JPG" />
             </image>
         </ImageView>
-        <ImageView fx:id="Wood" fitHeight="42.0" fitWidth="43.0" layoutX="64.0" layoutY="72.0" onMousePressed="#wood" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Wood" fitHeight="42.0" fitWidth="43.0" layoutX="64.0" layoutY="72.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../images1/wood.png" />
             </image>
@@ -169,7 +169,7 @@
                 <Font name="Century" size="14.0" />
             </font>
         </Label>
-        <ImageView fx:id="cheese" fitHeight="29.0" fitWidth="36.0" layoutX="385.0" layoutY="525.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Cheese" fitHeight="29.0" fitWidth="36.0" layoutX="385.0" layoutY="525.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../images1/cheese.png" />
             </image>

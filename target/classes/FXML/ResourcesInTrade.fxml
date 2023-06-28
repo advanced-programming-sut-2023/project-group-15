@@ -24,14 +24,13 @@
                 <Font name="Century" size="24.0" />
             </font>
         </Label>
-      <TextField layoutX="99.0" layoutY="32.0" prefHeight="25.0" prefWidth="112.0" />
       <Label layoutX="21.0" layoutY="33.0" text="Message">
          <font>
             <Font name="Century" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="513.0" layoutY="39.0" mnemonicParsing="false" text="Donate" />
-      <Button layoutX="511.0" layoutY="90.0" mnemonicParsing="false" text="Request" />
+
+
       <Label layoutX="29.0" layoutY="69.0" text="Cost">
          <font>
             <Font size="14.0" />
@@ -42,7 +41,6 @@
             <Font name="Century" size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="99.0" layoutY="65.0" prefHeight="25.0" prefWidth="112.0" />
-      <TextField layoutX="99.0" layoutY="97.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField id="nu" layoutX="99.0" layoutY="97.0" prefHeight="25.0" prefWidth="112.0" />
     </children>
 </Pane>

@@ -82,5 +82,10 @@ public class TradeMenu extends Application {
                     else if(output.equals(GameInformationOutput.ACCEPTED_SUCCESSFULLY))
                         alertAccept.showAndWait();
         });
+        pane.getChildren().addAll(index , textArea , textField , accept);
+        Stage stage = new Stage();
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
     }
 }
