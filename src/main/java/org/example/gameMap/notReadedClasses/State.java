@@ -1,4 +1,4 @@
-package org.example.gameMap.notReadedClasses;
+/*package org.example.gameMap.notReadedClasses;
 
 //import core.Position;
 //import core.Size;
@@ -74,4 +74,4 @@ public abstract class State {
 //    public List<UIContainer> getUiContainers() {
 //        return uiContainers;
 //    }
-}
+}*/

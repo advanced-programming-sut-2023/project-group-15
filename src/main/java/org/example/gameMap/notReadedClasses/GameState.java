@@ -1,4 +1,4 @@
-package org.example.gameMap.notReadedClasses;
+/*package org.example.gameMap.notReadedClasses;
 
 //import controller.NPCController;
 //import controller.PlayerController;
@@ -48,4 +48,4 @@ public class GameState extends State {
 //            gameObjects.add(npc);
 //        }
 //    }
-}
+}*/

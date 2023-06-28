@@ -33,18 +33,6 @@ public class SuperObject {
 
 
 
-    public void draw(Graphics2D graphics2D, GamePanel gamePanel) {
-        int screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
-        int screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
-        if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
-                worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
-                worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
-                worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
-            graphics2D.drawImage(this.getImage(), screenX, screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
-        }
-    }
-
-
     public BufferedImage getImage() {
         return bufferedImage;
     }

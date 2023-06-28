@@ -6,6 +6,5 @@ public enum GameState {
     pauseState,
     dialogueState,
     statusState,
-
-    ;
+    InventoryMenu, buildingMenu, gameMenu;
 }

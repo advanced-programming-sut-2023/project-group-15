@@ -19,4 +19,6 @@ module project {
     opens org.example.gameMap.mouseHandling to javafx.fxml;
     exports org.example.gameMap.keyHandling;
     opens org.example.gameMap.keyHandling to javafx.fxml;
+    exports org.example.view;
+    opens org.example.view to javafx.fxml;
 }

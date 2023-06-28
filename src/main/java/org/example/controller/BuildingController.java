@@ -4,7 +4,8 @@ import org.example.model.Tile;
 import org.example.model.building.*;
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
-import org.example.model.gameData.*;
+import org.example.model.gameData.GameInformation;
+import org.example.model.gameData.Government;
 import org.example.view.enums.outputs.BuildingStatusOutput;
 import org.example.view.enums.outputs.GameInformationOutput;
 
@@ -60,7 +61,7 @@ public class BuildingController {
         }
     }
 
-    public void dropStorageBuilding(int x, int y, String name) {
+   /* public void dropStorageBuilding(int x, int y, String name) {
         for (BuildingName building : BuildingName.values())
             if (String.valueOf(building).equals(name)) {
                 Building newBuilding = new Storage(name, 100, x, y, building.getMaterial1Name(), building.getMaterial2Name()
@@ -69,7 +70,7 @@ public class BuildingController {
                 GameInformation.getAllBuildings().add(newBuilding);
                 government.addBuiltBuilding(newBuilding);
             }
-    }
+    }*/
 
     public void dropCityBuilding(int x, int y, String name) {
         for (BuildingName building : BuildingName.values())
@@ -116,7 +117,7 @@ public class BuildingController {
             GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(market);
             GameInformation.getAllBuildings().add(market);
             government.addBuiltBuilding(market);
-            government.setPayerMarket((Marketplace) market);
+            government.setPlayerMarket((Marketplace) market);
         }
     }
 
@@ -124,15 +125,33 @@ public class BuildingController {
         String status;
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
-                status = checkForSources(building.getMaterial1Name(), building.getNumberOfMaterial1());
-                if (!status.equals(GameInformationOutput.SUCCESS.getOutput()))
+            if(building.getMaterial1Name().equals(Products.GOLD_COIN))
+                if (this.government.getCoins() < building.getNumberOfMaterial1())
                     return false;
-                else if (building.getMaterial2Name() != null)
+
+               if(!building.getMaterial1Name().equals(Products.GOLD_COIN)) {
+                    status = checkForSources(building.getMaterial1Name(), building.getNumberOfMaterial1());
+                    if (!status.equals(GameInformationOutput.SUCCESS.getOutput()))
+                        return false;
+                }
+                if (building.getMaterial2Name() != null) {
                     status = checkForSources(building.getMaterial2Name(), building.getNumberOfMaterial2());
-                if (status.equals(GameInformationOutput.SUCCESS.getOutput()))
-                    return true;
+                    if (!status.equals(GameInformationOutput.SUCCESS.getOutput()))
+                        return false;
+                    else {
+                        reduceResources(building.getMaterial2Name(), building.getNumberOfMaterial2());
+                    }
+                }
+                if(building.getMaterial1Name().equals(Products.GOLD_COIN)) {
+                    double current = this.government.getCoins();
+                    this.government.setCoins(current - building.getNumberOfMaterial1());
+                }
+                else
+                    reduceResources(building.getMaterial1Name() , building.getNumberOfMaterial1());
+                return true;
             }
-        }
+            }
+
         return false;
     }
 
@@ -145,12 +164,22 @@ public class BuildingController {
             }
         }
         if (store.getGoods().containsKey(product) && store.getGoods().get(product) >= amount) {
-            current = store.getGoods().get(product);
-            store.getGoods().remove(product);
-            store.getGoods().put(product, current - amount);
             return GameInformationOutput.SUCCESS.getOutput();
         }
         return GameInformationOutput.NOT_ENOUGH.getOutput();
+    }
+    public static void reduceResources(Products product , int amount)
+    {
+        Storage storage = null;
+        for (StoreProducts storeProduct : StoreProducts.values()) {
+            if (String.valueOf(product).equalsIgnoreCase(String.valueOf(storeProduct))) {
+                storage = (Storage) GameInformation.findBuilding(String.valueOf(storeProduct.getStoreType()), GameInformation.getCurrentPlayer());
+            }
+        }
+        int current = storage.getGoods().get(product);
+        storage.getGoods().remove(product);
+        storage.getGoods().put(product, current - amount);
+
     }
 
     public String checkParameters(int x, int y, String name) {
@@ -171,8 +200,8 @@ public class BuildingController {
             dropPopularityBuilding(x, y, name);
         else if (type.equals("market"))
             dropMarket(x, y, name);
-        else if (type.equals("store"))
-            dropStorageBuilding(x, y, name);
+       /* else if (type.equals("store"))
+            dropStorageBuilding(x, y, name);*/
     }
 
     public String repair() {

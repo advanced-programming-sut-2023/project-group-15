@@ -80,7 +80,7 @@ public class GameInformation {
     public static Building findBuilding(String name, User user) {
         for (int i = 0; i < user.getMap().length; i++) {
             for (int j = 0; j < user.getMap()[0].length; j++) {
-                if (GameInformation.getCurrentPlayerMap()[i][j].getBuilding().getName()
+                if (user.getMap()[i][j].getBuilding().getName()
                         .equals(name))
                     return GameInformation.getCurrentPlayerMap()[i][j].getBuilding();
             }
@@ -88,7 +88,10 @@ public class GameInformation {
         return null;
     }
 
-    public static HashMap<User, Integer> getPlayers() {
+
+
+
+        public static HashMap<User, Integer> getPlayers() {
         return players;
     }
 
