@@ -4,9 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.TradingMenuController;
 import org.example.controller.userControllers.MainMenuController;
@@ -19,10 +19,18 @@ import java.net.URL;
 
 public class TradeMenu extends Application {
     User currentUser = MainMenuController.getCurrentUser();
+    Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
+    BackgroundImage bImg = new BackgroundImage(background,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.DEFAULT,
+            new BackgroundSize(1, 1.0, true, true, false, false));
+    Background bGround = new Background(bImg);
     TradingMenuController tradingMenuController = new TradingMenuController(currentUser.getUsername());
     public void start(Stage stage) throws Exception{
-        URL url = TradeMenu.class.getResource("FXML/TradingMenu.fxml");
+        URL url = TradeMenu.class.getResource("/FXML/TradingMenu.fxml");
         Pane pane = FXMLLoader.load(url);
+        pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();

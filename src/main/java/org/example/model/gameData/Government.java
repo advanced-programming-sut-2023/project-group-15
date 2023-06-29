@@ -5,6 +5,7 @@ import org.example.model.MBC.InfantryUnit;
 import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
+import org.example.model.building.BuildingName;
 import org.example.model.building.Marketplace;
 import org.example.model.enums.Products;
 
@@ -16,7 +17,7 @@ public class Government {
     private final String owner;
     private int people;
     private int workers;
-    private Marketplace market;
+    private Marketplace market ;
     private ArrayList<InfantryUnit> infantryUnit;
     private ArrayList<LauncherUnit> launcherUnit;
     private ArrayList<UnitWallTarget> unitWallTarget;
@@ -49,7 +50,8 @@ public class Government {
         this.religion = 0;
         this.popularity = -8;
         this.storeBuilt = false;
-        this.market = null;
+        this.market = new Marketplace("market" , BuildingName.MARKET.getHp(),50 , 50 ,
+                BuildingName.MARKET.getMaterial1Name() , BuildingName.MARKET.getMaterial2Name() , BuildingName.MARKET.getNumberOfMaterial1(), BuildingName.MARKET.getNumberOfMaterial2(), BuildingName.MARKET.getNumberOfWorkers());
         this.builtBuildings = new ArrayList<>();
         this.newUnitForGovernment();
         this.tradeUnacceptedReqList = new ArrayList<>();
@@ -64,6 +66,7 @@ public class Government {
     public List<Trade> getTradeAcceptedReqList() {
         return tradeAcceptedReqList;
     }
+
 
     public HashMap<Products, Integer> getFOODSTORE() {
         return FOODSTORE;
@@ -110,10 +113,30 @@ public class Government {
 
     private void setPrimitiveFoods() {
         this.foods.put("Apple", 0.00);
-        this.foods.put("Hop", 0.00);
+        this.foods.put("Oat", 0.00);
         this.foods.put("Bread", 0.00);
         this.foods.put("Cheese", 0.00);
     }
+    private void setResources()
+    {
+        this.SOURCESTORE.put(Products.IRON , 0);
+        this.SOURCESTORE.put(Products.ROCK , 0);
+        this.SOURCESTORE.put(Products.VEST , 0);
+        this.SOURCESTORE.put(Products.PITCH , 0);
+        this.SOURCESTORE.put(Products.HOP , 0);
+        this.ARMOURY.put(Products.ARMOUR , 0);
+        this.ARMOURY.put(Products.ARCHER , 0);
+        this.ARMOURY.put(Products.SPEAR , 0);
+        this.ARMOURY.put(Products.SWORD , 0);
+        this.ARMOURY.put(Products.MACE , 0);
+        this.FOODSTORE.put(Products.APPLE , 0);
+        this.FOODSTORE.put(Products.WEAT , 0);
+        this.FOODSTORE.put(Products.BREAD , 0);
+        this.FOODSTORE.put(Products.MEAT , 0);
+        this.FOODSTORE.put(Products.CHEESE , 0);
+
+    }
+
 
     public String getOwner() {
         return owner;

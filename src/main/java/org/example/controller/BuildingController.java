@@ -154,7 +154,6 @@ public class BuildingController {
 
         return false;
     }
-
     public static String checkForSources(Products product, int amount) {
         int current;
         Storage store = null;

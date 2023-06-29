@@ -504,4 +504,8 @@ public class ProfileMenu extends Application {
 
         }
     }
+
+    public void market(MouseEvent mouseEvent) throws Exception {
+        new Market().start(new Stage());
+    }
 }

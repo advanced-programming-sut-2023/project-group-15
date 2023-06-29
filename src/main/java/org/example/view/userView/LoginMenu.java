@@ -20,6 +20,8 @@ import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.GameInformation;
+import org.example.model.gameData.Government;
 import org.example.view.GameStartMenu;
 import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
@@ -144,12 +146,14 @@ public class LoginMenu extends StartingMenu {
         classify(username, password);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
-            System.out.println(status.getOutput());
+          //  System.out.println(status.getOutput());
             successfulLogin.setStyle(styles.getSuccessfulMessage());
+
             successfulLogin.setText("successful login");
             for(User user : GameDataBase.getAllUsers()) {
                 if (user.getUsername().equals(username)) {
                     MainMenuController.setCurrentUser(user);
+                    GameInformation.setCurrentPlayer(user);
                 }
             }
             captchaShower();

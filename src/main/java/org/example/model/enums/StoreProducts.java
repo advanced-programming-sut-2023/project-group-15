@@ -1,28 +1,30 @@
 //this class is completed!
 package org.example.model.enums;
 
-public enum StoreProducts {
-    APPLE("foodStore"),
-    OAT("foodStore"),
-    BREAD("foodStore"),
-    MEAT("foodStore"),
-    WEAT("foodStore"),
-    BEER("foodStore"),
-    ARMOUR("foodStore"),
-    CHEESE("foodStore"),
-    FLOUR("foodStore"),
-    ROCK("sourceStore"),
-    IRON("sourceStore"),
-    PITCH("sourceStore"),
-    WOOD("sourceStore"),
-    VEST("foodStore"),
-    HORSE("foodStore"),
-    SWORD("armoury"),
-    SPEAR("armoury"),
-    ARCHE("armoury"),
-    MACE("armoury"),
-    OIL_POT("armoury"),
+import org.example.model.building.BuildingName;
+import org.example.model.building.Storage;
 
+public enum StoreProducts {
+    APPLE("FOODSTORE"),
+    OAT("FOODSTORE"),
+    BREAD("FOODSTORE"),
+    MEAT("FOODSTORE"),
+    WEAT("FOODSTORE"),
+    BEER("FOODSTORE"),
+    ARMOUR("FOODSTORE"),
+    CHEESE("FOODSTORE"),
+    FLOUR("FOODSTORE"),
+    ROCK("SOURCESTORE"),
+    IRON("SOURCESTORE"),
+    PITCH("SOURCESTORE"),
+    WOOD("SOURCESTORE"),
+    VEST("SOURCESTORE"),
+    HORSE("SOURCESTORE"),
+    SWORD("ARMOURY"),
+    SPEAR("ARMOURY"),
+    ARCHE("ARMOURY"),
+    MACE("ARMOURY"),
+    OIL_POT("ARMOURY"),
     ;
     private final String storeType;
 

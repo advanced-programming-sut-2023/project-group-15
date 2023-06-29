@@ -60,6 +60,8 @@ public class MainMenu extends Application {
         button.setText("choose");
         button.setOnAction(e ->
         {
+          /*  for(User player: GameInformation.getAllPlayers())
+            System.out.println(player.getUsername());*/
              GameStartMenuOutput gameStartMenuOutput = gameStartMenu.addPlayer(MainMenuController.getCurrentUser().getUsername() ,
                 GameDataBase.getUserByUsername(textField.getText()));
                  if(gameStartMenuOutput.equals(GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL))
@@ -115,9 +117,10 @@ public class MainMenu extends Application {
         button.setTranslateX(294);
         button.setTranslateY(361);
         Pane pane = new Pane();
-        pane.setPrefWidth(400);
-        pane.setPrefHeight(639);
-        pane.getChildren().addAll(label , textArea , textField);
+        pane.setPrefWidth(639);
+        pane.setPrefHeight(400);
+        pane.getChildren().addAll(label , textArea , textField , button);
+        pane.setBackground(bGround);
         Scene scene =new Scene(pane);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -125,6 +128,11 @@ public class MainMenu extends Application {
     }
 
     public void startGame(MouseEvent mouseEvent) {
+        GameInformation.setNewGameAccess(true);
+
+    }
+
+    public void enterGame(MouseEvent mouseEvent) {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
@@ -134,6 +142,7 @@ public class MainMenu extends Application {
         window.pack();
         window.setLocationRelativeTo(null);
         window.setVisible(true);
+
 
     }
 }

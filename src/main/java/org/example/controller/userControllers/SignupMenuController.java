@@ -7,6 +7,7 @@ import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
 import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.Government;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
@@ -184,6 +185,7 @@ public class SignupMenuController extends MainMenuController {
         byte[] salt = makeSalt();
         String passHash = JsonController.getPassHashSha256(this.getPassword(), salt);
         User newUser = new User(this.getUsername(), passHash, this.getClipBoard(), this.getNickname(), this.getEmail());
+        //newUser.setGovernment(new Government(newUser.getUsername()));
         if (!this.getSlogan().equals("empty")) {
             newUser.setSlogan(this.getSlogan());
         }

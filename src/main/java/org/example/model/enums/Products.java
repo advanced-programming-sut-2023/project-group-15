@@ -24,7 +24,7 @@ public enum Products {
     MACE("mace"),
     OIL_POT("oil pot"),
     ARCHER("armoury"),
-    HOP("hop")
+    HOP("hop"),
 
     ;
 

@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.example.controller.MarketController;
 import org.example.controller.userControllers.SignupMenuController;
+import org.example.view.TradeMenu;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,6 +28,7 @@ import java.util.ResourceBundle;
 
 public class Market extends Application implements Initializable {
     private final MarketController marketController = new MarketController();
+
     public ImageView wood;
     public ImageView bread;
     public ImageView apple;
@@ -50,7 +52,7 @@ public class Market extends Application implements Initializable {
     private static Stage stage;
     public static String name;
     
-    private final SignupMenuController signupMenuController = new SignupMenuController();
+
 
     public
     String successfulMessage = String.format("-fx-text-fill: Black;");
@@ -241,6 +243,10 @@ public class Market extends Application implements Initializable {
 
     public void backToGame(MouseEvent event) {
         stage.close();
+    }
+
+    public void startTrade(MouseEvent mouseEvent) throws Exception {
+        new TradeMenu().start(new Stage());
     }
 }
 

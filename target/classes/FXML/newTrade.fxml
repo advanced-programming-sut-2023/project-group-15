@@ -13,7 +13,7 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="639.0">
          <children>
-            <TextArea layoutX="208.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" />
+
             <TextField fx:id="user" layoutX="233.0" layoutY="307.0" />
             <Label layoutX="151.0" layoutY="311.0" text="player name:" />
             <Label layoutX="122.0" layoutY="23.0" text="Please choose the player you wanna trade with">
