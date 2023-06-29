@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class AssetSetter {
     private final GamePanel gamePanel;
-    private final SuperObject[] allObjects = new SuperObject[10];
+    private final SuperObject[] allObjects = new SuperObject[8];
 
     public AssetSetter(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
@@ -22,14 +22,14 @@ public class AssetSetter {
 
     public void getObjectTiles() {
         try {
-            allObjects[0] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/castle.gif")), "castle");
-            allObjects[1] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/church.png")), "church");
-            allObjects[2] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/grave.gif")), "grave");
-            allObjects[3] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/storage.png")), "storage");
-            allObjects[4] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/store.png")), "store");
-            allObjects[5] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/tallTower.png")), "tallTower");
-            allObjects[6] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/tenet.png")), "tenet");
-            allObjects[7] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/Images/buildings/tower.png")), "tower");
+            allObjects[0] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/castle.gif")), "castle");
+            allObjects[1] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/church.png")), "church");
+            allObjects[2] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/grave.gif")), "grave");
+            allObjects[3] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/storage.png")), "storage");
+            allObjects[4] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/store.png")), "store");
+            allObjects[5] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/tallTower.png")), "tallTower");
+            allObjects[6] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/tenet.png")), "tenet");
+            allObjects[7] = new SuperObject(ImageIO.read(getClass().getResourceAsStream("/images1/buildings/tower.png")), "tower");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -46,5 +46,9 @@ public class AssetSetter {
             allObjects[0].setRectangle(worldX,worldY);
 
         }
+    }
+
+    public SuperObject[] getAllObjects() {
+        return allObjects;
     }
 }

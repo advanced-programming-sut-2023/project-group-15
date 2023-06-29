@@ -1,0 +1,19 @@
+.root{
+-fx-background-image:url("backgroundOfInfoMenu.png");
+-fx-background-size: 600 400;
+}
+
+#fearRateButton{
+-fx-background-image:url("255_255img15.png");
+-fx-background-size: 182 34;
+}
+
+#foodRateButton{
+-fx-background-image:url("255_255img15.png");
+-fx-background-size: 182 34;
+}
+
+#taxRateButton{
+-fx-background-image:url("255_255img15.png");
+-fx-background-size: 182 34;
+}

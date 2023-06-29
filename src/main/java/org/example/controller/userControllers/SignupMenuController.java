@@ -133,7 +133,7 @@ public class SignupMenuController extends MainMenuController {
             for (int i = 0; i < 8; i++) {
                 p[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];
             }
-            password = java.lang.String.valueOf(p);
+            password = String.valueOf(p);
             if (password.matches(regex)) {
                 return password;
             }

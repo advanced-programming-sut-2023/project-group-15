@@ -42,7 +42,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         screenX = (gamePanel.getScreenWidth() - gamePanel.getTileSize()) / 2;
         screenY = (gamePanel.getScreenHeight() - gamePanel.getTileSize()) / 2;
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("/images/mouse/pointer.png"));
+            image = ImageIO.read(getClass().getResourceAsStream("/images1/mouse/pointer.png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

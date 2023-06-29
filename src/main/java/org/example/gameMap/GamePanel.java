@@ -184,4 +184,20 @@ public class GamePanel extends JPanel implements Runnable {
     public PlayerGameStatus getPlayerStatus() {
         return playerStatus;
     }
+
+    public AssetSetter getAssetSetter() {
+        return assetSetter;
+    }
+
+    public int getFullScreenWidth() {
+        return fullScreenWidth;
+    }
+
+    public int getFullScreenHeight() {
+        return fullScreenHeight;
+    }
+
+    public BufferedImage getScreenImage() {
+        return screenImage;
+    }
 }

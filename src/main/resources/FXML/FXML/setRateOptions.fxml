@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.GovernmentMenu">
+   <children>
+      <Button id="taxRateButton" fx:id="setTaxRate" layoutX="198.0" layoutY="90.0" mnemonicParsing="false" onAction="#setTaxRate" prefHeight="34.0" prefWidth="182.0" stylesheets="@../Css/setRateOptions.css" text="Set Tax Rate" textFill="#e8d087" textOverrun="CLIP">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+      </Button>
+      <Button id="foodRateButton" fx:id="setFoodRate" layoutX="198.0" layoutY="239.0" mnemonicParsing="false" onAction="#setFoodRate" prefHeight="34.0" prefWidth="182.0" stylesheets="@../Css/setRateOptions.css" text="Set Food Rate" textFill="#e8d087" textOverrun="CLIP">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+      </Button>
+      <Button id="fearRateButton" fx:id="setFearRate" layoutX="198.0" layoutY="165.0" mnemonicParsing="false" onAction="#setFearRate" prefHeight="34.0" prefWidth="182.0" stylesheets="@../Css/setRateOptions.css" text="Set Fear Rate" textFill="#e8d087" textOverrun="CLIP">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

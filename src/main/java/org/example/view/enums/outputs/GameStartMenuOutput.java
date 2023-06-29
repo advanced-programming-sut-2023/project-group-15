@@ -9,6 +9,8 @@ public enum GameStartMenuOutput {
     GAME_IS_NOT_STARTED("You haven't started the game yet!\nfirst start the game!"),
     USER_HAS_STARTED_GAME("you already started a game before!\ncan't start new game!"),
     GAME_STARTED_SUCCESSFULLY("game started successfully!"),
+    User_DOESNT_EXIST("the user you have chosen doesn't exist"),
+    PLAYER_IN_THE_GAME("the player in already in the game"),
     NOT_YOUR_TURN("it's not your turn to play!");
     private final String output;
 
@@ -19,4 +21,5 @@ public enum GameStartMenuOutput {
     public String getOutput() {
         return output;
     }
+
 }

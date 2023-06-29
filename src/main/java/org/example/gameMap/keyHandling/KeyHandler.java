@@ -1,7 +1,10 @@
 package org.example.gameMap.keyHandling;
 
+import javafx.stage.Stage;
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
+import org.example.view.userView.GovernmentMenu;
+import org.example.view.userView.StartingMenu;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -26,6 +29,11 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
+        if (gamePanel.getGameState() == GameState.inventoryMenu && keyCode != KeyEvent.VK_I) {
+            moveOnInventoryMenu(keyCode);
+        } else if (gamePanel.getGameState() == GameState.buildingMenu && keyCode != KeyEvent.VK_B) {
+            moveOnInventoryMenu(keyCode);
+        }
         if (keyCode == KeyEvent.VK_W)
             upPressed = true;
         if (keyCode == KeyEvent.VK_A)
@@ -49,11 +57,18 @@ public class KeyHandler implements KeyListener {
             else
                 gamePanel.setGameState(GameState.statusState);
         }
+//        if (keyCode == KeyEvent.VK_G) {
+//            try {
+//                new GovernmentMenu().start(StartingMenu.stage);
+//            } catch (Exception ex) {
+//                throw new RuntimeException(ex);
+//            }
+//        }
         if (keyCode == KeyEvent.VK_I) {
-            if (gamePanel.getGameState() == GameState.InventoryMenu)
+            if (gamePanel.getGameState() == GameState.inventoryMenu)
                 gamePanel.setGameState(GameState.playState);
             else
-                gamePanel.setGameState(GameState.InventoryMenu);
+                gamePanel.setGameState(GameState.inventoryMenu);
         }
         if (keyCode == KeyEvent.VK_B) {
             if (gamePanel.getGameState() == GameState.buildingMenu)
@@ -67,6 +82,17 @@ public class KeyHandler implements KeyListener {
             else
                 gamePanel.setGameState(GameState.gameMenu);
         }
+    }
+
+    private void moveOnInventoryMenu(int keyCode) {
+        if (keyCode == KeyEvent.VK_W)
+            gamePanel.getPopupPage().reduceSlotRow();
+        if (keyCode == KeyEvent.VK_A)
+            gamePanel.getPopupPage().reduceSlotCol();
+        if (keyCode == KeyEvent.VK_S)
+            gamePanel.getPopupPage().addSlotRow();
+        if (keyCode == KeyEvent.VK_D)
+            gamePanel.getPopupPage().addSlotCol();
     }
 
     @Override

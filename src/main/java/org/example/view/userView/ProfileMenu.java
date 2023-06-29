@@ -264,7 +264,7 @@ public class ProfileMenu extends Application {
 
         secondDataColumn.setCellValueFactory(new MapValueFactory("score"));
         secondDataColumn.setMinWidth(100);
-        javafx.scene.control.TableView tableView = new javafx.scene.control.TableView<>(generateDataInMap());
+        TableView tableView = new TableView<>(generateDataInMap());
 
         tableView.setEditable(true);
         Callback<TableColumn<Map, String>, TableCell<Map, String>>
