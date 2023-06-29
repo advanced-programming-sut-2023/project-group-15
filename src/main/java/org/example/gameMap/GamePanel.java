@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable {
+    private final SelectedMap selectedMap;
     private final int tileSize = 48;
     private final int screenWidth = tileSize * 40; // 48 * 40 = 1920
     private final int screenHeight = tileSize * 22; // 48 * 22 = 1080
@@ -17,20 +18,19 @@ public class GamePanel extends JPanel implements Runnable {
     private final int worldWidth = tileSize * 50; // todo: has to change to user map 200 or 400
     private final int worldHeight = tileSize * 50;
     private GameState gameState;
-    private PlayerGameStatus playerStatus = new PlayerGameStatus(this);
-    private UI popupPage = new UI(this);
+    private final PlayerGameStatus playerStatus = new PlayerGameStatus(this);
+    private final UI popupPage = new UI(this);
     private final KeyHandler keyHandler = new KeyHandler(this);
     private final AssetSetter assetSetter;
     private final MousePointer mouse = new MousePointer(this, keyHandler,getComponents());
     private final TileManager tileManager;
     private Thread gameThread;
     //for FullScreen
-    private final int fullScreenWidth = screenWidth;
-    private final int fullScreenHeight = screenHeight;
     private BufferedImage screenImage;
     private Graphics2D graphics2D;
 
     public GamePanel() {
+        this.selectedMap = SelectedMap.getSelectedMap();
         this.gameState = GameState.playState;
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
@@ -41,24 +41,12 @@ public class GamePanel extends JPanel implements Runnable {
         this.addMouseListener(mouse);
         this.addMouseMotionListener(mouse);
         this.setFocusable(true);
-//        setUpFullScreen();
         startGameThread();
-    }
-
-    public void setUpFullScreen() {
-        screenImage = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);
-        graphics2D = (Graphics2D) screenImage.getGraphics();
     }
 
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
-    }
-
-    public void setupGame() {
-        //todo:set object
-        //todo:play and pause music
-        this.gameState = GameState.playState;
     }
 
     @Override
@@ -76,8 +64,6 @@ public class GamePanel extends JPanel implements Runnable {
             if (delta >= 1) {
                 update();
                 repaint();
-//                painComponentForFullScreenMode();
-//                drawToFullScreen();
                 delta--;
             }
         }
@@ -86,8 +72,6 @@ public class GamePanel extends JPanel implements Runnable {
     public void update() {
         if (gameState == GameState.playState) {
             mouse.update();
-
-//            mouse.updateMouse(graphics2D);
         }
         if (gameState == GameState.pauseState) {
             //todo:pause state...
@@ -95,24 +79,13 @@ public class GamePanel extends JPanel implements Runnable {
         }
 
     }
-
-    public void painComponentForFullScreenMode() {
-        tileManager.draw(graphics2D);
-        mouse.draw(graphics2D);
-    }
-
-    public void drawToFullScreen() {
-        Graphics graphics = getGraphics();
-        graphics.drawImage(screenImage, 0, 0, fullScreenWidth, fullScreenHeight, null);
-        graphics.dispose();
-    }
-
     @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics2D = (Graphics2D) graphics;
         //loading tiles
-        tileManager.draw(graphics2D);
+//        tileManager.draw(graphics2D);
+        tileManager.drawFromJson(graphics2D,selectedMap);
         //loading objects
         assetSetter.draw(graphics2D, 23 * tileSize, 7 * tileSize);
         //loading mouse
@@ -131,10 +104,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     public int getScreenHeight() {
         return screenHeight;
-    }
-
-    public int getFPS() {
-        return FPS;
     }
 
     public int getWorldWidth() {
@@ -187,14 +156,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     public AssetSetter getAssetSetter() {
         return assetSetter;
-    }
-
-    public int getFullScreenWidth() {
-        return fullScreenWidth;
-    }
-
-    public int getFullScreenHeight() {
-        return fullScreenHeight;
     }
 
     public BufferedImage getScreenImage() {

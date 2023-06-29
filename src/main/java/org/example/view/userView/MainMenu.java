@@ -10,19 +10,17 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.MainMenuController;
-import org.example.gameMap.GamePanel;
 import org.example.gameMap.Main;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.GameInformation;
 import org.example.view.GameStartMenu;
-import org.example.view.enums.outputs.GameMenuOutput;
+import org.example.view.NewGameSettings;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
-import javax.swing.*;
 import java.net.URL;
 
 public class MainMenu extends Application {
+    static String username;
     LoginMenuController loginMenuController= new LoginMenuController();
     GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
 
@@ -33,6 +31,15 @@ public class MainMenu extends Application {
             BackgroundPosition.DEFAULT,
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
+
+    public static void setUsername(String name) {
+        username = name;
+    }
+
+    public static String getUsername() {
+        return username;
+    }
+
     public void start (Stage stage) throws Exception{
         URL url = MainMenu.class.getResource("/FXML/MainMenu.fxml");
         Pane pane = FXMLLoader.load(url);
@@ -124,16 +131,11 @@ public class MainMenu extends Application {
         stage.show();
     }
 
-    public void startGame(MouseEvent mouseEvent) {
-        JFrame window = new JFrame();
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
-        window.setTitle("2D Map");
-        GamePanel gamePanel = new GamePanel();
-        window.add(gamePanel);
-        window.pack();
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
-
+    public void startGame() {
+        try {
+            new NewGameSettings().start(StartingMenu.stage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

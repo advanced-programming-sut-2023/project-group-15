@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.view.userView;
 
 import javafx.collections.ObservableList;
@@ -45,7 +44,7 @@ public class LoginMenu extends StartingMenu {
     private Matcher loginMenuMatcher;
     MainMenuController mainMenuController = new MainMenuController();
     public static Stage stage;
-    private static Stage stage1 = new Stage();
+    private static final Stage stage1 = new Stage();
     Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
@@ -56,8 +55,8 @@ public class LoginMenu extends StartingMenu {
     Styles styles = new Styles();
 
     @FXML
-    void changeMode(ActionEvent event){
-        if(changeMode.isSelected()){
+    void changeMode(ActionEvent event) {
+        if (changeMode.isSelected()) {
             passwordShow.setText(password.getText());
             passwordShow.setVisible(true);
             password.setVisible(false);
@@ -70,9 +69,8 @@ public class LoginMenu extends StartingMenu {
 
 
     @Override
-    public void start (Stage stage) throws Exception
-    {
-        LoginMenu.stage = stage ;
+    public void start(Stage stage) throws Exception {
+        LoginMenu.stage = stage;
         URL url = StartingMenu.class.getResource("/FXML/Login.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(new Group(), 600, 400);
@@ -86,7 +84,6 @@ public class LoginMenu extends StartingMenu {
 
         stage.setScene(scene);
         stage.show();
-
 
 
     }
@@ -140,32 +137,31 @@ public class LoginMenu extends StartingMenu {
            }
        }
    */
-    public void loginInCheck(String username , String password) throws Exception {
+    public void loginInCheck(String username, String password) {
         classify(username, password);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
             System.out.println(status.getOutput());
             successfulLogin.setStyle(styles.getSuccessfulMessage());
             successfulLogin.setText("successful login");
-            for(User user : GameDataBase.getAllUsers()) {
+            for (User user : GameDataBase.getAllUsers()) {
                 if (user.getUsername().equals(username)) {
                     MainMenuController.setCurrentUser(user);
+                    MainMenu.setUsername(user.getUsername());
                 }
             }
             captchaShower();
-            //new MainMenu().start(StartingMenu.stage);
-        } else if(status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)){
+        } else if (status.equals(LoginMenuOutput.USER_AND_PASS_MATCH_ERROR)) {
             successfulLogin.setStyle(styles.getErrorMessage());
             successfulLogin.setText("username and password doesn't match");
-        }
-        else if(status.equals(LoginMenuOutput.USER_DOES_NOT_EXIST)){
+        } else if (status.equals(LoginMenuOutput.USER_DOES_NOT_EXIST)) {
             successfulLogin.setStyle(styles.getErrorMessage());
             successfulLogin.setText("username doesn't exist");
         }
 
     }
 
-    private void classify(String username , String pass) {
+    private void classify(String username, String pass) {
         loginMenuController.setUsername(username);
         String password = pass;
         byte[] salt = JsonController.makeSalt();
@@ -237,11 +233,11 @@ public class LoginMenu extends StartingMenu {
         new StartingMenu().start(LoginMenu.stage);
     }
 
-    public void forgotPassword(MouseEvent mouseEvent) throws Exception{
+    public void forgotPassword(MouseEvent mouseEvent) throws Exception {
         new ForgotPassword().start(LoginMenu.stage);
     }
-    public void captchaShower()
-    {
+
+    public void captchaShower() {
         Label captchaMessage = new Label("please enter the below captcha");
         Button submit2 = new Button("submit");
         TextField captchaInput = new TextField();
@@ -260,7 +256,6 @@ public class LoginMenu extends StartingMenu {
         content.addAll(captchaMessage, submit2, captchaInput);
         stage1.setScene(scene);
         stage1.show();
-        //todo the error labels are not shown
         submit2.setOnAction(e ->
         {
             if (!captchaInput.getText().isBlank()) {
@@ -277,29 +272,23 @@ public class LoginMenu extends StartingMenu {
                     alert.show();
                     captchaShower();
                 }
-
-
             }
         });
     }
 
 
-    public void loginUser(MouseEvent mouseEvent) throws Exception {
-        if(password.getText().isBlank())
-        {
+    public void loginUser() throws Exception {
+        if (password.getText().isBlank()) {
             errorPassword.setStyle(styles.getErrorMessage());
             errorPassword.setText("password field is blank");
             password.setStyle(styles.getErrorStyle());
         }
-        if(username.getText().isBlank())
-        {
+        if (username.getText().isBlank()) {
             errorUsername.setStyle(styles.getErrorMessage());
             errorUsername.setText("password field is blank");
             username.setStyle(styles.getErrorStyle());
-        }
-        else if(!password.getText().isBlank() && !username.getText().isBlank())
-        {
-            loginInCheck(username.getText() , password.getText());
+        } else if (!password.getText().isBlank() && !username.getText().isBlank()) {
+            loginInCheck(username.getText(), password.getText());
         }
     }
 }

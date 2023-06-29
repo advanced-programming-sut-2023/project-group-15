@@ -1,4 +1,3 @@
-//this is class is completed! please don't touch my class!
 package org.example.view.userView;
 
 import javafx.application.Application;
@@ -21,23 +20,20 @@ public class StartingMenu extends Application {
             BackgroundPosition.DEFAULT,
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
+
     @Override
-    public void start (Stage stage) throws Exception
-    {
+    public void start(Stage stage) throws Exception {
         new MainMenuController().checkJsonDirectory();
-        StartingMenu.stage = stage ;
+        StartingMenu.stage = stage;
         URL url = StartingMenu.class.getResource("/FXML/StartingMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
-
-
-
     }
 
-    public void signUp(MouseEvent mouseEvent) throws Exception{
+    public void signUp(MouseEvent mouseEvent) throws Exception {
         new SignupMenu().start(StartingMenu.stage);
     }
 
@@ -70,7 +66,6 @@ public class StartingMenu extends Application {
             }
         }
     }*/
-
 
 
 }

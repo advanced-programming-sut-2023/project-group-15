@@ -1,6 +1,7 @@
 //this class is completed!
 package org.example.model.gameData;
 
+import org.example.gameMap.Main;
 import org.example.model.MBC.Soldier;
 import org.example.model.Tile;
 import org.example.model.User;
@@ -42,20 +43,22 @@ public class GameInformation {
     private static final ArrayList<Soldier> allSoldiers = new ArrayList<>();
     private static final ArrayList<Building> allBuildings = new ArrayList<>();
 
-    public static void setMapGame(int mapGame, String path) {
+    public static void setMapGame(int mapSize, String path) {
         try {
+            gameMap = new Tile[mapSize][mapSize];
             String contents = new String((Files.readAllBytes(Paths.get(path))));
             JSONTokener jsonParser = new JSONTokener(contents);
             JSONObject jsonobject = new JSONObject(jsonParser);
             while (!jsonParser.end()) {
-                for (int i = 0; i < mapGame; i++) {
-                    for (int j = 0; j < mapGame; j++) {
+                for (int i = 0; i < mapSize; i++) {
+                    for (int j = 0; j < mapSize; j++) {
                         LandType landType = LandType.getLandType(String.valueOf(jsonobject.get("Land: ")));
                         gameMap[i][j] = new Tile(null, landType, 0, null, null, false, null);
                         jsonParser.next();
                     }
                 }
             }
+            Main.startingGame();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -89,9 +92,7 @@ public class GameInformation {
     }
 
 
-
-
-        public static HashMap<User, Integer> getPlayers() {
+    public static HashMap<User, Integer> getPlayers() {
         return players;
     }
 
@@ -112,7 +113,7 @@ public class GameInformation {
         return false;
     }
 
-    public static void setLandType(int x,int y,LandType landType) {
+    public static void setLandType(int x, int y, LandType landType) {
         gameMap[x][y].setLandType(landType);
     }
 
@@ -124,11 +125,12 @@ public class GameInformation {
         gameMap[x][y].setBuilding(building);
     }
 
-    public static void setRock(int x, int y, boolean isRock,Direction direction) {
-        gameMap[x][y].setRock(isRock,direction);
+    public static void setRock(int x, int y, boolean isRock, Direction direction) {
+        gameMap[x][y].setRock(isRock, direction);
     }
 
     public static void setSoldier(int x, int y, Soldier soldier) {
         gameMap[x][y].setSoldier(soldier);
     }
+
 }
