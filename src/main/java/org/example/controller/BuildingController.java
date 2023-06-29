@@ -116,7 +116,7 @@ public class BuildingController {
             GameInformation.getCurrentPlayer().getMap()[x][y].setBuilding(market);
             GameInformation.getAllBuildings().add(market);
             government.addBuiltBuilding(market);
-            government.setPayerMarket((Marketplace) market);
+       //     government.setPayerMarket((Marketplace) market);
         }
     }
 

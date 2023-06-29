@@ -224,7 +224,7 @@ public class GovermentMenu extends Application implements Initializable {
         blackSmith.setLayoutX(307);
         blackSmith.setFitWidth(49);
         blackSmith.setFitHeight(53);
-
+        pane.getChildren().add(blackSmith);
         EventHandler<MouseEvent> garden = (EventHandler<MouseEvent>) e -> {
             pane.getChildren().add(appleGarden);
             pane.getChildren().add(beerGarden);
@@ -236,7 +236,7 @@ public class GovermentMenu extends Application implements Initializable {
 
 
 
-        pane.getChildren().add(showDefend);
+      //  pane.getChildren().add(showProductive);
         pane.getChildren().add(showWar);
         pane.getChildren().add(showProductive);
         pane.getChildren().add(showCity);

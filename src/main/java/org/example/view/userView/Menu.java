@@ -27,6 +27,7 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import org.example.controller.GameMenuController;
 import org.example.controller.MarketController;
 
 import java.io.IOException;
@@ -42,7 +43,7 @@ public class Menu extends Application implements Initializable {
         @FXML
         private Button button;
         int number = 0 ;
-        Parent parent;
+        Pane parent;
 MarketController marketController = new MarketController();
         @FXML
         public void showMarket(MouseEvent mouseEvent) {
@@ -76,27 +77,7 @@ MarketController marketController = new MarketController();
                 }
         }
 
-        public void clicked(ActionEvent event) throws IOException {
-                ++number;
-                System.out.println(number);
-                if(number%2 == 0){
-                        parentFirst.getChildren().remove(parent);
-                        return;
-                }
-                parent = FXMLLoader.load(getClass().getResource("/FXML/Goverment.fxml"));
 
-                Scene scene = button.getScene();
-                parent.translateXProperty().set(scene.getHeight());
-                parent.setLayoutX(0);
-                parent.setLayoutY(217);
-                parentFirst.getChildren().add(parent);
-                Timeline timeline = new Timeline();
-                KeyValue keyValue = new KeyValue(parent.translateXProperty(), 0, Interpolator.EASE_IN);
-                KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), keyValue);
-                timeline.getKeyFrames().add(keyFrame);
-                timeline.play();
-
-        }
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -118,8 +99,8 @@ MarketController marketController = new MarketController();
                 try {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Goverment.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
+                        System.out.println("kkkkkkkkkk");
                         Stage stage = new Stage();
-                        stage.setTitle("market");
                         stage.setScene(new Scene(root));
                         stage.show();
                 }catch (Exception e){
@@ -127,6 +108,433 @@ MarketController marketController = new MarketController();
                 }
         }
 
+        public void clicked(ActionEvent event) throws Exception {
+                ++number;
+                System.out.println(number);
+                if(number%2 == 0){
+                        parentFirst.getChildren().remove(parent);
+                        return;
+                }
+                parent = FXMLLoader.load(getClass().getResource("/FXML/Goverment.fxml"));
+                Scene scene = button.getScene();
+                parent.translateXProperty().set(scene.getHeight());
 
+                ImageView showCity = new ImageView(String.valueOf(getClass().getResource("/images/city.png")));
+                showCity.setLayoutY(166);
+                showCity.setLayoutX(43);
+                showCity.setFitWidth(22);
+                showCity.setFitHeight(26);
+                parent.getChildren().add(showCity);
+                ImageView showGardens = new ImageView(String.valueOf(getClass().getResource("/images/productive.png")));
+                showGardens.setLayoutY(166);
+                showGardens.setLayoutX(14);
+                showGardens.setFitWidth(22);
+                showGardens.setFitHeight(26);
+                ImageView showDefend = new ImageView(String.valueOf(getClass().getResource("/images/war.png")));
+                showDefend.setLayoutY(166);
+                showDefend.setLayoutX(71);
+                showDefend.setFitWidth(22);
+                showDefend.setFitHeight(26);
+                ImageView showProductive = new ImageView(String.valueOf(getClass().getResource("/images/build.png")));
+                showProductive.setLayoutY(166);
+                showProductive.setLayoutX(96);
+                showProductive.setFitWidth(22);
+                showProductive.setFitHeight(26);
+                ImageView showWar = new ImageView(String.valueOf(getClass().getResource("/images/castle.png")));
+                showWar.setLayoutY(166);
+                showWar.setLayoutX(122);
+                showWar.setFitWidth(22);
+                showWar.setFitHeight(26);
+                ImageView showOthers = new ImageView(String.valueOf(getClass().getResource("/images/0_0img24.png")));
+                showOthers.setLayoutY(166);
+                showOthers.setLayoutX(147);
+                showOthers.setFitWidth(22);
+                showOthers.setFitHeight(26);
+                parent.getChildren().add(showGardens);
+                parent.getChildren().add(showDefend);
+                parent.getChildren().add(showProductive);
+                parent.getChildren().add(showWar);
+                parent.getChildren().add(showOthers);
+
+                ImageView appleGarden = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/APPLE_GARDEN.png")));
+                appleGarden.setLayoutY(97);
+                appleGarden.setLayoutX(34);
+                appleGarden.setFitWidth(69);
+                appleGarden.setFitHeight(57);
+
+                ImageView beerGarden = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/BEER_MAKING.png")));
+                beerGarden.setLayoutY(105);
+                beerGarden.setLayoutX(126);
+                beerGarden.setFitWidth(44);
+                beerGarden.setFitHeight(57);
+
+                ImageView barrak = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/BARRAK.png")));
+                barrak.setLayoutY(105);
+                barrak.setLayoutX(205);
+                barrak.setFitWidth(58);
+                barrak.setFitHeight(57);
+
+                ImageView oat = new ImageView(String.valueOf(getClass().getResource("/images/buildings/gardens/OAT_FARM.png")));
+                oat.setLayoutY(97);
+                oat.setLayoutX(287);
+                oat.setFitWidth(65);
+                oat.setFitHeight(57);
+
+                ImageView cathedral = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/CATHEDRAL.png")));
+                cathedral.setLayoutY(100);
+                cathedral.setLayoutX(33);
+                cathedral.setFitWidth(42);
+                cathedral.setFitHeight(39);
+
+                ImageView mercerany = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/MERCENARY_POST.png")));
+                mercerany.setLayoutY(130);
+                mercerany.setLayoutX(86);
+                mercerany.setFitWidth(42);
+                mercerany.setFitHeight(39);
+
+                ImageView church = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/CHURCH.png")));
+                church.setLayoutY(103);
+                church.setLayoutX(137);
+                church.setFitWidth(42);
+                church.setFitHeight(39);
+
+                ImageView house = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/HOUSE.png")));
+                house.setLayoutY(123);
+                house.setLayoutX(197);
+                house.setFitWidth(42);
+                house.setFitHeight(39);
+
+                ImageView inn = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/INN.png")));
+                inn.setLayoutY(96);
+                inn.setLayoutX(256);
+                inn.setFitWidth(42);
+                inn.setFitHeight(39);
+
+                ImageView market = new ImageView(String.valueOf(getClass().getResource("/images/buildings/house/MARKET.png")));
+                market.setLayoutY(115);
+                market.setLayoutX(304);
+                market.setFitWidth(42);
+                market.setFitHeight(39);
+
+                ImageView bigGate = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/BIG_STONE_GATEHOUSE.png")));
+                bigGate.setLayoutY(113);
+                bigGate.setLayoutX(35);
+                bigGate.setFitWidth(41);
+                bigGate.setFitHeight(43);
+
+                ImageView deffendTurret = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/DEFEND_TURRET.png")));
+                deffendTurret.setLayoutY(97);
+                deffendTurret.setLayoutX(81);
+                deffendTurret.setFitWidth(41);
+                deffendTurret.setFitHeight(43);
+
+                ImageView engineerGuid = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/ENGINEER_GUILD.png")));
+                engineerGuid.setLayoutY(115);
+                engineerGuid.setLayoutX(304);
+                engineerGuid.setFitWidth(48);
+                engineerGuid.setFitHeight(50);
+
+                ImageView lookoutTower = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/LOOKOUT_TOWER.png")));
+                lookoutTower.setLayoutY(96);
+                lookoutTower.setLayoutX(169);
+                lookoutTower.setFitWidth(35);
+                lookoutTower.setFitHeight(43);
+
+                ImageView pitchRig = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/PITCH_RIG.png")));
+                pitchRig.setLayoutY(124);
+                pitchRig.setLayoutX(200);
+                pitchRig.setFitWidth(57);
+                pitchRig.setFitHeight(58);
+
+                ImageView poleturner = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/POLETURNER.png")));
+                poleturner.setLayoutY(99);
+                poleturner.setLayoutX(272);
+                poleturner.setFitWidth(50);
+                poleturner.setFitHeight(37);
+
+                ImageView smallGate = new ImageView(String.valueOf(getClass().getResource("/images/buildings/defend/SMALL_STONE_GATEHOUSE.png")));
+                smallGate.setLayoutY(121);
+                smallGate.setLayoutX(321);
+                smallGate.setFitWidth(37);
+                smallGate.setFitHeight(43);
+
+                ImageView bakery = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/BAKERY.png")));
+                bakery.setLayoutY(97);
+                bakery.setLayoutX(26);
+                bakery.setFitWidth(39);
+                bakery.setFitHeight(43);
+
+                ImageView woodCutter = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/WOODCUTTER.png")));
+                woodCutter.setLayoutY(115);
+                woodCutter.setLayoutX(319);
+                woodCutter.setFitWidth(63);
+                woodCutter.setFitHeight(43);
+
+                ImageView oilSmelter = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/OIL_SMELTLER.png")));
+                oilSmelter.setLayoutY(97);
+                oilSmelter.setLayoutX(263);
+                oilSmelter.setFitWidth(45);
+                oilSmelter.setFitHeight(43);
+
+                ImageView diary = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/DIARY.png")));
+                diary.setLayoutY(97);
+                diary.setLayoutX(142);
+                diary.setFitWidth(38);
+                diary.setFitHeight(37);
+
+                ImageView mill = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/MILL.png")));
+                mill.setLayoutY(98);
+                mill.setLayoutX(190);
+                mill.setFitWidth(36);
+                mill.setFitHeight(57);
+
+                ImageView ironMine = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/IRON_MINE.png")));
+                ironMine.setLayoutY(126);
+                ironMine.setLayoutX(231);
+                ironMine.setFitWidth(38);
+                ironMine.setFitHeight(37);
+
+                ImageView blackSmith = new ImageView(String.valueOf(getClass().getResource("/images/buildings/productive/BLACKSMITH.png")));
+                blackSmith.setLayoutY(87);
+                blackSmith.setLayoutX(118);
+                blackSmith.setFitWidth(38);
+                blackSmith.setFitHeight(37);
+
+                ImageView armourer = new ImageView(String.valueOf(getClass().getResource("/images/buildings/war/ARMOURER.png")));
+                armourer.setLayoutY(87);
+                armourer.setLayoutX(118);
+                armourer.setFitWidth(38);
+                armourer.setFitHeight(37);
+
+                ImageView armoury = new ImageView(String.valueOf(getClass().getResource("/images/buildings/war/ARMOURY.png")));
+                armoury.setLayoutY(87);
+                armoury.setLayoutX(118);
+                armoury.setFitWidth(38);
+                armoury.setFitHeight(37);
+
+                ImageView dogs = new ImageView(String.valueOf(getClass().getResource("/images/buildings/war/CAGED_WAR_DOGS.png")));
+                dogs.setLayoutY(87);
+                dogs.setLayoutX(118);
+                dogs.setFitWidth(38);
+                dogs.setFitHeight(37);
+
+                ImageView huntingBuilding = new ImageView(String.valueOf(getClass().getResource("/images/buildings/war/HUNTING_BUILDING.png")));
+                huntingBuilding.setLayoutY(87);
+                huntingBuilding.setLayoutX(118);
+                huntingBuilding.setFitWidth(38);
+                huntingBuilding.setFitHeight(37);
+
+                ImageView premeter = new ImageView(String.valueOf(getClass().getResource("/images/buildings/war/PERMETER_TOWER.png")));
+                premeter.setLayoutY(87);
+                premeter.setLayoutX(118);
+                premeter.setFitWidth(38);
+                premeter.setFitHeight(37);
+
+                ImageView squareTower = new ImageView(String.valueOf(getClass().getResource("/images/buildings/war/SQUARE_TOWER.png")));
+                squareTower.setLayoutY(87);
+                squareTower.setLayoutX(118);
+                squareTower.setFitWidth(38);
+                squareTower.setFitHeight(37);
+
+                EventHandler<MouseEvent> garden = (EventHandler<MouseEvent>) e -> {
+                        parent.getChildren().add(appleGarden);
+                        parent.getChildren().add(beerGarden);
+                        parent.getChildren().add(barrak);
+                        parent.getChildren().add(oat);
+
+                        parent.getChildren().remove(cathedral);
+                        parent.getChildren().remove(mercerany);
+                        parent.getChildren().remove(church);
+                        parent.getChildren().remove(house);
+                        parent.getChildren().remove(inn);
+                        parent.getChildren().remove(market);
+
+                        parent.getChildren().remove(bigGate);
+                        parent.getChildren().remove(smallGate);
+                        parent.getChildren().remove(deffendTurret);
+                        parent.getChildren().remove(poleturner);
+                        parent.getChildren().remove(pitchRig);
+                        parent.getChildren().remove(lookoutTower);
+                        parent.getChildren().remove(engineerGuid);
+
+                        parent.getChildren().remove(oilSmelter);
+                        parent.getChildren().remove(woodCutter);
+                        parent.getChildren().remove(bakery);
+                        parent.getChildren().remove(blackSmith);
+                        parent.getChildren().remove(mill);
+                        parent.getChildren().remove(ironMine);
+                        parent.getChildren().remove(diary);
+
+                        parent.getChildren().remove(armourer);
+                        parent.getChildren().remove(armoury);
+                        parent.getChildren().remove(dogs);
+                        parent.getChildren().remove(huntingBuilding);
+                        parent.getChildren().remove(squareTower);
+                        parent.getChildren().remove(premeter);
+                };
+
+                EventHandler<MouseEvent> houseMenu = (EventHandler<MouseEvent>) e -> {
+                        parent.getChildren().add(cathedral);
+                        parent.getChildren().add(mercerany);
+                        parent.getChildren().add(church);
+                        parent.getChildren().add(house);
+                        parent.getChildren().add(inn);
+                        parent.getChildren().add(market);
+
+                        parent.getChildren().remove(appleGarden);
+                        parent.getChildren().remove(beerGarden);
+                        parent.getChildren().remove(barrak);
+                        parent.getChildren().remove(oat);
+
+                        parent.getChildren().remove(bigGate);
+                        parent.getChildren().remove(smallGate);
+                        parent.getChildren().remove(deffendTurret);
+                        parent.getChildren().remove(poleturner);
+                        parent.getChildren().remove(pitchRig);
+                        parent.getChildren().remove(lookoutTower);
+                        parent.getChildren().remove(engineerGuid);
+
+                        parent.getChildren().remove(oilSmelter);
+                        parent.getChildren().remove(woodCutter);
+                        parent.getChildren().remove(bakery);
+                        parent.getChildren().remove(blackSmith);
+                        parent.getChildren().remove(mill);
+                        parent.getChildren().remove(ironMine);
+                        parent.getChildren().remove(diary);
+
+                        parent.getChildren().remove(armourer);
+                        parent.getChildren().remove(armoury);
+                        parent.getChildren().remove(dogs);
+                        parent.getChildren().remove(huntingBuilding);
+                        parent.getChildren().remove(squareTower);
+                        parent.getChildren().remove(premeter);
+                };
+
+                EventHandler<MouseEvent> defendMenu = (EventHandler<MouseEvent>) e -> {
+                        parent.getChildren().add(bigGate);
+                        parent.getChildren().add(smallGate);
+                        parent.getChildren().add(deffendTurret);
+                        parent.getChildren().add(poleturner);
+                        parent.getChildren().add(pitchRig);
+                        parent.getChildren().add(lookoutTower);
+                        parent.getChildren().add(engineerGuid);
+
+                        parent.getChildren().remove(appleGarden);
+                        parent.getChildren().remove(beerGarden);
+                        parent.getChildren().remove(barrak);
+                        parent.getChildren().remove(oat);
+
+                        parent.getChildren().remove(cathedral);
+                        parent.getChildren().remove(mercerany);
+                        parent.getChildren().remove(church);
+                        parent.getChildren().remove(house);
+                        parent.getChildren().remove(inn);
+                        parent.getChildren().remove(market);
+
+                        parent.getChildren().remove(oilSmelter);
+                        parent.getChildren().remove(woodCutter);
+                        parent.getChildren().remove(bakery);
+                        parent.getChildren().remove(blackSmith);
+                        parent.getChildren().remove(mill);
+                        parent.getChildren().remove(ironMine);
+                        parent.getChildren().remove(diary);
+
+                        parent.getChildren().remove(armourer);
+                        parent.getChildren().remove(armoury);
+                        parent.getChildren().remove(dogs);
+                        parent.getChildren().remove(huntingBuilding);
+                        parent.getChildren().remove(squareTower);
+                        parent.getChildren().remove(premeter);
+                };
+
+                EventHandler<MouseEvent> productiveMenu = (EventHandler<MouseEvent>) e -> {
+                        parent.getChildren().add(oilSmelter);
+                        parent.getChildren().add(woodCutter);
+                        parent.getChildren().add(bakery);
+                        parent.getChildren().add(blackSmith);
+                        parent.getChildren().add(mill);
+                        parent.getChildren().add(ironMine);
+                        parent.getChildren().add(diary);
+
+                        parent.getChildren().remove(appleGarden);
+                        parent.getChildren().remove(beerGarden);
+                        parent.getChildren().remove(barrak);
+                        parent.getChildren().remove(oat);
+
+                        parent.getChildren().remove(cathedral);
+                        parent.getChildren().remove(mercerany);
+                        parent.getChildren().remove(church);
+                        parent.getChildren().remove(house);
+                        parent.getChildren().remove(inn);
+                        parent.getChildren().remove(market);
+
+                        parent.getChildren().remove(bigGate);
+                        parent.getChildren().remove(smallGate);
+                        parent.getChildren().remove(deffendTurret);
+                        parent.getChildren().remove(poleturner);
+                        parent.getChildren().remove(pitchRig);
+                        parent.getChildren().remove(lookoutTower);
+                        parent.getChildren().remove(engineerGuid);
+
+                        parent.getChildren().remove(armourer);
+                        parent.getChildren().remove(armoury);
+                        parent.getChildren().remove(dogs);
+                        parent.getChildren().remove(huntingBuilding);
+                        parent.getChildren().remove(squareTower);
+                        parent.getChildren().remove(premeter);
+                };
+
+                EventHandler<MouseEvent> warMenu = (EventHandler<MouseEvent>) e -> {
+                        parent.getChildren().add(armourer);
+                        parent.getChildren().add(armoury);
+                        parent.getChildren().add(dogs);
+                        parent.getChildren().add(huntingBuilding);
+                        parent.getChildren().add(squareTower);
+                        parent.getChildren().add(premeter);
+
+                        parent.getChildren().remove(appleGarden);
+                        parent.getChildren().remove(beerGarden);
+                        parent.getChildren().remove(barrak);
+                        parent.getChildren().remove(oat);
+
+                        parent.getChildren().remove(cathedral);
+                        parent.getChildren().remove(mercerany);
+                        parent.getChildren().remove(church);
+                        parent.getChildren().remove(house);
+                        parent.getChildren().remove(inn);
+                        parent.getChildren().remove(market);
+
+                        parent.getChildren().remove(bigGate);
+                        parent.getChildren().remove(smallGate);
+                        parent.getChildren().remove(deffendTurret);
+                        parent.getChildren().remove(poleturner);
+                        parent.getChildren().remove(pitchRig);
+                        parent.getChildren().remove(lookoutTower);
+                        parent.getChildren().remove(engineerGuid);
+
+                        parent.getChildren().remove(oilSmelter);
+                        parent.getChildren().remove(woodCutter);
+                        parent.getChildren().remove(bakery);
+                        parent.getChildren().remove(blackSmith);
+                        parent.getChildren().remove(mill);
+                        parent.getChildren().remove(ironMine);
+                        parent.getChildren().remove(diary);
+                };
+
+                showWar.setOnMouseClicked(warMenu);
+                showProductive.setOnMouseClicked(productiveMenu);
+                showDefend.setOnMouseClicked(defendMenu);
+                showCity.setOnMouseClicked(houseMenu);
+                showGardens.setOnMouseClicked(garden);
+
+                parent.setLayoutX(0);
+                parent.setLayoutY(217);
+                parentFirst.getChildren().add(parent);
+                Timeline timeline = new Timeline();
+                KeyValue keyValue = new KeyValue(parent.translateXProperty(), 0, Interpolator.EASE_IN);
+                KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), keyValue);
+                timeline.getKeyFrames().add(keyFrame);
+                timeline.play();
+        }
 
 }

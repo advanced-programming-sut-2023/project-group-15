@@ -2,6 +2,8 @@
 package org.example.model.enums;
 
 public enum Products {
+    HOP("hop"),
+    ARCHER("archer"),
     APPLE("apple"),
     OAT("oat"),
     BREAD("bead"),

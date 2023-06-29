@@ -9,6 +9,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.MainMenuController;
+import org.example.model.gameData.GameDataBase;
+import org.example.view.ScoreBoard;
 
 import java.net.URL;
 

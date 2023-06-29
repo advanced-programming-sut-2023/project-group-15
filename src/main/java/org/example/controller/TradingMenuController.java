@@ -27,7 +27,7 @@ public class TradingMenuController {
         User sender = GameDataBase.getUserByUsername(this.government.getOwner());
         Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
         sender.getGovernment().getTradeSendList().add(newTrade);
-        receiver.getGovernment().getTradeReqList().add(newTrade);
+      //  receiver.getGovernment().getTradeReqList().add(newTrade);
         Government.getTradeHistoryList().add(newTrade);
     }
 

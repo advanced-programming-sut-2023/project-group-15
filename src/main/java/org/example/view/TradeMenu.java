@@ -18,7 +18,8 @@ import org.example.view.enums.outputs.GameInformationOutput;
 import java.net.URL;
 
 public class TradeMenu extends Application {
-    User currentUser = MainMenuController.getCurrentUser();
+    MainMenuController mainMenuController = new MainMenuController();
+    User currentUser = mainMenuController.getCurrentUser();
     TradingMenuController tradingMenuController = new TradingMenuController(currentUser.getUsername());
     public void start(Stage stage) throws Exception{
         URL url = TradeMenu.class.getResource("FXML/TradingMenu.fxml");
@@ -35,7 +36,7 @@ public class TradeMenu extends Application {
 
     public void showHistory(MouseEvent mouseEvent) {
         TextArea textArea = new TextArea();
-        textArea.setText(tradingMenuController.showTradeHistory());
+     //   textArea.setText(tradingMenuController.showTradeHistory());
         textArea.setEditable(false);
         VBox vBox = new VBox();
         vBox.getChildren().add(textArea);
@@ -53,7 +54,7 @@ public class TradeMenu extends Application {
         Alert alertAccept = new Alert(Alert.AlertType.INFORMATION);
         alertAccept.setContentText("accepted successfully");
         TextArea textArea = new TextArea();
-        textArea.appendText(Trade.showTrades());
+      //  textArea.appendText(Trade.showTrades());
         Pane pane = new Pane();
         pane.setPrefHeight(410);
         pane.setPrefWidth(630);
@@ -72,15 +73,15 @@ public class TradeMenu extends Application {
         index.setText("index");
         index.setTranslateX(167);
         index.setTranslateY(315);
-        accept.setOnAction(e ->
+       /* accept.setOnAction(e ->
         {
-            GameInformationOutput output = tradingMenuController.acceptRequest(Integer.parseInt(index.getText()));
+           /* GameInformationOutput output = tradingMenuController.acceptRequest(Integer.parseInt(index.getText()));
                 if(output.equals(GameInformationOutput.NOT_ENOUGH))
                 alertResource.showAndWait();
                 else if(output.equals(GameInformationOutput.NOT_ENOUGH_COIN))
                     alertCoins.showAndWait();
                     else if(output.equals(GameInformationOutput.ACCEPTED_SUCCESSFULLY))
                         alertAccept.showAndWait();
-        });
+        })*/
     }
 }

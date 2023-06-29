@@ -71,7 +71,7 @@ public class TradeRequest extends Application {
         stage.setScene(scene);
         this.products.add(WOOD) ;
         this.products.add(APPLE) ;
-       this.products.add(ARCHER) ;
+    //   this.products.add(ARCHER) ;
        this.products.add(ARMOUR);
        this.products.add(ROCK);
         this.products.add(CHEESE);
@@ -79,7 +79,7 @@ public class TradeRequest extends Application {
         this.products.add(MEAT);
         this.products.add(MACE);
         this.products.add(IRON);
-        this.products.add(HOP);
+       // this.products.add(HOP);
         this.products.add(PITCH);
         this.products.add(SWORD);
         this.products.add(WEAT);
@@ -90,7 +90,7 @@ public class TradeRequest extends Application {
     public void setAmount()
     {
         Government government = GameInformation.getCurrentPlayer().getGovernment();
-        HashMap store = government.getFOODSTORE();
+        //HashMap store = government.getFOODSTORE();
     /*    if(store.containsKey(VEST))
             vest.setText(String.valueOf(store.get(VEST)));
         if(store.containsKey(BREAD))
@@ -195,14 +195,14 @@ public class TradeRequest extends Application {
                     alert.showAndWait();
                 }
                 else {
-                    newTrade.tradingMenuController.sendTradeRequest(name , Integer.parseInt(number.getText()) ,message.getText()
-                            ,Double.parseDouble(cost.getText()) ,newTrade.chosen  );
+                   // newTrade.tradingMenuController.sendTradeRequest(name , Integer.parseInt(number.getText()) ,message.getText()
+                        //    ,Double.parseDouble(cost.getText()) ,newTrade.chosen  );
 
                 }
             });
             donate.setOnAction(e->{
-                newTrade.tradingMenuController.sendTradeDonate(name , Integer.parseInt(number.getText()) , message.getText() ,
-                        Double.parseDouble(cost.getText()) ,newTrade.chosen );
+              //  newTrade.tradingMenuController.sendTradeDonate(name , Integer.parseInt(number.getText()) , message.getText() ,
+                      //  Double.parseDouble(cost.getText()) ,newTrade.chosen );
                     }
             );
             Image back = new Image(getClass().getResource("/images1/0_0img22.png").toString());
