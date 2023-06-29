@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="349.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
    <children>
-      <StackPane prefHeight="349.0" prefWidth="600.0" />
-      <Pane prefHeight="406.0" prefWidth="600.0">
+      <Pane layoutX="200.0" layoutY="72.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <VBox alignment="CENTER" layoutX="200.0" prefHeight="416.0" prefWidth="149.0" spacing="20.0">
-               <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#profileDisplay" prefHeight="30.0" prefWidth="150.0" text="Profile display" />
-                  <Button mnemonicParsing="false" onMouseClicked="#changeUsername" prefHeight="30.0" prefWidth="150.0" text="Change username" />
-                  <Button mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="30.0" prefWidth="150.0" text="Change password" />
-                  <Button mnemonicParsing="false" onMouseClicked="#chooseAvatar" prefHeight="30.0" prefWidth="150.0" text="Choose new avatar" />
-                  <Button mnemonicParsing="false" onMouseClicked="#changeEmail" prefHeight="30.0" prefWidth="150.0" text="Change email" />
-                  <Button mnemonicParsing="false" onMouseClicked="#changeNickname" prefHeight="30.0" prefWidth="150.0" text="Change nickname" />
-                  <Button mnemonicParsing="false" onMouseClicked="#showScoreboard" prefHeight="30.0" prefWidth="150.0" text="Show scoreboard" />
-                  <Button maxHeight="30.0" maxWidth="150.0" mnemonicParsing="false" text="Upload avatar" onMouseClicked="#uploadAvatar" />
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
-               </padding>
-            </VBox>
-            <Button contentDisplay="CENTER" layoutX="430.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" prefHeight="30.0" prefWidth="150.0" text="Change slogan" />
-            <Button alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="430.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#removeSlogan" prefHeight="30.0" prefWidth="150.0" text="Remove slogan" />
+            <Label layoutX="70.0" layoutY="26.0" text="username" />
+            <Label layoutX="71.0" layoutY="91.0" text="password" />
+            <Label layoutX="70.0" layoutY="168.0" text="nickname " />
          </children>
       </Pane>
+      <Button layoutX="14.0" layoutY="326.0" mnemonicParsing="false" text="change slogan" onMouseClicked="#changeSlogan" />
+      <Button layoutX="402.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="30.0" prefWidth="120.0" text="change password" />
+      <Button layoutX="402.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#changeEmail" prefHeight="30.0" prefWidth="120.0" text="change email" />
+      <Button layoutX="402.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#changeUsername" prefHeight="30.0" text="change username" />
+      <Button layoutX="402.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#changeNickname" prefHeight="30.0" prefWidth="120.0" text="change nickname" />
+      <Label layoutX="277.0" layoutY="302.0" text="email" />
+      <Button layoutX="13.0" layoutY="364.0" mnemonicParsing="false" text="remove slogan" onMouseClicked="#removeSlogan" />
+      <Label layoutX="273.0" layoutY="29.0" text="slogan" />
+      <Button layoutX="244.0" layoutY="356.0" mnemonicParsing="false" text="choose avatar" onMouseClicked="#chooseAvatar" />
    </children>
 </AnchorPane>

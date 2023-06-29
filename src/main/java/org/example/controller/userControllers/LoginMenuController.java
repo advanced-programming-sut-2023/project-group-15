@@ -10,9 +10,10 @@ import org.example.view.enums.outputs.LoginMenuOutput;
 public class LoginMenuController extends MainMenuController {
     private boolean stayLoggedInFlag = false;
 
-    public LoginMenuOutput loginUser() {
+    public LoginMenuOutput loginUser(String password) {
+        System.out.println(this.getUsername()+password);
         if (checkMatchUsername()) {
-            if (checkUsernameWithPassword()) {
+            if (checkUsernameWithPassword(password)) {
                 if (this.isStayLoggedInFlag()) {
                     GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(true);
                     ProfileMenuController.moveDataToFile();
@@ -32,10 +33,10 @@ public class LoginMenuController extends MainMenuController {
         return false;
     }
 
-    private boolean checkUsernameWithPassword() {
+    private boolean checkUsernameWithPassword(String password) {
         for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
-                if (user.getPassword().equals(this.getPassword())) {
+                if (user.getPassword().equals(password)) {
                     return true;
                 }
             }
@@ -86,4 +87,3 @@ public class LoginMenuController extends MainMenuController {
     }
 
 }
-

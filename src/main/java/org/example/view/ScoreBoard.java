@@ -59,7 +59,7 @@ public class ScoreBoard extends Application {
 
 
 
-        TableView tableView = new TableView<>(generateDataInMap());
+        javafx.scene.control.TableView tableView = new javafx.scene.control.TableView<>(generateDataInMap());
 
         tableView.setEditable(true);
         tableView.getSelectionModel().setCellSelectionEnabled(true);

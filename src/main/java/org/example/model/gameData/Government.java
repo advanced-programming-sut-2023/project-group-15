@@ -6,7 +6,6 @@ import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
 import org.example.model.building.Marketplace;
-import org.example.model.enums.Products;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,8 +20,7 @@ public class Government {
     private ArrayList<LauncherUnit> launcherUnit;
     private ArrayList<UnitWallTarget> unitWallTarget;
     private final List<Trade> tradeSendList;
-    private final List<Trade> tradeUnacceptedReqList;
-    private final List<Trade> tradeAcceptedReqList;
+    private final List<Trade> tradeReqList;
     private int popularity;
     private int foodRate;
     private int taxRate;
@@ -34,47 +32,26 @@ public class Government {
     private final HashMap<String, Double> foods;
     private static final ArrayList<Government> allGovernments = new ArrayList<>();
     private static final List<Trade> tradeHistoryList = new ArrayList<>();
-    private HashMap<Products , Integer> FOODSTORE = new HashMap<>();
-    private HashMap<Products , Integer> ARMOURY = new HashMap<>();
-    private HashMap<Products , Integer> SOURCESTORE =  new HashMap<>();
 
     public Government(String owner) {
         this.owner = owner;
-        this.coins = 800.00;
+        this.coins = 100.00;
         this.people = 50;
         this.workers = 0;
         this.fearRate = 0;
         this.foodRate = -8;
         this.taxRate = 0;
         this.religion = 0;
-        this.popularity = -8;
+        this.popularity = 8;
         this.storeBuilt = false;
         this.market = null;
         this.builtBuildings = new ArrayList<>();
         this.newUnitForGovernment();
-        this.tradeUnacceptedReqList = new ArrayList<>();
+        this.tradeReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
-        this.tradeAcceptedReqList = new ArrayList<>();
         this.foods = new HashMap<>();
         setPrimitiveFoods();
         allGovernments.add(this);
-        this.SOURCESTORE.put(Products.WOOD , 200);
-    }
-
-    public List<Trade> getTradeAcceptedReqList() {
-        return tradeAcceptedReqList;
-    }
-
-    public HashMap<Products, Integer> getFOODSTORE() {
-        return FOODSTORE;
-    }
-
-    public HashMap<Products, Integer> getARMOURY() {
-        return ARMOURY;
-    }
-
-    public HashMap<Products, Integer> getSOURCESTORE() {
-        return SOURCESTORE;
     }
 
     private void newUnitForGovernment() {
@@ -87,7 +64,7 @@ public class Government {
         return market;
     }
 
-    public void setPlayerMarket(Marketplace market) {
+    public void setPayerMarket(Marketplace market) {
         this.market = market;
         this.storeBuilt = true;
     }
@@ -318,8 +295,8 @@ public class Government {
         return tradeSendList;
     }
 
-    public List<Trade> getTradeUnacceptedReqList() {
-        return tradeUnacceptedReqList;
+    public List<Trade> getTradeReqList() {
+        return tradeReqList;
     }
 
     public static List<Trade> getTradeHistoryList() {

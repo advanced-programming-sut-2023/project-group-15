@@ -16,13 +16,13 @@ public class MousePointer implements MouseListener, MouseMotionListener {
     private final GamePanel gamePanel;
     private final KeyHandler keyHandler;
     private final BufferedImage image;
-    private double worldX = 100;
-    private double worldY = 100;
+    private int worldX = 100;
+    private int worldY = 100;
     private final int screenX;
     private final int screenY;
     private int mouseSpeed = 15;
-    private double mouseX;
-    private double mouseY;
+    private int mouseX;
+    private int mouseY;
     //    private Position mousePosition;
     private boolean mouseClicked = false;
     private boolean mousePressed = false;
@@ -42,7 +42,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         screenX = (gamePanel.getScreenWidth() - gamePanel.getTileSize()) / 2;
         screenY = (gamePanel.getScreenHeight() - gamePanel.getTileSize()) / 2;
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("/images1/mouse/pointer.png"));
+            image = ImageIO.read(getClass().getResourceAsStream("/images/mouse/pointer.png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -142,7 +142,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        e.getComponent().setLocation((int) (e.getX()+e.getComponent().getX()+mouseX), (int) (e.getY()+e.getComponent().getY()-mouseY));
+        e.getComponent().setLocation(e.getX()+e.getComponent().getX()+mouseX,e.getY()+e.getComponent().getY()-mouseY);
 //        mousePosition = new Position(e.getPoint().getX(),e.getPoint().getY());
     }
 
@@ -165,11 +165,11 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         return image;
     }
 
-    public double getWorldX() {
+    public int getWorldX() {
         return worldX;
     }
 
-    public double getWorldY() {
+    public int getWorldY() {
         return worldY;
     }
 
@@ -212,27 +212,11 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         return mouseMoved;
     }
 
-    public double getMouseX() {
+    public int getMouseX() {
         return mouseX;
     }
 
-    public double getMouseY() {
+    public int getMouseY() {
         return mouseY;
-    }
-
-    public void setMouseX(double mouseX) {
-        this.mouseX = mouseX;
-    }
-
-    public void setMouseY(double mouseY) {
-        this.mouseY = mouseY;
-    }
-
-    public void setWorldX(double worldX) {
-        this.worldX = worldX;
-    }
-
-    public void setWorldY(double worldY) {
-        this.worldY = worldY;
     }
 }

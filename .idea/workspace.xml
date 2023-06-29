@@ -4,14 +4,124 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23ed45ba-e0ca-4fbe-a047-bd3b4f6dae6b" name="Changes" comment="some changes in gamemenu and unit">
+    <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_5_52_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_5_52_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_6_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_23_2023_6_26_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_7_2023_8_24_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_7_2023_8_24_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_2023_9_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_2023_9_40_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_2023_6_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_2023_6_27_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_10_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_10_08_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_9_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_8_2023_9_40_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/InputScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuEnvironmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/StartingGameMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/TradingMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/jsonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/ProfileMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GamePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/PlayerGameStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/mouseHandling/MousePointer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/AssetSetter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/SuperObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/InfantryUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/LauncherUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/People.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/Soldier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/UnitWallTarget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/Worker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Building.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/BuildingName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/CityBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Education.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Marketplace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/PopularityBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/ProductiveBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Storage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/WarBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/FilePaths.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/LandType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Products.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/SecurityQuestion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Slogans.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/StoreProducts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/UnitName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Weapon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/MapTemplates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapChangesEnvironment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/BuildingCommandsEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameStartMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/LoginMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/ProfileMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/SignupMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/TradingMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/BuildingStatusOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameInformationOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameStartMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/LoginMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/ProfileMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/SignupMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/UnitMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ChooseAvatar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ChooseAvatar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ChooseRandomSlogan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ResourcesOfMarket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,21 +131,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="module-info" />
-        <option value="Class" />
-        <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="760ec35748b1af5d0d2498548229b3b0be4c88d0" />
+        <entry key="$PROJECT_DIR$" value="mahdi" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" root0="FORCE_HIGHLIGHTING" />
@@ -54,42 +164,50 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OdNK38UNz2OrnIqCzmN0SMvyKl" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mahdi&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/java/org/example/view&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mahdi.ak/Documents/GitHub/project-group-15&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/Raya/Desktop/project2-group-15/src/main/java",
+    "last_opened_file_path": "C:/Users/mobin/Desktop/projectLast",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15" />
-      <recent name="C:\Users\Raya\Desktop\project2-group-15\src\main\resources\Images" />
+      <recent name="C:\Users\mobin\Desktop\projectLast\src\main\resources\images1" />
+      <recent name="C:\Users\mobin\Desktop\projectLast\src\main\resources\Images\buildings" />
+      <recent name="C:\Users\mobin\Desktop\project152\src\main\resources\images\popularity" />
+      <recent name="C:\Users\mobin\Desktop\project152\src\main\resources\Css" />
+      <recent name="C:\Users\mobin\Desktop\project152\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mobin\Desktop\project2\src\main\java\org\example" />
       <recent name="C:\Users\Raya\Desktop\project2-group-15\src\main\java\org\example\view" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -97,22 +215,9 @@
       <recent name="org.example.veiw.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TradeMenu">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StartingMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.StartingMenu" />
+  <component name="RunManager" selected="Application.Market">
+    <configuration name="ForgotPassword" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ForgotPassword" />
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
@@ -124,12 +229,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TradeMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.TradeMenu" />
+    <configuration name="GovermentMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.GovermentMenu" />
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.view.*" />
+          <option name="PATTERN" value="org.example.view.userView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,7 +242,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.gameMap.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.gameMap.Main" />
       <module name="untitled" />
       <extension name="coverage">
@@ -150,12 +255,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.view.NewGameSettings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.NewGameSettings" />
+    <configuration name="Market" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Market" />
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.view.*" />
+          <option name="PATTERN" value="org.example.view.userView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,20 +268,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Menu" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.view.userView.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TradeMenu" />
-        <item itemvalue="Application.StartingMenu" />
-        <item itemvalue="Application.org.example.gameMap.Main" />
-        <item itemvalue="Application.org.example.view.NewGameSettings" />
+        <item itemvalue="Application.Market" />
+        <item itemvalue="Application.GovermentMenu" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Menu" />
+        <item itemvalue="Application.ForgotPassword" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="23ed45ba-e0ca-4fbe-a047-bd3b4f6dae6b" name="Changes" comment="some changes in gamemenu and unit" />
+      <changelist id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="" />
       <created>1681886432173</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -200,7 +329,6 @@
       <workItem from="1684848886064" duration="138000" />
       <workItem from="1684853887629" duration="38000" />
       <workItem from="1684855759036" duration="29000" />
-      <workItem from="1688044109143" duration="2496000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -234,7 +362,49 @@
       <option name="project" value="LOCAL" />
       <updated>1682100873720</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3shanbeh">
+      <created>1685439658220</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685439658220</updated>
+    </task>
+    <task id="LOCAL-00007" summary="last commit">
+      <created>1685729803541</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685729803541</updated>
+    </task>
+    <task id="LOCAL-00008" summary="3shanbeh(add ForgotPassword and market)">
+      <created>1686051682000</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686051682000</updated>
+    </task>
+    <task id="LOCAL-00009" summary="friday(completed market)">
+      <created>1686335457951</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686335457952</updated>
+    </task>
+    <task id="LOCAL-00010" summary="4shanbe-(goverment and forget password)">
+      <created>1687369736506</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687369736506</updated>
+    </task>
+    <task id="LOCAL-00011" summary="3shanbe(completing goverment and buildings)">
+      <created>1687880872074</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687880872074</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,16 +415,33 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="creating files..." />
-    <option name="LAST_COMMIT_MESSAGE" value="creating files..." />
+    <MESSAGE value="3shanbeh" />
+    <MESSAGE value="last commit" />
+    <MESSAGE value="3shanbeh(add ForgotPassword and market)" />
+    <MESSAGE value="friday(completed market)" />
+    <MESSAGE value="4shanbe-(goverment and forget password)" />
+    <MESSAGE value="3shanbe(completing goverment and buildings)" />
+    <option name="LAST_COMMIT_MESSAGE" value="3shanbe(completing goverment and buildings)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,6 +466,16 @@
           <line>13</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>
           <line>16</line>
@@ -297,12 +494,22 @@
           </properties>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="13" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest.ic" NAME="SignupMenuControllerTest Coverage Results" MODIFIED="1684827005041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic" NAME="SignupMenuControllerTest.changeForgetPasswordTests Coverage Results" MODIFIED="1684173056920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$Main.ic" NAME="Main Coverage Results" MODIFIED="1684167396630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changeUsernameTests.ic" NAME="ProfileMenuControllerTest.changeUsernameTests Coverage Results" MODIFIED="1684172861618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.controller.*</FILTER>
@@ -312,18 +519,6 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest.ic" NAME="ProfileMenuControllerTest Coverage Results" MODIFIED="1684172775802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$ProfileMenu.ic" NAME="ProfileMenu Coverage Results" MODIFIED="1685693202450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.view.userView.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic" NAME="SignupMenuControllerTest.changeForgetPasswordTests Coverage Results" MODIFIED="1684173056920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$StartingMenu.ic" NAME="StartingMenu Coverage Results" MODIFIED="1688010332698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.view.userView.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$Main.ic" NAME="Main Coverage Results" MODIFIED="1688002056933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.gameMap.*</FILTER>
     </SUITE>
   </component>
 </project>

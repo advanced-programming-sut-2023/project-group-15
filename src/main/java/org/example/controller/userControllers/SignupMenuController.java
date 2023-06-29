@@ -9,15 +9,14 @@ import org.example.model.enums.Slogans;
 import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
+import org.example.view.userView.ForgotPassword;
 
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupMenuController extends MainMenuController {
-    public User user = ProfileMenuController.getCurrentUser();
-
-
+    public User user;
     public void setUsernameSignup(String username){
         user.setUsername(username);
     }
@@ -41,7 +40,7 @@ public class SignupMenuController extends MainMenuController {
     public void setPassRecoveryQuestionSignup(String passRecoveryQuestion){
         user.setPassRecoveryQuestion(passRecoveryQuestion);
     }
-    /*public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
+    public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
         user.setPassRecoveryAnswer(passRecoveryAnswer);
     }
     public SignupMenuOutput signupUserCheck() {
@@ -51,7 +50,7 @@ public class SignupMenuController extends MainMenuController {
         if ((status = nicknameCheck()) != SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
-    }*/
+    }
 
     public SignupMenuOutput nicknameCheck() {
         return user.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
@@ -113,10 +112,7 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public void selectSlogan(String input) {
-        System.out.println(Slogans.getAllSlogans().get(Integer.parseInt(input) -1).getSlogan());
-        System.out.println(this.getNickname());
-        // user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) -1).getSlogan());
-        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
+        user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
     }
     public void userSlogan(String input)
     {
@@ -133,28 +129,28 @@ public class SignupMenuController extends MainMenuController {
             for (int i = 0; i < 8; i++) {
                 p[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];
             }
-            password = String.valueOf(p);
+            password = java.lang.String.valueOf(p);
             if (password.matches(regex)) {
                 return password;
             }
         }
     }
 
-    /*  public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
-          for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
-              if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
-                  user.setPassRecoveryQuestion(question);
-                  if (matcher.group("Qanswer1").equals(matcher.group("Qanswer2"))) {
-                      user.setPassRecoveryAnswer(matcher.group("Qanswer1"));
-                      return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-                  } else {
-                      return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;
-                  }
-              }
-          }
-          return SignupMenuOutput.INVALID_COMMAND;
-      }
-  */
+  /*  public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
+        for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
+            if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
+                user.setPassRecoveryQuestion(question);
+                if (matcher.group("Qanswer1").equals(matcher.group("Qanswer2"))) {
+                    user.setPassRecoveryAnswer(matcher.group("Qanswer1"));
+                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                } else {
+                    return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;
+                }
+            }
+        }
+        return SignupMenuOutput.INVALID_COMMAND;
+    }
+*/
     public void usernameSuggestionGenerator() {
         while (true) {
             boolean flag = true;
@@ -200,10 +196,10 @@ public class SignupMenuController extends MainMenuController {
         return matcher.matches() ? matcher : null;
     }
 
-    public void changeForgetPassword() {
+    public void changeForgetPassword(String username , String password) {
         for (User user : GameDataBase.getAllUsers()) {
-            if (user.getUsername().equals(user.getUsername())) {
-                user.setPassword(user.getPassword());
+            if (user.getUsername().equals(username)) {
+                user.setPassword(password);
             }
         }
     }

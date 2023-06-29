@@ -9,57 +9,87 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../java/org/example/Css/MainMenuStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../images/IMG_5977.png" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.SignupMenu">
    <children>
-      <Pane layoutX="54.0" prefHeight="319.0" prefWidth="454.0">
+      <Pane layoutX="73.0" prefHeight="319.0" prefWidth="454.0">
          <children>
-            <TextField id="email" fx:id="email" layoutX="171.0" layoutY="178.0" prefHeight="25.0" prefWidth="171.0" promptText="email" style="-fx-color: wheat" />
-            <TextField id="nickname" fx:id="nickname" layoutX="171.0" layoutY="230.0" prefHeight="25.0" prefWidth="171.0" promptText="nickname" />
-            <PasswordField id="password" fx:id="password" layoutX="171.0" layoutY="124.0" prefHeight="25.0" prefWidth="171.0" promptText="password" />
-            <TextField id="username" fx:id="username" layoutX="171.0" layoutY="82.0" prefHeight="25.0" prefWidth="171.0" promptText="username" />
-            <Label layoutX="76.0" layoutY="124.0" style="-fx-background-color: wheat" text="password" textFill="black">
+            <TextField id="email" fx:id="email" layoutX="78.0" layoutY="176.0" prefHeight="25.0" prefWidth="171.0" promptText="email" />
+            <TextField id="nickname" fx:id="nickname" layoutX="78.0" layoutY="229.0" prefHeight="25.0" prefWidth="171.0" promptText="nickname" />
+            <PasswordField id="password" fx:id="password" layoutX="78.0" layoutY="122.0" prefHeight="25.0" prefWidth="171.0" promptText="password" />
+            <TextField id="username" fx:id="username" layoutX="78.0" layoutY="71.0" prefHeight="25.0" prefWidth="171.0" promptText="username" />
+            <Label layoutX="1.0" layoutY="124.0" text="password">
                <font>
-                  <Font size="16.0" />
+                  <Font size="14.0" />
                </font></Label>
-            <Label layoutX="78.0" layoutY="178.0" style="-fx-background-color: wheat" text="email" textFill="black">
+            <Label layoutX="1.0" layoutY="178.0" text="email">
                <font>
-                  <Font size="16.0" />
+                  <Font size="14.0" />
                </font></Label>
-            <Label layoutX="78.0" layoutY="232.0" style="-fx-background-color: wheat" text="nickname" textFill="black">
+            <Label layoutX="5.0" layoutY="233.0" text="nickname" />
+            <Label layoutY="73.0" text="username">
                <font>
-                  <Font size="15.0" />
+                  <Font size="14.0" />
                </font></Label>
-            <Label layoutX="78.0" layoutY="84.0" style="-fx-background-color: wheat" text="username" textFill="black">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label layoutX="160.0" layoutY="14.0" style="-fx-background-color: wheat" text="Signup Menu" textFill="black">
+            <Label layoutX="152.0" layoutY="14.0" text="Signup Menu">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
             <Label fx:id="errorUsername" layoutX="5.0" layoutY="96.0" prefHeight="17.0" prefWidth="251.0" />
             <Label fx:id="errorPassword" layoutX="5.0" layoutY="145.0" prefHeight="17.0" prefWidth="251.0" />
-            <Label fx:id="errorEmail" layoutX="16.0" layoutY="163.0" prefHeight="17.0" prefWidth="251.0" textFill="red" />
+            <Label fx:id="errorEmail" layoutX="5.0" layoutY="201.0" prefHeight="17.0" prefWidth="251.0" textFill="red" />
             <Label fx:id="errorNickname" layoutX="5.0" layoutY="254.0" prefHeight="17.0" prefWidth="251.0" />
-            
-            <Button layoutX="183.0" layoutY="280.0" onMouseClicked="#securityQuestions" style="-fx-background-color: wheat" text="security question" textFill="black" />
-            <CheckBox id="showPass" layoutX="325.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#changeVisibility" />
-            <Button layoutX="371.0" layoutY="124.0" mnemonicParsing="false" onMouseClicked="#randomPassword" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: wheat;" text="random password" />
+            <TextField fx:id="passwordShow" layoutX="78.0" layoutY="122.0" prefHeight="25.0" prefWidth="171.0" promptText="password" />
+            <CheckBox fx:id="chaneMode" layoutX="227.0" layoutY="126.0" mnemonicParsing="false" onAction="#changeVisibility" />
+            <CheckBox layoutX="303.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#pickQuestion1" text="What's my father's name?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="303.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#pickQuestion2" text="What's my brother's name?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="303.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#pickQuestion3" text="What's my hair color?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="303.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#pickQuestion4" text="What's my car color?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="303.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#pickQuestion5" text="What's my favorite food?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="303.0" layoutY="58.0" text="Choose Security Question">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="303.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#pickQuestion6" text="What's my cellphone model?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <Button layoutX="172.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#signup" prefHeight="53.0" prefWidth="110.0" text="sing up">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <CheckBox layoutX="495.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#slogan" style="-fx-background-color: wheat" text="slogan" textFill="black" />
-      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#randomSlogan" style="-fx-background-color: wheat" text="random slogan" textFill="black" />
-      <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" style="-fx-background-color: wheat" text="Back" textFill="black" />
+      <CheckBox layoutX="495.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#slogan" text="slogan" />
+      <CheckBox layoutX="496.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#randomSlogan" text="random slogan" />
+      <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" text="Back" />
       <Label fx:id="successfulSignup" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="359.0" prefHeight="17.0" prefWidth="171.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button layoutX="235.0" layoutY="332.0" mnemonicParsing="false" onMouseClicked="#signup" prefHeight="53.0" prefWidth="110.0" style="-fx-background-color: wheat" text="sing up" textFill="black">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <CheckBox layoutX="496.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#chooseSlogan" style="-fx-background-color: wheat" text="choose slogan" textFill="black" />
+      <Button layoutX="73.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#randomPassword" prefHeight="25.0" prefWidth="151.0" text="Random Password" />
    </children>
 </AnchorPane>

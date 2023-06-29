@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="152.0" fitWidth="599.0" layoutY="1.0" pickOnBounds="true">
          <image>
-            <Image url="@../images1/0_0img6.png" />
+            <Image url="@../images/0_0img6.png" />
          </image>
          <viewport>
             <Rectangle2D />

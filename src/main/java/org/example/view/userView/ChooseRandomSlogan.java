@@ -31,7 +31,7 @@ public class ChooseRandomSlogan extends Application {
     public void start (Stage stage) throws Exception
     {
         ChooseRandomSlogan.stage = stage ;
-        URL url = ChooseRandomSlogan.class.getResource("/FXML2/randomSlogan.fxml");
+        URL url = ChooseRandomSlogan.class.getResource("/FXML/randomSlogan.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
