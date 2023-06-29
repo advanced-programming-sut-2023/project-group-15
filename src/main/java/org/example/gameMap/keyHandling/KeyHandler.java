@@ -34,6 +34,13 @@ public class KeyHandler implements KeyListener {
         } else if (gamePanel.getGameState() == GameState.buildingMenu && keyCode != KeyEvent.VK_B) {
             moveOnInventoryMenu(keyCode);
         }
+        if (keyCode == KeyEvent.VK_UP) {
+            if (gamePanel.getTileSize() > 20)
+                gamePanel.zoomInOut(-1);
+        }
+        if (keyCode == KeyEvent.VK_DOWN)
+            if (gamePanel.getTileSize() < 64)
+                gamePanel.zoomInOut(1);
         if (keyCode == KeyEvent.VK_W)
             upPressed = true;
         if (keyCode == KeyEvent.VK_A)

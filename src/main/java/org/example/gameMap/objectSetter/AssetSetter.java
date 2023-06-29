@@ -36,13 +36,13 @@ public class AssetSetter {
     }
 
     public void draw(Graphics2D graphics2D,int worldX,int worldY) {
-        int screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
-        int screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
+        double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
+        double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
         if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
                 worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
                 worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
                 worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
-            graphics2D.drawImage(allObjects[0].getImage(), screenX, screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
+            graphics2D.drawImage(allObjects[0].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
             allObjects[0].setRectangle(worldX,worldY);
 
         }

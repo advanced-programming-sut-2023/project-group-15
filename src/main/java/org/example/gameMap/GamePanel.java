@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable {
     private final SelectedMap selectedMap;
-    private final int tileSize = 48;
+    private int tileSize = 48;
     private final int screenWidth = tileSize * 40; // 48 * 40 = 1920
     private final int screenHeight = tileSize * 22; // 48 * 22 = 1080
     private final int FPS = 60;
@@ -43,7 +43,14 @@ public class GamePanel extends JPanel implements Runnable {
         this.setFocusable(true);
         startGameThread();
     }
-
+    public void zoomInOut(int i) {
+        int oldWidth = tileSize * 50;
+        tileSize += i;
+        int newWidth = tileSize * 50;
+        double multiplier = (double) newWidth / oldWidth;
+        mouse.setWorldX(mouse.getWorldX() * multiplier);
+        mouse.setWorldY(mouse.getWorldY() * multiplier);
+    }
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();

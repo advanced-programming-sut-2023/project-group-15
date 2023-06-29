@@ -16,13 +16,13 @@ public class MousePointer implements MouseListener, MouseMotionListener {
     private final GamePanel gamePanel;
     private final KeyHandler keyHandler;
     private final BufferedImage image;
-    private int worldX = 100;
-    private int worldY = 100;
+    private double worldX = 100;
+    private double worldY = 100;
     private final int screenX;
     private final int screenY;
     private int mouseSpeed = 15;
-    private int mouseX;
-    private int mouseY;
+    private double mouseX;
+    private double mouseY;
     //    private Position mousePosition;
     private boolean mouseClicked = false;
     private boolean mousePressed = false;
@@ -142,7 +142,7 @@ public class MousePointer implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        e.getComponent().setLocation(e.getX()+e.getComponent().getX()+mouseX,e.getY()+e.getComponent().getY()-mouseY);
+        e.getComponent().setLocation((int) (e.getX()+e.getComponent().getX()+mouseX), (int) (e.getY()+e.getComponent().getY()-mouseY));
 //        mousePosition = new Position(e.getPoint().getX(),e.getPoint().getY());
     }
 
@@ -165,11 +165,11 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         return image;
     }
 
-    public int getWorldX() {
+    public double getWorldX() {
         return worldX;
     }
 
-    public int getWorldY() {
+    public double getWorldY() {
         return worldY;
     }
 
@@ -212,11 +212,27 @@ public class MousePointer implements MouseListener, MouseMotionListener {
         return mouseMoved;
     }
 
-    public int getMouseX() {
+    public double getMouseX() {
         return mouseX;
     }
 
-    public int getMouseY() {
+    public double getMouseY() {
         return mouseY;
+    }
+
+    public void setMouseX(double mouseX) {
+        this.mouseX = mouseX;
+    }
+
+    public void setMouseY(double mouseY) {
+        this.mouseY = mouseY;
+    }
+
+    public void setWorldX(double worldX) {
+        this.worldX = worldX;
+    }
+
+    public void setWorldY(double worldY) {
+        this.worldY = worldY;
     }
 }

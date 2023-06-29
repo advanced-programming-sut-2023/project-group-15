@@ -85,13 +85,13 @@ public class TileManager {
 
             int worldX = worldCol * gamePanel.getTileSize();
             int worldY = worldRow * gamePanel.getTileSize();
-            int screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
-            int screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
+            double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
+            double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
             if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
                     worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
                     worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
                     worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
-                graphics2D.drawImage(tile[tileNumber].getImage(), screenX, screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
+                graphics2D.drawImage(tile[tileNumber].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
             }
             worldCol++;
 
@@ -115,22 +115,23 @@ public class TileManager {
         int worldCol = 0;
         int worldRow = 0;
 
-        while (worldCol < selectedMap.getMapSize() && worldRow < selectedMap.getMapSize()) {
+//        while (worldCol < selectedMap.getMapSize() && worldRow < selectedMap.getMapSize()) {
+//            int tileNumber = toDraw[worldCol][worldRow].getLandType().getTileNumber();
+        while (worldCol < 50 && worldRow < 50) {
             int tileNumber = toDraw[worldCol][worldRow].getLandType().getTileNumber();
-
             int worldX = worldCol * gamePanel.getTileSize();
             int worldY = worldRow * gamePanel.getTileSize();
-            int screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
-            int screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
+            double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
+            double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
             if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
                     worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
                     worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
                     worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
-                graphics2D.drawImage(tile[tileNumber].getImage(), screenX, screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
+                graphics2D.drawImage(tile[tileNumber].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
             }
             worldCol++;
 
-            if (worldCol == selectedMap.getMapSize()) {
+            if (worldCol == 50) {
                 worldCol = 0;
                 worldRow++;
             }

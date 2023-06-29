@@ -1,6 +1,7 @@
 module project {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
 //    requires jdk.internal.le;
     requires org.json;
     requires java.datatransfer;
