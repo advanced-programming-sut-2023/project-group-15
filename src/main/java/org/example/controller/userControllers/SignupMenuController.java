@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupMenuController extends MainMenuController {
-    public User user;
+    public User user = ProfileMenuController.getCurrentUser();
 
 
     public void setUsernameSignup(String username){
@@ -41,7 +41,7 @@ public class SignupMenuController extends MainMenuController {
     public void setPassRecoveryQuestionSignup(String passRecoveryQuestion){
         user.setPassRecoveryQuestion(passRecoveryQuestion);
     }
-    public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
+    /*public void setPassRecoveryAnswerSignup(String passRecoveryAnswer){
         user.setPassRecoveryAnswer(passRecoveryAnswer);
     }
     public SignupMenuOutput signupUserCheck() {
@@ -51,7 +51,7 @@ public class SignupMenuController extends MainMenuController {
         if ((status = nicknameCheck()) != SignupMenuOutput.CHECKED_SUCCESSFULLY)
             return status;
         return SignupMenuOutput.SECURITY_QUESTION;
-    }
+    }*/
 
     public SignupMenuOutput nicknameCheck() {
         return user.getNickname().length() == 0 ? SignupMenuOutput.EMPTY_FIELD : SignupMenuOutput.CHECKED_SUCCESSFULLY;
@@ -113,7 +113,10 @@ public class SignupMenuController extends MainMenuController {
     }
 
     public void selectSlogan(String input) {
-        user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
+        System.out.println(Slogans.getAllSlogans().get(Integer.parseInt(input) -1).getSlogan());
+        System.out.println(this.getNickname());
+        // user.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) -1).getSlogan());
+        this.setSlogan(Slogans.getAllSlogans().get(Integer.parseInt(input) - 1).getSlogan());
     }
     public void userSlogan(String input)
     {
@@ -130,28 +133,28 @@ public class SignupMenuController extends MainMenuController {
             for (int i = 0; i < 8; i++) {
                 p[i] = charSet.toCharArray()[random.nextInt(charSet.length() - 1)];
             }
-            password = java.lang.String.valueOf(p);
+            password = String.valueOf(p);
             if (password.matches(regex)) {
                 return password;
             }
         }
     }
 
-  /*  public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
-        for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
-            if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
-                user.setPassRecoveryQuestion(question);
-                if (matcher.group("Qanswer1").equals(matcher.group("Qanswer2"))) {
-                    user.setPassRecoveryAnswer(matcher.group("Qanswer1"));
-                    return SignupMenuOutput.CHECKED_SUCCESSFULLY;
-                } else {
-                    return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;
-                }
-            }
-        }
-        return SignupMenuOutput.INVALID_COMMAND;
-    }
-*/
+    /*  public SignupMenuOutput pickSecurityQuestion(Matcher matcher) {
+          for (SecurityQuestion question : SecurityQuestion.allQuestions()) {
+              if (question.getQuestionNumber().matches(matcher.group("Qnumber"))) {
+                  user.setPassRecoveryQuestion(question);
+                  if (matcher.group("Qanswer1").equals(matcher.group("Qanswer2"))) {
+                      user.setPassRecoveryAnswer(matcher.group("Qanswer1"));
+                      return SignupMenuOutput.CHECKED_SUCCESSFULLY;
+                  } else {
+                      return SignupMenuOutput.ANSWERS_ARE_NOT_EQUAL;
+                  }
+              }
+          }
+          return SignupMenuOutput.INVALID_COMMAND;
+      }
+  */
     public void usernameSuggestionGenerator() {
         while (true) {
             boolean flag = true;

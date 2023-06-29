@@ -1,35 +1,44 @@
 //this class is completed!
 package org.example.controller;
 
+import org.example.model.building.Marketplace;
+import org.example.model.enums.Products;
 import org.example.model.gameData.Government;
 import org.example.view.enums.outputs.GameMenuOutput;
+import org.example.view.userView.Market;
 
 import java.util.HashMap;
 
 public class MarketController {
-    public Government government;
-
-    public MarketController(String playerName) {
+    int number = 0 ;
+    public Government government = new Government("owner");
+    public Marketplace market = new Marketplace("market",10,1,1, Products.ROCK,Products.WOOD,1,1,1);
+   /* public MarketController(String playerName) {
         government = Government.findGovernmentWithUsername(playerName);
-    }
-
+    }*/
+    // return government.playerMarket().getNumber();
     public HashMap<String, Integer> show1() {
-        return government.playerMarket().getNumber();
+        government.setCoins(150.0);
+        ++number;
+        if(number == 1)
+            market.setMarket();
+
+        return market.getNumber();
     }
 
     public HashMap<String, Integer> show2() {
-        return government.playerMarket().getSellCoin();
+        return market.getSellCoin();
     }
 
     public HashMap<String, Integer> show3() {
-        return government.playerMarket().getBuyCoin();
+        return market.getBuyCoin();
     }
 
     public GameMenuOutput sell(String item, int number) {
-        if (government.playerMarket().getNumberOfItem(item) >= number) {
-            government.playerMarket().sellItemNumber(item, number);
-            government.InCoin(number * government.playerMarket().getSellCoin(item));
-            government.removeFood(item, number);
+        if (market.getNumberOfItem(item) >= number) {
+            market.sellItemNumber(item, number);
+          //  government.InCoin(number * market.getSellCoin(item));
+          //  government.removeFood(item, number);
             return GameMenuOutput.SUCCESSFUL_SELL;
         } else
             return GameMenuOutput.ERROR_SELL;
@@ -46,4 +55,11 @@ public class MarketController {
 
     }
 
+    public static void setName(String name){
+        System.out.println("ll");
+        Marketplace.setName(name);
+    }
+    public String getName(){
+        return Marketplace.getName1();
+    }
 }

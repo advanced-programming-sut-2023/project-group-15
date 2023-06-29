@@ -118,7 +118,7 @@ public class ChooseAvatar extends Application {
             public void changed(ObservableValue<? extends Toggle> ob,
                                 Toggle o, Toggle n) {
 
-                javafx.scene.control.RadioButton rb = (javafx.scene.control.RadioButton) tg.getSelectedToggle();
+                RadioButton rb = (RadioButton) tg.getSelectedToggle();
 
                 if (rb != null) {
                     String s = rb.getText();

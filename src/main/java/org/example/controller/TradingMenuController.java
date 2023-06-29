@@ -21,13 +21,22 @@ public class TradingMenuController {
     }
 
 
-    public void sendTradeRequest(String recourseType, int recourseAmount, String messageI, double priceI, String receiverI) {
+    public void sendTradeRequest(String recourseType, int recourseAmount, String messageI, double priceI, User receiverI) {
         Products product = Products.getProductByName(recourseType);
-        User receiver = GameDataBase.getUserByUsername(receiverI);
+        User receiver = receiverI;
         User sender = GameDataBase.getUserByUsername(this.government.getOwner());
         Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
         sender.getGovernment().getTradeSendList().add(newTrade);
-        receiver.getGovernment().getTradeReqList().add(newTrade);
+        receiver.getGovernment().getTradeUnacceptedReqList().add(newTrade);
+        Government.getTradeHistoryList().add(newTrade);
+    }
+    public void sendTradeDonate(String recourseType, int recourseAmount, String messageI, double priceI, User chosen) {
+        Products product = Products.getProductByName(recourseType);
+        User receiver =GameDataBase.getUserByUsername(this.government.getOwner());
+        User sender = chosen;
+        Trade newTrade = new Trade(sender, receiver, recourseAmount, product, messageI, priceI);
+        sender.getGovernment().getTradeSendList().add(newTrade);
+        receiver.getGovernment().getTradeUnacceptedReqList().add(newTrade);
         Government.getTradeHistoryList().add(newTrade);
     }
 
@@ -38,15 +47,19 @@ public class TradingMenuController {
             System.out.println("no trade request sent!");
     }
 
-    public void showTradeHistory() {
+    public String showTradeHistory() {
+        String output = null;
         if (Trade.getAllTrades().isEmpty()) {
-            System.out.println("no trade request sent!");
+            output = "no trade request sent!";
         } else
-            Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
+            output += Trade.showTradesHistory(GameDataBase.getUserByUsername(this.government.getOwner()));
+        return output;
     }
 
-    public GameInformationOutput acceptRequest(int id, String message) {
-        Trade trade = Trade.findTradeWithID(id);
+
+    public GameInformationOutput acceptRequest(int index) {
+
+        Trade trade = GameInformation.getCurrentPlayer().getGovernment().getTradeUnacceptedReqList().get(index-1);
         Storage storage = null;
         String message1 = BuildingController.checkForSources(trade.getProduct(), trade.getAmount());
         if (message1.equals(GameInformationOutput.NOT_ENOUGH.getOutput())) {
@@ -60,8 +73,11 @@ public class TradingMenuController {
                     storage = (Storage) GameInformation.findBuilding(storeProducts.getStoreType(), trade.getSender());
             storage.addonStorageWithAmount(trade.getProduct(), trade.getAmount());
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
-            trade.setReceiverMessage(message);
+           double current =  trade.getReceiver().getGovernment().getCoins();
+           trade.getReceiver().getGovernment().setCoins(current+trade.getPrice() * trade.getAmount());
         }
+        trade.getReceiver().getGovernment().getTradeUnacceptedReqList().remove(trade);
+        trade.getReceiver().getGovernment().getTradeAcceptedReqList().add(trade);
         return GameInformationOutput.ACCEPTED_SUCCESSFULLY;
     }
 

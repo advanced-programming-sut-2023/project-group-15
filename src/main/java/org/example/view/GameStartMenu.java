@@ -4,6 +4,7 @@ package org.example.view;
 import org.example.InputScanner;
 import org.example.controller.StartingGameMenuController;
 import org.example.controller.userControllers.LoginMenuController;
+import org.example.model.User;
 import org.example.model.gameData.GameInformation;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.outputs.GameStartMenuOutput;
@@ -11,19 +12,21 @@ import org.example.view.enums.outputs.GameStartMenuOutput;
 import java.util.regex.Matcher;
 
 public class GameStartMenu{
-    private StartingGameMenuController startingGameMenuController;
+    private final StartingGameMenuController startingGameMenuController;
+    public GameStartMenu(LoginMenuController controller) {
+        startingGameMenuController = new StartingGameMenuController(controller);
+    }
 
-    public void addPlayer(String owner,Matcher loginMenuMatcher) {
-        String playerToBeAdded = loginMenuMatcher.group("name");
+    public GameStartMenuOutput addPlayer(String owner, User player) {
+        String playerToBeAdded = player.getUsername();
+        String output;
         if (GameInformation.checkPlayerExist(playerToBeAdded)){
             if (!GameInformation.checkPlayerExist(playerToBeAdded)) {
-                System.out.println(startingGameMenuController.addUser(owner,playerToBeAdded).getOutput());
-                return;
+                return startingGameMenuController.addUser(owner,playerToBeAdded);
             }
-            System.out.println("the player is already in the game!");
-            return;
+            return GameStartMenuOutput.PLAYER_IN_THE_GAME;
         }
-        System.out.println("the player you want to add doesn't exist!");
+        return GameStartMenuOutput.User_DOESNT_EXIST;
     }
 
     public void startNewGame() {
