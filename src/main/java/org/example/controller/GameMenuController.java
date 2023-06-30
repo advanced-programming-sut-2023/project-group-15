@@ -8,9 +8,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
-    Government government = new Government(GameInformation.getCurrentPlayer().getUsername());
+    Government government = null;
+
     public GameMenuController() {
-        // government = Government.findGovernmentWithUsername(player);
+    }
+
+    public GameMenuController(String governmentOwner) {
+
+         government = Government.findGovernmentWithUsername(governmentOwner);
 
     }
 

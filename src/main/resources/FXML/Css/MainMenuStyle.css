@@ -1,0 +1,19 @@
+#custom .thumb {
+    -fx-background-image :url("0_0img279.png");
+    -fx-background-color: transparent;
+
+    -fx-pref-height: 35;
+
+}
+
+#custom .track {
+   -fx-background-image :url("track.png");
+   -fx-background-size: 170;
+   -fx-pref-height: 35;
+   -fx-pref-width: 900;
+}
+
+.root{
+-fx-background-image:url("0_0img6.png");
+-fx-background-size: 599 152;
+}
