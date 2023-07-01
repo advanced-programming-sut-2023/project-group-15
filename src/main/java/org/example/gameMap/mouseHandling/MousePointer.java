@@ -8,13 +8,11 @@ import org.example.gameMap.objectSetter.SuperObject;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class MousePointer implements MouseListener, MouseMotionListener {
+public class MousePointer implements MouseListener, MouseMotionListener  {
     private int selectionX;
     private int selectionY;
     private final GamePanel gamePanel;
@@ -299,4 +297,5 @@ public class MousePointer implements MouseListener, MouseMotionListener {
     public void setSelectionY(int selectionY) {
         this.selectionY = selectionY;
     }
+
 }
