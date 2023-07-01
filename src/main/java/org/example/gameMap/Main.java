@@ -1,6 +1,7 @@
 package org.example.gameMap;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main {
 

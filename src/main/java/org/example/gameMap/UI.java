@@ -7,6 +7,7 @@ import java.awt.*;
 import java.text.DecimalFormat;
 
 public class UI extends JPanel {
+    public static JLabel jLabel;
     Font arial_40, arial_80B;
     GamePanel gamePanel;
     Graphics2D g2;
@@ -72,19 +73,28 @@ public class UI extends JPanel {
         int cursorY = frameY + 20 + (gamePanel.getTileSize() * slotRow * 4);
         int cursorWidth = gamePanel.getTileSize() * 4;
         int cursorHeight = gamePanel.getTileSize() * 4;
-        int slotX = frameX+20*4;
-        int slotY = frameY+20*4;
+        int slotX = frameX + 20 * 4;
+        int slotY = frameY + 20 * 4;
         gamePanel.getAssetSetter().getObjectTiles();
-        int count = 1;
-        for (SuperObject object:gamePanel.getAssetSetter().getAllObjects()) {
-            g2.drawImage(object.getBufferedImage(),slotX,slotY,null);
-            count++;
-            if (count>7) {
-                slotY+=20*4;
-                count=1;
-            }
-            slotX+=20*4;
-        }
+        ImageIcon image = new ImageIcon(UI.class.getResource("/images1/buildings/store.png"));
+        jLabel = new JLabel(image);
+        jLabel.addMouseListener(gamePanel.getMouse());
+        jLabel.addMouseMotionListener(gamePanel.getMouse());
+        jLabel.setVisible(true);
+        gamePanel.add(jLabel);
+        gamePanel.revalidate();
+
+
+//        int count = 1;
+//        for (SuperObject object:gamePanel.getAssetSetter().getAllObjects()) {
+//            g2.drawImage(object.getBufferedImage(),slotX,slotY,null);
+//            count++;
+//            if (count>7) {
+//                slotY+=20*4;
+//                count=1;
+//            }
+//            slotX+=20*4;
+//        }
         //drawing
         g2.setColor(Color.WHITE);
         g2.setStroke(new BasicStroke(3));

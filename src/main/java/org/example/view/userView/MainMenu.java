@@ -14,7 +14,16 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 
 public class MainMenu extends Application {
+    public static String username;
     public static Stage stage;
+
+    public static String getUsername() {
+        return username;
+    }
+    public static void setUsername(String name) {
+        username = name;
+    }
+
     @Override
     public void start (Stage stage) throws Exception
     {

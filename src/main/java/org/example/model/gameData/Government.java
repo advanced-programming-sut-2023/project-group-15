@@ -1,11 +1,12 @@
-//this class is completed!
 package org.example.model.gameData;
 
 import org.example.model.MBC.InfantryUnit;
 import org.example.model.MBC.LauncherUnit;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
+import org.example.model.building.BuildingName;
 import org.example.model.building.Marketplace;
+import org.example.model.enums.Products;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,12 +16,13 @@ public class Government {
     private final String owner;
     private int people;
     private int workers;
-    private Marketplace market;
+    private Marketplace market ;
     private ArrayList<InfantryUnit> infantryUnit;
     private ArrayList<LauncherUnit> launcherUnit;
     private ArrayList<UnitWallTarget> unitWallTarget;
     private final List<Trade> tradeSendList;
-    private final List<Trade> tradeReqList;
+    private final List<Trade> tradeUnacceptedReqList;
+    private final List<Trade> tradeAcceptedReqList;
     private int popularity;
     private int foodRate;
     private int taxRate;
@@ -32,26 +34,49 @@ public class Government {
     private final HashMap<String, Double> foods;
     private static final ArrayList<Government> allGovernments = new ArrayList<>();
     private static final List<Trade> tradeHistoryList = new ArrayList<>();
+    private HashMap<Products , Integer> FOODSTORE = new HashMap<>();
+    private HashMap<Products , Integer> ARMOURY = new HashMap<>();
+    private HashMap<Products , Integer> SOURCESTORE =  new HashMap<>();
 
     public Government(String owner) {
         this.owner = owner;
-        this.coins = 100.00;
+        this.coins = 800.00;
         this.people = 50;
         this.workers = 0;
         this.fearRate = 0;
         this.foodRate = -8;
         this.taxRate = 0;
         this.religion = 0;
-        this.popularity = 8;
+        this.popularity = -8;
         this.storeBuilt = false;
-        this.market = null;
+        this.market = new Marketplace("market" , BuildingName.MARKET.getHp(),50 , 50 ,
+                BuildingName.MARKET.getMaterial1Name() , BuildingName.MARKET.getMaterial2Name() , BuildingName.MARKET.getNumberOfMaterial1(), BuildingName.MARKET.getNumberOfMaterial2(), BuildingName.MARKET.getNumberOfWorkers());
         this.builtBuildings = new ArrayList<>();
         this.newUnitForGovernment();
-        this.tradeReqList = new ArrayList<>();
+        this.tradeUnacceptedReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
+        this.tradeAcceptedReqList = new ArrayList<>();
         this.foods = new HashMap<>();
         setPrimitiveFoods();
         allGovernments.add(this);
+        this.SOURCESTORE.put(Products.WOOD , 200);
+    }
+
+    public List<Trade> getTradeAcceptedReqList() {
+        return tradeAcceptedReqList;
+    }
+
+
+    public HashMap<Products, Integer> getFOODSTORE() {
+        return FOODSTORE;
+    }
+
+    public HashMap<Products, Integer> getARMOURY() {
+        return ARMOURY;
+    }
+
+    public HashMap<Products, Integer> getSOURCESTORE() {
+        return SOURCESTORE;
     }
 
     private void newUnitForGovernment() {
@@ -64,7 +89,7 @@ public class Government {
         return market;
     }
 
-    public void setPayerMarket(Marketplace market) {
+    public void setPlayerMarket(Marketplace market) {
         this.market = market;
         this.storeBuilt = true;
     }
@@ -87,10 +112,30 @@ public class Government {
 
     private void setPrimitiveFoods() {
         this.foods.put("Apple", 0.00);
-        this.foods.put("Hop", 0.00);
+        this.foods.put("Oat", 0.00);
         this.foods.put("Bread", 0.00);
         this.foods.put("Cheese", 0.00);
     }
+    private void setResources()
+    {
+        this.SOURCESTORE.put(Products.IRON , 0);
+        this.SOURCESTORE.put(Products.ROCK , 0);
+        this.SOURCESTORE.put(Products.VEST , 0);
+        this.SOURCESTORE.put(Products.PITCH , 0);
+        this.SOURCESTORE.put(Products.HOP , 0);
+        this.ARMOURY.put(Products.ARMOUR , 0);
+        this.ARMOURY.put(Products.ARCHER , 0);
+        this.ARMOURY.put(Products.SPEAR , 0);
+        this.ARMOURY.put(Products.SWORD , 0);
+        this.ARMOURY.put(Products.MACE , 0);
+        this.FOODSTORE.put(Products.APPLE , 0);
+        this.FOODSTORE.put(Products.WEAT , 0);
+        this.FOODSTORE.put(Products.BREAD , 0);
+        this.FOODSTORE.put(Products.MEAT , 0);
+        this.FOODSTORE.put(Products.CHEESE , 0);
+
+    }
+
 
     public String getOwner() {
         return owner;
@@ -295,8 +340,8 @@ public class Government {
         return tradeSendList;
     }
 
-    public List<Trade> getTradeReqList() {
-        return tradeReqList;
+    public List<Trade> getTradeUnacceptedReqList() {
+        return tradeUnacceptedReqList;
     }
 
     public static List<Trade> getTradeHistoryList() {

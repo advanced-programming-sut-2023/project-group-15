@@ -27,7 +27,7 @@ public class MainMenuController {
     private String passRecoveryAnswer;
     private int score;
     private int rank;
-    private User currentUser;
+    private static User currentUser;
 
 
 
@@ -124,12 +124,12 @@ public class MainMenuController {
         this.email = email;
     }
 
-    public User getCurrentUser() {
+    public static User getCurrentUser() {
         return currentUser;
     }
 
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
+    public void setCurrentUser(User user) {
+        currentUser = user;
     }
 
     public void checkJsonDirectory()  {

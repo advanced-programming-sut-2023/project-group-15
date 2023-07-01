@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.controller.userControllers;
 
 import org.example.model.User;

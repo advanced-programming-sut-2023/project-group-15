@@ -3,6 +3,7 @@ package org.example.gameMap.keyHandling;
 import javafx.stage.Stage;
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
+import org.example.view.TradeMenu;
 import org.example.view.userView.GovernmentMenu;
 import org.example.view.userView.StartingMenu;
 
@@ -51,6 +52,13 @@ public class KeyHandler implements KeyListener {
             rightPressed = true;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = true;
+        if (keyCode == KeyEvent.VK_T) {
+            try {
+                new TradeMenu().start(StartingMenu.stage);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
         if (keyCode == KeyEvent.VK_P) {
             if (gamePanel.getGameState().equals(GameState.playState)) {
                 gamePanel.setGameState(GameState.pauseState);

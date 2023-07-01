@@ -33,6 +33,7 @@ public class GamePanel extends JPanel implements Runnable {
         this.selectedMap = SelectedMap.getSelectedMap();
         this.gameState = GameState.playState;
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+        this.setSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.tileManager = new TileManager(this);
@@ -91,8 +92,8 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(graphics);
         graphics2D = (Graphics2D) graphics;
         //loading tiles
-//        tileManager.draw(graphics2D);
-        tileManager.drawFromJson(graphics2D,selectedMap);
+        tileManager.draw(graphics2D);
+//        tileManager.drawFromJson(graphics2D,selectedMap);
         //loading objects
         assetSetter.draw(graphics2D, 23 * tileSize, 7 * tileSize);
         //loading mouse

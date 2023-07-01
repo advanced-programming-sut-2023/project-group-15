@@ -35,17 +35,17 @@ public class AssetSetter {
         }
     }
 
-    public void draw(Graphics2D graphics2D,int worldX,int worldY) {
+    public void draw(Graphics2D graphics2D, int worldX, int worldY) {
         double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
         double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
-        if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
-                worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
-                worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
-                worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
-            graphics2D.drawImage(allObjects[0].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
-            allObjects[0].setRectangle(worldX,worldY);
-
-        }
+        graphics2D.drawImage(allObjects[0].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
+        worldY += gamePanel.getTileSize();
+        screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
+        graphics2D.drawImage(allObjects[4].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
+        System.out.println(worldX + "world" + worldY);
+        System.out.println(gamePanel.getMouse().getMouseX() + "mouse" + gamePanel.getMouse().getMouseY());
+        System.out.println(screenX + "e" + screenY);
+        allObjects[0].setRectangle(worldX, worldY);
     }
 
     public SuperObject[] getAllObjects() {
