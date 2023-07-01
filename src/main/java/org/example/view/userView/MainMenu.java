@@ -24,6 +24,7 @@ import java.net.URL;
 
 public class MainMenu extends Application {
     LoginMenuController loginMenuController= new LoginMenuController();
+
     GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
 
     Image background = new Image(getClass().getResource("/Images/05.jpg").toString());
@@ -77,18 +78,15 @@ public class MainMenu extends Application {
                      alert.setContentText(gameStartMenuOutput.getOutput());
                      alert.showAndWait();
                  }
-                 else if(gameStartMenuOutput.equals(GameStartMenuOutput.GAME_IS_NOT_STARTED))
-                 {
-                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                     alert.setContentText(gameStartMenuOutput.getOutput());
-                     alert.showAndWait();
-                 }
+
                  else if(gameStartMenuOutput.equals(GameStartMenuOutput.ADD_USER_FORBIDDEN))
                  {
                      Alert alert = new Alert(Alert.AlertType.ERROR);
                      alert.setContentText(gameStartMenuOutput.getOutput());
                      alert.showAndWait();
                  } else if (gameStartMenuOutput.equals(GameStartMenuOutput.GAME_IS_NOT_STARTED)) {
+                     System.out.println(GameInformation.isNewGameAccess());
+                     System.out.println("***");
                      Alert alert = new Alert(Alert.AlertType.ERROR);
                      alert.setContentText(gameStartMenuOutput.getOutput());
                      alert.showAndWait();
@@ -128,8 +126,9 @@ public class MainMenu extends Application {
     }
 
     public void startGame(MouseEvent mouseEvent) {
+       // gameStartMenu.startNewGame();
         GameInformation.setNewGameAccess(true);
-
+        GameInformation.getCurrentPlayer().setUserNO(1);
     }
 
     public void enterGame(MouseEvent mouseEvent) {

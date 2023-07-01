@@ -65,7 +65,9 @@ public class JsonController {
                         String.valueOf(jsonobject.get("Password recover answer:")),
                         String.valueOf(jsonobject.get("rank")),
                         String.valueOf(jsonobject.get("HighScore")));
-                GameDataBase.getAllUsers().add(user);
+                if(!GameDataBase.getAllUsers().contains(user)) 
+                    GameDataBase.getAllUsers().add(user);
+
                 jsonParser.next();
             }
         } catch (JSONException e) {

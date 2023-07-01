@@ -26,12 +26,12 @@
         </ImageView>
         <ImageView fx:id="Apple" fitHeight="29.0" fitWidth="44.0" layoutX="71.0" layoutY="458.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/apple.png" />
+                <Image url="@../images1/0_0img110.png" />
             </image>
         </ImageView>
         <ImageView fx:id="Iron" fitHeight="33.0" fitWidth="39.0" layoutX="385.0" layoutY="253.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/iron.png" />
+                <Image url="@../images1/0_0img103.png" />
             </image>
         </ImageView>
         <ImageView fx:id="Rock" fitHeight="29.0" fitWidth="33.0" layoutX="70.0" layoutY="196.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
@@ -41,7 +41,7 @@
         </ImageView>
         <ImageView fx:id="Spear" fitHeight="43.0" fitWidth="41.0" layoutX="381.0" layoutY="385.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/spear.png" />
+                <Image url="@../images1/0_0img116.png" />
             </image>
         </ImageView>
         <ImageView fx:id="Meat" fitHeight="33.0" fitWidth="46.0" layoutX="369.0" layoutY="140.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
@@ -56,17 +56,17 @@
         </ImageView>
         <ImageView fx:id="Archer" fitHeight="35.0" fitWidth="42.0" layoutX="65.0" layoutY="380.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/archer.png" />
+                <Image url="@../images1/0_0img114.png" />
             </image>
         </ImageView>
         <ImageView fx:id="Sword" fitHeight="37.0" fitWidth="38.0" layoutX="383.0" layoutY="463.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/sword.png" />
+                <Image url="@../images1/0_0img119.png" />
             </image>
         </ImageView>
         <ImageView fx:id="Wheat" fitHeight="48.0" fitWidth="16.0" layoutX="77.0" layoutY="249.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/wheat.png" />
+                <Image url="@../images1/0_0img106.png" />
             </image>
         </ImageView>
         <ImageView fx:id="Pitch" fitHeight="33.0" fitWidth="21.0" layoutX="75.0" layoutY="317.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
@@ -76,12 +76,12 @@
         </ImageView>
         <ImageView fx:id="Hop" fitHeight="35.0" fitWidth="27.0" layoutX="80.0" layoutY="130.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/hop.png" />
+                <Image url="@../images1/0_0img105.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="lather" fitHeight="40.0" fitWidth="26.0" layoutX="75.0" layoutY="520.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Lather" fitHeight="40.0" fitWidth="26.0" layoutX="75.0" layoutY="520.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/lather.png" />
+                <Image url="@../images1/0_0img120.png" />
             </image>
         </ImageView>
         <Text layoutX="207.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trade " wrappingWidth="83.82475280761707">
@@ -91,7 +91,7 @@
         </Text>
         <ImageView fx:id="Mace" fitHeight="40.0" fitWidth="42.0" layoutX="382.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/mace.png" />
+                <Image url="@../images1/0_0img118.png" />
             </image>
         </ImageView>
         <Label layoutX="111.0" layoutY="80.0" text="Wood">
@@ -99,7 +99,7 @@
                 <Font name="Century" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="105.0" layoutY="530.0" text="Lather Armor">
+        <Label layoutX="105.0" layoutY="530.0" text="Lather Armour">
             <font>
                 <Font name="Century" size="14.0" />
             </font>
@@ -171,7 +171,7 @@
         </Label>
         <ImageView fx:id="Cheese" fitHeight="29.0" fitWidth="36.0" layoutX="385.0" layoutY="525.0" onMousePressed="#showResource" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images1/cheese.png" />
+                <Image url="@../images1/0_0img108.png" />
             </image>
         </ImageView>
         <Label layoutX="326.0" layoutY="530.0" text="Cheese">
@@ -179,21 +179,5 @@
                 <Font name="Century" size="14.0" />
             </font>
         </Label>
-      <Label id="hop" layoutX="123.0" layoutY="164.0" text="0" />
-      <Label id="vest" layoutX="334.0" layoutY="98.0" text="0" />
-      <Label id="wood" layoutX="115.0" layoutY="98.0" text="0" />
-      <Label id="meat" layoutX="333.0" layoutY="164.0" text="0" />
-      <Label id="rock" layoutX="123.0" layoutY="222.0" text="0" />
-      <Label id="mace" layoutX="334.0" layoutY="222.0" text="0" />
-      <Label id="wheat" layoutX="123.0" layoutY="290.0" text="0" />
-      <Label id="pitch" layoutX="129.0" layoutY="345.0" text="0" />
-      <Label id="archer" layoutX="123.0" layoutY="410.0" text="0" />
-      <Label id="apple" layoutX="129.0" layoutY="488.0" text="0" />
-      <Label id="armour" layoutX="129.0" layoutY="551.0" text="0" />
-      <Label id="iron" layoutX="337.0" layoutY="281.0" text="0" />
-      <Label id="bread" layoutX="336.0" layoutY="345.0" text="0" />
-      <Label id="spear" layoutX="334.0" layoutY="410.0" text="0" />
-      <Label id="sword" layoutX="333.0" layoutY="488.0" text="0" />
-      <Label id="cheese" layoutX="333.0" layoutY="551.0" text="0" />
     </children>
 </AnchorPane>

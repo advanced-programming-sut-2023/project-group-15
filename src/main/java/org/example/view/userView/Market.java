@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -137,8 +138,7 @@ public class Market extends Application implements Initializable {
             Popup popupMessage = new Popup();
             Popup sellSuccess = new Popup();
             Popup sellError = new Popup();
-            Popup buySuccess = new Popup();
-            Popup buyError = new Popup();
+
 
             Stage stage = new Stage();
             EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
@@ -151,14 +151,14 @@ public class Market extends Application implements Initializable {
                         HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
                         System.out.println(newNumber.get(name));
                         numberOfProduct.setText(String.valueOf(newNumber.get(name)));
-                        sellSuccess.setX(730);
-                        sellSuccess.setY(260);
-                        sellSuccess.getContent().add(successSell);
+                        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                        alert1.setContentText("successful sell");
+                        alert1.showAndWait();
                         break;
                     default:
-                        sellError.setX(730);
-                        sellError.setY(260);
-                        sellError.getContent().add(errorSell);
+                        Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                        alert2.setContentText("successful buy");
+                        alert2.showAndWait();
                 }
 
                 if (!sellSuccess.isShowing())
@@ -173,28 +173,20 @@ public class Market extends Application implements Initializable {
 
             EventHandler<MouseEvent> buy = (EventHandler<MouseEvent>) e ->{
 
-                switch (marketController.buy(name,1)){
-                    case SUCCESSFUL_BUY : System.out.println("successful");
+                switch (marketController.buy(name,1)) {
+                    case SUCCESSFUL_BUY:
+                        System.out.println("successful");
                         HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
                         numberOfProduct.setText(String.valueOf((newNumber.get(name))));
-                        buySuccess.setX(730);
-                        buySuccess.setY(260);
-                        buySuccess.getContent().add(successBuy);
+                        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                        alert1.setContentText("successfull buy");
+                        alert1.showAndWait();
                         break;
                     default:
-                        buyError.setX(730);
-                        buyError.setY(260);
-                        buyError.getContent().add(errorBuy);
-
+                        Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                        alert2.setContentText("error in purchase");
+                        alert2.showAndWait();
                 }
-                if (!buySuccess.isShowing())
-                    buySuccess.show(stage);
-                else
-                    buySuccess.hide();
-                if (!buyError.isShowing())
-                    buyError.show(stage);
-                else
-                    buyError.hide();
 
             };
             buyLable.setOnMouseClicked(buy);
@@ -208,10 +200,6 @@ public class Market extends Application implements Initializable {
             sellItem.setLayoutY(65.0);
             buyItem.setLayoutX(300.0);
             buyItem.setLayoutY(110.0);
-            //  sellItem.setMinSize(156.0 , 35.0);
-            //  buyItem.setMinSize(156.0 , 35.0);
-
-
             Pane pane = fxmlLoader.load();
             pane.getChildren().add(sellItem);
             pane.getChildren().add(imageView);

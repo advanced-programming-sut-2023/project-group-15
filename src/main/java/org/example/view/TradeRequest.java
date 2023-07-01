@@ -57,6 +57,7 @@ public class TradeRequest extends Application {
     public ImageView Mace;
     public ImageView Cheese;
     public ImageView image;
+    public Label reName = new Label();
     Pane pane;
     private static Stage stage;
     public static String name;
@@ -65,7 +66,7 @@ public class TradeRequest extends Application {
 
 
     public void start(Stage stage) throws Exception{
-        URL url = TradeRequest.class.getResource("FXML/TradeRequest.fxml");
+        URL url = TradeRequest.class.getResource("/FXML/TradeRequest.fxml");
         Pane pane = FXMLLoader.load(url);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
@@ -126,38 +127,70 @@ public class TradeRequest extends Application {
     }
     public void showResource(MouseEvent mouseEvent) {
 
-        if(Apple.isPressed())
+        if(Apple.isPressed()) {
             setName("apple");
-        else if(Archer.isPressed())
+            reName.setText("apple");
+        }
+        else if(Archer.isPressed()) {
             setName("archer");
-        else if(Bread.isPressed())
+            reName.setText("archer");
+        }
+        else if(Bread.isPressed()) {
             setName("bread");
-        else if(Hop.isPressed())
+            reName.setText("bread");
+        }
+        else if(Hop.isPressed()) {
             setName("hop");
-        else if(Cheese.isPressed())
+            reName.setText("hop");
+        }
+        else if(Cheese.isPressed()) {
             setName("cheese");
-        else if(Pitch.isPressed())
+            reName.setText("cheese");
+        }
+        else if(Pitch.isPressed()) {
             setName("pitch");
-        else if(Sword.isPressed())
+            reName.setText("pitch");
+        }
+        else if(Sword.isPressed()) {
             setName("sword");
-        else if(Spear.isPressed())
+            reName.setText("sword");
+        }
+        else if(Spear.isPressed()) {
             setName("spear");
-        else if(Rock.isPressed())
+            reName.setText("spear");
+        }
+        else if(Rock.isPressed()) {
             setName("rock");
-        else if(Iron.isPressed())
+            reName.setText("rock");
+        }
+        else if(Iron.isPressed()) {
             setName("iron");
-        else if(Lather.isPressed())
+            reName.setText("iron");
+        }
+        else if(Lather.isPressed()) {
             setName("lather");
-        else if(Mace.isPressed())
+            reName.setText("lather");
+        }
+        else if(Mace.isPressed()) {
             setName("mace");
-        else if(Wheat.isPressed())
+            reName.setText("mace");
+        }
+        else if(Wheat.isPressed()) {
             setName("wheat");
-        else if(Vest.isPressed())
+            reName.setText("wheat");
+        }
+        else if(Vest.isPressed()) {
             setName("vest");
-        else if(Wood.isPressed())
+            reName.setText("vest");
+        }
+        else if(Wood.isPressed()) {
             setName("wood");
-        else
+            reName.setText("wood");
+        }
+        else {
             setName("meat");
+            reName.setText("meat");
+        }
         try {
             String successfulMessage = String.format("-fx-text-fill: Green;");
             String errorMessage = String.format("-fx-text-fill: RED;");
@@ -173,18 +206,20 @@ public class TradeRequest extends Application {
             donate.setTranslateX(513);
             donate.setTranslateY(39);
             donate.setText("Donate");
-            message.setTranslateX(99);
-            message.setTranslateY(32);
-            number.setTranslateX(99);
-            number.setTranslateY(97);
-            cost.setTranslateX(99);
+            message.setTranslateX(81);
+            message.setTranslateY(30);
+            number.setTranslateX(81);
+            number.setTranslateY(98);
+            reName.setTranslateX(294);
+            reName.setTranslateY(115);
+            cost.setTranslateX(81);
             cost.setTranslateY(65);
-            number.setPrefHeight(112);
-            number.setPrefWidth(25);
-            message.setPrefHeight(112);
-            message.setPrefWidth(25);
-            cost.setPrefHeight(112);
-            cost.setPrefWidth(25);
+            number.setPrefHeight(25);
+            number.setPrefWidth(99);
+            message.setPrefHeight(25);
+            message.setPrefWidth(99);
+            cost.setPrefHeight(25);
+            cost.setPrefWidth(99);
             request.setOnAction(e ->
             {
                 if (message.getText().isBlank() || cost.getText().isBlank() || number.getText().isBlank())
@@ -195,6 +230,7 @@ public class TradeRequest extends Application {
                     alert.showAndWait();
                 }
                 else {
+                    System.out.println(newTrade.chosen.getUsername());
                     newTrade.tradingMenuController.sendTradeRequest(name , Integer.parseInt(number.getText()) ,message.getText()
                             ,Double.parseDouble(cost.getText()) ,newTrade.chosen  );
 
@@ -214,10 +250,17 @@ public class TradeRequest extends Application {
             ImageView imageView = new ImageView(image2);
             imageView.setLayoutX(220.0);
             imageView.setLayoutY(58);
+            Pane pane1 = fxmlLoader.load();
+            pane1.getChildren().addAll(request , donate,imageView , number , message , backIcon , cost , reName);
+            Scene scene = new Scene(pane1);
+            Stage stage1 = new Stage();
+            stage1.setScene(scene);
+            stage1.show();
         }
         catch (Exception e) {
             System.out.println(e);
         }
+
 
     }
     public static void setName(String name) {

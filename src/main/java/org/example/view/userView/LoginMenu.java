@@ -34,9 +34,8 @@ import static org.example.Utility.captchaStringGen;
 import static org.example.Utility.displacementMap;
 
 public class LoginMenu extends StartingMenu {
-    private final LoginMenuController loginMenuController = new LoginMenuController();
+    public final LoginMenuController loginMenuController = new LoginMenuController();
 
-    private final GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
     public TextField passwordShow;
     public CheckBox changeMode;
     public PasswordField password;

@@ -3,6 +3,7 @@ package org.example.view;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -12,12 +13,14 @@ import org.example.controller.TradingMenuController;
 import org.example.model.User;
 import org.example.model.gameData.GameInformation;
 
+import java.beans.EventHandler;
 import java.net.URL;
 
 public class NewTrade extends Application {
-    public TextField user;
-    public User chosen;
-    public TradingMenuController tradingMenuController;
+    public TextField user = new TextField();
+    public static User chosen;
+    public Button choose = new Button();
+    public TradingMenuController tradingMenuController = new TradingMenuController(GameInformation.getCurrentPlayer().getUsername());
     public TextArea users = new TextArea();
     public void start(Stage stage) throws Exception{
         URL url = NewTrade.class.getResource("/FXML/newTrade.fxml");
@@ -28,24 +31,37 @@ public class NewTrade extends Application {
         users.setPrefHeight(200);
         users.setPrefWidth(200);
         users.setTranslateY(67);
+        user.setTranslateY(307);
+        user.setTranslateX(233);
         Pane pane = FXMLLoader.load(url);
-        pane.getChildren().add(users);
+        choose.setTranslateX(294);
+        choose.setTranslateY(361);
+        choose.setText("choose");
+        pane.getChildren().addAll(users , choose , user);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
 
-    }
-
-    public void startTrade(MouseEvent mouseEvent) {
-        String input = user.getText();
-
-        for(User player : GameInformation.getAllPlayers())
+        choose.setOnAction(e ->
         {
-            if(player.getUsername().equals(input))
-                chosen = player;
+            try {
+                String input = user.getText();
+                System.out.println(input);
+                for(User player : GameInformation.getAllPlayers())
+                {
+                    System.out.println(player.getUsername());
+                    if(player.getUsername().equals(input)) {
+                        chosen = player;
+                        System.out.println(chosen.getUsername());
+                    }
 
-        }
-
+                }
+                new TradeRequest().start(stage);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
     }
-}
+    }
+
