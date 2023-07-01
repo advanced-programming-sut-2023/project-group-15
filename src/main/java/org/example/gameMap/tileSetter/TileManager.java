@@ -52,22 +52,22 @@ public class TileManager {
 
     private void getTileImage() {
         try {
-            tile[0] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/default.jpg")));
-            tile[1] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/pebble.jpg")));
-            tile[2] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/bowlder.png")));
-            tile[3] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/rock.png")));
-            tile[4] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/iron.jpg")));
-            tile[5] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/grass.png")));
-            tile[6] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/meadow.jpg")));
-            tile[7] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/oil.jpg")));
-            tile[8] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/plain.png")));
-            tile[9] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/shallowWater.png")));
-            tile[10] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/river.png")));
-            tile[11] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/smallPond.png")));
-            tile[12] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/bigPond.jpg")));
-            tile[13] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/beach.jpg")));
-            tile[14] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/sea.jpg")));
-            tile[15] = new Tile(ImageIO.read(getClass().getResourceAsStream("/images1/landType/grassLand.jpg")));
+            tile[0] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/default.jpg")));
+            tile[1] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/pebble.jpg")));
+            tile[2] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/bowlder.png")));
+            tile[3] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/rock.png")));
+            tile[4] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/iron.jpg")));
+            tile[5] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/grass.png")));
+            tile[6] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/meadow.jpg")));
+            tile[7] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/oil.jpg")));
+            tile[8] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/plain.png")));
+            tile[9] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/shallowWater.png")));
+            tile[10] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/river.png")));
+            tile[11] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/smallPond.png")));
+            tile[12] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/bigPond.jpg")));
+            tile[13] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/beach.jpg")));
+            tile[14] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/sea.jpg")));
+            tile[15] = new TileGraphic(ImageIO.read(getClass().getResourceAsStream("/images1/landType/grassLand.jpg")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

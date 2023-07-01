@@ -1,10 +1,14 @@
 package org.example.gameMap;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        startingGame();
+    }
+    public static void startingGame() {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);

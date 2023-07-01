@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.model.enums;
 
 public enum Products {

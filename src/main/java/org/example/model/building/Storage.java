@@ -16,6 +16,12 @@ public class Storage extends Building {
         this.goods = hashMap;
 
     }
+    public Storage(String name, int hp, int xCoordinate, int yCoordinate, Products material1, Products material2,
+                   int numberOfMaterial1, int numberOfMaterial2, int capacity ) {
+        super(name, hp, xCoordinate, yCoordinate, material1, material2, numberOfMaterial1, numberOfMaterial2);
+        this.capacity = capacity;
+        this.goods = new HashMap<>();
+    }
 
     public int showCapacity() {
         return capacity;

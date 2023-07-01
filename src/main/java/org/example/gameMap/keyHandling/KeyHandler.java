@@ -1,8 +1,10 @@
 package org.example.gameMap.keyHandling;
 
-import javafx.stage.Stage;
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
+import org.example.view.TradeMenu;
+import org.example.view.userView.GovernmentMenu;
+import org.example.view.userView.StartingMenu;
 import org.example.view.userView.GovermentMenu;
 import org.example.view.userView.StartingMenu;
 
@@ -34,6 +36,13 @@ public class KeyHandler implements KeyListener {
         } else if (gamePanel.getGameState() == GameState.buildingMenu && keyCode != KeyEvent.VK_B) {
             moveOnInventoryMenu(keyCode);
         }
+        if (keyCode == KeyEvent.VK_UP) {
+            if (gamePanel.getTileSize() > 20)
+                gamePanel.zoomInOut(1);
+        }
+        if (keyCode == KeyEvent.VK_DOWN)
+            if (gamePanel.getTileSize() < 64)
+                gamePanel.zoomInOut(-1);
         if (keyCode == KeyEvent.VK_W)
             upPressed = true;
         if (keyCode == KeyEvent.VK_A)
@@ -48,51 +57,14 @@ public class KeyHandler implements KeyListener {
             if (gamePanel.getGameState().equals(GameState.playState)) {
                 gamePanel.setGameState(GameState.pauseState);
             } else if (gamePanel.getGameState().equals(GameState.pauseState)) {
+//                gamePanel.getPopupPage().drawPauseScreen();
                 gamePanel.setGameState(GameState.playState);
             }
         }
         if (keyCode == KeyEvent.VK_1) { // pressing key 1 will show status
-            if (gamePanel.getGameState() == GameState.statusState)
-                gamePanel.setGameState(GameState.playState);
-            else
-                gamePanel.setGameState(GameState.statusState);
+            this.gamePanel.setGameState(GameState.statusState);
+//            gamePanel.getPopupPage().drawStatusState();
         }
-//        if (keyCode == KeyEvent.VK_G) {
-//            try {
-//                new GovernmentMenu().start(StartingMenu.stage);
-//            } catch (Exception ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        }
-        if (keyCode == KeyEvent.VK_I) {
-            if (gamePanel.getGameState() == GameState.inventoryMenu)
-                gamePanel.setGameState(GameState.playState);
-            else
-                gamePanel.setGameState(GameState.inventoryMenu);
-        }
-        if (keyCode == KeyEvent.VK_B) {
-            if (gamePanel.getGameState() == GameState.buildingMenu)
-                gamePanel.setGameState(GameState.playState);
-            else
-                gamePanel.setGameState(GameState.buildingMenu);
-        }
-        if (keyCode == KeyEvent.VK_ESCAPE) {
-            if (gamePanel.getGameState() == GameState.gameMenu)
-                gamePanel.setGameState(GameState.playState);
-            else
-                gamePanel.setGameState(GameState.gameMenu);
-        }
-    }
-
-    private void moveOnInventoryMenu(int keyCode) {
-        if (keyCode == KeyEvent.VK_W)
-            gamePanel.getPopupPage().reduceSlotRow();
-        if (keyCode == KeyEvent.VK_A)
-            gamePanel.getPopupPage().reduceSlotCol();
-        if (keyCode == KeyEvent.VK_S)
-            gamePanel.getPopupPage().addSlotRow();
-        if (keyCode == KeyEvent.VK_D)
-            gamePanel.getPopupPage().addSlotCol();
     }
 
     @Override
@@ -108,6 +80,9 @@ public class KeyHandler implements KeyListener {
             rightPressed = false;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = false;
+        if (keyCode == KeyEvent.VK_1) {
+            this.gamePanel.setGameState(GameState.playState);
+        }
     }
 
     public boolean isUpPressed() {

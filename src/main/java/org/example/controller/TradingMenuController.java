@@ -13,7 +13,7 @@ import org.example.model.gameData.Trade;
 import org.example.view.enums.outputs.GameInformationOutput;
 
 
-public class TradingMenuController {
+public class    TradingMenuController {
     private final Government government;
 
     public TradingMenuController(String playerName) {

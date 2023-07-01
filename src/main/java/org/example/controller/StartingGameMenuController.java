@@ -2,6 +2,7 @@
 package org.example.controller;
 
 import org.example.controller.userControllers.LoginMenuController;
+import org.example.gameMap.SelectedMap;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
@@ -10,15 +11,21 @@ import org.example.view.enums.outputs.GameStartMenuOutput;
 
 
 public class StartingGameMenuController {
-    private final User gameOwner;
+    private User gameOwner;
     private int userNumberForMapSelection = 2;
     private final GameInformationController gameInformationController = new GameInformationController();
 
     public StartingGameMenuController(LoginMenuController controller) {
         this.gameOwner = GameDataBase.getUserByUsername(controller.getUsername());
     }
+    public StartingGameMenuController(String username) {
+        this.gameOwner = GameDataBase.getUserByUsername(username);
+    }
+    public StartingGameMenuController() {
+    }
 
     public GameStartMenuOutput newGame(int mapSize, int mapNumber) {
+        new SelectedMap(mapSize,mapNumber);
         gameInformationController.setMap(mapSize, mapNumber);
         GameInformation.setNewGameAccess(false);
         gameOwner.setUserNO(1);
