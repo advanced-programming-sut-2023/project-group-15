@@ -19,7 +19,7 @@ public class ResourcesOfMarket extends Application {
     private String name ;
     private static Stage stage;
     private final MarketController marketController = new MarketController();
-   // public Market market = new Market();
+    // public Market market = new Market();
     @Override
     public void start(Stage stage) throws Exception {
         HashMap<String, Integer> number = new HashMap<>(marketController.show1());

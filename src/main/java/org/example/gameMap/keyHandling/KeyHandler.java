@@ -3,7 +3,7 @@ package org.example.gameMap.keyHandling;
 import javafx.stage.Stage;
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
-import org.example.view.userView.GovernmentMenu;
+import org.example.view.userView.GovermentMenu;
 import org.example.view.userView.StartingMenu;
 
 import java.awt.event.KeyEvent;

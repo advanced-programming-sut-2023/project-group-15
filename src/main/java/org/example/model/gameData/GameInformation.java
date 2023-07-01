@@ -91,7 +91,7 @@ public class GameInformation {
 
 
 
-        public static HashMap<User, Integer> getPlayers() {
+    public static HashMap<User, Integer> getPlayers() {
         return players;
     }
 

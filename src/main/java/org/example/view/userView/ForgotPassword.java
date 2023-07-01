@@ -29,10 +29,10 @@ public class ForgotPassword extends Application  {
     public Label changePassword;
     // public PasswordField password;
     Label errorAnswer;
-     Label errorUsername;
-    
+    Label errorUsername;
+
     Label questionCheck;
-   
+
     static Stage stage;
     int number = 0;
     TextField username;
@@ -88,7 +88,7 @@ public class ForgotPassword extends Application  {
 
             public void handle(ActionEvent e)
             {
-              //  String answerQ = answer.getText();
+                //  String answerQ = answer.getText();
                 byte[] salt = JsonController.makeSalt();
                 String answerQ = JsonController.getPassHashSha256(answer.getText(), salt);
                 if (loginMenuController.checkSecurityQuestion(answerQ)) {
@@ -130,7 +130,7 @@ public class ForgotPassword extends Application  {
 
         }
         else
-        errorUsername.setText("username dose not exist");
+            errorUsername.setText("username dose not exist");
 
     }
 

@@ -1,5 +1,6 @@
 package org.example.view.userView;
 
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.example.controller.MarketController;
 import org.example.controller.userControllers.SignupMenuController;
+import org.example.view.TradeMenu;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,6 +29,8 @@ import java.util.ResourceBundle;
 
 public class Market extends Application implements Initializable {
     private final MarketController marketController = new MarketController();
+    boolean sell = false;
+
     public ImageView wood;
     public ImageView bread;
     public ImageView apple;
@@ -49,8 +53,8 @@ public class Market extends Application implements Initializable {
     Pane pane;
     private static Stage stage;
     public static String name;
-    
-    private final SignupMenuController signupMenuController = new SignupMenuController();
+
+
 
     public
     String successfulMessage = String.format("-fx-text-fill: Black;");
@@ -120,8 +124,8 @@ public class Market extends Application implements Initializable {
             ImageView imageView = new ImageView(image2);
             imageView.setLayoutX(220.0);
             imageView.setLayoutY(58);
-          //  imageView.setPreserveRatio(true);
-           // imageView.setLayoutX(0);
+            //  imageView.setPreserveRatio(true);
+            // imageView.setLayoutX(0);
             Label successSell = new Label("successful sell...");
             Label successBuy = new Label("successful buy...");
             Label errorSell = new Label("error sell!");
@@ -132,6 +136,11 @@ public class Market extends Application implements Initializable {
             errorBuy.setStyle(errorMessage);
             errorSell.setStyle(errorMessage);
             Popup popupMessage = new Popup();
+            Popup sellSuccess = new Popup();
+            Popup sellError = new Popup();
+            Popup buySuccess = new Popup();
+            Popup buyError = new Popup();
+
             Stage stage = new Stage();
             EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
                 stage.close();
@@ -143,37 +152,50 @@ public class Market extends Application implements Initializable {
                         HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
                         System.out.println(newNumber.get(name));
                         numberOfProduct.setText(String.valueOf(newNumber.get(name)));
-                        popupMessage.setX(730);
-                        popupMessage.setY(260);
-                        popupMessage.getContent().add(successSell);
+                        sellSuccess.setX(730);
+                        sellSuccess.setY(260);
+                        sellSuccess.getContent().add(successSell);
                         break;
                     default:
-                        popupMessage.setX(730);
-                        popupMessage.setY(260);
-                        popupMessage.getContent().add(errorSell);
+                        sellError.setX(730);
+                        sellError.setY(260);
+                        sellError.getContent().add(errorSell);
                 }
 
-                if (!popupMessage.isShowing())
-                    popupMessage.show(stage);
+                if (!sellSuccess.isShowing())
+                    sellSuccess.show(stage);
                 else
-                    popupMessage.hide();
+                    sellSuccess.hide();
+                if (!sellError.isShowing())
+                    sellError.show(stage);
+                else
+                    sellError.hide();
             };
 
             EventHandler<MouseEvent> buy = (EventHandler<MouseEvent>) e ->{
 
-                    switch (marketController.buy(name,1)){
-                        case SUCCESSFUL_BUY : System.out.println("successful");
-                            HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
-                            numberOfProduct.setText(String.valueOf((newNumber.get(name))));
-                            popupMessage.setX(730);
-                            popupMessage.setY(260);
-                            popupMessage.getContent().add(successSell);
-                            break;
-                        default:
-                            popupMessage.setX(730);
-                            popupMessage.setY(260);
-                            popupMessage.getContent().add(errorBuy);
-                    }
+                switch (marketController.buy(name,1)){
+                    case SUCCESSFUL_BUY : System.out.println("successful");
+                        HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
+                        numberOfProduct.setText(String.valueOf((newNumber.get(name))));
+                        buySuccess.setX(730);
+                        buySuccess.setY(260);
+                        buySuccess.getContent().add(successBuy);
+                        break;
+                    default:
+                        buyError.setX(730);
+                        buyError.setY(260);
+                        buyError.getContent().add(errorBuy);
+
+                }
+                if (!buySuccess.isShowing())
+                    buySuccess.show(stage);
+                else
+                    buySuccess.hide();
+                if (!buyError.isShowing())
+                    buyError.show(stage);
+                else
+                    buyError.hide();
 
             };
             buyLable.setOnMouseClicked(buy);
@@ -187,8 +209,8 @@ public class Market extends Application implements Initializable {
             sellItem.setLayoutY(65.0);
             buyItem.setLayoutX(300.0);
             buyItem.setLayoutY(110.0);
-          //  sellItem.setMinSize(156.0 , 35.0);
-          //  buyItem.setMinSize(156.0 , 35.0);
+            //  sellItem.setMinSize(156.0 , 35.0);
+            //  buyItem.setMinSize(156.0 , 35.0);
 
 
             Pane pane = fxmlLoader.load();
@@ -214,7 +236,7 @@ public class Market extends Application implements Initializable {
 
     @Override
     public void start(Stage stage) throws IOException {
-       Market.stage = stage;
+        Market.stage = stage;
         URL url = SignupMenu.class.getResource("/FXML/Market.fxml");
 
         pane = FXMLLoader.load(url);
@@ -241,6 +263,10 @@ public class Market extends Application implements Initializable {
 
     public void backToGame(MouseEvent event) {
         stage.close();
+    }
+
+    public void startTrade(MouseEvent mouseEvent) throws Exception {
+        new TradeMenu().start(new Stage());
     }
 }
 

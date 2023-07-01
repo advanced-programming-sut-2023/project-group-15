@@ -17,7 +17,7 @@
             </VBox>
             <Button layoutX="48.0" layoutY="43.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="134.0" style="-fx-background-color: wheat" text="Start new game" textFill="black" onMouseClicked="#startGame" />
             <Button layoutX="55.0" layoutY="131.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: wheat" text="Add player" textFill="black"  onMouseClicked="#addPlayer"/>
-            <Button layoutX="55.0" layoutY="227.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: wheat" text="Enter game" textFill="black"  />
+            <Button layoutX="55.0" layoutY="227.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: wheat" text="Enter game" textFill="black" onMouseClicked="#enterGame"  />
             <Button layoutX="55.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#enterProfileMenu" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: wheat" text="Enter profile menu" textFill="black" />
          </children>
       </Pane>

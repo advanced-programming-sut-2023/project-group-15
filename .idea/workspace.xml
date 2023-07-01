@@ -5,309 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/0_0img279.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/0_0img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/255_255img15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/MainMenuStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/Screenshot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/Screenshot1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/backOfPopularity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/backgroundOfInfoMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_builder.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_builder2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_combat.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_combat2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_economics2.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_loading.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/frontend_main.tgx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/popularityBackground.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/setRate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/setRateOptions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/GameInformation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/MainMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Market.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/ProfileMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/ResourcesInTrade.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/ResourcesOfMarket.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/SignUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/StartingMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/TradeHistory.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/TradeRequest.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/TradingMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/changePassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/chooseQuestion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/forgotPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/newTrade.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/randomPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/randomSlogan.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/setRate.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/setRateOptions.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/Goverment.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/MainMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/Menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/ProfileMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/SignUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/forgotPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/randomSlogan.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img126.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img277.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img606.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img729.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img92.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img93.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/BackOfResources.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/IMG_5996.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/IMG_5997(1).JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/IMG_5997.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/Untitled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/aks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/apple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/archer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/bread.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/BAKERY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/BIG_STONE_GATEHOUSE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/BLACKSMITH.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/CHURCH.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/DEFEND_TURRET.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/ENGINEER_GUILD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/HOUSE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/INN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/IRON_MINE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/LOOKOUT_TOWER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/MARKET.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/MILL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/OIL_SMELTLER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/POLETURNER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/SMALL_STONE_GATEHOUSE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/WOODCUTTER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/castle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/BIG_STONE_GATEHOUSE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/DEFEND_TURRET.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/ENGINEER_GUILD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/LOOKOUT_TOWER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/PITCH_RIG.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/POLETURNER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/SMALL_STONE_GATEHOUSE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/APPLE_GARDEN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/BARRAK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/BEER_MAKING.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/OAT_FARM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/CATHEDRAL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/CHURCH.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/HOUSE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/INN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/MARKET.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/MERCENARY_POST.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/DRAWBRIDGE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/FLETCHER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/OX_TETHER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/QUARRY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/STABLE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/BAKERY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/BLACKSMITH.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/DIARY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/IRON_MINE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/MILL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/OIL_SMELTLER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/WOODCUTTER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/ARMOURER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/ARMOURY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/CAGED_WAR_DOGS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/HUNTING_BUILDING.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/PERMETER_TOWER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/SQUARE_TOWER.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/squareTower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/cheese.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/cion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/flour.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/hop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/iron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/beach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/bigPond.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/bowlder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/grassLand.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/iron.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/meadow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/oil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/pebble.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/plain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/river.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/sea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/shallowWater.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/smallPond.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/lather.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/mace.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/meat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/mouse/pointer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/pitch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/sell.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/show.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/spear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/sword.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/track.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/vest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/wheat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/wood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img101.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img102.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img103.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img104.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img105.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img106.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img107.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img108.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img109.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img110.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img111.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img112.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img113.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img115.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img116.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img117.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img118.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img119.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img99.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/BackOfResources.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/IMG_5996.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/IMG_5997(1).JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/IMG_5997.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/Screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/aks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/apple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/archer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/bread.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/build.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/castle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/cheese.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/cion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/city.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/flour.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/hop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/iron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/beach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/bigPond.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/bowlder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/grassLand.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/iron.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/meadow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/oil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/pebble.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/plain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/river.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/sea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/shallowWater.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/smallPond.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/lather.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/mace.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/meat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/mouse/pointer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/pitch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/happiest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/happy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/sad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/saddest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularityIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/productive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/rock (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/save.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/sell.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/show.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/spear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/sword.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/track.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/vest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/war.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/wheat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/images1/wood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/map/testMap.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/map/world01.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/castle.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/church.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/grave.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/storage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/tallTower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/tenet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images1/buildings/tower.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GameInformationMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SetRate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_45_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_23_2023_8_46_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at________Changes_2.xml" afterDir="false" />
@@ -322,152 +25,787 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_24_2023_1_03_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_24_2023_1_03_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/BuildingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/TradingMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/TradingMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MarketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/notReadedClasses/GameState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/notReadedClasses/ImageUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/notReadedClasses/State.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/ScoreBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradeMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/GameStartMenuOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/enums/outputs/GameStartMenuOutput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovernmentMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovernmentMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Goverment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Css/Screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Css/Screenshot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/GameInformation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInformation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Goverment.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Market.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/ProfileMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/ResourcesInTrade.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/ResourcesOfMarket.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/StartingMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/TradeHistory.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/TradeRequest.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/TradingMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/changePassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/chooseQuestion.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/forgotPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/newTrade.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/popularityDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/popularityDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/randomPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/randomSlogan.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/setRate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/setRate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML/setRateOptions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/setRateOptions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/Goverment.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/ProfileMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/forgotPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FXML2/randomSlogan.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Market.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/popularityDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/FXML/popularityDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img101.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img102.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img102.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img103.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img103.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img104.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img104.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img105.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img105.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img106.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img106.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img107.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img107.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img108.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img108.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img109.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img109.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img110.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img110.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img111.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img111.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img112.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img112.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img113.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img113.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img114.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img115.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img115.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img116.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img116.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img117.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img117.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img118.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img118.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img119.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img119.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img120.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img126.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img126.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img22.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img25.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img26.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img277.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img277.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img47.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img47.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img606.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img606.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img729.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img729.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img73.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img73.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img92.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img92.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img93.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img93.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img99.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/0_0img99.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Avatars/avatar9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Avatars/avatar9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/BackOfResources.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/BackOfResources.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/IMG_5996.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5996.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/IMG_5997(1).JPG" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5997(1).JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/IMG_5997.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/IMG_5997.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/Untitled.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/Untitled.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/aks.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/aks.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/apple.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/apple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/archer.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/archer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/bread.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/bread.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/build.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/build.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/BAKERY.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/BAKERY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/BIG_STONE_GATEHOUSE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/BIG_STONE_GATEHOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/BLACKSMITH.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/BLACKSMITH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/CHURCH.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/CHURCH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/DEFEND_TURRET.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/DEFEND_TURRET.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/ENGINEER_GUILD.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/ENGINEER_GUILD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/HOUSE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/HOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/INN.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/INN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/IRON_MINE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/IRON_MINE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/LOOKOUT_TOWER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/LOOKOUT_TOWER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/MARKET.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/MARKET.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/MILL.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/MILL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/OIL_SMELTLER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/OIL_SMELTLER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/POLETURNER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/POLETURNER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/SMALL_STONE_GATEHOUSE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/SMALL_STONE_GATEHOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/WOODCUTTER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/WOODCUTTER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/castle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/castle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/BIG_STONE_GATEHOUSE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/BIG_STONE_GATEHOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/DEFEND_TURRET.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/DEFEND_TURRET.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/ENGINEER_GUILD.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/ENGINEER_GUILD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/LOOKOUT_TOWER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/LOOKOUT_TOWER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/PITCH_RIG.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/PITCH_RIG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/POLETURNER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/POLETURNER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/defend/SMALL_STONE_GATEHOUSE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/defend/SMALL_STONE_GATEHOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/APPLE_GARDEN.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/gardens/APPLE_GARDEN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/BARRAK.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/gardens/BARRAK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/BEER_MAKING.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/gardens/BEER_MAKING.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/gardens/OAT_FARM.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/gardens/OAT_FARM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/CATHEDRAL.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/house/CATHEDRAL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/CHURCH.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/house/CHURCH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/HOUSE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/house/HOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/INN.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/house/INN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/MARKET.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/house/MARKET.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/house/MERCENARY_POST.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/house/MERCENARY_POST.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/DRAWBRIDGE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/other/DRAWBRIDGE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/FLETCHER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/other/FLETCHER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/OX_TETHER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/other/OX_TETHER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/QUARRY.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/other/QUARRY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/other/STABLE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/other/STABLE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/BAKERY.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/BAKERY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/BLACKSMITH.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/BLACKSMITH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/DIARY.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/DIARY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/IRON_MINE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/IRON_MINE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/MILL.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/MILL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/OIL_SMELTLER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/OIL_SMELTLER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/productive/WOODCUTTER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/productive/WOODCUTTER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/ARMOURER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/ARMOURER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/ARMOURY.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/ARMOURY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/CAGED_WAR_DOGS.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/CAGED_WAR_DOGS.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/HUNTING_BUILDING.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/HUNTING_BUILDING.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/PERMETER_TOWER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/PERMETER_TOWER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/SQUARE_TOWER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/SQUARE_TOWER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/buildings/war/squareTower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/buildings/war/squareTower.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/castle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/castle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/cheese.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cheese.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/cion.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/city.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/city.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/happy4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/face/sad4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/flour.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/flour.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/hop.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/hop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/iron.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/iron.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/beach.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/beach.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/bigPond.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/bigPond.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/bowlder.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/bowlder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/grassLand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/grassLand.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/iron.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/iron.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/meadow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/meadow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/oil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/oil.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/pebble.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/pebble.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/plain.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/plain.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/river.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/river.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/rock.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/rock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/sea.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/sea.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/shallowWater.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/shallowWater.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/smallPond.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/smallPond.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/landType/water.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/landType/water.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/lather.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/lather.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/mace.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/mace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/meat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/meat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/mouse/pointer.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/mouse/pointer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/pitch.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/pitch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/happiest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/happiest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/happy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/happy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/sad.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/sad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/saddest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/popularity/saddest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/popularityIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/popularityIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/productive.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/productive.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/rock (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/rock (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/rock.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/rock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/s.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/s.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/save.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/save.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/select.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/select.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/sell.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/sell.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/show.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/show.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/spear.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/spear.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/sword.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/sword.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/track.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/track.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/vest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/vest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/war.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/war.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/wheat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/wheat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images/wood.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/wood.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img101.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img102.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img102.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img103.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img103.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img104.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img104.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img105.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img105.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img106.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img106.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img107.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img107.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img108.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img108.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img109.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img109.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img110.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img110.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img111.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img111.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img112.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img112.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img113.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img113.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img114.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img115.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img115.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img116.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img116.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img117.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img117.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img118.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img118.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img119.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img119.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img120.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img25.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img73.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img73.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/0_0img99.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/0_0img99.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Avatars/avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/BackOfResources.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/IMG_5996.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/IMG_5997(1).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/IMG_5997.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/aks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/archer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/bread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/build.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/build.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/castle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/castle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/cion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/city.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/city.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/happy1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/happy2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/happy3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/happy4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/happy4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/sad1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/sad2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/sad3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/face/sad4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/face/sad4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/flour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/hop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/beach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/bigPond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/bowlder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/default.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/grassLand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/iron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/meadow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/oil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/pebble.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/plain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/river.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/sea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/shallowWater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/smallPond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/landType/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/lather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/mace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/mouse/pointer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/pitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/happiest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/popularity/happiest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/happy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/popularity/happy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/popularity/normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/sad.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/popularity/sad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularity/saddest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/popularity/saddest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/popularityIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/popularityIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/productive.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/productive.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/rock (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/rock (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/s.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/s.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/save.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/save.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/sell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/spear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/track.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/track.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/vest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/war.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images1/war.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/wheat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/images1/wood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/map/testMap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/map/world01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/newTrade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/newTrade.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML2/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML2/Goverment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img100.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img101.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img101.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img102.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img102.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img103.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img103.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img104.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img104.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img105.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img105.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img106.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img106.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img107.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img107.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img108.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img108.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img109.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img109.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img110.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img110.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img111.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img111.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img112.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img112.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img113.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img113.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img114.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img114.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img115.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img115.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img116.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img116.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img117.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img117.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img118.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img118.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img119.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img119.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img120.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img120.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/0_0img99.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/0_0img99.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/build.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/build.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/castle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/castle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/city.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/city.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/happy1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/happy2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/happy3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/happy4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/happy4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/sad1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/sad2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/sad3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/face/sad4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/face/sad4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/popularity/happiest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/happiest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/popularity/happy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/happy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/popularity/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/popularity/sad.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/sad.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/popularity/saddest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/popularity/saddest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/popularityIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/popularityIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/productive.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/productive.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/rock (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/rock (2).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/s.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/s.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/save.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/save.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/track.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Css/track.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/war.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/images/war.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Avatars/avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/castle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/church.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/grave.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/tallTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/tenet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images1/buildings/tower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/0_0img279.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/0_0img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/255_255img15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/MainMenuStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/Screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/Screenshot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/backgroundOfInfoMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_builder.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_builder2.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_combat.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_combat2.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_economics2.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_loading.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_main.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/setRate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/setRateOptions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/track.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/MainMenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Css/MainMenuStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/Screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/Screenshot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/popularityBackground.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Css/popularityBackground.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/setRate.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Css/setRate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/setRateOptions.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Css/setRateOptions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/GameInformation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/Goverment.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/Market.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/ProfileMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/ResourcesInTrade.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/ResourcesOfMarket.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/StartingMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/TradeHistory.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/TradeRequest.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/TradingMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/changePassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/chooseQuestion.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/forgotPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/newTrade.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/popularityDetails.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/randomPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/randomSlogan.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/setRate.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML/setRateOptions.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/Goverment.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/ProfileMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/forgotPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/FXML2/randomSlogan.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameInformation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameInformation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Goverment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/Market.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/Market.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/ResourcesInTrade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ResourcesInTrade.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ResourcesOfMarket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ResourcesOfMarket.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/StartingMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/StartingMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/TradeHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/TradeHistory.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/TradeRequest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/TradeRequest.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/TradingMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/TradingMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/changePassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/changePassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/chooseQuestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/chooseQuestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img106.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img113.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img118.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img119.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img606.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img729.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img93.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/0_0img99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Avatars/avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/BackOfResources.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/IMG_5996.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/IMG_5997(1).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/IMG_5997.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/Untitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/aks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/archer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/bread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/build.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/BAKERY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/BIG_STONE_GATEHOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/BLACKSMITH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/CHURCH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/DEFEND_TURRET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/ENGINEER_GUILD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/HOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/INN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/IRON_MINE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/LOOKOUT_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/MARKET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/MILL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/OIL_SMELTLER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/POLETURNER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/SMALL_STONE_GATEHOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/WOODCUTTER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/BIG_STONE_GATEHOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/DEFEND_TURRET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/ENGINEER_GUILD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/LOOKOUT_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/PITCH_RIG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/POLETURNER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/defend/SMALL_STONE_GATEHOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/gardens/APPLE_GARDEN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/gardens/BARRAK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/gardens/BEER_MAKING.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/gardens/OAT_FARM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/house/CATHEDRAL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/house/CHURCH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/house/HOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/house/INN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/house/MARKET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/house/MERCENARY_POST.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/other/DRAWBRIDGE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/other/FLETCHER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/other/OX_TETHER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/other/QUARRY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/other/STABLE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/BAKERY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/BLACKSMITH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/DIARY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/IRON_MINE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/MILL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/OIL_SMELTLER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/productive/WOODCUTTER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/ARMOURER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/ARMOURY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/CAGED_WAR_DOGS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/HUNTING_BUILDING.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/PERMETER_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/SQUARE_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/buildings/war/squareTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/cion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/happy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/happy2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/happy3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/happy4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/sad1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/sad2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/sad3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/face/sad4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/flour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/hop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/beach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/bigPond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/bowlder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/default.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/grassLand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/iron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/meadow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/oil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/pebble.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/plain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/river.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/sea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/shallowWater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/smallPond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/landType/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/lather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/mace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/mouse/pointer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/pitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/popularity/happiest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/popularity/happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/popularity/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/popularity/sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/popularity/saddest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/popularityIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/productive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/rock (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/save.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/sell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/spear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/track.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/vest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/war.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/wheat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images/wood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img106.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img113.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img118.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img119.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/0_0img99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Avatars/avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/BackOfResources.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/IMG_5996.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/IMG_5997(1).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/IMG_5997.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/aks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/archer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/bread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/build.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/cion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/happy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/happy2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/happy3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/happy4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/sad1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/sad2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/sad3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/face/sad4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/flour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/hop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/beach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/bigPond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/bowlder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/default.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/grassLand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/iron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/meadow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/oil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/pebble.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/plain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/river.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/sea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/shallowWater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/smallPond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/landType/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/lather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/mace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/mouse/pointer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/pitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/popularity/happiest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/popularity/happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/popularity/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/popularity/sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/popularity/saddest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/popularityIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/productive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/rock (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/save.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/sell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/spear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/track.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/vest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/war.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/wheat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/images1/wood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/map/testMap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/map/world01.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML/newTrade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/newTrade.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/randomPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/randomPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/setRate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/setRate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/setRateOptions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/setRateOptions.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML2/Goverment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/Goverment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/MainMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FXML2/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img101.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img103.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img104.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img105.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img106.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img107.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img108.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img109.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img110.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img112.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img113.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img114.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img115.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img116.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img117.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img118.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img119.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/0_0img99.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/rock (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/save.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/track.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/ProfileMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/forgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/forgotPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/randomSlogan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML2/randomSlogan.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/castle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/church.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/buildings/church.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/grave.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/tallTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/tenet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/buildings/tower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/castle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/church.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/grave.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/tallTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/tenet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/tower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/testMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/testMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/world01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/world01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/TradingMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/TradingMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/mouseHandling/MousePointer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/mouseHandling/MousePointer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/AssetSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/NewTrade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/NewTrade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/TradeMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameStartMenuOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameStartMenuOutput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovernmentMenu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SetRate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/SetRate.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -524,7 +862,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_directory_selection": "C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/resources/FXML",
-    "last_opened_file_path": "C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/resources/FXML",
+    "last_opened_file_path": "C:/Users/mobin/Desktop/new/project-15/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -540,11 +878,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mobin\Desktop\new\project-15\src\main\resources" />
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\FXML" />
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources" />
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\java\org\example" />
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\images" />
-      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\images1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mobin\Desktop\project2\src\main\java\org\example" />
@@ -555,7 +893,7 @@
       <recent name="org.example.veiw.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.StartingMenu">
     <configuration name="GovernmentMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.view.userView.GovernmentMenu" />
       <module name="Game2DMap" />
@@ -582,9 +920,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Market" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Market" />
-      <module name="untitled" />
+    <configuration name="MainMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.MainMenu" />
+      <module name="Game2DMap" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.view.userView.*" />
@@ -623,11 +961,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StartingMenu" />
+        <item itemvalue="Application.MainMenu" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.GovernmentMenu" />
         <item itemvalue="Application.Menu" />
-        <item itemvalue="Application.Market" />
       </list>
     </recent_temporary>
   </component>
@@ -798,6 +1136,11 @@
           <line>13</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>
           <line>16</line>
@@ -827,6 +1170,12 @@
     <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest.ic" NAME="SignupMenuControllerTest Coverage Results" MODIFIED="1684827005041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic" NAME="SignupMenuControllerTest.changeForgetPasswordTests Coverage Results" MODIFIED="1684173056920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/project_group_15$Main.ic" NAME="Main Coverage Results" MODIFIED="1688002056933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.gameMap.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest_changeUsernameTests.ic" NAME="ProfileMenuControllerTest.changeUsernameTests Coverage Results" MODIFIED="1684172861618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.controller.*</FILTER>
     </SUITE>
@@ -835,12 +1184,6 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/project_group_15$ProfileMenuControllerTest.ic" NAME="ProfileMenuControllerTest Coverage Results" MODIFIED="1684172775802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$SignupMenuControllerTest_changeForgetPasswordTests.ic" NAME="SignupMenuControllerTest.changeForgetPasswordTests Coverage Results" MODIFIED="1684173056920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$Main.ic" NAME="Main Coverage Results" MODIFIED="1688002056933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.gameMap.*</FILTER>
     </SUITE>
   </component>
 </project>

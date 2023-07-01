@@ -264,7 +264,7 @@ public class ProfileMenu extends Application {
 
         secondDataColumn.setCellValueFactory(new MapValueFactory("score"));
         secondDataColumn.setMinWidth(100);
-        TableView tableView = new TableView<>(generateDataInMap());
+        javafx.scene.control.TableView tableView = new javafx.scene.control.TableView<>(generateDataInMap());
 
         tableView.setEditable(true);
         Callback<TableColumn<Map, String>, TableCell<Map, String>>
@@ -503,5 +503,9 @@ public class ProfileMenu extends Application {
             mainMenuController.getCurrentUser().setAvatar(avatar);
 
         }
+    }
+
+    public void market(MouseEvent mouseEvent) throws Exception {
+        new Market().start(new Stage());
     }
 }

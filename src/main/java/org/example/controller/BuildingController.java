@@ -125,11 +125,11 @@ public class BuildingController {
         String status;
         for (BuildingName building : BuildingName.values()) {
             if (String.valueOf(building).equals(name)) {
-            if(building.getMaterial1Name().equals(Products.GOLD_COIN))
-                if (this.government.getCoins() < building.getNumberOfMaterial1())
-                    return false;
+                if(building.getMaterial1Name().equals(Products.GOLD_COIN))
+                    if (this.government.getCoins() < building.getNumberOfMaterial1())
+                        return false;
 
-               if(!building.getMaterial1Name().equals(Products.GOLD_COIN)) {
+                if(!building.getMaterial1Name().equals(Products.GOLD_COIN)) {
                     status = checkForSources(building.getMaterial1Name(), building.getNumberOfMaterial1());
                     if (!status.equals(GameInformationOutput.SUCCESS.getOutput()))
                         return false;
@@ -150,11 +150,10 @@ public class BuildingController {
                     reduceResources(building.getMaterial1Name() , building.getNumberOfMaterial1());
                 return true;
             }
-            }
+        }
 
         return false;
     }
-
     public static String checkForSources(Products product, int amount) {
         int current;
         Storage store = null;
@@ -241,5 +240,4 @@ public class BuildingController {
         return this.selectedBuilding != null;
     }
 }
-
 

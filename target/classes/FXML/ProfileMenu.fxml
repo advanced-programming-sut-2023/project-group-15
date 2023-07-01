@@ -21,7 +21,7 @@
                   <Button mnemonicParsing="false" onMouseClicked="#changeEmail" prefHeight="30.0" prefWidth="150.0" text="Change email" />
                   <Button mnemonicParsing="false" onMouseClicked="#changeNickname" prefHeight="30.0" prefWidth="150.0" text="Change nickname" />
                   <Button mnemonicParsing="false" onMouseClicked="#showScoreboard" prefHeight="30.0" prefWidth="150.0" text="Show scoreboard" />
-                  <Button maxHeight="30.0" maxWidth="150.0" mnemonicParsing="false" text="Upload avatar" onMouseClicked="#uploadAvatar" />
+                  <Button maxHeight="30.0" maxWidth="150.0" mnemonicParsing="false" onMouseClicked="#uploadAvatar" text="Upload avatar" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
@@ -29,6 +29,7 @@
             </VBox>
             <Button contentDisplay="CENTER" layoutX="430.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" prefHeight="30.0" prefWidth="150.0" text="Change slogan" />
             <Button alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="430.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#removeSlogan" prefHeight="30.0" prefWidth="150.0" text="Remove slogan" />
+            <Button layoutX="479.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#market" text="market" />
          </children>
       </Pane>
    </children>
