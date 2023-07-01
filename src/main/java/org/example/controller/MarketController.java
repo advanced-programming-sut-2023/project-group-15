@@ -19,8 +19,8 @@ public class MarketController {
     public Marketplace market = new Marketplace("market",10,1,1, Products.ROCK,Products.WOOD,1,1,1);
 
     public MarketController() {
-        this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
-        GameInformation.getCurrentPlayer().setGovernment(government);
+       // this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
+        this.government = GameInformation.getCurrentPlayer().getGovernment();
 
     }
 

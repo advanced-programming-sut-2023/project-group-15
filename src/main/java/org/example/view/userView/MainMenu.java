@@ -15,6 +15,7 @@ import org.example.gameMap.Main;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
+import org.example.model.gameData.Government;
 import org.example.view.GameStartMenu;
 import org.example.view.enums.outputs.GameMenuOutput;
 import org.example.view.enums.outputs.GameStartMenuOutput;
@@ -85,8 +86,6 @@ public class MainMenu extends Application {
                      alert.setContentText(gameStartMenuOutput.getOutput());
                      alert.showAndWait();
                  } else if (gameStartMenuOutput.equals(GameStartMenuOutput.GAME_IS_NOT_STARTED)) {
-                     System.out.println(GameInformation.isNewGameAccess());
-                     System.out.println("***");
                      Alert alert = new Alert(Alert.AlertType.ERROR);
                      alert.setContentText(gameStartMenuOutput.getOutput());
                      alert.showAndWait();
@@ -129,6 +128,7 @@ public class MainMenu extends Application {
        // gameStartMenu.startNewGame();
         GameInformation.setNewGameAccess(true);
         GameInformation.getCurrentPlayer().setUserNO(1);
+        GameInformation.getCurrentPlayer().setGovernment(new Government(GameInformation.getCurrentPlayer().getUsername()));
     }
 
     public void enterGame(MouseEvent mouseEvent) {
@@ -143,5 +143,10 @@ public class MainMenu extends Application {
         window.setVisible(true);
 
 
+    }
+
+    public void logout(MouseEvent mouseEvent) throws Exception {
+        StartingMenu.stage.close();
+        new StartingMenu().start(new Stage());
     }
 }

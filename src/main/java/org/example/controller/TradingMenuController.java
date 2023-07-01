@@ -12,12 +12,15 @@ import org.example.model.gameData.Government;
 import org.example.model.gameData.Trade;
 import org.example.view.enums.outputs.GameInformationOutput;
 
+import java.util.HashMap;
+
 
 public class TradingMenuController {
-    private final Government government;
+    private Government government = null;
 
     public TradingMenuController(String playerName) {
         this.government = Government.findGovernmentWithUsername(playerName);
+
     }
 
 
@@ -29,6 +32,9 @@ public class TradingMenuController {
         sender.getGovernment().getTradeSendList().add(newTrade);
         receiver.getGovernment().getTradeUnacceptedReqList().add(newTrade);
         Government.getTradeHistoryList().add(newTrade);
+        System.out.println(receiver.getUsername());
+        //System.out.println(receiver.getGovernment().getTradeUnacceptedReqList());
+        System.out.println(receiver.getGovernment().getTradeUnacceptedReqList().get(0).getReceiver().getUsername());
     }
     public void sendTradeDonate(String recourseType, int recourseAmount, String messageI, double priceI, User chosen) {
         Products product = Products.getProductByName(recourseType);
@@ -40,15 +46,19 @@ public class TradingMenuController {
         Government.getTradeHistoryList().add(newTrade);
     }
 
-    public void showTradeList() {
-        if (Trade.getAllTrades().size() != 0) {
-            Trade.showTrades();
-        } else
-            System.out.println("no trade request sent!");
+    public String showTradeList() {
+        String output = "";
+        System.out.println(GameInformation.getCurrentPlayer().getUsername());
+        System.out.println(GameInformation.getCurrentPlayer().getGovernment().getTradeUnacceptedReqList().get(0).getSender().getUsername());
+        System.out.println(Trade.showTrades() + "xxx");
+
+            output += Trade.showTrades();
+        return output;
     }
 
+
     public String showTradeHistory() {
-        String output = null;
+        String output = "";
         if (Trade.getAllTrades().isEmpty()) {
             output = "no trade request sent!";
         } else
@@ -56,29 +66,37 @@ public class TradingMenuController {
         return output;
     }
 
-
-    public GameInformationOutput acceptRequest(int index) {
-
-        Trade trade = GameInformation.getCurrentPlayer().getGovernment().getTradeUnacceptedReqList().get(index-1);
-        Storage storage = null;
-        String message1 = BuildingController.checkForSources(trade.getProduct(), trade.getAmount());
-        if (message1.equals(GameInformationOutput.NOT_ENOUGH.getOutput())) {
-            return GameInformationOutput.NOT_ENOUGH;
-        } else if (trade.getSender().getGovernment().getCoins() < trade.getAmount() * trade.getPrice()) {
-            return GameInformationOutput.NOT_ENOUGH_COIN;
-        } else if (message1.equals(GameInformationOutput.SUCCESS.getOutput())) {
-            //hess mikonm eshtbas
-            for (StoreProducts storeProducts : StoreProducts.values())
-                if (trade.getProduct().name().equals(String.valueOf(storeProducts)))
-                    storage = (Storage) GameInformation.findBuilding(storeProducts.getStoreType(), trade.getSender());
-            storage.addonStorageWithAmount(trade.getProduct(), trade.getAmount());
+    public String acceptRequest(HashMap<Products , Integer> receiverStore , Trade trade , HashMap<Products , Integer> senderStore)
+    {
+        String output = "";
+        if(receiverStore.get(trade.getProduct()) < trade.getAmount())
+            output = "resource";
+        else if(trade.getSender().getGovernment().getCoins() < trade.getAmount() * trade.getPrice())
+            output = "enough coin";
+        else {
             trade.getSender().getGovernment().deCoin(trade.getAmount() * trade.getPrice());
-           double current =  trade.getReceiver().getGovernment().getCoins();
-           trade.getReceiver().getGovernment().setCoins(current+trade.getPrice() * trade.getAmount());
+            double current = trade.getReceiver().getGovernment().getCoins();
+            trade.getReceiver().getGovernment().setCoins(current + trade.getPrice() * trade.getAmount());
+            trade.getReceiver().getGovernment().getTradeUnacceptedReqList().remove(trade);
+            trade.getReceiver().getGovernment().getTradeAcceptedReqList().add(trade);
+            trade.setAccepted(true);
+            output = "accepted";
         }
-        trade.getReceiver().getGovernment().getTradeUnacceptedReqList().remove(trade);
-        trade.getReceiver().getGovernment().getTradeAcceptedReqList().add(trade);
-        return GameInformationOutput.ACCEPTED_SUCCESSFULLY;
+        return output;
+    }
+    public String  findStore(int index)
+    {
+        String output = "";
+        Trade trade = GameInformation.getCurrentPlayer().getGovernment().getTradeUnacceptedReqList().get(index-1);;
+        Government government = trade.getReceiver().getGovernment();
+        if(government.getFOODSTORE().containsKey(trade.getProduct()))
+             output = acceptRequest(government.getFOODSTORE() , trade , trade.getSender().getGovernment().getFOODSTORE());
+        else if(government.getSOURCESTORE().containsKey(trade.getProduct()))
+            output = acceptRequest(government.getSOURCESTORE() , trade , trade.getSender().getGovernment().getSOURCESTORE());
+        else if(government.getARMOURY().containsKey(trade.getProduct()))
+            output = acceptRequest(government.getARMOURY() , trade , trade.getSender().getGovernment().getARMOURY());
+        return output;
+
     }
 
     public boolean productInputCheck(String product) {

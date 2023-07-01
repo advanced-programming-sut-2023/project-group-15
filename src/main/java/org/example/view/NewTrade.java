@@ -46,13 +46,10 @@ public class NewTrade extends Application {
         {
             try {
                 String input = user.getText();
-                System.out.println(input);
                 for(User player : GameInformation.getAllPlayers())
                 {
-                    System.out.println(player.getUsername());
                     if(player.getUsername().equals(input)) {
                         chosen = player;
-                        System.out.println(chosen.getUsername());
                     }
 
                 }

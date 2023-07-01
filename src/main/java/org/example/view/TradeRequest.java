@@ -86,45 +86,8 @@ public class TradeRequest extends Application {
         this.products.add(WEAT);
         this.products.add(BREAD);
         this.products.add(VEST);
-        setAmount();
     }
-    public void setAmount()
-    {
-        Government government = GameInformation.getCurrentPlayer().getGovernment();
-        HashMap store = government.getFOODSTORE();
-    /*    if(store.containsKey(VEST))
-            vest.setText(String.valueOf(store.get(VEST)));
-        if(store.containsKey(BREAD))
-            bread.setText(String.valueOf(store.get(BREAD)));
-        if(store.containsKey(WEAT))
-            wheat.setText(String.valueOf(store.get(WEAT)));
-        if(store.containsKey(SWORD))
-            sword.setText(String.valueOf(store.get(SWORD)));
-        if(store.containsKey(PITCH))
-                pitch.setText(String.valueOf(store.get(PITCH)));
-        if(store.containsKey(HOP))
-            hop.setText(String.valueOf(store.get(HOP)));
-        if(store.containsKey(IRON))
-            iron.setText(String.valueOf(store.get(IRON)));
-        if(store.containsKey(CHEESE))
-            cheese.setText(String.valueOf(store.get(CHEESE)));
-        if(store.containsKey(APPLE))
-            apple.setText(String.valueOf(store.get(APPLE)));
-        if(store.containsKey(WOOD))
-            wood.setText(String.valueOf(store.get(WOOD)));
-        if(store.containsKey(ARCHER))
-        archer.setText(String.valueOf(store.get(ARCHER)));
-        if(store.containsKey(ARMOUR))
-            armour.setText(String.valueOf(store.get(ARMOUR)));
-        if(store.containsKey(ROCK))
-            rock.setText(String.valueOf(store.get(ROCK)));
-        if(store.containsKey(SPEAR))
-            spear.setText(String.valueOf(store.get(SPEAR)));
-        if(store.containsKey(MEAT))
-            meat.setText(String.valueOf(store.get(MEAT)));
-        if(store.containsKey(MACE))
-            mace.setText(String.valueOf(store.get(MACE)));*/
-    }
+
     public void showResource(MouseEvent mouseEvent) {
 
         if(Apple.isPressed()) {
@@ -230,7 +193,6 @@ public class TradeRequest extends Application {
                     alert.showAndWait();
                 }
                 else {
-                    System.out.println(newTrade.chosen.getUsername());
                     newTrade.tradingMenuController.sendTradeRequest(name , Integer.parseInt(number.getText()) ,message.getText()
                             ,Double.parseDouble(cost.getText()) ,newTrade.chosen  );
 

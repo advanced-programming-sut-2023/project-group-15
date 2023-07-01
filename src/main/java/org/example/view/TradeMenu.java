@@ -61,7 +61,7 @@ public class TradeMenu extends Application {
         Alert alertAccept = new Alert(Alert.AlertType.INFORMATION);
         alertAccept.setContentText("accepted successfully");
         TextArea textArea = new TextArea();
-        textArea.appendText(Trade.showTrades());
+        textArea.appendText(tradingMenuController.showTradeList());
         Pane pane = new Pane();
         pane.setPrefHeight(410);
         pane.setPrefWidth(630);
@@ -82,12 +82,12 @@ public class TradeMenu extends Application {
         index.setTranslateY(315);
         accept.setOnAction(e ->
         {
-            GameInformationOutput output = tradingMenuController.acceptRequest(Integer.parseInt(index.getText()));
-                if(output.equals(GameInformationOutput.NOT_ENOUGH))
+            String output = tradingMenuController.findStore(Integer.parseInt(textField.getText()));
+                if(output.equals("resource"))
                 alertResource.showAndWait();
-                else if(output.equals(GameInformationOutput.NOT_ENOUGH_COIN))
+                else if(output.equals("enough coin"))
                     alertCoins.showAndWait();
-                    else if(output.equals(GameInformationOutput.ACCEPTED_SUCCESSFULLY))
+                    else if(output.equals("accepted"))
                         alertAccept.showAndWait();
         });
         pane.getChildren().addAll(index , textArea , textField , accept);
