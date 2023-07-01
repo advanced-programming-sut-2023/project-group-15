@@ -63,7 +63,7 @@ public class Trade {
 
     public static String showTradesHistory(User user) {
         int index = 1;
-        String output = null;
+        String output = "";
         for (Trade trade : Trade.getAllTrades()) {
             if (trade.getSender().getUsername().equals(user.getUsername()) || trade.getReceiver().getUsername().equals(user.getUsername())) {
                 output += index + ". sender: " + trade.getSender().getUsername() + " receiver: " + trade.getReceiver().getUsername() + " product(amount): "
@@ -71,9 +71,9 @@ public class Trade {
                 index++;
                 output += "\n" + "status: ";
                 if (trade.isAccepted())
-                    output += "accepted!";
+                    output += "accepted!" + "\n";
                 else
-                    output += "not accepted yet!";
+                    output += "not accepted yet!" + "\n";
             }
         }
         return output;

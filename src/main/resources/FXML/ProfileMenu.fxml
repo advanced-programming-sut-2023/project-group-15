@@ -30,6 +30,7 @@
             <Button contentDisplay="CENTER" layoutX="430.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" prefHeight="30.0" prefWidth="150.0" text="Change slogan" />
             <Button alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="430.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#removeSlogan" prefHeight="30.0" prefWidth="150.0" text="Remove slogan" />
             <Button layoutX="479.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#market" text="market" />
+            <Button layoutX="45.0" layoutY="367.0" mnemonicParsing="false" text="exit" onMouseClicked="#exit" />
          </children>
       </Pane>
    </children>

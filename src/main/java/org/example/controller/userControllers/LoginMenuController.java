@@ -4,6 +4,7 @@ package org.example.controller.userControllers;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.GameInformation;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
 
@@ -17,6 +18,7 @@ public class LoginMenuController extends MainMenuController {
                     GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(true);
                     ProfileMenuController.moveDataToFile();
                 }
+
                 return LoginMenuOutput.LOGGED_IN_SUCCESSFULLY;
             }
             return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;

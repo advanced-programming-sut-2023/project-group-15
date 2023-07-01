@@ -6,7 +6,7 @@ public enum Products {
     OAT("oat"),
     BREAD("bead"),
     MEAT("meat"),
-    WEAT("weat"),
+    WEAT("wheat"),
     BEER("beer"),
     ARMOUR("armour"),
     CHEESE("cheese"),
@@ -49,7 +49,7 @@ public enum Products {
 
     public static Products getProductByName(String name) {
         for (Products product : Products.values()) {
-            if (String.valueOf(product).equals(name))
+            if (product.getProductName().equals(name))
                 return product;
         }
         return null;
