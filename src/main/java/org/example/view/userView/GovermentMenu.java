@@ -1,15 +1,10 @@
 package org.example.view.userView;
 
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,10 +19,7 @@ import javafx.stage.StageStyle;
 import org.example.controller.GameMenuController;
 import org.example.controller.userControllers.MainMenuController;
 
-import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -40,19 +32,22 @@ public class GovermentMenu extends Application implements Initializable {
     public static int number;
     public static int foodNumber;
     public static int fearNumber;
-    private static Stage stage;
     public Button setRate;
     public Button setTaxRate;
     public Button setFoodRate;
     public Button setFearRate;
-    private GameMenuController gameMenuController = new GameMenuController();
+    private final GameMenuController gameMenuController = new GameMenuController();
     public MainMenuController mainMenuController = new MainMenuController();
-    Pane root;
     Stage stage1;
+    public Slider fearSlider;
+    public Slider foodSlider;
+    public Slider slider;
 
     @Override
     public void start(Stage stage) throws Exception {
-        GovermentMenu.stage = stage;
+        fearSlider = new Slider();
+        foodSlider = new Slider();
+        slider = new Slider();
         URL url = MainMenu.class.getResource("/FXML/Goverment.fxml");
         ImageView showGardens = new ImageView(String.valueOf(getClass().getResource("/images/productive.png")));
         showGardens.setLayoutY(166);
@@ -340,10 +335,10 @@ public class GovermentMenu extends Application implements Initializable {
     }
 
     Label setFear;
-    Slider fearSlider = new Slider();
 
-    public void setFearRate(ActionEvent event) {
+    public void setFearRate() {
         try {
+            fearSlider = new Slider();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
             Pane root = fxmlLoader.load();
             fearSlider.setId("custom");
@@ -405,7 +400,6 @@ public class GovermentMenu extends Application implements Initializable {
 
     Label foodCoins;
     Label numberOfPeople;
-    Slider foodSlider = new Slider();
     Label foodInfo;
 
     public void setFoodRate() {
@@ -500,7 +494,6 @@ public class GovermentMenu extends Application implements Initializable {
         }
     }
 
-    Slider slider = new Slider();
     Label coins;
     Label people;
     Label taxInfo;

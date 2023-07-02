@@ -21,7 +21,7 @@ import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.net.URL;
 
-public class ForgotPassword extends Application  {
+public class ForgotPassword extends Application {
 
     public TextField answerQ;
     public PasswordField passwordField;
@@ -29,10 +29,10 @@ public class ForgotPassword extends Application  {
     public Label changePassword;
     // public PasswordField password;
     Label errorAnswer;
-     Label errorUsername;
-    
+    Label errorUsername;
+
     Label questionCheck;
-   
+
     static Stage stage;
     int number = 0;
     TextField username;
@@ -77,28 +77,17 @@ public class ForgotPassword extends Application  {
         Button checker = new Button("check");
         checker.setLayoutX(430.0);
         checker.setLayoutY(181.0);
-        EventHandler<ActionEvent> sell = new EventHandler<ActionEvent>() {
+        EventHandler<ActionEvent> sell = e -> forgetPassword(username.getText());
+        EventHandler<ActionEvent> checkAnswer = e -> {
+            //  String answerQ = answer.getText();
+            byte[] salt = JsonController.makeSalt();
+            String answerQ = JsonController.getPassHashSha256(answer.getText(), salt);
+            if (loginMenuController.checkSecurityQuestion(answerQ)) {
+                errorAnswer.setText("");
+                answer.setStyle(successStyle);
+            } else
+                errorAnswer.setText("answer dose not match with the picked question");
 
-            public void handle(ActionEvent e)
-            {
-                forgetPassword(username.getText());
-            }
-        };
-        EventHandler<ActionEvent> checkAnswer = new EventHandler<ActionEvent>() {
-
-            public void handle(ActionEvent e)
-            {
-              //  String answerQ = answer.getText();
-                byte[] salt = JsonController.makeSalt();
-                String answerQ = JsonController.getPassHashSha256(answer.getText(), salt);
-                if (loginMenuController.checkSecurityQuestion(answerQ)) {
-                    errorAnswer.setText("");
-                    answer.setStyle(successStyle);
-                }
-                else
-                    errorAnswer.setText("answer dose not match with the picked question");
-
-            }
         };
         checker.setOnAction(checkAnswer);
         button.setOnAction(sell);
@@ -115,8 +104,6 @@ public class ForgotPassword extends Application  {
         stage.show();
 
 
-
-
     }
 
     protected void forgetPassword(String username1) {
@@ -128,12 +115,10 @@ public class ForgotPassword extends Application  {
             System.out.println(loginMenuController.findUserSecurityQuestion().getQuestion());
 
 
-        }
-        else
-        errorUsername.setText("username dose not exist");
+        } else
+            errorUsername.setText("username dose not exist");
 
     }
-
 
 
     private void resettingUserPassword(String username) {
@@ -147,13 +132,12 @@ public class ForgotPassword extends Application  {
             System.out.println(LoginMenuOutput.ENTER_YOUR_PASSWORD_AGAIN.getOutput());
 
 
-
         }
     }
 
     private void passwordCheck() {
-        switch (SignupMenuController.passwordCheckErrors(passwordField.getText())){
-            case ERROR_PASSWORD_IS_TOO_SHORT :
+        switch (SignupMenuController.passwordCheckErrors(passwordField.getText())) {
+            case ERROR_PASSWORD_IS_TOO_SHORT:
                 errorPassword.setStyle(errorMessage);
                 errorPassword.setText("password must contains as least 6 characters");
                 break;
@@ -172,24 +156,16 @@ public class ForgotPassword extends Application  {
 
 
     @FXML
-    public void initialize(){
-        passwordField.textProperty().addListener((observable , oldText , newText)->{
+    public void initialize() {
+        passwordField.textProperty().addListener((observable, oldText, newText) -> {
             passwordCheck();
-        } );
+        });
     }
 
-    public void confirmChangePassword(MouseEvent event) {
-        if(errorPassword.getText().equals("")&&errorUsername.getText().equals("")&&errorAnswer.getText().equals("")){
+    public void confirmChangePassword() {
+        if (errorPassword.getText().equals("") && errorUsername.getText().equals("") && errorAnswer.getText().equals("")) {
             changePassword.setStyle(successfulMessage);
             changePassword.setText("successful");
         }
-
-
     }
-
-
-  /*  @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }*/
 }

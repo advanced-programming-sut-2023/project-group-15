@@ -6,37 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/notReadedClasses/GameState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/notReadedClasses/ImageUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/SuperObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapChangesEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MapMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/NewGameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/NewGameSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/NewTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/NewTrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/ScoreBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradeMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseRandomSlogan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseRandomSlogan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovernmentMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Market.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/PopularityDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ProfileMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ResourcesOfMarket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SetRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SetRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/StartingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/StartingMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/TradeHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/SuperObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovernmentMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,7 +352,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java</url>
-          <line>195</line>
+          <line>179</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

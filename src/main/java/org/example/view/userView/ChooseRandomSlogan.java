@@ -38,7 +38,7 @@ public class ChooseRandomSlogan extends Application {
         stage.show();
     }
 
-    public void selectSlogan(MouseEvent mouseEvent) throws Exception {
+    public void selectSlogan() throws Exception {
         if(first.isSelected())
             signupMenuController.setSlogan(first.getText());
         if(second.isSelected())
