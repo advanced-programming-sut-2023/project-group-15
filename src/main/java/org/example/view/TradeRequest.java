@@ -13,11 +13,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.example.model.enums.Products;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
+
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import static org.example.model.enums.Products.*;
 

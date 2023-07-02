@@ -4,8 +4,8 @@ import org.example.model.Tile;
 import org.example.model.building.*;
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
+import org.example.Server.gameData.GameInformation;
+import org.example.Server.gameData.Government;
 import org.example.view.enums.outputs.BuildingStatusOutput;
 import org.example.view.enums.outputs.GameInformationOutput;
 

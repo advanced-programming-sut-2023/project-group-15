@@ -6,8 +6,7 @@ import org.example.controller.JsonController;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.enums.Slogans;
-import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.Government;
+import org.example.Server.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 

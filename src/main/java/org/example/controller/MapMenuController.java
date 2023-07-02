@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.model.gameData.GameInformation;
+import org.example.Server.gameData.GameInformation;
 import org.example.model.Tile;
 
 import java.util.regex.Matcher;

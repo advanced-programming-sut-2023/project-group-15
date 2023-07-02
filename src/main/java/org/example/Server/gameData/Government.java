@@ -1,5 +1,5 @@
 //this class is completed!
-package org.example.model.gameData;
+package org.example.Server.gameData;
 
 import org.example.model.MBC.InfantryUnit;
 import org.example.model.MBC.LauncherUnit;

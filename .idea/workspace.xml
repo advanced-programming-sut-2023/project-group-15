@@ -5,28 +5,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbeh(add ForgotPassword and market)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/ConnectionRelay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/BuildingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/JsonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/JsonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MapMenuEnvironmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MarketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StartingGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StartingGameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/TradingMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/TradingMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UnitMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/SignupMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/Education.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/Education.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/building/ProductiveBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/building/ProductiveBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/gameData/GameDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/GameInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/gameData/GameInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/gameData/Government.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/MapTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/gameData/MapTemplates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/gameData/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/GameStartMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/NewTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/NewTrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/ScoreBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradeMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradeRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/LoginMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/controller/MainMenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/controller/MainMenuControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/controller/ProfileMenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/controller/ProfileMenuControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/controller/SignupMenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/controller/SignupMenuControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/model/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/model/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuEnvironmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuEnvironmentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/StartingGameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/StartingGameMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/TradingMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/TradingMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/enums/Products.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/jsonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/jsonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/ProfileMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Building.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/Building.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Education.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/Education.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/ProductiveBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/building/ProductiveBuilding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/MapTemplates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/NewTrade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/NewTrade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/ScoreBoard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/ScoreBoard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/ScoreBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/ScoreBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/TradeMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/controller/MainMenuControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/controller/ProfileMenuControllerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +90,8 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,7 +133,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_directory_selection": "C:/Users/Raya/Desktop/project-group-15-new2/src/main/java/org/example/view",
-    "last_opened_file_path": "C:/Users/Raya/Desktop/project-group-15-final/src/main/resources/FXML",
+    "last_opened_file_path": "C:/Users/Raya/Desktop/project-group-15-final - 3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,6 +149,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
       <recent name="org.example.gameMap.Ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -127,26 +180,13 @@
       <recent name="org.example.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StartingMenu">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.gameMap.Main" />
-      <module name="Game2DMap" />
+  <component name="RunManager" selected="Application.org.example.view.userView.GameInformationMenu">
+    <configuration name="GameInformationMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Client.view.userView.GameInformationMenu" />
+      <module name="project-group-15-final - 3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.gameMap.objectSetter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Market" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.Market" />
-      <module name="Game2DMap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.view.*" />
+          <option name="PATTERN" value="org.example.Client.view.userView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -193,12 +233,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.example.view.userView.GameInformationMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.GameInformationMenu" />
+      <module name="project-group-15-final - 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.view.userView.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StartingMenu" />
-        <item itemvalue="Application.Market" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.org.example.view.userView.GameInformationMenu" />
+        <item itemvalue="Application.GameInformationMenu" />
         <item itemvalue="Application.TradeMenu" />
+        <item itemvalue="Application.StartingMenu" />
         <item itemvalue="Application.ResourcesOfMarket" />
       </list>
     </recent_temporary>

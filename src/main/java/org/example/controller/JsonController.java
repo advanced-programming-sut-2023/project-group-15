@@ -2,7 +2,7 @@
 package org.example.controller;
 
 import org.example.model.User;
-import org.example.model.gameData.GameDataBase;
+import org.example.Server.gameData.GameDataBase;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;

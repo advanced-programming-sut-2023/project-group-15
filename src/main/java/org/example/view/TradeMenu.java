@@ -11,9 +11,6 @@ import javafx.stage.Stage;
 import org.example.controller.TradingMenuController;
 import org.example.controller.userControllers.MainMenuController;
 import org.example.model.User;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Trade;
-import org.example.view.enums.outputs.GameInformationOutput;
 
 import java.net.URL;
 

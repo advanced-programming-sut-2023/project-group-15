@@ -1,9 +1,10 @@
 package org.example.model.building;
 
 
+import org.example.Server.gameData.GameInformation;
 import org.example.model.User;
 import org.example.model.enums.*;
-import org.example.model.gameData.*;
+import org.example.Server.gameData.*;
 
 
 public class Building {

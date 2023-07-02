@@ -2,8 +2,8 @@ package org.example.model;
 
 import javafx.scene.image.Image;
 import org.example.model.enums.SecurityQuestion;
-import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.Government;
+import org.example.Server.gameData.GameDataBase;
+import org.example.Server.gameData.Government;
 
 import java.util.Objects;
 

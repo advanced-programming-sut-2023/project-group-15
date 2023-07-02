@@ -3,10 +3,9 @@ package org.example.controller;
 
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.model.User;
-import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
-import org.example.view.GameStartMenu;
+import org.example.Server.gameData.GameDataBase;
+import org.example.Server.gameData.GameInformation;
+import org.example.Server.gameData.Government;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
 

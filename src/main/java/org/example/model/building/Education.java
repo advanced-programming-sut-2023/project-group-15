@@ -2,7 +2,7 @@ package org.example.model.building;
 
 import org.example.model.MBC.*;
 import org.example.model.enums.*;
-import org.example.model.gameData.GameInformation;
+import org.example.Server.gameData.GameInformation;
 
 public class Education extends Building {
     private Soldier soldiers;

@@ -1,6 +1,6 @@
 package org.example.model;
 
-import org.example.model.gameData.GameDataBase;
+import org.example.Server.gameData.GameDataBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

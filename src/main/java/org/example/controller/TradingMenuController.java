@@ -3,14 +3,11 @@ package org.example.controller;
 
 
 import org.example.model.User;
-import org.example.model.building.Storage;
 import org.example.model.enums.Products;
-import org.example.model.enums.StoreProducts;
-import org.example.model.gameData.GameDataBase;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
-import org.example.model.gameData.Trade;
-import org.example.view.enums.outputs.GameInformationOutput;
+import org.example.Server.gameData.GameDataBase;
+import org.example.Server.gameData.GameInformation;
+import org.example.Server.gameData.Government;
+import org.example.Server.gameData.Trade;
 
 import java.util.HashMap;
 

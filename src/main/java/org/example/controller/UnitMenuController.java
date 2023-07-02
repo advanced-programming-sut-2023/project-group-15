@@ -6,8 +6,8 @@ import org.example.model.MBC.Soldier;
 import org.example.model.MBC.UnitWallTarget;
 import org.example.model.building.Building;
 import org.example.model.enums.*;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
+import org.example.Server.gameData.GameInformation;
+import org.example.Server.gameData.Government;
 import org.example.view.enums.outputs.GameInformationOutput;
 import org.example.view.enums.outputs.UnitMenuOutput;
 

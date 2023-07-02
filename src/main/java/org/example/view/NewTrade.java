@@ -6,14 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.example.controller.TradingMenuController;
 import org.example.model.User;
-import org.example.model.gameData.GameInformation;
+import org.example.Server.gameData.GameInformation;
 
-import java.beans.EventHandler;
 import java.net.URL;
 
 public class NewTrade extends Application {

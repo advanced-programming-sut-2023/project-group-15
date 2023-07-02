@@ -2,7 +2,7 @@ package org.example.model.building;
 
 import org.example.model.enums.Products;
 import org.example.model.enums.StoreProducts;
-import org.example.model.gameData.GameInformation;
+import org.example.Server.gameData.GameInformation;
 
 import java.util.Objects;
 

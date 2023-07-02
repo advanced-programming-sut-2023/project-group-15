@@ -1,4 +1,4 @@
-package org.example.model.gameData;
+package org.example.Server.gameData;
 
 import org.example.model.User;
 

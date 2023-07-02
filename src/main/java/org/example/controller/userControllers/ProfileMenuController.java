@@ -3,7 +3,6 @@ package org.example.controller.userControllers;
 
 import org.example.controller.JsonController;
 import org.example.model.User;
-import org.example.model.gameData.GameDataBase;
 import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 

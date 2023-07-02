@@ -5,7 +5,7 @@ import org.example.InputScanner;
 import org.example.controller.StartingGameMenuController;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.model.User;
-import org.example.model.gameData.GameInformation;
+import org.example.Server.gameData.GameInformation;
 import org.example.view.enums.commands.GameStartMenuEnum;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 

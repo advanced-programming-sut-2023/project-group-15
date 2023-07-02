@@ -4,7 +4,7 @@ package org.example.controller;
 import org.example.model.enums.LandType;
 import org.example.model.enums.Tree;
 import org.example.model.enums.Direction;
-import org.example.model.gameData.GameInformation;
+import org.example.Server.gameData.GameInformation;
 
 
 public class MapMenuEnvironmentController {

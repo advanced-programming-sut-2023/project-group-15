@@ -1,8 +1,8 @@
 package org.example.controller;
 
 import org.example.model.building.Building;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
+import org.example.Server.gameData.GameInformation;
+import org.example.Server.gameData.Government;
 
 import java.util.ArrayList;
 import java.util.HashMap;

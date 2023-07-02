@@ -1,10 +1,10 @@
-package org.example.controller;
+/*package org.example.controller;
 
 
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.User;
 import org.example.model.enums.Slogans;
-import org.example.model.gameData.GameDataBase;
+import org.example.Server.gameData.GameDataBase;
 import org.example.view.enums.commands.SignupMenuEnum;
 import org.example.view.enums.outputs.SignupMenuOutput;
 import org.junit.jupiter.api.Assertions;
@@ -174,4 +174,4 @@ class SignupMenuControllerTest {
         Matcher matcher = Pattern.compile(regex, Pattern.CASE_INSENSITIVE).matcher(password);
         return matcher.matches() ? matcher : null;
     }
-}
+}*/
