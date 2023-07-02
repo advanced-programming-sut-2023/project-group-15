@@ -16,7 +16,6 @@ import java.io.InputStreamReader;
 public class TileManager {
     private final GamePanel gamePanel;
     private final int[][] mapTileNumber;
-    private final TileDetail[][] tileDetail;
     private final TileGraphic[] tile = new TileGraphic[20];
     Graphics2D g2;
     private boolean isSelected;
@@ -25,7 +24,6 @@ public class TileManager {
     public TileManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         this.mapTileNumber = new int[50][50];
-        this.tileDetail = new TileDetail[50][50];
         this.isSelected = false;
         getTileImage();
         loadMap();

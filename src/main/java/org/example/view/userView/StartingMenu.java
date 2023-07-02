@@ -1,11 +1,9 @@
-//this is class is completed! please don't touch my class!
 package org.example.view.userView;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.MainMenuController;
@@ -37,15 +35,15 @@ public class StartingMenu extends Application {
 
     }
 
-    public void signUp(MouseEvent mouseEvent) throws Exception{
+    public void signUp() throws Exception{
         new SignupMenu().start(StartingMenu.stage);
     }
 
-    public void login(MouseEvent mouseEvent) throws Exception {
+    public void login() throws Exception {
         new LoginMenu().start(StartingMenu.stage);
     }
 
-    public void exit(MouseEvent mouseEvent) {
+    public void exit() {
         stage.close();
     }
     /*public void run()  {

@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.LoginMenuController;
@@ -17,14 +16,14 @@ import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Government;
 import org.example.view.GameStartMenu;
-import org.example.view.enums.outputs.GameMenuOutput;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
 import javax.swing.*;
 import java.net.URL;
 
 public class MainMenu extends Application {
-    LoginMenuController loginMenuController= new LoginMenuController();
+    private static String username;
+    LoginMenuController loginMenuController = new LoginMenuController();
 
     GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
 
@@ -35,7 +34,8 @@ public class MainMenu extends Application {
             BackgroundPosition.DEFAULT,
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
-    public void start (Stage stage) throws Exception{
+
+    public void start(Stage stage) throws Exception {
         URL url = MainMenu.class.getResource("/FXML/MainMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.setBackground(bGround);
@@ -45,18 +45,17 @@ public class MainMenu extends Application {
 
     }
 
-    public void enterProfileMenu(MouseEvent mouseEvent) throws Exception {
+    public void enterProfileMenu() throws Exception {
         new ProfileMenu().start(StartingMenu.stage);
-     }
+    }
 
-    public void addPlayer(MouseEvent mouseEvent) {
+    public void addPlayer() {
         TextArea textArea = new TextArea();
-        for(User user : GameDataBase.getAllUsers())
-        textArea.appendText(user.getUsername() + "\n");
+        for (User user : GameDataBase.getAllUsers())
+            textArea.appendText(user.getUsername() + "\n");
         TextField textField = new TextField();
         Label label = new Label();
         label.setText("enter player name");
-        Label title = new Label();
 
         Button button = new Button();
         button.setText("choose");
@@ -64,42 +63,34 @@ public class MainMenu extends Application {
         {
           /*  for(User player: GameInformation.getAllPlayers())
             System.out.println(player.getUsername());*/
-             GameStartMenuOutput gameStartMenuOutput = gameStartMenu.addPlayer(MainMenuController.getCurrentUser().getUsername() ,
-                GameDataBase.getUserByUsername(textField.getText()));
-                 if(gameStartMenuOutput.equals(GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL))
-                 {
-                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                     alert.setContentText("sorry there already 8 players in the game");
-                     alert.showAndWait();
+            GameStartMenuOutput gameStartMenuOutput = gameStartMenu.addPlayer(MainMenuController.getCurrentUser().getUsername(),
+                    GameDataBase.getUserByUsername(textField.getText()));
+            if (gameStartMenuOutput.equals(GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL)) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("sorry there already 8 players in the game");
+                alert.showAndWait();
 
-             }
-                 else if(gameStartMenuOutput.equals(GameStartMenuOutput.User_DOESNT_EXIST))
-                 {
-                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                     alert.setContentText(gameStartMenuOutput.getOutput());
-                     alert.showAndWait();
-                 }
-
-                 else if(gameStartMenuOutput.equals(GameStartMenuOutput.ADD_USER_FORBIDDEN))
-                 {
-                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                     alert.setContentText(gameStartMenuOutput.getOutput());
-                     alert.showAndWait();
-                 } else if (gameStartMenuOutput.equals(GameStartMenuOutput.GAME_IS_NOT_STARTED)) {
-                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                     alert.setContentText(gameStartMenuOutput.getOutput());
-                     alert.showAndWait();
-                 } else if (gameStartMenuOutput.equals(GameStartMenuOutput.PLAYER_IN_THE_GAME)) {
-                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                     alert.setContentText(gameStartMenuOutput.getOutput());
-                     alert.showAndWait();
-                 }
-                 else if(gameStartMenuOutput.equals(GameStartMenuOutput.ADD_USER_SUCCESS))
-                 {
-                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                     alert.setContentText(gameStartMenuOutput.getOutput());
-                     alert.showAndWait();
-                 }
+            } else if (gameStartMenuOutput.equals(GameStartMenuOutput.User_DOESNT_EXIST)) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(gameStartMenuOutput.getOutput());
+                alert.showAndWait();
+            } else if (gameStartMenuOutput.equals(GameStartMenuOutput.ADD_USER_FORBIDDEN)) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(gameStartMenuOutput.getOutput());
+                alert.showAndWait();
+            } else if (gameStartMenuOutput.equals(GameStartMenuOutput.GAME_IS_NOT_STARTED)) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(gameStartMenuOutput.getOutput());
+                alert.showAndWait();
+            } else if (gameStartMenuOutput.equals(GameStartMenuOutput.PLAYER_IN_THE_GAME)) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(gameStartMenuOutput.getOutput());
+                alert.showAndWait();
+            } else if (gameStartMenuOutput.equals(GameStartMenuOutput.ADD_USER_SUCCESS)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText(gameStartMenuOutput.getOutput());
+                alert.showAndWait();
+            }
 
         });
         textArea.setPrefWidth(200);
@@ -116,37 +107,35 @@ public class MainMenu extends Application {
         Pane pane = new Pane();
         pane.setPrefWidth(639);
         pane.setPrefHeight(400);
-        pane.getChildren().addAll(label , textArea , textField , button);
+        pane.getChildren().addAll(label, textArea, textField, button);
         pane.setBackground(bGround);
-        Scene scene =new Scene(pane);
+        Scene scene = new Scene(pane);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }
 
-    public void startGame(MouseEvent mouseEvent) {
-       // gameStartMenu.startNewGame();
+    public void startGame() {
+        // gameStartMenu.startNewGame();
         GameInformation.setNewGameAccess(true);
         GameInformation.getCurrentPlayer().setUserNO(1);
         GameInformation.getCurrentPlayer().setGovernment(new Government(GameInformation.getCurrentPlayer().getUsername()));
     }
 
-    public void enterGame(MouseEvent mouseEvent) {
-        JFrame window = new JFrame();
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
-        window.setTitle("2D Map");
-        GamePanel gamePanel = new GamePanel();
-        window.add(gamePanel);
-        window.pack();
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
-
-
+    public void enterGame() {
+        new Main().startingGame();
     }
 
-    public void logout(MouseEvent mouseEvent) throws Exception {
+    public void logout() throws Exception {
         StartingMenu.stage.close();
         new StartingMenu().start(new Stage());
+    }
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String username) {
+        MainMenu.username = username;
     }
 }

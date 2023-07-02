@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.view.userView;
 
 import javafx.application.Application;
@@ -11,18 +10,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.effect.DisplacementMap;
-import javafx.scene.effect.FloatMap;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
@@ -35,7 +27,7 @@ import java.util.Random;
 import static org.example.Utility.captchaStringGen;
 import static org.example.Utility.displacementMap;
 
-public class SignupMenu extends  Application {
+public class SignupMenu extends Application {
     public static Stage stage;
     public TextField email;
     public Label errorEmail;
@@ -48,7 +40,7 @@ public class SignupMenu extends  Application {
     public PasswordField password;
     public Label errorUsername;
     public TextField username;
-    private Stage stage1 = new Stage();
+    private final Stage stage1 = new Stage();
     public Label errorPassword;
     public Label successfulSignup;
     Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
@@ -64,10 +56,9 @@ public class SignupMenu extends  Application {
     Styles styles = new Styles();
 
 
-
     public
     @FXML
-    void changeVisibility(ActionEvent event) {
+    void changeVisibility() {
            /* if(showPass.isSelected()) {
                 passwordShow.setText(password.getText());
                 password.setVisible(false);
@@ -80,7 +71,6 @@ public class SignupMenu extends  Application {
         passwordShow.setVisible(false);*/
 
     }
-
 
 
     @Override
@@ -227,7 +217,7 @@ public class SignupMenu extends  Application {
          signupMenuController.setSlogan(matcher.group("slogan"));
      }
  */
-    public void slogan(MouseEvent mouseEvent) {
+    public void slogan() {
         TextInputDialog sloganInput = new TextInputDialog();
         sloganInput.setHeaderText("slogan");
         sloganInput.setContentText("enter your slogan");
@@ -239,12 +229,12 @@ public class SignupMenu extends  Application {
 
     }
 
-    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
+    public void backToMainMenu() throws Exception {
         new StartingMenu().start(SignupMenu.stage);
     }
 
 
-    public void signup(MouseEvent mouseEvent) throws Exception {
+    public void signup() throws Exception {
         if (email.getText().isBlank()) {
             errorEmail.setStyle(styles.getErrorMessage());
             errorEmail.setText("email field is blank");
@@ -268,8 +258,7 @@ public class SignupMenu extends  Application {
                     email.setStyle(styles.getErrorStyle());
             }
         }
-        if(!security)
-        {
+        if (!security) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("error");
             alert.setContentText("please choose a security question");
@@ -280,9 +269,8 @@ public class SignupMenu extends  Application {
             errorNickname.setText("nickname field is blank");
             nickname.setStyle(styles.getErrorStyle());
         }
-        if(randomPass)
-        {
-            if(!password.getText().equals(randomPassword));
+        if (randomPass) {
+            if (!password.getText().equals(randomPassword)) ;
             {
                 System.out.println("hhhh");
                 errorPassword.setStyle(styles.getErrorMessage());
@@ -296,7 +284,6 @@ public class SignupMenu extends  Application {
 
             errorNickname.setText("");
             nickname.setStyle(styles.getSuccessStyle());
-            // System.out.println(errorNickname.getText());
         }
 
         if (username.getText().isBlank()) {
@@ -321,7 +308,7 @@ public class SignupMenu extends  Application {
 
         if (errorNickname.getText().equals("") && errorEmail.getText().equals("") && errorPassword.getText().equals("") &&
                 errorUsername.getText().equals("") && security) {
-            if(!slogan)
+            if (!slogan)
                 signupMenuController.setSlogan("slogan is empty");
             signupMenuController.signingsComplete();
             successfulSignup.setStyle(styles.getSuccessfulMessage());
@@ -359,38 +346,35 @@ public class SignupMenu extends  Application {
         questions.setPadding(new Insets(0, 10, 0, 10));
         questions.setAlignment(Pos.CENTER_LEFT);
 
-        toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle o, Toggle n) {
-                RadioButton rb = (RadioButton) toggleGroup.getSelectedToggle();
+        toggleGroup.selectedToggleProperty().addListener((observableValue, o, n) -> {
+            RadioButton rb = (RadioButton) toggleGroup.getSelectedToggle();
 
-                submitted = true;
-                if (rb != null) {
+            submitted = true;
+            if (rb != null) {
 
-                    String chosenQuestion = String.valueOf(rb.getText());
-                    switch (chosenQuestion) {
-                        case "What's my father's name?":
-                            pickQuestion1();
-                            break;
-                        case "What's my brother's name?":
-                            pickQuestion2();
-                            break;
-                        case "What's my hair color?":
-                            pickQuestion3();
-                            break;
-                        case "What's my car color?":
-                            pickQuestion4();
-                            break;
-                        case "What's my favorite food?":
-                            pickQuestion5();
-                            break;
-                        case "What's my cellphone model?":
-                            pickQuestion6();
-                            break;
-                    }
+                String chosenQuestion = String.valueOf(rb.getText());
+                switch (chosenQuestion) {
+                    case "What's my father's name?":
+                        pickQuestion1();
+                        break;
+                    case "What's my brother's name?":
+                        pickQuestion2();
+                        break;
+                    case "What's my hair color?":
+                        pickQuestion3();
+                        break;
+                    case "What's my car color?":
+                        pickQuestion4();
+                        break;
+                    case "What's my favorite food?":
+                        pickQuestion5();
+                        break;
+                    case "What's my cellphone model?":
+                        pickQuestion6();
+                        break;
                 }
-
             }
+
         });
 
         Scene scene1 = new Scene(questions, 300, 300);
@@ -403,6 +387,7 @@ public class SignupMenu extends  Application {
         });
 
     }
+
     private void captchaShower() {
         Label captchaMessage = new Label("please enter the below captcha");
         Button submit2 = new Button("submit");
@@ -425,7 +410,7 @@ public class SignupMenu extends  Application {
         captchaInput.setTranslateX(50);
         captchaInput.setTranslateY(70);
         content.add(displacementMap(captcha[0]));
-        content.addAll(captchaMessage, submit2, captchaInput , error);
+        content.addAll(captchaMessage, submit2, captchaInput, error);
         stage1.setScene(scene);
         stage1.show();
         //todo the error labels are not shown
@@ -435,10 +420,7 @@ public class SignupMenu extends  Application {
                 if (captchaInput.getText().equals(captcha[0])) {
                     security = true;
                     stage1.close();
-                }
-
-                else
-                {
+                } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("wrong captcha");
                     alert.show();
@@ -453,12 +435,6 @@ public class SignupMenu extends  Application {
             }
         });
     }
-
-
-
-
-
-
 
 
     @FXML
@@ -548,7 +524,7 @@ public class SignupMenu extends  Application {
     }
 
 
-    public void chooseSlogan(MouseEvent mouseEvent) {
+    public void chooseSlogan() {
         RadioButton slogan1 = new RadioButton("Build. Defend. Conquer.");
         RadioButton slogan2 = new RadioButton("Create Your Own Kingdom and Conquer the World.");
         RadioButton slogan3 = new RadioButton("The desert is a cruel place to fight mi'lord, are you sure you have the heart for it?");
@@ -563,45 +539,42 @@ public class SignupMenu extends  Application {
         slogan5.setToggleGroup(tg);
         slogan6.setToggleGroup(tg);
         VBox slogans = new VBox();
-        slogans.getChildren().addAll(slogan1 , slogan2 , slogan3 , slogan4 , slogan5 , slogan6);
+        slogans.getChildren().addAll(slogan1, slogan2, slogan3, slogan4, slogan5, slogan6);
         Scene scene = new Scene(slogans);
         stage1.setScene(scene);
         stage1.show();
-        tg.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle o, Toggle n) {
-                RadioButton rb = (RadioButton) tg.getSelectedToggle();
+        tg.selectedToggleProperty().addListener((observableValue, o, n) -> {
+            RadioButton rb = (RadioButton) tg.getSelectedToggle();
 
-                if (rb != null) {
-                    signupMenuController.setSlogan(rb.getText());
-                    slogan = true;
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("slogan choose");
-                    alert.setContentText("your slogan was chosen successfully");
-                    stage1.close();
+            if (rb != null) {
+                signupMenuController.setSlogan(rb.getText());
+                slogan = true;
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("slogan choose");
+                alert.setContentText("your slogan was chosen successfully");
+                stage1.close();
 
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("slogan error");
-                    alert.setContentText("please choose a slogan");
-
-                }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("slogan error");
+                alert.setContentText("please choose a slogan");
 
             }
+
         });
     }
-    public void randomPassword(MouseEvent mouseEvent)
-    {
+
+    public void randomPassword() {
         password.setText(signupMenuController.generateRandomPassword());
 
     }
 
-    public void randomSlogan(MouseEvent mouseEvent) throws Exception {
+    public void randomSlogan() {
         Random random = new Random();
         int rand = 0;
-        while (true){
+        while (true) {
             rand = random.nextInt(11);
-            if(rand !=0 && rand < 7) break;
+            if (rand != 0 && rand < 7) break;
         }
         slogan = true;
         signupMenuController.selectSlogan(String.valueOf(rand));

@@ -49,9 +49,10 @@ public class GovermentMenu extends Application implements Initializable {
     public MainMenuController mainMenuController = new MainMenuController();
     Pane root;
     Stage stage1;
+
     @Override
     public void start(Stage stage) throws Exception {
-        GovermentMenu.stage = stage ;
+        GovermentMenu.stage = stage;
         URL url = MainMenu.class.getResource("/FXML/Goverment.fxml");
         ImageView showGardens = new ImageView(String.valueOf(getClass().getResource("/images/productive.png")));
         showGardens.setLayoutY(166);
@@ -225,7 +226,7 @@ public class GovermentMenu extends Application implements Initializable {
         blackSmith.setFitHeight(53);
          */
 
-        EventHandler<MouseEvent> garden = (EventHandler<MouseEvent>) e -> {
+        EventHandler<MouseEvent> garden = e -> {
             pane.getChildren().add(appleGarden);
             pane.getChildren().add(beerGarden);
             pane.getChildren().add(barrak);
@@ -233,7 +234,6 @@ public class GovermentMenu extends Application implements Initializable {
         };
 
         showGardens.setOnMouseClicked(garden);
-
 
 
         //  pane.getChildren().add(showProductive);
@@ -271,7 +271,7 @@ public class GovermentMenu extends Application implements Initializable {
         }
     }*/
 
-    public void gameInformation(MouseEvent event) {
+    public void gameInformation() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/setRate.fxml"));
             Pane root1 = fxmlLoader.load();
@@ -283,7 +283,7 @@ public class GovermentMenu extends Application implements Initializable {
             setRate = new Button();
             setRate.setId("setRate");
             Stage stage = new Stage();
-            EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> backToGame = e -> {
                 stage.close();
             };
             backToGameMenu.setOnMouseClicked(backToGame);
@@ -297,12 +297,12 @@ public class GovermentMenu extends Application implements Initializable {
             //  System.out.println(getClass().getResource("/Css/MainMenu.css").getPath());
             stage.setScene(scene);
             stage.show();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public void setRate(ActionEvent event) throws Exception {
+    public void setRate() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/setRateOptions.fxml"));
             Pane root = fxmlLoader.load();
@@ -312,7 +312,7 @@ public class GovermentMenu extends Application implements Initializable {
             backToGameMenu.setLayoutX(78);
             backToGameMenu.setLayoutY(299);
             Stage stage = new Stage();
-            EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> backToGame = e -> {
                 stage.close();
             };
             backToGameMenu.setOnMouseClicked(backToGame);
@@ -335,14 +335,16 @@ public class GovermentMenu extends Application implements Initializable {
      */
 
 
-
-    public void backToSetRate(MouseEvent event) {
+    public void backToSetRate() {
         stage1.close();
     }
+
     Label setFear;
     Slider fearSlider = new Slider();
+
     public void setFearRate(ActionEvent event) {
-        try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
             Pane root = fxmlLoader.load();
             fearSlider.setId("custom");
             fearSlider.setPrefHeight(25.0);
@@ -352,11 +354,11 @@ public class GovermentMenu extends Application implements Initializable {
             fearSlider.setMax(5);
             fearSlider.setMin(-5);
             Label label = new Label("Set Fear Rate");
-            label.setFont(Font.font("Century",24));
+            label.setFont(Font.font("Century", 24));
             label.setLayoutX(43);
             label.setLayoutY(14);
             setFear = new Label("Tax Information");
-            setFear.setFont(Font.font("Century",18));
+            setFear.setFont(Font.font("Century", 18));
             setFear.setLayoutX(43);
             setFear.setLayoutY(50);
             ImageView left = new ImageView(String.valueOf(getClass().getResource("/images/0_0img22.png")));
@@ -375,7 +377,7 @@ public class GovermentMenu extends Application implements Initializable {
             select.setLayoutY(13);
             select.setLayoutX(555);
             Stage stage = new Stage();
-            EventHandler<MouseEvent> setTax = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> setTax = e -> {
                 fearNumber = (int) fearSlider.getValue();
                 gameMenuController.setFearRate(number);
                 stage.close();
@@ -405,8 +407,10 @@ public class GovermentMenu extends Application implements Initializable {
     Label numberOfPeople;
     Slider foodSlider = new Slider();
     Label foodInfo;
-    public void setFoodRate(ActionEvent event) {
-        try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
+
+    public void setFoodRate() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
             Pane root = fxmlLoader.load();
             foodSlider.setId("custom");
             foodSlider.setPrefHeight(25.0);
@@ -446,30 +450,30 @@ public class GovermentMenu extends Application implements Initializable {
             select.setLayoutY(13);
             select.setLayoutX(555);
             Stage stage = new Stage();
-            EventHandler<MouseEvent> setTax = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> setTax = e -> {
                 foodNumber = (int) slider.getValue();
                 gameMenuController.setFoodRate(number);
                 stage.close();
             };
             select.setOnMouseClicked(setTax);
             Label label = new Label("Set Food Rate");
-            label.setFont(Font.font("Century",24));
+            label.setFont(Font.font("Century", 24));
             label.setLayoutX(43);
             label.setLayoutY(14);
             foodCoins = new Label("food");
             foodCoins.setLayoutY(27);
             foodCoins.setLayoutX(430);
-            foodCoins.setFont(Font.font("Century",18));
+            foodCoins.setFont(Font.font("Century", 18));
             numberOfPeople = new Label("person");
             numberOfPeople.setLayoutY(27);
             numberOfPeople.setLayoutX(330);
-            numberOfPeople.setFont(Font.font("Century",18));
+            numberOfPeople.setFont(Font.font("Century", 18));
             foodInfo = new Label("Tax Information");
-            foodInfo.setFont(Font.font("Century",18));
+            foodInfo.setFont(Font.font("Century", 18));
             foodInfo.setLayoutX(150);
             foodInfo.setLayoutY(120);
             Label equal = new Label("=");
-            equal.setFont(Font.font("Century",18));
+            equal.setFont(Font.font("Century", 18));
             equal.setLayoutY(12);
             root.getChildren().add(right);
             root.getChildren().add(left);
@@ -495,13 +499,16 @@ public class GovermentMenu extends Application implements Initializable {
             System.out.println(e);
         }
     }
+
     Slider slider = new Slider();
     Label coins;
     Label people;
     Label taxInfo;
-    public void setTaxRate(ActionEvent event) {
+
+    public void setTaxRate() {
         System.out.println(mainMenuController.getUsername());
-        try{   FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/GameInformation.fxml"));
             Pane root = fxmlLoader.load();
             //slider = new Slider();
             slider.setId("custom");
@@ -514,17 +521,17 @@ public class GovermentMenu extends Application implements Initializable {
             coins = new Label("coin");
             coins.setLayoutY(27);
             coins.setLayoutX(430);
-            coins.setFont(Font.font("Century",18));
+            coins.setFont(Font.font("Century", 18));
             people = new Label("person");
             people.setLayoutY(27);
             people.setLayoutX(350);
-            people.setFont(Font.font("Century",18));
+            people.setFont(Font.font("Century", 18));
             Label label = new Label("Set Tax Rate");
-            label.setFont(Font.font("Century",24));
+            label.setFont(Font.font("Century", 24));
             label.setLayoutX(43);
             label.setLayoutY(14);
             taxInfo = new Label("Tax Information");
-            taxInfo.setFont(Font.font("Century",18));
+            taxInfo.setFont(Font.font("Century", 18));
             taxInfo.setLayoutX(150);
             taxInfo.setLayoutY(120);
             ImageView tax = new ImageView(String.valueOf(getClass().getResource("/images/Untitled.png")));
@@ -538,7 +545,7 @@ public class GovermentMenu extends Application implements Initializable {
             select.setLayoutY(13);
             select.setLayoutX(555);
             Stage stage = new Stage();
-            EventHandler<MouseEvent> setTax = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> setTax = e -> {
                 number = (int) slider.getValue();
                 gameMenuController.setTaxRate(number);
                 stage.close();
@@ -593,72 +600,63 @@ public class GovermentMenu extends Application implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        slider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                int number1 = (int) slider.getValue();
-                System.out.println(gameMenuController.showTaxRate(number1));
-                String[] splitString = gameMenuController.showTaxRate(number1).split(">");
-                coins.setText(splitString[0]);
-                people.setText(splitString[1]);
-                taxInfo.setText(splitString[2]);
-            }
+        slider.valueProperty().addListener((observableValue, number, t1) -> {
+            int number1 = (int) slider.getValue();
+            System.out.println(gameMenuController.showTaxRate(number1));
+            String[] splitString = gameMenuController.showTaxRate(number1).split(">");
+            coins.setText(splitString[0]);
+            people.setText(splitString[1]);
+            taxInfo.setText(splitString[2]);
         });
 
-        foodSlider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                int number1 = (int) foodSlider.getValue();
-                System.out.println(gameMenuController.showFoodRate(number1));
-                String[] splitString = gameMenuController.showFoodRate(number1).split("-");
-                foodCoins.setText(splitString[0]);
-                numberOfPeople.setText("1");
-                foodInfo.setText(splitString[1]);
-            }
+        foodSlider.valueProperty().addListener((observableValue, number, t1) -> {
+            int number1 = (int) foodSlider.getValue();
+            System.out.println(gameMenuController.showFoodRate(number1));
+            String[] splitString = gameMenuController.showFoodRate(number1).split("-");
+            foodCoins.setText(splitString[0]);
+            numberOfPeople.setText("1");
+            foodInfo.setText(splitString[1]);
         });
 
-        fearSlider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                int number1 = (int) fearSlider.getValue();
-                System.out.println("n");
-                setFear.setText("Set On " + number1);
-            }
+        fearSlider.valueProperty().addListener((observableValue, number, t1) -> {
+            int number1 = (int) fearSlider.getValue();
+            System.out.println("n");
+            setFear.setText("Set On " + number1);
         });
 
     }
 
-    public void productiveBuildings(MouseEvent event) {
+    public void productiveBuildings() {
 
 
     }
 
-    public void cityBuildings(MouseEvent event) {
+    public void cityBuildings() {
     }
 
-    public void warBuildings(MouseEvent event) {
+    public void warBuildings() {
     }
 
     @FXML
-    public void initialize(){
-        popularity.textProperty().addListener((observable , oldText , newText)->{
-                    if(gameMenuController.showPopularity()<=100 && gameMenuController.showPopularity()>=90)
+    public void initialize() {
+        popularity.textProperty().addListener((observable, oldText, newText) -> {
+                    if (gameMenuController.showPopularity() <= 100 && gameMenuController.showPopularity() >= 90)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy1.png"))));
-                    else if(gameMenuController.showPopularity()<90 && gameMenuController.showPopularity()>=80)
+                    else if (gameMenuController.showPopularity() < 90 && gameMenuController.showPopularity() >= 80)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy2.png"))));
-                    else if(gameMenuController.showPopularity()<80 && gameMenuController.showPopularity()>=70)
+                    else if (gameMenuController.showPopularity() < 80 && gameMenuController.showPopularity() >= 70)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy3.png"))));
-                    else if(gameMenuController.showPopularity()<70 && gameMenuController.showPopularity()>=60)
+                    else if (gameMenuController.showPopularity() < 70 && gameMenuController.showPopularity() >= 60)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/happy4.png"))));
-                    else if(gameMenuController.showPopularity()<60 && gameMenuController.showPopularity()>=50)
+                    else if (gameMenuController.showPopularity() < 60 && gameMenuController.showPopularity() >= 50)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/normal.png"))));
-                    else if(gameMenuController.showPopularity()<50 && gameMenuController.showPopularity()>=40)
+                    else if (gameMenuController.showPopularity() < 50 && gameMenuController.showPopularity() >= 40)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad1.png"))));
-                    else if(gameMenuController.showPopularity()<40 && gameMenuController.showPopularity()>=30)
+                    else if (gameMenuController.showPopularity() < 40 && gameMenuController.showPopularity() >= 30)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad2.png"))));
-                    else if(gameMenuController.showPopularity()<30 && gameMenuController.showPopularity()>=20)
+                    else if (gameMenuController.showPopularity() < 30 && gameMenuController.showPopularity() >= 20)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad3.png"))));
-                    else if(gameMenuController.showPopularity()<20 && gameMenuController.showPopularity()>=0)
+                    else if (gameMenuController.showPopularity() < 20 && gameMenuController.showPopularity() >= 0)
                         face.setImage(new Image(String.valueOf(getClass().getResource("/images/face/sad4.png"))));
                 }
 
@@ -686,42 +684,46 @@ public class GovermentMenu extends Application implements Initializable {
             Label taxRateLable = new Label(String.valueOf(number));
             taxRateLable.setLayoutY(48);
             taxRateLable.setLayoutX(288);
-            taxRateLable.setFont(Font.font("System" , 18));
-            taxRateLable.setStyle("Bold");
+            taxRateLable.setFont(Font.font("System", 18));
+            taxRateLable.setStyle("Bold:Bold");
             Label foodRateLable = new Label(String.valueOf(foodNumber));
             foodRateLable.setLayoutX(288);
             foodRateLable.setLayoutY(85);
-            foodRateLable.setFont(Font.font("System" , 18));
-            foodRateLable.setStyle("Bold");
+            foodRateLable.setFont(Font.font("System", 18));
+            foodRateLable.setStyle("Bold:Bold");
             Label fearRateLable = new Label(String.valueOf(fearNumber));
             fearRateLable.setLayoutX(288);
             fearRateLable.setLayoutY(126);
-            fearRateLable.setFont(Font.font("System" , 18));
-            fearRateLable.setStyle("Bold");
+            fearRateLable.setFont(Font.font("System", 18));
+            fearRateLable.setStyle("Bold:Bold");
             System.out.println(gameMenuController.getTaxRate() + number);
-            switch (number){
-                case -3,-2,-1 : left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
+            switch (number) {
+                case -3, -2, -1:
+                    left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
                     taxRateLable.setStyle(bad);
                     break;
-                case 0,1,2:left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
+                case 0, 1, 2:
+                    left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
                     taxRateLable.setStyle(normal);
                     break;
-                case 3,4: left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
+                case 3, 4:
+                    left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
                     left.prefHeight(21);
                     taxRateLable.setStyle(normal);
                     break;
-                case 5,6: left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
+                case 5, 6:
+                    left = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
                     left.setLayoutX(339);
                     left.setLayoutY(48);
                     left.prefWidth(32);
@@ -737,29 +739,33 @@ public class GovermentMenu extends Application implements Initializable {
                     taxRateLable.setStyle(good);
             }
             ImageView foodRate;
-            switch (foodNumber){
-                case -2 : foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
+            switch (foodNumber) {
+                case -2:
+                    foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
                     foodRateLable.setStyle(bad);
                     break;
-                case -1:foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
+                case -1:
+                    foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
                     foodRateLable.setStyle(normal);
                     break;
-                case 0:foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
+                case 0:
+                    foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
                     foodRate.prefHeight(21);
                     foodRateLable.setStyle(normal);
                     break;
-                case 1: foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
+                case 1:
+                    foodRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
                     foodRate.setLayoutX(339);
                     foodRate.setLayoutY(88);
                     foodRate.prefWidth(32);
@@ -776,8 +782,9 @@ public class GovermentMenu extends Application implements Initializable {
             }
             ImageView fearRate;
             System.out.println(fearNumber);
-            switch (fearNumber){
-                case -5,-4,-3 : fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
+            switch (fearNumber) {
+                case -5, -4, -3:
+                    fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/saddest.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
@@ -786,21 +793,24 @@ public class GovermentMenu extends Application implements Initializable {
                     root.getChildren().add(fearRate);
                     fearRateLable.setStyle(bad);
                     break;
-                case -2,-1:fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
+                case -2, -1:
+                    fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/sad.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
                     fearRateLable.setStyle(normal);
                     break;
-                case 0,1:fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
+                case 0, 1:
+                    fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/normal.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);
                     fearRate.prefHeight(21);
                     fearRateLable.setStyle(normal);
                     break;
-                case 2,3: fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
+                case 2, 3:
+                    fearRate = new ImageView(String.valueOf(getClass().getResource("/images/popularity/happy.png")));
                     fearRate.setLayoutX(339);
                     fearRate.setLayoutY(48);
                     fearRate.prefWidth(32);

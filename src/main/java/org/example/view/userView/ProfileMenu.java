@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.view.userView;
 
 
@@ -27,7 +26,6 @@ import org.example.controller.userControllers.ProfileMenuController;
 import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
 import org.example.view.ScoreBoard;
-import org.example.view.enums.outputs.ProfileMenuOutput;
 import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.io.File;
@@ -49,7 +47,7 @@ public class ProfileMenu extends Application {
     private boolean captchaCheck = false;
     Styles styles = new Styles();
     public Label errorPassword = new Label();
-    private ProfileMenuController profileMenuController = new ProfileMenuController();
+    private final ProfileMenuController profileMenuController = new ProfileMenuController();
     Label slogan = new Label(MainMenuController.getCurrentUser().getSlogan());
     Image background = new Image(getClass().getResource("/Images/04.jpg").toString());
     Image profileDBackground = new Image(getClass().getResource("/Images/02.jpg").toString());
@@ -75,7 +73,7 @@ public class ProfileMenu extends Application {
         pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
-        //  stage.setResizable(false);
+        stage.setResizable(false);
         stage.show();
 
     }
@@ -135,7 +133,7 @@ public class ProfileMenu extends Application {
     }
 
 
-    public void changeEmail(MouseEvent mouseEvent) {
+    public void changeEmail() {
 
         TextInputDialog sloganInput = new TextInputDialog();
         sloganInput.setHeaderText("new email");
@@ -168,7 +166,7 @@ public class ProfileMenu extends Application {
         }
     }
 
-    public void changeUsername(MouseEvent mouseEvent) {
+    public void changeUsername() {
 
         newUsername.setTitle("new username");
         newUsername.setContentText("please enter your new username");
@@ -233,7 +231,7 @@ public class ProfileMenu extends Application {
     }
 
 
-    public void changeNickname(MouseEvent mouseEvent) {
+    public void changeNickname() {
 
         TextInputDialog nicknameInput = new TextInputDialog();
         nicknameInput.setHeaderText("new nickname");
@@ -311,7 +309,7 @@ public class ProfileMenu extends Application {
     }
 
 
-    public void changePassword(MouseEvent mouseEvent) throws Exception {
+    public void changePassword() {
         Pane pane = new Pane();
         newPassword.setId("password");
         PasswordField oldPassword = new PasswordField();
@@ -420,19 +418,19 @@ public class ProfileMenu extends Application {
 
     }
 
-    public void chooseAvatar(MouseEvent mouseEvent) throws Exception {
+    public void chooseAvatar() throws Exception {
         Stage avatarStage = new Stage();
         new ChooseAvatar().start(avatarStage);
     }
 
-    public void removeSlogan(MouseEvent mouseEvent) {
+    public void removeSlogan() {
         profileMenuController.removeSlogan();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("remove slogan");
         alert.setContentText("your slogan removed successfully");
     }
 
-    public void changeSlogan(MouseEvent mouseEvent) {
+    public void changeSlogan() {
         TextInputDialog sloganInput = new TextInputDialog();
         sloganInput.setHeaderText("new slogan");
         sloganInput.setContentText("enter new slogan");
@@ -489,11 +487,11 @@ public class ProfileMenu extends Application {
     }
 
 
-    public void showScoreboard(MouseEvent mouseEvent) {
+    public void showScoreboard() {
         new ScoreBoard().start(new Stage());
     }
 
-    public void uploadAvatar(MouseEvent mouseEvent) {
+    public void uploadAvatar() {
         FileChooser fc = new FileChooser();
         fc.setTitle("please choose an image");
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("*.png", "*.jpg", "*.gif");
@@ -505,11 +503,11 @@ public class ProfileMenu extends Application {
         }
     }
 
-    public void market(MouseEvent mouseEvent) throws Exception {
+    public void market() throws Exception {
         new Market().start(new Stage());
     }
 
-    public void exit(MouseEvent mouseEvent) throws Exception {
+    public void exit() throws Exception {
         StartingMenu.stage.close();
         new MainMenu().start(new Stage());
     }

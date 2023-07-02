@@ -11,15 +11,12 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.MapValueFactory;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 
 import java.util.HashMap;
@@ -27,7 +24,7 @@ import java.util.Map;
 
 public class ScoreBoard extends Application {
     public static final String Column1MapKey = "rank";
-    public static final String Column2MapKey ="Name";
+    public static final String Column2MapKey = "Name";
     public static final String Column3MapKey = "HighScore";
 
 
@@ -41,31 +38,22 @@ public class ScoreBoard extends Application {
         stage.setTitle("scoreBoard");
         stage.setWidth(350);
         stage.setHeight(500);
-
         final Label label = new Label("ScoreBoard");
         label.setFont(new Font("Arial", 20));
-
         TableColumn<Map, String> firstDataColumn = new TableColumn<>("rank");
         TableColumn<Map, String> secondDataColumn = new TableColumn<>("name");
-        TableColumn<Map , String> thirdDataColumn = new TableColumn<>("highScore");
-        ;
-
-        firstDataColumn.setCellValueFactory(new MapValueFactory(Column1MapKey));
+        TableColumn<Map, String> thirdDataColumn = new TableColumn<>("highScore");
+        firstDataColumn.setCellValueFactory(new MapValueFactory<>(Column1MapKey));
         firstDataColumn.setMinWidth(30);
-        secondDataColumn.setCellValueFactory(new MapValueFactory(Column2MapKey));
+        secondDataColumn.setCellValueFactory(new MapValueFactory<>(Column2MapKey));
         secondDataColumn.setMinWidth(100);
         thirdDataColumn.setCellValueFactory(new MapValueFactory<>(Column3MapKey));
         thirdDataColumn.setMinWidth(100);
-
-
-
-        javafx.scene.control.TableView tableView = new javafx.scene.control.TableView<>(generateDataInMap());
-
+        TableView<Map> tableView = new javafx.scene.control.TableView<>(generateDataInMap());
         tableView.setEditable(true);
         tableView.getSelectionModel().setCellSelectionEnabled(true);
-        tableView.getColumns().setAll(firstDataColumn, secondDataColumn , thirdDataColumn);
+        tableView.getColumns().setAll(firstDataColumn, secondDataColumn, thirdDataColumn);
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
         Callback<TableColumn<Map, String>, TableCell<Map, String>>
                 cellFactoryForMap = (TableColumn<Map, String> p) ->
                 new TextFieldTableCell(new StringConverter() {
@@ -73,6 +61,7 @@ public class ScoreBoard extends Application {
                     public String toString(Object t) {
                         return t.toString();
                     }
+
                     @Override
                     public Object fromString(String string) {
                         return string;
@@ -80,17 +69,12 @@ public class ScoreBoard extends Application {
                 });
         firstDataColumn.setCellFactory(cellFactoryForMap);
         secondDataColumn.setCellFactory(cellFactoryForMap);
-
         final VBox vbox = new VBox();
-
         vbox.setSpacing(1);
         vbox.setPadding(new Insets(10, 0, 0, 10));
         vbox.getChildren().addAll(label, tableView);
-
         ((Group) scene.getRoot()).getChildren().addAll(vbox);
-
         stage.setScene(scene);
-
         stage.show();
     }
 
@@ -99,15 +83,12 @@ public class ScoreBoard extends Application {
         ObservableList<Map> allData = FXCollections.observableArrayList();
         for (int i = 0; i < max; i++) {
             Map<String, String> dataRow = new HashMap<>();
-            String rank = String.valueOf(i+1);
+            String rank = String.valueOf(i + 1);
             String Name = GameDataBase.getAllUsers().get(i).getUsername();
             String value2 = String.valueOf(GameDataBase.getAllUsers().get(i).getHighScore());
-
-            dataRow.put(Column1MapKey , rank);
+            dataRow.put(Column1MapKey, rank);
             dataRow.put(Column2MapKey, Name);
             dataRow.put(Column3MapKey, value2);
-
-
             allData.add(dataRow);
         }
         return allData;

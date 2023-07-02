@@ -26,7 +26,6 @@ public class SetRate extends Application {
         Scene scene = new Scene(pane);
         scene.getStylesheets().add(getClass().getResource("/Css/setRateOptions.css").toExternalForm());
         stage.setScene(scene);
-        //stage.setFullScreen(true);
         stage.show();
     }
 

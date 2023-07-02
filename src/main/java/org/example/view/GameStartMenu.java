@@ -1,4 +1,3 @@
-//this class is completed!
 package org.example.view;
 
 import org.example.InputScanner;
@@ -11,18 +10,18 @@ import org.example.view.enums.outputs.GameStartMenuOutput;
 
 import java.util.regex.Matcher;
 
-public class GameStartMenu{
+public class GameStartMenu {
     private final StartingGameMenuController startingGameMenuController;
+
     public GameStartMenu(LoginMenuController controller) {
         startingGameMenuController = new StartingGameMenuController(controller);
     }
 
     public GameStartMenuOutput addPlayer(String owner, User player) {
-
         String playerToBeAdded = player.getUsername();
-        if (GameInformation.checkPlayerExist(playerToBeAdded)){
+        if (GameInformation.checkPlayerExist(playerToBeAdded)) {
             if (!GameInformation.getAllPlayers().contains(playerToBeAdded)) {
-                return startingGameMenuController.addUser(owner,playerToBeAdded);
+                return startingGameMenuController.addUser(owner, playerToBeAdded);
             }
             return GameStartMenuOutput.PLAYER_IN_THE_GAME;
         }
@@ -35,11 +34,11 @@ public class GameStartMenu{
             while (true) {
                 System.out.println("select your map with this command:\nmap select -a <area> -t <type>\n(area most be 200 or 400,type most be 1 or 2!)");
                 String input = InputScanner.getScanner().nextLine();
-                if ((matcher = GameStartMenuEnum.getMatcher(input,GameStartMenuEnum.SELECT_MAP))!=null) {
+                if ((matcher = GameStartMenuEnum.getMatcher(input, GameStartMenuEnum.SELECT_MAP)) != null) {
                     if (checkSelectMapInputs(matcher)) {
                         int mapSize = Integer.parseInt(matcher.group("area"));
                         int mapNumber = Integer.parseInt(matcher.group("type"));
-                        System.out.println(startingGameMenuController.newGame(mapSize,mapNumber).getOutput());
+                        System.out.println(startingGameMenuController.newGame(mapSize, mapNumber).getOutput());
                         new MapChangesEnvironment().run();
                         return;
                     } else {
@@ -56,7 +55,7 @@ public class GameStartMenu{
     }
 
     private boolean checkSelectMapInputs(Matcher matcher) {
-        if (matcher.group("area").equals("200")||matcher.group("area").equals("400")) {
+        if (matcher.group("area").equals("200") || matcher.group("area").equals("400")) {
             return matcher.group("type").equals("1") || matcher.group("type").equals("2");
         }
         return false;

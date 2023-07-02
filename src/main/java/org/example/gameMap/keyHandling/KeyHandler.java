@@ -1,10 +1,9 @@
 package org.example.gameMap.keyHandling;
 
-import javafx.stage.Stage;
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
 import org.example.view.TradeMenu;
-import org.example.view.userView.GovernmentMenu;
+import org.example.view.userView.GovermentMenu;
 import org.example.view.userView.StartingMenu;
 
 import java.awt.event.KeyEvent;
@@ -72,13 +71,13 @@ public class KeyHandler implements KeyListener {
             else
                 gamePanel.setGameState(GameState.statusState);
         }
-//        if (keyCode == KeyEvent.VK_G) {
-//            try {
-//                new GovernmentMenu().start(StartingMenu.stage);
-//            } catch (Exception ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        }
+        if (keyCode == KeyEvent.VK_G) {
+            try {
+                new GovermentMenu().start(StartingMenu.stage);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
         if (keyCode == KeyEvent.VK_I) {
             if (gamePanel.getGameState() == GameState.inventoryMenu)
                 gamePanel.setGameState(GameState.playState);

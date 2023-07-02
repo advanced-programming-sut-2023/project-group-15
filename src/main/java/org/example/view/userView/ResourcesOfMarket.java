@@ -16,10 +16,10 @@ import java.util.HashMap;
 
 public class ResourcesOfMarket extends Application {
     public ImageView image;
-    private String name ;
+    private String name;
     private static Stage stage;
     private final MarketController marketController = new MarketController();
-   // public Market market = new Market();
+
     @Override
     public void start(Stage stage) throws Exception {
         HashMap<String, Integer> number = new HashMap<>(marketController.show1());
@@ -37,8 +37,6 @@ public class ResourcesOfMarket extends Application {
         Button buyItem = new Button("sell   " + sellCoin.get(marketController.getName()));
 
 
-
-
         sellItem.setLayoutX(300.0);
         sellItem.setLayoutY(115.0);
         buyItem.setLayoutX(300.0);
@@ -47,8 +45,7 @@ public class ResourcesOfMarket extends Application {
         sellItem.prefHeight(35.0);
         buyItem.prefWidth(156.0);
         buyItem.prefHeight(35.0);
-        //System.out.println(market.name);
-        numberOfProduct.setText(marketController.getName().toString());
+        numberOfProduct.setText(marketController.getName());
         Pane pane = FXMLLoader.load(url);
         pane.getChildren().add(sellItem);
         pane.getChildren().add(buyItem);

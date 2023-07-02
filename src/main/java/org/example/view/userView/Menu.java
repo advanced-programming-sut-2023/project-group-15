@@ -13,32 +13,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import org.example.controller.GameMenuController;
 import org.example.controller.MarketController;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class Menu extends Application implements Initializable {
 
         private static Stage stage;
-        public Button button1;
         public Pane parentFirst;
         @FXML
         private Button button;
@@ -46,7 +35,7 @@ public class Menu extends Application implements Initializable {
         Pane parent;
         MarketController marketController = new MarketController();
         @FXML
-        public void showMarket(MouseEvent mouseEvent) {
+        public void showMarket() {
                 try {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Market.fxml"));
                         Image image2 = new Image((getClass().getResource("/images/0_0img26.png").toString()));
@@ -54,7 +43,7 @@ public class Menu extends Application implements Initializable {
                         imageView.setLayoutX(398.0);
                         Pane root = fxmlLoader.load();
                         Stage stage = new Stage();
-                        EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
+                        EventHandler<MouseEvent> backToGame = e -> {
                                 stage.close();
                         };
                         imageView.setOnMouseClicked(backToGame);
@@ -90,16 +79,14 @@ public class Menu extends Application implements Initializable {
                 Pane pane = FXMLLoader.load(url);
                 Scene scene = new Scene(pane);
                 stage.setScene(scene);
-                //stage.setFullScreen(true);
                 stage.show();
         }
 
         @FXML
-        public void showGovermentMenu(MouseEvent mouseEvent) {
+        public void showGovermentMenu() {
                 try {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Goverment.fxml"));
-                        Parent root = (Parent) fxmlLoader.load();
-                        System.out.println("kkkkkkkkkk");
+                        Parent root = fxmlLoader.load();
                         Stage stage = new Stage();
                         stage.setScene(new Scene(root));
                         stage.show();
@@ -108,7 +95,7 @@ public class Menu extends Application implements Initializable {
                 }
         }
 
-        public void clicked(ActionEvent event) throws Exception {
+        public void clicked() throws Exception {
                 ++number;
                 System.out.println(number);
                 if(number%2 == 0){
@@ -372,7 +359,7 @@ public class Menu extends Application implements Initializable {
                 stable.setFitWidth(36);
                 stable.setFitHeight(33);
 
-                EventHandler<MouseEvent> garden = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> garden = e -> {
                         parent.getChildren().add(appleGarden);
                         parent.getChildren().add(beerGarden);
                         parent.getChildren().add(barrak);
@@ -415,7 +402,7 @@ public class Menu extends Application implements Initializable {
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> houseMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> houseMenu = e -> {
                         parent.getChildren().add(cathedral);
                         parent.getChildren().add(mercerany);
                         parent.getChildren().add(church);
@@ -458,7 +445,7 @@ public class Menu extends Application implements Initializable {
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> defendMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> defendMenu = e -> {
                         parent.getChildren().add(bigGate);
                         parent.getChildren().add(smallGate);
                         parent.getChildren().add(deffendTurret);
@@ -501,7 +488,7 @@ public class Menu extends Application implements Initializable {
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> productiveMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> productiveMenu = e -> {
                         parent.getChildren().add(oilSmelter);
                         parent.getChildren().add(woodCutter);
                         parent.getChildren().add(bakery);
@@ -543,8 +530,7 @@ public class Menu extends Application implements Initializable {
                         parent.getChildren().remove(quarry);
                         parent.getChildren().remove(stable);
                 };
-
-                EventHandler<MouseEvent> warMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> warMenu = e -> {
                         parent.getChildren().add(armourer);
                         parent.getChildren().add(armoury);
                         parent.getChildren().add(dogs);
@@ -586,9 +572,7 @@ public class Menu extends Application implements Initializable {
                         parent.getChildren().remove(stable);
                 };
 
-
-
-                EventHandler<MouseEvent> otherMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> otherMenu = e -> {
                         parent.getChildren().add(drawBridge);
                         parent.getChildren().add(fletcher);
                         parent.getChildren().add(oxTether);
@@ -632,15 +616,12 @@ public class Menu extends Application implements Initializable {
                         parent.getChildren().remove(market);
 
                 };
-
-
                 showOthers.setOnMouseClicked(otherMenu);
                 showWar.setOnMouseClicked(warMenu);
                 showProductive.setOnMouseClicked(productiveMenu);
                 showDefend.setOnMouseClicked(defendMenu);
                 showCity.setOnMouseClicked(houseMenu);
                 showGardens.setOnMouseClicked(garden);
-
                 parent.setLayoutX(0);
                 parent.setLayoutY(217);
                 parentFirst.getChildren().add(parent);

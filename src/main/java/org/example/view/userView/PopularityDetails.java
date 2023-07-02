@@ -22,7 +22,7 @@ public class PopularityDetails extends Application {
         stage.show();
     }
 
-    public void closePopularity(MouseEvent event) {
+    public void closePopularity() {
         stage.close();
     }
 }

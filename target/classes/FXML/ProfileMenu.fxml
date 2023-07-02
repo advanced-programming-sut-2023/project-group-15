@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="349.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.userView.ProfileMenu">
+   <children>
+      <StackPane prefHeight="349.0" prefWidth="600.0" />
+      <Pane prefHeight="406.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="200.0" prefHeight="416.0" prefWidth="149.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#profileDisplay" prefHeight="30.0" prefWidth="150.0" text="Profile display" />
+                  <Button mnemonicParsing="false" onMouseClicked="#changeUsername" prefHeight="30.0" prefWidth="150.0" text="Change username" />
+                  <Button mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="30.0" prefWidth="150.0" text="Change password" />
+                  <Button mnemonicParsing="false" onMouseClicked="#chooseAvatar" prefHeight="30.0" prefWidth="150.0" text="Choose new avatar" />
+                  <Button mnemonicParsing="false" onMouseClicked="#changeEmail" prefHeight="30.0" prefWidth="150.0" text="Change email" />
+                  <Button mnemonicParsing="false" onMouseClicked="#changeNickname" prefHeight="30.0" prefWidth="150.0" text="Change nickname" />
+                  <Button mnemonicParsing="false" onMouseClicked="#showScoreboard" prefHeight="30.0" prefWidth="150.0" text="Show scoreboard" />
+                  <Button maxHeight="30.0" maxWidth="150.0" mnemonicParsing="false" onMouseClicked="#uploadAvatar" text="Upload avatar" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </padding>
+            </VBox>
+            <Button contentDisplay="CENTER" layoutX="430.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#changeSlogan" prefHeight="30.0" prefWidth="150.0" text="Change slogan" />
+            <Button alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="430.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#removeSlogan" prefHeight="30.0" prefWidth="150.0" text="Remove slogan" />
+            <Button layoutX="479.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#market" text="market" />
+            <Button layoutX="45.0" layoutY="367.0" mnemonicParsing="false" text="exit" onMouseClicked="#exit" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

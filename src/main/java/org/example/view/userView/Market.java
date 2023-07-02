@@ -55,41 +55,41 @@ public class Market extends Application implements Initializable {
     public static String name;
 
 
-
     public
     String successfulMessage = String.format("-fx-text-fill: Black;");
-    @FXML
-    public void showResource(MouseEvent mouseEvent) throws FileNotFoundException {
 
-        if(apple.isPressed())
+    @FXML
+    public void showResource() {
+
+        if (apple.isPressed())
             setName("apple");
-        else if(archer.isPressed())
+        else if (archer.isPressed())
             setName("archer");
-        else if(bread.isPressed())
+        else if (bread.isPressed())
             setName("bread");
-        else if(hop.isPressed())
+        else if (hop.isPressed())
             setName("hop");
-        else if(cheese.isPressed())
+        else if (cheese.isPressed())
             setName("cheese");
-        else if(pitch.isPressed())
+        else if (pitch.isPressed())
             setName("pitch");
-        else if(sword.isPressed())
+        else if (sword.isPressed())
             setName("sword");
-        else if(spear.isPressed())
+        else if (spear.isPressed())
             setName("spear");
-        else if(rock.isPressed())
+        else if (rock.isPressed())
             setName("rock");
-        else if(iron.isPressed())
+        else if (iron.isPressed())
             setName("iron");
-        else if(lather.isPressed())
+        else if (lather.isPressed())
             setName("lather");
-        else if(mace.isPressed())
+        else if (mace.isPressed())
             setName("mace");
-        else if(wheat.isPressed())
+        else if (wheat.isPressed())
             setName("wheat");
-        else if(vest.isPressed())
+        else if (vest.isPressed())
             setName("vest");
-        else if(wood.isPressed())
+        else if (wood.isPressed())
             setName("wood");
         else
             setName("meat");
@@ -109,17 +109,17 @@ public class Market extends Application implements Initializable {
             numberOfProduct.setLayoutX(230.0);
             numberOfProduct.setLayoutY(115.0);
             Text sellLable = new Text("sell      " + buyCoin.get(name));
-            sellLable.setFont(Font.font("Century",14));
+            sellLable.setFont(Font.font("Century", 14));
             sellLable.setLayoutX(330.0);
             sellLable.setLayoutY(85);
             Image button = new Image((getClass().getResource("/images1/0_0img47.png").toString()));
             ImageView sellItem = new ImageView(button);
             Text buyLable = new Text("buy        " + sellCoin.get(name));
-            buyLable.setFont(Font.font("Century",14));
+            buyLable.setFont(Font.font("Century", 14));
             buyLable.setLayoutX(330.0);
             buyLable.setLayoutY(130.0);
             ImageView buyItem = new ImageView(button);
-            String address = "/images1/"+name+".png";
+            String address = "/images1/" + name + ".png";
             Image image2 = new Image((getClass().getResource(address).toString()));
             ImageView imageView = new ImageView(image2);
             imageView.setLayoutX(220.0);
@@ -141,10 +141,10 @@ public class Market extends Application implements Initializable {
 
 
             Stage stage = new Stage();
-            EventHandler<MouseEvent> backToGame = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> backToGame = e -> {
                 stage.close();
             };
-            EventHandler<MouseEvent> sell = (EventHandler<MouseEvent>) e -> {
+            EventHandler<MouseEvent> sell = e -> {
                 switch (marketController.sell(name, 1)) {
                     case SUCCESSFUL_SELL:
                         System.out.println("successful");
@@ -171,9 +171,9 @@ public class Market extends Application implements Initializable {
                     sellError.hide();
             };
 
-            EventHandler<MouseEvent> buy = (EventHandler<MouseEvent>) e ->{
+            EventHandler<MouseEvent> buy = e -> {
 
-                switch (marketController.buy(name,1)) {
+                switch (marketController.buy(name, 1)) {
                     case SUCCESSFUL_BUY:
                         System.out.println("successful");
                         HashMap<String, Integer> newNumber = new HashMap<>(marketController.show1());
@@ -195,7 +195,7 @@ public class Market extends Application implements Initializable {
             buyItem.setOnMouseClicked(buy);
             sellItem.setOnMouseClicked(sell);
             numberOfProduct.setText(String.valueOf((number.get(name))));
-            numberOfProduct.setFont(Font.font("century",18));
+            numberOfProduct.setFont(Font.font("century", 18));
             sellItem.setLayoutX(300.0);
             sellItem.setLayoutY(65.0);
             buyItem.setLayoutX(300.0);
@@ -212,7 +212,7 @@ public class Market extends Application implements Initializable {
             stage.setTitle("Resource");
             stage.setScene(new Scene(pane));
             stage.show();
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
 
             Image image2 = new Image((getClass().getResource("/images1/0_0img47.png").toString()));
@@ -248,11 +248,11 @@ public class Market extends Application implements Initializable {
         Market.name = name;
     }
 
-    public void backToGame(MouseEvent event) {
+    public void backToGame() {
         stage.close();
     }
 
-    public void startTrade(MouseEvent mouseEvent) throws Exception {
+    public void startTrade() throws Exception {
         new TradeMenu().start(new Stage());
     }
 }

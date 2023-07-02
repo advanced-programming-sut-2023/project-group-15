@@ -14,7 +14,7 @@ import org.example.view.userView.MainMenu;
 import org.example.view.userView.StartingMenu;
 
 public class NewGameSettings extends Application {
-    private StartingGameMenuController startingGameMenuController = new StartingGameMenuController(MainMenu.getUsername());
+    private final StartingGameMenuController startingGameMenuController = new StartingGameMenuController(MainMenu.getUsername());
     @FXML
     private CheckBox templateOne;
     @FXML
@@ -27,6 +27,7 @@ public class NewGameSettings extends Application {
     public static void main(String[] args) {
         launch();
     }
+
     @Override
     public void start(Stage stage) throws Exception {
         VBox vBox = FXMLLoader.load(getClass().getResource("/FXML/newGameSettings.fxml"));
@@ -35,7 +36,7 @@ public class NewGameSettings extends Application {
         stage.show();
     }
 
-    public void checkCheckBoxes(MouseEvent mouseEvent) {
+    public void checkCheckBoxes() {
         if (templateOne.isSelected() || templateTwo.isSelected()) {
             if (twoHundredCheckBox.isSelected() || fourHundredCheckBox.isSelected()) {
                 createNewGameCheck();
@@ -54,7 +55,7 @@ public class NewGameSettings extends Application {
     }
 
     private void createNewGameCheck() {
-        int dimension = 0,template = 0;
+        int dimension = 0, template = 0;
         if (twoHundredCheckBox.isSelected()) {
             dimension = 200;
         } else if (fourHundredCheckBox.isSelected()) {
@@ -65,7 +66,7 @@ public class NewGameSettings extends Application {
         } else if (templateTwo.isSelected()) {
             template = 2;
         }
-        startingGameMenuController.newGame(dimension,template);
+        startingGameMenuController.newGame(dimension, template);
     }
 
     public void GoBack() {

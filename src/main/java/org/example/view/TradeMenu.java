@@ -5,15 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.TradingMenuController;
 import org.example.controller.userControllers.MainMenuController;
 import org.example.model.User;
-import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Trade;
-import org.example.view.enums.outputs.GameInformationOutput;
 
 import java.net.URL;
 
@@ -27,7 +23,8 @@ public class TradeMenu extends Application {
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
     TradingMenuController tradingMenuController = new TradingMenuController(currentUser.getUsername());
-    public void start(Stage stage) throws Exception{
+
+    public void start(Stage stage) throws Exception {
         URL url = TradeMenu.class.getResource("/FXML/TradingMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.setBackground(bGround);
@@ -36,12 +33,12 @@ public class TradeMenu extends Application {
         stage.show();
     }
 
-    public void newTrade(MouseEvent mouseEvent) throws Exception {
+    public void newTrade() throws Exception {
         new NewTrade().start(new Stage());
 
     }
 
-    public void showHistory(MouseEvent mouseEvent) {
+    public void showHistory() {
         TextArea textArea = new TextArea();
         textArea.setText(tradingMenuController.showTradeHistory());
         textArea.setEditable(false);
@@ -53,7 +50,7 @@ public class TradeMenu extends Application {
         stage.show();
     }
 
-    public void showTrade(MouseEvent mouseEvent) {
+    public void showTrade() {
         Alert alertResource = new Alert(Alert.AlertType.ERROR);
         alertResource.setContentText("not enough resources");
         Alert alertCoins = new Alert(Alert.AlertType.ERROR);
@@ -83,14 +80,14 @@ public class TradeMenu extends Application {
         accept.setOnAction(e ->
         {
             String output = tradingMenuController.findStore(Integer.parseInt(textField.getText()));
-                if(output.equals("resource"))
+            if (output.equals("resource"))
                 alertResource.showAndWait();
-                else if(output.equals("enough coin"))
-                    alertCoins.showAndWait();
-                    else if(output.equals("accepted"))
-                        alertAccept.showAndWait();
+            else if (output.equals("enough coin"))
+                alertCoins.showAndWait();
+            else if (output.equals("accepted"))
+                alertAccept.showAndWait();
         });
-        pane.getChildren().addAll(index , textArea , textField , accept);
+        pane.getChildren().addAll(index, textArea, textField, accept);
         Stage stage = new Stage();
         Scene scene = new Scene(pane);
         stage.setScene(scene);

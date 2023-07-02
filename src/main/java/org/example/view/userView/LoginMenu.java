@@ -1,31 +1,22 @@
-//this class is completed!
 package org.example.view.userView;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import org.example.InputScanner;
 import org.example.controller.*;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.MainMenuController;
-import org.example.controller.userControllers.SignupMenuController;
 import org.example.model.Styles;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
-import org.example.model.gameData.Government;
-import org.example.view.GameStartMenu;
-import org.example.view.enums.commands.LoginMenuEnum;
 import org.example.view.enums.outputs.LoginMenuOutput;
-import org.example.view.enums.outputs.SignupMenuOutput;
 
 import java.net.URL;
 import java.util.regex.Matcher;
@@ -57,7 +48,7 @@ public class LoginMenu extends StartingMenu {
     Styles styles = new Styles();
 
     @FXML
-    void changeMode(ActionEvent event){
+    void changeMode(){
         if(changeMode.isSelected()){
             passwordShow.setText(password.getText());
             passwordShow.setVisible(true);
@@ -141,7 +132,7 @@ public class LoginMenu extends StartingMenu {
            }
        }
    */
-    public void loginInCheck(String username , String password) throws Exception {
+    public void loginInCheck(String username , String password) {
         classify(username, password);
         LoginMenuOutput status = loginMenuController.loginUser();
         if (status.equals(LoginMenuOutput.LOGGED_IN_SUCCESSFULLY)) {
@@ -236,11 +227,11 @@ public class LoginMenu extends StartingMenu {
         // run();
     }
 
-    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
+    public void backToMainMenu() throws Exception {
         new StartingMenu().start(LoginMenu.stage);
     }
 
-    public void forgotPassword(MouseEvent mouseEvent) throws Exception{
+    public void forgotPassword() throws Exception{
         new ForgotPassword().start(LoginMenu.stage);
     }
     public void captchaShower()
@@ -287,7 +278,7 @@ public class LoginMenu extends StartingMenu {
     }
 
 
-    public void loginUser(MouseEvent mouseEvent) throws Exception {
+    public void loginUser() {
         if(password.getText().isBlank())
         {
             errorPassword.setStyle(styles.getErrorMessage());

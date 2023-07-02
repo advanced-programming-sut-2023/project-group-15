@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.view.NewTrade">
+    <children>
+        <ImageView fitHeight="152.0" fitWidth="599.0" layoutY="1.0" pickOnBounds="true">
+            <image>
+                <Image url="@../images1/0_0img6.png" />
+            </image>
+            <viewport>
+                <Rectangle2D />
+            </viewport>
+        </ImageView>
+        <Label layoutX="266.0" layoutY="17.0" text="Resources">
+            <font>
+                <Font name="Century" size="24.0" />
+            </font>
+        </Label>
+      <Label layoutX="21.0" layoutY="33.0" text="Message">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+
+
+      <Label layoutX="29.0" layoutY="69.0" text="Cost">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="102.0" text="number">
+         <font>
+            <Font name="Century" size="13.0" />
+         </font>
+      </Label>
+
+    </children>
+</Pane>

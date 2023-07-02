@@ -1,6 +1,5 @@
 package org.example.gameMap.objectSetter;
 
-import org.example.gameMap.GamePanel;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
