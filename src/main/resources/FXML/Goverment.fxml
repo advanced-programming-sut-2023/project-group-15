@@ -10,44 +10,15 @@
    <children>
       <ImageView fitHeight="126.0" fitWidth="571.0" layoutY="66.0" pickOnBounds="true">
          <image>
-            <Image url="@../images/0_0img0.png" />
+            <Image url="@../images1/0_0img0.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="31.0" fitWidth="27.0" layoutX="364.0" layoutY="86.0" onMouseClicked="#gameInformation" pickOnBounds="true">
          <image>
-            <Image url="@../images/0_0img25.png" />
+            <Image url="@../images1/0_0img25.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="productive" fitHeight="26.0" fitWidth="22.0" layoutX="14.0" layoutY="166.0" onMouseClicked="#productiveBuildings" pickOnBounds="true">
-         <image>
-            <Image url="@../images/productive.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="city" fitHeight="26.0" fitWidth="22.0" layoutX="43.0" layoutY="166.0" onMouseClicked="#cityBuildings" pickOnBounds="true">
-         <image>
-            <Image url="@../images/city.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="war" fitHeight="26.0" fitWidth="22.0" layoutX="71.0" layoutY="166.0" onMouseClicked="#warBuildings" pickOnBounds="true">
-         <image>
-            <Image url="@../images/war.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="96.0" layoutY="166.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/build.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="122.0" layoutY="166.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/castle.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="147.0" layoutY="166.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/0_0img24.png" />
-         </image>
-      </ImageView>
+
       <Label fx:id="popularity" layoutX="519.0" layoutY="117.0" text="100" textFill="#17bd0c">
          <font>
             <Font name="System Bold" size="12.0" />

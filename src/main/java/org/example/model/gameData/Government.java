@@ -1,3 +1,4 @@
+//this class is completed!
 package org.example.model.gameData;
 
 import org.example.model.MBC.InfantryUnit;
@@ -29,6 +30,7 @@ public class Government {
     private int fearRate;
     private int religion;
     private double coins;
+    private static int check= 0;
     private boolean storeBuilt;
     private final ArrayList<Building> builtBuildings;
     private final HashMap<String, Double> foods;
@@ -60,6 +62,8 @@ public class Government {
         setPrimitiveFoods();
         allGovernments.add(this);
         this.SOURCESTORE.put(Products.WOOD , 200);
+        System.out.println(check);
+        check ++ ;
     }
 
     public List<Trade> getTradeAcceptedReqList() {

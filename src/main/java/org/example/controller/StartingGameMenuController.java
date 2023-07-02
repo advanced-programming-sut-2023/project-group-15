@@ -7,6 +7,7 @@ import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
 import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Government;
+import org.example.view.GameStartMenu;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
 
@@ -36,10 +37,10 @@ public class StartingGameMenuController {
     }
 
     public GameStartMenuOutput addUser(String gameOwner, String playerToBeAdded) {
-        User owner = GameDataBase.getUserByUsername(gameOwner);
+        User owner = GameInformation.getCurrentPlayer();
         if (GameInformation.getAllPlayers().size() > 7) {
             return GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL;
-        } else if (GameInformation.isNewGameAccess()) {
+        } else if (!GameInformation.isNewGameAccess()) {
             return GameStartMenuOutput.GAME_IS_NOT_STARTED;
         } else if (owner.getUserNO() != 1)
             return GameStartMenuOutput.ADD_USER_FORBIDDEN;

@@ -347,7 +347,7 @@ public class UnitMenuController {
                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier2);
             this.government.addUnitWallTarget((UnitWallTarget) soldier2);
-            //new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
+            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
         }
     }
 
@@ -357,7 +357,7 @@ public class UnitMenuController {
                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING");
             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier1);
             this.government.addInfantryUnit((InfantryUnit) soldier1);
-           // new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
+            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
         }
     }
 
@@ -367,7 +367,7 @@ public class UnitMenuController {
                     unit.getUnitHp(), unit.getMaxMove(), unit.getName(), unit.getType(), "STANDING", unit.getThrowRange());
             GameInformation.getCurrentPlayer().getMap()[x][y].setSoldier(soldier);
             this.government.addLauncherUnit((LauncherUnit) soldier);
-            //new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
+            new GameMenuController(this.government.getOwner()).setFearRate(this.government.getFearRate());
         }
     }
 

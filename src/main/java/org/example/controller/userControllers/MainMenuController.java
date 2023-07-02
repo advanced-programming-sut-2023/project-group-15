@@ -3,9 +3,7 @@ package org.example.controller.userControllers;
 
 import org.example.controller.JsonController;
 import org.example.model.User;
-import org.example.model.enums.SecurityQuestion;
 import org.example.view.userView.LoginMenu;
-import org.example.view.userView.MainMenu;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -21,7 +19,7 @@ public class MainMenuController {
     private String password;
     private String nickname;
     private String slogan;
-    private String email;
+    private static String email;
     private String clipBoard;
     private String passRecoveryQuestion;
     private String passRecoveryAnswer;
@@ -100,7 +98,7 @@ public class MainMenuController {
         return slogan;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
@@ -128,8 +126,8 @@ public class MainMenuController {
         return currentUser;
     }
 
-    public void setCurrentUser(User user) {
-        currentUser = user;
+    public static void setCurrentUser(User currentUser) {
+        MainMenuController.currentUser = currentUser;
     }
 
     public void checkJsonDirectory()  {
@@ -139,7 +137,7 @@ public class MainMenuController {
             checkUsersFlag();
         } else {
             new File("d:/json").mkdirs();
-          //  new MainMenu().run();
+            //  new MainMenu().run();
         }
     }
 
@@ -166,7 +164,7 @@ public class MainMenuController {
                 }
                 jsonParser.next();
             }
-           // new MainMenu().run();
+            // new MainMenu().run();
         } catch (JSONException e) {
             System.out.println(e);
         } catch (IOException e) {

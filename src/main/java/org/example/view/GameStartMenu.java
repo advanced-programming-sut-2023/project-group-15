@@ -18,10 +18,10 @@ public class GameStartMenu{
     }
 
     public GameStartMenuOutput addPlayer(String owner, User player) {
+
         String playerToBeAdded = player.getUsername();
-        String output;
         if (GameInformation.checkPlayerExist(playerToBeAdded)){
-            if (!GameInformation.checkPlayerExist(playerToBeAdded)) {
+            if (!GameInformation.getAllPlayers().contains(playerToBeAdded)) {
                 return startingGameMenuController.addUser(owner,playerToBeAdded);
             }
             return GameStartMenuOutput.PLAYER_IN_THE_GAME;

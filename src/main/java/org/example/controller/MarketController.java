@@ -2,7 +2,9 @@
 package org.example.controller;
 
 import org.example.model.building.Marketplace;
+import org.example.model.building.Storage;
 import org.example.model.enums.Products;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Government;
 import org.example.view.enums.outputs.GameMenuOutput;
 import org.example.view.userView.Market;
@@ -11,12 +13,17 @@ import java.util.HashMap;
 
 public class MarketController {
     int number = 0 ;
-    public Government government = new Government("owner");
+    public Government government =null;
+
+
     public Marketplace market = new Marketplace("market",10,1,1, Products.ROCK,Products.WOOD,1,1,1);
-   /* public MarketController(String playerName) {
-        government = Government.findGovernmentWithUsername(playerName);
-    }*/
-    // return government.playerMarket().getNumber();
+
+    public MarketController() {
+       // this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
+        this.government = GameInformation.getCurrentPlayer().getGovernment();
+
+    }
+
     public HashMap<String, Integer> show1() {
         government.setCoins(150.0);
         ++number;
@@ -48,7 +55,20 @@ public class MarketController {
         if (government.getCoins() >= number * government.playerMarket().getBuyCoin(item)) {
             government.playerMarket().buyItemNumber(item, number);
             government.deCoin(number * government.playerMarket().getBuyCoin(item));
-            government.addFood(item, number);
+            Products toAdd = Products.getProductByName(item);
+            if(government.getSOURCESTORE().containsKey(toAdd)) {
+                int current = government.getSOURCESTORE().get(toAdd);
+                government.getSOURCESTORE().replace(toAdd, current + number);
+            }
+            if(government.getFOODSTORE().containsKey(toAdd)) {
+                int current = government.getSOURCESTORE().get(toAdd);
+                government.getFOODSTORE().replace(toAdd, current + number);
+            }
+            if(government.getARMOURY().containsKey(toAdd)) {
+                int current = government.getSOURCESTORE().get(toAdd);
+                government.getARMOURY().replace(toAdd, current + number);
+            }
+
             return GameMenuOutput.SUCCESSFUL_BUY;
         } else
             return GameMenuOutput.ERROR_BUY_ITEM;

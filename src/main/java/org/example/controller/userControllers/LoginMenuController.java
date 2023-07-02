@@ -3,20 +3,21 @@ package org.example.controller.userControllers;
 import org.example.model.User;
 import org.example.model.enums.SecurityQuestion;
 import org.example.model.gameData.GameDataBase;
+import org.example.model.gameData.GameInformation;
 import org.example.view.enums.outputs.LoginMenuOutput;
 
 
 public class LoginMenuController extends MainMenuController {
     private boolean stayLoggedInFlag = false;
 
-    public LoginMenuOutput loginUser(String password) {
-        System.out.println(this.getUsername()+password);
+    public LoginMenuOutput loginUser() {
         if (checkMatchUsername()) {
-            if (checkUsernameWithPassword(password)) {
+            if (checkUsernameWithPassword()) {
                 if (this.isStayLoggedInFlag()) {
                     GameDataBase.getUserByUsername(this.getUsername()).setStayLoggedIn(true);
                     ProfileMenuController.moveDataToFile();
                 }
+
                 return LoginMenuOutput.LOGGED_IN_SUCCESSFULLY;
             }
             return LoginMenuOutput.USER_AND_PASS_MATCH_ERROR;
@@ -32,10 +33,10 @@ public class LoginMenuController extends MainMenuController {
         return false;
     }
 
-    private boolean checkUsernameWithPassword(String password) {
+    private boolean checkUsernameWithPassword() {
         for (User user : GameDataBase.getAllUsers()) {
             if (user.getUsername().equals(this.getUsername())) {
-                if (user.getPassword().equals(password)) {
+                if (user.getPassword().equals(this.getPassword())) {
                     return true;
                 }
             }
@@ -86,3 +87,4 @@ public class LoginMenuController extends MainMenuController {
     }
 
 }
+
