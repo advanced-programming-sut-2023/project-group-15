@@ -161,11 +161,11 @@ public class TileManager {
 //                double xDiff = screenX - tileX;
 //                double yDiff = screenY - tileY;
 //                if (xDiff <= gamePanel.getTileSize() && xDiff >= 0 && yDiff <= gamePanel.getTileSize() && yDiff >= 0) {
-                    System.out.println("x");
-                    g2.setColor(Color.WHITE);
-                    g2.setStroke(new BasicStroke(3));
-                    g2.drawRoundRect((int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), 10, 10);
-                    isSelected = true;
+        System.out.println("x");
+        g2.setColor(Color.WHITE);
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect((int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), 10, 10);
+        isSelected = true;
 //                }
 //            }
 //        }

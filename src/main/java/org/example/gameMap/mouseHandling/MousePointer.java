@@ -107,7 +107,7 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
         if (isMouseClicked()) {
             int x = (int) worldX;
             int y = (int) worldY;
-            gamePanel.getTileManager().selectTile(x, y);
+//            gamePanel.getTileManager().selectTile(x, y);
         }
         graphics2D.drawImage(image, screenX+100, screenY+100, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
     }
@@ -126,7 +126,7 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
         while (true) {
             if (isMouseClicked())
                 break;
-            gamePanel.getTileManager().selectTile(x, y);
+//            gamePanel.getTileManager().selectTile(x, y);
         }
     }
     public Point startPoint;
@@ -138,7 +138,7 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
         System.out.println(e.getX()+"e"+e.getY());
         selectionX = e.getX();
         selectionY = e.getY();
-        gamePanel.getTileManager().selectTile((int) worldX, (int) worldY);
+//        gamePanel.getTileManager().selectTile((int) worldX, (int) worldY);
         mousePressed = true;
     }
 

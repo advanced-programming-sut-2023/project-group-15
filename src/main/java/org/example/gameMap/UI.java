@@ -1,5 +1,7 @@
 package org.example.gameMap;
 
+
+import org.example.gameMap.GamePanel;
 import org.example.gameMap.objectSetter.SuperObject;
 
 import javax.swing.*;

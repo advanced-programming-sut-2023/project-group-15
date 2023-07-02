@@ -51,4 +51,5 @@ public class AssetSetter {
     public SuperObject[] getAllObjects() {
         return allObjects;
     }
+
 }
