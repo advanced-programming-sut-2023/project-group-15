@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import org.example.controller.GameMenuController;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.MainMenuController;
 import org.example.gameMap.Main;
@@ -117,6 +118,7 @@ public class MainMenu extends Application {
         GameInformation.setNewGameAccess(true);
         GameInformation.getCurrentPlayer().setUserNO(1);
         GameInformation.getCurrentPlayer().setGovernment(new Government(GameInformation.getCurrentPlayer().getUsername()));
+        GovermentMenu.setGameMenuController(new GameMenuController(MainMenu.getUsername()));
 //        new Main().startingGame();
         try {
             new Main().startingGame();

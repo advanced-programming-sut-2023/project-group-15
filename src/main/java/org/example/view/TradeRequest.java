@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.example.model.enums.Products;
@@ -56,8 +55,6 @@ public class TradeRequest extends Application {
     public ImageView Cheese;
     public ImageView image;
     public Label reName = new Label();
-    Pane pane;
-    private static Stage stage;
     public static String name;
     private ArrayList<Products> products = new ArrayList<>();
 
@@ -85,7 +82,7 @@ public class TradeRequest extends Application {
         this.products.add(VEST);
     }
 
-    public void showResource(MouseEvent mouseEvent) {
+    public void showResource() {
 
         if (Apple.isPressed()) {
             setName("apple");
@@ -174,13 +171,13 @@ public class TradeRequest extends Application {
                     alert.showAndWait();
                 } else {
                     newTrade.tradingMenuController.sendTradeRequest(name, Integer.parseInt(number.getText()), message.getText()
-                            , Double.parseDouble(cost.getText()), newTrade.chosen);
+                            , Double.parseDouble(cost.getText()), NewTrade.chosen);
 
                 }
             });
             donate.setOnAction(e -> {
                         newTrade.tradingMenuController.sendTradeDonate(name, Integer.parseInt(number.getText()), message.getText(),
-                                Double.parseDouble(cost.getText()), newTrade.chosen);
+                                Double.parseDouble(cost.getText()), NewTrade.chosen);
                     }
             );
             Image back = new Image(getClass().getResource("/images1/0_0img22.png").toString());

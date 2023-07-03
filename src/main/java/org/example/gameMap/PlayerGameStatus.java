@@ -1,11 +1,12 @@
 package org.example.gameMap;
 
-import java.awt.*;
+import org.example.controller.GameMenuController;
+import org.example.model.gameData.Government;
 
 public class PlayerGameStatus {
     private final GamePanel gamePanel;
     private int level;
-    private int coin;
+    private double coin;
     private int taxRate;
     private int foodRate;
     private int fearRate;
@@ -14,14 +15,14 @@ public class PlayerGameStatus {
 
     public PlayerGameStatus(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        //TODO: here the fields fill with user government
+        Government government = GameMenuController.getGovernment();
         this.level = 1;
-        this.coin = 15000;
-        this.taxRate = 5;
-        this.foodRate = 4;
-        this.fearRate = 6;
-        this.religion = 0;
-        this.popularity = 5;
+        this.coin = government.getCoins();
+        this.taxRate = government.getTaxRate();
+        this.foodRate = government.getFoodRate();
+        this.fearRate = government.getFearRate();
+        this.religion = government.getReligion();
+        this.popularity = government.getPopularity();
     }
 
     public GamePanel getGamePanel() {
@@ -32,7 +33,7 @@ public class PlayerGameStatus {
         return level;
     }
 
-    public int getCoin() {
+    public double getCoin() {
         return coin;
     }
 
@@ -64,7 +65,7 @@ public class PlayerGameStatus {
         this.level = level;
     }
 
-    public void setCoin(int coin) {
+    public void setCoin(double coin) {
         this.coin = coin;
     }
 

@@ -25,4 +25,6 @@ module project {
     opens org.example.model to javafx.fxml;
     exports org.example.controller;
     opens org.example.controller;
+    exports org.example.model.gameData;
+    opens org.example.model.gameData;
 }

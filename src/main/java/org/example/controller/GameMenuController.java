@@ -8,11 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMenuController {
-    Government government = null;
+    private static Government government;
 
     public GameMenuController(String governmentOwner) {
-        this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
-        //  this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
+        government= new Government(GameInformation.getCurrentPlayer().getUsername());
         GameInformation.getCurrentPlayer().setGovernment(government);
     }
 
@@ -285,5 +284,13 @@ public class GameMenuController {
 
     public int getFearRate(){
         return government.getFearRate();
+    }
+
+    public static Government getGovernment() {
+        return government;
+    }
+
+    public static void setGovernment(Government government) {
+        GameMenuController.government = government;
     }
 }
