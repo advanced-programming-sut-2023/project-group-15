@@ -4,6 +4,8 @@ import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
 import org.example.view.TradeMenu;
 import org.example.view.userView.GovermentMenu;
+import org.example.view.userView.MainMenu;
+import org.example.view.userView.Menu;
 import org.example.view.userView.StartingMenu;
 
 import java.awt.event.KeyEvent;
@@ -51,6 +53,9 @@ public class KeyHandler implements KeyListener {
             rightPressed = true;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = true;
+        if (keyCode == KeyEvent.VK_M) {
+            gamePanel.getMiniMap().setMiniMapOn(!gamePanel.getMiniMap().isMiniMapOn());
+        }
         if (keyCode == KeyEvent.VK_T) {
             try {
                 new TradeMenu().start(StartingMenu.stage);
@@ -73,7 +78,7 @@ public class KeyHandler implements KeyListener {
         }
         if (keyCode == KeyEvent.VK_G) {
             try {
-                new GovermentMenu().start(StartingMenu.stage);
+                new Menu().start(StartingMenu.stage);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
@@ -91,8 +96,14 @@ public class KeyHandler implements KeyListener {
                 gamePanel.setGameState(GameState.buildingMenu);
         }
         if (keyCode == KeyEvent.VK_ESCAPE) {
-            if (gamePanel.getGameState() == GameState.gameMenu)
+            if (gamePanel.getGameState() == GameState.gameMenu) {
                 gamePanel.setGameState(GameState.playState);
+                try {
+                    new MainMenu().start(StartingMenu.stage);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
             else
                 gamePanel.setGameState(GameState.gameMenu);
         }

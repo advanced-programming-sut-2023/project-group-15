@@ -23,9 +23,6 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     private final int screenX;
     private final int screenY;
     private int mouseSpeed = 15;
-    private double mouseX;
-    private double mouseY;
-    //    private Position mousePosition;
     private boolean mouseClicked = false;
     private boolean mousePressed = false;
     private boolean mouseReleased = false;
@@ -77,37 +74,11 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     }
 
 
-
-    public void updateMouse(Graphics2D graphics2D) {
-//        if (mouseHandler.isMouseEntered()) {
-//            graphics2D.drawImage(image, (int) mouseHandler.getMousePosition().getX(), (int) mouseHandler.getMousePosition().getY(), gamePanel.getTileSize(), gamePanel.getTileSize(), null);
-//        }
-//        if (isMouseClicked()) {
-//            System.out.printf("Mouse Clicked at position : x:%f y:%f", mouseHandler.getMousePosition().getX(), mouseHandler.getMousePosition().getY());
-//            System.out.println();
-//        }
-//        if (isMouseExited()) {
-//            System.out.println("mouse exited from the game screen!");
-//        }
-        if (isMouseDragged()) {
-//            System.out.println("mouse is dragging from position : x:"+mouseHandler.getMousePosition().getX()+" y:" + mouseHandler.getMousePosition().getY());
-        }
-//        if (isMousePressed()) {
-//            System.out.println("mouse pressed!");
-//        }
-//        if (isMouseReleased()) {
-//            System.out.println("mouse released!");
-//        }
-//        if (isMouseEntered()) {
-//            System.out.println("mouse entered to the game screen!");
-//        }
-//        clearMouseClicked();
-    }
     public void draw(Graphics2D graphics2D) {
         if (isMouseClicked()) {
-            int x = (int) worldX;
-            int y = (int) worldY;
-//            gamePanel.getTileManager().selectTile(x, y);
+            final int x = (int) worldX;
+            final int y = (int) worldY;
+            gamePanel.getTileManager().selectTile(x, y);
         }
         graphics2D.drawImage(image, screenX+100, screenY+100, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
     }
@@ -134,7 +105,6 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     public void mousePressed(MouseEvent e) {
 //        startPoint = SwingUtilities.convertPoint(UI.jLabel,e.getPoint(),UI.jLabel.getParent());
         System.out.println(worldX+"world"+worldY);
-        System.out.println(mouseX+"mouse"+mouseY);
         System.out.println(e.getX()+"e"+e.getY());
         selectionX = e.getX();
         selectionY = e.getY();
@@ -188,12 +158,11 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-//        gamePanel.getTileManager().selectTile((int) worldX, (int) worldY);
         if (isMouseEntered()) {
-            mouseSpeed += 80;
+            mouseSpeed += 150;
             worldY = e.getY();
             worldX = e.getX();
-            mouseSpeed -= 80;
+            mouseSpeed -= 150;
         }
     }
     public void clearMouseClicked() {
@@ -256,22 +225,6 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
 
     public boolean isMouseMoved() {
         return mouseMoved;
-    }
-
-    public double getMouseX() {
-        return mouseX;
-    }
-
-    public double getMouseY() {
-        return mouseY;
-    }
-
-    public void setMouseX(double mouseX) {
-        this.mouseX = mouseX;
-    }
-
-    public void setMouseY(double mouseY) {
-        this.mouseY = mouseY;
     }
 
     public void setWorldX(double worldX) {

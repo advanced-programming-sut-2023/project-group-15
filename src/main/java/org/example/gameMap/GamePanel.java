@@ -3,11 +3,11 @@ package org.example.gameMap;
 import org.example.gameMap.keyHandling.KeyHandler;
 import org.example.gameMap.mouseHandling.MousePointer;
 import org.example.gameMap.objectSetter.AssetSetter;
+import org.example.gameMap.tileSetter.MiniMap;
 import org.example.gameMap.tileSetter.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable {
     private final SelectedMap selectedMap;
@@ -24,9 +24,8 @@ public class GamePanel extends JPanel implements Runnable {
     private final AssetSetter assetSetter;
     private final MousePointer mouse = new MousePointer(this, keyHandler,getComponents());
     private final TileManager tileManager;
+    private final MiniMap miniMap;
     private Thread gameThread;
-    //for FullScreen
-    private BufferedImage screenImage;
     private Graphics2D graphics2D;
 
     public GamePanel() {
@@ -37,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable {
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.tileManager = new TileManager(this);
+        this.miniMap = new MiniMap(this);
         this.assetSetter = new AssetSetter(this);
         this.addKeyListener(keyHandler);
         this.addMouseListener(mouse);
@@ -99,6 +99,8 @@ public class GamePanel extends JPanel implements Runnable {
         //loading mouse
         popupPage.draw(graphics2D);
         mouse.draw(graphics2D);
+        //loading minimap
+        miniMap.drawMiniMap(graphics2D);
         graphics2D.dispose();
     }
 
@@ -134,20 +136,12 @@ public class GamePanel extends JPanel implements Runnable {
         return tileManager;
     }
 
-    public Thread getGameThread() {
-        return gameThread;
-    }
-
     public GameState getGameState() {
         return gameState;
     }
 
     public void setGameState(GameState gameState) {
         this.gameState = gameState;
-    }
-
-    public void setGameThread(Thread gameThread) {
-        this.gameThread = gameThread;
     }
 
     public Graphics2D getGraphics2D() {
@@ -166,7 +160,7 @@ public class GamePanel extends JPanel implements Runnable {
         return assetSetter;
     }
 
-    public BufferedImage getScreenImage() {
-        return screenImage;
+    public MiniMap getMiniMap() {
+        return miniMap;
     }
 }

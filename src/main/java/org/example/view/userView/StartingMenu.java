@@ -19,23 +19,22 @@ public class StartingMenu extends Application {
             BackgroundPosition.DEFAULT,
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
+    public static void main(String[] args) {
+        launch(args);
+    }
     @Override
-    public void start (Stage stage) throws Exception
-    {
+    public void start(Stage stage) throws Exception {
         new MainMenuController().checkJsonDirectory();
-        StartingMenu.stage = stage ;
+        StartingMenu.stage = stage;
         URL url = StartingMenu.class.getResource("/FXML/StartingMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.setBackground(bGround);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
-
-
-
     }
 
-    public void signUp() throws Exception{
+    public void signUp() throws Exception {
         new SignupMenu().start(StartingMenu.stage);
     }
 
@@ -46,29 +45,6 @@ public class StartingMenu extends Application {
     public void exit() {
         stage.close();
     }
-    /*public void run()  {
-        Matcher mainMenuMatcher;
-        String userInput;
-        System.out.println(SignupMenuOutput.SHOW_MAIN_MENU_OPTIONS.getOutput());
-        while (true) {
-            userInput = InputScanner.getScanner().nextLine();
-            if (userInput.matches("\\s*exit\\s*"))
-                return;
-            else if ((mainMenuMatcher = SignupMenuEnum.getMatcher(userInput, SignupMenuEnum.USER_CREATION)) != null) {
-                System.out.println(SignupMenuOutput.SHOW_OPTIONS.getOutput());
-                new SignupMenu().run(mainMenuMatcher);
-            } else if ((mainMenuMatcher = LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.USER_LOGIN)) != null) {
-                new LoginMenu().loginInCheck(mainMenuMatcher);
-            } else if (LoginMenuEnum.getMatcher(userInput, LoginMenuEnum.FORGET_PASSWORD) != null) {
-                forgetPassword();
-            } else if (SignupMenuEnum.getMatcher(userInput, SignupMenuEnum.CREATE_MAP) != null) {
-                new MapMenu().run();
-            } else {
-                System.out.println("Invalid command!");
-            }
-        }
-    }*/
-
 
 
 }

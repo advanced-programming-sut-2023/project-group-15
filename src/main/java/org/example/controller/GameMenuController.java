@@ -10,13 +10,10 @@ import java.util.HashMap;
 public class GameMenuController {
     Government government = null;
 
-    public GameMenuController() {
-    }
-
     public GameMenuController(String governmentOwner) {
-
-         government = Government.findGovernmentWithUsername(governmentOwner);
-
+        this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
+        //  this.government= new Government(GameInformation.getCurrentPlayer().getUsername());
+        GameInformation.getCurrentPlayer().setGovernment(government);
     }
 
     public String showFoodRate(int number) {
@@ -135,7 +132,7 @@ public class GameMenuController {
                     break;
                 case -2:
                     government.setCoins(government.getCoins() - 0.8 * government.getPeople());
-                    government.setTaxRate(-2);
+                    this.government.setTaxRate(-2);
                     break;
                 case -1:
                     government.setCoins(government.getCoins() - 0.6 * government.getPeople());
@@ -202,6 +199,7 @@ public class GameMenuController {
 
     public void setFearRate(int rate) {
         government.setFearRate(rate);
+        System.out.println(rate);
         ArrayList<Building> building = GameInformation.getAllBuildings();
         switch (rate) {
             //TODO: add code to Increase in the production of buildings by workers
@@ -282,12 +280,10 @@ public class GameMenuController {
     }
 
     public int getTaxRate(){
-        return government.getTaxRate();
+        return this.government.getTaxRate();
     }
 
     public int getFearRate(){
         return government.getFearRate();
     }
 }
-
-

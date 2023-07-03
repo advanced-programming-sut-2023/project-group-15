@@ -5,23 +5,491 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/MiniMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/0_0img279.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Css/255_255img15.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseAvatar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseRandomSlogan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ChooseRandomSlogan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Css/MainMenuStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/PlayerGameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/PlayerGameStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/gameData/Government.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/GovermentMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/SuperObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovernmentMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/SignupMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/StartingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/StartingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Css/MainMenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Css/MainMenuStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Css/popularityBackground.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Css/setRate.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Css/setRate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Css/setRateOptions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Css/setRateOptions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML2/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML2/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/backOfPopularity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/backgroundOfInfoMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_builder.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_builder2.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_combat.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_combat2.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_economics2.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_loading.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/frontend_main.tgx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Css/popularityBackground.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/MainMenuStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/popularityBackground.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/setRate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Css/setRateOptions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameInformation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Goverment.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/Market.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ProfileMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ResourcesInTrade.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ResourcesOfMarket.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/StartingMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/TradeHistory.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/TradeRequest.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/TradingMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/changePassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/chooseQuestion.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/forgotPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/newGameSettings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/newTrade.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/popularityDetails.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/randomPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/setRate.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/setRateOptions.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/Goverment.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/ProfileMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/forgotPassword.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML2/randomSlogan.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img106.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img113.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img118.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img119.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Css/0_0img6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img606.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img729.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img93.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/0_0img99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Avatars/avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/BackOfResources.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/IMG_5996.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/IMG_5997(1).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/IMG_5997.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/Untitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/aks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/archer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/bread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/build.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/BAKERY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/BIG_STONE_GATEHOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/BLACKSMITH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/CHURCH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/DEFEND_TURRET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/ENGINEER_GUILD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/HOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/INN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/IRON_MINE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/LOOKOUT_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/MARKET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/MILL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/OIL_SMELTLER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/POLETURNER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/WOODCUTTER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/defend/BIG_STONE_GATEHOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/defend/DEFEND_TURRET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/defend/ENGINEER_GUILD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/defend/LOOKOUT_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/defend/PITCH_RIG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/defend/POLETURNER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/gardens/APPLE_GARDEN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/gardens/BARRAK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/gardens/BEER_MAKING.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/gardens/OAT_FARM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/house/CATHEDRAL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/house/CHURCH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/house/HOUSE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/house/INN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/house/MARKET.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/house/MERCENARY_POST.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/other/DRAWBRIDGE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/other/FLETCHER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/other/OX_TETHER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/other/QUARRY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/other/STABLE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/BAKERY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/BLACKSMITH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/DIARY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/IRON_MINE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/MILL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/OIL_SMELTLER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/productive/WOODCUTTER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/ARMOURER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/ARMOURY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/CAGED_WAR_DOGS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/HUNTING_BUILDING.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/PERMETER_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/SQUARE_TOWER.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/buildings/war/squareTower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/cion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/happy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/happy2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/happy3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/happy4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/sad1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/sad2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/sad3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/face/sad4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/flour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/hop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/beach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/bigPond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/bowlder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/default.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/grassLand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/iron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/meadow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/oil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/pebble.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/plain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/river.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/sea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/shallowWater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/smallPond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/landType/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/lather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/mace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/mouse/pointer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/pitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/popularity/happiest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/popularity/happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/popularity/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/popularity/sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/popularity/saddest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/popularityIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/productive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/rock (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/save.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/sell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/spear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/track.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Css/track.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/vest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/war.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/wheat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/wood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img106.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img113.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img118.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img119.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img606.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img729.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img93.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/0_0img99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Avatars/avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/BackOfResources.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/IMG_5996.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/IMG_5997(1).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/IMG_5997.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/Untitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/aks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/archer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/bread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/build.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/buildings/tower.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/buildings/defend/SMALL_STONE_GATEHOUSE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/cheese.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/cion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/happy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/happy2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/happy3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/happy4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/sad1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/sad2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/sad3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/face/sad4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/flour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/hop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/beach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/bigPond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/bowlder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/default.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/grassLand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/iron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/meadow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/oil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/pebble.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/plain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/river.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/sea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/shallowWater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/smallPond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/landType/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/lather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/mace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/mouse/pointer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/pitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/popularity/happiest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/popularity/happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/popularity/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/popularity/sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/popularity/saddest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/popularityIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/productive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/rock (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/save.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/sell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/spear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/track.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/vest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/war.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/wheat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images1/wood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/testMap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/world01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/InputScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Utility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/BuildingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameInformationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/JsonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MapMenuEnvironmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/MarketController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/StartingGameMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/TradingMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/UnitMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/MainMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/ProfileMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/SignupMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GamePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GameState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/PlayerGameStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/SelectedMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/mouseHandling/MousePointer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/AssetSetter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/SuperObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileGraphic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/InfantryUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/LauncherUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/People.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/Soldier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/UnitWallTarget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MBC/Worker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Styles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Building.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/BuildingName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/CityBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Education.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Marketplace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/PopularityBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/ProductiveBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/Storage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/building/WarBuilding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/FilePaths.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/LandType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Products.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/SecurityQuestion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Slogans.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/StoreProducts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/UnitName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/enums/Weapon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/GameInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Government.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/MapTemplates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/gameData/Trade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameStartMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapChangesEnvironment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/MapMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/NewGameSettings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/NewTrade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/ScoreBoard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/ScoreBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/BuildingCommandsEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/GameStartMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/LoginMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/MapEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/ProfileMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/SignupMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/commands/TradingMenuEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/BuildingStatusOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameInformationOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/GameStartMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/LoginMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/ProfileMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/SignupMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/enums/outputs/UnitMenuOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ChooseAvatar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ChooseAvatar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ChooseRandomSlogan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ForgotPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GameInformationMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/GovermentMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/LoginMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Market.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/PopularityDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ProfileMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/ResourcesOfMarket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SetRate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/SignupMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/StartingMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/TradeHistory.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +501,8 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,40 +539,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Raya/Desktop/project-group-15-new2/src/main/java/org/example/view&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Raya/Desktop/project-group-15-final/src/main/resources/FXML&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_directory_selection": "C:/Users/Raya/Desktop/project-group-15-new2/src/main/java/org/example/view",
+    "last_opened_file_path": "C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/resources/Css",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.gameMap.Ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Css" />
+      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Images\buildings\defend" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\resources\FXML" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\resources\FXML\Css" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\java\org\example\view\userView" />
-      <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\resources" />
-      <recent name="C:\Users\Raya\Desktop\project-group-15-new2\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Css" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\resources\images1" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-new2\src\main\resources\FXML" />
       <recent name="C:\Users\mobin\Desktop\project2\src\main\java\org\example" />
@@ -125,7 +594,20 @@
       <recent name="org.example.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.StartingMenu">
+    <configuration name="GovermentMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.GovermentMenu" />
+      <module name="Game2DMap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.view.userView.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.gameMap.Main" />
       <module name="Game2DMap" />
@@ -145,19 +627,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResourcesOfMarket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.view.userView.ResourcesOfMarket" />
-      <module name="Game2DMap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.view.userView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -193,11 +662,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StartingMenu" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.GovermentMenu" />
         <item itemvalue="Application.Market" />
         <item itemvalue="Application.TradeMenu" />
-        <item itemvalue="Application.ResourcesOfMarket" />
       </list>
     </recent_temporary>
   </component>
@@ -244,6 +713,8 @@
       <workItem from="1687441083110" duration="713000" />
       <workItem from="1687526843874" duration="2896000" />
       <workItem from="1687551111082" duration="4623000" />
+      <workItem from="1688363510404" duration="354000" />
+      <workItem from="1688363882908" duration="13408000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>
@@ -350,11 +821,6 @@
           <line>6</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/userView/ForgotPassword.java</url>
-          <line>179</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/enums/commands/mapMenuEnum.java</url>
           <line>16</line>
@@ -405,8 +871,8 @@
     <SUITE FILE_PATH="coverage/project_group_15$ProfileMenu.ic" NAME="ProfileMenu Coverage Results" MODIFIED="1685693202450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.view.userView.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/project_group_15$StartingMenu.ic" NAME="StartingMenu Coverage Results" MODIFIED="1688010332698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.view.userView.*</FILTER>
+    <SUITE FILE_PATH="coverage/project_group_15$StartingMenu.ic" NAME="StartingMenu Coverage Results" MODIFIED="1688387642556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.view.*</FILTER>
     </SUITE>
   </component>
 </project>

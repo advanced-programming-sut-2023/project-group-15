@@ -1,4 +1,6 @@
 //this class is completed!
+//this class is completed!
+//this class is completed!
 package org.example.model.gameData;
 
 import org.example.model.MBC.InfantryUnit;
@@ -26,11 +28,10 @@ public class Government {
     private final List<Trade> tradeAcceptedReqList;
     private int popularity;
     private int foodRate;
-    private int taxRate;
+    private static int taxRate;
     private int fearRate;
     private int religion;
     private double coins;
-    private static int check= 0;
     private boolean storeBuilt;
     private final ArrayList<Building> builtBuildings;
     private final HashMap<String, Double> foods;
@@ -58,12 +59,9 @@ public class Government {
         this.tradeUnacceptedReqList = new ArrayList<>();
         this.tradeSendList = new ArrayList<>();
         this.tradeAcceptedReqList = new ArrayList<>();
-        this.foods = new HashMap<>();
-        setPrimitiveFoods();
+        this.foods = setPrimitiveFoods();
         allGovernments.add(this);
         this.SOURCESTORE.put(Products.WOOD , 200);
-        System.out.println(check);
-        check ++ ;
     }
 
     public List<Trade> getTradeAcceptedReqList() {
@@ -114,11 +112,13 @@ public class Government {
         this.religion = religion;
     }
 
-    private void setPrimitiveFoods() {
-        this.foods.put("Apple", 0.00);
-        this.foods.put("Oat", 0.00);
-        this.foods.put("Bread", 0.00);
-        this.foods.put("Cheese", 0.00);
+    private HashMap<String,Double> setPrimitiveFoods() {
+        HashMap<String , Double> foods = new HashMap<>();
+        foods.put("Apple", 0.00);
+        foods.put("Oat", 0.00);
+        foods.put("Bread", 0.00);
+        foods.put("Cheese", 0.00);
+        return foods;
     }
     private void setResources()
     {
@@ -174,8 +174,8 @@ public class Government {
     }
 
     public void setTaxRate(int taxRate) {
-        this.taxRate = taxRate;
-        switch (this.taxRate) {
+        taxRate = taxRate;
+        switch (taxRate) {
             case -3:
                 this.popularity += 7;
                 break;
@@ -230,7 +230,7 @@ public class Government {
     }
 
     public int getTaxRate() {
-        return this.taxRate;
+        return taxRate;
     }
 
     public int getFoodRate() {
@@ -278,7 +278,7 @@ public class Government {
         double zero = 0.00;
         if (Double.compare(foods.get("Apple"), zero) != 0)
             ++variety;
-        if (Double.compare(foods.get("Hop"), zero) != 0)
+        if (Double.compare(foods.get("Oat"), zero) != 0)
             ++variety;
         if (Double.compare(foods.get("Bread"), zero) != 0)
             ++variety;

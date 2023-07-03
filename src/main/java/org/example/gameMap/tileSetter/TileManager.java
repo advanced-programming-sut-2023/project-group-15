@@ -15,11 +15,10 @@ import java.io.InputStreamReader;
 
 public class TileManager {
     private final GamePanel gamePanel;
-    private final int[][] mapTileNumber;
-    private final TileGraphic[] tile = new TileGraphic[20];
+    protected final int[][] mapTileNumber;
+    protected final TileGraphic[] tile = new TileGraphic[20];
     Graphics2D g2;
     private boolean isSelected;
-    private int selectedX,selectedY;
 
     public TileManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
@@ -147,25 +146,21 @@ public class TileManager {
     }
 
     public void selectTile(int x, int y) {
+        System.out.println("x:"+x+",y:"+y);
         double screenX = x - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
         double screenY = y - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
-        if (isSelected) {
-//            clear();
+        for (int i = 0; i <= 50; i++) {
+            for (int j = 0; j <= 50; j++) {
+                int tileX = -115 + i * 48;
+                int tileY = -115 + j * 48;
+                double xDiff = screenX - tileX;
+                double yDiff = screenY - tileY;
+                if (xDiff <= gamePanel.getTileSize() && xDiff >= 0 && yDiff <= gamePanel.getTileSize() && yDiff >= 0) {
+                    g2.setColor(Color.WHITE);
+                    g2.setStroke(new BasicStroke(3));
+                    g2.drawRoundRect((int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), 10, 10);
+                }
+            }
         }
-//        for (int i = 0; i <= 50; i++) {
-//            for (int j = 0; j <=50; j++) {
-//                int tileX = -115 + i * 48;
-//                int tileY = -115 + j * 48;
-//                double xDiff = screenX - tileX;
-//                double yDiff = screenY - tileY;
-//                if (xDiff <= gamePanel.getTileSize() && xDiff >= 0 && yDiff <= gamePanel.getTileSize() && yDiff >= 0) {
-        System.out.println("x");
-        g2.setColor(Color.WHITE);
-        g2.setStroke(new BasicStroke(3));
-        g2.drawRoundRect((int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), 10, 10);
-        isSelected = true;
-//                }
-//            }
-//        }
     }
 }

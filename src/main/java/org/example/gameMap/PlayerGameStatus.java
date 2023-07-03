@@ -24,15 +24,6 @@ public class PlayerGameStatus {
         this.popularity = 5;
     }
 
-    public void statusScreen() {
-        final int frameX = gamePanel.getTileSize() * 2;
-        final int frameY = gamePanel.getTileSize();
-        final int frameWidth = gamePanel.getTileSize() * 5;
-        final int frameHeight = gamePanel.getTileSize() * 10 ;
-        Color color = new Color(0,0,0,210);
-        
-
-    }
     public GamePanel getGamePanel() {
         return gamePanel;
     }

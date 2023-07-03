@@ -2,6 +2,8 @@ package org.example.gameMap;
 
 
 
+import org.example.gameMap.objectSetter.SuperObject;
+
 import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
@@ -76,16 +78,14 @@ public class UI extends JPanel {
         int slotX = frameX + 20 * 4;
         int slotY = frameY + 20 * 4;
         gamePanel.getAssetSetter().getObjectTiles();
-        ImageIcon image = new ImageIcon(UI.class.getResource("/images1/buildings/store.png"));
+        ImageIcon image = new ImageIcon(UI.class.getResource("/Images/buildings/house/MARKET.png"));
         jLabel = new JLabel(image);
         jLabel.addMouseListener(gamePanel.getMouse());
         jLabel.addMouseMotionListener(gamePanel.getMouse());
         jLabel.setVisible(true);
         gamePanel.add(jLabel);
         gamePanel.revalidate();
-
-
-//        int count = 1;
+        int count = 1;
 //        for (SuperObject object:gamePanel.getAssetSetter().getAllObjects()) {
 //            g2.drawImage(object.getBufferedImage(),slotX,slotY,null);
 //            count++;
@@ -95,7 +95,7 @@ public class UI extends JPanel {
 //            }
 //            slotX+=20*4;
 //        }
-        //drawing
+//        drawing
         g2.setColor(Color.WHITE);
         g2.setStroke(new BasicStroke(3));
         g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 30, 30);

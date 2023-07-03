@@ -9,7 +9,6 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.controller.userControllers.LoginMenuController;
 import org.example.controller.userControllers.MainMenuController;
-import org.example.gameMap.GamePanel;
 import org.example.gameMap.Main;
 import org.example.model.User;
 import org.example.model.gameData.GameDataBase;
@@ -18,11 +17,11 @@ import org.example.model.gameData.Government;
 import org.example.view.GameStartMenu;
 import org.example.view.enums.outputs.GameStartMenuOutput;
 
-import javax.swing.*;
 import java.net.URL;
 
 public class MainMenu extends Application {
     private static String username;
+    Stage stage;
     LoginMenuController loginMenuController = new LoginMenuController();
 
     GameStartMenu gameStartMenu = new GameStartMenu(loginMenuController);
@@ -36,6 +35,7 @@ public class MainMenu extends Application {
     Background bGround = new Background(bImg);
 
     public void start(Stage stage) throws Exception {
+        this.stage = stage;
         URL url = MainMenu.class.getResource("/FXML/MainMenu.fxml");
         Pane pane = FXMLLoader.load(url);
         pane.setBackground(bGround);
@@ -61,8 +61,6 @@ public class MainMenu extends Application {
         button.setText("choose");
         button.setOnAction(e ->
         {
-          /*  for(User player: GameInformation.getAllPlayers())
-            System.out.println(player.getUsername());*/
             GameStartMenuOutput gameStartMenuOutput = gameStartMenu.addPlayer(MainMenuController.getCurrentUser().getUsername(),
                     GameDataBase.getUserByUsername(textField.getText()));
             if (gameStartMenuOutput.equals(GameStartMenuOutput.PLAYER_CAPACITY_IS_FULL)) {
@@ -115,11 +113,16 @@ public class MainMenu extends Application {
         stage.show();
     }
 
-    public void startGame() {
-        // gameStartMenu.startNewGame();
+    public void startGame()  {
         GameInformation.setNewGameAccess(true);
         GameInformation.getCurrentPlayer().setUserNO(1);
         GameInformation.getCurrentPlayer().setGovernment(new Government(GameInformation.getCurrentPlayer().getUsername()));
+//        new Main().startingGame();
+        try {
+            new Main().startingGame();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void enterGame() {
