@@ -48,6 +48,8 @@ public class KeyHandler implements KeyListener {
             leftPressed = true;
         if (keyCode == KeyEvent.VK_S)
             downPressed = true;
+        if (keyCode == KeyEvent.VK_O)
+            System.exit(-1);
         if (keyCode == KeyEvent.VK_D)
             rightPressed = true;
         if (keyCode == KeyEvent.VK_SHIFT)
