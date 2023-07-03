@@ -17,15 +17,24 @@ public class TileManager {
     private final GamePanel gamePanel;
     protected final int[][] mapTileNumber;
     protected final TileGraphic[] tile = new TileGraphic[20];
+    private boolean[][] selectedTile;
     Graphics2D g2;
-    private boolean isSelected;
 
     public TileManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         this.mapTileNumber = new int[50][50];
-        this.isSelected = false;
+        this.selectedTile = new boolean[50][50];
+        initializeSelectedTiles(this.selectedTile);
         getTileImage();
         loadMap();
+    }
+
+    private void initializeSelectedTiles(boolean[][] selectedTile) {
+        for (int i = 0; i < 50; i++) {
+            for (int j = 0; j < 50; j++) {
+                selectedTile[i][j] = false;
+            }
+        }
     }
 
     public void loadMap() {
@@ -91,10 +100,7 @@ public class TileManager {
             int worldY = worldRow * gamePanel.getTileSize();
             double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
             double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
-            if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
-                    worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
-                    worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
-                    worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
+            if (limitCondition(worldX, worldY)) {
                 graphics2D.drawImage(tile[tileNumber].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
             }
             worldCol++;
@@ -104,6 +110,13 @@ public class TileManager {
                 worldRow++;
             }
         }
+    }
+
+    private boolean limitCondition(int worldX, int worldY) {
+        return worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
+                worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
+                worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
+                worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
     }
 
     public GamePanel getGamePanel() {
@@ -127,10 +140,7 @@ public class TileManager {
             int worldY = worldRow * gamePanel.getTileSize();
             double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
             double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
-            if (worldX + gamePanel.getTileSize() > gamePanel.getMouse().getWorldX() - gamePanel.getMouse().getScreenX() &&
-                    worldX - gamePanel.getTileSize() < gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX() &&
-                    worldY + gamePanel.getTileSize() > gamePanel.getMouse().getWorldY() - gamePanel.getMouse().getScreenY() &&
-                    worldY - gamePanel.getTileSize() < gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY()) {
+            if (limitCondition(worldX, worldY)) {
                 graphics2D.drawImage(tile[tileNumber].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
                 screenX = 23 * 48 - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
                 screenY = 7 * 48 - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
@@ -146,20 +156,46 @@ public class TileManager {
     }
 
     public void selectTile(int x, int y) {
-        System.out.println("x:"+x+",y:"+y);
-        double screenX = x - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
-        double screenY = y - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
-        for (int i = 0; i <= 50; i++) {
-            for (int j = 0; j <= 50; j++) {
-                int tileX = -115 + i * 48;
-                int tileY = -115 + j * 48;
-                double xDiff = screenX - tileX;
-                double yDiff = screenY - tileY;
-                if (xDiff <= gamePanel.getTileSize() && xDiff >= 0 && yDiff <= gamePanel.getTileSize() && yDiff >= 0) {
-                    g2.setColor(Color.WHITE);
-                    g2.setStroke(new BasicStroke(3));
-                    g2.drawRoundRect((int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), 10, 10);
-                }
+        int worldX = x * gamePanel.getTileSize();
+        int worldY = y * gamePanel.getTileSize();
+        double screenX = worldX - gamePanel.getMouse().getWorldX() + gamePanel.getMouse().getScreenX();
+        double screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
+        if (limitCondition(worldX, worldY)) {
+            if (selectedTile[x][y]) {
+                g2.setColor(Color.WHITE);
+                g2.setStroke(new BasicStroke(3));
+                g2.drawRoundRect((int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), 10, 10);
+            }
+        }
+    }
+
+    public void selectAllTiles() {
+        for (int a = 0; a < 50; a++) {
+            for (int b = 0; b < 50; b++) {
+                selectTile(a, b);
+            }
+        }
+    }
+
+    public void selectOneTile(int x, int y) {
+        selectedTile[x][y] = true;
+    }
+
+    public boolean isNoneSelected() {
+        for (int i=0;i<50;i++) {
+            for (int j=0;j<50;j++) {
+                if (selectedTile[i][j])
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public void setSelectedTileFalse() {
+        for (int a=0;a<50;a++) {
+            for (int b=0;b<50;b++) {
+                if (selectedTile[a][b])
+                    selectedTile[a][b] = false;
             }
         }
     }

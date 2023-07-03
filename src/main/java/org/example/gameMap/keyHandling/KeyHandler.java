@@ -2,10 +2,9 @@ package org.example.gameMap.keyHandling;
 
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
+import org.example.gameMap.Main;
 import org.example.view.TradeMenu;
-import org.example.view.userView.GovermentMenu;
 import org.example.view.userView.MainMenu;
-import org.example.view.userView.Menu;
 import org.example.view.userView.StartingMenu;
 
 import java.awt.event.KeyEvent;
@@ -78,7 +77,9 @@ public class KeyHandler implements KeyListener {
         }
         if (keyCode == KeyEvent.VK_G) {
             try {
-                new Menu().start(StartingMenu.stage);
+                Main main = new Main();
+                Thread thread = new Thread((Runnable) main);
+                thread.start();
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }

@@ -42,8 +42,8 @@ public class AssetSetter {
         worldY += gamePanel.getTileSize();
         screenY = worldY - gamePanel.getMouse().getWorldY() + gamePanel.getMouse().getScreenY();
         graphics2D.drawImage(allObjects[4].getImage(), (int) screenX, (int) screenY, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
-        System.out.println(worldX + "world" + worldY);
-        System.out.println(screenX + "e" + screenY);
+//        System.out.println(worldX + "world" + worldY);
+//        System.out.println(screenX + "e" + screenY);
         allObjects[0].setRectangle(worldX, worldY);
     }
 

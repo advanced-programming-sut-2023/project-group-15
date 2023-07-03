@@ -12,8 +12,8 @@ import java.awt.*;
 public class GamePanel extends JPanel implements Runnable {
     private final SelectedMap selectedMap;
     private int tileSize = 48;
-    private final int screenWidth = tileSize * 40; // 48 * 40 = 1920
-    private final int screenHeight = tileSize * 22; // 48 * 22 = 1080
+    private final int screenWidth = tileSize * 20; // 48 * 40 = 1920
+    private final int screenHeight = tileSize * 20; // 48 * 22 = 1080
     private final int FPS = 60;
     private final int worldWidth = tileSize * 50; // todo: has to change to user map 200 or 400
     private final int worldHeight = tileSize * 50;
@@ -94,6 +94,7 @@ public class GamePanel extends JPanel implements Runnable {
         graphics2D = (Graphics2D) graphics;
         //loading tiles
         tileManager.draw(graphics2D);
+        tileManager.selectAllTiles();
 //        tileManager.drawFromJson(graphics2D,selectedMap);
         //loading objects
         assetSetter.draw(graphics2D, 23 * tileSize, 7 * tileSize);

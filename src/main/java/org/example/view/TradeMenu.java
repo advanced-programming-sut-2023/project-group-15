@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class TradeMenu extends Application {
     User currentUser = MainMenuController.getCurrentUser();
-    Image background = new Image(getClass().getResource("/Images/01.jpg").toString());
+    Image background = new Image(getClass().getResource("/Images/01.jpg").toExternalForm());
     BackgroundImage bImg = new BackgroundImage(background,
             BackgroundRepeat.NO_REPEAT,
             BackgroundRepeat.NO_REPEAT,

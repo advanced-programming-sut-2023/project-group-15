@@ -37,7 +37,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class Menu extends Application implements Initializable {
+public class Menu extends Application implements Initializable , Runnable{
 
         private static Stage stage;
         public Button button1;
@@ -652,4 +652,12 @@ public class Menu extends Application implements Initializable {
                 timeline.play();
         }
 
+        @Override
+        public void run() {
+                try {
+                        start(StartingMenu.stage);
+                } catch (Exception e) {
+                        throw new RuntimeException(e);
+                }
+        }
 }

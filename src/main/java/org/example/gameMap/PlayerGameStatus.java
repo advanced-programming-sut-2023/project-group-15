@@ -1,6 +1,7 @@
 package org.example.gameMap;
 
 import org.example.controller.GameMenuController;
+import org.example.model.gameData.GameInformation;
 import org.example.model.gameData.Government;
 
 public class PlayerGameStatus {
@@ -16,6 +17,9 @@ public class PlayerGameStatus {
     public PlayerGameStatus(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         Government government = GameMenuController.getGovernment();
+        if (government == null) {
+            government = new Government("mahd");
+        }
         this.level = 1;
         this.coin = government.getCoins();
         this.taxRate = government.getTaxRate();

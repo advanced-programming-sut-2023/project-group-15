@@ -7,21 +7,20 @@
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/userControllers/LoginMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/PlayerGameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/PlayerGameStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/GameMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/TradeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/TradeRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/GameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/userControllers/LoginMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/objectSetter/AssetSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/PlayerGameStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/PlayerGameStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/GameMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/keyHandling/KeyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/mouseHandling/MousePointer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/mouseHandling/MousePointer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/objectSetter/AssetSetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gameMap/tileSetter/TileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/TradeRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/view/userView/Menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +123,7 @@
       <recent name="org.example.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StartingMenu">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="GovermentMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.view.userView.GovermentMenu" />
       <module name="Game2DMap" />
@@ -192,8 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StartingMenu" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.StartingMenu" />
         <item itemvalue="Application.GovermentMenu" />
         <item itemvalue="Application.Market" />
         <item itemvalue="Application.TradeMenu" />
@@ -244,7 +243,7 @@
       <workItem from="1687526843874" duration="2896000" />
       <workItem from="1687551111082" duration="4623000" />
       <workItem from="1688363510404" duration="354000" />
-      <workItem from="1688363882908" duration="14799000" />
+      <workItem from="1688363882908" duration="20298000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>

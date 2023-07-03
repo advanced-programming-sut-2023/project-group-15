@@ -75,11 +75,6 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
 
 
     public void draw(Graphics2D graphics2D) {
-        if (isMouseClicked()) {
-            final int x = (int) worldX;
-            final int y = (int) worldY;
-            gamePanel.getTileManager().selectTile(x, y);
-        }
         graphics2D.drawImage(image, screenX+100, screenY+100, gamePanel.getTileSize(), gamePanel.getTileSize(), null);
     }
     private void checkSolidAreas() {
@@ -104,12 +99,42 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     @Override
     public void mousePressed(MouseEvent e) {
 //        startPoint = SwingUtilities.convertPoint(UI.jLabel,e.getPoint(),UI.jLabel.getParent());
-        System.out.println(worldX+"world"+worldY);
-        System.out.println(e.getX()+"e"+e.getY());
+        if (gamePanel.getTileManager().isNoneSelected()) {
+            selectTile(worldX, worldY);
+        } else {
+            gamePanel.getTileManager().setSelectedTileFalse();
+            selectTile(worldX,worldY);
+        }
         selectionX = e.getX();
         selectionY = e.getY();
 //        gamePanel.getTileManager().selectTile((int) worldX, (int) worldY);
         mousePressed = true;
+    }
+
+
+    private void selectTile(double worldX, double worldY) {
+        int x = -100;
+        int y = -100;
+        for (int a=0;a<50;a++) {
+            for (int b=0;b<50;b++) {
+                double difX = worldX-x;
+                double difY = worldY-y;
+                System.out.print(difX);
+                System.out.println(difY);
+                if (difX<=gamePanel.getTileSize()&&
+                    difX>=0&&
+                    difY<=gamePanel.getTileSize()&&
+                    difY>=0) {
+                    System.out.print(a);
+                    System.out.print(b);
+                    gamePanel.getTileManager().selectOneTile(a, b);
+                    return;
+                }
+                x += 48;
+            }
+            y += 48;
+            x = -100;
+        }
     }
 
 
