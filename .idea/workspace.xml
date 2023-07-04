@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4908046b-a59d-480a-b0ae-14605eb14fdd" name="Changes" comment="3shanbe(completing goverment and buildings)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/troops/shield_soldier.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/troops/soldier.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/troops/sword_soldier.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/keyHandling/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/mouseHandling/MousePointer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gameMap/tileSetter/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/userView/StartingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/userView/StartingMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,38 +57,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Raya/Desktop/project-group-15-new2/src/main/java/org/example/view&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/resources/Css&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_directory_selection": "C:/Users/Raya/Desktop/project-group-15-new2/src/main/java/org/example/view",
+    "last_opened_file_path": "C:/Users/mahdi.ak/Documents/GitHub/project-group-15/src/main/resources/Images/troops",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.gameMap.Ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Images\troops" />
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Css" />
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Images\buildings\defend" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\resources\FXML" />
       <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\resources\FXML\Css" />
-      <recent name="C:\Users\Raya\Desktop\project-group-15-final\src\main\java\org\example\view\userView" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mahdi.ak\Documents\GitHub\project-group-15\src\main\resources\Css" />
@@ -234,7 +233,7 @@
       <workItem from="1687551111082" duration="4623000" />
       <workItem from="1688363510404" duration="354000" />
       <workItem from="1688363882908" duration="21485000" />
-      <workItem from="1688472164557" duration="3675000" />
+      <workItem from="1688472164557" duration="8705000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="creating files...">
       <created>1681886768892</created>

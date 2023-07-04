@@ -2,17 +2,24 @@ package org.example.gameMap;
 
 
 
+
 import org.example.gameMap.objectSetter.SuperObject;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class UI extends JPanel {
+    int cursorWidth ;
+    int cursorHeight ;
     public static JLabel jLabel;
     Font arial_40, arial_80B;
     GamePanel gamePanel;
     Graphics2D g2;
+    public ArrayList<SuperObject> troops;
     public boolean messageOn = false;
     public String message = null;
     int messageCounter = 0;
@@ -24,8 +31,11 @@ public class UI extends JPanel {
 
     public UI(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
+        this.cursorHeight = gamePanel.getTileSize();
+        this.cursorWidth = gamePanel.getTileSize();
         arial_40 = new Font("Arial", Font.PLAIN, 40);
         arial_80B = new Font("Arial", Font.BOLD, 80);
+        this.troops = new ArrayList<>();
         // object key ????
         // inserting an object image here but what ????? !
 
@@ -110,12 +120,30 @@ public class UI extends JPanel {
         //cursor
         int cursorX = frameX + 20 + (gamePanel.getTileSize() * slotCol);
         int cursorY = frameY + 20 + (gamePanel.getTileSize() * slotRow);
-        int cursorWidth = gamePanel.getTileSize();
-        int cursorHeight = gamePanel.getTileSize();
         //drawing
         g2.setColor(Color.WHITE);
         g2.setStroke(new BasicStroke(3));
         g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
+        //drawing troops
+        try {
+            int x = frameX + 20 ;
+            int y = frameY + 20 ;
+            SuperObject object = new SuperObject(ImageIO.read(getClass().getResource("/Images/troops/shield_soldier.png")),"shield");
+            troops.add(object);
+            g2.drawImage(object.getImage(),x,y,cursorWidth,cursorHeight,null);
+            object = new SuperObject(ImageIO.read(getClass().getResource("/Images/troops/sword_soldier.png")),"sword");
+            troops.add(object);
+            x = frameX + 20 + gamePanel.getTileSize();
+            g2.drawImage(object.getImage(),x,y,cursorWidth,cursorHeight,null);
+            object = new SuperObject(ImageIO.read(getClass().getResource("/Images/troops/soldier.png")),"soldier");
+            troops.add(object);
+            x = frameX + 20 + gamePanel.getTileSize() * 2;
+            g2.drawImage(object.getImage(),x,y,cursorWidth,cursorHeight,null);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void drawStatusState() {
@@ -134,25 +162,25 @@ public class UI extends JPanel {
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 40F));
         printString("Status: ", x, y);
         y += gamePanel.getTileSize() + 10;
-        String stringToPrint = "Level: " + String.valueOf(gamePanel.getPlayerStatus().getLevel());
+        String stringToPrint = "Level: " + gamePanel.getPlayerStatus().getLevel();
         printString(stringToPrint, x, y);
         y += gamePanel.getTileSize() + 10;
-        stringToPrint = "Coin: " + String.valueOf(gamePanel.getPlayerStatus().getCoin());
+        stringToPrint = "Coin: " + gamePanel.getPlayerStatus().getCoin();
         printString(stringToPrint, x, y);
         y += gamePanel.getTileSize() + 10;
-        stringToPrint = "Tax Rate: " + String.valueOf(gamePanel.getPlayerStatus().getTaxRate());
+        stringToPrint = "Tax Rate: " + gamePanel.getPlayerStatus().getTaxRate();
         printString(stringToPrint, x, y);
         y += gamePanel.getTileSize() + 10;
-        stringToPrint = "Fear Rate: " + String.valueOf(gamePanel.getPlayerStatus().getFearRate());
+        stringToPrint = "Fear Rate: " + gamePanel.getPlayerStatus().getFearRate();
         printString(stringToPrint, x, y);
         y += gamePanel.getTileSize() + 10;
-        stringToPrint = "Food Rate: " + String.valueOf(gamePanel.getPlayerStatus().getFoodRate());
+        stringToPrint = "Food Rate: " + gamePanel.getPlayerStatus().getFoodRate();
         printString(stringToPrint, x, y);
         y += gamePanel.getTileSize() + 10;
-        stringToPrint = "Religion: " + String.valueOf(gamePanel.getPlayerStatus().getReligion());
+        stringToPrint = "Religion: " + gamePanel.getPlayerStatus().getReligion();
         printString(stringToPrint, x, y);
         y += gamePanel.getTileSize() + 10;
-        stringToPrint = "Popularity: " + String.valueOf(gamePanel.getPlayerStatus().getPopularity());
+        stringToPrint = "Popularity: " + gamePanel.getPlayerStatus().getPopularity();
         printString(stringToPrint, x, y);
     }
 
@@ -226,4 +254,13 @@ public class UI extends JPanel {
         }
     }
 
+    public void dropSelectedUnit() {
+        if (slotCol == 0) {
+            g2.drawImage(troops.get(0).getBufferedImage(), (int) gamePanel.getMouse().getWorldX(), (int) gamePanel.getMouse().getWorldY(),cursorWidth,cursorHeight,null);
+        } else if (slotCol == 1) {
+            g2.drawImage(troops.get(1).getBufferedImage(), (int) gamePanel.getMouse().getWorldX(), (int) gamePanel.getMouse().getWorldY(),cursorWidth,cursorHeight,null);
+        } else if (slotCol == 2) {
+            g2.drawImage(troops.get(2).getBufferedImage(), (int) gamePanel.getMouse().getWorldX(), (int) gamePanel.getMouse().getWorldY(),cursorWidth,cursorHeight,null);
+        }
+    }
 }

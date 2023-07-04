@@ -149,6 +149,8 @@ public class KeyHandler implements KeyListener {
             gamePanel.getPopupPage().addSlotRow();
         if (keyCode == KeyEvent.VK_D)
             gamePanel.getPopupPage().addSlotCol();
+        if (keyCode == KeyEvent.VK_ENTER)
+            gamePanel.getPopupPage().dropSelectedUnit();
     }
 
     @Override

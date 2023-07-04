@@ -84,7 +84,7 @@ public class Menu extends Application implements Initializable{
         }
 
         @FXML
-        public void showGovermentMenu(MouseEvent mouseEvent) {
+        public void showGovermentMenu() {
                 try {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Goverment.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
@@ -361,7 +361,7 @@ public class Menu extends Application implements Initializable{
                 stable.setFitWidth(36);
                 stable.setFitHeight(33);
 
-                EventHandler<MouseEvent> garden = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> garden = e -> {
                         parent.getChildren().add(appleGarden);
                         parent.getChildren().add(beerGarden);
                         parent.getChildren().add(barrak);
@@ -404,7 +404,7 @@ public class Menu extends Application implements Initializable{
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> houseMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> houseMenu = e -> {
                         parent.getChildren().add(cathedral);
                         parent.getChildren().add(mercerany);
                         parent.getChildren().add(church);
@@ -447,7 +447,7 @@ public class Menu extends Application implements Initializable{
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> defendMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> defendMenu = e -> {
                         parent.getChildren().add(bigGate);
                         parent.getChildren().add(smallGate);
                         parent.getChildren().add(deffendTurret);
@@ -490,7 +490,7 @@ public class Menu extends Application implements Initializable{
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> productiveMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> productiveMenu = e -> {
                         parent.getChildren().add(oilSmelter);
                         parent.getChildren().add(woodCutter);
                         parent.getChildren().add(bakery);
@@ -533,7 +533,7 @@ public class Menu extends Application implements Initializable{
                         parent.getChildren().remove(stable);
                 };
 
-                EventHandler<MouseEvent> warMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> warMenu = e -> {
                         parent.getChildren().add(armourer);
                         parent.getChildren().add(armoury);
                         parent.getChildren().add(dogs);
@@ -578,7 +578,7 @@ public class Menu extends Application implements Initializable{
 
 
 
-                EventHandler<MouseEvent> otherMenu = (EventHandler<MouseEvent>) e -> {
+                EventHandler<MouseEvent> otherMenu = e -> {
                         parent.getChildren().add(drawBridge);
                         parent.getChildren().add(fletcher);
                         parent.getChildren().add(oxTether);
