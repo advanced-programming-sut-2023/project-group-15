@@ -1,10 +1,11 @@
 package org.example.gameMap.keyHandling;
 
+import javafx.application.Platform;
 import org.example.gameMap.GamePanel;
 import org.example.gameMap.GameState;
-import org.example.gameMap.Main;
 import org.example.view.TradeMenu;
 import org.example.view.userView.MainMenu;
+import org.example.view.userView.Menu;
 import org.example.view.userView.StartingMenu;
 
 import java.awt.event.KeyEvent;
@@ -17,7 +18,9 @@ public class KeyHandler implements KeyListener {
     private boolean downPressed = false;
     private boolean rightPressed = false;
     private boolean sprint = false;
-
+    private boolean multiSelection = false;
+    private int firstSelectedX = -1;
+    private int firstSelectedY = -1;
     public KeyHandler(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
     }
@@ -34,12 +37,14 @@ public class KeyHandler implements KeyListener {
             moveOnInventoryMenu(keyCode);
         } else if (gamePanel.getGameState() == GameState.buildingMenu && keyCode != KeyEvent.VK_B) {
             moveOnInventoryMenu(keyCode);
+        } else if (multiSelection) {
+            multiSelect(keyCode);
         }
-        if (keyCode == KeyEvent.VK_UP) {
+        if (keyCode == KeyEvent.VK_UP && !multiSelection) {
             if (gamePanel.getTileSize() > 20)
                 gamePanel.zoomInOut(1);
         }
-        if (keyCode == KeyEvent.VK_DOWN)
+        if (keyCode == KeyEvent.VK_DOWN && !multiSelection)
             if (gamePanel.getTileSize() < 64)
                 gamePanel.zoomInOut(-1);
         if (keyCode == KeyEvent.VK_W)
@@ -54,6 +59,8 @@ public class KeyHandler implements KeyListener {
             rightPressed = true;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = true;
+        if (keyCode == KeyEvent.VK_CONTROL)
+            multiSelection = true;
         if (keyCode == KeyEvent.VK_M) {
             gamePanel.getMiniMap().setMiniMapOn(!gamePanel.getMiniMap().isMiniMapOn());
         }
@@ -78,13 +85,13 @@ public class KeyHandler implements KeyListener {
                 gamePanel.setGameState(GameState.statusState);
         }
         if (keyCode == KeyEvent.VK_G) {
-            try {
-                Main main = new Main();
-                Thread thread = new Thread((Runnable) main);
-                thread.start();
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+            Platform.startup(() -> {
+                try {
+                    new Menu().start(StartingMenu.stage);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
         }
         if (keyCode == KeyEvent.VK_I) {
             if (gamePanel.getGameState() == GameState.inventoryMenu)
@@ -112,6 +119,27 @@ public class KeyHandler implements KeyListener {
         }
     }
 
+    private void multiSelect(int keyCode) {
+        if (firstSelectedX!=-1&&firstSelectedY!=-1) {
+            if (keyCode == KeyEvent.VK_LEFT) {
+                firstSelectedX--;
+                gamePanel.getTileManager().selectOneTile(firstSelectedX, firstSelectedY);
+            }
+            if (keyCode == KeyEvent.VK_RIGHT) {
+                firstSelectedX++;
+                gamePanel.getTileManager().selectOneTile(firstSelectedX, firstSelectedY);
+            }
+            if (keyCode == KeyEvent.VK_UP) {
+                firstSelectedY--;
+                gamePanel.getTileManager().selectOneTile(firstSelectedX, firstSelectedY);
+            }
+            if (keyCode == KeyEvent.VK_DOWN) {
+                firstSelectedY++;
+                gamePanel.getTileManager().selectOneTile(firstSelectedX, firstSelectedY);
+            }
+        }
+    }
+
     private void moveOnInventoryMenu(int keyCode) {
         if (keyCode == KeyEvent.VK_W)
             gamePanel.getPopupPage().reduceSlotRow();
@@ -136,6 +164,8 @@ public class KeyHandler implements KeyListener {
             rightPressed = false;
         if (keyCode == KeyEvent.VK_SHIFT)
             sprint = false;
+        if (keyCode == KeyEvent.VK_CONTROL)
+            multiSelection = false;
     }
 
     public boolean isUpPressed() {
@@ -156,5 +186,21 @@ public class KeyHandler implements KeyListener {
 
     public boolean getSprint() {
         return sprint;
+    }
+
+    public int getFirstSelectedX() {
+        return firstSelectedX;
+    }
+
+    public void setFirstSelectedX(int firstSelectedX) {
+        this.firstSelectedX = firstSelectedX;
+    }
+
+    public int getFirstSelectedY() {
+        return firstSelectedY;
+    }
+
+    public void setFirstSelectedY(int firstSelectedY) {
+        this.firstSelectedY = firstSelectedY;
     }
 }

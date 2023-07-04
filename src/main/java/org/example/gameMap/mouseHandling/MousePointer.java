@@ -87,24 +87,17 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     @Override
     public void mouseClicked(MouseEvent e) {
         mouseClicked = true;
-        int x = (int) worldX;
-        int y = (int) worldY;
-        while (true) {
-            if (isMouseClicked())
-                break;
-//            gamePanel.getTileManager().selectTile(x, y);
-        }
-    }
-    public Point startPoint;
-    @Override
-    public void mousePressed(MouseEvent e) {
-//        startPoint = SwingUtilities.convertPoint(UI.jLabel,e.getPoint(),UI.jLabel.getParent());
         if (gamePanel.getTileManager().isNoneSelected()) {
             selectTile(worldX, worldY);
         } else {
             gamePanel.getTileManager().setSelectedTileFalse();
             selectTile(worldX,worldY);
         }
+    }
+    public Point startPoint;
+    @Override
+    public void mousePressed(MouseEvent e) {
+//        startPoint = SwingUtilities.convertPoint(UI.jLabel,e.getPoint(),UI.jLabel.getParent());
         selectionX = e.getX();
         selectionY = e.getY();
 //        gamePanel.getTileManager().selectTile((int) worldX, (int) worldY);
@@ -112,22 +105,20 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     }
 
 
-    private void selectTile(double worldX, double worldY) {
+    public void selectTile(double worldX, double worldY) {
         int x = -100;
         int y = -100;
         for (int a=0;a<50;a++) {
             for (int b=0;b<50;b++) {
                 double difX = worldX-x;
                 double difY = worldY-y;
-                System.out.print(difX);
-                System.out.println(difY);
                 if (difX<=gamePanel.getTileSize()&&
                     difX>=0&&
                     difY<=gamePanel.getTileSize()&&
                     difY>=0) {
-                    System.out.print(a);
-                    System.out.print(b);
-                    gamePanel.getTileManager().selectOneTile(a, b);
+                    gamePanel.getTileManager().selectOneTile(b, a);
+                    gamePanel.getKeyHandler().setFirstSelectedX(b);
+                    gamePanel.getKeyHandler().setFirstSelectedY(a);
                     return;
                 }
                 x += 48;
@@ -143,6 +134,7 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
         startPoint = null;
         mouseReleased = true;
         mousePressed = false;
+        mouseDragged = false;
     }
 
     @Override
@@ -162,23 +154,29 @@ public class MousePointer implements MouseListener, MouseMotionListener  {
     public void mouseExited(MouseEvent e) {
         mouseExited = true;
         mouseEntered = false;
-//        mouseSpeed -= 15;
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
-//        e.getComponent().setLocation((e.getX()+e.getComponent().getX()) -selectionX, (e.getY()+e.getComponent().getY()) -selectionY);
-        Point location = SwingUtilities.convertPoint(UI.jLabel,e.getPoint(),UI.jLabel.getParent());
-        if (UI.jLabel.getParent().getBounds().contains(location)) {
-            Point newLocation = UI.jLabel.getLocation();
-            newLocation.translate(location.x - startPoint.x,location.y - startPoint.y);
-            newLocation.x = Math.max(newLocation.x,0);
-            newLocation.y = Math.max(newLocation.y,0);
-            newLocation.x = Math.min(newLocation.x ,UI.jLabel.getParent().getWidth() - UI.jLabel.getWidth());
-            newLocation.y = Math.min(newLocation.y ,UI.jLabel.getParent().getHeight() - UI.jLabel.getHeight());
-            UI.jLabel.setLocation(newLocation);
-            startPoint = location;
+        if (mouseEntered) {
+            worldY = e.getY();
+            worldX = e.getX();
         }
+        gamePanel.getTileManager().setSelectedTileFalse();
+        while (mouseDragged)
+            selectTile(worldX, worldY);
+//        e.getComponent().setLocation((e.getX()+e.getComponent().getX()) -selectionX, (e.getY()+e.getComponent().getY()) -selectionY);
+//        Point location = SwingUtilities.convertPoint(UI.jLabel,e.getPoint(),UI.jLabel.getParent());
+//        if (UI.jLabel.getParent().getBounds().contains(location)) {
+//            Point newLocation = UI.jLabel.getLocation();
+//            newLocation.translate(location.x - startPoint.x,location.y - startPoint.y);
+//            newLocation.x = Math.max(newLocation.x,0);
+//            newLocation.y = Math.max(newLocation.y,0);
+//            newLocation.x = Math.min(newLocation.x ,UI.jLabel.getParent().getWidth() - UI.jLabel.getWidth());
+//            newLocation.y = Math.min(newLocation.y ,UI.jLabel.getParent().getHeight() - UI.jLabel.getHeight());
+//            UI.jLabel.setLocation(newLocation);
+//            startPoint = location;
+//        }
     }
 
     @Override

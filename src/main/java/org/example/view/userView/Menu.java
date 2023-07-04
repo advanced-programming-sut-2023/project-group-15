@@ -6,8 +6,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,29 +13,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.example.controller.GameMenuController;
 import org.example.controller.MarketController;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class Menu extends Application implements Initializable , Runnable{
+public class Menu extends Application implements Initializable{
 
         private static Stage stage;
         public Button button1;
@@ -650,14 +639,5 @@ public class Menu extends Application implements Initializable , Runnable{
                 KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), keyValue);
                 timeline.getKeyFrames().add(keyFrame);
                 timeline.play();
-        }
-
-        @Override
-        public void run() {
-                try {
-                        start(StartingMenu.stage);
-                } catch (Exception e) {
-                        throw new RuntimeException(e);
-                }
         }
 }

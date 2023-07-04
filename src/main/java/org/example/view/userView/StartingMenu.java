@@ -19,9 +19,6 @@ public class StartingMenu extends Application {
             BackgroundPosition.DEFAULT,
             new BackgroundSize(1, 1.0, true, true, false, false));
     Background bGround = new Background(bImg);
-    public static void main(String[] args) {
-        launch(args);
-    }
     @Override
     public void start(Stage stage) throws Exception {
         new MainMenuController().checkJsonDirectory();

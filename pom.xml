@@ -20,7 +20,6 @@
             <artifactId>oval</artifactId>
             <version>3.2.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.passay/passay -->
         <dependency>
             <groupId>org.passay</groupId>
             <artifactId>passay</artifactId>
@@ -42,7 +41,6 @@
             <artifactId>javafx-controls</artifactId>
             <version>19.0.2.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.wujing.jframe/jframe -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -55,7 +53,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
